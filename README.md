@@ -184,8 +184,8 @@ OpenClawChineseTranslation/
 先卸载原版，再安装汉化版：
 
 ```bash
-npm uninstall -g openclaw clawdbot moltbot
-npm install -g openclaw-zh@latest
+npm uninstall -g openclaw
+npm install -g @qingchencloud/openclaw-zh@latest
 ```
 
 ### Q: 如何更新到最新版？

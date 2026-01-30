@@ -39,40 +39,40 @@ git clone https://github.com/openclaw/openclaw.git openclaw
 
 ```
 translations/
-├── config.json          # 主配置（定义模块和文件映射）
-├── cli/                 # CLI 界面
-│   ├── banner.json      # 启动横幅
-│   └── tagline.json     # 标语
-├── wizard/              # 初始化向导
-│   ├── onboarding.json  # 引导流程
-│   └── security.json    # 安全警告
-└── commands/            # 命令帮助
-    ├── auth-choice.json # 认证选择
-    └── helpers.json     # 帮助信息
+├── config.json              # 主配置（定义模块和文件映射）
+├── cli/                     # CLI 界面
+│   ├── banner.json          # 启动横幅
+│   ├── tagline.json         # 标语
+│   └── help.json            # 帮助信息
+├── wizard/                  # 初始化向导
+│   ├── onboarding.json      # 引导流程
+│   └── security.json        # 安全警告
+└── commands/                # 命令帮助
+    ├── auth-choice.json     # 认证选择
+    ├── helpers.json         # 帮助信息
+    ├── doctor.json          # 诊断命令
+    └── doctor-security.json # 安全审计警告
 ```
 
 #### 翻译格式
 
-每个 JSON 文件包含一个 `translations` 数组：
+每个 JSON 文件使用 `replacements` 对象（键值对形式）：
 
 ```json
 {
   "file": "src/cli/banner.ts",
   "description": "CLI 横幅标题",
-  "translations": [
-    {
-      "original": "🦞 OpenClaw",
-      "translated": "🦞 OpenClaw 中文版",
-      "context": "主标题"
-    }
-  ]
+  "replacements": {
+    "🦞 OpenClaw": "🦞 OpenClaw 中文版",
+    "Welcome to OpenClaw": "欢迎使用 OpenClaw"
+  }
 }
 ```
 
 字段说明：
-- `original`: 原始英文字符串（必须精确匹配）
-- `translated`: 翻译后的中文
-- `context`: 上下文说明（可选）
+- `file`: 目标源文件路径
+- `description`: 此翻译配置的说明
+- `replacements`: 键值对，键为原始英文，值为翻译后的中文
 
 #### 验证翻译
 
