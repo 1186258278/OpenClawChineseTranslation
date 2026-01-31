@@ -1,0 +1,29 @@
+# OpenClaw 汉化版 Docker 构建忽略文件
+# 确保 dist/ 目录被包含
+
+# 忽略开发文件
+.git
+.github
+.gitignore
+*.md
+!README.md
+
+# 忽略测试文件
+tests/
+test/
+__tests__/
+*.test.ts
+*.test.js
+*.spec.ts
+*.spec.js
+
+# 忽略开发配置
+.eslintrc*
+.prettierrc*
+tsconfig*.json
+jest.config.*
+vitest.config.*
+
+# 保留构建产物（不忽略）
+# !dist/
+# !node_modules/

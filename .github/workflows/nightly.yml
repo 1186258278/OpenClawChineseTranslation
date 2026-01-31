@@ -216,11 +216,25 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # ==================== Docker 镜像构建与推送 ====================
-      - name: 准备 Dockerfile
+      - name: 准备 Docker 构建
         run: |
-          # 复制 Dockerfile 到构建目录
+          # 复制 Dockerfile 和 .dockerignore 到构建目录
           cp Dockerfile openclaw/Dockerfile
-          echo "✅ Dockerfile 已复制到构建目录"
+          cp .dockerignore openclaw/.dockerignore 2>/dev/null || true
+          
+          # 验证构建产物存在
+          echo "📦 检查构建产物..."
+          ls -la openclaw/
+          ls -la openclaw/dist/ || echo "⚠️ dist/ 目录不存在"
+          ls -la openclaw/node_modules/ | head -20 || echo "⚠️ node_modules/ 目录不存在"
+          
+          # 确保 dist 目录存在
+          if [ ! -d "openclaw/dist" ]; then
+            echo "❌ 错误：dist/ 目录不存在，Docker 构建将失败"
+            exit 1
+          fi
+          
+          echo "✅ Docker 构建准备完成"
 
       - name: 设置 Docker Buildx
         uses: docker/setup-buildx-action@v3
