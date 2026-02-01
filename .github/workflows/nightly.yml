@@ -156,22 +156,6 @@ jobs:
           python3 /tmp/fix_icon.py
           echo "✅ 图标修复完成"
 
-      - name: 查找构建产物目录
-        run: |
-          echo "📁 查找 control-ui 目录..."
-          find openclaw -name "control-ui" -type d 2>/dev/null || echo "未找到 control-ui"
-          echo ""
-          echo "📁 查找 dist 目录..."
-          find openclaw -name "dist" -type d 2>/dev/null || echo "未找到 dist"
-          echo ""
-          echo "📁 openclaw 目录结构:"
-          ls -la openclaw/ || true
-          echo ""
-          if [ -d "openclaw/dist" ]; then
-            echo "📁 openclaw/dist 目录结构:"
-            ls -la openclaw/dist/ || true
-          fi
-
       - name: 注入功能面板
         run: |
           python3 scripts/inject_panel.py
