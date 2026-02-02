@@ -144,7 +144,29 @@ jobs:
 
       - name: 注入功能面板
         run: |
+          echo "📁 当前目录: $(pwd)"
+          echo "📁 目录结构:"
+          ls -la
+          echo ""
+          echo "📁 openclaw/dist/ 内容:"
+          ls -la openclaw/dist/ || echo "❌ openclaw/dist/ 不存在"
+          echo ""
+          echo "📁 openclaw/dist/control-ui/ 内容:"
+          ls -la openclaw/dist/control-ui/ || echo "❌ control-ui 不存在"
+          echo ""
+          echo "📁 openclaw/dist/control-ui/assets/ 内容:"
+          ls -la openclaw/dist/control-ui/assets/ || echo "❌ assets 不存在"
+          echo ""
+          echo "🦞 开始注入功能面板..."
           python3 scripts/inject_panel.py
+          echo ""
+          echo "📊 注入后检查:"
+          if [ -f "openclaw/dist/control-ui/assets/index-"*".js" ]; then
+            JS_FILE=$(ls openclaw/dist/control-ui/assets/index-*.js | head -1)
+            echo "JS 文件: $JS_FILE"
+            echo "文件大小: $(ls -la $JS_FILE | awk '{print $5}') bytes"
+            echo "是否包含面板代码: $(grep -c 'initPanel' $JS_FILE || echo 0) 处"
+          fi
           echo "✅ 功能面板注入完成"
 
       - name: 准备版本信息
