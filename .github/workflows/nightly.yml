@@ -115,11 +115,20 @@ jobs:
       - name: 验证功能面板注入
         run: |
           echo "📊 验证 artifact 中的功能面板注入..."
-          JS_FILE=$(ls openclaw/dist/control-ui/assets/index-*.js 2>/dev/null | head -1)
+          # 支持新旧两种目录结构
+          JS_FILE=""
+          if [ -f openclaw/dist/canvas-host/a2ui/a2ui.bundle.js ]; then
+            JS_FILE="openclaw/dist/canvas-host/a2ui/a2ui.bundle.js"
+            echo "📁 检测到新版目录结构: canvas-host/a2ui"
+          elif ls openclaw/dist/control-ui/assets/index-*.js 1>/dev/null 2>&1; then
+            JS_FILE=$(ls openclaw/dist/control-ui/assets/index-*.js | head -1)
+            echo "📁 检测到旧版目录结构: control-ui/assets"
+          fi
+          
           if [ -n "$JS_FILE" ]; then
             echo "JS 文件: $JS_FILE"
-            echo "文件大小: $(ls -la $JS_FILE | awk '{print $5}') bytes"
-            PANEL_COUNT=$(grep -c 'initPanel' $JS_FILE || echo 0)
+            echo "文件大小: $(ls -la "$JS_FILE" | awk '{print $5}') bytes"
+            PANEL_COUNT=$(grep -c 'initPanel' "$JS_FILE" || echo 0)
             echo "面板代码出现次数: $PANEL_COUNT"
             if [ "$PANEL_COUNT" -eq "0" ]; then
               echo "⚠️ 警告: artifact 中未检测到功能面板代码！"
@@ -128,7 +137,8 @@ jobs:
             fi
           else
             echo "❌ 未找到 JS 文件"
-            ls -la openclaw/dist/control-ui/assets/ || echo "assets 目录不存在"
+            echo "📁 查找 dist 目录结构..."
+            find openclaw/dist -name "*.js" ! -path "*/node_modules/*" -type f 2>/dev/null | head -10
           fi
 
       - name: 设置 Node.js

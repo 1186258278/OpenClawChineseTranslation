@@ -173,13 +173,28 @@ jobs:
           python3 scripts/inject_panel.py
           echo ""
           echo "📊 注入后检查:"
-          if [ -f "openclaw/dist/control-ui/assets/index-"*".js" ]; then
+          # 支持新旧两种目录结构
+          JS_FILE=""
+          if [ -f openclaw/dist/canvas-host/a2ui/a2ui.bundle.js ]; then
+            JS_FILE="openclaw/dist/canvas-host/a2ui/a2ui.bundle.js"
+          elif ls openclaw/dist/control-ui/assets/index-*.js 1>/dev/null 2>&1; then
             JS_FILE=$(ls openclaw/dist/control-ui/assets/index-*.js | head -1)
-            echo "JS 文件: $JS_FILE"
-            echo "文件大小: $(ls -la $JS_FILE | awk '{print $5}') bytes"
-            echo "是否包含面板代码: $(grep -c 'initPanel' $JS_FILE || echo 0) 处"
           fi
-          echo "✅ 功能面板注入完成"
+          
+          if [ -n "$JS_FILE" ]; then
+            echo "JS 文件: $JS_FILE"
+            echo "文件大小: $(ls -la "$JS_FILE" | awk '{print $5}') bytes"
+            PANEL_COUNT=$(grep -c 'initPanel' "$JS_FILE" || echo 0)
+            echo "是否包含面板代码: $PANEL_COUNT 处"
+            if [ "$PANEL_COUNT" -eq "0" ]; then
+              echo "❌ 错误: 面板代码未注入成功！"
+            else
+              echo "✅ 面板代码注入成功"
+            fi
+          else
+            echo "❌ 未找到主 JS 文件"
+          fi
+          echo "✅ 功能面板注入步骤完成"
 
       - name: 准备版本信息
         id: prepare

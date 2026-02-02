@@ -193,10 +193,20 @@ def inject_panel():
     js_injected = False
     inject_marker = '/* === OpenClaw 功能面板 === */'
     
+    # 主 bundle 文件名模式（按优先级排序）
+    main_bundle_patterns = [
+        'a2ui.bundle.js',  # 新版 canvas-host/a2ui 目录
+        'index-',          # 旧版 control-ui/assets 目录
+        'index.js',        # 备选
+        '.bundle.js',      # 通用 bundle 模式
+        'main',            # 通用 main 模式
+    ]
+    
     for js_file in js_files:
         filename = os.path.basename(js_file)
-        # 寻找主 bundle（通常是 index-*.js）
-        if 'index-' in filename or filename == 'index.js':
+        # 寻找主 bundle
+        is_main_bundle = any(pattern in filename for pattern in main_bundle_patterns)
+        if is_main_bundle:
             content = read_file(js_file)
             
             # 检查是否已注入（防止重复）
@@ -208,7 +218,7 @@ def inject_panel():
             # 追加 JS 到文件末尾
             new_content = content + f'\n\n{inject_marker}\n' + panel_js
             write_file(js_file, new_content)
-            print(f"  ✅ JS 已注入: {filename}")
+            print(f"  ✅ JS 已注入: {filename} ({len(new_content)} bytes)")
             js_injected = True
             break
     
