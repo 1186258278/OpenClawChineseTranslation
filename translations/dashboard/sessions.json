@@ -21,7 +21,7 @@
     "<div>Actions</div>": "<div>操作</div>",
     "<div class=\"muted\">No sessions found.</div>": "<div class=\"muted\">未找到会话。</div>",
     "placeholder=\"(optional)\"": "placeholder=\"（可选）\"",
-    "Delete": "删除",
+    ">\n            Delete\n          </button>": ">\n            删除\n          </button>",
     "{ value: \"\", label: \"inherit\" }": "{ value: \"\", label: \"继承\" }",
     "{ value: \"off\", label: \"off (explicit)\" }": "{ value: \"off\", label: \"关闭（显式）\" }",
     "{ value: \"on\", label: \"on\" }": "{ value: \"on\", label: \"开启\" }",

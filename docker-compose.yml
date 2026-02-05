@@ -24,31 +24,62 @@ services:
       - openclaw-data:/root/.openclaw
     environment:
       # 访问令牌（推荐设置，用于 Dashboard 认证）
+      # 建议创建 .env 文件设置: OPENCLAW_GATEWAY_TOKEN=your-secure-token
       - OPENCLAW_GATEWAY_TOKEN=${OPENCLAW_GATEWAY_TOKEN:-}
+      # 跳过首次初始化检查（仅高级用户使用）
+      # - OPENCLAW_SKIP_SETUP=1
     restart: unless-stopped
     # 默认启动 gateway（首次需要初始化，见下方说明）
     command: openclaw gateway run --allow-unconfigured
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:18789/health", "||", "exit", "0"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
     # 
     # ========== 首次使用说明 ==========
     # 
-    # 1. 首次启动后，建议初始化配置：
-    #    docker-compose exec openclaw openclaw setup
-    #    docker-compose exec openclaw openclaw config set gateway.mode local
-    #    docker-compose restart
+    # 方式 1: 一键脚本（推荐）
+    #   curl -fsSL https://cdn.jsdelivr.net/gh/1186258278/OpenClawChineseTranslation@main/docker-deploy.sh | bash
+    #
+    # 方式 2: 手动初始化
+    #   docker-compose exec openclaw openclaw setup
+    #   docker-compose exec openclaw openclaw config set gateway.mode local
+    #   docker-compose restart
     #
     # ========== 远程访问配置 ==========
     # 
-    # 如果需要从其他设备访问（非 localhost），还需要：
-    #    docker-compose exec openclaw openclaw config set gateway.bind lan
-    #    docker-compose exec openclaw openclaw config set gateway.auth.token YOUR_TOKEN
-    #    docker-compose restart
+    # 如果需要从其他设备访问（非 localhost）：
     #
-    # 访问 http://服务器IP:18789，在 Dashboard 输入 token 连接
+    # 1. 配置绑定和认证
+    #   docker-compose exec openclaw openclaw config set gateway.bind lan
+    #   docker-compose exec openclaw openclaw config set gateway.auth.token YOUR_TOKEN
+    #   docker-compose restart
     #
-    # ========== 或者使用一键脚本（推荐）==========
-    # 
-    # 自动完成所有配置：
-    #   curl -fsSL https://cdn.jsdelivr.net/gh/1186258278/OpenClawChineseTranslation@main/docker-deploy.sh | bash
+    # 2. 访问 http://服务器IP:18789，在 Dashboard 输入 token 连接
+    #
+    # ========== 反向代理配置（Nginx 等）==========
+    #
+    # 如果使用 Nginx 反向代理，需要配置信任代理地址：
+    #   docker-compose exec openclaw openclaw config set gateway.trustedProxies '["127.0.0.1", "::1"]'
+    #   docker-compose restart
+    #
+    # 详细配置请参考 README.md 中的反向代理章节。
+    #
+    # ========== 常见错误排查 ==========
+    #
+    # 1. "Gateway auth is set to token, but no token is configured"
+    #    → 设置 token: docker-compose exec openclaw openclaw config set gateway.auth.token YOUR_TOKEN
+    #
+    # 2. "Missing config. Run openclaw setup"
+    #    → 初始化: docker-compose exec openclaw openclaw setup
+    #
+    # 3. "control ui requires HTTPS or localhost"
+    #    → 使用 Token 认证或配置 HTTPS 反向代理
+    #
+    # 4. "Proxy headers detected from untrusted address"
+    #    → 设置信任代理: docker-compose exec openclaw openclaw config set gateway.trustedProxies '["127.0.0.1"]'
     #
 
 volumes:

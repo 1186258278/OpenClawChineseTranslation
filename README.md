@@ -551,6 +551,94 @@ http://服务器IP:18789/overview
 
 > **⚠️ 注意**：`gateway.controlUi.allowInsecureAuth: true` 配置存在已知上游 Bug（[#1679](https://github.com/clawdbot/clawdbot/issues/1679)），单独使用不起作用，必须配合 `gateway.auth.token` 使用。
 
+### 反向代理配置（Nginx + HTTPS）
+
+如果使用 Nginx 等反向代理，需要额外配置 `gateway.trustedProxies`，否则会提示 `Proxy headers detected from untrusted address`。
+
+**1. 配置 OpenClaw 信任代理地址**
+
+```bash
+# Docker 环境
+docker exec openclaw openclaw config set gateway.trustedProxies '["127.0.0.1", "::1"]'
+docker restart openclaw
+
+# npm 安装环境
+openclaw config set gateway.trustedProxies '["127.0.0.1", "::1"]'
+openclaw gateway restart
+```
+
+> 💡 如果 Nginx 和 OpenClaw 在不同服务器，将 `127.0.0.1` 替换为 Nginx 服务器的 IP 地址。
+
+**2. Nginx 配置示例**
+
+```nginx
+# /etc/nginx/sites-available/openclaw
+server {
+    listen 443 ssl http2;
+    server_name oc.example.com;
+    
+    # SSL 证书配置（推荐使用 Let's Encrypt）
+    ssl_certificate /etc/letsencrypt/live/oc.example.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/oc.example.com/privkey.pem;
+    
+    # SSL 安全配置
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_ciphers ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256;
+    ssl_prefer_server_ciphers off;
+    
+    location / {
+        proxy_pass http://127.0.0.1:18789;
+        proxy_http_version 1.1;
+        
+        # WebSocket 支持（必须）
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        
+        # 转发真实客户端信息
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        
+        # 超时配置
+        proxy_read_timeout 86400;
+        proxy_send_timeout 86400;
+    }
+}
+
+# HTTP 重定向到 HTTPS
+server {
+    listen 80;
+    server_name oc.example.com;
+    return 301 https://$server_name$request_uri;
+}
+```
+
+**3. 启用配置**
+
+```bash
+# 创建符号链接
+sudo ln -s /etc/nginx/sites-available/openclaw /etc/nginx/sites-enabled/
+
+# 测试配置
+sudo nginx -t
+
+# 重载 Nginx
+sudo systemctl reload nginx
+```
+
+### Docker 常见错误排查
+
+| 错误信息 | 原因 | 解决方案 |
+|----------|------|----------|
+| `Gateway auth is set to token, but no token is configured` | Gateway 检测到需要 token 认证但未配置 | 设置 token：`docker exec openclaw openclaw config set gateway.auth.token YOUR_TOKEN` |
+| `Missing config. Run openclaw setup` | 未初始化配置 | 运行初始化：`docker exec openclaw openclaw setup` |
+| `control ui requires HTTPS or localhost` | HTTP 远程访问被浏览器安全策略阻止 | 使用 Token 认证或配置 HTTPS 反向代理 |
+| `Proxy headers detected from untrusted address` | 反向代理地址未添加到信任列表 | 设置信任代理：`docker exec openclaw openclaw config set gateway.trustedProxies '["127.0.0.1"]'` |
+| `pairing required` | 新设备需要配对授权 | 运行 `docker exec openclaw openclaw devices list` 然后 `devices approve <id>` |
+| 容器启动后立即退出 | 缺少必要配置 | 查看日志 `docker logs openclaw`，按提示初始化配置 |
+| `EACCES: permission denied` | 数据卷权限问题 | 确保使用 named volume 而非 bind mount |
+
 ### 使用 Docker Compose
 
 项目提供了开箱即用的 `docker-compose.yml`：
@@ -1038,6 +1126,46 @@ openclaw gateway restart
 > sudo firewall-cmd --add-port=18789/tcp --permanent
 > sudo firewall-cmd --reload
 > ```
+
+### Q: Dashboard 显示 `Proxy headers detected from untrusted address`？
+
+这是使用 Nginx 等反向代理时的常见错误，需要配置 OpenClaw 信任代理服务器地址。
+
+**解决方法：**
+
+```bash
+# Docker 环境
+docker exec openclaw openclaw config set gateway.trustedProxies '["127.0.0.1", "::1"]'
+docker restart openclaw
+
+# npm 安装环境
+openclaw config set gateway.trustedProxies '["127.0.0.1", "::1"]'
+openclaw gateway restart
+```
+
+> 💡 详细的 Nginx + HTTPS 反向代理配置，请参考 [Docker 部署指南](#docker) 中的「反向代理配置」章节。
+
+### Q: Dashboard 显示 `control ui requires HTTPS or localhost`？
+
+这是浏览器安全策略限制，Web Crypto API 需要 secure context（HTTPS 或 localhost）。
+
+**解决方案（任选一种）：**
+
+1. **设置 Token 认证**（推荐）
+   ```bash
+   docker exec openclaw openclaw config set gateway.auth.token YOUR_TOKEN
+   docker restart openclaw
+   # 然后在 Dashboard 输入 token 连接
+   ```
+
+2. **使用 SSH 端口转发**
+   ```bash
+   ssh -L 18789:127.0.0.1:18789 user@server
+   # 然后访问 http://localhost:18789
+   ```
+
+3. **配置 HTTPS 反向代理**（生产环境推荐）
+   - 参考 [Docker 部署指南](#docker) 中的 Nginx 配置示例
 
 ---
 

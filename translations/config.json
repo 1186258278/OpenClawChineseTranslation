@@ -69,7 +69,9 @@
       "dashboard/schema.json",
       "dashboard/config-form-render.json",
       "dashboard/config-form-node.json",
-      "dashboard/config-form-shared.json"
+      "dashboard/config-form-shared.json",
+      "dashboard/agents.json",
+      "dashboard/channels-feishu.json"
     ]
   }
 }

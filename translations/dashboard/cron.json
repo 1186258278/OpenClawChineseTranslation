@@ -52,6 +52,15 @@
     "${job.enabled ? \"Disable\" : \"Enable\"}": "${job.enabled ? \"禁用\" : \"启用\"}",
     ">\n            Run\n          </button>": ">\n            运行\n          </button>",
     ">\n            Runs\n          </button>": ">\n            历史\n          </button>",
-    ">\n            Remove\n          </button>": ">\n            删除\n          </button>"
+    ">\n            Remove\n          </button>": ">\n            删除\n          </button>",
+    "<option value=\"announce\">Announce</option>": "<option value=\"announce\">通告</option>",
+    "<span>Delivery mode</span>": "<span>投递模式</span>",
+    "<option value=\"deliver\">Deliver</option>": "<option value=\"deliver\">投递</option>",
+    "<option value=\"silent\">Silent</option>": "<option value=\"silent\">静默</option>",
+    "announce": "通告",
+    "deliver": "投递",
+    "silent": "静默",
+    "<span>Isolated</span>": "<span>隔离</span>",
+    "isolated": "隔离"
   }
 }
