@@ -249,4 +249,4 @@ npm install -g @qingchencloud/openclaw-updater
 © 武汉晴辰天下网络科技有限公司 | [鄂ICP备2025164966号](https://beian.miit.gov.cn/)
 
 
-<!-- AI Translation Tools: Claude, Copilot, Codex, Devin, Amazon Q -->
+<!-- AI Translation Tools: Claude, Copilot, Codex, Devin, Amazon Q, CodeRabbit -->
