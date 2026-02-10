@@ -11,10 +11,12 @@
     "cli": [
       "cli/banner.json",
       "cli/tagline.json",
-      "cli/help.json"
+      "cli/help.json",
+      "cli/models-cli.json"
     ],
     "wizard": [
       "wizard/onboarding.json",
+      "wizard/onboarding-gateway-config.json",
       "wizard/security.json",
       "wizard/finalize.json"
     ],
@@ -26,6 +28,7 @@
       "commands/auth-choice.json",
       "commands/auth-choice-options.json",
       "commands/auth-choice-xai.json",
+      "commands/auth-choice-providers.json",
       "commands/helpers.json",
       "commands/doctor.json",
       "commands/doctor-security.json",
@@ -37,6 +40,7 @@
       "commands/update.json",
       "commands/skills.json",
       "commands/onboard-skills.json",
+      "commands/onboard-channels.json",
       "commands/plugin-install.json",
       "commands/channels.json",
       "commands/uninstall.json",
@@ -74,8 +78,14 @@
       "dashboard/config-form-node.json",
       "dashboard/config-form-shared.json",
       "dashboard/agents.json",
-      "dashboard/channels-feishu.json",
       "dashboard/usage.json"
+    ],
+    "extensions": [
+      "extensions/feishu.json",
+      "extensions/feishu-onboarding.json",
+      "extensions/feishu-bitable.json",
+      "extensions/voice-call.json",
+      "extensions/voice-call-cli.json"
     ]
   }
 }

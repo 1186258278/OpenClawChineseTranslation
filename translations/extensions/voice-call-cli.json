@@ -1,0 +1,29 @@
+{
+  "file": "extensions/voice-call/src/cli.ts",
+  "description": "语音通话 CLI 命令",
+  "replacements": {
+    ".description(\"Voice call utilities\")": ".description(\"语音通话工具\")",
+    ".description(\"Initiate an outbound voice call\")": ".description(\"发起外呼语音通话\")",
+    "\"Message to speak when call connects\"": "\"通话连接时朗读的消息\"",
+    "\"Phone number to call (E.164 format, uses config toNumber if not set)\"": "\"呼叫的电话号码 (E.164 格式，如果未设置则使用配置的 toNumber)\"",
+    "\"Call mode: notify (hangup after message) or conversation (stay open)\"": "\"通话模式: notify (消息后挂断) 或 conversation (保持通话)\"",
+    "\"Missing --to and no toNumber configured\"": "\"缺少 --to 且未配置 toNumber\"",
+    ".description(\"Alias for voicecall call\")": ".description(\"voicecall call 的别名\")",
+    "\"Phone number to call\"": "\"呼叫的电话号码\"",
+    ".description(\"Speak a message and wait for a response\")": ".description(\"朗读消息并等待响应\")",
+    "\"Call ID\"": "\"通话 ID\"",
+    "\"Message to speak\"": "\"要朗读的消息\"",
+    ".description(\"Speak a message without waiting for response\")": ".description(\"朗读消息而不等待响应\")",
+    ".description(\"Hang up an active call\")": ".description(\"挂断活动通话\")",
+    ".description(\"Show call status\")": ".description(\"显示通话状态\")",
+    ".description(\"Tail voice-call JSONL logs (prints new lines; useful during provider tests)\")": ".description(\"跟踪 voice-call JSONL 日志 (打印新行；用于提供商测试)\")",
+    "\"Path to calls.jsonl\"": "\"calls.jsonl 的路径\"",
+    "\"Print last N lines first\"": "\"先打印最后 N 行\"",
+    "\"Poll interval in ms\"": "\"轮询间隔 (毫秒)\"",
+    ".description(\"Enable/disable Tailscale serve/funnel for the webhook\")": ".description(\"启用/禁用 Webhook 的 Tailscale serve/funnel\")",
+    "\"off | serve (tailnet) | funnel (public)\"": "\"off | serve (Tailnet) | funnel (公共)\"",
+    "\"Tailscale path to expose (recommend matching serve.path)\"": "\"要暴露的 Tailscale 路径 (建议匹配 serve.path)\"",
+    "\"Local webhook port\"": "\"本地 Webhook 端口\"",
+    "\"Local webhook path\"": "\"本地 Webhook 路径\""
+  }
+}

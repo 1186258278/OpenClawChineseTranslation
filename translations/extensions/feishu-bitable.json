@@ -1,0 +1,26 @@
+{
+  "file": "extensions/feishu/src/bitable.ts",
+  "description": "飞书多维表格工具",
+  "replacements": {
+    "description: \"Parse a Bitable URL and get app_token, table_id, and table list. Use this first when given a /wiki/ or /base/ URL.\"": "description: \"解析多维表格 URL 并获取 app_token, table_id 和表列表。当给定 /wiki/ 或 /base/ URL 时首先使用此工具。\"",
+    "description: \"Bitable URL. Supports both formats: /base/XXX?table=YYY or /wiki/XXX?table=YYY\"": "description: \"多维表格 URL。支持两种格式: /base/XXX?table=YYY 或 /wiki/XXX?table=YYY\"",
+    "description: \"Bitable app token (use feishu_bitable_get_meta to get from URL)\"": "description: \"多维表格 app_token (使用 feishu_bitable_get_meta 从 URL 获取)\"",
+    "description: \"Table ID (from URL: ?table=YYY)\"": "description: \"表 ID (来自 URL: ?table=YYY)\"",
+    "description: \"List all fields (columns) in a Bitable table with their types and properties\"": "description: \"列出多维表格中的所有字段 (列) 及其类型和属性\"",
+    "description: \"List records (rows) from a Bitable table with pagination support\"": "description: \"列出多维表格中的记录 (行)，支持分页\"",
+    "description: \"Number of records per page (1-500, default 100)\"": "description: \"每页记录数 (1-500, 默认 100)\"",
+    "description: \"Pagination token from previous response\"": "description: \"来自上一次响应的分页令牌\"",
+    "description: \"Get a single record by ID from a Bitable table\"": "description: \"通过 ID 获取多维表格中的单条记录\"",
+    "description: \"Record ID to retrieve\"": "description: \"要获取的记录 ID\"",
+    "description: \"Create a new record (row) in a Bitable table\"": "description: \"在多维表格中创建新记录 (行)\"",
+    "description: \"Field values keyed by field name. Format by type: Text='string', Number=123, SingleSelect='Option', MultiSelect=['A','B'], DateTime=timestamp_ms, User=[{id:'ou_xxx'}], URL={text:'Display',link:'https://...'}\"": "description: \"以字段名为键的字段值。各类型的格式: Text='string', Number=123, SingleSelect='Option', MultiSelect=['A','B'], DateTime=timestamp_ms, User=[{id:'ou_xxx'}], URL={text:'Display',link:'https://...'}\"",
+    "description: \"Update an existing record (row) in a Bitable table\"": "description: \"更新多维表格中的现有记录 (行)\"",
+    "description: \"Record ID to update\"": "description: \"要更新的记录 ID\"",
+    "description: \"Field values to update (same format as create_record)\"": "description: \"要更新的字段值 (格式同 create_record)\"",
+    "\"Invalid URL format. Expected /base/XXX or /wiki/XXX URL\"": "\"无效的 URL 格式。应为 /base/XXX 或 /wiki/XXX URL\"",
+    "\"Node not found\"": "\"未找到节点\"",
+    "`Node is not a bitable (type: ${node.obj_type})`": "`节点不是多维表格 (类型: ${node.obj_type})`",
+    "`Use app_token=\"${appToken}\" and table_id=\"${parsed.tableId}\" for other bitable tools`": "`对于其他多维表格工具，请使用 app_token=\"${appToken}\" 和 table_id=\"${parsed.tableId}\"`",
+    "`Use app_token=\"${appToken}\" for other bitable tools. Select a table_id from the tables list.`": "`对于其他多维表格工具，请使用 app_token=\"${appToken}\"。请从表列表中选择 table_id。`"
+  }
+}

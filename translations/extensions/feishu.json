@@ -1,0 +1,30 @@
+{
+  "file": "extensions/feishu/src/channel.ts",
+  "description": "飞书/Lark 扩展配置",
+  "replacements": {
+    "label: \"Feishu\"": "label: \"飞书\"",
+    "selectionLabel: \"Feishu/Lark (飞书)\"": "selectionLabel: \"飞书/Lark (Feishu)\"",
+    "blurb: \"飞书/Lark enterprise messaging.\"": "blurb: \"飞书/Lark 企业消息集成。\"",
+    "appId: { type: \"string\" }": "appId: { type: \"string\", title: \"App ID (应用 ID)\" }",
+    "appSecret: { type: \"string\" }": "appSecret: { type: \"string\", title: \"App Secret (应用密钥)\" }",
+    "encryptKey: { type: \"string\" }": "encryptKey: { type: \"string\", title: \"Encrypt Key (加密密钥)\" }",
+    "verificationToken: { type: \"string\" }": "verificationToken: { type: \"string\", title: \"Verification Token (验证令牌)\" }",
+    "domain: {": "domain: { title: \"Domain (域名)\",",
+    "connectionMode: { type: \"string\", enum: [\"websocket\", \"webhook\"] }": "connectionMode: { type: \"string\", enum: [\"websocket\", \"webhook\"], title: \"Connection Mode (连接模式)\" }",
+    "webhookPath: { type: \"string\" }": "webhookPath: { type: \"string\", title: \"Webhook Path (Webhook 路径)\" }",
+    "webhookPort: { type: \"integer\", minimum: 1 }": "webhookPort: { type: \"integer\", minimum: 1, title: \"Webhook Port (Webhook 端口)\" }",
+    "dmPolicy: { type: \"string\", enum: [\"open\", \"pairing\", \"allowlist\"] }": "dmPolicy: { type: \"string\", enum: [\"open\", \"pairing\", \"allowlist\"], title: \"DM Policy (私信策略)\" }",
+    "allowFrom: { type: \"array\", items: { oneOf: [{ type: \"string\" }, { type: \"number\" }] } }": "allowFrom: { type: \"array\", title: \"Allow From (允许来自)\", items: { oneOf: [{ type: \"string\" }, { type: \"number\" }] } }",
+    "groupPolicy: { type: \"string\", enum: [\"open\", \"allowlist\", \"disabled\"] }": "groupPolicy: { type: \"string\", enum: [\"open\", \"allowlist\", \"disabled\"], title: \"Group Policy (群组策略)\" }",
+    "groupAllowFrom: {": "groupAllowFrom: { title: \"Group Allow From (群组允许来自)\",",
+    "requireMention: { type: \"boolean\" }": "requireMention: { type: \"boolean\", title: \"Require Mention (需要提及)\" }",
+    "topicSessionMode: { type: \"string\", enum: [\"disabled\", \"enabled\"] }": "topicSessionMode: { type: \"string\", enum: [\"disabled\", \"enabled\"], title: \"Topic Session Mode (话题会话模式)\" }",
+    "historyLimit: { type: \"integer\", minimum: 0 }": "historyLimit: { type: \"integer\", minimum: 0, title: \"History Limit (历史限制)\" }",
+    "dmHistoryLimit: { type: \"integer\", minimum: 0 }": "dmHistoryLimit: { type: \"integer\", minimum: 0, title: \"DM History Limit (私信历史限制)\" }",
+    "textChunkLimit: { type: \"integer\", minimum: 1 }": "textChunkLimit: { type: \"integer\", minimum: 1, title: \"Text Chunk Limit (文本分块限制)\" }",
+    "chunkMode: { type: \"string\", enum: [\"length\", \"newline\"] }": "chunkMode: { type: \"string\", enum: [\"length\", \"newline\"], title: \"Chunk Mode (分块模式)\" }",
+    "mediaMaxMb: { type: \"number\", minimum: 0 }": "mediaMaxMb: { type: \"number\", minimum: 0, title: \"Media Max MB (媒体最大 MB)\" }",
+    "renderMode: { type: \"string\", enum: [\"auto\", \"raw\", \"card\"] }": "renderMode: { type: \"string\", enum: [\"auto\", \"raw\", \"card\"], title: \"Render Mode (渲染模式)\" }",
+    "name: { type: \"string\" }": "name: { type: \"string\", title: \"Name (名称)\" }"
+  }
+}
