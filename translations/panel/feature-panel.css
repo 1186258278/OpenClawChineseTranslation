@@ -916,3 +916,1076 @@ a.commit-sha:hover {
   width: 16px;
   height: 16px;
 }
+
+/* ========== AI 创作工具样式 (胜算云) ========== */
+
+.ai-studio-tab {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* 头部品牌区 */
+.ssy-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(168, 85, 247, 0.08) 100%);
+  border: 1px solid rgba(99, 102, 241, 0.15);
+  border-radius: 10px;
+}
+
+.ssy-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ssy-logo {
+  font-size: 28px;
+  line-height: 1;
+}
+
+.ssy-brand h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--panel-text);
+}
+
+.ssy-subtitle {
+  margin: 2px 0 0;
+  font-size: 12px;
+  color: var(--panel-text-muted);
+}
+
+.ssy-subtitle a {
+  color: #8b5cf6;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.ssy-subtitle a:hover {
+  text-decoration: underline;
+}
+
+.ssy-promo-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 12px;
+  background: linear-gradient(135deg, #8b5cf6, #6366f1);
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.ssy-promo-badge:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+/* API Key 配置区 */
+.ssy-key-section {
+  padding: 14px 16px;
+  background: var(--panel-code-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: 8px;
+}
+
+.ssy-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--panel-text);
+  margin-bottom: 8px;
+}
+
+.ssy-key-row {
+  display: flex;
+  gap: 8px;
+}
+
+.ssy-input {
+  flex: 1;
+  padding: 8px 12px;
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: 6px;
+  color: var(--panel-text);
+  font-size: 13px;
+  font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.ssy-input:focus {
+  border-color: #8b5cf6;
+}
+
+.ssy-input::placeholder {
+  color: var(--panel-text-muted);
+  font-family: inherit;
+}
+
+.ssy-key-hint {
+  margin: 6px 0 0;
+  font-size: 12px;
+  color: var(--panel-text-muted);
+}
+
+.ssy-key-hint a {
+  color: #8b5cf6;
+  text-decoration: none;
+}
+
+.ssy-key-hint a:hover {
+  text-decoration: underline;
+}
+
+/* 通用按钮 */
+.ssy-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.ssy-btn-save {
+  background: var(--panel-border);
+  color: var(--panel-text);
+}
+
+.ssy-btn-save:hover {
+  background: var(--panel-text-muted);
+  color: var(--panel-bg);
+}
+
+.ssy-btn-primary {
+  background: linear-gradient(135deg, #8b5cf6, #6366f1);
+  color: white;
+}
+
+.ssy-btn-primary:hover {
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+  transform: translateY(-1px);
+}
+
+.ssy-btn-primary:active {
+  transform: translateY(0);
+}
+
+/* 工具列表 */
+.ssy-tools {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* 工具卡片 - 可点击展开 */
+.ssy-tool-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1px solid var(--panel-border);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ssy-tool-card:hover {
+  background: var(--panel-hover);
+  border-color: rgba(99, 102, 241, 0.3);
+}
+
+.ssy-tool-card.expanded {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-color: transparent;
+  background: var(--panel-hover);
+}
+
+.ssy-tool-card svg {
+  width: 16px;
+  height: 16px;
+  color: var(--panel-text-muted);
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.ssy-tool-card.expanded svg {
+  transform: rotate(180deg);
+}
+
+/* 禁用状态的工具卡片 */
+.ssy-tool-card.ssy-tool-disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background: var(--panel-code-bg);
+}
+.ssy-tool-card.ssy-tool-disabled:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: var(--panel-border);
+}
+.ssy-tool-card.ssy-tool-disabled .ssy-tool-icon {
+  filter: grayscale(1);
+}
+
+/* 即将上线标签 */
+.ssy-coming-soon {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 500;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: linear-gradient(135deg, #ff9500, #ff5e3a);
+  color: white;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+.ssy-beta-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: linear-gradient(135deg, #0ea5e9, #2563eb);
+  color: white;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+.ssy-tool-icon {
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(99, 102, 241, 0.1);
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.ssy-tool-info {
+  flex: 1;
+}
+
+.ssy-tool-info h4 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--panel-text);
+}
+
+.ssy-tool-info p {
+  margin: 2px 0 0;
+  font-size: 12px;
+  color: var(--panel-text-muted);
+}
+
+/* 工具展开面板 */
+.ssy-tool-panel {
+  display: none;
+  border: 1px solid var(--panel-border);
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  margin-top: -4px;
+  margin-bottom: 4px;
+}
+
+.ssy-tool-panel.expanded {
+  display: block;
+  padding: 14px;
+}
+
+/* Textarea */
+.ssy-textarea {
+  width: 100%;
+  padding: 10px 12px;
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: 6px;
+  color: var(--panel-text);
+  font-size: 13px;
+  line-height: 1.5;
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.2s ease;
+  box-sizing: border-box;
+}
+
+.ssy-textarea:focus {
+  border-color: #8b5cf6;
+}
+
+.ssy-textarea::placeholder {
+  color: var(--panel-text-muted);
+}
+
+/* 工具选项行 */
+.ssy-tool-options {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+/* Select 下拉框 */
+.ssy-select {
+  padding: 7px 10px;
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: 6px;
+  color: var(--panel-text);
+  font-size: 12px;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.ssy-select:focus {
+  border-color: #8b5cf6;
+}
+
+/* 结果区域 */
+.ssy-result {
+  margin-top: 12px;
+  min-height: 0;
+  clear: both;
+  position: relative;
+}
+
+.ssy-result::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.ssy-result:empty {
+  display: none;
+}
+
+/* 生成的媒体结果容器 */
+.ssy-media-result {
+  clear: both;
+  overflow: hidden;
+  position: relative;
+}
+
+/* 生成的图片 */
+.ssy-img-wrap {
+  display: block;
+  margin: 8px 0;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--panel-border);
+  max-width: 100%;
+  clear: both;
+}
+
+.ssy-generated-img {
+  max-width: 100%;
+  max-height: 400px;
+  display: block;
+  border-radius: 8px;
+  margin: 0 auto;
+}
+
+.ssy-download-link {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  padding: 4px 10px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  font-size: 11px;
+  border-radius: 4px;
+  text-decoration: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.ssy-img-wrap:hover .ssy-download-link,
+.ssy-video-wrap:hover .ssy-download-link {
+  opacity: 1;
+}
+
+/* 生成的视频 */
+.ssy-video-wrap {
+  position: relative;
+  margin: 8px 0;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--panel-border);
+}
+
+.ssy-generated-video {
+  width: 100%;
+  max-height: 400px;
+  display: block;
+  border-radius: 8px;
+}
+
+/* 生成的音频 */
+.ssy-audio-wrap {
+  margin: 4px 0;
+}
+
+.ssy-generated-audio {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.ssy-file-wrap {
+  margin: 6px 0;
+  padding: 10px 12px;
+  border: 1px dashed var(--panel-border);
+  border-radius: 8px;
+  background: var(--panel-code-bg);
+}
+
+.ssy-file-link {
+  color: #8b5cf6;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.ssy-file-link:hover {
+  text-decoration: underline;
+}
+
+/* 错误信息 */
+.ssy-error {
+  padding: 10px 14px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: 6px;
+  color: #ef4444;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* 底部说明 */
+.ssy-footer {
+  text-align: center;
+  padding-top: 8px;
+}
+
+.ssy-footer p {
+  margin: 0;
+  font-size: 11px;
+  color: var(--panel-text-muted);
+}
+
+.ssy-footer a {
+  color: #8b5cf6;
+  text-decoration: none;
+}
+
+.ssy-footer a:hover {
+  text-decoration: underline;
+}
+
+/* 测试连接按钮 */
+.ssy-btn-test {
+  background: var(--panel-border);
+  color: var(--panel-text);
+  white-space: nowrap;
+}
+
+.ssy-btn-test:hover {
+  background: var(--panel-text-muted);
+  color: var(--panel-bg);
+}
+
+/* 测试结果 */
+.ssy-test-loading,
+.ssy-test-ok,
+.ssy-test-fail {
+  margin: 6px 0 0;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.ssy-test-loading {
+  color: var(--panel-text-muted);
+  background: var(--panel-code-bg);
+}
+
+.ssy-test-ok {
+  color: #22c55e;
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.ssy-test-fail {
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+/* ========== 快速配置渠道样式 ========== */
+
+.ssy-quick-config {
+  padding: 14px 16px;
+  background: var(--panel-code-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: 8px;
+  border-left: 3px solid #8b5cf6;
+}
+
+.ssy-config-desc {
+  margin: 0 0 10px;
+  font-size: 12px;
+  color: var(--panel-text-muted);
+}
+
+.ssy-config-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.ssy-model-select {
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 13px;
+}
+
+.ssy-custom-model-input {
+  margin-top: 4px;
+}
+
+.ssy-config-cmd-block {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ssy-config-cmd-label {
+  font-size: 12px;
+  color: var(--panel-text-muted);
+  font-weight: 500;
+}
+
+.ssy-config-cmd {
+  margin: 0;
+  padding: 10px 12px;
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: 6px;
+  font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+  font-size: 11px;
+  color: var(--panel-code-text);
+  white-space: pre-wrap;
+  word-break: break-all;
+  line-height: 1.6;
+  max-height: 160px;
+  overflow-y: auto;
+}
+
+.ssy-config-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.ssy-btn-copy {
+  background: linear-gradient(135deg, #8b5cf6, #6366f1);
+  color: white;
+  flex: 1;
+}
+
+.ssy-btn-copy:hover {
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+  transform: translateY(-1px);
+}
+
+.ssy-btn-test-model {
+  background: var(--panel-border);
+  color: var(--panel-text);
+  flex: 1;
+}
+
+.ssy-btn-test-model:hover {
+  background: var(--panel-text-muted);
+  color: var(--panel-bg);
+}
+
+/* 模型测试回复 */
+.ssy-model-reply {
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: var(--panel-text-muted);
+  font-style: italic;
+}
+
+/* 活动注释 */
+.ssy-promo-note {
+  margin: -8px 0 0;
+  padding: 4px 16px;
+  font-size: 11px;
+  color: var(--panel-text-muted);
+  text-align: right;
+}
+
+/* 多模态工具选项横向布局 */
+.ssy-multimodal-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.ssy-model-input-wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ssy-model-input-wrap-full {
+  flex: 1;
+}
+
+.ssy-custom-model {
+  width: 100%;
+  padding: 6px 10px;
+  font-size: 12px;
+  border: 1px solid var(--panel-border);
+  border-radius: 6px;
+  background: var(--panel-bg);
+  color: var(--panel-text);
+}
+
+.ssy-custom-model:focus {
+  outline: none;
+  border-color: #8b5cf6;
+  box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.2);
+}
+
+.ssy-size-select,
+.ssy-seconds-select {
+  min-width: 110px;
+}
+
+.ssy-tool-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.ssy-default-model-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--panel-text-muted);
+  cursor: pointer;
+  user-select: none;
+}
+
+.ssy-default-model-label input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: #8b5cf6;
+}
+
+.ssy-default-model-label:hover {
+  color: var(--panel-text);
+}
+
+/* 按钮加载状态 */
+.ssy-btn-loading {
+  opacity: 0.7;
+  cursor: wait !important;
+  pointer-events: none;
+}
+
+.ssy-btn-spinner {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: ssy-spin 0.8s linear infinite;
+  vertical-align: middle;
+  margin-right: 6px;
+}
+
+@keyframes ssy-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* 媒体结果样式 */
+.ssy-media-result {
+  margin-top: 12px;
+  padding: 12px;
+  background: var(--panel-code-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: 8px;
+}
+
+.ssy-media-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.ssy-action-btn {
+  padding: 6px 12px;
+  font-size: 12px;
+  border: 1px solid var(--panel-border);
+  border-radius: 6px;
+  background: var(--panel-bg);
+  color: var(--panel-text);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.ssy-action-btn:hover {
+  background: var(--panel-code-bg);
+  border-color: var(--panel-accent);
+  color: var(--panel-accent);
+}
+
+.ssy-generated-img {
+  cursor: pointer;
+  border-radius: 6px;
+  max-width: 100%;
+  transition: transform 0.2s ease;
+}
+
+.ssy-generated-img:hover {
+  transform: scale(1.02);
+}
+
+/* 响应式适配 */
+@media (max-width: 500px) {
+  .ssy-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .ssy-tool-options {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .ssy-multimodal-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .ssy-size-select,
+  .ssy-seconds-select {
+    min-width: auto;
+  }
+
+  .ssy-key-row {
+    flex-direction: column;
+  }
+}
+
+/* ========== AI 创作 Tab 醒目样式 ========== */
+.panel-tab[data-tab="ai-studio"] {
+  color: #ef4444;
+  font-weight: 600;
+  position: relative;
+}
+
+.panel-tab[data-tab="ai-studio"]:hover {
+  color: #dc2626;
+}
+
+.panel-tab[data-tab="ai-studio"].active {
+  color: #ef4444;
+}
+
+.panel-tab[data-tab="ai-studio"].active::after {
+  background: linear-gradient(90deg, #ef4444, #f59e0b);
+}
+
+/* HOT 徽章 */
+.panel-tab[data-tab="ai-studio"] .hot-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 4px;
+  padding: 1px 5px;
+  background: linear-gradient(135deg, #ef4444, #f59e0b);
+  color: white;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  animation: hot-pulse 2s ease-in-out infinite;
+}
+
+@keyframes hot-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.02); }
+}
+
+/* 火焰图标动画 */
+.panel-tab[data-tab="ai-studio"] .fire-icon {
+  display: inline-block;
+  margin-right: 4px;
+  animation: fire-flicker 0.8s ease-in-out infinite alternate;
+}
+
+@keyframes fire-flicker {
+  0% { transform: scale(1) rotate(-2deg); }
+  100% { transform: scale(1.05) rotate(2deg); }
+}
+
+/* ========== 动态表单样式 ========== */
+
+.ssy-model-section {
+  margin-bottom: 12px;
+}
+
+.ssy-model-select-full {
+  width: 100%;
+}
+
+.ssy-model-select-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ssy-dynamic-form {
+  margin: 12px 0;
+}
+
+.ssy-dynamic-form-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ssy-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ssy-form-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--panel-text);
+}
+
+.ssy-required {
+  color: #ef4444;
+  margin-left: 2px;
+}
+
+.ssy-form-checkbox {
+  flex-direction: row;
+  align-items: center;
+}
+
+.ssy-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.ssy-checkbox-label input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: #8b5cf6;
+}
+
+.ssy-dyn-select,
+.ssy-dyn-number,
+.ssy-dyn-text,
+.ssy-dyn-textarea {
+  width: 100%;
+}
+
+/* 文件上传样式 */
+.ssy-form-file {
+  background: var(--panel-code-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.ssy-file-upload-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ssy-file-input {
+  display: none;
+}
+
+.ssy-file-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: var(--panel-bg);
+  border: 1px dashed var(--panel-border);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--panel-text);
+  transition: all 0.15s ease;
+}
+
+.ssy-file-btn:hover {
+  border-color: #8b5cf6;
+  color: #8b5cf6;
+  background: rgba(139, 92, 246, 0.05);
+}
+
+.ssy-file-preview {
+  margin-top: 8px;
+}
+
+.ssy-file-preview-img img,
+.ssy-file-preview-video video {
+  max-width: 100%;
+  max-height: 200px;
+  border-radius: 6px;
+  object-fit: contain;
+}
+
+.ssy-file-preview-audio audio {
+  width: 100%;
+  max-width: 300px;
+}
+
+.ssy-file-preview-img,
+.ssy-file-preview-video,
+.ssy-file-preview-audio {
+  position: relative;
+  display: inline-block;
+}
+
+.ssy-file-clear {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(239, 68, 68, 0.9);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ssy-file-clear:hover {
+  background: #ef4444;
+}
+
+.ssy-hint {
+  padding: 12px;
+  background: var(--panel-code-bg);
+  border: 1px dashed var(--panel-border);
+  border-radius: 8px;
+  font-size: 12px;
+  color: var(--panel-text-muted);
+  text-align: center;
+}
+
+/* ========== 修复图片遮住内容问题 ========== */
+
+.ssy-result {
+  clear: both;
+  overflow: hidden;
+}
+
+.ssy-img-wrap {
+  display: block;
+  width: 100%;
+  margin: 8px 0;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--panel-border);
+  background: var(--panel-code-bg);
+}
+
+.ssy-generated-img {
+  display: block;
+  max-width: 100%;
+  max-height: 400px;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+.ssy-video-wrap {
+  display: block;
+  width: 100%;
+  clear: both;
+}
+
+.ssy-generated-video {
+  width: 100%;
+  max-height: 400px;
+  display: block;
+  border-radius: 8px;
+  background: #000;
+}
+
+.ssy-audio-wrap {
+  display: block;
+  width: 100%;
+  clear: both;
+}
+
+.ssy-generated-audio {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* optgroup 样式 */
+.ssy-select optgroup {
+  font-weight: 600;
+  color: var(--panel-text);
+}
+
+.ssy-select option {
+  font-weight: 400;
+  color: var(--panel-text);
+}

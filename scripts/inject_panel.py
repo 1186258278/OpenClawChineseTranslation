@@ -65,6 +65,14 @@ def write_file(path, content):
     with open(path, 'w', encoding='utf-8') as f:
         f.write(content)
 
+def upsert_marked_block(content, marker, block_content):
+    """插入或更新带 marker 的注入块"""
+    block = f"{marker}\n{block_content}"
+    if marker in content:
+        pattern = re.compile(re.escape(marker) + r"[\s\S]*$", re.MULTILINE)
+        return pattern.sub(block, content), True
+    return content.rstrip() + "\n\n" + block + "\n", False
+
 def inject_to_directory(name, build_dir, panel_js, panel_css, inject_marker):
     """注入功能面板到指定目录"""
     print(f"\n{'─' * 50}")
@@ -89,14 +97,16 @@ def inject_to_directory(name, build_dir, panel_js, panel_css, inject_marker):
     
     for css_file in css_files:
         content = read_file(css_file)
-        if css_marker in content:
-            print(f"   ⏭️ CSS 已存在: {os.path.basename(css_file)}")
-            css_injected = True
-        else:
-            new_content = content + '\n\n' + css_marker + '\n' + panel_css
+        new_content, replaced = upsert_marked_block(content, css_marker, panel_css)
+        if new_content != content:
             write_file(css_file, new_content)
-            print(f"   ✅ CSS 已注入: {os.path.basename(css_file)}")
-            css_injected = True
+            if replaced:
+                print(f"   ♻️ CSS 已更新: {os.path.basename(css_file)}")
+            else:
+                print(f"   ✅ CSS 已注入: {os.path.basename(css_file)}")
+        else:
+            print(f"   ⏭️ CSS 已是最新: {os.path.basename(css_file)}")
+        css_injected = True
     
     # 注入 JS
     js_files = glob.glob(os.path.join(assets_dir, '*.js'))
@@ -129,15 +139,16 @@ def inject_to_directory(name, build_dir, panel_js, panel_css, inject_marker):
         is_main_bundle = any(pattern in filename for pattern in main_bundle_patterns)
         if is_main_bundle:
             content = read_file(js_file)
-            
-            if inject_marker in content:
-                print(f"   ⏭️ JS 已存在: {filename}")
-                js_injected = True
-                break
-            
-            new_content = content + f'\n\n{inject_marker}\n' + js_to_inject
-            write_file(js_file, new_content)
-            print(f"   ✅ JS 已注入: {filename} ({len(new_content)} bytes)")
+
+            new_content, replaced = upsert_marked_block(content, inject_marker, js_to_inject)
+            if new_content != content:
+                write_file(js_file, new_content)
+                if replaced:
+                    print(f"   ♻️ JS 已更新: {filename} ({len(new_content)} bytes)")
+                else:
+                    print(f"   ✅ JS 已注入: {filename} ({len(new_content)} bytes)")
+            else:
+                print(f"   ⏭️ JS 已是最新: {filename}")
             js_injected = True
             break
     
@@ -146,11 +157,16 @@ def inject_to_directory(name, build_dir, panel_js, panel_css, inject_marker):
         js_file = js_files[0]
         filename = os.path.basename(js_file)
         content = read_file(js_file)
-        if inject_marker not in content:
-            new_content = content + f'\n\n{inject_marker}\n' + js_to_inject
+        new_content, replaced = upsert_marked_block(content, inject_marker, js_to_inject)
+        if new_content != content:
             write_file(js_file, new_content)
-            print(f"   ✅ JS 已注入 (备选): {filename}")
-            js_injected = True
+            if replaced:
+                print(f"   ♻️ JS 已更新 (备选): {filename}")
+            else:
+                print(f"   ✅ JS 已注入 (备选): {filename}")
+        else:
+            print(f"   ⏭️ JS 已是最新 (备选): {filename}")
+        js_injected = True
     
     if not js_injected:
         print(f"   ❌ 未找到可注入的 JS 文件")

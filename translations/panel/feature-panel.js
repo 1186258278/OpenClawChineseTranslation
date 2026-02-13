@@ -128,8 +128,9 @@
             <button class="panel-close" id="panel-close">&times;</button>
           </header>
           <nav class="panel-tabs">
-            <button class="panel-tab active" data-tab="help">帮助文档</button>
+<button class="panel-tab active" data-tab="help">帮助文档</button>
             <button class="panel-tab" data-tab="commands">快捷指令</button>
+            <button class="panel-tab" data-tab="ai-studio"><span class="fire-icon">🔥</span>AI 创作<span class="hot-badge">HOT</span></button>
             <button class="panel-tab" data-tab="plugins">插件列表</button>
             <button class="panel-tab" data-tab="changelog">更新日志</button>
             <button class="panel-tab" data-tab="about">关于我们</button>
@@ -149,6 +150,8 @@
         return renderHelpTab();
       case 'commands':
         return renderCommandsTab();
+      case 'ai-studio':
+        return renderAiStudioTab();
       case 'plugins':
         return renderPluginsTab();
       case 'changelog':
@@ -239,6 +242,1820 @@
         </button>
       </div>
     `;
+  }
+
+  // ============================================================
+  // 胜算云 AI 创作工具 (由胜算云提供 API 服务)
+  // 所有链接/文案从 PANEL_DATA.provider 读取，修改时只改 panel-data.json
+  // ============================================================
+  const SSY_PROVIDER = PANEL_DATA.provider || {};
+  const SSY_API_BASE = SSY_PROVIDER.apiBase || 'https://router.shengsuanyun.com/api/v1';
+  const SSY_MODELS_API = SSY_PROVIDER.modelsApi || 'https://router.shengsuanyun.com/api/v1/models';
+  const SSY_MULTIMODAL_API = SSY_PROVIDER.multimodalApi || 'https://router.shengsuanyun.com/api/v1/models/multimodal';
+  const SSY_WEBSITE = SSY_PROVIDER.website || 'https://www.shengsuanyun.com';
+  const SSY_API_KEY_URL = SSY_PROVIDER.apiKeyUrl || 'https://console.shengsuanyun.com/user/keys';
+  const SSY_AFFILIATE_PARAM = SSY_PROVIDER.affiliateParam || 'from=CH_4BVI0BM2';
+  const SSY_PROMO_TEXT = SSY_PROVIDER.promoText || '🎁 新用户送10元';
+  const SSY_PROMO_NOTE = SSY_PROVIDER.promoNote || '';
+  const SSY_GET_KEY_TEXT = SSY_PROVIDER.getKeyText || '点此获取 API Key';
+  const SSY_FOOTER_TEXT = SSY_PROVIDER.footerText || '生成的内容仅供参考 · API 费用由胜算云收取';
+  const SSY_FOOTER_LINK = SSY_PROVIDER.footerLink || '了解更多';
+  const SSY_NAME = SSY_PROVIDER.name || '胜算云';
+  const SSY_DESC = SSY_PROVIDER.description || '国内 API 聚合平台，支持多种 AI 模型';
+  const SSY_DEFAULT_LLM_MODEL = SSY_PROVIDER.defaultLlmModel || 'openai/gpt-4.1-nano';
+  const SSY_DEFAULT_IMAGE_MODEL = SSY_PROVIDER.defaultImageModel || 'ali/z-image-turbo';
+  const SSY_DEFAULT_VIDEO_MODEL = SSY_PROVIDER.defaultVideoModel || 'google/veo3.1-fast-preview';
+  const SSY_DEFAULT_AUDIO_MODEL = SSY_PROVIDER.defaultAudioModel || 'runway/eleven_multilingual_v2';
+  const SSY_PREFERRED_LLM_MODELS = Array.isArray(SSY_PROVIDER.preferredLlmModels)
+    ? SSY_PROVIDER.preferredLlmModels.filter(item => typeof item === 'string' && item.trim())
+    : [];
+  const SSY_MODEL_CACHE_TTL =
+    typeof SSY_PROVIDER.modelCacheTtlMs === 'number' && SSY_PROVIDER.modelCacheTtlMs > 0
+      ? SSY_PROVIDER.modelCacheTtlMs
+      : 5 * 60 * 1000;
+  const SSY_MULTIMODAL_ENABLED = SSY_PROVIDER.multimodalEnabled !== false;
+  const SSY_MULTIMODAL_BADGE_TEXT =
+    typeof SSY_PROVIDER.multimodalBadgeText === 'string' ? SSY_PROVIDER.multimodalBadgeText.trim() : '';
+  const SSY_COOP_LINK = SSY_PROVIDER.cooperationLink || '';
+  const SSY_COOP_TEXT = SSY_PROVIDER.cooperationText || '商务合作';
+  const SSY_STORAGE_KEY = 'shengsuanyun_api_key';
+
+  const ssyModelState = {
+    llmModels: [],
+    multimodalModels: [],
+    timestamp: 0,
+    loadingPromise: null,
+  };
+
+  // 生成带推广参数的胜算云链接
+  function getSSYUrl(path) {
+    const base = SSY_WEBSITE;
+    const param = SSY_AFFILIATE_PARAM;
+    if (!path) {
+      // 主页链接
+      const sep = base.includes('?') ? '&' : '?';
+      return `${base}${sep}${param}`;
+    }
+    // 子路径链接（如 /user/keys）
+    const cleanPath = path.startsWith('/') ? path : `/${path}`;
+    return `${base}${cleanPath}?${param}`;
+  }
+
+  function getSSYApiKey() {
+    return localStorage.getItem(SSY_STORAGE_KEY) || '';
+  }
+  function setSSYApiKey(key) {
+    localStorage.setItem(SSY_STORAGE_KEY, key.trim());
+  }
+
+  function escapeAttr(value) {
+    return String(value)
+      .replace(/&/g, '&amp;')
+      .replace(/"/g, '&quot;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;');
+  }
+
+  function toStringList(value) {
+    if (!Array.isArray(value)) return [];
+    return value
+      .filter(item => typeof item === 'string')
+      .map(item => item.trim())
+      .filter(Boolean);
+  }
+
+  function buildSSYHeaders(apiKey, includeJson) {
+    const headers = {};
+    if (includeJson) {
+      headers['Content-Type'] = 'application/json';
+    }
+    if (apiKey) {
+      headers['Authorization'] = `Bearer ${apiKey}`;
+    }
+    return headers;
+  }
+
+  async function readJsonSafely(response) {
+    const text = await response.text();
+    if (!text) return {};
+    try {
+      return JSON.parse(text);
+    } catch {
+      return { message: text };
+    }
+  }
+
+  function extractSSYError(payload, fallback) {
+    if (!payload || typeof payload !== 'object') return fallback;
+    const nested = payload.error && typeof payload.error === 'object' ? payload.error : {};
+    const candidates = [
+      payload.message,
+      payload.msg,
+      nested.message,
+      nested.code,
+      payload.code,
+    ];
+    for (const item of candidates) {
+      if (typeof item === 'string' && item.trim()) {
+        return item;
+      }
+    }
+    return fallback;
+  }
+
+  function determineSsyApiType(supportApis) {
+    const apis = toStringList(supportApis);
+    if (apis.includes('/v1/chat/completions')) return 'openai-completions';
+    if (apis.includes('/v1/messages')) return 'anthropic-messages';
+    if (apis.includes('/v1/responses')) return 'openai-responses';
+    return 'openai-completions';
+  }
+
+  function normalizeLlmModel(raw) {
+    if (!raw || typeof raw !== 'object') return null;
+    const id = String(raw.id || raw.api_name || '').trim();
+    if (!id) return null;
+    const supportApis = toStringList(raw.support_apis);
+    if (supportApis.length === 0) return null;
+    const inputHint = String(raw.architecture?.input || '').toLowerCase();
+    return {
+      id,
+      name: String(raw.name || id),
+      supportApis,
+      apiType: determineSsyApiType(supportApis),
+      supportsImage: /image|vision/.test(inputHint),
+    };
+  }
+
+  function parseSchemaObject(schema) {
+    if (!schema) return null;
+    if (typeof schema === 'object') return schema;
+    if (typeof schema === 'string') {
+      try {
+        return JSON.parse(schema);
+      } catch {
+        return null;
+      }
+    }
+    return null;
+  }
+
+  function normalizeMultimodalModel(raw) {
+    if (!raw || typeof raw !== 'object') return null;
+    const id = String(raw.id || raw.api_name || '').trim();
+    if (!id) return null;
+    const classNames = toStringList(raw.class_names);
+    const supportApis = toStringList(raw.support_apis);
+    const outputHint = String(raw.architecture?.output || '').toLowerCase();
+    return {
+      id,
+      apiName: String(raw.api_name || id),
+      name: String(raw.name || raw.model_name || id),
+      description: String(raw.description || raw.desc || ''),
+      classNames,
+      supportApis,
+      outputHint,
+      inputSchema: parseSchemaObject(raw.input_schema),
+    };
+  }
+
+  function getMultimodalKind(model) {
+    const text = `${model.id} ${model.name} ${model.classNames.join(' ')}`.toLowerCase();
+    if (model.outputHint.includes('image')) return 'image';
+    if (model.outputHint.includes('video')) return 'video';
+    if (model.outputHint.includes('audio')) return 'audio';
+    if (model.supportApis.includes('/v1/images/generations') || model.supportApis.includes('/v1/images/edits')) {
+      return 'image';
+    }
+    if (text.includes('video') || text.includes('veo') || text.includes('wan') || text.includes('kling')) {
+      return 'video';
+    }
+    if (text.includes('audio') || text.includes('speech') || text.includes('voice') || text.includes('sound') || text.includes('tts') || text.includes('fish') || text.includes('eleven')) {
+      return 'audio';
+    }
+    return '';
+  }
+
+  function getModelCategory(modelId, modelName, classNames) {
+    const text = `${modelId} ${modelName} ${(classNames || []).join(' ')}`.toLowerCase();
+    
+    if (/i2v|图生视频|image.*video/.test(text)) return { type: 'video', subType: 'i2v', label: '图生视频', icon: '🖼️→🎬' };
+    if (/kf2v|首尾帧|first.*tail/.test(text)) return { type: 'video', subType: 'kf2v', label: '首尾帧', icon: '🎞️' };
+    if (/t2v|文生视频|text.*video/.test(text)) return { type: 'video', subType: 't2v', label: '文生视频', icon: '📝→🎬' };
+    if (/s2v|数字人|avatar/.test(text)) return { type: 'video', subType: 's2v', label: '数字人', icon: '👤' };
+    if (/animate|动作|motion/.test(text)) return { type: 'video', subType: 'animate', label: '动作生成', icon: '🏃' };
+    if (/lipsync|口型|lip/.test(text)) return { type: 'video', subType: 'lipsync', label: '口型同步', icon: '👄' };
+    if (/video|veo|kling|vidu|sora|gen3|gen4/.test(text)) return { type: 'video', subType: 't2v', label: '视频生成', icon: '🎬' };
+    
+    if (/i2i|图生图|image.*edit|edit.*image/.test(text)) return { type: 'image', subType: 'i2i', label: '图生图', icon: '🖼️→🖼️' };
+    if (/t2i|文生图|text.*image/.test(text)) return { type: 'image', subType: 't2i', label: '文生图', icon: '📝→🖼️' };
+    if (/upscale|放大|enhance|增强|super/.test(text)) return { type: 'image', subType: 'edit', label: '图像处理', icon: '🔍' };
+    if (/image|flux|dalle|stablediffusion|sd|imagen|z-image/.test(text)) return { type: 'image', subType: 't2i', label: '图像生成', icon: '🎨' };
+    
+    if (/tts|speech|语音|voice|multilingual/.test(text)) return { type: 'audio', subType: 'tts', label: '语音合成', icon: '🗣️' };
+    if (/sound|音效|music|音乐|sfx/.test(text)) return { type: 'audio', subType: 'sound', label: '音效生成', icon: '🎵' };
+    if (/audio|eleven/.test(text)) return { type: 'audio', subType: 'tts', label: '音频生成', icon: '🎵' };
+    
+    return { type: 'unknown', subType: 'unknown', label: '其他', icon: '❓' };
+  }
+
+  function fileToBase64(file) {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = reject;
+      reader.readAsDataURL(file);
+    });
+  }
+
+  function renderDynamicFormControl(key, prop, isRequired, currentValue) {
+    const label = prop.title || prop.description || key;
+    const requiredMark = isRequired ? '<span class="ssy-required">*</span>' : '';
+    const format = prop.format || '';
+    const inputId = `ssy-dyn-${key}`;
+    
+    if (format === 'image') {
+      const preview = currentValue ? `<div class="ssy-file-preview-img"><img src="${currentValue}" alt="预览"/></div>` : '';
+      return `
+        <div class="ssy-form-group ssy-form-file" data-key="${key}" data-format="image">
+          <label class="ssy-form-label">${label}${requiredMark}</label>
+          <div class="ssy-file-upload-wrap">
+            <input type="file" accept="image/*" class="ssy-file-input" id="${inputId}-file" />
+            <label for="${inputId}-file" class="ssy-file-btn">📁 选择图片</label>
+            <input type="hidden" id="${inputId}" value="${escapeAttr(currentValue || '')}" />
+            <div class="ssy-file-preview" id="${inputId}-preview">${preview}</div>
+          </div>
+        </div>`;
+    }
+    
+    if (format === 'video') {
+      const preview = currentValue ? `<div class="ssy-file-preview-video"><video src="${currentValue}" controls></video></div>` : '';
+      return `
+        <div class="ssy-form-group ssy-form-file" data-key="${key}" data-format="video">
+          <label class="ssy-form-label">${label}${requiredMark}</label>
+          <div class="ssy-file-upload-wrap">
+            <input type="file" accept="video/*" class="ssy-file-input" id="${inputId}-file" />
+            <label for="${inputId}-file" class="ssy-file-btn">📁 选择视频</label>
+            <input type="hidden" id="${inputId}" value="${escapeAttr(currentValue || '')}" />
+            <div class="ssy-file-preview" id="${inputId}-preview">${preview}</div>
+          </div>
+        </div>`;
+    }
+    
+    if (format === 'audio') {
+      const preview = currentValue ? `<div class="ssy-file-preview-audio"><audio src="${currentValue}" controls></audio></div>` : '';
+      return `
+        <div class="ssy-form-group ssy-form-file" data-key="${key}" data-format="audio">
+          <label class="ssy-form-label">${label}${requiredMark}</label>
+          <div class="ssy-file-upload-wrap">
+            <input type="file" accept="audio/*" class="ssy-file-input" id="${inputId}-file" />
+            <label for="${inputId}-file" class="ssy-file-btn">📁 选择音频</label>
+            <input type="hidden" id="${inputId}" value="${escapeAttr(currentValue || '')}" />
+            <div class="ssy-file-preview" id="${inputId}-preview">${preview}</div>
+          </div>
+        </div>`;
+    }
+    
+    if (prop.enum && Array.isArray(prop.enum) && prop.enum.length > 0) {
+      const options = prop.enum.map(v => 
+        `<option value="${escapeAttr(v)}" ${currentValue === v ? 'selected' : ''}>${escapeHtml(String(v))}</option>`
+      ).join('');
+      return `
+        <div class="ssy-form-group" data-key="${key}">
+          <label class="ssy-form-label">${label}${requiredMark}</label>
+          <select class="ssy-select ssy-dyn-select" id="${inputId}">${options}</select>
+        </div>`;
+    }
+    
+    if (prop.type === 'boolean') {
+      return `
+        <div class="ssy-form-group ssy-form-checkbox" data-key="${key}">
+          <label class="ssy-checkbox-label">
+            <input type="checkbox" class="ssy-dyn-checkbox" id="${inputId}" ${currentValue === true || currentValue === 'true' ? 'checked' : ''} />
+            <span>${label}</span>
+          </label>
+        </div>`;
+    }
+    
+    if (prop.type === 'number' || prop.type === 'integer') {
+      const min = prop.minimum !== undefined ? prop.minimum : '';
+      const max = prop.maximum !== undefined ? prop.maximum : '';
+      const step = prop.type === 'integer' ? '1' : 'any';
+      return `
+        <div class="ssy-form-group" data-key="${key}">
+          <label class="ssy-form-label">${label}${requiredMark}</label>
+          <input type="number" class="ssy-input ssy-dyn-number" id="${inputId}" 
+                 value="${escapeAttr(currentValue || prop.default || '')}" 
+                 ${min !== '' ? `min="${min}"` : ''} 
+                 ${max !== '' ? `max="${max}"` : ''} 
+                 step="${step}" />
+        </div>`;
+    }
+    
+    if (prop.type === 'string' && (key.toLowerCase().includes('prompt') || key.toLowerCase().includes('text') || prop.description?.length > 50)) {
+      return `
+        <div class="ssy-form-group" data-key="${key}">
+          <label class="ssy-form-label">${label}${requiredMark}</label>
+          <textarea class="ssy-textarea ssy-dyn-textarea" id="${inputId}" rows="3" placeholder="请输入${label}...">${escapeHtml(currentValue || '')}</textarea>
+        </div>`;
+    }
+    
+    return `
+      <div class="ssy-form-group" data-key="${key}">
+        <label class="ssy-form-label">${label}${requiredMark}</label>
+        <input type="text" class="ssy-input ssy-dyn-text" id="${inputId}" value="${escapeAttr(currentValue || prop.default || '')}" placeholder="请输入${label}..." />
+      </div>`;
+  }
+
+  function renderDynamicForm(schema, containerId) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+    
+    if (!schema || !schema.properties || Object.keys(schema.properties).length === 0) {
+      container.innerHTML = '<p class="ssy-hint">此模型无需额外参数，直接点击生成即可。</p>';
+      return;
+    }
+    
+    const props = schema.properties;
+    const required = new Set(schema.required || []);
+    
+    const orderedKeys = Object.keys(props).sort((a, b) => {
+      const aReq = required.has(a);
+      const bReq = required.has(b);
+      if (aReq && !bReq) return -1;
+      if (!aReq && bReq) return 1;
+      const priorityKeys = ['prompt', 'prompttext', 'text', 'input', 'image', 'video', 'audio'];
+      const aPriority = priorityKeys.findIndex(k => a.toLowerCase().includes(k));
+      const bPriority = priorityKeys.findIndex(k => b.toLowerCase().includes(k));
+      if (aPriority !== bPriority) return aPriority - bPriority;
+      return a.localeCompare(b);
+    });
+    
+    let html = '<div class="ssy-dynamic-form-inner">';
+    for (const key of orderedKeys) {
+      html += renderDynamicFormControl(key, props[key], required.has(key), null);
+    }
+    html += '</div>';
+    container.innerHTML = html;
+    
+    container.querySelectorAll('.ssy-file-input').forEach(input => {
+      input.addEventListener('change', async (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+        
+        const wrap = input.closest('.ssy-file-upload-wrap');
+        const previewEl = wrap.querySelector('.ssy-file-preview');
+        const hiddenInput = wrap.querySelector('input[type="hidden"]');
+        
+        try {
+          const base64 = await fileToBase64(file);
+          hiddenInput.value = base64;
+          
+          if (file.type.startsWith('image/')) {
+            previewEl.innerHTML = `<div class="ssy-file-preview-img"><img src="${base64}" alt="预览"/><button class="ssy-file-clear" title="清除">×</button></div>`;
+          } else if (file.type.startsWith('video/')) {
+            previewEl.innerHTML = `<div class="ssy-file-preview-video"><video src="${base64}" controls></video><button class="ssy-file-clear" title="清除">×</button></div>`;
+          } else if (file.type.startsWith('audio/')) {
+            previewEl.innerHTML = `<div class="ssy-file-preview-audio"><audio src="${base64}" controls></audio><button class="ssy-file-clear" title="清除">×</button></div>`;
+          }
+        } catch (err) {
+          showToast('文件读取失败', 'error');
+        }
+      });
+    });
+    
+    container.querySelectorAll('.ssy-file-clear').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const previewEl = btn.closest('.ssy-file-preview');
+        const wrap = btn.closest('.ssy-file-upload-wrap');
+        const hiddenInput = wrap.querySelector('input[type="hidden"]');
+        const fileInput = wrap.querySelector('.ssy-file-input');
+        hiddenInput.value = '';
+        fileInput.value = '';
+        previewEl.innerHTML = '';
+      });
+    });
+  }
+
+  function collectDynamicFormData(containerId) {
+    const container = document.getElementById(containerId);
+    if (!container) return {};
+    
+    const data = {};
+    container.querySelectorAll('.ssy-form-group[data-key]').forEach(group => {
+      const key = group.dataset.key;
+      const format = group.dataset.format;
+      
+      if (format === 'image' || format === 'video' || format === 'audio') {
+        const hiddenInput = group.querySelector('input[type="hidden"]');
+        if (hiddenInput && hiddenInput.value) {
+          data[key] = hiddenInput.value;
+        }
+      } else {
+        const select = group.querySelector('.ssy-dyn-select');
+        const checkbox = group.querySelector('.ssy-dyn-checkbox');
+        const number = group.querySelector('.ssy-dyn-number');
+        const textarea = group.querySelector('.ssy-dyn-textarea');
+        const text = group.querySelector('.ssy-dyn-text');
+        
+        if (select) {
+          data[key] = select.value;
+        } else if (checkbox) {
+          data[key] = checkbox.checked;
+        } else if (number) {
+          const val = parseFloat(number.value);
+          if (!isNaN(val)) data[key] = val;
+        } else if (textarea) {
+          data[key] = textarea.value;
+        } else if (text) {
+          data[key] = text.value;
+        }
+      }
+    });
+    return data;
+  }
+
+  function getLlmModelById(modelId) {
+    return ssyModelState.llmModels.find(model => model.id === modelId) || null;
+  }
+
+  function getMultimodalModelById(modelId) {
+    return ssyModelState.multimodalModels.find(model => model.id === modelId) || null;
+  }
+
+  function getMultimodalModelsByKind(kind) {
+    return ssyModelState.multimodalModels.filter(model => getMultimodalKind(model) === kind);
+  }
+
+  async function fetchWithOptionalAuth(url, apiKey) {
+    const token = typeof apiKey === 'string' ? apiKey.trim() : '';
+    let response = await fetch(url, {
+      method: 'GET',
+      headers: buildSSYHeaders(token, false),
+    });
+    if (!response.ok && token) {
+      response = await fetch(url, { method: 'GET' });
+    }
+    return response;
+  }
+
+  async function fetchSsyLlmModels(apiKey) {
+    const response = await fetchWithOptionalAuth(SSY_MODELS_API, apiKey);
+    const payload = await readJsonSafely(response);
+    if (!response.ok) {
+      throw new Error(extractSSYError(payload, `获取模型列表失败 (${response.status})`));
+    }
+    const list = Array.isArray(payload.data) ? payload.data : [];
+    return list
+      .map(normalizeLlmModel)
+      .filter(Boolean)
+      .sort((a, b) => a.id.localeCompare(b.id));
+  }
+
+  async function fetchSsyMultimodalModels(apiKey) {
+    const response = await fetchWithOptionalAuth(SSY_MULTIMODAL_API, apiKey);
+    const payload = await readJsonSafely(response);
+    if (!response.ok) {
+      throw new Error(extractSSYError(payload, `获取多模态模型失败 (${response.status})`));
+    }
+    const list = Array.isArray(payload.data) ? payload.data : [];
+    return list
+      .map(normalizeMultimodalModel)
+      .filter(Boolean)
+      .sort((a, b) => a.id.localeCompare(b.id));
+  }
+
+  async function ensureSsyModelCatalog(options = {}) {
+    const now = Date.now();
+    const force = options.force === true;
+    const hasCache = ssyModelState.llmModels.length > 0 || ssyModelState.multimodalModels.length > 0;
+    const cacheValid = hasCache && now - ssyModelState.timestamp < SSY_MODEL_CACHE_TTL;
+    if (!force && cacheValid) {
+      return {
+        llmModels: ssyModelState.llmModels,
+        multimodalModels: ssyModelState.multimodalModels,
+      };
+    }
+    if (!force && ssyModelState.loadingPromise) {
+      return ssyModelState.loadingPromise;
+    }
+
+    const apiKey = options.apiKey || getSSYApiKey();
+    ssyModelState.loadingPromise = (async () => {
+      const [llmResult, multimodalResult] = await Promise.allSettled([
+        fetchSsyLlmModels(apiKey),
+        fetchSsyMultimodalModels(apiKey),
+      ]);
+      const llmModels = llmResult.status === 'fulfilled' ? llmResult.value : [];
+      const multimodalModels = multimodalResult.status === 'fulfilled' ? multimodalResult.value : [];
+      if (llmModels.length === 0 && multimodalModels.length === 0) {
+        const reason = llmResult.status === 'rejected'
+          ? llmResult.reason
+          : multimodalResult.status === 'rejected'
+            ? multimodalResult.reason
+            : new Error('模型列表为空');
+        throw reason;
+      }
+      ssyModelState.llmModels = llmModels;
+      ssyModelState.multimodalModels = multimodalModels;
+      ssyModelState.timestamp = Date.now();
+      return { llmModels, multimodalModels };
+    })();
+
+    try {
+      return await ssyModelState.loadingPromise;
+    } finally {
+      ssyModelState.loadingPromise = null;
+    }
+  }
+
+  function setModelLoadStatus(text, type = 'loading') {
+    const el = document.getElementById('ssy-model-load-status');
+    if (!el) return;
+    el.className =
+      type === 'success'
+        ? 'ssy-test-ok'
+        : type === 'error'
+          ? 'ssy-test-fail'
+          : 'ssy-test-loading';
+    el.textContent = text;
+  }
+
+  function buildLlmOptionLabel(model) {
+    const tags = [];
+    if (model.apiType === 'openai-responses') tags.push('Responses');
+    if (model.apiType === 'anthropic-messages') tags.push('Messages');
+    if (model.supportsImage) tags.push('图像');
+    return tags.length > 0
+      ? `${model.name} [${model.id}] (${tags.join(' / ')})`
+      : `${model.name} [${model.id}]`;
+  }
+
+  function renderQuickModelOptions(preferredModelId) {
+    const select = document.getElementById('ssy-model-select');
+    const customInput = document.getElementById('ssy-custom-model');
+    if (!select) return;
+
+    const currentSelected = preferredModelId || getSelectedModelId() || SSY_DEFAULT_LLM_MODEL;
+    const allModels = ssyModelState.llmModels;
+    const preferSet = new Set([...SSY_PREFERRED_LLM_MODELS, SSY_DEFAULT_LLM_MODEL]);
+    const recommended = [];
+    const others = [];
+    allModels.forEach(model => {
+      if (preferSet.has(model.id)) {
+        recommended.push(model);
+      } else {
+        others.push(model);
+      }
+    });
+
+    const optionHtml = model =>
+      `<option value="${escapeAttr(model.id)}">${escapeHtml(buildLlmOptionLabel(model))}</option>`;
+
+    const htmlParts = [];
+    if (recommended.length > 0) {
+      htmlParts.push('<optgroup label="⭐ 推荐模型">');
+      htmlParts.push(recommended.map(optionHtml).join(''));
+      htmlParts.push('</optgroup>');
+    }
+    if (others.length > 0) {
+      htmlParts.push(`<optgroup label="📚 动态模型 (${allModels.length})">`);
+      htmlParts.push(others.map(optionHtml).join(''));
+      htmlParts.push('</optgroup>');
+    }
+    htmlParts.push('<optgroup label="✏️ 自定义">');
+    htmlParts.push('<option value="__custom__">手动输入模型 ID...</option>');
+    htmlParts.push('</optgroup>');
+
+    select.innerHTML = htmlParts.join('');
+
+    const hasCurrent = allModels.some(model => model.id === currentSelected);
+    if (hasCurrent) {
+      select.value = currentSelected;
+      if (customInput) {
+        customInput.style.display = 'none';
+      }
+    } else {
+      select.value = '__custom__';
+      if (customInput) {
+        customInput.style.display = 'block';
+        customInput.value = currentSelected || '';
+      }
+    }
+  }
+
+  function renderMultimodalOptions(selectId, customInputId, defaultCheckboxId, dynamicFormId, models, defaultModelId, fallbackText) {
+    const select = document.getElementById(selectId);
+    const customInput = document.getElementById(customInputId);
+    const defaultCheckbox = document.getElementById(defaultCheckboxId);
+    const dynamicForm = document.getElementById(dynamicFormId);
+    if (!select) return;
+
+    const current = select.value === '__custom__' ? '__custom__' : String(select.value || '').trim();
+    const customValue = customInput?.value?.trim() || '';
+
+    if (!Array.isArray(models) || models.length === 0) {
+      select.innerHTML = `<option value="">${escapeHtml(fallbackText)}</option>`;
+      if (customInput) customInput.style.display = 'none';
+      if (dynamicForm) dynamicForm.innerHTML = '';
+      return;
+    }
+
+    const grouped = {};
+    const otherModels = [];
+    models.forEach(model => {
+      const cat = getModelCategory(model.id, model.name, model.classNames);
+      if (cat.subType === 'unknown') {
+        otherModels.push(model);
+      } else {
+        const key = `${cat.type}_${cat.subType}`;
+        if (!grouped[key]) {
+          grouped[key] = { category: cat, models: [] };
+        }
+        grouped[key].models.push(model);
+      }
+    });
+
+    const sortedGroups = Object.values(grouped).sort((a, b) => {
+      const order = { t2v: 1, i2v: 2, kf2v: 3, t2i: 10, i2i: 11, edit: 12, tts: 20, sound: 21 };
+      const aOrder = order[a.category.subType] || 99;
+      const bOrder = order[b.category.subType] || 99;
+      return aOrder - bOrder;
+    });
+
+    let html = '';
+    sortedGroups.forEach(group => {
+      const cat = group.category;
+      html += `<optgroup label="${cat.icon} ${cat.label}">`;
+      group.models.forEach(model => {
+        html += `<option value="${escapeAttr(model.id)}">${escapeHtml(model.name)}</option>`;
+      });
+      html += '</optgroup>';
+    });
+
+    if (otherModels.length > 0) {
+      html += '<optgroup label="📋 其他模型">';
+      otherModels.forEach(model => {
+        html += `<option value="${escapeAttr(model.id)}">${escapeHtml(model.name)}</option>`;
+      });
+      html += '</optgroup>';
+    }
+
+    html += '<option value="__custom__">✏️ 自定义模型...</option>';
+    select.innerHTML = html;
+
+    const modelIds = new Set(models.map(m => m.id));
+    let target = '';
+    if (current === '__custom__' && customValue) {
+      target = '__custom__';
+      if (customInput) {
+        customInput.style.display = 'block';
+        customInput.value = customValue;
+      }
+    } else if (current && modelIds.has(current)) {
+      target = current;
+      if (customInput) customInput.style.display = 'none';
+    } else if (defaultModelId && modelIds.has(defaultModelId)) {
+      target = defaultModelId;
+      if (customInput) customInput.style.display = 'none';
+    } else if (models.length > 0) {
+      const firstGroup = sortedGroups[0];
+      if (firstGroup && firstGroup.models.length > 0) {
+        target = firstGroup.models[0].id;
+      } else {
+        target = otherModels[0]?.id || '';
+      }
+      if (customInput) customInput.style.display = 'none';
+    }
+
+    if (target && target !== '__custom__') {
+      select.value = target;
+      if (defaultCheckbox) {
+        defaultCheckbox.checked = (target === defaultModelId);
+      }
+      const selectedModel = models.find(m => m.id === target);
+      if (dynamicForm && selectedModel) {
+        renderDynamicForm(selectedModel.inputSchema, dynamicFormId);
+      }
+    } else if (target === '__custom__') {
+      select.value = '__custom__';
+      if (defaultCheckbox) defaultCheckbox.checked = false;
+      if (dynamicForm) dynamicForm.innerHTML = '<p class="ssy-hint">请输入自定义模型ID后选择</p>';
+    }
+  }
+
+  function getMultimodalModelId(selectId, customInputId) {
+    const select = document.getElementById(selectId);
+    const customInput = document.getElementById(customInputId);
+    if (!select) return '';
+
+    if (select.value === '__custom__' && customInput) {
+      return customInput.value?.trim() || '';
+    }
+    return String(select.value || '').trim();
+  }
+
+  async function refreshSsyModelOptions(force) {
+    setModelLoadStatus('⏳ 正在加载模型列表...');
+    try {
+      await ensureSsyModelCatalog({ force: force === true, apiKey: getSSYApiKey() });
+      renderQuickModelOptions();
+      const savedImageModel = localStorage.getItem('ssy_default_image_model') || SSY_DEFAULT_IMAGE_MODEL;
+      const savedVideoModel = localStorage.getItem('ssy_default_video_model') || SSY_DEFAULT_VIDEO_MODEL;
+      const savedAudioModel = localStorage.getItem('ssy_default_audio_model') || SSY_DEFAULT_AUDIO_MODEL;
+      renderMultimodalOptions('ssy-t2i-model', 'ssy-t2i-custom-model', 'ssy-t2i-default', 'ssy-t2i-dynamic-form', getMultimodalModelsByKind('image'), savedImageModel, '暂无可用图像模型');
+      renderMultimodalOptions('ssy-t2v-model', 'ssy-t2v-custom-model', 'ssy-t2v-default', 'ssy-t2v-dynamic-form', getMultimodalModelsByKind('video'), savedVideoModel, '暂无可用视频模型');
+      renderMultimodalOptions('ssy-tts-model', 'ssy-tts-custom-model', 'ssy-tts-default', 'ssy-tts-dynamic-form', getMultimodalModelsByKind('audio'), savedAudioModel, '暂无可用音频模型');
+      setModelLoadStatus(`✅ 模型已加载：语言 ${ssyModelState.llmModels.length} 个，多模态 ${ssyModelState.multimodalModels.length} 个`, 'success');
+      generateConfigCommands();
+    } catch (err) {
+      console.warn('[功能面板] 胜算云模型加载失败:', err);
+      setModelLoadStatus(`❌ 模型加载失败：${err?.message || '未知错误'}`, 'error');
+    }
+  }
+
+  // 渲染 AI 创作 Tab
+  function renderAiStudioTab() {
+    const savedKey = getSSYApiKey();
+    const keyPreview = savedKey ? savedKey.slice(0, 8) + '...' + savedKey.slice(-4) : '';
+    const brandUrl = getSSYUrl();
+    const promoUrl = getSSYUrl();
+    const keyUrl = SSY_API_KEY_URL;
+    const multimodalCardClass = SSY_MULTIMODAL_ENABLED ? 'ssy-tool-card' : 'ssy-tool-card ssy-tool-disabled';
+    const multimodalBadge = !SSY_MULTIMODAL_ENABLED
+      ? ' <span class="ssy-coming-soon">即将上线</span>'
+      : SSY_MULTIMODAL_BADGE_TEXT
+        ? ` <span class="ssy-beta-badge">${escapeHtml(SSY_MULTIMODAL_BADGE_TEXT)}</span>`
+        : '';
+
+    return `
+      <div class="ai-studio-tab">
+        <div class="ssy-header">
+          <div class="ssy-brand">
+            <span class="ssy-logo">⚡</span>
+            <div>
+              <h3>AI 创作工具</h3>
+              <p class="ssy-subtitle">由 <a href="${brandUrl}" target="_blank">${SSY_NAME}</a> 提供 API 服务</p>
+            </div>
+          </div>
+          <a href="${promoUrl}" target="_blank" class="ssy-promo-badge">${SSY_PROMO_TEXT}</a>
+        </div>
+        ${SSY_PROMO_NOTE ? `<p class="ssy-promo-note">${SSY_PROMO_NOTE}</p>` : ''}
+
+        <div class="ssy-key-section">
+          <label class="ssy-label">🔑 API Key 配置</label>
+          <div class="ssy-key-row">
+            <input type="password" id="ssy-api-key" class="ssy-input" 
+                   placeholder="输入${SSY_NAME} API Key..." 
+                   value="${savedKey}" />
+            <button class="ssy-btn ssy-btn-test" id="ssy-test-key" title="测试连接">🔗 测试</button>
+            <button class="ssy-btn ssy-btn-save" id="ssy-save-key">保存</button>
+          </div>
+          <div id="ssy-test-result"></div>
+          ${savedKey ? '<p class="ssy-key-hint">✅ 已配置: ' + keyPreview + '</p>' : '<p class="ssy-key-hint">📎 <a href="' + keyUrl + '" target="_blank">' + SSY_GET_KEY_TEXT + '</a></p>'}
+        </div>
+
+        <div class="ssy-quick-config">
+          <label class="ssy-label">🚀 快速配置渠道</label>
+          <p class="ssy-config-desc">选择模型后复制命令到终端执行，即可完成对接。</p>
+          <div class="ssy-config-row">
+            <select id="ssy-model-select" class="ssy-select ssy-model-select">
+              <option value="">正在加载模型列表...</option>
+            </select>
+            <input type="text" id="ssy-custom-model" class="ssy-input ssy-custom-model-input" placeholder="输入模型 ID，如 openai/gpt-4o" style="display:none;" />
+          </div>
+          <div id="ssy-model-load-status" class="ssy-test-loading">⏳ 正在加载模型列表...</div>
+          <div class="ssy-config-commands" id="ssy-config-commands">
+            <div class="ssy-config-cmd-block">
+              <span class="ssy-config-cmd-label">📋 复制以下命令到终端执行：</span>
+              <pre class="ssy-config-cmd" id="ssy-config-cmd-text"></pre>
+              <div class="ssy-config-actions">
+                <button class="ssy-btn ssy-btn-copy" id="ssy-copy-config">📋 复制命令</button>
+                <button class="ssy-btn ssy-btn-test-model" id="ssy-test-model">🧪 测试模型</button>
+                <button class="ssy-btn ssy-btn-test-model" id="ssy-refresh-models">🔄 刷新模型</button>
+              </div>
+            </div>
+          </div>
+          <div id="ssy-model-test-result"></div>
+        </div>
+
+        <div class="ssy-tools">
+          <div class="${multimodalCardClass}" data-tool="text2img">
+            <div class="ssy-tool-icon">🎨</div>
+            <div class="ssy-tool-info">
+              <h4>图像生成${multimodalBadge}</h4>
+              <p>文生图、图生图、图像编辑等多种图像生成能力</p>
+            </div>
+          </div>
+          <div class="ssy-tool-panel" id="ssy-text2img-panel">
+            <div class="ssy-model-section">
+              <label class="ssy-label">📦 选择模型</label>
+              <div class="ssy-model-select-row">
+                <select id="ssy-t2i-model" class="ssy-select ssy-model-select-full">
+                  <option value="">正在加载图像模型...</option>
+                </select>
+                <input type="text" id="ssy-t2i-custom-model" class="ssy-input ssy-custom-model" placeholder="自定义模型ID" style="display:none;" />
+              </div>
+            </div>
+            <div id="ssy-t2i-dynamic-form" class="ssy-dynamic-form"></div>
+            <div class="ssy-tool-actions">
+              <label class="ssy-default-model-label"><input type="checkbox" id="ssy-t2i-default" /> 设为默认</label>
+              <button class="ssy-btn ssy-btn-primary" id="ssy-t2i-generate">✨ 生成</button>
+            </div>
+            <div id="ssy-t2i-result" class="ssy-result"></div>
+          </div>
+
+          <div class="${multimodalCardClass}" data-tool="text2video">
+            <div class="ssy-tool-icon">🎬</div>
+            <div class="ssy-tool-info">
+              <h4>视频生成${multimodalBadge}</h4>
+              <p>文生视频、图生视频、首尾帧等多种视频生成能力</p>
+            </div>
+          </div>
+          <div class="ssy-tool-panel" id="ssy-text2video-panel">
+            <div class="ssy-model-section">
+              <label class="ssy-label">📦 选择模型</label>
+              <div class="ssy-model-select-row">
+                <select id="ssy-t2v-model" class="ssy-select ssy-model-select-full">
+                  <option value="">正在加载视频模型...</option>
+                </select>
+                <input type="text" id="ssy-t2v-custom-model" class="ssy-input ssy-custom-model" placeholder="自定义模型ID" style="display:none;" />
+              </div>
+            </div>
+            <div id="ssy-t2v-dynamic-form" class="ssy-dynamic-form"></div>
+            <div class="ssy-tool-actions">
+              <label class="ssy-default-model-label"><input type="checkbox" id="ssy-t2v-default" /> 设为默认</label>
+              <button class="ssy-btn ssy-btn-primary" id="ssy-t2v-generate">🎬 生成</button>
+            </div>
+            <div id="ssy-t2v-result" class="ssy-result"></div>
+          </div>
+
+          <div class="${multimodalCardClass}" data-tool="tts">
+            <div class="ssy-tool-icon">🎵</div>
+            <div class="ssy-tool-info">
+              <h4>音频生成${multimodalBadge}</h4>
+              <p>语音合成、音效生成等多种音频生成能力</p>
+            </div>
+          </div>
+          <div class="ssy-tool-panel" id="ssy-tts-panel">
+            <div class="ssy-model-section">
+              <label class="ssy-label">📦 选择模型</label>
+              <div class="ssy-model-select-row">
+                <select id="ssy-tts-model" class="ssy-select ssy-model-select-full">
+                  <option value="">正在加载音频模型...</option>
+                </select>
+                <input type="text" id="ssy-tts-custom-model" class="ssy-input ssy-custom-model" placeholder="自定义模型ID" style="display:none;" />
+              </div>
+            </div>
+            <div id="ssy-tts-dynamic-form" class="ssy-dynamic-form"></div>
+            <div class="ssy-tool-actions">
+              <label class="ssy-default-model-label"><input type="checkbox" id="ssy-tts-default" /> 设为默认</label>
+              <button class="ssy-btn ssy-btn-primary" id="ssy-tts-generate">🎵 合成</button>
+            </div>
+            <div id="ssy-tts-result" class="ssy-result"></div>
+          </div>
+        </div>
+
+        <div class="ssy-footer">
+          <p>💡 ${SSY_FOOTER_TEXT} · <a href="${getSSYUrl()}" target="_blank">${SSY_FOOTER_LINK}</a></p>
+        </div>
+      </div>
+    `;
+  }
+
+  function collectMediaUrls(payload) {
+    const urls = new Set();
+
+    const knownFields = ['audio_urls', 'image_urls', 'video_urls', 'media_urls', 'urls', 'url', 'output_url', 'result_url'];
+    if (payload && typeof payload === 'object') {
+      const data = payload.data?.data || payload.data || payload;
+      if (data && typeof data === 'object') {
+        for (const field of knownFields) {
+          const val = data[field];
+          if (Array.isArray(val)) {
+            val.forEach(item => {
+              if (typeof item === 'string' && /^https?:\/\//i.test(item)) {
+                urls.add(item);
+              }
+            });
+          } else if (typeof val === 'string' && /^https?:\/\//i.test(val)) {
+            urls.add(val);
+          }
+        }
+      }
+    }
+
+    const visit = (value, depth) => {
+      if (depth > 8 || value == null) return;
+      if (typeof value === 'string') {
+        if (/^https?:\/\//i.test(value)) {
+          urls.add(value);
+        }
+        return;
+      }
+      if (Array.isArray(value)) {
+        value.forEach(item => visit(item, depth + 1));
+        return;
+      }
+      if (typeof value === 'object') {
+        Object.values(value).forEach(item => visit(item, depth + 1));
+      }
+    };
+
+    visit(payload, 0);
+    return Array.from(urls);
+  }
+
+  function getTaskRequestId(payload) {
+    if (!payload || typeof payload !== 'object') return '';
+    return String(payload.data?.request_id || payload.request_id || '');
+  }
+
+  function getTaskStatus(payload) {
+    if (!payload || typeof payload !== 'object') return '';
+    return String(payload.data?.status || payload.status || '').toUpperCase();
+  }
+
+  function getTaskProgress(payload) {
+    if (!payload || typeof payload !== 'object') return undefined;
+    const candidates = [payload.data?.data?.progress, payload.data?.progress, payload.progress];
+    for (const candidate of candidates) {
+      if (typeof candidate === 'number' && Number.isFinite(candidate)) {
+        return candidate;
+      }
+      if (typeof candidate === 'string' && candidate.trim()) {
+        const value = Number(candidate);
+        if (Number.isFinite(value)) return value;
+      }
+    }
+    return undefined;
+  }
+
+  function getTaskFailReason(payload) {
+    if (!payload || typeof payload !== 'object') return '任务执行失败';
+    return String(payload.data?.fail_reason || payload.data?.data?.error || payload.message || '任务执行失败');
+  }
+
+  function isTaskFailure(status) {
+    return ['FAILED', 'FAIL', 'ERROR', 'CANCELLED', 'CANCELED'].includes(status);
+  }
+
+  function isTaskFinished(status, progress, urls) {
+    if (['SUCCESS', 'SUCCEEDED', 'COMPLETED', 'DONE', 'FINISHED'].includes(status)) return true;
+    if (typeof progress === 'number' && progress >= 100) return true;
+    return urls.length > 0 && !['', 'PENDING', 'RUNNING', 'PROCESSING', 'QUEUED'].includes(status);
+  }
+
+  function detectMediaType(url, fallbackType) {
+    if (fallbackType) return fallbackType;
+    if (/\.(png|jpg|jpeg|webp|gif|bmp|svg)(\?|$)/i.test(url)) return 'image';
+    if (/\.(mp4|webm|mov|m4v)(\?|$)/i.test(url)) return 'video';
+    if (/\.(mp3|wav|ogg|m4a|aac|flac)(\?|$)/i.test(url)) return 'audio';
+    return 'file';
+  }
+
+  function downloadFile(url, filename) {
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = filename || '';
+    link.target = '_blank';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+  window.ssyDownloadFile = downloadFile;
+
+  function generateTimestampFilename(ext) {
+    const now = new Date();
+    const ts = `${now.getFullYear()}${String(now.getMonth()+1).padStart(2,'0')}${String(now.getDate()).padStart(2,'0')}_${String(now.getHours()).padStart(2,'0')}${String(now.getMinutes()).padStart(2,'0')}${String(now.getSeconds()).padStart(2,'0')}`;
+    return `ssy_${ts}.${ext}`;
+  }
+
+  function renderMediaResults(resultDiv, urls, fallbackType) {
+    if (!urls || urls.length === 0) {
+      resultDiv.innerHTML = '<p class="ssy-error">❌ 未返回可用结果</p>';
+      return;
+    }
+
+    const html = urls.map((url, idx) => {
+      const safeUrl = escapeAttr(url);
+      const mediaType = detectMediaType(url, fallbackType);
+      const ext = mediaType === 'image' ? 'png' : mediaType === 'video' ? 'mp4' : mediaType === 'audio' ? 'mp3' : 'bin';
+      const filename = generateTimestampFilename(ext);
+
+      if (mediaType === 'image') {
+        return `
+          <div class="ssy-media-result ssy-img-wrap">
+            <img src="${safeUrl}" alt="AI 生成" class="ssy-generated-img" onclick="window.open('${safeUrl}', '_blank')" />
+            <div class="ssy-media-actions">
+              <button class="ssy-action-btn" onclick="window.open('${safeUrl}', '_blank')" title="预览大图">🔍 预览</button>
+              <button class="ssy-action-btn" onclick="window.ssyDownloadFile('${safeUrl}', '${filename}')" title="下载图片">📥 下载</button>
+              <button class="ssy-action-btn ssy-copy-url-btn" data-url="${safeUrl}" title="复制链接">📋 复制</button>
+            </div>
+          </div>`;
+      }
+      if (mediaType === 'video') {
+        return `
+          <div class="ssy-media-result ssy-video-wrap">
+            <video src="${safeUrl}" controls class="ssy-generated-video"></video>
+            <div class="ssy-media-actions">
+              <button class="ssy-action-btn" onclick="window.open('${safeUrl}', '_blank')" title="新窗口播放">🔍 播放</button>
+              <button class="ssy-action-btn" onclick="window.ssyDownloadFile('${safeUrl}', '${filename}')" title="下载视频">📥 下载</button>
+              <button class="ssy-action-btn ssy-copy-url-btn" data-url="${safeUrl}" title="复制链接">📋 复制</button>
+            </div>
+          </div>`;
+      }
+      if (mediaType === 'audio') {
+        return `
+          <div class="ssy-media-result ssy-audio-wrap">
+            <audio src="${safeUrl}" controls class="ssy-generated-audio"></audio>
+            <div class="ssy-media-actions">
+              <button class="ssy-action-btn" onclick="window.open('${safeUrl}', '_blank')" title="新窗口播放">🔍 播放</button>
+              <button class="ssy-action-btn" onclick="window.ssyDownloadFile('${safeUrl}', '${filename}')" title="下载音频">📥 下载</button>
+              <button class="ssy-action-btn ssy-copy-url-btn" data-url="${safeUrl}" title="复制链接">📋 复制</button>
+            </div>
+          </div>`;
+      }
+      return `
+        <div class="ssy-media-result ssy-file-wrap">
+          <a href="${safeUrl}" target="_blank" class="ssy-file-link">📎 打开结果文件</a>
+          <div class="ssy-media-actions">
+            <button class="ssy-action-btn" onclick="window.ssyDownloadFile('${safeUrl}', '${filename}')" title="下载文件">📥 下载</button>
+            <button class="ssy-action-btn ssy-copy-url-btn" data-url="${safeUrl}" title="复制链接">📋 复制</button>
+          </div>
+        </div>`;
+    }).join('');
+    resultDiv.innerHTML = html;
+
+    resultDiv.querySelectorAll('.ssy-copy-url-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const url = btn.dataset.url;
+        if (url) {
+          copyToClipboard(url);
+          showToast('链接已复制', 'success');
+        }
+      });
+    });
+  }
+
+  async function requestSsyTask(apiKey, payload, resultDiv, loadingText) {
+    const submitRes = await fetch(`${SSY_API_BASE}/tasks/generations`, {
+      method: 'POST',
+      headers: buildSSYHeaders(apiKey, true),
+      body: JSON.stringify(payload),
+    });
+    const submitPayload = await readJsonSafely(submitRes);
+    if (!submitRes.ok) {
+      throw new Error(extractSSYError(submitPayload, `提交任务失败 (${submitRes.status})`));
+    }
+
+    const directUrls = collectMediaUrls(submitPayload);
+    if (directUrls.length > 0) {
+      return directUrls;
+    }
+
+    const requestId = getTaskRequestId(submitPayload);
+    if (!requestId) {
+      throw new Error(extractSSYError(submitPayload, '任务提交成功但未返回 request_id'));
+    }
+
+    for (let i = 0; i < 30; i++) {
+      await new Promise(resolve => setTimeout(resolve, 6000));
+
+      const pollRes = await fetch(`${SSY_API_BASE}/tasks/generations/${requestId}`, {
+        method: 'GET',
+        headers: buildSSYHeaders(apiKey, false),
+      });
+      if (!pollRes.ok) {
+        continue;
+      }
+
+      const pollPayload = await readJsonSafely(pollRes);
+      const status = getTaskStatus(pollPayload);
+      if (isTaskFailure(status)) {
+        throw new Error(getTaskFailReason(pollPayload));
+      }
+
+      const urls = collectMediaUrls(pollPayload);
+      const progress = getTaskProgress(pollPayload);
+      if (isTaskFinished(status, progress, urls)) {
+        if (urls.length > 0) {
+          return urls;
+        }
+        throw new Error(extractSSYError(pollPayload, '任务完成但未返回结果地址'));
+      }
+
+      if (resultDiv) {
+        const progressText = typeof progress === 'number' ? `${Math.max(0, Math.min(100, progress))}%` : `${(i + 1) * 6}s`;
+        resultDiv.innerHTML = `<div class="loading-container"><div class="loading-spinner"></div><p>${loadingText}（${progressText}）</p></div>`;
+      }
+    }
+
+    throw new Error('任务执行超时（约 3 分钟），请稍后重试');
+  }
+
+  async function requestSsyImage(apiKey, payload) {
+    const response = await fetch(`${SSY_API_BASE}/images/generations`, {
+      method: 'POST',
+      headers: buildSSYHeaders(apiKey, true),
+      body: JSON.stringify(payload),
+    });
+    const body = await readJsonSafely(response);
+    if (!response.ok) {
+      throw new Error(extractSSYError(body, `图片生成失败 (${response.status})`));
+    }
+    const urls = collectMediaUrls(body);
+    if (urls.length === 0) {
+      throw new Error(extractSSYError(body, '图片生成未返回可用地址'));
+    }
+    return urls;
+  }
+
+  function normalizeSsySize(value) {
+    if (typeof value !== 'string') return value;
+    return value.replace(/[xX×]/g, '*');
+  }
+
+  function createMultimodalPayload(model, prompt, extras = {}) {
+    const payload = { model: model?.apiName || model?.id };
+    const schema = model?.inputSchema;
+    const properties =
+      schema && typeof schema === 'object' && schema.properties && typeof schema.properties === 'object'
+        ? schema.properties
+        : null;
+    const propertyKeys = properties ? new Set(Object.keys(properties)) : null;
+
+    const addPromptFields = () => {
+      if (!propertyKeys) {
+        payload.prompt = prompt;
+        return;
+      }
+      const hasPrompt = propertyKeys.has('prompt');
+      const hasPromptText = propertyKeys.has('promptText');
+      if (hasPrompt) payload.prompt = prompt;
+      if (hasPromptText) payload.promptText = prompt;
+      if (!hasPrompt && !hasPromptText) {
+        payload.prompt = prompt;
+      }
+    };
+
+    addPromptFields();
+
+    for (const [key, value] of Object.entries(extras)) {
+      if (value == null || value === '') {
+        continue;
+      }
+      if (key === 'duration' || key === 'seconds') {
+        if (!propertyKeys || (propertyKeys.has('duration') || propertyKeys.has('seconds'))) {
+          payload[key] = value;
+        }
+        continue;
+      }
+      if (key === 'voice_preset' || key === 'voice' || key === 'voice_id') {
+        if (!propertyKeys || propertyKeys.has(key)) {
+          payload[key] = value;
+        }
+        continue;
+      }
+      if (!propertyKeys || propertyKeys.has(key)) {
+        if (key === 'size' || key === 'image_size' || key === 'resolution') {
+          payload[key] = normalizeSsySize(value);
+        } else {
+          payload[key] = value;
+        }
+      }
+    }
+
+    if (schema && typeof schema === 'object' && schema.properties && typeof schema.properties === 'object') {
+      if ('seconds' in schema.properties && payload.seconds == null && payload.duration != null) {
+        payload.seconds = String(payload.duration);
+      }
+      if ('duration' in schema.properties && payload.duration == null && payload.seconds != null) {
+        payload.duration = Number(payload.seconds) || 4;
+      }
+      if ('size' in schema.properties && payload.size == null && payload.resolution != null) {
+        payload.size = normalizeSsySize(payload.resolution);
+      }
+      if ('resolution' in schema.properties && payload.resolution == null && payload.size != null) {
+        payload.resolution = normalizeSsySize(payload.size);
+      }
+    }
+
+    if (payload.size) payload.size = normalizeSsySize(payload.size);
+    if (payload.image_size) payload.image_size = normalizeSsySize(payload.image_size);
+    if (payload.resolution) payload.resolution = normalizeSsySize(payload.resolution);
+
+    return payload;
+  }
+
+  function buildPayloadFromSchema(model, formData) {
+    const payload = { model: model?.apiName || model?.id };
+    const schema = model?.inputSchema;
+    const properties = schema?.properties || {};
+    
+    for (const [key, value] of Object.entries(formData)) {
+      if (value == null || value === '') continue;
+      
+      const prop = properties[key];
+      if (!prop) {
+        payload[key] = value;
+        continue;
+      }
+      
+      if (prop.format === 'image' || prop.format === 'video' || prop.format === 'audio') {
+        payload[key] = value;
+      } else if (key === 'size' || key === 'image_size' || key === 'resolution') {
+        payload[key] = normalizeSsySize(value);
+      } else {
+        payload[key] = value;
+      }
+    }
+    
+    return payload;
+  }
+
+  function validateFormData(formData, schema) {
+    if (!schema || !schema.required) return { valid: true, errors: [] };
+    
+    const errors = [];
+    for (const key of schema.required) {
+      const value = formData[key];
+      if (value === undefined || value === null || value === '') {
+        const prop = schema.properties?.[key];
+        const label = prop?.title || prop?.description || key;
+        errors.push(`缺少必填项：${label}`);
+      }
+    }
+    
+    return { valid: errors.length === 0, errors };
+  }
+
+  // 胜算云 API 调用：图像生成（动态表单版本）
+  async function ssyGenerateImage() {
+    const btn = document.getElementById('ssy-t2i-generate');
+    if (btn?.disabled) return;
+
+    const apiKey = getSSYApiKey();
+    if (!apiKey) { showToast('请先配置胜算云 API Key', 'error'); return; }
+
+    const modelId = getMultimodalModelId('ssy-t2i-model', 'ssy-t2i-custom-model');
+    if (!modelId) { showToast('请先选择图像模型', 'error'); return; }
+
+    const model = getMultimodalModelById(modelId);
+    const formData = collectDynamicFormData('ssy-t2i-dynamic-form');
+    
+    const validation = validateFormData(formData, model?.inputSchema);
+    if (!validation.valid) {
+      showToast(validation.errors[0], 'error');
+      return;
+    }
+
+    const supportApis = model?.supportApis || [];
+    const resultDiv = document.getElementById('ssy-t2i-result');
+    if (!resultDiv) return;
+
+    setButtonLoading(btn, true, '生成中...');
+    resultDiv.innerHTML = '<div class="loading-container"><div class="loading-spinner"></div><p>正在生成图片，请稍候...</p></div>';
+
+    try {
+      const payload = buildPayloadFromSchema(model || { id: modelId, apiName: modelId }, formData);
+
+      let urls = [];
+      if (supportApis.includes('/v1/images/generations')) {
+        try {
+          urls = await requestSsyImage(apiKey, payload);
+        } catch (syncError) {
+          if (!supportApis.includes('/v1/tasks/generations')) {
+            throw syncError;
+          }
+        }
+      }
+
+      if (urls.length === 0) {
+        if (supportApis.length > 0 && !supportApis.includes('/v1/tasks/generations')) {
+          throw new Error('当前图像模型不支持任务生成接口，请切换模型后重试');
+        }
+        urls = await requestSsyTask(apiKey, payload, resultDiv, '图片生成中');
+      }
+
+      renderMediaResults(resultDiv, urls, 'image');
+    } catch (err) {
+      resultDiv.innerHTML = `<p class="ssy-error">❌ ${escapeHtml(err?.message || '生成失败')}</p>`;
+    } finally {
+      setButtonLoading(btn, false);
+    }
+  }
+
+  // 胜算云 API 调用：视频生成（动态表单版本）
+  async function ssyGenerateVideo() {
+    const btn = document.getElementById('ssy-t2v-generate');
+    if (btn?.disabled) return;
+
+    const apiKey = getSSYApiKey();
+    if (!apiKey) { showToast('请先配置胜算云 API Key', 'error'); return; }
+
+    const modelId = getMultimodalModelId('ssy-t2v-model', 'ssy-t2v-custom-model');
+    if (!modelId) { showToast('请先选择视频模型', 'error'); return; }
+
+    const model = getMultimodalModelById(modelId);
+    const formData = collectDynamicFormData('ssy-t2v-dynamic-form');
+    
+    const validation = validateFormData(formData, model?.inputSchema);
+    if (!validation.valid) {
+      showToast(validation.errors[0], 'error');
+      return;
+    }
+
+    const resultDiv = document.getElementById('ssy-t2v-result');
+    if (!resultDiv) return;
+
+    setButtonLoading(btn, true, '生成中...');
+    resultDiv.innerHTML = '<div class="loading-container"><div class="loading-spinner"></div><p>正在生成视频，这可能需要 1-3 分钟...</p></div>';
+
+    try {
+      const payload = buildPayloadFromSchema(model || { id: modelId, apiName: modelId }, formData);
+      const urls = await requestSsyTask(apiKey, payload, resultDiv, '视频生成中');
+      renderMediaResults(resultDiv, urls, 'video');
+    } catch (err) {
+      resultDiv.innerHTML = `<p class="ssy-error">❌ ${escapeHtml(err?.message || '生成失败')}</p>`;
+    } finally {
+      setButtonLoading(btn, false);
+    }
+  }
+
+  function setButtonLoading(btn, loading, loadingText) {
+    if (!btn) return;
+    if (loading) {
+      btn.dataset.originalText = btn.innerHTML;
+      btn.disabled = true;
+      btn.innerHTML = `<span class="ssy-btn-spinner"></span> ${loadingText || '处理中...'}`;
+      btn.classList.add('ssy-btn-loading');
+    } else {
+      btn.disabled = false;
+      btn.innerHTML = btn.dataset.originalText || btn.innerHTML;
+      btn.classList.remove('ssy-btn-loading');
+    }
+  }
+
+  function getTtsVoicePreset(modelId, schema) {
+    const properties = schema && typeof schema === 'object' && schema.properties;
+    if (!properties) return null;
+
+    if ('voice_preset' in properties || 'voice' in properties || 'voice_id' in properties) {
+      const key = 'voice_preset' in properties ? 'voice_preset' : 'voice' in properties ? 'voice' : 'voice_id';
+      const prop = properties[key];
+      if (prop && prop.enum && prop.enum.length > 0) {
+        return prop.enum[0];
+      }
+      if (prop && prop.default) {
+        return prop.default;
+      }
+      return null;
+    }
+    return null;
+  }
+
+  // 胜算云 API 调用：音频生成（动态表单版本）
+  async function ssyGenerateTTS() {
+    const btn = document.getElementById('ssy-tts-generate');
+    if (btn?.disabled) return;
+
+    const apiKey = getSSYApiKey();
+    if (!apiKey) { showToast('请先配置胜算云 API Key', 'error'); return; }
+
+    const modelId = getMultimodalModelId('ssy-tts-model', 'ssy-tts-custom-model');
+    if (!modelId) { showToast('请先选择音频模型', 'error'); return; }
+
+    const model = getMultimodalModelById(modelId);
+    const formData = collectDynamicFormData('ssy-tts-dynamic-form');
+    
+    const validation = validateFormData(formData, model?.inputSchema);
+    if (!validation.valid) {
+      showToast(validation.errors[0], 'error');
+      return;
+    }
+
+    const resultDiv = document.getElementById('ssy-tts-result');
+    if (!resultDiv) return;
+
+    setButtonLoading(btn, true, '合成中...');
+    resultDiv.innerHTML = '<div class="loading-container"><div class="loading-spinner"></div><p>正在合成音频...</p></div>';
+
+    try {
+      const payload = buildPayloadFromSchema(model || { id: modelId, apiName: modelId }, formData);
+      const urls = await requestSsyTask(apiKey, payload, resultDiv, '音频合成中');
+      renderMediaResults(resultDiv, urls, 'audio');
+    } catch (err) {
+      resultDiv.innerHTML = `<p class="ssy-error">❌ ${escapeHtml(err?.message || '合成失败')}</p>`;
+    } finally {
+      setButtonLoading(btn, false);
+    }
+  }
+
+  // 测试 API Key 连接
+  async function ssyTestConnection() {
+    const input = document.getElementById('ssy-api-key');
+    const key = input?.value?.trim();
+    if (!key) { showToast('请先输入 API Key', 'error'); return; }
+
+    const resultDiv = document.getElementById('ssy-test-result');
+    if (resultDiv) {
+      resultDiv.innerHTML = '<p class="ssy-test-loading">⏳ 正在测试连接...</p>';
+    }
+
+    try {
+      const res = await fetch(SSY_MODELS_API, {
+        method: 'GET',
+        headers: buildSSYHeaders(key, false),
+      });
+      const payload = await readJsonSafely(res);
+
+      if (res.ok) {
+        if (resultDiv) resultDiv.innerHTML = '<p class="ssy-test-ok">✅ 连接成功！API Key 有效</p>';
+        showToast('API Key 验证通过', 'success');
+        await refreshSsyModelOptions(true);
+      } else if (res.status === 401 || res.status === 403) {
+        if (resultDiv) resultDiv.innerHTML = '<p class="ssy-test-fail">❌ API Key 无效或已过期</p>';
+        showToast('API Key 无效', 'error');
+      } else {
+        const errText = extractSSYError(payload, `服务端返回 ${res.status}`);
+        if (resultDiv) resultDiv.innerHTML = `<p class="ssy-test-fail">⚠️ ${escapeHtml(errText)}</p>`;
+      }
+    } catch (err) {
+      if (resultDiv) resultDiv.innerHTML = '<p class="ssy-test-fail">⚠️ 网络错误，无法连接服务器</p>';
+      showToast('网络错误', 'error');
+    }
+  }
+
+  // 获取当前选择的模型 ID
+  function getSelectedModelId() {
+    const select = document.getElementById('ssy-model-select');
+    if (!select) return '';
+    if (select.value === '__custom__') {
+      const custom = document.getElementById('ssy-custom-model');
+      return custom?.value?.trim() || '';
+    }
+    return String(select.value || '').trim();
+  }
+
+  function getSelectedLlmModelMeta() {
+    const modelId = getSelectedModelId();
+    return getLlmModelById(modelId);
+  }
+
+  // 生成配置命令
+  function generateConfigCommands() {
+    const selectedModelId = getSelectedModelId();
+    const modelId = selectedModelId || SSY_DEFAULT_LLM_MODEL;
+    const modelMeta = getLlmModelById(modelId);
+    const providerApi = modelMeta?.apiType || 'openai-completions';
+    const apiKey = document.getElementById('ssy-api-key')?.value?.trim() || getSSYApiKey();
+    const cmdText = document.getElementById('ssy-config-cmd-text');
+    if (!cmdText) return;
+
+    const lines = [];
+    const safeModelId = modelId.replace(/"/g, '\\"');
+    if (apiKey) {
+      const safeKey = apiKey.replace(/"/g, '\\"');
+      lines.push('# 步骤 1: 非交互配置胜算云认证（跳过 daemon 安装，适合内测）');
+      lines.push(`openclaw onboard --non-interactive --accept-risk --auth-choice shengsuanyun-api-key --shengsuanyun-api-key "${safeKey}" --no-install-daemon`);
+    } else {
+      lines.push('# 步骤 1: 非交互配置胜算云认证（请替换 API Key）');
+      lines.push('openclaw onboard --non-interactive --accept-risk --auth-choice shengsuanyun-api-key --shengsuanyun-api-key "你的API密钥" --no-install-daemon');
+    }
+    lines.push('');
+    lines.push(`# 步骤 2: 设置默认模型为 ${safeModelId}`);
+    lines.push(`openclaw config set agents.defaults.model.primary "shengsuanyun/${safeModelId}"`);
+    lines.push('');
+    lines.push('# 步骤 3: 确认 provider 端点与接口类型');
+    lines.push(`openclaw config set models.providers.shengsuanyun.baseUrl "${SSY_API_BASE}"`);
+    lines.push(`openclaw config set models.providers.shengsuanyun.api "${providerApi}"`);
+
+    cmdText.textContent = lines.join('\n');
+  }
+
+  function extractTestReply(payload, apiType) {
+    if (!payload || typeof payload !== 'object') return '';
+    if (apiType === 'openai-responses') {
+      if (typeof payload.output_text === 'string') {
+        return payload.output_text;
+      }
+      if (Array.isArray(payload.output)) {
+        for (const item of payload.output) {
+          if (item && typeof item === 'object' && Array.isArray(item.content)) {
+            for (const part of item.content) {
+              if (part?.text) return String(part.text);
+            }
+          }
+        }
+      }
+      return '';
+    }
+
+    if (apiType === 'anthropic-messages') {
+      if (Array.isArray(payload.content)) {
+        const textPart = payload.content.find(part => part?.type === 'text' && typeof part.text === 'string');
+        if (textPart) return String(textPart.text);
+      }
+      return '';
+    }
+
+    const content = payload.choices?.[0]?.message?.content;
+    if (typeof content === 'string') return content;
+    if (Array.isArray(content)) {
+      const textPart = content.find(part => part?.type === 'text' && typeof part.text === 'string');
+      if (textPart) return String(textPart.text);
+    }
+    if (typeof payload.choices?.[0]?.text === 'string') return payload.choices[0].text;
+    return '';
+  }
+
+  // 测试模型可用性
+  async function ssyTestModel() {
+    const apiKey = document.getElementById('ssy-api-key')?.value?.trim() || getSSYApiKey();
+    if (!apiKey) { showToast('请先输入 API Key', 'error'); return; }
+
+    const modelId = getSelectedModelId();
+    if (!modelId) { showToast('请先选择模型', 'error'); return; }
+
+    const modelMeta = getSelectedLlmModelMeta();
+    const apiType = modelMeta?.apiType || 'openai-completions';
+    const resultDiv = document.getElementById('ssy-model-test-result');
+    if (resultDiv) {
+      resultDiv.innerHTML = '<p class="ssy-test-loading">⏳ 正在测试模型 ' + escapeHtml(modelId) + ' ...</p>';
+    }
+
+    try {
+      let endpoint = '/chat/completions';
+      let payload = {
+        model: modelId,
+        messages: [{ role: 'user', content: '你好，请用一句话回复。' }],
+        max_tokens: 64,
+      };
+
+      if (apiType === 'anthropic-messages') {
+        endpoint = '/messages';
+        payload = {
+          model: modelId,
+          max_tokens: 64,
+          messages: [{ role: 'user', content: '你好，请用一句话回复。' }],
+        };
+      } else if (apiType === 'openai-responses') {
+        endpoint = '/responses';
+        payload = {
+          model: modelId,
+          input: '你好，请用一句话回复。',
+          max_output_tokens: 64,
+        };
+      }
+
+      const response = await fetch(`${SSY_API_BASE}${endpoint}`, {
+        method: 'POST',
+        headers: buildSSYHeaders(apiKey, true),
+        body: JSON.stringify(payload),
+      });
+      const data = await readJsonSafely(response);
+
+      if (response.ok) {
+        const reply = extractTestReply(data, apiType) || '（模型已响应）';
+        const truncated = reply.length > 120 ? `${reply.slice(0, 120)}...` : reply;
+        if (resultDiv) {
+          resultDiv.innerHTML = `<div class="ssy-test-ok">
+            <p>✅ 模型 <strong>${escapeHtml(modelId)}</strong> 可用（${escapeHtml(apiType)}）</p>
+            <p class="ssy-model-reply">AI 回复: "${escapeHtml(truncated)}"</p>
+          </div>`;
+        }
+        showToast('模型测试通过！', 'success');
+      } else if (response.status === 401 || response.status === 403) {
+        if (resultDiv) resultDiv.innerHTML = '<p class="ssy-test-fail">❌ API Key 无效或无权限</p>';
+      } else {
+        const errText = extractSSYError(data, `模型测试失败 (${response.status})`);
+        if (resultDiv) resultDiv.innerHTML = `<p class="ssy-test-fail">❌ ${escapeHtml(errText)}</p>`;
+      }
+    } catch (err) {
+      if (resultDiv) resultDiv.innerHTML = '<p class="ssy-test-fail">⚠️ 网络错误，无法连接服务器</p>';
+    }
+  }
+
+  // 绑定快速配置事件
+  function bindQuickConfigEvents() {
+    // 模型选择变更
+    const modelSelect = document.getElementById('ssy-model-select');
+    const customInput = document.getElementById('ssy-custom-model');
+    if (modelSelect) {
+      modelSelect.addEventListener('change', () => {
+        if (customInput && modelSelect.value === '__custom__') {
+          customInput.style.display = 'block';
+          customInput.focus();
+        } else if (customInput) {
+          customInput.style.display = 'none';
+        }
+        generateConfigCommands();
+      });
+    }
+    if (customInput) {
+      customInput.addEventListener('input', generateConfigCommands);
+    }
+
+    // 复制命令
+    const copyBtn = document.getElementById('ssy-copy-config');
+    if (copyBtn) {
+      copyBtn.addEventListener('click', () => {
+        const cmdText = document.getElementById('ssy-config-cmd-text');
+        if (cmdText) {
+          // 只复制实际命令，去掉注释行
+          const commands = cmdText.textContent
+            .split('\n')
+            .filter(l => l.trim() && !l.trim().startsWith('#'))
+            .join('\n');
+          copyToClipboard(commands);
+        }
+      });
+    }
+
+    // 测试模型
+    const testModelBtn = document.getElementById('ssy-test-model');
+    if (testModelBtn) {
+      testModelBtn.addEventListener('click', ssyTestModel);
+    }
+
+    // 刷新模型
+    const refreshBtn = document.getElementById('ssy-refresh-models');
+    if (refreshBtn) {
+      refreshBtn.addEventListener('click', () => {
+        refreshSsyModelOptions(true).catch(err => {
+          showToast(`刷新失败: ${err?.message || '未知错误'}`, 'error');
+        });
+      });
+    }
+
+    // 初始生成命令
+    generateConfigCommands();
+  }
+
+  // 绑定 AI 创作相关事件
+  function bindAiStudioEvents() {
+    // 快速配置事件
+    bindQuickConfigEvents();
+
+    // 测试连接按钮
+    const testBtn = document.getElementById('ssy-test-key');
+    if (testBtn) {
+      testBtn.addEventListener('click', ssyTestConnection);
+    }
+
+    // 保存 API Key（含二次确认：如果已有 Key 则提示覆盖）
+    const saveBtn = document.getElementById('ssy-save-key');
+    if (saveBtn) {
+      saveBtn.addEventListener('click', () => {
+        const input = document.getElementById('ssy-api-key');
+        const newKey = input?.value?.trim();
+        if (!newKey) { showToast('请输入 API Key', 'error'); return; }
+
+        const oldKey = getSSYApiKey();
+        if (oldKey && oldKey !== newKey) {
+          // 已有不同的 Key，二次确认
+          if (!confirm('已存在一个 API Key，确定要覆盖吗？')) return;
+        }
+        setSSYApiKey(newKey);
+        showToast('API Key 已保存', 'success');
+        // 刷新显示
+        switchTab('ai-studio');
+      });
+    }
+
+    const keyInput = document.getElementById('ssy-api-key');
+    if (keyInput) {
+      keyInput.addEventListener('input', generateConfigCommands);
+    }
+
+    // 工具卡片折叠/展开
+    document.querySelectorAll('.ssy-tool-card').forEach(card => {
+      card.addEventListener('click', () => {
+        if (card.classList.contains('ssy-tool-disabled')) {
+          return;
+        }
+        const tool = card.dataset.tool;
+        const panel = document.getElementById(`ssy-${tool}-panel`);
+        if (panel) {
+          card.classList.toggle('expanded');
+          panel.classList.toggle('expanded');
+        }
+      });
+    });
+
+    // 图像生成
+    const t2iBtn = document.getElementById('ssy-t2i-generate');
+    if (t2iBtn) t2iBtn.addEventListener('click', ssyGenerateImage);
+
+    const t2iSelect = document.getElementById('ssy-t2i-model');
+    const t2iCustom = document.getElementById('ssy-t2i-custom-model');
+    if (t2iSelect && t2iCustom) {
+      t2iSelect.addEventListener('change', () => {
+        const isCustom = t2iSelect.value === '__custom__';
+        t2iCustom.style.display = isCustom ? 'block' : 'none';
+        if (!isCustom && t2iSelect.value) {
+          const model = getMultimodalModelById(t2iSelect.value);
+          if (model) {
+            renderDynamicForm(model.inputSchema, 'ssy-t2i-dynamic-form');
+          }
+        } else {
+          document.getElementById('ssy-t2i-dynamic-form').innerHTML = '<p class="ssy-hint">请选择模型后配置参数</p>';
+        }
+      });
+    }
+
+    const t2iDefault = document.getElementById('ssy-t2i-default');
+    if (t2iDefault) {
+      t2iDefault.addEventListener('change', () => {
+        if (t2iDefault.checked) {
+          const modelId = getMultimodalModelId('ssy-t2i-model', 'ssy-t2i-custom-model');
+          if (modelId) {
+            localStorage.setItem('ssy_default_image_model', modelId);
+            showToast('已设为默认图像模型', 'success');
+          }
+        } else {
+          localStorage.removeItem('ssy_default_image_model');
+        }
+      });
+    }
+
+    // 视频生成
+    const t2vBtn = document.getElementById('ssy-t2v-generate');
+    if (t2vBtn) t2vBtn.addEventListener('click', ssyGenerateVideo);
+
+    const t2vSelect = document.getElementById('ssy-t2v-model');
+    const t2vCustom = document.getElementById('ssy-t2v-custom-model');
+    if (t2vSelect && t2vCustom) {
+      t2vSelect.addEventListener('change', () => {
+        const isCustom = t2vSelect.value === '__custom__';
+        t2vCustom.style.display = isCustom ? 'block' : 'none';
+        if (!isCustom && t2vSelect.value) {
+          const model = getMultimodalModelById(t2vSelect.value);
+          if (model) {
+            renderDynamicForm(model.inputSchema, 'ssy-t2v-dynamic-form');
+          }
+        } else {
+          document.getElementById('ssy-t2v-dynamic-form').innerHTML = '<p class="ssy-hint">请选择模型后配置参数</p>';
+        }
+      });
+    }
+
+    const t2vDefault = document.getElementById('ssy-t2v-default');
+    if (t2vDefault) {
+      t2vDefault.addEventListener('change', () => {
+        if (t2vDefault.checked) {
+          const modelId = getMultimodalModelId('ssy-t2v-model', 'ssy-t2v-custom-model');
+          if (modelId) {
+            localStorage.setItem('ssy_default_video_model', modelId);
+            showToast('已设为默认视频模型', 'success');
+          }
+        } else {
+          localStorage.removeItem('ssy_default_video_model');
+        }
+      });
+    }
+
+    // 音频生成
+    const ttsBtn = document.getElementById('ssy-tts-generate');
+    if (ttsBtn) ttsBtn.addEventListener('click', ssyGenerateTTS);
+
+    const ttsSelect = document.getElementById('ssy-tts-model');
+    const ttsCustom = document.getElementById('ssy-tts-custom-model');
+    if (ttsSelect && ttsCustom) {
+      ttsSelect.addEventListener('change', () => {
+        const isCustom = ttsSelect.value === '__custom__';
+        ttsCustom.style.display = isCustom ? 'block' : 'none';
+        if (!isCustom && ttsSelect.value) {
+          const model = getMultimodalModelById(ttsSelect.value);
+          if (model) {
+            renderDynamicForm(model.inputSchema, 'ssy-tts-dynamic-form');
+          }
+        } else {
+          document.getElementById('ssy-tts-dynamic-form').innerHTML = '<p class="ssy-hint">请选择模型后配置参数</p>';
+        }
+      });
+    }
+
+    const ttsDefault = document.getElementById('ssy-tts-default');
+    if (ttsDefault) {
+      ttsDefault.addEventListener('change', () => {
+        if (ttsDefault.checked) {
+          const modelId = getMultimodalModelId('ssy-tts-model', 'ssy-tts-custom-model');
+          if (modelId) {
+            localStorage.setItem('ssy_default_audio_model', modelId);
+            showToast('已设为默认音频模型', 'success');
+          }
+        } else {
+          localStorage.removeItem('ssy_default_audio_model');
+        }
+      });
+    }
+
+    refreshSsyModelOptions(false).catch(err => {
+      console.warn('[功能面板] 初始化模型失败:', err);
+    });
   }
 
   // 渲染单个插件项 - 折叠式
@@ -673,6 +2490,9 @@
         showToast('正在刷新插件列表...', 'info');
       });
     }
+
+    // AI 创作工具事件
+    bindAiStudioEvents();
 
     // 刷新更新日志按钮
     const refreshChangelogBtn = document.getElementById('refresh-changelog');

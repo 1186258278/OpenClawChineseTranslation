@@ -1,0 +1,9 @@
+{
+  "file": "src/commands/auth-choice-options.ts",
+  "description": "胜算云认证菜单 - 在 CLI 认证选项中添加胜算云（中文名称）",
+  "replacements": {
+    "hint: \"Access to Llama, DeepSeek, Qwen, and more open models\",\n  });": "hint: \"Access to Llama, DeepSeek, Qwen, and more open models\",\n  });\n  options.push({\n    value: \"shengsuanyun-api-key\",\n    label: \"胜算云 (国产模型)\",\n    hint: \"国内 API 聚合平台，新用户注册可获赠体验金\",\n  });",
+
+    "choices: [\"together-api-key\"],\n  },\n  {\n    value: \"venice\"": "choices: [\"together-api-key\"],\n  },\n  {\n    value: \"shengsuanyun\" as AuthChoiceGroupId,\n    label: \"胜算云 (国产模型)\",\n    hint: \"国内 API 聚合平台\",\n    choices: [\"shengsuanyun-api-key\"],\n  },\n  {\n    value: \"venice\""
+  }
+}

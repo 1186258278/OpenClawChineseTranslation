@@ -1,0 +1,9 @@
+{
+  "file": "src/commands/onboard-non-interactive/local/auth-choice-inference.ts",
+  "description": "胜算云 - 非交互式 onboard 的 Flag 推断映射（--shengsuanyun-api-key）",
+  "replacements": {
+    "| \"litellmApiKey\"": "| \"shengsuanyunApiKey\"\n  | \"litellmApiKey\"",
+
+    "{ flag: \"litellmApiKey\", authChoice: \"litellm-api-key\", label: \"--litellm-api-key\" },": "{ flag: \"shengsuanyunApiKey\", authChoice: \"shengsuanyun-api-key\", label: \"--shengsuanyun-api-key\" },\n  { flag: \"litellmApiKey\", authChoice: \"litellm-api-key\", label: \"--litellm-api-key\" },"
+  }
+}

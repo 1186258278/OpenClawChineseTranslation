@@ -1,0 +1,9 @@
+{
+  "file": "src/commands/onboard-non-interactive/local/auth-choice.ts",
+  "description": "胜算云 - 非交互式 onboard 认证处理逻辑（openclaw onboard --shengsuanyun-api-key xxx）",
+  "replacements": {
+    "import { applyOpenAIConfig } from \"../../openai-model-default.js\";": "import { applyOpenAIConfig } from \"../../openai-model-default.js\";\nimport { applyShengsuanyunConfig, setShengSuanYunApiKey } from \"../../onboard-auth.js\";",
+
+    "if (authChoice === \"together-api-key\") {": "if (authChoice === \"shengsuanyun-api-key\") {\n    const resolved = await resolveNonInteractiveApiKey({\n      provider: \"shengsuanyun\",\n      cfg: baseConfig,\n      flagValue: opts.shengsuanyunApiKey,\n      flagName: \"--shengsuanyun-api-key\",\n      envVar: \"SHENGSUANYUN_API_KEY\",\n      runtime,\n    });\n    if (!resolved) {\n      return null;\n    }\n    if (resolved.source !== \"profile\") {\n      await setShengSuanYunApiKey(resolved.key);\n    }\n    nextConfig = applyAuthProfileConfig(nextConfig, {\n      profileId: \"shengsuanyun:default\",\n      provider: \"shengsuanyun\",\n      mode: \"api_key\",\n    });\n    return applyShengsuanyunConfig(nextConfig);\n  }\n\n  if (authChoice === \"together-api-key\") {"
+  }
+}

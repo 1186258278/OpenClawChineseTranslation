@@ -14,6 +14,7 @@
 
 param(
     [switch]$Nightly,
+    [string]$ShengsuanyunKey,
     [switch]$Help
 )
 
@@ -35,14 +36,20 @@ if ($Help) {
     Write-Host "用法:"
     Write-Host "  irm https://xxx/install.ps1 | iex                              # 安装稳定版"
     Write-Host "  iex ""& { `$(irm https://xxx/install.ps1) } -Nightly""          # 安装最新版"
+    Write-Host "  .\install.ps1 -ShengsuanyunKey sk-xxx                           # 安装并配置胜算云"
     Write-Host ""
     Write-Host "选项:"
-    Write-Host "  -Nightly     安装最新版（每小时自动构建，追踪上游最新代码）"
-    Write-Host "  -Help        显示帮助信息"
+    Write-Host "  -Nightly            安装最新版（每小时自动构建，追踪上游最新代码）"
+    Write-Host "  -ShengsuanyunKey    安装后自动配置胜算云 API（跳过交互式初始化）"
+    Write-Host "  -Help               显示帮助信息"
     Write-Host ""
     Write-Host "版本说明:"
     Write-Host "  稳定版 (@latest)   手动发布，经过测试，推荐生产使用"
     Write-Host "  最新版 (@nightly)  每小时自动构建，追踪上游，适合测试"
+    Write-Host ""
+    Write-Host "胜算云快速配置:"
+    Write-Host "  获取 API 密钥: https://shengsuanyun.com"
+    Write-Host "  新用户福利: 注册送 10 元体验金！"
     exit 0
 }
 
@@ -147,6 +154,43 @@ function Invoke-SetupIfNeeded {
     # 用户明确跳过
     if ($env:OPENCLAW_SKIP_SETUP -eq "1") {
         Write-Host "⚠ OPENCLAW_SKIP_SETUP=1，跳过自动初始化" -ForegroundColor Yellow
+        return
+    }
+    
+    # 如果提供了胜算云 Key，执行胜算云专属非交互式 onboard
+    if ($ShengsuanyunKey) {
+        Write-Host ""
+        Write-Host "🔧 正在配置胜算云..." -ForegroundColor Blue
+        Write-Host ""
+        
+        try {
+            & openclaw onboard --non-interactive `
+                --auth-choice shengsuanyun-api-key `
+                --shengsuanyun-api-key $ShengsuanyunKey `
+                --accept-risk 2>$null
+            if ($LASTEXITCODE -eq 0) {
+                Write-Host "✓ 胜算云配置完成！" -ForegroundColor Green
+            } else {
+                throw "onboard failed"
+            }
+        } catch {
+            # 降级：设置环境变量后重试
+            $env:SHENGSUANYUN_API_KEY = $ShengsuanyunKey
+            try {
+                & openclaw onboard --non-interactive `
+                    --auth-choice shengsuanyun-api-key `
+                    --accept-risk 2>$null
+                if ($LASTEXITCODE -eq 0) {
+                    Write-Host "✓ 胜算云配置完成（环境变量模式）！" -ForegroundColor Green
+                } else {
+                    throw "retry failed"
+                }
+            } catch {
+                Write-Host "⚠ 胜算云自动配置失败，请手动运行:" -ForegroundColor Yellow
+                Write-Host "   openclaw onboard"
+                Write-Host "   然后在认证选项中选择 '胜算云 API 密钥'"
+            }
+        }
         return
     }
     

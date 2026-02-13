@@ -1,0 +1,11 @@
+{
+  "file": "src/commands/onboard-auth.ts",
+  "description": "胜算云 - 在 onboard-auth.ts 导出桶中添加胜算云配置函数和凭据函数",
+  "replacements": {
+    "applyZaiConfig,": "applyShengsuanyunConfig,\n  applyShengsuanyunProviderConfig,\n  applyZaiConfig,",
+
+    "setTogetherApiKey,": "setShengSuanYunApiKey,\n  setTogetherApiKey,",
+
+    "TOGETHER_DEFAULT_MODEL_REF,": "SHENGSUANYUN_DEFAULT_MODEL_REF,\n  TOGETHER_DEFAULT_MODEL_REF,"
+  }
+}

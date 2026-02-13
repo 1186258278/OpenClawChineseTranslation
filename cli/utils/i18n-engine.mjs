@@ -52,6 +52,65 @@ export async function loadAllTranslations(mainConfig, verbose = false) {
 }
 
 /**
+ * 复制新文件到目标目录（用于全新的胜算云源文件等）
+ */
+export async function applyCopyFiles(copyConfig, targetDir, options = {}) {
+  const { dryRun = false, verify = false, verbose = false } = options;
+  
+  const stats = {
+    file: copyConfig.description || '文件复制',
+    description: copyConfig.description || '',
+    total: copyConfig.copyFiles.length,
+    applied: 0,
+    skipped: 0,
+    notFound: 0
+  };
+
+  for (const copyItem of copyConfig.copyFiles) {
+    const sourcePath = path.join(TRANSLATIONS_DIR, copyItem.source);
+    const targetPath = path.join(targetDir, copyItem.target);
+    
+    try {
+      // 检查源文件是否存在
+      await fs.access(sourcePath);
+    } catch {
+      stats.notFound++;
+      if (verbose) log.warn(`源文件不存在: ${copyItem.source}`);
+      continue;
+    }
+
+    // 检查目标文件是否已存在且内容相同
+    try {
+      const existingContent = await fs.readFile(targetPath, 'utf-8');
+      const sourceContent = await fs.readFile(sourcePath, 'utf-8');
+      if (existingContent === sourceContent) {
+        stats.skipped++;
+        if (verbose) log.dim(`已存在: ${copyItem.target}`);
+        continue;
+      }
+    } catch {
+      // 目标文件不存在，需要创建
+    }
+
+    if (!dryRun && !verify) {
+      // 确保目标目录存在
+      const targetDirPath = path.dirname(targetPath);
+      await fs.mkdir(targetDirPath, { recursive: true });
+      
+      // 复制文件
+      await fs.copyFile(sourcePath, targetPath);
+    }
+    
+    stats.applied++;
+    if (verbose) {
+      log.dim(`复制: ${copyItem.source} → ${copyItem.target}`);
+    }
+  }
+
+  return stats;
+}
+
+/**
  * 应用翻译到目标文件
  */
 export async function applyTranslation(translation, targetDir, options = {}) {

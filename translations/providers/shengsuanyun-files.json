@@ -1,0 +1,21 @@
+{
+  "description": "胜算云源文件 - 模型发现、多模态工具、图片生成等全新文件",
+  "copyFiles": [
+    {
+      "source": "providers/files/agents/shengsuanyun-models.ts",
+      "target": "src/agents/shengsuanyun-models.ts"
+    },
+    {
+      "source": "providers/files/agents/tools/shengsuanyun/generate.ts",
+      "target": "src/agents/tools/shengsuanyun/generate.ts"
+    },
+    {
+      "source": "providers/files/agents/tools/shengsuanyun/zimage-turbo.ts",
+      "target": "src/agents/tools/shengsuanyun/zimage-turbo.ts"
+    },
+    {
+      "source": "providers/files/agents/tools/shengsuanyun/gemini3pro-image-preview.ts",
+      "target": "src/agents/tools/shengsuanyun/gemini3pro-image-preview.ts"
+    }
+  ]
+}

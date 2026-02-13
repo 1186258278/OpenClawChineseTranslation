@@ -1,0 +1,9 @@
+{
+  "file": "src/daemon/schtasks.ts",
+  "description": "Windows schtasks 兼容修复 - 命令不可用时不阻断 onboarding",
+  "replacements": {
+    "throw new Error(`schtasks unavailable: ${detail || \"unknown error\"}`.trim());": "throw new Error(`schtasks unavailable: ${detail || \"unknown error\"}. On Windows, run in PowerShell/CMD or skip daemon install.`.trim());",
+
+    "export async function isScheduledTaskInstalled(args: {\n  env?: Record<string, string | undefined>;\n}): Promise<boolean> {\n  await assertSchtasksAvailable();\n  const taskName = resolveTaskName(args.env ?? (process.env as Record<string, string | undefined>));\n  const res = await execSchtasks([\"/Query\", \"/TN\", taskName]);\n  return res.code === 0;\n}": "export async function isScheduledTaskInstalled(args: {\n  env?: Record<string, string | undefined>;\n}): Promise<boolean> {\n  try {\n    await assertSchtasksAvailable();\n  } catch {\n    return false;\n  }\n  const taskName = resolveTaskName(args.env ?? (process.env as Record<string, string | undefined>));\n  const res = await execSchtasks([\"/Query\", \"/TN\", taskName]);\n  return res.code === 0;\n}"
+  }
+}

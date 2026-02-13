@@ -16,6 +16,7 @@ dist/
 # =====================================
 *.log
 npm-debug.log*
+untranslated_list.txt
 
 # =====================================
 # 编辑器
@@ -49,6 +50,9 @@ test-config/
 
 # 调试脚本（开发用）
 scripts/extract-untranslated.mjs
+
+# 本地测试脚本
+scripts/test-local-full.ps1
 
 # 内部维护文档（仅本地保留）
 docs/MAINTENANCE.md

@@ -1,0 +1,33 @@
+{
+  "file": "src/commands/model-picker.ts",
+  "description": "模型选择器 - 模型筛选/选择/允许列表界面汉化",
+  "replacements": {
+    "\"Filter models by provider\"": "\"按提供商筛选模型\"",
+
+    "\"All providers\"": "\"所有提供商\"",
+
+    "\"Enter model manually\"": "\"手动输入模型\"",
+
+    "\"auth missing\"": "\"未认证\"",
+
+    "\"reasoning\"": "\"推理\"",
+
+    "\"Default model (blank to keep)\" : \"Default model\"": "\"默认模型（留空保持不变）\" : \"默认模型\"",
+
+    "placeholder: \"provider/model\"": "placeholder: \"提供商/模型名\"",
+
+    "\"Models in /model picker (multi-select)\"": "\"选择可用模型（多选，空格切换）\"",
+
+    "\"Allowlist models (comma-separated provider/model; blank to keep current)\"": "\"允许的模型（逗号分隔 提供商/模型名；留空保持当前）\"",
+
+    "\"allowed (not in catalog)\"": "\"已允许（不在模型目录中）\"",
+
+    "\"configured (not in catalog)\"": "\"已配置（不在模型目录中）\"",
+
+    "\"Clear the model allowlist? (shows all models)\"": "\"清除模型允许列表？（将显示所有模型）\"",
+
+    "hint: `${count} model${count === 1 ? \"\" : \"s\"}`": "hint: `${count} 个模型`",
+
+    "label: provider,": "label: provider === \"shengsuanyun\" ? \"胜算云\" : provider,"
+  }
+}

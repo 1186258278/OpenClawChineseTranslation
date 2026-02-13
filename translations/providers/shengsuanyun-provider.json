@@ -1,0 +1,9 @@
+{
+  "file": "src/agents/models-config.providers.ts",
+  "description": "胜算云供应商注册 - 使用实时模型目录构建 provider",
+  "replacements": {
+    "__comment_shengsuanyun_import": "在 models-config.providers.ts 中注入胜算云模型发现函数导入与隐式注册",
+    "import { discoverVeniceModels, VENICE_BASE_URL } from \"./venice-models.js\";": "import { discoverVeniceModels, VENICE_BASE_URL } from \"./venice-models.js\";\nimport { getShengSuanYunModels, SHENGSUANYUN_BASE_URL } from \"./shengsuanyun-models.js\";",
+    "const togetherKey =\n    resolveEnvApiKeyVarName(\"together\") ??\n    resolveApiKeyFromProfiles({ provider: \"together\", store: authStore });\n  if (togetherKey) {\n    providers.together = {\n      ...buildTogetherProvider(),\n      apiKey: togetherKey,\n    };\n  }": "const togetherKey =\n    resolveEnvApiKeyVarName(\"together\") ??\n    resolveApiKeyFromProfiles({ provider: \"together\", store: authStore });\n  if (togetherKey) {\n    providers.together = {\n      ...buildTogetherProvider(),\n      apiKey: togetherKey,\n    };\n  }\n\n  const shengsuanyunKey =\n    resolveEnvApiKeyVarName(\"shengsuanyun\") ??\n    resolveApiKeyFromProfiles({ provider: \"shengsuanyun\", store: authStore });\n  if (shengsuanyunKey) {\n    const shengsuanyunModels = await getShengSuanYunModels();\n    providers.shengsuanyun = {\n      baseUrl: SHENGSUANYUN_BASE_URL,\n      api: \"openai-completions\",\n      models: shengsuanyunModels,\n      apiKey: shengsuanyunKey,\n    };\n  }"
+  }
+}

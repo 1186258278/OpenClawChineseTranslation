@@ -1,0 +1,7 @@
+{
+  "file": "src/agents/model-auth.ts",
+  "description": "胜算云认证 - 添加 SHENGSUANYUN_API_KEY 环境变量映射",
+  "replacements": {
+    "together: \"TOGETHER_API_KEY\",": "together: \"TOGETHER_API_KEY\",\n    shengsuanyun: \"SHENGSUANYUN_API_KEY\","
+  }
+}

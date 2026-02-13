@@ -8,7 +8,8 @@ import { execSync } from 'node:child_process';
 import { 
   loadMainConfig, 
   loadAllTranslations, 
-  applyTranslation, 
+  applyTranslation,
+  applyCopyFiles,
   printStats,
   ROOT_DIR 
 } from '../utils/i18n-engine.mjs';
@@ -93,12 +94,22 @@ export async function applyCommand(args) {
   // 应用翻译
   const allStats = [];
   for (const translation of translations) {
-    const stats = await applyTranslation(translation, targetDir, {
-      dryRun,
-      verify,
-      verbose
-    });
-    allStats.push(stats);
+    // 区分 copyFiles 类型和 replacements 类型
+    if (translation.copyFiles && Array.isArray(translation.copyFiles)) {
+      const stats = await applyCopyFiles(translation, targetDir, {
+        dryRun,
+        verify,
+        verbose
+      });
+      allStats.push(stats);
+    } else if (translation.replacements) {
+      const stats = await applyTranslation(translation, targetDir, {
+        dryRun,
+        verify,
+        verbose
+      });
+      allStats.push(stats);
+    }
   }
   
   // 打印统计

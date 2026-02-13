@@ -1,0 +1,11 @@
+{
+  "file": "src/commands/onboard-types.ts",
+  "description": "胜算云 - 在 AuthChoice/AuthChoiceGroupId 类型和 OnboardOptions 中添加胜算云支持",
+  "replacements": {
+    "| \"custom-api-key\"": "| \"shengsuanyun-api-key\"\n  | \"custom-api-key\"",
+
+    "| \"custom\";": "| \"shengsuanyun\"\n  | \"custom\";",
+
+    "togetherApiKey?: string;": "togetherApiKey?: string;\n  shengsuanyunApiKey?: string;"
+  }
+}

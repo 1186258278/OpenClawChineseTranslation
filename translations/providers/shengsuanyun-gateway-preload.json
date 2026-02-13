@@ -1,0 +1,8 @@
+{
+  "file": "src/gateway/server.impl.ts",
+  "description": "胜算云工具预加载 - 网关启动时提前拉取多模态工具列表",
+  "replacements": {
+    "import { initSubagentRegistry } from \"../agents/subagent-registry.js\";": "import { initSubagentRegistry } from \"../agents/subagent-registry.js\";\nimport { preloadShengSuanYunTools } from \"../agents/tools/shengsuanyun/generate.js\";",
+    "  setGatewaySigusr1RestartPolicy({ allowExternal: cfgAtStart.commands?.restart === true });\n  initSubagentRegistry();\n  const defaultAgentId = resolveDefaultAgentId(cfgAtStart);": "  setGatewaySigusr1RestartPolicy({ allowExternal: cfgAtStart.commands?.restart === true });\n  initSubagentRegistry();\n\n  try {\n    await preloadShengSuanYunTools({ config: cfgAtStart });\n  } catch (err) {\n    log.warn(`gateway: shengsuanyun tools preload failed: ${String(err)}`);\n  }\n\n  const defaultAgentId = resolveDefaultAgentId(cfgAtStart);"
+  }
+}
