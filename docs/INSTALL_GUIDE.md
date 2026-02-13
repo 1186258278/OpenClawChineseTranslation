@@ -346,7 +346,31 @@ openclaw config set agents.defaults.model xiaomi/mimo-v2-flash
 openclaw config set auth.xiaomi.apiKey 你的API密钥
 ```
 
+获取 API Key：[platform.xiaomi.cn](https://platform.xiaomi.cn/)
+
 环境变量方式：`export XIAOMI_API_KEY=你的API密钥`
+
+#### 胜算云（API 聚合平台）
+
+胜算云是国内知名的 AI API 聚合平台，整合了 Kimi、DeepSeek、Qwen、Llama 等热门模型，一个 Key 就能调用几百种模型。
+
+**🎁 新春活动（截至 2025年3月3日）**：
+| 阶梯 | 春节消耗 | 奖励 |
+|------|---------|------|
+| 尝鲜礼 | ≥50元 | 5元 模力券 |
+| 极客礼 | ≥100元 | 10元 模力券 + Kimi K2.5 七折卡(7天) |
+| 大神礼 | ≥500元 | 50元 模力券 + Kimi K2.5 七折卡(7天) |
+
+[查看活动详情 →](https://www.shengsuanyun.com/activity/4184b48a6be4443cbe13e86e091e43b4?from=CH_4BVI0BM2)
+
+```bash
+# 在 onboard 向导中选择 "胜算云 (国产模型)" 即可自动配置
+# 或手动配置：
+openclaw config set agents.defaults.model shengsuanyun/openai/gpt-4.1-nano
+openclaw config set auth.shengsuanyun.apiKey 你的胜算云API密钥
+```
+
+获取 API Key：[胜算云官网](https://www.shengsuanyun.com/?from=CH_4BVI0BM2)
 
 #### Venice AI
 
@@ -500,6 +524,7 @@ openclaw
 | `ZAI_API_KEY` | 智谱 GLM |
 | `MINIMAX_API_KEY` | MiniMax |
 | `XIAOMI_API_KEY` | 小米 MiMo |
+| `SHENGSUANYUN_API_KEY` | 胜算云（聚合平台） |
 
 ---
 

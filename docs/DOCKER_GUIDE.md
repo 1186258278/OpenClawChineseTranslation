@@ -56,20 +56,39 @@ irm https://cdn.jsdelivr.net/gh/1186258278/OpenClawChineseTranslation@main/docke
 # 国内: 1186258278/openclaw-zh:latest
 IMAGE=ghcr.io/1186258278/openclaw-zh:latest
 
-# 1. 初始化配置（首次运行）
-docker run --rm -v openclaw-data:/root/.openclaw \
-  $IMAGE openclaw setup
+# 1. 初始化配置（首次运行，需要交互式配置 AI 模型和 API 密钥）
 
+# Linux/macOS:
+docker run --rm -it -v openclaw-data:/root/.openclaw \
+  $IMAGE openclaw onboard
+
+# Windows (PowerShell):
+docker run --rm -it -v openclaw-data:/root/.openclaw `
+  $IMAGE openclaw onboard
+
+# 2. 配置网关模式（本地访问）
+
+# Linux/macOS:
 docker run --rm -v openclaw-data:/root/.openclaw \
   $IMAGE openclaw config set gateway.mode local
 
-# 2. 启动容器
+# Windows (PowerShell):
+docker run --rm -v openclaw-data:/root/.openclaw `
+  $IMAGE openclaw config set gateway.mode local
+
+# 3. 启动容器（守护进程模式，容器会一直运行）
+
+# Linux/macOS:
 docker run -d \
   --name openclaw \
   -p 18789:18789 \
   -v openclaw-data:/root/.openclaw \
+  --restart unless-stopped \
   $IMAGE \
   openclaw gateway run
+
+# Windows (PowerShell):
+docker run -d --name openclaw -p 18789:18789 -v openclaw-data:/root/.openclaw --restart unless-stopped $IMAGE openclaw gateway run
 ```
 
 访问：`http://localhost:18789`
@@ -89,22 +108,43 @@ IMAGE=ghcr.io/1186258278/openclaw-zh:latest
 # 1. 创建数据卷
 docker volume create openclaw-data
 
-# 2. 初始化配置
-docker run --rm -v openclaw-data:/root/.openclaw \
-  $IMAGE openclaw setup
+# 2. 初始化配置（首次运行，需要交互式配置 AI 模型和 API 密钥）
+
+# Linux/macOS:
+docker run --rm -it -v openclaw-data:/root/.openclaw \
+  $IMAGE openclaw onboard
+
+# Windows (PowerShell):
+docker run --rm -it -v openclaw-data:/root/.openclaw `
+  $IMAGE openclaw onboard
 
 # 3. 配置远程访问参数
+
+# Linux/macOS:
 docker run --rm -v openclaw-data:/root/.openclaw \
   $IMAGE openclaw config set gateway.mode local
-
 docker run --rm -v openclaw-data:/root/.openclaw \
   $IMAGE openclaw config set gateway.bind lan
 
+# Windows (PowerShell):
+docker run --rm -v openclaw-data:/root/.openclaw `
+  $IMAGE openclaw config set gateway.mode local
+docker run --rm -v openclaw-data:/root/.openclaw `
+  $IMAGE openclaw config set gateway.bind lan
+
 # 4. 设置访问令牌（推荐）
+
+# Linux/macOS:
 docker run --rm -v openclaw-data:/root/.openclaw \
   $IMAGE openclaw config set gateway.auth.token your-secure-token
 
-# 5. 启动容器
+# Windows (PowerShell):
+docker run --rm -v openclaw-data:/root/.openclaw `
+  $IMAGE openclaw config set gateway.auth.token your-secure-token
+
+# 5. 启动容器（守护进程模式，容器会一直运行）
+
+# Linux/macOS:
 docker run -d \
   --name openclaw \
   -p 18789:18789 \
@@ -112,6 +152,9 @@ docker run -d \
   --restart unless-stopped \
   $IMAGE \
   openclaw gateway run
+
+# Windows (PowerShell):
+docker run -d --name openclaw -p 18789:18789 -v openclaw-data:/root/.openclaw --restart unless-stopped $IMAGE openclaw gateway run
 ```
 
 访问：`http://服务器IP:18789` → 在 Dashboard 输入 token 连接
