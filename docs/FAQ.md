@@ -18,39 +18,6 @@
 
 ---
 
-## 零、紧急修复
-
-### Missing workspace template: AGENTS.md
-
-**你会看到**：
-```
-Error: Missing workspace template: AGENTS.md (C:\Users\xxx\docs\reference\templates\AGENTS.md). 
-Ensure docs/reference/templates are packaged.
-```
-
-**影响版本**：`2026.2.4-zh.1` 及更早版本
-
-**原因**：汉化版在构建时修改了包名为 `@qingchencloud/openclaw-zh`，但上游代码中有一处硬编码只识别 `openclaw` 包名，导致运行时无法定位模板文件、Dashboard 资源、技能目录等关键路径。
-
-**解决方案**：
-
-```bash
-# 升级到最新版（已修复）
-npm install -g @qingchencloud/openclaw-zh@latest
-
-# 如果使用 nightly 版
-npm install -g @qingchencloud/openclaw-zh@nightly
-```
-
-此 Bug 已在 `2026.2.4-zh.2` 版本修复。如果升级后仍有问题，请尝试完全重装：
-
-```bash
-npm uninstall -g @qingchencloud/openclaw-zh
-npm install -g @qingchencloud/openclaw-zh@latest
-```
-
----
-
 ## 一、安装问题
 
 ### 安装卡住不动 / 下载很慢
@@ -101,6 +68,32 @@ openclaw --version
 ```
 
 > 如果仍然报错，检查你的 Node.js 版本是否 >= 22：`node -v`
+
+---
+
+### 启动时提示 "JavaScript heap out of memory"
+
+**你会看到**：
+```
+FATAL ERROR: Reached heap limit Allocation failed - JavaScript heap out of memory
+```
+
+**原因**：服务器内存不足，Node.js 默认内存限制不够。
+
+**解决方案**：
+
+```bash
+# 增加内存限制运行
+NODE_OPTIONS="--max-old-space-size=4096" openclaw onboard --install-daemon
+```
+
+**Docker 环境** - 在 docker-compose.yml 中添加：
+```yaml
+environment:
+  - NODE_OPTIONS=--max-old-space-size=4096
+```
+
+> 服务器建议至少 4GB 内存
 
 ---
 
