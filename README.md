@@ -131,16 +131,18 @@ openclaw --help             # 查看帮助
 
 # 网关管理
 openclaw gateway run        # 前台运行（挂终端，用于调试）
-openclaw gateway start     # 后台守护进程（不挂终端，推荐！）
+openclaw gateway start      # 后台守护进程（不挂终端，推荐！）
 openclaw gateway stop       # 停止网关
-openclaw gateway restart   # 重启网关
-openclaw gateway status    # 查看网关状态
-openclaw gateway install   # 安装为系统服务（开机自启）
+openclaw gateway restart    # 重启网关
+openclaw gateway status     # 查看网关状态
+openclaw gateway install    # 安装为系统服务（开机自启）
 
 # 常用操作
-openclaw update            # 检查并更新 CLI
-openclaw doctor            # 诊断问题（自动修复）
+openclaw update             # 检查并更新 CLI
+openclaw doctor             # 诊断问题（自动修复）
 ```
+
+> **Windows 用户注意**：如果 `gateway install` 失败（提示 schtasks 不可用），可使用 `gateway start` 启动后台进程，或使用 Docker 部署方案。
 
 ---
 
