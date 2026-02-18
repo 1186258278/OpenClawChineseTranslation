@@ -2,21 +2,14 @@
   "file": "src/cli/program/command-registry.ts",
   "description": "CLI 命令注册表 - 顶层命令描述",
   "replacements": {
-    "description: \"Setup helpers\"": "description: \"设置工具\"",
-    "description: \"Onboarding helpers\"": "description: \"引导工具\"",
-    "description: \"Configure wizard\"": "description: \"配置向导\"",
-    "description: \"Config helpers\"": "description: \"配置助手\"",
-    "description: \"Health checks + quick fixes for the gateway and channels\"": "description: \"网关和渠道健康检查 + 快速修复\"",
-    "description: \"Open the Control UI with your current token\"": "description: \"使用当前令牌打开控制面板\"",
-    "description: \"Reset local config/state (keeps the CLI installed)\"": "description: \"重置本地配置/状态（保留 CLI）\"",
-    "description: \"Uninstall the gateway service + local data (CLI remains)\"": "description: \"卸载网关服务和本地数据（保留 CLI）\"",
-    "description: \"Send, read, and manage messages\"": "description: \"发送、读取和管理消息\"",
-    "description: \"Memory commands\"": "description: \"记忆命令\"",
-    "description: \"Agent commands\"": "description: \"Agent 命令\"",
-    "description: \"Manage isolated agents\"": "description: \"管理隔离的 Agent\"",
-    "description: \"Gateway status\"": "description: \"网关状态\"",
-    "description: \"Gateway health\"": "description: \"网关健康\"",
-    "description: \"Session management\"": "description: \"会话管理\"",
-    "description: \"Browser tools\"": "description: \"浏览器工具\""
+    "description: \"Initialize local config and agent workspace\"": "description: \"初始化本地配置和代理工作区\"",
+    "description: \"Interactive onboarding wizard for gateway, workspace, and skills\"": "description: \"网关、工作区和技能的交互式引导向导\"",
+    "description: \"Search and reindex memory files\"": "description: \"搜索和重建记忆文件索引\"",
+    "description: \"Run one agent turn via the Gateway\"": "description: \"通过网关运行一次代理\"",
+    "description: \"Manage isolated agents (workspaces, auth, routing)\"": "description: \"管理隔离的代理（工作区、认证、路由）\"",
+    "description: \"Show channel health and recent session recipients\"": "description: \"显示渠道健康状态和最近会话接收者\"",
+    "description: \"Fetch health from the running gateway\"": "description: \"从运行中的网关获取健康状态\"",
+    "description: \"List stored conversation sessions\"": "description: \"列出已存储的对话会话\"",
+    "description: \"Manage OpenClaw's dedicated browser (Chrome/Chromium)\"": "description: \"管理 OpenClaw 专用浏览器（Chrome/Chromium）\""
   }
 }

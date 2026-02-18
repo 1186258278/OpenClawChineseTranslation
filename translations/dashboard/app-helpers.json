@@ -2,10 +2,6 @@
   "file": "ui/src/ui/app-render.helpers.ts",
   "description": "Dashboard 通用辅助组件",
   "replacements": {
-    "title=\"Refresh chat data\"": "title=\"刷新对话数据\"",
-    ": \"Toggle assistant thinking/working output\"": ": \"切换助手思考/工作输出\"",
-    ": \"Toggle focus mode (hide sidebar + page header)\"": ": \"切换专注模式（隐藏侧栏和页头）\"",
-    "\"Disabled during onboarding\"": "\"初始化期间禁用\"",
     "aria-label=\"System theme\"": "aria-label=\"系统主题\"",
     "title=\"System\"": "title=\"系统\"",
     "aria-label=\"Light theme\"": "aria-label=\"浅色主题\"",

@@ -6,14 +6,6 @@
     "</div>\n          </div>\n        </div>\n        <div class=\"topbar-status\">": "</div>\n          </a>\n        </div>\n        <div class=\"topbar-status\">",
     "<div class=\"brand-title\">OPENCLAW</div>": "<div class=\"brand-title\">OPENCLAW 中文版</div>",
     "<div class=\"brand-sub\">Gateway Dashboard</div>": "<div class=\"brand-sub\">网关控制台 · 点击访问官网</div>",
-    "<span>Health</span>": "<span>健康状态</span>",
-    "<span class=\"mono\">${state.connected ? \"OK\" : \"Offline\"}</span>": "<span class=\"mono\">${state.connected ? \"正常\" : \"离线\"}</span>",
-    "title=\"${state.settings.navCollapsed ? \"Expand sidebar\" : \"Collapse sidebar\"}\"": "title=\"${state.settings.navCollapsed ? \"展开侧栏\" : \"收起侧栏\"}\"",
-    "aria-label=\"${state.settings.navCollapsed ? \"Expand sidebar\" : \"Collapse sidebar\"}\"": "aria-label=\"${state.settings.navCollapsed ? \"展开侧栏\" : \"收起侧栏\"}\"",
-    "<span class=\"nav-label__text\">Resources</span>": "<span class=\"nav-label__text\">资源</span>",
-    "title=\"Docs (opens in new tab)\"": "title=\"文档（新标签页打开）\"",
-    "<span class=\"nav-item__text\">Docs</span>": "<span class=\"nav-item__text\">文档</span>",
-    "\"Disconnected from gateway.\"": "\"已断开网关连接。\"",
     "</div>\n        </div>\n      </aside>": "</div>\n            <a\n              class=\"nav-item nav-item--external\"\n              href=\"https://www.shengsuanyun.com/?from=CH_4BVI0BM2\"\n              target=\"_blank\"\n              rel=\"noreferrer\"\n              title=\"胜算云 - AI 模型聚合平台（新标签页打开）\"\n              style=\"color: #f59e0b; font-weight: 600;\"\n            >\n              <span class=\"nav-item__icon\" aria-hidden=\"true\">⚡</span>\n              <span class=\"nav-item__text\">胜算云</span>\n            </a>\n            <a\n              class=\"nav-item nav-item--external\"\n              href=\"https://openclaw.qt.cool\"\n              target=\"_blank\"\n              rel=\"noreferrer\"\n              title=\"汉化官网（新标签页打开）\"\n              style=\"color: #ef4444;\"\n            >\n              <span class=\"nav-item__icon\" aria-hidden=\"true\">${icons.globe}</span>\n              <span class=\"nav-item__text\">🇨🇳 汉化官网</span>\n            </a>\n            <a\n              class=\"nav-item nav-item--external\"\n              href=\"https://github.com/1186258278/OpenClawChineseTranslation\"\n              target=\"_blank\"\n              rel=\"noreferrer\"\n              title=\"GitHub 仓库（新标签页打开）\"\n            >\n              <span class=\"nav-item__icon\" aria-hidden=\"true\">${icons.link}</span>\n              <span class=\"nav-item__text\">GitHub</span>\n            </a>\n        </div>\n      </aside>"
   }
 }

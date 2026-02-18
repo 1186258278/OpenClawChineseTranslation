@@ -64,11 +64,8 @@
       "daemon/schtasks.json"
     ],
     "dashboard": [
-      "dashboard/navigation.json",
       "dashboard/app-render.json",
-      "dashboard/app-helpers.json",
       "dashboard/chat.json",
-      "dashboard/overview.json",
       "dashboard/sessions.json",
       "dashboard/skills.json",
       "dashboard/nodes.json",
