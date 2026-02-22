@@ -97,8 +97,17 @@ jobs:
         run: |
           if [ "${{ inputs.version_type }}" = "stable" ]; then
             # 稳定版：克隆指定 tag，避免 main 分支版本号超前导致版本倒挂
-            echo "📌 克隆上游 tag v${{ inputs.upstream_version }}..."
-            git clone --depth 1 --branch v${{ inputs.upstream_version }} https://github.com/${{ env.UPSTREAM_REPO }}.git openclaw
+            # npm 版本可能带 -N 后缀（如 2026.2.21-2），但 git tag 通常不带（v2026.2.21）
+            UPSTREAM_VER="${{ inputs.upstream_version }}"
+            BASE_VER="${UPSTREAM_VER%%-*}"
+            if git clone --depth 1 --branch "v${UPSTREAM_VER}" https://github.com/${{ env.UPSTREAM_REPO }}.git openclaw 2>/dev/null; then
+              echo "📌 使用精确 tag v${UPSTREAM_VER}"
+            elif [ "$BASE_VER" != "$UPSTREAM_VER" ] && git clone --depth 1 --branch "v${BASE_VER}" https://github.com/${{ env.UPSTREAM_REPO }}.git openclaw 2>/dev/null; then
+              echo "📌 使用基础 tag v${BASE_VER}（npm 版本 ${UPSTREAM_VER} 无对应 tag）"
+            else
+              echo "⚠️ 未找到 tag v${UPSTREAM_VER} 或 v${BASE_VER}，回退到 main 分支"
+              git clone --depth 1 https://github.com/${{ env.UPSTREAM_REPO }}.git openclaw
+            fi
           else
             # Nightly：追踪 main 分支最新代码
             git clone --depth 1 https://github.com/${{ env.UPSTREAM_REPO }}.git openclaw
