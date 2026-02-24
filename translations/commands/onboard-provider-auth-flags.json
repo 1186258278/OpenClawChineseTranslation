@@ -1,0 +1,29 @@
+{
+  "file": "src/commands/onboard-provider-auth-flags.ts",
+  "description": "提供商认证标志 - CLI 选项描述（用作动态标签）",
+  "replacements": {
+    "description: \"Anthropic API key\"": "description: \"Anthropic API 密钥\"",
+    "description: \"OpenAI API key\"": "description: \"OpenAI API 密钥\"",
+    "description: \"Mistral API key\"": "description: \"Mistral API 密钥\"",
+    "description: \"OpenRouter API key\"": "description: \"OpenRouter API 密钥\"",
+    "description: \"Kilo Gateway API key\"": "description: \"Kilo Gateway API 密钥\"",
+    "description: \"Vercel AI Gateway API key\"": "description: \"Vercel AI Gateway API 密钥\"",
+    "description: \"Cloudflare AI Gateway API key\"": "description: \"Cloudflare AI Gateway API 密钥\"",
+    "description: \"Moonshot API key\"": "description: \"Moonshot API 密钥\"",
+    "description: \"Kimi Coding API key\"": "description: \"Kimi Coding API 密钥\"",
+    "description: \"Gemini API key\"": "description: \"Gemini API 密钥\"",
+    "description: \"Z.AI API key\"": "description: \"Z.AI API 密钥\"",
+    "description: \"Xiaomi API key\"": "description: \"小米 API 密钥\"",
+    "description: \"MiniMax API key\"": "description: \"MiniMax API 密钥\"",
+    "description: \"Synthetic API key\"": "description: \"Synthetic API 密钥\"",
+    "description: \"Venice API key\"": "description: \"Venice API 密钥\"",
+    "description: \"Together AI API key\"": "description: \"Together AI API 密钥\"",
+    "description: \"Hugging Face API key (HF token)\"": "description: \"Hugging Face API 密钥（HF 令牌）\"",
+    "description: \"OpenCode Zen API key\"": "description: \"OpenCode Zen API 密钥\"",
+    "description: \"xAI API key\"": "description: \"xAI API 密钥\"",
+    "description: \"LiteLLM API key\"": "description: \"LiteLLM API 密钥\"",
+    "description: \"QIANFAN API key\"": "description: \"千帆 API 密钥\"",
+    "description: \"Volcano Engine API key\"": "description: \"火山引擎 API 密钥\"",
+    "description: \"BytePlus API key\"": "description: \"BytePlus API 密钥\""
+  }
+}

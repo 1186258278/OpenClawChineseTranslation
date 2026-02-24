@@ -1,8 +1,8 @@
 {
   "file": "src/commands/auth-choice-options.ts",
-  "description": "胜算云认证菜单 - 在顶层提供商分组和选项数组中添加胜算云",
+  "description": "胜算云认证菜单 - 在提供商分组中添加胜算云，并在动态选项构建函数中追加胜算云选项",
   "replacements": {
     "value: \"together\",\n    label: \"Together AI\",\n    hint: \"API 密钥\",\n    choices: [\"together-api-key\"],\n  },\n  {\n    value: \"huggingface\"": "value: \"together\",\n    label: \"Together AI\",\n    hint: \"API 密钥\",\n    choices: [\"together-api-key\"],\n  },\n  {\n    value: \"shengsuanyun\",\n    label: \"胜算云 (国产模型)\",\n    hint: \"国内 API 聚合平台\",\n    choices: [\"shengsuanyun-api-key\"],\n  },\n  {\n    value: \"huggingface\"",
-    "value: \"together-api-key\",\n    label: \"Together AI API key\",\n    hint: \"Access to Llama, DeepSeek, Qwen, and more open models\",\n  },\n  {\n    value: \"huggingface-api-key\"": "value: \"together-api-key\",\n    label: \"Together AI API 密钥\",\n    hint: \"Llama、DeepSeek、Qwen 等开源模型\",\n  },\n  {\n    value: \"shengsuanyun-api-key\",\n    label: \"胜算云 API 密钥\",\n    hint: \"国内 API 聚合平台 - shengsuanyun.com\",\n  },\n  {\n    value: \"huggingface-api-key\""
+    "function buildProviderAuthChoiceOptions(): AuthChoiceOption[] {\n  return ONBOARD_PROVIDER_AUTH_FLAGS.map((flag) => ({\n    value: flag.authChoice,\n    label: PROVIDER_AUTH_CHOICE_OPTION_LABELS[flag.authChoice] ?? flag.description,\n    ...(PROVIDER_AUTH_CHOICE_OPTION_HINTS[flag.authChoice]\n      ? { hint: PROVIDER_AUTH_CHOICE_OPTION_HINTS[flag.authChoice] }\n      : {}),\n  }));\n}": "function buildProviderAuthChoiceOptions(): AuthChoiceOption[] {\n  const choices = ONBOARD_PROVIDER_AUTH_FLAGS.map((flag) => ({\n    value: flag.authChoice,\n    label: PROVIDER_AUTH_CHOICE_OPTION_LABELS[flag.authChoice] ?? flag.description,\n    ...(PROVIDER_AUTH_CHOICE_OPTION_HINTS[flag.authChoice]\n      ? { hint: PROVIDER_AUTH_CHOICE_OPTION_HINTS[flag.authChoice] }\n      : {}),\n  }));\n  choices.push({\n    value: \"shengsuanyun-api-key\" as AuthChoice,\n    label: \"胜算云 API 密钥\",\n    hint: \"国内 API 聚合平台 - shengsuanyun.com\",\n  });\n  return choices;\n}"
   }
 }
