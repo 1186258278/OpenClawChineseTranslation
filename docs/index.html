@@ -1336,7 +1336,7 @@
                 <span class="md-doc-title" id="mdTitle"></span>
             </div>
             <div class="md-toolbar-right">
-                <a class="md-github-link" id="mdGithubLink" href="#" target="_blank">在 GitHub 上查看原文</a>
+                <a class="md-github-link" id="mdGithubLink" href="javascript:void(0)" target="_blank">在 GitHub 上查看原文</a>
             </div>
         </div>
         <div class="md-body">
@@ -1425,6 +1425,7 @@
         // Markdown 阅读器
         var GITHUB_DOCS = 'https://github.com/1186258278/OpenClawChineseTranslation/blob/main/docs/';
         var GITHUB_ROOT = 'https://github.com/1186258278/OpenClawChineseTranslation/blob/main/';
+        var RAW_ROOT = 'https://raw.githubusercontent.com/1186258278/OpenClawChineseTranslation/main/';
         var docCache = {};
 
         // 配置 marked：为 heading 生成 GitHub 兼容的 ID
@@ -1461,7 +1462,10 @@
 
             content.innerHTML = '<div class="md-loading">加载中...</div>';
 
-            fetch(file)
+            // README.md 在仓库根目录，Pages 上不存在，用 GitHub raw 地址加载
+            var fetchUrl = (file === '../README.md') ? RAW_ROOT + 'README.md' : file;
+
+            fetch(fetchUrl)
                 .then(function(res) {
                     if (!res.ok) throw new Error(res.status);
                     return res.text();
@@ -1473,8 +1477,8 @@
                 .catch(function() {
                     var ghUrl = (file === '../README.md') ? GITHUB_ROOT + 'README.md' : GITHUB_DOCS + file;
                     content.innerHTML = '<div class="md-error">' +
-                        '<p>文档加载失败</p>' +
-                        '<a class="btn btn-primary" href="' + ghUrl + '" target="_blank">在 GitHub 上查看原文</a>' +
+                        '<p>文档加载失败，请点击下方按钮查看原文</p>' +
+                        '<a class="btn btn-primary" href="' + ghUrl + '" target="_blank" style="color:#fff">在 GitHub 上查看原文</a>' +
                         '</div>';
                 });
         }
