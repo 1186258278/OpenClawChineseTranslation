@@ -3,42 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- SEO 核心标签 -->
     <title>OpenClaw 汉化版 - 开源 AI 助手「龙虾爪」中文版 | WhatsApp/Telegram/Discord</title>
-    <meta name="description" content="🦞 OpenClaw 汉化发行版 - 开源个人 AI 助手中文版，支持 WhatsApp、Telegram、Discord、Slack 等聊天平台。每小时自动同步官方更新，CLI + Dashboard 全中文界面，npm 一键安装。">
-    <meta name="keywords" content="OpenClaw, Clawd, Moltbot, OpenClaw汉化, OpenClaw中文版, AI助手, 个人AI助手, 龙虾爪, lobster, WhatsApp机器人, Telegram机器人, Discord机器人, Slack机器人, 聊天机器人, ChatGPT, Claude, Claude AI, LLM, 开源AI, 汉化版, 中文版, npm, Node.js, 自动化助手, 智能助手, steipete, personal-ai-assistant">
+    <meta name="description" content="OpenClaw 汉化发行版 - 开源个人 AI 助手中文版，支持 WhatsApp、Telegram、Discord、Slack 等聊天平台。每小时自动同步官方更新，CLI + Dashboard 全中文界面，npm 一键安装。">
+    <meta name="keywords" content="OpenClaw, OpenClaw汉化, OpenClaw中文版, AI助手, 个人AI助手, 龙虾爪, WhatsApp机器人, Telegram机器人, Discord机器人, 聊天机器人, 开源AI, 汉化版, 中文版, npm, Node.js">
     <meta name="author" content="武汉晴辰天下网络科技有限公司">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://openclaw.qt.cool/">
-    
-    <!-- Open Graph (Facebook/微信分享) -->
+
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://openclaw.qt.cool/">
     <meta property="og:title" content="OpenClaw 汉化版 - 开源 AI 助手「龙虾爪」中文版">
-    <meta property="og:description" content="🦞 开源个人 AI 助手中文版，支持 WhatsApp、Telegram、Discord 等聊天平台，每小时自动同步官方更新。">
+    <meta property="og:description" content="开源个人 AI 助手中文版，支持 WhatsApp、Telegram、Discord 等聊天平台，每小时自动同步官方更新。">
     <meta property="og:image" content="https://openclaw.qt.cool/image/5.png">
     <meta property="og:locale" content="zh_CN">
     <meta property="og:site_name" content="OpenClaw 汉化版">
-    
+
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="OpenClaw 汉化版 - 开源 AI 助手中文版">
-    <meta name="twitter:description" content="🦞 支持 WhatsApp/Telegram/Discord，每小时同步更新，CLI + Dashboard 全中文界面">
+    <meta name="twitter:description" content="支持 WhatsApp/Telegram/Discord，每小时同步更新，CLI + Dashboard 全中文界面">
     <meta name="twitter:image" content="https://openclaw.qt.cool/image/5.png">
-    
-    <!-- 其他 SEO 标签 -->
+
     <meta name="theme-color" content="#dc2626">
-    <meta name="application-name" content="OpenClaw 汉化版">
-    <meta name="apple-mobile-web-app-title" content="OpenClaw CN">
-    
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦞</text></svg>">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
+
     <style>
         :root {
             --primary: #dc2626;
@@ -53,33 +44,29 @@
             --border: #27272a;
             --gradient-start: #dc2626;
             --gradient-end: #f97316;
+            --blue: #3b82f6;
+            --green: #22c55e;
+            --purple: #a855f7;
+            --amber: #f59e0b;
+            --cyan: #06b6d4;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
             background: var(--bg-dark);
             color: var(--text-primary);
             line-height: 1.6;
             overflow-x: hidden;
         }
 
-        /* 背景动画 */
         .bg-gradient {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(ellipse at 20% 20%, rgba(220, 38, 38, 0.15) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 80%, rgba(249, 115, 22, 0.1) 0%, transparent 50%),
-                radial-gradient(ellipse at 50% 50%, rgba(220, 38, 38, 0.05) 0%, transparent 70%);
+            top: 0; left: 0; width: 100%; height: 100%;
+            background:
+                radial-gradient(ellipse at 20% 20%, rgba(220,38,38,0.12) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(249,115,22,0.08) 0%, transparent 50%);
             pointer-events: none;
             z-index: 0;
         }
@@ -94,13 +81,11 @@
 
         /* 导航 */
         nav {
-            padding: 20px 0;
+            padding: 16px 0;
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
+            top: 0; left: 0; right: 0;
             z-index: 100;
-            background: rgba(15, 15, 15, 0.8);
+            background: rgba(15,15,15,0.85);
             backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border);
         }
@@ -114,16 +99,14 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 12px;
-            font-size: 1.5rem;
+            gap: 10px;
+            font-size: 1.4rem;
             font-weight: 700;
             text-decoration: none;
             color: var(--text-primary);
         }
 
-        .logo-icon {
-            font-size: 2rem;
-        }
+        .logo-icon { font-size: 1.8rem; }
 
         .logo-text {
             background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
@@ -134,24 +117,36 @@
 
         .nav-links {
             display: flex;
-            gap: 32px;
+            gap: 28px;
             align-items: center;
         }
 
         .nav-links a {
             color: var(--text-secondary);
             text-decoration: none;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             transition: color 0.2s;
         }
 
-        .nav-links a:hover {
-            color: var(--text-primary);
+        .nav-links a:hover { color: var(--text-primary); }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        .hamburger span {
+            width: 22px; height: 2px;
+            background: var(--text-secondary);
+            transition: all 0.3s;
         }
 
         /* Hero */
         .hero {
-            padding: 180px 0 100px;
+            padding: 140px 0 80px;
             text-align: center;
         }
 
@@ -159,19 +154,18 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 8px 16px;
+            padding: 6px 14px;
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: 9999px;
-            font-size: 0.875rem;
+            font-size: 0.85rem;
             color: var(--text-secondary);
-            margin-bottom: 32px;
+            margin-bottom: 28px;
         }
 
         .badge-dot {
-            width: 8px;
-            height: 8px;
-            background: #22c55e;
+            width: 8px; height: 8px;
+            background: var(--green);
             border-radius: 50%;
             animation: pulse 2s infinite;
         }
@@ -182,10 +176,10 @@
         }
 
         .hero h1 {
-            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
             font-weight: 700;
-            line-height: 1.1;
-            margin-bottom: 24px;
+            line-height: 1.15;
+            margin-bottom: 20px;
         }
 
         .hero h1 span {
@@ -196,26 +190,27 @@
         }
 
         .hero-subtitle {
-            font-size: 1.25rem;
+            font-size: 1.15rem;
             color: var(--text-secondary);
-            max-width: 600px;
-            margin: 0 auto 40px;
+            max-width: 560px;
+            margin: 0 auto 36px;
         }
 
         .hero-buttons {
             display: flex;
-            gap: 16px;
+            gap: 14px;
             justify-content: center;
             flex-wrap: wrap;
         }
 
+        /* 按钮 */
         .btn {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 14px 28px;
-            border-radius: 12px;
-            font-size: 1rem;
+            padding: 12px 24px;
+            border-radius: 10px;
+            font-size: 0.95rem;
             font-weight: 600;
             text-decoration: none;
             transition: all 0.2s;
@@ -226,12 +221,12 @@
         .btn-primary {
             background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
             color: white;
-            box-shadow: 0 4px 20px rgba(220, 38, 38, 0.3);
+            box-shadow: 0 4px 20px rgba(220,38,38,0.3);
         }
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 30px rgba(220, 38, 38, 0.4);
+            box-shadow: 0 6px 30px rgba(220,38,38,0.4);
         }
 
         .btn-secondary {
@@ -245,32 +240,95 @@
             border-color: var(--text-muted);
         }
 
-        /* 安装区域 */
-        .install-section {
-            padding: 80px 0;
-        }
+        /* 通用板块 */
+        .section { padding: 72px 0; }
 
         .section-title {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: 700;
             text-align: center;
-            margin-bottom: 48px;
+            margin-bottom: 12px;
         }
 
+        .section-desc {
+            text-align: center;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            font-size: 0.95rem;
+        }
+
+        /* 快速入门 - 4步卡片 */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+
+        .step-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 24px 20px;
+            text-align: center;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .step-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .step-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px; height: 36px;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 0.95rem;
+            margin-bottom: 14px;
+        }
+
+        .step-card h3 {
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        .step-card p {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        .step-card code {
+            display: block;
+            background: #0d0d0d;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 8px 10px;
+            margin-top: 10px;
+            font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+            font-size: 0.78rem;
+            color: #e5e5e5;
+            word-break: break-all;
+        }
+
+        /* 安装区域 */
         .install-tabs {
             display: flex;
             justify-content: center;
-            gap: 12px;
-            margin-bottom: 24px;
+            gap: 10px;
+            margin-bottom: 20px;
         }
 
         .tab-btn {
-            padding: 10px 24px;
+            padding: 8px 20px;
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: 8px;
             color: var(--text-secondary);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             cursor: pointer;
             transition: all 0.2s;
         }
@@ -281,61 +339,53 @@
             color: white;
         }
 
-        .tab-btn:hover:not(.active) {
-            background: var(--bg-card-hover);
-        }
+        .tab-btn:hover:not(.active) { background: var(--bg-card-hover); }
 
         .install-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 32px;
+            border-radius: 14px;
+            padding: 28px;
             max-width: 800px;
             margin: 0 auto;
         }
 
-        .install-method {
-            display: none;
-        }
-
-        .install-method.active {
-            display: block;
-        }
+        .install-method { display: none; }
+        .install-method.active { display: block; }
 
         .code-block {
             background: #0d0d0d;
             border: 1px solid var(--border);
             border-radius: 8px;
-            padding: 16px 20px;
-            margin: 16px 0;
+            padding: 14px 18px;
+            margin: 12px 0;
             position: relative;
             overflow-x: auto;
         }
 
         .code-block code {
-            font-family: 'SF Mono', 'Fira Code', monospace;
-            font-size: 0.9rem;
+            font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+            font-size: 0.85rem;
             color: #e5e5e5;
             white-space: pre-wrap;
             word-break: break-all;
         }
 
         .code-label {
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             color: var(--text-muted);
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         .copy-btn {
             position: absolute;
-            top: 12px;
-            right: 12px;
-            padding: 6px 12px;
+            top: 10px; right: 10px;
+            padding: 4px 10px;
             background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 6px;
+            border-radius: 5px;
             color: var(--text-secondary);
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             cursor: pointer;
             transition: all 0.2s;
         }
@@ -344,138 +394,185 @@
             background: var(--bg-card-hover);
             color: var(--text-primary);
         }
-
-        /* 特性 */
-        .features {
-            padding: 80px 0;
+        /* 文档中心 */
+        .docs-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
         }
 
+        .doc-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 24px;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.3s;
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+
+        .doc-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(220,38,38,0.1);
+        }
+
+        .doc-icon {
+            flex-shrink: 0;
+            width: 44px; height: 44px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+        }
+
+        .doc-card h3 { font-size: 1.05rem; margin-bottom: 6px; }
+        .doc-card p { color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 8px; }
+
+        .doc-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .doc-tag {
+            padding: 2px 8px;
+            background: rgba(255,255,255,0.06);
+            border-radius: 4px;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        /* 命令速查 */
+        .cmd-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .cmd-group {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 22px;
+        }
+
+        .cmd-group h3 {
+            font-size: 0.95rem;
+            margin-bottom: 14px;
+            color: var(--text-primary);
+        }
+
+        .cmd-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 6px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+        }
+
+        .cmd-row:last-child { border-bottom: none; }
+
+        .cmd-row code {
+            font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+            font-size: 0.8rem;
+            color: var(--primary);
+            background: rgba(220,38,38,0.08);
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .cmd-row span {
+            color: var(--text-secondary);
+            font-size: 0.82rem;
+        }
+
+        /* 特性 */
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
         }
 
         .feature-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 28px;
+            border-radius: 14px;
+            padding: 24px;
             transition: all 0.3s;
         }
 
         .feature-card:hover {
             border-color: var(--primary);
-            transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(220, 38, 38, 0.1);
+            transform: translateY(-3px);
         }
 
-        .feature-icon {
-            font-size: 2rem;
-            margin-bottom: 16px;
-        }
+        .feature-icon { font-size: 1.8rem; margin-bottom: 12px; }
+        .feature-card h3 { font-size: 1.05rem; margin-bottom: 8px; }
+        .feature-card p { color: var(--text-secondary); font-size: 0.85rem; }
 
-        .feature-card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 12px;
-        }
-
-        .feature-card p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-        }
-
-        /* 截图展示 */
-        .screenshots {
-            padding: 80px 0;
-            background: linear-gradient(180deg, transparent, rgba(220, 38, 38, 0.03), transparent);
-        }
-
+        /* 截图 */
         .screenshots-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin-top: 48px;
-        }
-
-        @media (max-width: 1024px) {
-            .screenshots-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 640px) {
-            .screenshots-grid {
-                grid-template-columns: 1fr;
-            }
+            gap: 16px;
         }
 
         .screenshot-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 16px;
+            border-radius: 14px;
             overflow: hidden;
             transition: all 0.3s;
         }
 
         .screenshot-card:hover {
             border-color: var(--primary);
-            transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(220, 38, 38, 0.15);
+            transform: translateY(-3px);
         }
 
         .screenshot-card img {
-            width: 100%;
-            height: auto;
+            width: 100%; height: auto;
             display: block;
             cursor: zoom-in;
         }
 
         .screenshot-card .caption {
-            padding: 16px 20px;
+            padding: 12px 16px;
             text-align: center;
         }
 
-        .screenshot-card .caption h4 {
-            font-size: 1rem;
-            margin-bottom: 4px;
-        }
+        .screenshot-card .caption h4 { font-size: 0.9rem; margin-bottom: 2px; }
+        .screenshot-card .caption p { color: var(--text-muted); font-size: 0.8rem; }
 
-        .screenshot-card .caption p {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-        }
-
-        /* 图片放大模态框 */
+        /* 模态框 */
         .modal {
             display: none;
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.95);
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.95);
             z-index: 1000;
             justify-content: center;
             align-items: center;
             cursor: zoom-out;
         }
 
-        .modal.active {
-            display: flex;
-        }
+        .modal.active { display: flex; }
 
         .modal img {
-            max-width: 95%;
-            max-height: 95%;
+            max-width: 95%; max-height: 95%;
             border-radius: 8px;
-            box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
         }
 
         .modal-close {
             position: absolute;
-            top: 20px;
-            right: 30px;
+            top: 20px; right: 30px;
             font-size: 2rem;
             color: white;
             cursor: pointer;
@@ -483,88 +580,104 @@
             transition: opacity 0.2s;
         }
 
-        .modal-close:hover {
-            opacity: 1;
-        }
+        .modal-close:hover { opacity: 1; }
 
-        /* 什么是 OpenClaw */
-        .about {
-            padding: 80px 0;
-        }
-
-        .about-content {
-            max-width: 800px;
+        /* 社区 */
+        .community-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            max-width: 900px;
             margin: 0 auto;
+        }
+
+        .community-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 28px 20px;
+            text-align: center;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.3s;
+        }
+
+        .community-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .community-icon { font-size: 2.2rem; margin-bottom: 12px; }
+        .community-card h3 { font-size: 1rem; margin-bottom: 6px; }
+        .community-card p { color: var(--text-secondary); font-size: 0.82rem; }
+
+        .qr-section {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            margin-top: 32px;
+            flex-wrap: wrap;
+        }
+
+        .qr-item {
             text-align: center;
         }
 
-        .about-content h2 {
-            font-size: 2rem;
-            margin-bottom: 24px;
-        }
-
-        .about-content p {
-            color: var(--text-secondary);
-            font-size: 1.1rem;
-            margin-bottom: 16px;
-        }
-
-        .quote-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
+        .qr-item img {
+            width: 160px; height: 160px;
             border-radius: 12px;
-            padding: 24px;
-            margin: 32px 0;
-            font-style: italic;
-            color: var(--text-secondary);
+            border: 1px solid var(--border);
+            background: white;
+            padding: 8px;
         }
 
-        .quote-card cite {
-            display: block;
-            margin-top: 12px;
-            font-style: normal;
-            color: var(--text-muted);
-            font-size: 0.9rem;
+        .qr-item p {
+            margin-top: 10px;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        .qr-item a {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.82rem;
         }
 
         /* Footer */
         footer {
-            padding: 60px 0 30px;
+            padding: 48px 0 24px;
             border-top: 1px solid var(--border);
         }
 
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+            margin-bottom: 32px;
         }
 
         .footer-section h4 {
-            font-size: 1rem;
-            margin-bottom: 16px;
-            color: var(--text-primary);
+            font-size: 0.95rem;
+            margin-bottom: 14px;
         }
 
         .footer-section a {
             display: block;
             color: var(--text-secondary);
             text-decoration: none;
-            font-size: 0.9rem;
-            margin-bottom: 10px;
+            font-size: 0.85rem;
+            margin-bottom: 8px;
             transition: color 0.2s;
         }
 
-        .footer-section a:hover {
-            color: var(--primary);
-        }
+        .footer-section a:hover { color: var(--primary); }
 
         .footer-bottom {
             text-align: center;
-            padding-top: 30px;
+            padding-top: 24px;
             border-top: 1px solid var(--border);
             color: var(--text-muted);
-            font-size: 0.85rem;
+            font-size: 0.8rem;
         }
 
         .footer-bottom a {
@@ -572,66 +685,48 @@
             text-decoration: none;
         }
 
-        .footer-bottom a:hover {
-            color: var(--text-secondary);
-        }
+        .footer-bottom a:hover { color: var(--text-secondary); }
 
         /* 响应式 */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .hero {
-                padding: 140px 0 60px;
-            }
-            
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .btn {
-                width: 100%;
-                max-width: 300px;
-                justify-content: center;
-            }
+        @media (max-width: 1024px) {
+            .screenshots-grid { grid-template-columns: repeat(2, 1fr); }
+            .features-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
-        /* 公告提示条 */
-        .announce-bar {
-            background: rgba(39, 39, 42, 0.8);
-            border-bottom: 1px solid var(--border);
-            color: var(--text-secondary);
-            text-align: center;
-            padding: 6px 16px;
-            font-size: 0.8rem;
-            line-height: 1.5;
-            z-index: 1001;
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .nav-links.open {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%; left: 0; right: 0;
+                background: rgba(15,15,15,0.95);
+                backdrop-filter: blur(12px);
+                padding: 16px 24px;
+                gap: 14px;
+                border-bottom: 1px solid var(--border);
+            }
+            .hamburger { display: flex; }
+            .hero { padding: 120px 0 50px; }
+            .hero-buttons { flex-direction: column; align-items: center; }
+            .btn { width: 100%; max-width: 280px; justify-content: center; }
+            .steps-grid { grid-template-columns: repeat(2, 1fr); }
+            .docs-grid { grid-template-columns: 1fr; }
+            .cmd-grid { grid-template-columns: 1fr; }
+            .features-grid { grid-template-columns: 1fr; }
+            .screenshots-grid { grid-template-columns: 1fr; }
+            .community-grid { grid-template-columns: 1fr; }
+            .footer-content { grid-template-columns: repeat(2, 1fr); }
         }
-        .announce-bar a {
-            color: var(--primary);
-            text-decoration: none;
+
+        @media (max-width: 480px) {
+            .steps-grid { grid-template-columns: 1fr; }
+            .footer-content { grid-template-columns: 1fr; }
         }
-        .announce-bar a:hover {
-            text-decoration: underline;
-        }
-        .announce-bar code {
-            background: rgba(255,255,255,0.08);
-            padding: 1px 5px;
-            border-radius: 3px;
-            font-size: 0.85em;
-            color: var(--text-primary);
-        }
-    </style>
+</style>
 </head>
 <body>
     <div class="bg-gradient"></div>
-
-    <!-- 公告 -->
-    <div class="announce-bar">
-        旧版用户遇到 <code>Missing workspace template</code>？请升级：<code>npm install -g @qingchencloud/openclaw-zh@latest</code> · <a href="FAQ.md#missing-workspace-template-agentsmd">查看详情</a>
-    </div>
 
     <!-- 导航 -->
     <nav>
@@ -640,13 +735,17 @@
                 <span class="logo-icon">🦞</span>
                 <span class="logo-text">OpenClaw CN</span>
             </a>
-            <div class="nav-links">
-                <a href="#features">特性</a>
+            <div class="nav-links" id="navLinks">
+                <a href="#quickstart">快速入门</a>
                 <a href="#install">安装</a>
+                <a href="#docs">文档中心</a>
+                <a href="#commands">命令速查</a>
                 <a href="#screenshots">截图</a>
+                <a href="#community">社区</a>
                 <a href="https://github.com/1186258278/OpenClawChineseTranslation" target="_blank">GitHub</a>
-                <a href="https://openclaw.qt.cool/" target="_blank">🔥 汉化官网</a>
-                <a href="https://openclaw.ai/" target="_blank">原版官网</a>
+            </div>
+            <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
             </div>
         </div>
     </nav>
@@ -661,203 +760,291 @@
             <h1>让 <span>AI 助手</span><br>更懂中国用户</h1>
             <p class="hero-subtitle">
                 OpenClaw 汉化发行版 — 开源个人 AI 助手平台中文版<br>
-                通过 WhatsApp/Telegram/Discord 与你的 AI 助手对话
+                通过 WhatsApp / Telegram / Discord 与你的 AI 助手对话
             </p>
             <div class="hero-buttons">
-                <a href="#install" class="btn btn-primary">
-                    🚀 立即安装
-                </a>
-                <a href="https://github.com/1186258278/OpenClawChineseTranslation" target="_blank" class="btn btn-secondary">
-                    📦 查看源码
-                </a>
+                <a href="#install" class="btn btn-primary">立即安装</a>
+                <a href="#docs" class="btn btn-secondary">查看文档</a>
+                <a href="https://github.com/1186258278/OpenClawChineseTranslation" target="_blank" class="btn btn-secondary">GitHub</a>
             </div>
         </div>
     </section>
 
-    <!-- 安装 -->
-    <section class="install-section" id="install">
+    <!-- 快速入门 4 步 -->
+    <section class="section" id="quickstart">
         <div class="container">
-            <h2 class="section-title">⚡ 一键安装</h2>
-            
+            <h2 class="section-title">4 步上手</h2>
+            <p class="section-desc">需要 Node.js >= 22（<a href="https://nodejs.org/" target="_blank" style="color:var(--primary)">下载</a>），检查版本：node -v</p>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-num">1</div>
+                    <h3>安装</h3>
+                    <p>npm 全局安装汉化版</p>
+                    <code>npm i -g @qingchencloud/openclaw-zh@latest</code>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">2</div>
+                    <h3>初始化</h3>
+                    <p>运行向导配置 AI 模型</p>
+                    <code>openclaw onboard --install-daemon</code>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">3</div>
+                    <h3>启动网关</h3>
+                    <p>后台运行服务</p>
+                    <code>openclaw gateway</code>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">4</div>
+                    <h3>打开控制台</h3>
+                    <p>浏览器自动打开中文界面</p>
+                    <code>openclaw dashboard</code>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 安装方式 -->
+    <section class="section" id="install" style="background: linear-gradient(180deg, transparent, rgba(220,38,38,0.03), transparent);">
+        <div class="container">
+            <h2 class="section-title">安装方式</h2>
+            <p class="section-desc">三种方式任选，脚本安装最省心</p>
+
             <div class="install-tabs">
                 <button class="tab-btn active" onclick="switchTab('script')">脚本安装</button>
                 <button class="tab-btn" onclick="switchTab('npm')">npm 安装</button>
-                <button class="tab-btn" onclick="switchTab('docker')">🐳 Docker 部署</button>
+                <button class="tab-btn" onclick="switchTab('docker')">Docker 部署</button>
             </div>
-            
+
             <div class="install-card">
                 <div class="install-method active" id="method-script">
-                    <div class="code-label">Windows PowerShell（推荐先审查脚本）</div>
+                    <div class="code-label">Windows PowerShell</div>
                     <div class="code-block">
-                        <code># 下载并执行安装脚本
-Invoke-WebRequest -Uri "https://cdn.jsdelivr.net/gh/1186258278/OpenClawChineseTranslation@main/install.ps1" -OutFile "install.ps1"; .\install.ps1</code>
+                        <code>Invoke-WebRequest -Uri "https://cdn.jsdelivr.net/gh/1186258278/OpenClawChineseTranslation@main/install.ps1" -OutFile "install.ps1"; .\install.ps1</code>
                         <button class="copy-btn" onclick="copyCode(this)">复制</button>
                     </div>
-                    
-                    <div class="code-label">macOS / Linux（推荐先审查脚本）</div>
+                    <div class="code-label">macOS / Linux</div>
                     <div class="code-block">
-                        <code># 下载并执行安装脚本
-curl -fsSL -o install.sh https://cdn.jsdelivr.net/gh/1186258278/OpenClawChineseTranslation@main/install.sh && bash install.sh</code>
+                        <code>curl -fsSL -o install.sh https://cdn.jsdelivr.net/gh/1186258278/OpenClawChineseTranslation@main/install.sh && bash install.sh</code>
                         <button class="copy-btn" onclick="copyCode(this)">复制</button>
                     </div>
-                    
-                    <p style="text-align: center; color: var(--text-muted); margin-top: 16px; font-size: 0.85rem;">
-                        🔒 开源脚本，可在 <a href="https://github.com/1186258278/OpenClawChineseTranslation/blob/main/install.sh" target="_blank" style="color: var(--primary);">GitHub</a> 审查源码
+                    <p style="text-align:center;color:var(--text-muted);margin-top:14px;font-size:0.82rem;">
+                        开源脚本，可在 <a href="https://github.com/1186258278/OpenClawChineseTranslation/blob/main/install.sh" target="_blank" style="color:var(--primary)">GitHub</a> 审查源码
                     </p>
                 </div>
-                
+
                 <div class="install-method" id="method-npm">
-                    <div class="code-label">使用 npm 全局安装</div>
+                    <div class="code-label">npm 全局安装</div>
                     <div class="code-block">
                         <code>npm install -g @qingchencloud/openclaw-zh@latest</code>
                         <button class="copy-btn" onclick="copyCode(this)">复制</button>
                     </div>
-                    
                     <div class="code-label">安装后运行</div>
                     <div class="code-block">
                         <code>openclaw onboard</code>
                         <button class="copy-btn" onclick="copyCode(this)">复制</button>
                     </div>
                 </div>
-                
+
                 <div class="install-method" id="method-docker">
-                    <div class="code-label">🚀 一键部署脚本（推荐，自动配置远程访问）</div>
+                    <div class="code-label">一键部署脚本（推荐，自动配置远程访问）</div>
                     <div class="code-block">
-                        <code># Linux / macOS
-curl -fsSL https://cdn.jsdelivr.net/gh/1186258278/OpenClawChineseTranslation@main/docker-deploy.sh | bash</code>
+                        <code>curl -fsSL https://cdn.jsdelivr.net/gh/1186258278/OpenClawChineseTranslation@main/docker-deploy.sh | bash</code>
                         <button class="copy-btn" onclick="copyCode(this)">复制</button>
                     </div>
-                    
-                    <div class="code-label">快速启动（本地访问，需先初始化）</div>
+                    <div class="code-label">Docker Compose</div>
                     <div class="code-block">
-                        <code># 1. 初始化配置
-docker run --rm -v openclaw-data:/root/.openclaw ghcr.io/1186258278/openclaw-zh:nightly openclaw setup
-# 2. 设置模式并启动
-docker run --rm -v openclaw-data:/root/.openclaw ghcr.io/1186258278/openclaw-zh:nightly openclaw config set gateway.mode local
-docker run -d --name openclaw -p 18789:18789 -v openclaw-data:/root/.openclaw ghcr.io/1186258278/openclaw-zh:nightly openclaw gateway run</code>
+                        <code>curl -fsSL https://cdn.jsdelivr.net/gh/1186258278/OpenClawChineseTranslation@main/docker-compose.yml -o docker-compose.yml && docker-compose up -d</code>
                         <button class="copy-btn" onclick="copyCode(this)">复制</button>
                     </div>
-                    
-                    <div class="code-label">使用 Docker Compose</div>
-                    <div class="code-block">
-                        <code># 下载配置并启动
-curl -fsSL https://cdn.jsdelivr.net/gh/1186258278/OpenClawChineseTranslation@main/docker-compose.yml -o docker-compose.yml && docker-compose up -d</code>
-                        <button class="copy-btn" onclick="copyCode(this)">复制</button>
-                    </div>
-                    
-                    <p style="text-align: center; color: var(--text-muted); margin-top: 16px; font-size: 0.85rem;">
-                        ⚠️ 服务器远程访问需额外配置，详见 <a href="https://github.com/1186258278/OpenClawChineseTranslation#-%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2%E8%BF%9C%E7%A8%8B%E8%AE%BF%E9%97%AE" target="_blank" style="color: var(--primary);">README 文档</a>
-                    </p>
                 </div>
-                
-                <p style="text-align: center; color: var(--text-muted); margin-top: 20px; font-size: 0.9rem;">
-                    💡 脚本/npm 需要 Node.js >= 22.12.0 | Docker 需要 Docker Engine | 
-                    <a href="https://github.com/1186258278/OpenClawChineseTranslation/releases" style="color: var(--primary);">查看所有版本</a>
+
+                <p style="text-align:center;color:var(--text-muted);margin-top:18px;font-size:0.85rem;">
+                    脚本/npm 需要 Node.js >= 22.12.0 | Docker 需要 Docker Engine |
+                    <a href="https://github.com/1186258278/OpenClawChineseTranslation/releases" style="color:var(--primary)">查看所有版本</a>
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- 特性 -->
-    <section class="features" id="features">
+    <!-- 文档中心 -->
+    <section class="section" id="docs">
         <div class="container">
-            <h2 class="section-title">✨ 为什么选择我们</h2>
-            
+            <h2 class="section-title">文档中心</h2>
+            <p class="section-desc">遇到问题？这里有你需要的一切</p>
+
+            <div class="docs-grid">
+                <a href="INSTALL_GUIDE.md" class="doc-card">
+                    <div class="doc-icon" style="background:rgba(59,130,246,0.12);color:var(--blue)">📖</div>
+                    <div>
+                        <h3>安装指南</h3>
+                        <p>从零开始的完整安装教程，包含 Node.js 安装、模型配置、守护进程、内网访问等</p>
+                        <div class="doc-tags">
+                            <span class="doc-tag">前提条件</span>
+                            <span class="doc-tag">初始化配置</span>
+                            <span class="doc-tag">模型配置</span>
+                            <span class="doc-tag">守护进程</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="DOCKER_GUIDE.md" class="doc-card">
+                    <div class="doc-icon" style="background:rgba(6,182,212,0.12);color:var(--cyan)">🐳</div>
+                    <div>
+                        <h3>Docker 部署指南</h3>
+                        <p>一键部署脚本、Docker Compose、远程访问配置、Nginx 反代、Token 认证</p>
+                        <div class="doc-tags">
+                            <span class="doc-tag">一键部署</span>
+                            <span class="doc-tag">远程访问</span>
+                            <span class="doc-tag">Nginx</span>
+                            <span class="doc-tag">错误排查</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="FAQ.md" class="doc-card">
+                    <div class="doc-icon" style="background:rgba(245,158,11,0.12);color:var(--amber)">❓</div>
+                    <div>
+                        <h3>常见问题 FAQ</h3>
+                        <p>安装失败、启动报错、Dashboard 连不上、内网访问、模型配置等高频问题解答</p>
+                        <div class="doc-tags">
+                            <span class="doc-tag">安装问题</span>
+                            <span class="doc-tag">启动问题</span>
+                            <span class="doc-tag">Dashboard</span>
+                            <span class="doc-tag">远程访问</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="CONTRIBUTING.md" class="doc-card">
+                    <div class="doc-icon" style="background:rgba(168,85,247,0.12);color:var(--purple)">🤝</div>
+                    <div>
+                        <h3>贡献指南</h3>
+                        <p>参与汉化翻译、提交 PR、项目结构说明、翻译规范</p>
+                        <div class="doc-tags">
+                            <span class="doc-tag">环境准备</span>
+                            <span class="doc-tag">项目结构</span>
+                            <span class="doc-tag">提交 PR</span>
+                            <span class="doc-tag">翻译规范</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 命令速查 -->
+    <section class="section" id="commands" style="background: linear-gradient(180deg, transparent, rgba(220,38,38,0.03), transparent);">
+        <div class="container">
+            <h2 class="section-title">命令速查</h2>
+            <p class="section-desc">常用 CLI 命令一览，复制即用</p>
+
+            <div class="cmd-grid">
+                <div class="cmd-group">
+                    <h3>基础命令</h3>
+                    <div class="cmd-row"><code>openclaw</code><span>启动</span></div>
+                    <div class="cmd-row"><code>openclaw onboard</code><span>初始化向导</span></div>
+                    <div class="cmd-row"><code>openclaw dashboard</code><span>打开控制台</span></div>
+                    <div class="cmd-row"><code>openclaw config</code><span>查看配置</span></div>
+                    <div class="cmd-row"><code>openclaw skills</code><span>管理技能</span></div>
+                    <div class="cmd-row"><code>openclaw --help</code><span>查看帮助</span></div>
+                </div>
+                <div class="cmd-group">
+                    <h3>网关管理</h3>
+                    <div class="cmd-row"><code>openclaw gateway run</code><span>前台运行</span></div>
+                    <div class="cmd-row"><code>openclaw gateway start</code><span>后台启动</span></div>
+                    <div class="cmd-row"><code>openclaw gateway stop</code><span>停止</span></div>
+                    <div class="cmd-row"><code>openclaw gateway restart</code><span>重启</span></div>
+                    <div class="cmd-row"><code>openclaw gateway status</code><span>查看状态</span></div>
+                    <div class="cmd-row"><code>openclaw gateway install</code><span>开机自启</span></div>
+                </div>
+                <div class="cmd-group">
+                    <h3>维护命令</h3>
+                    <div class="cmd-row"><code>openclaw update</code><span>检查更新</span></div>
+                    <div class="cmd-row"><code>openclaw doctor</code><span>诊断修复</span></div>
+                    <div class="cmd-row"><code>openclaw daemon start</code><span>守护进程启动</span></div>
+                    <div class="cmd-row"><code>openclaw daemon stop</code><span>守护进程停止</span></div>
+                </div>
+                <div class="cmd-group">
+                    <h3>Docker 命令</h3>
+                    <div class="cmd-row"><code>docker restart openclaw</code><span>重启容器</span></div>
+                    <div class="cmd-row"><code>docker logs openclaw</code><span>查看日志</span></div>
+                    <div class="cmd-row"><code>docker-compose up -d</code><span>Compose 启动</span></div>
+                    <div class="cmd-row"><code>docker-compose down</code><span>Compose 停止</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 特性 -->
+    <section class="section" id="features">
+        <div class="container">
+            <h2 class="section-title">为什么选择我们</h2>
+            <p class="section-desc">基于官方源码，深度本地化</p>
+
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">⏱️</div>
                     <h3>每小时自动同步</h3>
-                    <p>基于 GitHub Actions 的 CI/CD 流水线，每小时检查官方更新，零延迟体验新功能。</p>
+                    <p>GitHub Actions CI/CD 流水线，每小时检查官方更新，零延迟体验新功能</p>
                 </div>
-                
                 <div class="feature-card">
                     <div class="feature-icon">🌏</div>
                     <h3>全量深度汉化</h3>
-                    <p>覆盖 CLI 界面、初始化向导、安全提示、帮助信息。符合中文语境的本地化体验。</p>
+                    <p>覆盖 CLI 界面、初始化向导、安全提示、帮助信息，符合中文语境</p>
                 </div>
-                
                 <div class="feature-card">
                     <div class="feature-icon">🚀</div>
                     <h3>CDN 极速下载</h3>
-                    <p>内置 jsDelivr CDN 加速，国内网络环境也能快速安装，告别网络烦恼。</p>
+                    <p>内置 jsDelivr CDN 加速，国内网络环境也能快速安装</p>
                 </div>
-                
                 <div class="feature-card">
                     <div class="feature-icon">💬</div>
                     <h3>多平台聊天</h3>
-                    <p>WhatsApp、Telegram、Discord、Slack、Signal 等主流聊天应用全支持。</p>
+                    <p>WhatsApp、Telegram、Discord、Slack、Signal 等主流聊天应用全支持</p>
                 </div>
-                
                 <div class="feature-card">
                     <div class="feature-icon">🧠</div>
                     <h3>持久记忆</h3>
-                    <p>AI 助手记住你的偏好和上下文，成为真正专属于你的个人助手。</p>
+                    <p>AI 助手记住你的偏好和上下文，成为真正专属于你的个人助手</p>
                 </div>
-                
                 <div class="feature-card">
                     <div class="feature-icon">🔒</div>
                     <h3>隐私优先</h3>
-                    <p>完全运行在你自己的机器上，数据始终在本地，你的消息你做主。</p>
+                    <p>完全运行在你自己的机器上，数据始终在本地，你的消息你做主</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- 截图展示 -->
-    <section class="screenshots" id="screenshots">
+    <section class="section" id="screenshots" style="background: linear-gradient(180deg, transparent, rgba(220,38,38,0.03), transparent);">
         <div class="container">
-            <h2 class="section-title">📸 汉化效果预览</h2>
-            <p style="text-align: center; color: var(--text-secondary); margin-top: -30px; margin-bottom: 20px;">
-                全中文界面，原汁原味的本地化体验
-            </p>
-            
+            <h2 class="section-title">汉化效果预览</h2>
+            <p class="section-desc">全中文界面，原汁原味的本地化体验</p>
+
             <div class="screenshots-grid">
                 <div class="screenshot-card">
-                    <img src="image/5.png" alt="概览仪表板" onclick="openModal(this)">
-                    <div class="caption">
-                        <h4>📊 概览仪表板</h4>
-                        <p>网关状态、实例监控、快捷操作一目了然</p>
-                    </div>
+                    <img src="image/5.png" alt="概览仪表板" onclick="openModal(this)" loading="lazy">
+                    <div class="caption"><h4>概览仪表板</h4><p>网关状态、实例监控、快捷操作</p></div>
                 </div>
-                
                 <div class="screenshot-card">
-                    <img src="image/1.png" alt="对话界面" onclick="openModal(this)">
-                    <div class="caption">
-                        <h4>💬 对话界面</h4>
-                        <p>与 AI 助手实时交互，支持上下文记忆</p>
-                    </div>
+                    <img src="image/1.png" alt="对话界面" onclick="openModal(this)" loading="lazy">
+                    <div class="caption"><h4>对话界面</h4><p>与 AI 助手实时交互</p></div>
                 </div>
-                
                 <div class="screenshot-card">
-                    <img src="image/4.png" alt="渠道管理" onclick="openModal(this)">
-                    <div class="caption">
-                        <h4>📱 渠道管理</h4>
-                        <p>WhatsApp、Telegram、Discord 等全平台支持</p>
-                    </div>
+                    <img src="image/4.png" alt="渠道管理" onclick="openModal(this)" loading="lazy">
+                    <div class="caption"><h4>渠道管理</h4><p>WhatsApp、Telegram 等全平台</p></div>
                 </div>
-                
                 <div class="screenshot-card">
-                    <img src="image/2.png" alt="配置中心" onclick="openModal(this)">
-                    <div class="caption">
-                        <h4>⚙️ 配置中心</h4>
-                        <p>30+ 配置项完整汉化，轻松定制</p>
-                    </div>
+                    <img src="image/2.png" alt="配置中心" onclick="openModal(this)" loading="lazy">
+                    <div class="caption"><h4>配置中心</h4><p>30+ 配置项完整汉化</p></div>
                 </div>
-                
                 <div class="screenshot-card">
-                    <img src="image/3.png" alt="节点配置" onclick="openModal(this)">
-                    <div class="caption">
-                        <h4>🖥️ 节点配置</h4>
-                        <p>执行审批、节点绑定、安全策略管理</p>
-                    </div>
+                    <img src="image/3.png" alt="节点配置" onclick="openModal(this)" loading="lazy">
+                    <div class="caption"><h4>节点配置</h4><p>执行审批、安全策略管理</p></div>
                 </div>
-                
                 <div class="screenshot-card">
-                    <img src="image/6.png" alt="技能插件" onclick="openModal(this)">
-                    <div class="caption">
-                        <h4>🔌 技能插件</h4>
-                        <p>1Password、Apple Notes、Reminders 等丰富扩展</p>
-                    </div>
+                    <img src="image/6.png" alt="技能插件" onclick="openModal(this)" loading="lazy">
+                    <div class="caption"><h4>技能插件</h4><p>1Password、Apple Notes 等扩展</p></div>
                 </div>
             </div>
         </div>
@@ -869,24 +1056,44 @@ curl -fsSL https://cdn.jsdelivr.net/gh/1186258278/OpenClawChineseTranslation@mai
         <img id="modalImage" src="" alt="">
     </div>
 
-    <!-- 关于 OpenClaw -->
-    <section class="about">
+    <!-- 社区交流 -->
+    <section class="section" id="community">
         <div class="container">
-            <div class="about-content">
-                <h2>🦞 什么是 OpenClaw？</h2>
-                <p>
-                    <a href="https://openclaw.ai/" target="_blank" style="color: var(--primary);">OpenClaw</a> 
-                    是由 Peter Steinberger 创建的<strong>开源个人 AI 助手平台</strong>，
-                    在 GitHub 上拥有超过 <strong>100,000+ Stars</strong>。
-                </p>
-                <p>
-                    它可以通过你常用的聊天应用（WhatsApp、Telegram 等）与 AI 助手交互，
-                    管理邮件、日历、浏览网页、读写文件，真正成为你的私人助理。
-                </p>
-                
-                <div class="quote-card">
-                    "这是我第一次感觉自己活在未来。一切 Siri 本该成为的样子，而且远不止如此。"
-                    <cite>— 来自社区用户评价</cite>
+            <h2 class="section-title">社区交流</h2>
+            <p class="section-desc">加入我们，和 2000+ 用户一起交流</p>
+
+            <div class="community-grid">
+                <a href="https://qt.cool/c/OpenClaw" target="_blank" class="community-card">
+                    <div class="community-icon">💬</div>
+                    <h3>QQ 群</h3>
+                    <p>2000 人大群，满员自动切换</p>
+                </a>
+                <a href="https://qt.cool/c/OpenClawWx" target="_blank" class="community-card">
+                    <div class="community-icon">📱</div>
+                    <h3>微信群</h3>
+                    <p>扫码加入，问题随时反馈</p>
+                </a>
+                <a href="https://discord.gg/U9AttmsNHh" target="_blank" class="community-card">
+                    <div class="community-icon">🎮</div>
+                    <h3>Discord</h3>
+                    <p>国际社区，英文交流</p>
+                </a>
+            </div>
+
+            <div class="qr-section">
+                <div class="qr-item">
+                    <a href="https://qt.cool/c/OpenClaw" target="_blank">
+                        <img src="image/OpenClaw-QQ.png" alt="QQ群二维码">
+                    </a>
+                    <p>QQ 交流群</p>
+                    <a href="https://qt.cool/c/OpenClaw" target="_blank">点击链接加入</a>
+                </div>
+                <div class="qr-item">
+                    <a href="https://qt.cool/c/OpenClawWx" target="_blank">
+                        <img src="image/OpenClawWx.png" alt="微信群二维码">
+                    </a>
+                    <p>微信交流群</p>
+                    <a href="https://qt.cool/c/OpenClawWx" target="_blank">点击链接加入</a>
                 </div>
             </div>
         </div>
@@ -898,18 +1105,26 @@ curl -fsSL https://cdn.jsdelivr.net/gh/1186258278/OpenClawChineseTranslation@mai
             <div class="footer-content">
                 <div class="footer-section">
                     <h4>资源</h4>
-                    <a href="https://openclaw.qt.cool/" target="_blank">🔥 官方网站 (推荐)</a>
+                    <a href="https://openclaw.qt.cool/">汉化官网</a>
                     <a href="https://github.com/1186258278/OpenClawChineseTranslation" target="_blank">GitHub 仓库</a>
                     <a href="https://github.com/1186258278/OpenClawChineseTranslation/releases" target="_blank">版本下载</a>
                     <a href="https://www.npmjs.com/package/@qingchencloud/openclaw-zh" target="_blank">npm 包</a>
                 </div>
-                
                 <div class="footer-section">
-                    <h4>支持</h4>
-                    <a href="https://github.com/1186258278/OpenClawChineseTranslation/issues" target="_blank">问题反馈</a>
-                    <a href="https://github.com/1186258278/OpenClawChineseTranslation/blob/main/docs/CONTRIBUTING.md" target="_blank">贡献指南</a>
+                    <h4>文档</h4>
+                    <a href="INSTALL_GUIDE.md">安装指南</a>
+                    <a href="DOCKER_GUIDE.md">Docker 部署</a>
+                    <a href="FAQ.md">常见问题</a>
+                    <a href="CONTRIBUTING.md">贡献指南</a>
+                    <a href="TRANSLATION_GUIDE.md">翻译规范</a>
                 </div>
-                
+                <div class="footer-section">
+                    <h4>社区</h4>
+                    <a href="https://qt.cool/c/OpenClaw" target="_blank">QQ 群</a>
+                    <a href="https://qt.cool/c/OpenClawWx" target="_blank">微信群</a>
+                    <a href="https://discord.gg/U9AttmsNHh" target="_blank">Discord</a>
+                    <a href="https://github.com/1186258278/OpenClawChineseTranslation/issues" target="_blank">问题反馈</a>
+                </div>
                 <div class="footer-section">
                     <h4>友情链接</h4>
                     <a href="https://openclaw.ai/" target="_blank">OpenClaw 官网</a>
@@ -917,20 +1132,12 @@ curl -fsSL https://cdn.jsdelivr.net/gh/1186258278/OpenClawChineseTranslation@mai
                     <a href="https://qingchencloud.com/" target="_blank">晴辰云</a>
                     <a href="https://qt.cool/" target="_blank">产品导航</a>
                 </div>
-                
-                <div class="footer-section">
-                    <h4>关于</h4>
-                    <p style="color: var(--text-secondary); font-size: 0.9rem;">
-                        本项目与 OpenClaw 官方无附属关系。<br>
-                        遵循 MIT 开源协议。
-                    </p>
-                </div>
             </div>
-            
             <div class="footer-bottom">
                 <p>
-                    © 2026 <a href="https://qingchencloud.com/">武汉晴辰天下网络科技有限公司</a> · 
-                    <a href="https://beian.miit.gov.cn/" target="_blank">鄂ICP备2025164966号</a>
+                    &copy; 2026 <a href="https://qingchencloud.com/">武汉晴辰天下网络科技有限公司</a> &middot;
+                    <a href="https://beian.miit.gov.cn/" target="_blank">鄂ICP备2025164966号</a> &middot;
+                    本项目与 OpenClaw 官方无附属关系，遵循 MIT 开源协议
                 </p>
             </div>
         </div>
@@ -939,60 +1146,81 @@ curl -fsSL https://cdn.jsdelivr.net/gh/1186258278/OpenClawChineseTranslation@mai
     <script>
         // 切换安装方式 Tab
         function switchTab(method) {
-            // 更新按钮状态
             document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
             event.target.classList.add('active');
-            
-            // 显示对应内容
             document.querySelectorAll('.install-method').forEach(m => m.classList.remove('active'));
             document.getElementById('method-' + method).classList.add('active');
         }
-        
+
         // 复制代码
         function copyCode(btn) {
-            const code = btn.parentElement.querySelector('code').textContent;
-            navigator.clipboard.writeText(code).then(() => {
-                const originalText = btn.textContent;
-                btn.textContent = '已复制!';
+            var code = btn.parentElement.querySelector('code').textContent;
+            navigator.clipboard.writeText(code).then(function() {
+                var orig = btn.textContent;
+                btn.textContent = '已复制';
                 btn.style.color = '#22c55e';
-                setTimeout(() => {
-                    btn.textContent = originalText;
+                setTimeout(function() {
+                    btn.textContent = orig;
                     btn.style.color = '';
                 }, 2000);
             });
         }
-        
+
         // 平滑滚动
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
+                var target = document.querySelector(this.getAttribute('href'));
                 if (target) {
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
+                // 关闭移动端菜单
+                document.getElementById('navLinks').classList.remove('open');
             });
         });
-        
+
         // 图片放大模态框
         function openModal(img) {
-            const modal = document.getElementById('imageModal');
-            const modalImg = document.getElementById('modalImage');
+            var modal = document.getElementById('imageModal');
+            var modalImg = document.getElementById('modalImage');
             modal.classList.add('active');
             modalImg.src = img.src;
             document.body.style.overflow = 'hidden';
         }
-        
+
         function closeModal() {
-            const modal = document.getElementById('imageModal');
-            modal.classList.remove('active');
+            document.getElementById('imageModal').classList.remove('active');
             document.body.style.overflow = '';
         }
-        
-        // ESC 关闭模态框
+
         document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeModal();
-            }
+            if (e.key === 'Escape') closeModal();
+        });
+
+        // 汉堡菜单
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('open');
+        }
+
+        // 导航栏滚动高亮
+        var sections = document.querySelectorAll('section[id]');
+        var navAnchors = document.querySelectorAll('.nav-links a[href^="#"]');
+
+        window.addEventListener('scroll', function() {
+            var scrollY = window.scrollY + 100;
+            sections.forEach(function(sec) {
+                var top = sec.offsetTop;
+                var height = sec.offsetHeight;
+                var id = sec.getAttribute('id');
+                if (scrollY >= top && scrollY < top + height) {
+                    navAnchors.forEach(function(a) {
+                        a.style.color = '';
+                        if (a.getAttribute('href') === '#' + id) {
+                            a.style.color = 'var(--text-primary)';
+                        }
+                    });
+                }
+            });
         });
     </script>
 </body>
