@@ -1046,6 +1046,19 @@
             <p class="section-desc">遇到问题？这里有你需要的一切</p>
 
             <div class="docs-grid">
+                <div class="doc-card" onclick="openDoc('../README.md','OpenClaw 主页')" style="cursor:pointer">
+                    <div class="doc-icon" style="background:rgba(220,38,38,0.12);color:var(--primary)">🏠</div>
+                    <div>
+                        <h3>项目主页 README</h3>
+                        <p>最完整的项目介绍，包含安装上手、命令速查、更新升级、Docker 部署、手机端、插件扩展等全部内容</p>
+                        <div class="doc-tags">
+                            <span class="doc-tag">快速上手</span>
+                            <span class="doc-tag">命令速查</span>
+                            <span class="doc-tag">更新升级</span>
+                            <span class="doc-tag">插件扩展</span>
+                        </div>
+                    </div>
+                </div>
                 <div class="doc-card" onclick="openDoc('INSTALL_GUIDE.md','安装指南')" style="cursor:pointer">
                     <div class="doc-icon" style="background:rgba(59,130,246,0.12);color:var(--blue)">📖</div>
                     <div>
@@ -1283,6 +1296,7 @@
                 </div>
                 <div class="footer-section">
                     <h4>文档</h4>
+                    <a href="javascript:void(0)" onclick="openDoc('../README.md','OpenClaw 主页')">项目主页</a>
                     <a href="javascript:void(0)" onclick="openDoc('INSTALL_GUIDE.md','安装指南')">安装指南</a>
                     <a href="javascript:void(0)" onclick="openDoc('DOCKER_GUIDE.md','Docker 部署指南')">Docker 部署</a>
                     <a href="javascript:void(0)" onclick="openDoc('FAQ.md','常见问题 FAQ')">常见问题</a>
@@ -1409,8 +1423,23 @@
             });
         });
         // Markdown 阅读器
-        var GITHUB_BASE = 'https://github.com/1186258278/OpenClawChineseTranslation/blob/main/docs/';
+        var GITHUB_DOCS = 'https://github.com/1186258278/OpenClawChineseTranslation/blob/main/docs/';
+        var GITHUB_ROOT = 'https://github.com/1186258278/OpenClawChineseTranslation/blob/main/';
         var docCache = {};
+
+        // 配置 marked：为 heading 生成 GitHub 兼容的 ID
+        var defined_renderer = { heading: function(token) {
+            var text = token.text;
+            var depth = token.depth;
+            // GitHub 风格：去 HTML 标签，去特殊符号（保留中文/字母/数字/空格/连字符），空格→连字符，首尾去连字符
+            var slug = text.toLowerCase()
+                .replace(/<[^>]*>/g, '')
+                .replace(/[^\w\u4e00-\u9fff\u3400-\u4dbf\s-]/g, '')
+                .replace(/\s+/g, '-')
+                .replace(/^-|-$/g, '');
+            return '<h' + depth + ' id="' + slug + '">' + text + '</h' + depth + '>';
+        }};
+        marked.use({ renderer: defined_renderer });
 
         function openDoc(file, title) {
             var reader = document.getElementById('mdReader');
@@ -1419,7 +1448,8 @@
             var githubLink = document.getElementById('mdGithubLink');
 
             titleEl.textContent = title;
-            githubLink.href = GITHUB_BASE + file;
+            // README.md 在仓库根目录，其他在 docs/
+            githubLink.href = (file === '../README.md') ? GITHUB_ROOT + 'README.md' : GITHUB_DOCS + file;
             reader.classList.add('active');
             document.body.style.overflow = 'hidden';
 
@@ -1441,9 +1471,10 @@
                     renderMarkdown(md, content, file);
                 })
                 .catch(function() {
+                    var ghUrl = (file === '../README.md') ? GITHUB_ROOT + 'README.md' : GITHUB_DOCS + file;
                     content.innerHTML = '<div class="md-error">' +
                         '<p>文档加载失败</p>' +
-                        '<a class="btn btn-primary" href="' + GITHUB_BASE + file + '" target="_blank">在 GitHub 上查看原文</a>' +
+                        '<a class="btn btn-primary" href="' + ghUrl + '" target="_blank">在 GitHub 上查看原文</a>' +
                         '</div>';
                 });
         }
@@ -1455,23 +1486,53 @@
 
             container.innerHTML = marked.parse(md);
 
-            // 修复文档内相对链接：其他 .md 文件也用阅读器打开
+            // 修复文档内相对链接
             container.querySelectorAll('a').forEach(function(a) {
                 var href = a.getAttribute('href');
                 if (!href) return;
-                // 相对 .md 链接
+
+                // 锚点链接：阅读器内滚动
+                if (href.charAt(0) === '#') {
+                    a.onclick = function(e) {
+                        e.preventDefault();
+                        var id = href.substring(1);
+                        var target = document.getElementById(id);
+                        if (target) target.scrollIntoView({ behavior: 'smooth' });
+                    };
+                    return;
+                }
+
+                // docs/ 下的 .md 链接（README 中引用 docs/INSTALL_GUIDE.md 等）
+                if (href.match(/^docs\/[A-Z_]+\.md/)) {
+                    a.style.cursor = 'pointer';
+                    a.onclick = function(e) {
+                        e.preventDefault();
+                        var docFile = href.replace('docs/', '').split('#')[0];
+                        openDoc(docFile, a.textContent);
+                    };
+                    return;
+                }
+
+                // 同目录 .md 链接（docs 内互相引用）
                 if (href.match(/^[A-Z_]+\.md/)) {
                     a.style.cursor = 'pointer';
                     a.onclick = function(e) {
                         e.preventDefault();
                         openDoc(href.split('#')[0], a.textContent);
                     };
+                    return;
                 }
-                // ../README.md 链接跳回主页
+
+                // ../README.md 链接用阅读器打开
                 if (href.indexOf('../README.md') === 0) {
-                    a.href = 'https://github.com/1186258278/OpenClawChineseTranslation#readme';
-                    a.target = '_blank';
+                    a.style.cursor = 'pointer';
+                    a.onclick = function(e) {
+                        e.preventDefault();
+                        openDoc('../README.md', 'OpenClaw 主页');
+                    };
+                    return;
                 }
+
                 // 外部链接新窗口打开
                 if (href.indexOf('http') === 0) {
                     a.target = '_blank';
@@ -1480,11 +1541,18 @@
             });
 
             // 修复图片相对路径
+            var isRoot = (file === '../README.md');
             container.querySelectorAll('img').forEach(function(img) {
                 var src = img.getAttribute('src');
-                if (src && src.indexOf('http') !== 0 && src.indexOf('image/') !== 0) {
-                    // docs/ 下的 md 引用 image/ 开头的图片，路径已正确
-                    // 但如果是 ../docs/image/ 之类的，修正一下
+                if (!src || src.indexOf('http') === 0) return;
+                if (isRoot) {
+                    // README.md 中的图片路径相对于仓库根目录（如 docs/image/1.png）
+                    // fetch('../README.md') 时浏览器基准是 docs/，所以 docs/image/ → image/
+                    if (src.indexOf('docs/') === 0) {
+                        img.src = src.replace('docs/', '');
+                    }
+                } else {
+                    // docs/ 下的 md，../docs/image/ 修正
                     if (src.indexOf('../') === 0) {
                         img.src = src.replace('../docs/', '');
                     }
