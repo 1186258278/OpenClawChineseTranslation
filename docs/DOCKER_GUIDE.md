@@ -1,8 +1,15 @@
 # Docker 部署指南
 
-本文档详细介绍如何使用 Docker 部署 OpenClaw 汉化版。
+<p align="center">
+  <a href="../README.md">🏠 首页</a> ·
+  <a href="INSTALL_GUIDE.md">📦 安装指南</a> ·
+  <b>🐳 Docker 部署</b> ·
+  <a href="FAQ.md">❓ 常见问题</a> ·
+  <a href="CONTRIBUTING.md">🤝 贡献指南</a> ·
+  <a href="TRANSLATION_GUIDE.md">📝 翻译规范</a>
+</p>
 
-> 返回 [README](../README.md)
+本文档详细介绍如何使用 Docker 部署 OpenClaw 汉化版。
 
 ---
 

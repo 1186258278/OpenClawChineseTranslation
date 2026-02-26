@@ -1,8 +1,15 @@
 # 常见问题排查手册
 
-遇到问题？按错误消息搜索本页，或按场景分类查找解决方案。
+<p align="center">
+  <a href="../README.md">🏠 首页</a> ·
+  <a href="INSTALL_GUIDE.md">📦 安装指南</a> ·
+  <a href="DOCKER_GUIDE.md">🐳 Docker 部署</a> ·
+  <b>❓ 常见问题</b> ·
+  <a href="CONTRIBUTING.md">🤝 贡献指南</a> ·
+  <a href="TRANSLATION_GUIDE.md">📝 翻译规范</a>
+</p>
 
-> 返回 [README](../README.md) | [Docker 部署指南](DOCKER_GUIDE.md)
+遇到问题？按错误消息搜索本页，或按场景分类查找解决方案。
 
 ---
 

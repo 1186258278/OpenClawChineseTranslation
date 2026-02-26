@@ -1,8 +1,15 @@
 # 详细安装指南
 
-从零开始，一步步安装和配置 OpenClaw 汉化版。
+<p align="center">
+  <a href="../README.md">🏠 首页</a> ·
+  <b>📦 安装指南</b> ·
+  <a href="DOCKER_GUIDE.md">🐳 Docker 部署</a> ·
+  <a href="FAQ.md">❓ 常见问题</a> ·
+  <a href="CONTRIBUTING.md">🤝 贡献指南</a> ·
+  <a href="TRANSLATION_GUIDE.md">📝 翻译规范</a>
+</p>
 
-> 返回 [README](../README.md) | [Docker 部署](DOCKER_GUIDE.md) | [常见问题](FAQ.md)
+从零开始，一步步安装和配置 OpenClaw 汉化版。
 
 ---
 

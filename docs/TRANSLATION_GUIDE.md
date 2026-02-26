@@ -1,5 +1,14 @@
 # 翻译规范
 
+<p align="center">
+  <a href="../README.md">🏠 首页</a> ·
+  <a href="INSTALL_GUIDE.md">📦 安装指南</a> ·
+  <a href="DOCKER_GUIDE.md">🐳 Docker 部署</a> ·
+  <a href="FAQ.md">❓ 常见问题</a> ·
+  <a href="CONTRIBUTING.md">🤝 贡献指南</a> ·
+  <b>📝 翻译规范</b>
+</p>
+
 ## 术语表
 
 保持以下术语的一致性：

@@ -12,6 +12,15 @@
   <a href="https://openclaw.qt.cool/"><img src="https://img.shields.io/badge/🔥_汉化官网-openclaw.qt.cool-dc2626?style=for-the-badge" alt="汉化官网"></a>
 </p>
 
+<p align="center">
+  <b>🏠 首页</b> ·
+  <a href="docs/INSTALL_GUIDE.md">📦 安装指南</a> ·
+  <a href="docs/DOCKER_GUIDE.md">🐳 Docker 部署</a> ·
+  <a href="docs/FAQ.md">❓ 常见问题</a> ·
+  <a href="docs/CONTRIBUTING.md">🤝 贡献指南</a> ·
+  <a href="docs/TRANSLATION_GUIDE.md">📝 翻译规范</a>
+</p>
+
 ---
 
 ## 什么是 OpenClaw？

@@ -1,8 +1,15 @@
 # 贡献指南
 
-感谢你对 **OpenClaw 汉化发行版** 的关注！
+<p align="center">
+  <a href="../README.md">🏠 首页</a> ·
+  <a href="INSTALL_GUIDE.md">📦 安装指南</a> ·
+  <a href="DOCKER_GUIDE.md">🐳 Docker 部署</a> ·
+  <a href="FAQ.md">❓ 常见问题</a> ·
+  <b>🤝 贡献指南</b> ·
+  <a href="TRANSLATION_GUIDE.md">📝 翻译规范</a>
+</p>
 
-> 返回 [README](../README.md)
+感谢你对 **OpenClaw 汉化发行版** 的关注！
 
 ---
 
