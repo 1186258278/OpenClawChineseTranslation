@@ -723,6 +723,177 @@
             .steps-grid { grid-template-columns: 1fr; }
             .footer-content { grid-template-columns: 1fr; }
         }
+
+        /* Markdown 阅读器面板 */
+        .md-reader {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            z-index: 500;
+            background: var(--bg-dark);
+            overflow: hidden;
+        }
+
+        .md-reader.active { display: flex; flex-direction: column; }
+
+        .md-toolbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 24px;
+            background: rgba(15,15,15,0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            flex-shrink: 0;
+        }
+
+        .md-toolbar-left {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .md-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+        }
+
+        .md-back:hover {
+            background: var(--bg-card-hover);
+            color: var(--text-primary);
+        }
+
+        .md-doc-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .md-toolbar-right {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .md-github-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .md-github-link:hover {
+            background: var(--bg-card-hover);
+            color: var(--text-primary);
+        }
+
+        .md-body {
+            flex: 1;
+            overflow-y: auto;
+            padding: 32px 24px;
+        }
+
+        .md-content {
+            max-width: 860px;
+            margin: 0 auto;
+            line-height: 1.75;
+            color: var(--text-secondary);
+        }
+
+        .md-loading {
+            text-align: center;
+            padding: 80px 0;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .md-error {
+            text-align: center;
+            padding: 60px 24px;
+            color: var(--text-muted);
+        }
+
+        .md-error p { margin-bottom: 16px; }
+
+        /* Markdown 渲染样式 */
+        .md-content h1 { font-size: 1.8rem; color: var(--text-primary); margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+        .md-content h2 { font-size: 1.4rem; color: var(--text-primary); margin: 28px 0 12px; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
+        .md-content h3 { font-size: 1.15rem; color: var(--text-primary); margin: 24px 0 10px; }
+        .md-content h4 { font-size: 1rem; color: var(--text-primary); margin: 20px 0 8px; }
+
+        .md-content p { margin: 12px 0; }
+
+        .md-content a { color: var(--primary); text-decoration: none; }
+        .md-content a:hover { text-decoration: underline; }
+
+        .md-content code {
+            background: rgba(255,255,255,0.08);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+            font-size: 0.88em;
+            color: #e5e5e5;
+        }
+
+        .md-content pre {
+            background: #0d0d0d;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 16px;
+            margin: 16px 0;
+            overflow-x: auto;
+        }
+
+        .md-content pre code {
+            background: none;
+            padding: 0;
+            font-size: 0.85rem;
+            line-height: 1.6;
+        }
+
+        .md-content blockquote {
+            border-left: 3px solid var(--primary);
+            margin: 16px 0;
+            padding: 8px 16px;
+            background: rgba(220,38,38,0.05);
+            border-radius: 0 8px 8px 0;
+            color: var(--text-secondary);
+        }
+
+        .md-content ul, .md-content ol { margin: 12px 0; padding-left: 24px; }
+        .md-content li { margin: 6px 0; }
+
+        .md-content table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+        .md-content th, .md-content td { padding: 10px 14px; border: 1px solid var(--border); text-align: left; }
+        .md-content th { background: var(--bg-card); color: var(--text-primary); font-weight: 600; }
+        .md-content tr:nth-child(even) { background: rgba(255,255,255,0.02); }
+
+        .md-content hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+
+        .md-content img { max-width: 100%; border-radius: 8px; margin: 12px 0; }
+
+        @media (max-width: 768px) {
+            .md-toolbar { padding: 10px 16px; }
+            .md-doc-title { display: none; }
+            .md-body { padding: 20px 16px; }
+        }
 </style>
 </head>
 <body>
@@ -875,7 +1046,7 @@
             <p class="section-desc">遇到问题？这里有你需要的一切</p>
 
             <div class="docs-grid">
-                <a href="INSTALL_GUIDE.md" class="doc-card">
+                <div class="doc-card" onclick="openDoc('INSTALL_GUIDE.md','安装指南')" style="cursor:pointer">
                     <div class="doc-icon" style="background:rgba(59,130,246,0.12);color:var(--blue)">📖</div>
                     <div>
                         <h3>安装指南</h3>
@@ -887,8 +1058,8 @@
                             <span class="doc-tag">守护进程</span>
                         </div>
                     </div>
-                </a>
-                <a href="DOCKER_GUIDE.md" class="doc-card">
+                </div>
+                <div class="doc-card" onclick="openDoc('DOCKER_GUIDE.md','Docker 部署指南')" style="cursor:pointer">
                     <div class="doc-icon" style="background:rgba(6,182,212,0.12);color:var(--cyan)">🐳</div>
                     <div>
                         <h3>Docker 部署指南</h3>
@@ -900,8 +1071,8 @@
                             <span class="doc-tag">错误排查</span>
                         </div>
                     </div>
-                </a>
-                <a href="FAQ.md" class="doc-card">
+                </div>
+                <div class="doc-card" onclick="openDoc('FAQ.md','常见问题 FAQ')" style="cursor:pointer">
                     <div class="doc-icon" style="background:rgba(245,158,11,0.12);color:var(--amber)">❓</div>
                     <div>
                         <h3>常见问题 FAQ</h3>
@@ -913,8 +1084,8 @@
                             <span class="doc-tag">远程访问</span>
                         </div>
                     </div>
-                </a>
-                <a href="CONTRIBUTING.md" class="doc-card">
+                </div>
+                <div class="doc-card" onclick="openDoc('CONTRIBUTING.md','贡献指南')" style="cursor:pointer">
                     <div class="doc-icon" style="background:rgba(168,85,247,0.12);color:var(--purple)">🤝</div>
                     <div>
                         <h3>贡献指南</h3>
@@ -926,7 +1097,7 @@
                             <span class="doc-tag">翻译规范</span>
                         </div>
                     </div>
-                </a>
+                </div>
             </div>
         </div>
     </section>
@@ -1112,11 +1283,11 @@
                 </div>
                 <div class="footer-section">
                     <h4>文档</h4>
-                    <a href="INSTALL_GUIDE.md">安装指南</a>
-                    <a href="DOCKER_GUIDE.md">Docker 部署</a>
-                    <a href="FAQ.md">常见问题</a>
-                    <a href="CONTRIBUTING.md">贡献指南</a>
-                    <a href="TRANSLATION_GUIDE.md">翻译规范</a>
+                    <a href="javascript:void(0)" onclick="openDoc('INSTALL_GUIDE.md','安装指南')">安装指南</a>
+                    <a href="javascript:void(0)" onclick="openDoc('DOCKER_GUIDE.md','Docker 部署指南')">Docker 部署</a>
+                    <a href="javascript:void(0)" onclick="openDoc('FAQ.md','常见问题 FAQ')">常见问题</a>
+                    <a href="javascript:void(0)" onclick="openDoc('CONTRIBUTING.md','贡献指南')">贡献指南</a>
+                    <a href="javascript:void(0)" onclick="openDoc('TRANSLATION_GUIDE.md','翻译规范')">翻译规范</a>
                 </div>
                 <div class="footer-section">
                     <h4>社区</h4>
@@ -1143,6 +1314,25 @@
         </div>
     </footer>
 
+    <!-- Markdown 阅读器面板 -->
+    <div class="md-reader" id="mdReader">
+        <div class="md-toolbar">
+            <div class="md-toolbar-left">
+                <button class="md-back" onclick="closeDoc()">← 返回</button>
+                <span class="md-doc-title" id="mdTitle"></span>
+            </div>
+            <div class="md-toolbar-right">
+                <a class="md-github-link" id="mdGithubLink" href="#" target="_blank">在 GitHub 上查看原文</a>
+            </div>
+        </div>
+        <div class="md-body">
+            <div class="md-content" id="mdContent">
+                <div class="md-loading">加载中...</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/marked.min.js"></script>
     <script>
         // 切换安装方式 Tab
         function switchTab(method) {
@@ -1193,10 +1383,6 @@
             document.body.style.overflow = '';
         }
 
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') closeModal();
-        });
-
         // 汉堡菜单
         function toggleMenu() {
             document.getElementById('navLinks').classList.toggle('open');
@@ -1221,6 +1407,106 @@
                     });
                 }
             });
+        });
+        // Markdown 阅读器
+        var GITHUB_BASE = 'https://github.com/1186258278/OpenClawChineseTranslation/blob/main/docs/';
+        var docCache = {};
+
+        function openDoc(file, title) {
+            var reader = document.getElementById('mdReader');
+            var content = document.getElementById('mdContent');
+            var titleEl = document.getElementById('mdTitle');
+            var githubLink = document.getElementById('mdGithubLink');
+
+            titleEl.textContent = title;
+            githubLink.href = GITHUB_BASE + file;
+            reader.classList.add('active');
+            document.body.style.overflow = 'hidden';
+
+            // 有缓存直接用
+            if (docCache[file]) {
+                renderMarkdown(docCache[file], content, file);
+                return;
+            }
+
+            content.innerHTML = '<div class="md-loading">加载中...</div>';
+
+            fetch(file)
+                .then(function(res) {
+                    if (!res.ok) throw new Error(res.status);
+                    return res.text();
+                })
+                .then(function(md) {
+                    docCache[file] = md;
+                    renderMarkdown(md, content, file);
+                })
+                .catch(function() {
+                    content.innerHTML = '<div class="md-error">' +
+                        '<p>文档加载失败</p>' +
+                        '<a class="btn btn-primary" href="' + GITHUB_BASE + file + '" target="_blank">在 GitHub 上查看原文</a>' +
+                        '</div>';
+                });
+        }
+
+        function renderMarkdown(md, container, file) {
+            // 去掉 md 中的 HTML 导航栏（<a id="top">、顶部导航 <p> 等）
+            md = md.replace(/<a id="top"><\/a>\s*/g, '');
+            md = md.replace(/<p align="right">.*?回到顶部.*?<\/p>/g, '');
+
+            container.innerHTML = marked.parse(md);
+
+            // 修复文档内相对链接：其他 .md 文件也用阅读器打开
+            container.querySelectorAll('a').forEach(function(a) {
+                var href = a.getAttribute('href');
+                if (!href) return;
+                // 相对 .md 链接
+                if (href.match(/^[A-Z_]+\.md/)) {
+                    a.style.cursor = 'pointer';
+                    a.onclick = function(e) {
+                        e.preventDefault();
+                        openDoc(href.split('#')[0], a.textContent);
+                    };
+                }
+                // ../README.md 链接跳回主页
+                if (href.indexOf('../README.md') === 0) {
+                    a.href = 'https://github.com/1186258278/OpenClawChineseTranslation#readme';
+                    a.target = '_blank';
+                }
+                // 外部链接新窗口打开
+                if (href.indexOf('http') === 0) {
+                    a.target = '_blank';
+                    a.rel = 'noopener';
+                }
+            });
+
+            // 修复图片相对路径
+            container.querySelectorAll('img').forEach(function(img) {
+                var src = img.getAttribute('src');
+                if (src && src.indexOf('http') !== 0 && src.indexOf('image/') !== 0) {
+                    // docs/ 下的 md 引用 image/ 开头的图片，路径已正确
+                    // 但如果是 ../docs/image/ 之类的，修正一下
+                    if (src.indexOf('../') === 0) {
+                        img.src = src.replace('../docs/', '');
+                    }
+                }
+            });
+        }
+
+        function closeDoc() {
+            document.getElementById('mdReader').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // ESC 也关闭阅读器
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                var reader = document.getElementById('mdReader');
+                if (reader.classList.contains('active')) {
+                    closeDoc();
+                    return;
+                }
+                closeModal();
+            }
         });
     </script>
 </body>
