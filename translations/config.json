@@ -67,6 +67,7 @@
       "commands/commands-session-abort.json",
       "commands/auth-choice-default-model.json",
       "commands/daemon-install-helpers.json",
+      "commands/onboard-channels-clawapp.json",
       "commands/commands-models.json",
       "commands/commands-subagents-main.json",
       "commands/commands-subagents-shared.json",
