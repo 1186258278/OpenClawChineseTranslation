@@ -16,9 +16,10 @@
     "\"- Multi-user/shared inbox: split trust boundaries (separate gateway/credentials, ideally separate OS users/hosts).\"": "\"- 多用户/共享信箱：拆分信任边界（独立网关/凭证，最好使用独立的系统用户/主机）。\"",
     "\"- Sandbox + least-privilege tools.\"": "\"- 沙箱 + 最小权限工具。\"",
     "\"- Shared inboxes: isolate DM sessions (`session.dmScope: per-channel-peer`) and keep tool access minimal.\"": "\"- 共享信箱：隔离私信会话 (`session.dmScope: per-channel-peer`) 并保持最小工具访问权限。\"",
+    "\"- Keep secrets out of the agent\u2019s reachable filesystem.\"": "\"- 将密钥保存在代理无法访问的文件系统之外。\"",
     "\"- Use the strongest available model for any bot with tools or untrusted inboxes.\"": "\"- 对于任何带有工具或不受信任收件箱的机器人，使用最强大的可用模型。\"",
     "\"Run regularly:\"": "\"定期运行：\"",
-    "\"Must read: https://docs.openclaw.ai/gateway/security\"": "\"必读文档：https://docs.openclaw.ai/gateway/security\"",
+    "\"Must read: https://docs.openclaw.ai/gateway/security\"": "\"必读文档：https://docs.openclaw.ai/gateway/security\",\n      \"\",\n      \"汉化版社区：QQ群 https://qt.cool/c/OpenClaw | 微信群 https://qt.cool/c/OpenClawWx\"",
     "\"Security\"": "\"安全\"",
     "message:\n      \"I understand this is personal-by-default and shared/multi-user use requires lock-down. Continue?\"": "message:\n      \"我理解这默认是个人使用的，共享/多用户使用需要安全加固。是否继续？\"",
     "throw new WizardCancelledError(\"risk not accepted\")": "throw new WizardCancelledError(\"风险未被接受\")"
