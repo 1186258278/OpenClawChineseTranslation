@@ -35,20 +35,40 @@
             --primary: #dc2626;
             --primary-dark: #b91c1c;
             --primary-light: #fecaca;
-            --bg-dark: #0f0f0f;
-            --bg-card: #1a1a1a;
-            --bg-card-hover: #252525;
-            --text-primary: #ffffff;
+            --bg-dark: #09090b;
+            --bg-card: rgba(255,255,255,0.03);
+            --bg-card-hover: rgba(255,255,255,0.06);
+            --text-primary: #fafafa;
             --text-secondary: #a1a1aa;
             --text-muted: #71717a;
-            --border: #27272a;
+            --border: rgba(255,255,255,0.06);
+            --border-highlight: rgba(255,255,255,0.1);
             --gradient-start: #dc2626;
-            --gradient-end: #f97316;
+            --gradient-mid: #f97316;
+            --gradient-end: #facc15;
             --blue: #3b82f6;
             --green: #22c55e;
             --purple: #a855f7;
             --amber: #f59e0b;
             --cyan: #06b6d4;
+            --glow-red: rgba(220,38,38,0.15);
+            --glow-orange: rgba(249,115,22,0.12);
+            --glow-purple: rgba(168,85,247,0.1);
+        }
+
+        /* Light 主题 */
+        :root.light {
+            --bg-dark: #fafafa;
+            --bg-card: rgba(0,0,0,0.02);
+            --bg-card-hover: rgba(0,0,0,0.04);
+            --text-primary: #18181b;
+            --text-secondary: #52525b;
+            --text-muted: #a1a1aa;
+            --border: rgba(0,0,0,0.06);
+            --border-highlight: rgba(0,0,0,0.1);
+            --glow-red: rgba(220,38,38,0.08);
+            --glow-orange: rgba(249,115,22,0.06);
+            --glow-purple: rgba(168,85,247,0.05);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -59,16 +79,80 @@
             color: var(--text-primary);
             line-height: 1.6;
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
         }
 
+        /* 光刻机网格底纹 */
+        .bg-grid {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+            background-size: 64px 64px;
+            mask-image: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, transparent 70%);
+            -webkit-mask-image: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+        :root.light .bg-grid {
+            background-image:
+                linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
+        }
+
+        /* 失焦彩色能量球 */
         .bg-gradient {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background:
-                radial-gradient(ellipse at 20% 20%, rgba(220,38,38,0.12) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 80%, rgba(249,115,22,0.08) 0%, transparent 50%);
             pointer-events: none;
             z-index: 0;
+            overflow: hidden;
+        }
+        .bg-gradient::before {
+            content: '';
+            position: absolute;
+            top: -20%; left: -10%;
+            width: 600px; height: 600px;
+            background: var(--glow-red);
+            border-radius: 50%;
+            filter: blur(120px);
+            animation: float-orb-1 20s ease-in-out infinite;
+        }
+        .bg-gradient::after {
+            content: '';
+            position: absolute;
+            bottom: -10%; right: -10%;
+            width: 500px; height: 500px;
+            background: var(--glow-orange);
+            border-radius: 50%;
+            filter: blur(100px);
+            animation: float-orb-2 25s ease-in-out infinite;
+        }
+        .orb-purple {
+            position: fixed;
+            top: 40%; left: 60%;
+            width: 400px; height: 400px;
+            background: var(--glow-purple);
+            border-radius: 50%;
+            filter: blur(100px);
+            pointer-events: none;
+            z-index: 0;
+            animation: float-orb-3 22s ease-in-out infinite;
+        }
+        @keyframes float-orb-1 {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(80px, 60px) scale(1.1); }
+            66% { transform: translate(-40px, 30px) scale(0.95); }
+        }
+        @keyframes float-orb-2 {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(-60px, -40px) scale(1.05); }
+            66% { transform: translate(40px, -20px) scale(0.9); }
+        }
+        @keyframes float-orb-3 {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(-80px, 50px) scale(1.1); }
         }
 
         .container {
@@ -85,9 +169,14 @@
             position: fixed;
             top: 0; left: 0; right: 0;
             z-index: 100;
-            background: rgba(15,15,15,0.85);
-            backdrop-filter: blur(12px);
+            background: rgba(9,9,11,0.7);
+            backdrop-filter: blur(20px) saturate(1.8);
+            -webkit-backdrop-filter: blur(20px) saturate(1.8);
             border-bottom: 1px solid var(--border);
+            transition: background 0.3s, border-color 0.3s;
+        }
+        :root.light nav {
+            background: rgba(250,250,250,0.7);
         }
 
         .nav-content {
@@ -176,17 +265,26 @@
         }
 
         .hero h1 {
-            font-size: clamp(2.2rem, 5vw, 3.5rem);
-            font-weight: 700;
-            line-height: 1.15;
-            margin-bottom: 20px;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 900;
+            line-height: 1.08;
+            letter-spacing: -0.03em;
+            margin-bottom: 24px;
         }
 
         .hero h1 span {
-            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-mid), var(--gradient-end), var(--gradient-start));
+            background-size: 200% 200%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            animation: gradient-flow 4s ease infinite;
+        }
+
+        @keyframes gradient-flow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         .hero-subtitle {
@@ -208,53 +306,85 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 12px 24px;
-            border-radius: 10px;
+            padding: 12px 28px;
+            border-radius: 12px;
             font-size: 0.95rem;
             font-weight: 600;
             text-decoration: none;
-            transition: all 0.2s;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             cursor: pointer;
             border: none;
+            position: relative;
         }
 
+        /* 流光旋转边框按钮 */
         .btn-primary {
-            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-mid));
             color: white;
-            box-shadow: 0 4px 20px rgba(220,38,38,0.3);
+            box-shadow: 0 4px 24px rgba(220,38,38,0.3), 0 0 0 1px rgba(220,38,38,0.1);
+            z-index: 1;
+            overflow: hidden;
+        }
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            background: conic-gradient(from var(--btn-angle, 0deg), var(--gradient-start), var(--gradient-mid), var(--gradient-end), var(--gradient-start));
+            border-radius: 14px;
+            z-index: -2;
+            animation: rotate-border 3s linear infinite;
+        }
+        .btn-primary::after {
+            content: '';
+            position: absolute;
+            inset: 2px;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-mid));
+            border-radius: 10px;
+            z-index: -1;
+        }
+        @keyframes rotate-border {
+            to { --btn-angle: 360deg; }
+        }
+        @property --btn-angle {
+            syntax: '<angle>';
+            initial-value: 0deg;
+            inherits: false;
         }
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 30px rgba(220,38,38,0.4);
+            box-shadow: 0 8px 40px rgba(220,38,38,0.4), 0 0 0 1px rgba(220,38,38,0.2);
         }
 
         .btn-secondary {
             background: var(--bg-card);
             color: var(--text-primary);
-            border: 1px solid var(--border);
+            border: 1px solid var(--border-highlight);
+            backdrop-filter: blur(12px);
         }
 
         .btn-secondary:hover {
             background: var(--bg-card-hover);
             border-color: var(--text-muted);
+            transform: translateY(-2px);
         }
 
         /* 通用板块 */
-        .section { padding: 72px 0; }
+        .section { padding: 80px 0; }
 
         .section-title {
-            font-size: 1.8rem;
-            font-weight: 700;
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            font-weight: 800;
             text-align: center;
             margin-bottom: 12px;
+            letter-spacing: -0.02em;
         }
 
         .section-desc {
             text-align: center;
             color: var(--text-secondary);
-            margin-bottom: 40px;
-            font-size: 0.95rem;
+            margin-bottom: 48px;
+            font-size: 1rem;
         }
 
         /* 快速入门 - 4步卡片 */
@@ -267,16 +397,30 @@
         .step-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 14px;
-            padding: 24px 20px;
+            border-radius: 16px;
+            padding: 28px 20px;
             text-align: center;
-            transition: all 0.3s;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
+            backdrop-filter: blur(12px);
+            overflow: hidden;
         }
+        .step-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 16px;
+            background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(220,38,38,0.06), transparent 60%);
+            opacity: 0;
+            transition: opacity 0.4s;
+            pointer-events: none;
+        }
+        .step-card:hover::before { opacity: 1; }
 
         .step-card:hover {
-            border-color: var(--primary);
-            transform: translateY(-3px);
+            border-color: rgba(220,38,38,0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
         }
 
         .step-num {
@@ -303,7 +447,7 @@
 
         .step-card code {
             display: block;
-            background: #0d0d0d;
+            background: rgba(0,0,0,0.6);
             border: 1px solid var(--border);
             border-radius: 6px;
             padding: 8px 10px;
@@ -312,6 +456,10 @@
             font-size: 0.78rem;
             color: #e5e5e5;
             word-break: break-all;
+        }
+        :root.light .step-card code {
+            background: rgba(0,0,0,0.06);
+            color: #1e1e1e;
         }
 
         /* 安装区域 */
@@ -344,23 +492,27 @@
         .install-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 14px;
-            padding: 28px;
+            border-radius: 16px;
+            padding: 32px;
             max-width: 800px;
             margin: 0 auto;
+            backdrop-filter: blur(12px);
         }
 
         .install-method { display: none; }
         .install-method.active { display: block; }
 
         .code-block {
-            background: #0d0d0d;
+            background: rgba(0,0,0,0.4);
             border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 14px 18px;
+            border-radius: 10px;
+            padding: 16px 18px;
             margin: 12px 0;
             position: relative;
             overflow-x: auto;
+        }
+        :root.light .code-block {
+            background: rgba(0,0,0,0.06);
         }
 
         .code-block code {
@@ -369,6 +521,9 @@
             color: #e5e5e5;
             white-space: pre-wrap;
             word-break: break-all;
+        }
+        :root.light .code-block code {
+            color: #1e1e1e;
         }
 
         .code-label {
@@ -404,20 +559,33 @@
         .doc-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 14px;
+            border-radius: 16px;
             padding: 24px;
             text-decoration: none;
             color: var(--text-primary);
-            transition: all 0.3s;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             display: flex;
             gap: 16px;
             align-items: flex-start;
+            backdrop-filter: blur(12px);
+            position: relative;
+            overflow: hidden;
         }
+        .doc-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(220,38,38,0.06), transparent 60%);
+            opacity: 0;
+            transition: opacity 0.4s;
+            pointer-events: none;
+        }
+        .doc-card:hover::before { opacity: 1; }
 
         .doc-card:hover {
-            border-color: var(--primary);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(220,38,38,0.1);
+            border-color: rgba(220,38,38,0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(220,38,38,0.08);
         }
 
         .doc-icon {
@@ -459,8 +627,14 @@
         .cmd-group {
             background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 14px;
-            padding: 22px;
+            border-radius: 16px;
+            padding: 24px;
+            backdrop-filter: blur(12px);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .cmd-group:hover {
+            border-color: var(--border-highlight);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
         }
 
         .cmd-group h3 {
@@ -503,14 +677,29 @@
         .feature-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 14px;
-            padding: 24px;
-            transition: all 0.3s;
+            border-radius: 16px;
+            padding: 28px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(12px);
+            position: relative;
+            overflow: hidden;
         }
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 16px;
+            background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(220,38,38,0.08), transparent 60%);
+            opacity: 0;
+            transition: opacity 0.4s;
+            pointer-events: none;
+        }
+        .feature-card:hover::before { opacity: 1; }
 
         .feature-card:hover {
-            border-color: var(--primary);
-            transform: translateY(-3px);
+            border-color: rgba(220,38,38,0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 16px 48px rgba(0,0,0,0.15);
         }
 
         .feature-icon { font-size: 1.8rem; margin-bottom: 12px; }
@@ -527,14 +716,16 @@
         .screenshot-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 14px;
+            border-radius: 16px;
             overflow: hidden;
-            transition: all 0.3s;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(12px);
         }
 
         .screenshot-card:hover {
-            border-color: var(--primary);
-            transform: translateY(-3px);
+            border-color: rgba(220,38,38,0.3);
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
         }
 
         .screenshot-card img {
@@ -594,17 +785,31 @@
         .community-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 14px;
-            padding: 28px 20px;
+            border-radius: 16px;
+            padding: 32px 20px;
             text-align: center;
             text-decoration: none;
             color: var(--text-primary);
-            transition: all 0.3s;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(12px);
+            position: relative;
+            overflow: hidden;
         }
+        .community-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(220,38,38,0.06), transparent 60%);
+            opacity: 0;
+            transition: opacity 0.4s;
+            pointer-events: none;
+        }
+        .community-card:hover::before { opacity: 1; }
 
         .community-card:hover {
-            border-color: var(--primary);
-            transform: translateY(-3px);
+            border-color: rgba(220,38,38,0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 16px 48px rgba(0,0,0,0.15);
         }
 
         .community-icon { font-size: 2.2rem; margin-bottom: 12px; }
@@ -700,11 +905,20 @@
                 flex-direction: column;
                 position: absolute;
                 top: 100%; left: 0; right: 0;
-                background: rgba(15,15,15,0.95);
-                backdrop-filter: blur(12px);
-                padding: 16px 24px;
-                gap: 14px;
+                background: rgba(9,9,11,0.95);
+                backdrop-filter: blur(24px) saturate(1.8);
+                -webkit-backdrop-filter: blur(24px) saturate(1.8);
+                padding: 20px 24px;
+                gap: 16px;
                 border-bottom: 1px solid var(--border);
+                animation: menu-slide 0.3s ease;
+            }
+            :root.light .nav-links.open {
+                background: rgba(250,250,250,0.95);
+            }
+            @keyframes menu-slide {
+                from { opacity: 0; transform: translateY(-8px); }
+                to { opacity: 1; transform: translateY(0); }
             }
             .hamburger { display: flex; }
             .hero { padding: 120px 0 50px; }
@@ -722,6 +936,105 @@
         @media (max-width: 480px) {
             .steps-grid { grid-template-columns: 1fr; }
             .footer-content { grid-template-columns: 1fr; }
+        }
+
+        /* 滚动揭示动效 */
+        .reveal {
+            opacity: 0;
+            transform: translateY(32px) scale(0.98);
+            transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        /* 数字统计区 */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto 48px;
+        }
+        .stat-card {
+            text-align: center;
+            padding: 28px 16px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            backdrop-filter: blur(12px);
+        }
+        .stat-number {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 900;
+            letter-spacing: -0.03em;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-mid));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+        @media (max-width: 768px) {
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        /* 品牌跑马灯 */
+        .marquee-section {
+            padding: 32px 0;
+            overflow: hidden;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            position: relative;
+            z-index: 1;
+        }
+        .marquee-track {
+            display: flex;
+            gap: 48px;
+            animation: marquee-scroll 30s linear infinite;
+            width: max-content;
+        }
+        .marquee-track:hover { animation-play-state: paused; }
+        .marquee-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            white-space: nowrap;
+            flex-shrink: 0;
+            transition: color 0.3s;
+        }
+        .marquee-item:hover { color: var(--text-primary); }
+        .marquee-item span { font-size: 1.5rem; }
+        @keyframes marquee-scroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+
+        /* 主题切换按钮 */
+        .theme-toggle {
+            width: 36px; height: 36px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            background: var(--bg-card);
+            color: var(--text-secondary);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            backdrop-filter: blur(8px);
+        }
+        .theme-toggle:hover {
+            background: var(--bg-card-hover);
+            color: var(--text-primary);
+            border-color: var(--border-highlight);
         }
 
         /* Markdown 阅读器面板 */
@@ -745,6 +1058,9 @@
             backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border);
             flex-shrink: 0;
+        }
+        :root.light .md-toolbar {
+            background: rgba(250,250,250,0.95);
         }
 
         .md-toolbar-left {
@@ -851,6 +1167,10 @@
             font-size: 0.88em;
             color: #e5e5e5;
         }
+        :root.light .md-content code {
+            background: rgba(0,0,0,0.06);
+            color: #1e1e1e;
+        }
 
         .md-content pre {
             background: #0d0d0d;
@@ -859,6 +1179,9 @@
             padding: 16px;
             margin: 16px 0;
             overflow-x: auto;
+        }
+        :root.light .md-content pre {
+            background: rgba(0,0,0,0.04);
         }
 
         .md-content pre code {
@@ -884,6 +1207,7 @@
         .md-content th, .md-content td { padding: 10px 14px; border: 1px solid var(--border); text-align: left; }
         .md-content th { background: var(--bg-card); color: var(--text-primary); font-weight: 600; }
         .md-content tr:nth-child(even) { background: rgba(255,255,255,0.02); }
+        :root.light .md-content tr:nth-child(even) { background: rgba(0,0,0,0.02); }
 
         .md-content hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
 
@@ -897,7 +1221,9 @@
 </style>
 </head>
 <body>
+    <div class="bg-grid"></div>
     <div class="bg-gradient"></div>
+    <div class="orb-purple"></div>
 
     <!-- 导航 -->
     <nav>
@@ -914,6 +1240,7 @@
                 <a href="#screenshots">截图</a>
                 <a href="#community">社区</a>
                 <a href="https://github.com/1186258278/OpenClawChineseTranslation" target="_blank">GitHub</a>
+                <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="切换主题">🌙</button>
             </div>
             <div class="hamburger" id="hamburger" onclick="toggleMenu()">
                 <span></span><span></span><span></span>
@@ -941,13 +1268,63 @@
         </div>
     </section>
 
+    <!-- 数字统计区 -->
+    <section class="section" style="padding-top:0;padding-bottom:40px;">
+        <div class="container">
+            <div class="stats-grid reveal">
+                <div class="stat-card">
+                    <div class="stat-number" data-target="24">0</div>
+                    <div class="stat-label">每日自动同步（次）</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-target="2000" data-suffix="+">0</div>
+                    <div class="stat-label">社区用户</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-target="100" data-suffix="%">0</div>
+                    <div class="stat-label">界面汉化覆盖</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-target="6">0</div>
+                    <div class="stat-label">支持聊天平台</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 品牌跑马灯 -->
+    <div class="marquee-section">
+        <div class="marquee-track" id="marqueeTrack">
+            <div class="marquee-item"><span>💬</span>WhatsApp</div>
+            <div class="marquee-item"><span>✈️</span>Telegram</div>
+            <div class="marquee-item"><span>🎮</span>Discord</div>
+            <div class="marquee-item"><span>💼</span>Slack</div>
+            <div class="marquee-item"><span>🔒</span>Signal</div>
+            <div class="marquee-item"><span>🧠</span>OpenAI</div>
+            <div class="marquee-item"><span>🤖</span>Anthropic</div>
+            <div class="marquee-item"><span>🌐</span>Gemini</div>
+            <div class="marquee-item"><span>🐳</span>Docker</div>
+            <div class="marquee-item"><span>📦</span>npm</div>
+            <div class="marquee-item"><span>💬</span>WhatsApp</div>
+            <div class="marquee-item"><span>✈️</span>Telegram</div>
+            <div class="marquee-item"><span>🎮</span>Discord</div>
+            <div class="marquee-item"><span>💼</span>Slack</div>
+            <div class="marquee-item"><span>🔒</span>Signal</div>
+            <div class="marquee-item"><span>🧠</span>OpenAI</div>
+            <div class="marquee-item"><span>🤖</span>Anthropic</div>
+            <div class="marquee-item"><span>🌐</span>Gemini</div>
+            <div class="marquee-item"><span>🐳</span>Docker</div>
+            <div class="marquee-item"><span>📦</span>npm</div>
+        </div>
+    </div>
+
     <!-- 快速入门 4 步 -->
     <section class="section" id="quickstart">
         <div class="container">
             <h2 class="section-title">4 步上手</h2>
             <p class="section-desc">需要 Node.js >= 22（<a href="https://nodejs.org/" target="_blank" style="color:var(--primary)">下载</a>），检查版本：node -v</p>
 
-            <div class="steps-grid">
+            <div class="steps-grid reveal">
                 <div class="step-card">
                     <div class="step-num">1</div>
                     <h3>安装</h3>
@@ -1045,7 +1422,7 @@
             <h2 class="section-title">文档中心</h2>
             <p class="section-desc">遇到问题？这里有你需要的一切</p>
 
-            <div class="docs-grid">
+            <div class="docs-grid reveal">
                 <div class="doc-card" onclick="openDoc('../README.md','OpenClaw 主页')" style="cursor:pointer">
                     <div class="doc-icon" style="background:rgba(220,38,38,0.12);color:var(--primary)">🏠</div>
                     <div>
@@ -1121,7 +1498,7 @@
             <h2 class="section-title">命令速查</h2>
             <p class="section-desc">常用 CLI 命令一览，复制即用</p>
 
-            <div class="cmd-grid">
+            <div class="cmd-grid reveal">
                 <div class="cmd-group">
                     <h3>基础命令</h3>
                     <div class="cmd-row"><code>openclaw</code><span>启动</span></div>
@@ -1164,7 +1541,7 @@
             <h2 class="section-title">为什么选择我们</h2>
             <p class="section-desc">基于官方源码，深度本地化</p>
 
-            <div class="features-grid">
+            <div class="features-grid reveal">
                 <div class="feature-card">
                     <div class="feature-icon">⏱️</div>
                     <h3>每小时自动同步</h3>
@@ -1205,7 +1582,7 @@
             <h2 class="section-title">汉化效果预览</h2>
             <p class="section-desc">全中文界面，原汁原味的本地化体验</p>
 
-            <div class="screenshots-grid">
+            <div class="screenshots-grid reveal">
                 <div class="screenshot-card">
                     <img src="image/5.png" alt="概览仪表板" onclick="openModal(this)" loading="lazy">
                     <div class="caption"><h4>概览仪表板</h4><p>网关状态、实例监控、快捷操作</p></div>
@@ -1246,7 +1623,7 @@
             <h2 class="section-title">社区交流</h2>
             <p class="section-desc">加入我们，和 2000+ 用户一起交流</p>
 
-            <div class="community-grid">
+            <div class="community-grid reveal">
                 <a href="https://qt.cool/c/OpenClaw" target="_blank" class="community-card">
                     <div class="community-icon">💬</div>
                     <h3>QQ 群</h3>
@@ -1348,61 +1725,74 @@
 
     <script src="js/marked.min.js"></script>
     <script>
-        // 切换安装方式 Tab
+        // ===== Dark/Light 主题切换（无闪烁） =====
+        (function() {
+            var saved = localStorage.getItem('theme');
+            if (saved === 'light') {
+                document.documentElement.classList.add('light');
+            }
+        })();
+
+        function toggleTheme() {
+            var root = document.documentElement;
+            var isLight = root.classList.toggle('light');
+            localStorage.setItem('theme', isLight ? 'light' : 'dark');
+            var btn = document.getElementById('themeToggle');
+            btn.textContent = isLight ? '☀️' : '🌙';
+        }
+        // 初始化按钮图标
+        document.addEventListener('DOMContentLoaded', function() {
+            var btn = document.getElementById('themeToggle');
+            if (btn) btn.textContent = document.documentElement.classList.contains('light') ? '☀️' : '🌙';
+        });
+
+        // ===== 切换安装方式 Tab =====
         function switchTab(method) {
-            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(function(btn) { btn.classList.remove('active'); });
             event.target.classList.add('active');
-            document.querySelectorAll('.install-method').forEach(m => m.classList.remove('active'));
+            document.querySelectorAll('.install-method').forEach(function(m) { m.classList.remove('active'); });
             document.getElementById('method-' + method).classList.add('active');
         }
 
-        // 复制代码
+        // ===== 复制代码 =====
         function copyCode(btn) {
             var code = btn.parentElement.querySelector('code').textContent;
             navigator.clipboard.writeText(code).then(function() {
                 var orig = btn.textContent;
                 btn.textContent = '已复制';
                 btn.style.color = '#22c55e';
-                setTimeout(function() {
-                    btn.textContent = orig;
-                    btn.style.color = '';
-                }, 2000);
+                setTimeout(function() { btn.textContent = orig; btn.style.color = ''; }, 2000);
             });
         }
 
-        // 平滑滚动
+        // ===== 平滑滚动 =====
         document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 var target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-                // 关闭移动端菜单
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 document.getElementById('navLinks').classList.remove('open');
             });
         });
 
-        // 图片放大模态框
+        // ===== 图片放大模态框 =====
         function openModal(img) {
             var modal = document.getElementById('imageModal');
-            var modalImg = document.getElementById('modalImage');
             modal.classList.add('active');
-            modalImg.src = img.src;
+            document.getElementById('modalImage').src = img.src;
             document.body.style.overflow = 'hidden';
         }
-
         function closeModal() {
             document.getElementById('imageModal').classList.remove('active');
             document.body.style.overflow = '';
         }
 
-        // 汉堡菜单
+        // ===== 汉堡菜单 =====
         function toggleMenu() {
             document.getElementById('navLinks').classList.toggle('open');
         }
 
-        // 导航栏滚动高亮
+        // ===== 导航栏滚动高亮 =====
         var sections = document.querySelectorAll('section[id]');
         var navAnchors = document.querySelectorAll('.nav-links a[href^="#"]');
 
@@ -1422,6 +1812,73 @@
                 }
             });
         });
+        // ===== IntersectionObserver 滚动揭示动效 =====
+        var revealObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    // 给子元素加 stagger delay
+                    var children = entry.target.children;
+                    for (var i = 0; i < children.length; i++) {
+                        children[i].style.transitionDelay = (i * 80) + 'ms';
+                        children[i].style.opacity = '0';
+                        children[i].style.transform = 'translateY(24px)';
+                        children[i].style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                    }
+                    entry.target.classList.add('visible');
+                    // 延迟触发子元素动画
+                    requestAnimationFrame(function() {
+                        for (var j = 0; j < children.length; j++) {
+                            children[j].style.opacity = '1';
+                            children[j].style.transform = 'translateY(0)';
+                        }
+                    });
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.reveal').forEach(function(el) {
+            revealObserver.observe(el);
+        });
+
+        // ===== 磁性探照灯特效（mousemove 边缘高光跟随） =====
+        var spotlightCards = '.feature-card, .step-card, .doc-card, .community-card';
+        document.addEventListener('mousemove', function(e) {
+            document.querySelectorAll(spotlightCards).forEach(function(card) {
+                var rect = card.getBoundingClientRect();
+                var x = e.clientX - rect.left;
+                var y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', x + 'px');
+                card.style.setProperty('--mouse-y', y + 'px');
+            });
+        });
+
+        // ===== 数字暴涨动画（requestAnimationFrame） =====
+        var counterObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (!entry.isIntersecting) return;
+                var el = entry.target;
+                var target = parseInt(el.getAttribute('data-target'));
+                var suffix = el.getAttribute('data-suffix') || '';
+                var duration = 1500;
+                var start = performance.now();
+                function animate(now) {
+                    var progress = Math.min((now - start) / duration, 1);
+                    // easeOutExpo
+                    var ease = 1 - Math.pow(2, -10 * progress);
+                    el.textContent = Math.floor(target * ease) + suffix;
+                    if (progress < 1) requestAnimationFrame(animate);
+                    else el.textContent = target + suffix;
+                }
+                requestAnimationFrame(animate);
+                counterObserver.unobserve(el);
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.stat-number[data-target]').forEach(function(el) {
+            counterObserver.observe(el);
+        });
+
         // Markdown 阅读器
         var GITHUB_DOCS = 'https://github.com/1186258278/OpenClawChineseTranslation/blob/main/docs/';
         var GITHUB_ROOT = 'https://github.com/1186258278/OpenClawChineseTranslation/blob/main/';
