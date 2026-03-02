@@ -195,7 +195,7 @@ jobs:
           draft: false
           prerelease: false
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.CI_GITHUB_TOKEN }}
 
       # ==================== Docker 镜像构建与推送 ====================
       - name: 设置 Docker Buildx
@@ -206,7 +206,7 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          password: ${{ secrets.CI_GITHUB_TOKEN }}
 
       - name: 准备 Docker 元数据
         id: docker_meta
@@ -233,7 +233,7 @@ jobs:
         run: |
           # 使用 GitHub API 将包设置为公开
           curl -X PATCH \
-            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Authorization: Bearer ${{ secrets.CI_GITHUB_TOKEN }}" \
             -H "Accept: application/vnd.github.v3+json" \
             https://api.github.com/user/packages/container/openclaw-zh/versions \
             -d '{"visibility":"public"}' || true
