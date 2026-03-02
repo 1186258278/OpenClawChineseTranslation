@@ -113,6 +113,10 @@ jobs:
             git clone --depth 1 https://github.com/${{ env.UPSTREAM_REPO }}.git openclaw
           fi
           cd openclaw
+          echo "add Array.prototype.toSorted polyfill for older browsers"
+          echo 'import "./polyfills.ts";' >> ui/src/main.ts
+          cp patch/ui/src/main.ts ui/src/polyfills.ts
+          
           COMMIT_SHA=$(git rev-parse --short HEAD)
           echo "✅ 上游代码已克隆 (commit: $COMMIT_SHA)"
 
