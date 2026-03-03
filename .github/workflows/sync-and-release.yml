@@ -230,8 +230,8 @@ jobs:
           tags: ${{ steps.docker_meta.outputs.tags }}
           labels: ${{ steps.docker_meta.outputs.labels }}
           # 使用 Registry Cache - 比 GHA 缓存更稳定，无 10GB 限制
-          cache-from: type=registry,ref=${{ env.ALI_REGISTRY }}/roweb/openclaw-zh:buildcache
-          cache-to: type=registry,ref=${{ env.ALI_REGISTRY }}/roweb/openclaw-zh:buildcache,mode=max
+          # cache-from: type=registry,ref=${{ env.ALI_REGISTRY }}/roweb/openclaw-zh:buildcache
+          # cache-to: type=registry,ref=${{ env.ALI_REGISTRY }}/roweb/openclaw-zh:buildcache,mode=max
           platforms: linux/amd64,linux/arm64
 
       # - name: 设置镜像为公开
