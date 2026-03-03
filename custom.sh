@@ -19,7 +19,7 @@ sed_inplace() {
 }
 
 # 修改 package.json
-sed_inplace 's#1186258278/OpenClawChineseTranslation#luoweb#openclawcn#g' package.json
+sed_inplace 's#1186258278/OpenClawChineseTranslation#luoweb/openclawcn#g' package.json
 sed_inplace 's#武汉晴辰天下网络科技有限公司#roweb#g' package.json
 sed_inplace 's#<contact@qingchencloud.com>#<contact@roweb.cn>#g' package.json
 sed_inplace 's#https://qingchencloud.com/#https://roweb.cn/#g' package.json
