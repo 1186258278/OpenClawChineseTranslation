@@ -2,10 +2,8 @@
   "file": "ui/src/ui/app-render.ts",
   "description": "Dashboard 主布局和顶栏（保留官方图标，仅汉化文字和添加链接）",
   "replacements": {
-    "<div class=\"brand\">": "<a class=\"brand\" href=\"https://openclaw.qt.cool\" target=\"_blank\" rel=\"noreferrer\" title=\"访问 OpenClaw 汉化官网\" style=\"text-decoration: none; color: inherit;\">",
     "</div>\n          </div>\n        </div>\n        <div class=\"topbar-status\">": "</div>\n          </a>\n        </div>\n        <div class=\"topbar-status\">",
     "<div class=\"brand-title\">OPENCLAW</div>": "<div class=\"brand-title\">OPENCLAW 中文版</div>",
-    "<div class=\"brand-sub\">Gateway Dashboard</div>": "<div class=\"brand-sub\">网关控制台 · 点击访问官网</div>",
-    "</div>\n        </div>\n      </aside>": "</div>\n            <a\n              class=\"nav-item nav-item--external\"\n              href=\"https://www.shengsuanyun.com/?from=CH_4BVI0BM2\"\n              target=\"_blank\"\n              rel=\"noreferrer\"\n              title=\"胜算云 - AI 模型聚合平台（新标签页打开）\"\n              style=\"color: #f59e0b; font-weight: 600;\"\n            >\n              <span class=\"nav-item__icon\" aria-hidden=\"true\">⚡</span>\n              <span class=\"nav-item__text\">胜算云</span>\n            </a>\n            <a\n              class=\"nav-item nav-item--external\"\n              href=\"https://openclaw.qt.cool\"\n              target=\"_blank\"\n              rel=\"noreferrer\"\n              title=\"汉化官网（新标签页打开）\"\n              style=\"color: #ef4444;\"\n            >\n              <span class=\"nav-item__icon\" aria-hidden=\"true\">${icons.globe}</span>\n              <span class=\"nav-item__text\">🇨🇳 汉化官网</span>\n            </a>\n            <a\n              class=\"nav-item nav-item--external\"\n              href=\"https://github.com/1186258278/OpenClawChineseTranslation\"\n              target=\"_blank\"\n              rel=\"noreferrer\"\n              title=\"GitHub 仓库（新标签页打开）\"\n            >\n              <span class=\"nav-item__icon\" aria-hidden=\"true\">${icons.link}</span>\n              <span class=\"nav-item__text\">GitHub</span>\n            </a>\n        </div>\n      </aside>"
+    "<div class=\"brand-sub\">Gateway Dashboard</div>": "<div class=\"brand-sub\">网关控制台 · 点击访问官网</div>"
   }
 }

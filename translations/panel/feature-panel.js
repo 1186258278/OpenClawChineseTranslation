@@ -130,10 +130,8 @@
           <nav class="panel-tabs">
 <button class="panel-tab active" data-tab="help">帮助文档</button>
             <button class="panel-tab" data-tab="commands">快捷指令</button>
-            <button class="panel-tab" data-tab="ai-studio"><span class="fire-icon">🔥</span>AI 创作<span class="hot-badge">HOT</span></button>
             <button class="panel-tab" data-tab="plugins">插件列表</button>
             <button class="panel-tab" data-tab="changelog">更新日志</button>
-            <button class="panel-tab" data-tab="about">关于我们</button>
           </nav>
           <main class="panel-content" id="panel-content">
             ${renderTabContent('help')}
