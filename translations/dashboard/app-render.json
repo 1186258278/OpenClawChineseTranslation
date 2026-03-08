@@ -3,7 +3,7 @@
   "description": "Dashboard 主布局和顶栏（保留官方图标，仅汉化文字和添加链接）",
   "replacements": {
     "</div>\n          </div>\n        </div>\n        <div class=\"topbar-status\">": "</div>\n          </a>\n        </div>\n        <div class=\"topbar-status\">",
-    "<div class=\"brand-title\">OPENCLAW</div>": "<div class=\"brand-title\">OPENCLAW 中文版</div>",
-    "<div class=\"brand-sub\">Gateway Dashboard</div>": "<div class=\"brand-sub\">网关控制台 · 点击访问官网</div>"
+    "<div class=\"brand-title\">OPENCLAW</div>": "<div class=\"brand-title\">iRobot</div>",
+    "<div class=\"brand-sub\">Gateway Dashboard</div>": "<div class=\"brand-sub\">网关控制台</div>"
   }
 }
