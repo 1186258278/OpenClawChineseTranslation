@@ -3,7 +3,7 @@
   "description": "胜算云供应商注册 - 使用实时模型目录构建 provider",
   "replacements": {
     "__comment_shengsuanyun_import": "在 models-config.providers.ts 中注入胜算云模型发现函数导入与注册",
-    "} from \"./models-config.providers.static.js\";": "} from \"./models-config.providers.static.js\";\nimport { getShengSuanYunModels, SHENGSUANYUN_BASE_URL } from \"./shengsuanyun-models.js\";",
+    "XIAOMI_DEFAULT_MODEL_ID,\n} from \"./models-config.providers.static.js\";\nexport {": "XIAOMI_DEFAULT_MODEL_ID,\n} from \"./models-config.providers.static.js\";\nimport { getShengSuanYunModels, SHENGSUANYUN_BASE_URL } from \"./shengsuanyun-models.js\";\nexport {",
     "withApiKey(\"together\", async ({ apiKey }) => ({ ...buildTogetherProvider(), apiKey })),\n  withApiKey(\"huggingface\", async ({ apiKey, discoveryApiKey }) => ({": "withApiKey(\"together\", async ({ apiKey }) => ({ ...buildTogetherProvider(), apiKey })),\n  withApiKey(\"shengsuanyun\", async ({ apiKey }) => ({\n    baseUrl: SHENGSUANYUN_BASE_URL,\n    api: \"openai-completions\",\n    models: await getShengSuanYunModels(),\n    apiKey,\n    headers: {\n      \"HTTP-Referer\": \"https://openclaw.ai\",\n      \"X-Title\": \"OpenClaw\",\n    },\n  })),\n  withApiKey(\"huggingface\", async ({ apiKey, discoveryApiKey }) => ({"
   }
 }
