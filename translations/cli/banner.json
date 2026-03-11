@@ -2,7 +2,7 @@
   "file": "src/cli/banner.ts",
   "description": "CLI 横幅标题",
   "replacements": {
-    "const title = \"🦞 OpenClaw\"": "const title = \"🦞 OpenClaw 中文版\"",
-    "\"                  🦞 OPENCLAW 🦞                    \"": "\"                🦞 OPENCLAW 中文版 🦞                \""
+    "const title = \"🦞 OpenClaw\"": "const title = \"🦞 iRobot\"",
+    "\"                  🦞 OPENCLAW 🦞                    \"": "\"                🦞 iRobot 🦞                \""
   }
 }

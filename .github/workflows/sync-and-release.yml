@@ -29,6 +29,7 @@ on:
         type: string
 
 env:
+  ALI_REGISTRY: ${{ vars.ALI_REGISTRY || 'registry.cn-hangzhou.aliyuncs.com' }}
   UPSTREAM_REPO: openclaw/openclaw
   NODE_VERSION: '22'
 
@@ -98,32 +99,33 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           registry-url: 'https://registry.npmjs.org'
 
-      - name: 发布到 npm (@latest)
-        working-directory: openclaw
-        # 使用 --ignore-scripts 跳过 prepack 脚本，因为代码已在 build job 中构建完成
-        # 否则 prepack 会触发重新构建，覆盖掉注入的功能面板
-        run: npm publish --access public --tag latest --ignore-scripts
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      # - name: 发布到 npm (@latest)
+      #   working-directory: openclaw
+      #   # 使用 --ignore-scripts 跳过 prepack 脚本，因为代码已在 build job 中构建完成
+      #   # 否则 prepack 会触发重新构建，覆盖掉注入的功能面板
+      #   run: npm publish --access public --tag latest --ignore-scripts
+      #   env:
+      #     NODE_AUTH_TOKEN: ${{ secrets.CI_NPM_TOKEN }}
 
-      - name: 同步 npmmirror 镜像源
-        run: |
-          echo "🔄 触发 npmmirror 同步..."
-          # 主动触发 npmmirror 同步，解决国内镜像源版本滞后问题
-          # 参考: https://github.com/1186258278/OpenClawChineseTranslation/issues/32
-          curl -sX PUT "https://registry-direct.npmmirror.com/-/package/@qingchencloud/openclaw-zh/syncs" || true
-          echo "⏳ 等待 30 秒让同步生效..."
-          sleep 30
-          # 验证同步结果
-          MIRROR_VER=$(curl -s "https://registry.npmmirror.com/@qingchencloud/openclaw-zh/latest" | jq -r '.version // "unknown"')
-          echo "📦 npmmirror 当前版本: $MIRROR_VER"
-          echo "📦 本次发布版本: ${{ needs.prepare.outputs.release_version }}"
-          if [ "$MIRROR_VER" = "${{ needs.prepare.outputs.release_version }}" ]; then
-            echo "✅ npmmirror 同步成功！"
-          else
-            echo "⚠️ npmmirror 尚未同步到最新版本，可能需要几分钟"
-          fi
-        continue-on-error: true
+
+      # - name: 同步 npmmirror 镜像源
+      #   run: |
+      #     echo "🔄 触发 npmmirror 同步..."
+      #     # 主动触发 npmmirror 同步，解决国内镜像源版本滞后问题
+      #     # 参考: https://github.com/1186258278/OpenClawChineseTranslation/issues/32
+      #     curl -sX PUT "https://registry-direct.npmmirror.com/-/package/@qingchencloud/openclaw-zh/syncs" || true
+      #     echo "⏳ 等待 30 秒让同步生效..."
+      #     sleep 30
+      #     # 验证同步结果
+      #     MIRROR_VER=$(curl -s "https://registry.npmmirror.com/@qingchencloud/openclaw-zh/latest" | jq -r '.version // "unknown"')
+      #     echo "📦 npmmirror 当前版本: $MIRROR_VER"
+      #     echo "📦 本次发布版本: ${{ needs.prepare.outputs.release_version }}"
+      #     if [ "$MIRROR_VER" = "${{ needs.prepare.outputs.release_version }}" ]; then
+      #       echo "✅ npmmirror 同步成功！"
+      #     else
+      #       echo "⚠️ npmmirror 尚未同步到最新版本，可能需要几分钟"
+      #     fi
+      #   continue-on-error: true
 
       - name: 创建 GitHub Release
         uses: softprops/action-gh-release@v1
@@ -186,7 +188,7 @@ jobs:
           draft: false
           prerelease: false
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.CI_GITHUB_TOKEN }}
 
       # ==================== Docker 镜像构建与推送 ====================
       - name: 设置 Docker Buildx
@@ -194,18 +196,22 @@ jobs:
 
       - name: 登录 GitHub Container Registry
         uses: docker/login-action@v3
+        # with:
+          # registry: ghcr.io
+          # username: ${{ github.actor }}
+          # password: ${{ secrets.CI_GITHUB_TOKEN }}
         with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: ${{ env.ALI_REGISTRY }}
+          username: ${{ secrets.ALIYUN_USER }}
+          password: ${{ secrets.ALIYUN_TOKEN }}
 
       - name: 准备 Docker 元数据
         id: docker_meta
         uses: docker/metadata-action@v5
         with:
-          images: ghcr.io/${{ github.repository_owner }}/openclaw-zh
+          images: ${{ env.ALI_REGISTRY }}/roweb/openclaw-zh
           tags: |
-            type=raw,value=latest
+            type=raw,value=main-custom
             type=raw,value=${{ needs.prepare.outputs.release_version }}
 
       - name: 构建并推送 Docker 镜像
@@ -216,49 +222,49 @@ jobs:
           tags: ${{ steps.docker_meta.outputs.tags }}
           labels: ${{ steps.docker_meta.outputs.labels }}
           # 使用 Registry Cache - 比 GHA 缓存更稳定，无 10GB 限制
-          cache-from: type=registry,ref=ghcr.io/${{ github.repository_owner }}/openclaw-zh:buildcache
-          cache-to: type=registry,ref=ghcr.io/${{ github.repository_owner }}/openclaw-zh:buildcache,mode=max
+          # cache-from: type=registry,ref=${{ env.ALI_REGISTRY }}/roweb/openclaw-zh:buildcache
+          # cache-to: type=registry,ref=${{ env.ALI_REGISTRY }}/roweb/openclaw-zh:buildcache,mode=max
           platforms: linux/amd64,linux/arm64
 
-      - name: 设置镜像为公开
-        run: |
-          # 使用 GitHub API 将包设置为公开
-          curl -X PATCH \
-            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-            -H "Accept: application/vnd.github.v3+json" \
-            https://api.github.com/user/packages/container/openclaw-zh/versions \
-            -d '{"visibility":"public"}' || true
-          echo "✅ Docker 镜像已推送到 ghcr.io"
+      # - name: 设置镜像为公开
+      #   run: |
+      #     # 使用 GitHub API 将包设置为公开
+      #     curl -X PATCH \
+      #       -H "Authorization: Bearer ${{ secrets.CI_GITHUB_TOKEN }}" \
+      #       -H "Accept: application/vnd.github.v3+json" \
+      #       https://api.github.com/user/packages/container/openclaw-zh/versions \
+      #       -d '{"visibility":"public"}' || true
+      #     echo "✅ Docker 镜像已推送到 ghcr.io"
 
       # ==================== Docker Hub 镜像（国内加速） ====================
-      - name: 登录 Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ github.repository_owner }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-        continue-on-error: true
+      # - name: 登录 Docker Hub
+      #   uses: docker/login-action@v3
+      #   with:
+      #     username: ${{ github.repository_owner }}
+      #     password: ${{ secrets.DOCKERHUB_TOKEN }}
+      #   continue-on-error: true
 
-      - name: 推送到 Docker Hub（国内加速）
-        uses: docker/build-push-action@v5
-        with:
-          context: ./openclaw
-          push: true
-          tags: |
-            ${{ github.repository_owner }}/openclaw-zh:latest
-            ${{ github.repository_owner }}/openclaw-zh:${{ needs.prepare.outputs.release_version }}
-          cache-from: type=registry,ref=ghcr.io/${{ github.repository_owner }}/openclaw-zh:buildcache
-          platforms: linux/amd64,linux/arm64
-        continue-on-error: true
+      # - name: 推送到 Docker Hub（国内加速）
+      #   uses: docker/build-push-action@v5
+      #   with:
+      #     context: ./openclaw
+      #     push: true
+      #     tags: |
+      #       ${{ github.repository_owner }}/openclaw-zh:latest
+      #       ${{ github.repository_owner }}/openclaw-zh:${{ needs.prepare.outputs.release_version }}
+      #     cache-from: type=registry,ref=ghcr.io/${{ github.repository_owner }}/openclaw-zh:buildcache
+      #     platforms: linux/amd64,linux/arm64
+      #   continue-on-error: true
 
-      # 同步 Docker Hub 仓库描述
-      - name: 更新 Docker Hub 描述
-        uses: peter-evans/dockerhub-description@v4
-        with:
-          username: ${{ github.repository_owner }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-          repository: ${{ github.repository_owner }}/openclaw-zh
-          readme-filepath: ./DOCKER_README.md
-        continue-on-error: true
+      # # 同步 Docker Hub 仓库描述
+      # - name: 更新 Docker Hub 描述
+      #   uses: peter-evans/dockerhub-description@v4
+      #   with:
+      #     username: ${{ github.repository_owner }}
+      #     password: ${{ secrets.DOCKERHUB_TOKEN }}
+      #     repository: ${{ github.repository_owner }}/openclaw-zh
+      #     readme-filepath: ./DOCKER_README.md
+      #   continue-on-error: true
 
       - name: 构建摘要
         run: |
