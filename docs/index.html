@@ -30,6 +30,90 @@
     <meta name="theme-color" content="#dc2626">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦞</text></svg>">
 
+    <!-- SEO 增强 -->
+    <link rel="alternate" hreflang="zh-CN" href="https://openclaw.qt.cool/">
+    <link rel="alternate" hreflang="x-default" href="https://openclaw.qt.cool/">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin>
+    <link rel="preconnect" href="https://claw.qt.cool" crossorigin>
+
+    <!-- JSON-LD 结构化数据 -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "OpenClaw 汉化版",
+        "alternateName": ["OpenClaw CN", "龙虾爪中文版", "OpenClaw Chinese"],
+        "description": "开源个人 AI 助手平台中文版，支持 WhatsApp、Telegram、Discord 等聊天平台，每小时自动同步官方更新。",
+        "url": "https://openclaw.qt.cool/",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Windows, macOS, Linux",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "CNY"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "武汉晴辰天下网络科技有限公司",
+            "url": "https://qingchencloud.com/"
+        },
+        "downloadUrl": "https://github.com/1186258278/OpenClawChineseTranslation/releases",
+        "installUrl": "https://www.npmjs.com/package/@qingchencloud/openclaw-zh",
+        "screenshot": "https://openclaw.qt.cool/image/5.png",
+        "softwareVersion": "latest",
+        "license": "https://opensource.org/licenses/MIT",
+        "isAccessibleForFree": true,
+        "inLanguage": "zh-CN"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "OpenClaw 汉化版是什么？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "OpenClaw 汉化版是开源个人 AI 助手平台 OpenClaw 的中文发行版，每小时自动同步官方更新，提供完整的中文界面和文档。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "如何安装 OpenClaw 汉化版？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "支持三种安装方式：1) 脚本一键安装；2) npm install -g @qingchencloud/openclaw-zh@latest；3) Docker 部署。需要 Node.js >= 22。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "ClawPanel 是什么？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "ClawPanel 是 OpenClaw 可视化管理面板，支持一键安装 OpenClaw、图形界面管理、内置 AI 助手，适用于 Windows、macOS、Linux。"
+                }
+            }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "OpenClaw 汉化版",
+        "url": "https://openclaw.qt.cool/",
+        "publisher": {
+            "@type": "Organization",
+            "name": "武汉晴辰天下网络科技有限公司",
+            "url": "https://qingchencloud.com/",
+            "logo": "https://openclaw.qt.cool/image/5.png"
+        }
+    }
+    </script>
+
     <style>
         :root {
             --primary: #dc2626;
@@ -776,9 +860,9 @@
         /* 社区 */
         .community-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 16px;
-            max-width: 900px;
+            max-width: 1100px;
             margin: 0 auto;
         }
 
@@ -898,7 +982,16 @@
             .features-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
+
+        /* 免费AI接口区域 */
+        .free-ai-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
         @media (max-width: 768px) {
+            .free-ai-grid { grid-template-columns: 1fr; }
             .nav-links { display: none; }
             .nav-links.open {
                 display: flex;
@@ -923,7 +1016,9 @@
             .hamburger { display: flex; }
             .hero { padding: 120px 0 50px; }
             .hero-buttons { flex-direction: column; align-items: center; }
-            .btn { width: 100%; max-width: 280px; justify-content: center; }
+            .btn { width: 100%; max-width: 320px; justify-content: center; }
+            .clawpanel-btn-wrap { width: 100%; max-width: 320px; }
+            .clawpanel-btn-wrap .btn { max-width: 100%; }
             .steps-grid { grid-template-columns: repeat(2, 1fr); }
             .docs-grid { grid-template-columns: 1fr; }
             .cmd-grid { grid-template-columns: 1fr; }
@@ -1218,6 +1313,275 @@
             .md-doc-title { display: none; }
             .md-body { padding: 20px 16px; }
         }
+
+        /* ClawPanel 引流板块 */
+        .promo-section {
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .promo-card {
+            position: relative;
+            background: linear-gradient(135deg, rgba(59,130,246,0.08), rgba(168,85,247,0.08), rgba(220,38,38,0.06));
+            border: 1px solid rgba(59,130,246,0.2);
+            border-radius: 24px;
+            padding: 48px;
+            display: flex;
+            gap: 48px;
+            align-items: center;
+            backdrop-filter: blur(16px);
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .promo-card:hover {
+            border-color: rgba(59,130,246,0.4);
+            box-shadow: 0 20px 60px rgba(59,130,246,0.1);
+        }
+        .promo-card::before {
+            content: '';
+            position: absolute;
+            top: -50%; right: -20%;
+            width: 400px; height: 400px;
+            background: radial-gradient(circle, rgba(59,130,246,0.1), transparent 70%);
+            pointer-events: none;
+        }
+        .promo-info { flex: 1; position: relative; z-index: 1; }
+        .promo-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 12px;
+            background: rgba(59,130,246,0.15);
+            border: 1px solid rgba(59,130,246,0.25);
+            border-radius: 9999px;
+            font-size: 0.78rem;
+            color: var(--blue);
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+        .promo-info h2 {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 800;
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
+        }
+        .promo-info h2 span {
+            background: linear-gradient(135deg, var(--blue), var(--purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .promo-desc {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        .promo-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-bottom: 28px;
+        }
+        .promo-feat {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+        }
+        .promo-feat-icon {
+            width: 28px; height: 28px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+        .promo-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .btn-promo {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 11px 24px;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-promo-primary {
+            background: linear-gradient(135deg, var(--blue), var(--purple));
+            color: white;
+            box-shadow: 0 4px 20px rgba(59,130,246,0.3);
+        }
+        .btn-promo-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(59,130,246,0.4);
+        }
+        .btn-promo-secondary {
+            background: var(--bg-card);
+            color: var(--text-primary);
+            border: 1px solid var(--border-highlight);
+        }
+        .btn-promo-secondary:hover {
+            background: var(--bg-card-hover);
+            transform: translateY(-2px);
+        }
+        .promo-preview {
+            flex-shrink: 0;
+            width: 340px;
+            position: relative;
+            z-index: 1;
+        }
+        .promo-preview-frame {
+            background: rgba(0,0,0,0.4);
+            border: 1px solid var(--border-highlight);
+            border-radius: 16px;
+            padding: 8px;
+            box-shadow: 0 16px 48px rgba(0,0,0,0.2);
+            transition: transform 0.4s;
+        }
+        :root.light .promo-preview-frame {
+            background: rgba(255,255,255,0.6);
+        }
+        .promo-preview-frame:hover {
+            transform: translateY(-4px) scale(1.02);
+        }
+        .promo-preview-frame img {
+            width: 100%;
+            border-radius: 10px;
+            display: block;
+        }
+        .promo-platform-tags {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 14px;
+        }
+        .promo-platform-tag {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        @media (max-width: 768px) {
+            .promo-card {
+                flex-direction: column;
+                padding: 32px 24px;
+                gap: 28px;
+            }
+            .promo-preview { width: 100%; max-width: 340px; }
+            .promo-features { grid-template-columns: 1fr; }
+        }
+
+        /* ClawPanel Hero 按钮 + 引导弹窗 */
+        .clawpanel-btn-wrap {
+            position: relative;
+            display: inline-flex;
+        }
+        .clawpanel-hero-btn {
+            background: linear-gradient(135deg, rgba(59,130,246,0.15), rgba(168,85,247,0.15)) !important;
+            border-color: rgba(59,130,246,0.4) !important;
+            color: var(--blue) !important;
+            font-weight: 700 !important;
+            position: relative;
+            overflow: hidden;
+        }
+        .clawpanel-hero-btn::after {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: conic-gradient(from 0deg, transparent 0%, rgba(59,130,246,0.15) 25%, transparent 50%);
+            animation: clawpanel-shimmer 3s linear infinite;
+        }
+        @keyframes clawpanel-shimmer {
+            to { transform: rotate(360deg); }
+        }
+        .clawpanel-tooltip {
+            position: absolute;
+            bottom: calc(100% + 14px);
+            left: 50%;
+            transform: translateX(-50%) translateY(-8px);
+            background: linear-gradient(135deg, #1e3a5f, #2d1b69);
+            border: 1px solid rgba(59,130,246,0.3);
+            border-radius: 14px;
+            padding: 16px 20px;
+            width: 260px;
+            text-align: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 50;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.3), 0 0 20px rgba(59,130,246,0.15);
+            pointer-events: none;
+        }
+        :root.light .clawpanel-tooltip {
+            background: linear-gradient(135deg, #eef2ff, #f3e8ff);
+            border-color: rgba(59,130,246,0.2);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.1), 0 0 20px rgba(59,130,246,0.08);
+        }
+        .clawpanel-tooltip.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+        .clawpanel-tooltip-arrow {
+            position: absolute;
+            bottom: -7px;
+            left: 50%;
+            transform: translateX(-50%) rotate(45deg);
+            width: 14px; height: 14px;
+            background: #2d1b69;
+            border-bottom: 1px solid rgba(59,130,246,0.3);
+            border-right: 1px solid rgba(59,130,246,0.3);
+        }
+        :root.light .clawpanel-tooltip-arrow {
+            background: #f3e8ff;
+            border-color: rgba(59,130,246,0.2);
+        }
+        .clawpanel-tooltip-title {
+            font-size: 0.92rem;
+            font-weight: 700;
+            color: #93c5fd;
+            margin-bottom: 6px;
+        }
+        :root.light .clawpanel-tooltip-title {
+            color: #2563eb;
+        }
+        .clawpanel-tooltip-desc {
+            font-size: 0.82rem;
+            color: #cbd5e1;
+            line-height: 1.5;
+            margin-bottom: 8px;
+        }
+        :root.light .clawpanel-tooltip-desc {
+            color: #475569;
+        }
+        .clawpanel-tooltip-hint {
+            font-size: 0.75rem;
+            color: rgba(147,197,253,0.7);
+            animation: tooltip-bounce 1.5s ease infinite;
+        }
+        :root.light .clawpanel-tooltip-hint {
+            color: rgba(37,99,235,0.5);
+        }
+        @keyframes tooltip-bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(3px); }
+        }
+        @media (max-width: 768px) {
+            .clawpanel-tooltip { width: 220px; padding: 12px 16px; }
+        }
 </style>
 </head>
 <body>
@@ -1226,19 +1590,22 @@
     <div class="orb-purple"></div>
 
     <!-- 导航 -->
-    <nav>
+    <header>
+    <nav aria-label="主导航">
         <div class="container nav-content">
-            <a href="#" class="logo">
+            <a href="#top" class="logo" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">
                 <span class="logo-icon">🦞</span>
                 <span class="logo-text">OpenClaw CN</span>
             </a>
             <div class="nav-links" id="navLinks">
+                <a href="#free-ai" style="color:#10b981;font-weight:600">🎁 免费AI接口</a>
                 <a href="#quickstart">快速入门</a>
                 <a href="#install">安装</a>
                 <a href="#docs">文档中心</a>
                 <a href="#commands">命令速查</a>
                 <a href="#screenshots">截图</a>
                 <a href="#community">社区</a>
+                <a href="#clawpanel" style="color:var(--blue);font-weight:600">ClawPanel</a>
                 <a href="https://github.com/1186258278/OpenClawChineseTranslation" target="_blank">GitHub</a>
                 <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="切换主题">🌙</button>
             </div>
@@ -1247,7 +1614,9 @@
             </div>
         </div>
     </nav>
+    </header>
 
+    <main>
     <!-- Hero -->
     <section class="hero">
         <div class="container">
@@ -1262,6 +1631,15 @@
             </p>
             <div class="hero-buttons">
                 <a href="#install" class="btn btn-primary">立即安装</a>
+                <span class="clawpanel-btn-wrap">
+                    <a href="#clawpanel" class="btn btn-secondary clawpanel-hero-btn" id="clawpanelHeroBtn">ClawPanel</a>
+                    <div class="clawpanel-tooltip" id="clawpanelTooltip">
+                        <div class="clawpanel-tooltip-arrow"></div>
+                        <div class="clawpanel-tooltip-title">OpenClaw 可视化管理面板</div>
+                        <div class="clawpanel-tooltip-desc">一键安装 OpenClaw，图形界面管理，内置 AI 助手</div>
+                        <div class="clawpanel-tooltip-hint">点击了解更多 ↑</div>
+                    </div>
+                </span>
                 <a href="#docs" class="btn btn-secondary">查看文档</a>
                 <a href="https://github.com/1186258278/OpenClawChineseTranslation" target="_blank" class="btn btn-secondary">GitHub</a>
             </div>
@@ -1317,6 +1695,57 @@
             <div class="marquee-item"><span>📦</span>npm</div>
         </div>
     </div>
+
+    <!-- 🎁 免费 AI 接口推广 -->
+    <section class="section" id="free-ai" style="background: linear-gradient(180deg, transparent, rgba(16,183,129,0.04), transparent);">
+        <div class="container">
+            <h2 class="section-title">🎁 免费 AI 接口</h2>
+            <p class="section-desc">零成本接入主流 AI 模型 — 内部公益平台，无限 Token 流量，超级省钱！</p>
+
+            <div class="install-card" style="max-width: 900px; margin: 0 auto; border-color: rgba(16,183,129,0.2);">
+                <div class="free-ai-grid">
+                    <div>
+                        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px;">
+                            <span style="font-size: 2rem;">🚀</span>
+                            <h3 style="font-size: 1.2rem;">gpt.qt.cool</h3>
+                        </div>
+                        <div style="display: flex; flex-direction: column; gap: 12px;">
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <span style="color: #10b981; font-size: 1.2rem;">✓</span>
+                                <span><strong>无限 Token 流量</strong> — 不限调用次数，真正零成本</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <span style="color: #10b981; font-size: 1.2rem;">✓</span>
+                                <span><strong>主流模型全覆盖</strong> — GPT-5.4、Claude、Gemini、DeepSeek</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <span style="color: #10b981; font-size: 1.2rem;">✓</span>
+                                <span><strong>即开即用</strong> — 兼容 OpenAI 接口，无缝对接 OpenClaw</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <span style="color: #10b981; font-size: 1.2rem;">✓</span>
+                                <span><strong>安全稳定</strong> — 内部公益项目，长期维护</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div style="margin-bottom: 12px;">
+                            <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; margin: 12px 0;">
+                                <p style="font-size: 0.9rem; margin-bottom: 8px;"><strong>使用方法：</strong></p>
+                                <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;">1. 在 <a href="https://gpt.qt.cool/" target="_blank" style="color: var(--primary);">gpt.qt.cool</a> 获取 API Key</p>
+                                <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;">2. OpenClaw 初始化时选择 <strong>OpenAI Compatible</strong></p>
+                                <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;">3. 填入地址和 Key 即可使用</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 12px; margin-top: 16px;">
+                            <a href="https://gpt.qt.cool/" target="_blank" class="btn btn-primary" style="flex: 1; justify-content: center;">🎁 立即使用</a>
+                        </div>
+                        <p style="text-align: center; margin-top: 10px; color: var(--text-muted); font-size: 0.82rem;">💡 搭配 OpenClaw = 免费私人 AI 助手</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- 快速入门 4 步 -->
     <section class="section" id="quickstart">
@@ -1584,27 +2013,27 @@
 
             <div class="screenshots-grid reveal">
                 <div class="screenshot-card">
-                    <img src="image/5.png" alt="概览仪表板" onclick="openModal(this)" loading="lazy">
+                    <img src="image/5.png" alt="OpenClaw 汉化版概览仪表板 - 网关状态监控和快捷操作" onclick="openModal(this)" loading="lazy">
                     <div class="caption"><h4>概览仪表板</h4><p>网关状态、实例监控、快捷操作</p></div>
                 </div>
                 <div class="screenshot-card">
-                    <img src="image/1.png" alt="对话界面" onclick="openModal(this)" loading="lazy">
+                    <img src="image/1.png" alt="OpenClaw AI 助手对话界面 - 实时智能对话交互" onclick="openModal(this)" loading="lazy">
                     <div class="caption"><h4>对话界面</h4><p>与 AI 助手实时交互</p></div>
                 </div>
                 <div class="screenshot-card">
-                    <img src="image/4.png" alt="渠道管理" onclick="openModal(this)" loading="lazy">
+                    <img src="image/4.png" alt="OpenClaw 渠道管理 - WhatsApp Telegram Discord 多平台配置" onclick="openModal(this)" loading="lazy">
                     <div class="caption"><h4>渠道管理</h4><p>WhatsApp、Telegram 等全平台</p></div>
                 </div>
                 <div class="screenshot-card">
-                    <img src="image/2.png" alt="配置中心" onclick="openModal(this)" loading="lazy">
+                    <img src="image/2.png" alt="OpenClaw 配置中心 - 30项参数完整汉化" onclick="openModal(this)" loading="lazy">
                     <div class="caption"><h4>配置中心</h4><p>30+ 配置项完整汉化</p></div>
                 </div>
                 <div class="screenshot-card">
-                    <img src="image/3.png" alt="节点配置" onclick="openModal(this)" loading="lazy">
+                    <img src="image/3.png" alt="OpenClaw 节点配置 - 执行审批和安全策略管理" onclick="openModal(this)" loading="lazy">
                     <div class="caption"><h4>节点配置</h4><p>执行审批、安全策略管理</p></div>
                 </div>
                 <div class="screenshot-card">
-                    <img src="image/6.png" alt="技能插件" onclick="openModal(this)" loading="lazy">
+                    <img src="image/6.png" alt="OpenClaw 技能插件 - 1Password Apple Notes 等扩展集成" onclick="openModal(this)" loading="lazy">
                     <div class="caption"><h4>技能插件</h4><p>1Password、Apple Notes 等扩展</p></div>
                 </div>
             </div>
@@ -1616,6 +2045,62 @@
         <span class="modal-close">&times;</span>
         <img id="modalImage" src="" alt="">
     </div>
+
+    <!-- ClawPanel 推荐 -->
+    <section class="promo-section" id="clawpanel">
+        <div class="container">
+            <div class="promo-card reveal">
+                <div class="promo-info">
+                    <div class="promo-badge">OpenClaw 生态</div>
+                    <h2>用 <span>ClawPanel</span> 管理你的 AI 助手</h2>
+                    <p class="promo-desc">
+                        OpenClaw 可视化管理面板 — 一键安装 OpenClaw，不用敲命令行。
+                        内置 AI 助手帮你诊断问题、读取配置、分析日志，小白也能轻松玩转。
+                    </p>
+                    <div class="promo-features">
+                        <div class="promo-feat">
+                            <div class="promo-feat-icon" style="background:rgba(34,197,94,0.12);color:var(--green)">📦</div>
+                            <span>一键安装 · 自动部署 OpenClaw</span>
+                        </div>
+                        <div class="promo-feat">
+                            <div class="promo-feat-icon" style="background:rgba(59,130,246,0.12);color:var(--blue)">🤖</div>
+                            <span>AI 助手 · 8 大工具 + 4 种模式</span>
+                        </div>
+                        <div class="promo-feat">
+                            <div class="promo-feat-icon" style="background:rgba(244,63,94,0.1);color:#f43f5e">🖼️</div>
+                            <span>图片识别 · 多模态对话</span>
+                        </div>
+                        <div class="promo-feat">
+                            <div class="promo-feat-icon" style="background:rgba(168,85,247,0.12);color:var(--purple)">⚙️</div>
+                            <span>模型管理 · 多厂商一键切换</span>
+                        </div>
+                        <div class="promo-feat">
+                            <div class="promo-feat-icon" style="background:rgba(245,158,11,0.12);color:var(--amber)">📊</div>
+                            <span>仪表盘 · 服务状态一目了然</span>
+                        </div>
+                        <div class="promo-feat">
+                            <div class="promo-feat-icon" style="background:rgba(6,182,212,0.12);color:var(--cyan)">🔄</div>
+                            <span>一键更新 · 版本升级无忧</span>
+                        </div>
+                    </div>
+                    <div class="promo-buttons">
+                        <a href="https://claw.qt.cool/" target="_blank" class="btn-promo btn-promo-primary">了解 ClawPanel →</a>
+                        <a href="https://github.com/qingchencloud/clawpanel/releases" target="_blank" class="btn-promo btn-promo-secondary">下载安装</a>
+                    </div>
+                </div>
+                <div class="promo-preview">
+                    <div class="promo-preview-frame">
+                        <img src="https://claw.qt.cool/00.png" alt="ClawPanel 仪表盘" loading="lazy">
+                    </div>
+                    <div class="promo-platform-tags">
+                        <span class="promo-platform-tag">🪟 Windows</span>
+                        <span class="promo-platform-tag">🍎 macOS</span>
+                        <span class="promo-platform-tag">🐧 Linux</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- 社区交流 -->
     <section class="section" id="community">
@@ -1633,6 +2118,11 @@
                     <div class="community-icon">📱</div>
                     <h3>微信群</h3>
                     <p>扫码加入，问题随时反馈</p>
+                </a>
+                <a href="https://qt.cool/c/OpenClawDY" target="_blank" class="community-card">
+                    <div class="community-icon">🎵</div>
+                    <h3>抖音交流群</h3>
+                    <p>关注抖音，加入社群交流</p>
                 </a>
                 <a href="https://discord.gg/U9AttmsNHh" target="_blank" class="community-card">
                     <div class="community-icon">🎮</div>
@@ -1656,12 +2146,21 @@
                     <p>微信交流群</p>
                     <a href="https://qt.cool/c/OpenClawWx" target="_blank">点击链接加入</a>
                 </div>
+                <div class="qr-item">
+                    <a href="https://qt.cool/c/OpenClawDY" target="_blank">
+                        <img src="https://qt.cool/c/OpenClawDY/qr.png" alt="抖音群二维码">
+                    </a>
+                    <p>抖音交流群</p>
+                    <a href="https://qt.cool/c/OpenClawDY" target="_blank">点击链接加入</a>
+                </div>
             </div>
         </div>
     </section>
 
+    </main>
+
     <!-- Footer -->
-    <footer>
+    <footer role="contentinfo">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
@@ -1689,6 +2188,7 @@
                 </div>
                 <div class="footer-section">
                     <h4>友情链接</h4>
+                    <a href="https://claw.qt.cool/" target="_blank">ClawPanel 管理面板</a>
                     <a href="https://openclaw.ai/" target="_blank">OpenClaw 官网</a>
                     <a href="https://github.com/openclaw/openclaw" target="_blank">OpenClaw GitHub</a>
                     <a href="https://qingchencloud.com/" target="_blank">晴辰云</a>
@@ -1840,6 +2340,29 @@
         document.querySelectorAll('.reveal').forEach(function(el) {
             revealObserver.observe(el);
         });
+
+        // ===== ClawPanel 引导弹窗 =====
+        (function() {
+            var btn = document.getElementById('clawpanelHeroBtn');
+            var tip = document.getElementById('clawpanelTooltip');
+            if (!btn || !tip) return;
+
+            // 首次访问自动弹出 3 秒
+            var shown = localStorage.getItem('clawpanel_tip_shown');
+            if (!shown) {
+                setTimeout(function() {
+                    tip.classList.add('show');
+                    setTimeout(function() {
+                        tip.classList.remove('show');
+                    }, 4000);
+                }, 1500);
+                localStorage.setItem('clawpanel_tip_shown', '1');
+            }
+
+            // hover 显示/隐藏
+            btn.addEventListener('mouseenter', function() { tip.classList.add('show'); });
+            btn.parentElement.addEventListener('mouseleave', function() { tip.classList.remove('show'); });
+        })();
 
         // ===== 磁性探照灯特效（mousemove 边缘高光跟随） =====
         var spotlightCards = '.feature-card, .step-card, .doc-card, .community-card';

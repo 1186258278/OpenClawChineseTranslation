@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Data/PC/openclaw-upstream/**)"
+    ]
+  }
+}

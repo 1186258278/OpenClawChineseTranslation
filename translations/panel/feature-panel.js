@@ -17,6 +17,8 @@
       github: "https://github.com/1186258278/OpenClawChineseTranslation",
       npm: "https://www.npmjs.com/package/@qingchencloud/openclaw-zh",
       companyWebsite: "https://qingchencloud.com/",
+      qqGroup: "https://qt.cool/c/OpenClaw",
+      wechatGroup: "https://qt.cool/c/OpenClawWx",
       license: "MIT License"
     }
   }/*END_PANEL_DATA*/;
@@ -2324,6 +2326,14 @@
           <a class="about-link" href="${about.companyWebsite}" target="_blank" rel="noreferrer">
             ${ICONS.globe}
             <span>公司官网</span>
+          </a>
+          <a class="about-link" href="${about.qqGroup}" target="_blank" rel="noreferrer">
+            ${ICONS.message}
+            <span>QQ群</span>
+          </a>
+          <a class="about-link" href="${about.wechatGroup}" target="_blank" rel="noreferrer">
+            ${ICONS.message}
+            <span>微信群</span>
           </a>
         </div>
         <p class="about-copyright">© 2026 ${about.company} | ${about.license}</p>

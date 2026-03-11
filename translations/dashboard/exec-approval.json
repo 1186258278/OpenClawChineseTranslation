@@ -1,0 +1,19 @@
+{
+  "file": "ui/src/ui/views/exec-approval.ts",
+  "description": "Dashboard 执行审批弹窗翻译",
+  "replacements": {
+    "<div class=\"exec-approval-title\">Exec approval needed</div>": "<div class=\"exec-approval-title\">需要执行审批</div>",
+    "? `expires in ${formatRemaining(remainingMs)}` : \"expired\"": "? `${formatRemaining(remainingMs)} 后过期` : \"已过期\"",
+    "${queueCount} pending</div>": "${queueCount} 个待处理</div>",
+    "renderMetaRow(\"Host\"": "renderMetaRow(\"主机\"",
+    "renderMetaRow(\"Agent\"": "renderMetaRow(\"代理\"",
+    "renderMetaRow(\"Session\"": "renderMetaRow(\"会话\"",
+    "renderMetaRow(\"CWD\"": "renderMetaRow(\"工作目录\"",
+    "renderMetaRow(\"Resolved\"": "renderMetaRow(\"解析路径\"",
+    "renderMetaRow(\"Security\"": "renderMetaRow(\"安全模式\"",
+    "renderMetaRow(\"Ask\"": "renderMetaRow(\"询问模式\"",
+    "Allow once": "允许一次",
+    "Always allow": "始终允许",
+    ">\n            Deny\n          </button>": ">\n            拒绝\n          </button>"
+  }
+}

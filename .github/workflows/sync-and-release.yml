@@ -99,15 +99,6 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           registry-url: 'https://registry.npmjs.org'
 
-      - name: 安装 pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 9
-
-      - name: 安装依赖
-        working-directory: openclaw
-        run: pnpm install --frozen-lockfile
-
       # - name: 发布到 npm (@latest)
       #   working-directory: openclaw
       #   # 使用 --ignore-scripts 跳过 prepack 脚本，因为代码已在 build job 中构建完成
@@ -115,6 +106,7 @@ jobs:
       #   run: npm publish --access public --tag latest --ignore-scripts
       #   env:
       #     NODE_AUTH_TOKEN: ${{ secrets.CI_NPM_TOKEN }}
+
 
       # - name: 同步 npmmirror 镜像源
       #   run: |

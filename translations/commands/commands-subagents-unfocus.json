@@ -2,9 +2,8 @@
   "file": "src/auto-reply/reply/commands-subagents/action-unfocus.ts",
   "description": "子代理命令 - /unfocus 取消聚焦",
   "replacements": {
-    "\"⚠️ /unfocus is only available on Discord.\"": "\"⚠️ /unfocus 仅在 Discord 上可用。\"",
+    "\"⚠️ /unfocus is only available on Discord and Telegram.\"": "\"⚠️ /unfocus 仅在 Discord 和 Telegram 上可用。\"",
     "\"⚠️ /unfocus must be run inside a Discord thread.\"": "\"⚠️ /unfocus 必须在 Discord 线程中运行。\"",
-    "\"⚠️ Discord thread bindings are unavailable for this account.\"": "\"⚠️ 此账户的 Discord 线程绑定不可用。\"",
     "\"ℹ️ This thread is not currently focused.\"": "\"ℹ️ 此线程当前未聚焦。\"",
     "\"✅ Thread unfocused.\"": "\"✅ 线程已取消聚焦。\""
   }

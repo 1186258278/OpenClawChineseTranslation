@@ -60,7 +60,7 @@
     "respond(false, { error: \"message required\" });": "respond(false, { error: \"消息必填\" });",
     "respond(false, { error: \"to required\" });": "respond(false, { error: \"目标(to)必填\" });",
     "respond(false, { error: result.error || \"initiate failed\" });": "respond(false, { error: result.error || \"发起失败\" });",
-    "respond(false, { error: \"callId and message required\" });": "respond(false, { error: \"callId 和消息必填\" });",
+    "return { error: \"callId and message required\" }": "return { error: \"callId 和消息必填\" }",
     "respond(false, { error: result.error || \"continue failed\" });": "respond(false, { error: result.error || \"继续失败\" });",
     "respond(false, { error: result.error || \"speak failed\" });": "respond(false, { error: result.error || \"朗读失败\" });",
     "respond(false, { error: \"callId required\" });": "respond(false, { error: \"callId 必填\" });",

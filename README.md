@@ -16,9 +16,13 @@
 
 <a id="toc"></a>
 
+> 🦀 **[ClawPanel](https://github.com/qingchencloud/clawpanel)** — 内置 AI 助手的可视化管理面板 | 📱 **[ClawApp](https://github.com/qingchencloud/clawapp)** — 手机端聊天客户端 | [查看生态工具 →](#ecosystem)
+
+
 ## 目录
 
 [什么是 OpenClaw？](#what-is-openclaw) ·
+[🎁 免费AI接口](#free-ai) ·
 [4 步上手](#quickstart) ·
 [汉化效果预览](#preview) ·
 [常用命令](#commands) ·
@@ -57,19 +61,96 @@
 
 ---
 
+<a id="free-ai"></a>
+
+## 🎁 免费 AI 接口
+
+> **零成本接入主流 AI 模型！** 我们内部搭建的公益平台，无限 Token 流量，超级省钱！
+
+<p align="center">
+  <a href="https://gpt.qt.cool/"><img src="https://img.shields.io/badge/🚀_免费AI接口-gpt.qt.cool-10b981?style=for-the-badge" alt="免费AI接口"></a>
+</p>
+
+**平台亮点：**
+
+- **🆓 无限 Token 流量** — 不限调用次数，不限 Token 用量，真正零成本
+- **🤖 主流模型全覆盖** — GPT-5.4、Claude、Gemini、DeepSeek 等热门模型开箱即用
+- **⚡ 即开即用** — 注册即可获取 API Key，兼容 OpenAI 接口格式，无缝对接 OpenClaw
+- **🔒 安全稳定** — 内部公益项目，长期维护，稳定可靠
+
+**配合 OpenClaw 使用：**
+
+在 [gpt.qt.cool](https://gpt.qt.cool/) 获取 API Key 后，初始化 OpenClaw 时选择 **OpenAI Compatible** 提供商，填入地址和 Key 即可。支持 GPT-5.4、Claude、Gemini、DeepSeek 等主流模型。
+
+> 💡 **省钱小贴士**：搭配 OpenClaw 使用，相当于拥有了一个免费的私人 AI 助手，日常聊天、写代码、处理文档全部零成本！
+
+[立即使用 →](https://gpt.qt.cool/)
+
 <a id="partners"></a>
 
-## 合作伙伴
+### 合作伙伴
 
 **胜算云** - 国内 AI API 聚合平台，新用户注册送额度，充值尊享 7 折优惠！
 
-| 阶梯 | 春节消耗 | 奖励 |
-|------|---------|------|
-| 尝鲜礼 | ≥50元 | 5元 模力券 |
-| 极客礼 | ≥100元 | 10元 模力券 + Kimi K2.5 七折卡(7天) |
-| 大神礼 | ≥500元 | 50元 模力券 + Kimi K2.5 七折卡(7天) |
+[注册账号 →](https://www.shengsuanyun.com/?from=CH_4BVI0BM2)
 
-[查看活动 →](https://www.shengsuanyun.com/activity/4184b48a6be4443cbe13e86e091e43b4?from=CH_4BVI0BM2) · [注册账号 →](https://www.shengsuanyun.com/?from=CH_4BVI0BM2)
+<p align="right"><a href="#top">回到顶部</a></p>
+
+---
+
+<a id="ecosystem"></a>
+
+## 🔥 生态工具
+
+<table>
+  <tr>
+    <td width="50%">
+      <h3>🦀 <a href="https://github.com/qingchencloud/clawpanel">ClawPanel</a></h3>
+      <p><strong>内置 AI 助手</strong>的 OpenClaw 可视化管理面板</p>
+      <ul>
+        <li>🤖 AI 助手 — 8 大工具 + 4 种模式，自动诊断配置</li>
+        <li>🖼️ 图片识别 — 粘贴截图，AI 一眼看懂</li>
+        <li>⚡ 一键安装 — 自动检测环境，无需终端</li>
+        <li>🎛️ 可视化管理 — 模型、Gateway、Agent</li>
+      </ul>
+      <p>
+        <a href="https://github.com/qingchencloud/clawpanel/releases/latest"><img src="https://img.shields.io/github/v/release/qingchencloud/clawpanel?style=flat-square&color=6366f1&label=latest" alt="Release"></a>
+        <a href="https://claw.qt.cool/"><img src="https://img.shields.io/badge/site-claw.qt.cool-8b5cf6?style=flat-square" alt="Site"></a>
+      </p>
+      <details>
+        <summary>📸 预览截图（点击展开）</summary>
+        <br>
+        <img src="https://raw.githubusercontent.com/qingchencloud/clawpanel/main/docs/ai-assistant-demo.gif" width="100%" alt="ClawPanel AI Demo">
+        <br><br>
+        <img src="https://raw.githubusercontent.com/qingchencloud/clawpanel/main/docs/00.png" width="100%" alt="ClawPanel AI">
+        <br><br>
+        <img src="https://raw.githubusercontent.com/qingchencloud/clawpanel/main/docs/13.png" width="100%" alt="ClawPanel Vision">
+        <br><br>
+        <img src="https://raw.githubusercontent.com/qingchencloud/clawpanel/main/docs/01.png" width="100%" alt="ClawPanel Dashboard">
+      </details>
+    </td>
+    <td width="50%">
+      <h3>📱 <a href="https://github.com/qingchencloud/clawapp">ClawApp</a></h3>
+      <p>用手机浏览器和 OpenClaw AI 智能体聊天</p>
+      <ul>
+        <li>💬 流式聊天 — WebSocket 实时对话</li>
+        <li>📷 图片收发 — 拍照上传，AI 图片回复</li>
+        <li>🔧 工具调用 — 实时状态显示</li>
+        <li>📱 PWA + APK — 添加到主屏幕</li>
+      </ul>
+      <p>
+        <a href="https://github.com/qingchencloud/clawapp/releases/latest"><img src="https://img.shields.io/github/v/release/qingchencloud/clawapp?style=flat-square&color=10b981&label=latest" alt="Release"></a>
+        <a href="https://clawapp.qt.cool/"><img src="https://img.shields.io/badge/site-clawapp.qt.cool-10b981?style=flat-square" alt="Site"></a>
+      </p>
+      <details>
+        <summary>📸 预览截图（点击展开）</summary>
+        <br>
+        <img src="https://raw.githubusercontent.com/qingchencloud/clawapp/main/docs/image/chat-response.png" width="280" alt="ClawApp Chat">
+        <img src="https://raw.githubusercontent.com/qingchencloud/clawapp/main/docs/image/login-page.png" width="280" alt="ClawApp Login">
+      </details>
+    </td>
+  </tr>
+</table>
 
 <p align="right"><a href="#top">回到顶部</a></p>
 
@@ -566,6 +647,8 @@ npm install -g @qingchencloud/openclaw-updater
   <a href="https://qt.cool/c/OpenClaw"><img src="https://img.shields.io/badge/QQ群-加入交流-12B7F5?style=for-the-badge&logo=tencent-qq&logoColor=white" alt="QQ群"></a>
   &nbsp;&nbsp;
   <a href="https://qt.cool/c/OpenClawWx"><img src="https://img.shields.io/badge/微信群-加入交流-07C160?style=for-the-badge&logo=wechat&logoColor=white" alt="微信群"></a>
+  &nbsp;&nbsp;
+  <a href="https://qt.cool/c/OpenClawDY"><img src="https://img.shields.io/badge/抖音群-加入交流-000000?style=for-the-badge&logo=tiktok&logoColor=white" alt="抖音群"></a>
 </p>
 
 ### QQ 交流群
@@ -586,6 +669,16 @@ npm install -g @qingchencloud/openclaw-updater
   </a>
   <br>
   <em>扫码或 <a href="https://qt.cool/c/OpenClawWx">点击链接</a> 加入 | 碰到问题也可以直接在群内反馈</em>
+</p>
+
+### 抖音交流群
+
+<p align="center">
+  <a href="https://qt.cool/c/OpenClawDY">
+    <img src="https://qt.cool/c/OpenClawDY/qr.png" alt="抖音交流群" width="200px">
+  </a>
+  <br>
+  <em>扫码或 <a href="https://qt.cool/c/OpenClawDY">点击链接</a> 加入 | 拍视频、看教程、交流心得</em>
 </p>
 
 <p align="right"><a href="#top">回到顶部</a></p>

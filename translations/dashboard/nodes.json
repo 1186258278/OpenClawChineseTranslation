@@ -30,6 +30,10 @@
     "<div class=\"muted\">No agents found.</div>": "<div class=\"muted\">未找到代理。</div>",
     "Use default": "使用默认",
     "Remove": "移除",
-    "<span>Binding</span>": "<span>绑定</span>"
+    "<span>Binding</span>": "<span>绑定</span>",
+    "Pin agents to a specific node when using <span class=\"mono\">exec host=node</span>.": "将代理固定到特定节点（使用 <span class=\"mono\">exec host=node</span> 时）。",
+    "Switch the Config tab to <strong>Form</strong> mode to edit bindings here.": "切换到配置页的<strong>表单</strong>模式以在此编辑绑定。",
+    "default agent": "默认代理",
+    "agent": "代理"
   }
 }

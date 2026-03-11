@@ -6,7 +6,7 @@
     "\"⚙️ Usage: /activation mention|always\"": "\"⚙️ 用法：/activation mention|always\"",
     "\"⚙️ Usage: /send on|off|inherit\"": "\"⚙️ 用法：/send on|off|inherit\"",
     "\"⚙️ Usage: /usage off|tokens|full|cost\"": "\"⚙️ 用法：/usage off|tokens|full|cost\"",
-    "\"⚠️ /session idle and /session max-age are currently available for Discord thread-bound sessions.\"": "\"⚠️ /session idle 和 /session max-age 目前仅适用于 Discord 线程绑定会话。\"",
+    "\"⚠️ /session idle and /session max-age are currently available for Discord and Telegram bound sessions.\"": "\"⚠️ /session idle 和 /session max-age 目前仅适用于 Discord 和 Telegram 绑定会话。\"",
     "\"⚠️ /session idle and /session max-age must be run inside a focused Discord thread.\"": "\"⚠️ /session idle 和 /session max-age 必须在已聚焦的 Discord 线程中运行。\"",
     "\"⚠️ Discord thread bindings are unavailable for this account.\"": "\"⚠️ 此账户的 Discord 线程绑定不可用。\"",
     "\"ℹ️ This thread is not currently focused.\"": "\"ℹ️ 此线程当前未聚焦。\"",

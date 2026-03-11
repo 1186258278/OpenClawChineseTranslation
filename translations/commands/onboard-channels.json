@@ -44,7 +44,7 @@
     "label: \"Finished\"": "label: \"完成\"",
     "hint: selection.length > 0 ? \"Done\" : \"Skip for now\"": "hint: selection.length > 0 ? \"完成\" : \"暂时跳过\"",
     "\"Selected channels\"": "\"已选渠道\"",
-    "`Cannot enable ${channel}: ${result.reason ?? \"plugin disabled\"}.`": "`无法启用 ${channel}：${result.reason ?? \"插件已禁用\"}。`",
+    "`Cannot enable ${channel}: ${result.reason ?? \"": "`无法启用 ${channel}：${result.reason ?? \"",
     "plugin not available (continuing with onboarding). If the channel still doesn't work after setup, run": "插件不可用（继续初始化向导）。如果设置完成后渠道仍无法工作，请运行",
     "then restart the gateway.": "然后重启网关。"
   }

@@ -21,67 +21,50 @@
     "- macOS app (system + notifications)": "- macOS 应用（系统通知）",
     "- iOS app (camera/canvas)": "- iOS 应用（摄像头/画布）",
     "- Android app (camera/canvas)": "- Android 应用（摄像头/画布）",
-
     "\"Gateway: reachable\"": "\"网关：已连接\"",
     ": `Gateway: not detected${gatewayProbe.detail ? ` (${gatewayProbe.detail})` : \"\"}`;": ": `网关：未检测到${gatewayProbe.detail ? `（${gatewayProbe.detail}）` : \"\"}`;",
     "\"Docs: https://docs.openclaw.ai/web/control-ui\"": "\"文档：https://docs.openclaw.ai/web/control-ui\"",
-
     "\"This is the defining action that makes your agent you.\"": "\"这是让你的智能体成为你的关键步骤。\"",
     "\"Please take your time.\"": "\"请花点时间认真填写。\"",
     "\"The more you tell it, the better the experience will be.\"": "\"你提供的信息越多，体验就越好。\"",
     "'We will send: \"Wake up, my friend!\"'": "'我们将发送：\"醒醒，朋友！\"'",
     "\"Start TUI (best option!)\"": "\"启动 TUI（推荐！）\"",
-
     "\"Gateway token: shared auth for the Gateway + Control UI.\"": "\"网关令牌：网关和控制面板的共享认证。\"",
     "\"Stored in: ~/.openclaw/openclaw.json (gateway.auth.token) or OPENCLAW_GATEWAY_TOKEN.\"": "\"存储位置：~/.openclaw/openclaw.json (gateway.auth.token) 或 OPENCLAW_GATEWAY_TOKEN 环境变量。\"",
-    "\"Web UI stores a copy in this browser's localStorage (openclaw.control.settings.v1).\"": "\"Web UI 会在浏览器 localStorage 中保存一份副本 (openclaw.control.settings.v1)。\"",
+    "\"Web UI keeps dashboard URL tokens in memory for the current tab and strips them from the URL after load.\"": "\"Web UI 会将控制台 URL 令牌保存在当前标签页内存中，并在加载后从 URL 中移除。\"",
     "\"If prompted: paste the token into Control UI settings (or use the tokenized dashboard URL).\"": "\"如果提示输入：将令牌粘贴到控制面板设置中（或使用带令牌的面板链接）。\"",
-
     "message: \"How do you want to hatch your bot?\"": "message: \"你想如何启动你的智能体？\"",
     "{ value: \"tui\", label: \"Hatch in TUI (recommended)\" }": "{ value: \"tui\", label: \"在 TUI 中启动（推荐）\" }",
     "{ value: \"web\", label: \"Open the Web UI\" }": "{ value: \"web\", label: \"打开 Web 控制面板\" }",
     "{ value: \"later\", label: \"Do this later\" }": "{ value: \"later\", label: \"稍后再说\" }",
-
     "message: hasBootstrap ? \"Wake up, my friend!\" : undefined": "message: hasBootstrap ? \"醒醒，朋友！\" : undefined",
-
     "\"Opened in your browser. Keep that tab to control OpenClaw.\"": "\"已在浏览器中打开。保持该标签页以控制 OpenClaw。\"",
     "\"Copy/paste this URL in a browser on this machine to control OpenClaw.\"": "\"复制此链接并在浏览器中打开以控制 OpenClaw。\"",
     "\"Dashboard ready\"": "\"控制面板就绪\"",
-
     "\"Back up your agent workspace.\"": "\"请备份你的智能体工作区。\"",
     "\"Docs: https://docs.openclaw.ai/concepts/agent-workspace\"": "\"文档：https://docs.openclaw.ai/concepts/agent-workspace\"",
     "\"Workspace backup\"": "\"工作区备份\"",
-
     "\"Running agents on your computer is risky — harden your setup: https://docs.openclaw.ai/security\"": "\"在你的电脑上运行智能体存在风险 — 请加固你的配置：https://docs.openclaw.ai/security\"",
     "\"Security\"": "\"安全提示\"",
-
     "\"Skipping Control UI/TUI prompts.\"": "\"跳过控制面板/TUI 提示。\"",
-
     "\"Web search is enabled, so your agent can look things up online when needed.\"": "\"网页搜索已启用，你的智能体可以在需要时搜索网络。\"",
-    "\"API key: stored in config (tools.web.search.apiKey).\"": "\"API 密钥：已保存在配置中 (tools.web.search.apiKey)。\"",
-    "\"API key: provided via BRAVE_API_KEY env var (Gateway environment).\"": "\"API 密钥：通过 BRAVE_API_KEY 环境变量提供（网关环境）。\"",
+    "\"API key: stored in config.\"": "\"API 密钥：已保存在配置中。\"",
+    "\"API key: configured via secret reference.\"": "\"API 密钥：通过密钥引用配置。\"",
     "\"Docs: https://docs.openclaw.ai/tools/web\"": "\"文档：https://docs.openclaw.ai/tools/web\"",
-    "\"If you want your agent to be able to search the web, you’ll need an API key.\"": "\"如果你希望智能体能搜索网页，需要一个 API 密钥。\"",
-    "\"OpenClaw uses Brave Search for the `web_search` tool. Without a Brave Search API key, web search won’t work.\"": "\"OpenClaw 使用 Brave Search 提供 `web_search` 工具。没有 Brave Search API 密钥，网页搜索将无法使用。\"",
-    "\"Set it up interactively:\"": "\"交互式设置：\"",
-    "\"- Enable web_search and paste your Brave Search API key\"": "\"- 启用 web_search 并粘贴你的 Brave Search API 密钥\"",
-    "\"Alternative: set BRAVE_API_KEY in the Gateway environment (no config changes).\"": "\"或者：在网关环境中设置 BRAVE_API_KEY 环境变量（无需修改配置）。\"",
-
     "\"Systemd user services are unavailable. Skipping lingering checks and service install.\"": "\"Systemd 用户服务不可用。跳过 lingering 检查和服务安装。\"",
     "\"Systemd\"": "\"Systemd\"",
     "message: \"Install Gateway service (recommended)\"": "message: \"安装网关服务（推荐）\"",
     "\"Systemd user services are unavailable; skipping service install. Use your container supervisor or `docker compose up -d`.\"": "\"Systemd 用户服务不可用；跳过服务安装。请使用容器管理器或 `docker compose up -d`。\"",
     "\"Gateway service runtime\"": "\"网关服务运行时\"",
-
     "\"Health check help\"": "\"健康检查帮助\"",
     "\"Docs:\"": "\"文档：\"",
     "\"https://docs.openclaw.ai/gateway/health\"": "\"https://docs.openclaw.ai/gateway/health\"",
     "\"https://docs.openclaw.ai/gateway/troubleshooting\"": "\"https://docs.openclaw.ai/gateway/troubleshooting\"",
-
     "\"Control UI\"": "\"控制面板\"",
     "\"Token\"": "\"令牌\"",
     "\"Later\"": "\"稍后\"",
-
-    "\"Linux installs use a systemd user service by default. Without lingering, systemd stops the user session on logout/idle and kills the Gateway.\"": "\"Linux 安装默认使用 systemd 用户服务。如果没有启用 lingering，systemd 会在登出/空闲时停止用户会话并终止网关。\""
+    "\"Linux installs use a systemd user service by default. Without lingering, systemd stops the user session on logout/idle and kills the Gateway.\"": "\"Linux 安装默认使用 systemd 用户服务。如果没有启用 lingering，systemd 会在登出/空闲时停止用户会话并终止网关。\"",
+    "\"web_search will not work until a key is added.\"": "\"web_search 在添加密钥之前无法使用。\"",
+    "\"Web search was skipped. You can enable it later:\"": "\"网页搜索已跳过。你可以稍后启用：\""
   }
 }

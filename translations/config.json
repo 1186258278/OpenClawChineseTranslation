@@ -111,7 +111,12 @@
       "dashboard/config-form-shared.json",
       "dashboard/agents.json",
       "dashboard/usage.json",
-      "dashboard/skills-shared.json"
+      "dashboard/skills-shared.json",
+      "dashboard/nodes-exec-approvals.json",
+      "dashboard/exec-approval.json",
+      "dashboard/agents-tools-skills.json",
+      "dashboard/schema-labels.json",
+      "dashboard/schema-help.json"
     ],
     "extensions": [
       "extensions/feishu.json",

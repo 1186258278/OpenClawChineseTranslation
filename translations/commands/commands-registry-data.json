@@ -3,8 +3,8 @@
   "description": "聊天命令注册表 - 新增命令描述翻译",
   "replacements": {
     "description: \"Manage session-level settings (for example /session idle).\"": "description: \"管理会话级设置（例如 /session idle）。\"",
-    "description: \"Bind this Discord thread (or a new one) to a session target.\"": "description: \"将此 Discord 线程（或新线程）绑定到会话目标。\"",
-    "description: \"Remove the current Discord thread binding.\"": "description: \"移除当前 Discord 线程绑定。\"",
+    "description:\n        \"Bind this thread (Discord) or topic/conversation (Telegram) to a session target.\"": "description:\n        \"将此线程（Discord）或话题/对话（Telegram）绑定到会话目标。\"",
+    "description: \"Remove the current thread (Discord) or topic/conversation (Telegram) binding.\"": "description: \"移除当前线程（Discord）或话题/对话（Telegram）绑定。\"",
     "description: \"List thread-bound agents for this session.\"": "description: \"列出此会话的线程绑定代理。\"",
     "description: \"Duration (24h, 90m) or off\"": "description: \"时长（24h、90m）或 off\""
   }

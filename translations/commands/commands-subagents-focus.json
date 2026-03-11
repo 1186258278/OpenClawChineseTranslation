@@ -2,10 +2,8 @@
   "file": "src/auto-reply/reply/commands-subagents/action-focus.ts",
   "description": "子代理命令 - /focus 聚焦操作",
   "replacements": {
-    "\"⚠️ /focus is only available on Discord.\"": "\"⚠️ /focus 仅在 Discord 上可用。\"",
+    "\"⚠️ /focus is only available on Discord and Telegram.\"": "\"⚠️ /focus 仅在 Discord 和 Telegram 上可用。\"",
     "\"Usage: /focus <subagent-label|session-key|session-id|session-label>\"": "\"用法：/focus <子代理标签|会话键|会话ID|会话标签>\"",
-    "\"⚠️ Discord thread bindings are unavailable for this account.\"": "\"⚠️ 此账户的 Discord 线程绑定不可用。\"",
-    "\"⚠️ Could not resolve a Discord channel for /focus.\"": "\"⚠️ 无法为 /focus 解析 Discord 频道。\"",
-    "\"⚠️ Failed to bind a Discord thread to the target session.\"": "\"⚠️ 将 Discord 线程绑定到目标会话失败。\""
+    "\"⚠️ Could not resolve a Discord channel for /focus.\"": "\"⚠️ 无法为 /focus 解析 Discord 频道。\""
   }
 }
