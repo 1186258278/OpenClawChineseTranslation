@@ -140,13 +140,35 @@ uninstall_original() {
     fi
 }
 
+# 检测是否在中国大陆（用于自动选择镜像源）
+detect_china() {
+    # 检查常见中国 DNS / 时区
+    if [ -f /etc/timezone ] && grep -qi "Asia/Shanghai\|Asia/Chongqing" /etc/timezone 2>/dev/null; then
+        return 0
+    fi
+    if [ "$(date +%Z 2>/dev/null)" = "CST" ]; then
+        return 0
+    fi
+    # 检查 locale
+    if echo "${LANG:-}${LC_ALL:-}" | grep -qi "zh_CN\|zh_TW"; then
+        return 0
+    fi
+    return 1
+}
+
 # 安装汉化版
 install_chinese() {
     echo ""
     echo -e "${BLUE}📦 正在安装 OpenClaw 汉化版 [${VERSION_NAME}]...${NC}"
     echo ""
     
-    npm install -g @qingchencloud/openclaw-zh@${NPM_TAG}
+    local REGISTRY_ARG=""
+    if detect_china; then
+        echo -e "${CYAN}🇨🇳 检测到中国大陆环境，自动使用淘宝镜像源加速${NC}"
+        REGISTRY_ARG="--registry=https://registry.npmmirror.com"
+    fi
+    
+    npm install -g @qingchencloud/openclaw-zh@${NPM_TAG} ${REGISTRY_ARG}
     
     echo ""
     echo -e "${GREEN}✓${NC} 安装完成！"

@@ -860,7 +860,7 @@
         /* 社区 */
         .community-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(5, 1fr);
             gap: 16px;
             max-width: 1100px;
             margin: 0 auto;
@@ -896,7 +896,7 @@
             box-shadow: 0 16px 48px rgba(0,0,0,0.15);
         }
 
-        .community-icon { font-size: 2.2rem; margin-bottom: 12px; }
+        .community-icon { margin-bottom: 12px; display: flex; justify-content: center; align-items: center; color: var(--accent-color, #dc2626); }
         .community-card h3 { font-size: 1rem; margin-bottom: 6px; }
         .community-card p { color: var(--text-secondary); font-size: 0.82rem; }
 
@@ -1598,16 +1598,16 @@
                 <span class="logo-text">OpenClaw CN</span>
             </a>
             <div class="nav-links" id="navLinks">
-                <a href="#free-ai" style="color:#10b981;font-weight:600">🎁 免费AI接口</a>
+                <a href="#free-ai" style="color:#10b981;font-weight:600"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px;margin-right:2px"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/></svg> 免费AI接口</a>
                 <a href="#quickstart">快速入门</a>
                 <a href="#install">安装</a>
-                <a href="#docs">文档中心</a>
+                <a href="/doc-hub.html" style="color:var(--primary);font-weight:600"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px;margin-right:2px"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg> 文档中心</a>
                 <a href="#commands">命令速查</a>
                 <a href="#screenshots">截图</a>
                 <a href="#community">社区</a>
                 <a href="#clawpanel" style="color:var(--blue);font-weight:600">ClawPanel</a>
                 <a href="https://github.com/1186258278/OpenClawChineseTranslation" target="_blank">GitHub</a>
-                <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="切换主题">🌙</button>
+                <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="切换主题"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
             </div>
             <div class="hamburger" id="hamburger" onclick="toggleMenu()">
                 <span></span><span></span><span></span>
@@ -1673,57 +1673,57 @@
     <!-- 品牌跑马灯 -->
     <div class="marquee-section">
         <div class="marquee-track" id="marqueeTrack">
-            <div class="marquee-item"><span>💬</span>WhatsApp</div>
-            <div class="marquee-item"><span>✈️</span>Telegram</div>
-            <div class="marquee-item"><span>🎮</span>Discord</div>
-            <div class="marquee-item"><span>💼</span>Slack</div>
-            <div class="marquee-item"><span>🔒</span>Signal</div>
-            <div class="marquee-item"><span>🧠</span>OpenAI</div>
-            <div class="marquee-item"><span>🤖</span>Anthropic</div>
-            <div class="marquee-item"><span>🌐</span>Gemini</div>
-            <div class="marquee-item"><span>🐳</span>Docker</div>
-            <div class="marquee-item"><span>📦</span>npm</div>
-            <div class="marquee-item"><span>💬</span>WhatsApp</div>
-            <div class="marquee-item"><span>✈️</span>Telegram</div>
-            <div class="marquee-item"><span>🎮</span>Discord</div>
-            <div class="marquee-item"><span>💼</span>Slack</div>
-            <div class="marquee-item"><span>🔒</span>Signal</div>
-            <div class="marquee-item"><span>🧠</span>OpenAI</div>
-            <div class="marquee-item"><span>🤖</span>Anthropic</div>
-            <div class="marquee-item"><span>🌐</span>Gemini</div>
-            <div class="marquee-item"><span>🐳</span>Docker</div>
-            <div class="marquee-item"><span>📦</span>npm</div>
+            <div class="marquee-item"><span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>WhatsApp</div>
+            <div class="marquee-item"><span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span>Telegram</div>
+            <div class="marquee-item"><span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></span>Discord</div>
+            <div class="marquee-item"><span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span>Slack</div>
+            <div class="marquee-item"><span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>Signal</div>
+            <div class="marquee-item"><span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"/><path d="M12 8v8M8 12h8"/></svg></span>OpenAI</div>
+            <div class="marquee-item"><span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="9" cy="16" r="1"/><circle cx="15" cy="16" r="1"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span>Anthropic</div>
+            <div class="marquee-item"><span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>Gemini</div>
+            <div class="marquee-item"><span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="15" rx="2" ry="2"/><path d="M17 2l-5 5-5-5"/></svg></span>Docker</div>
+            <div class="marquee-item"><span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></span>npm</div>
+            <div class="marquee-item"><span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>WhatsApp</div>
+            <div class="marquee-item"><span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span>Telegram</div>
+            <div class="marquee-item"><span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></span>Discord</div>
+            <div class="marquee-item"><span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span>Slack</div>
+            <div class="marquee-item"><span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>Signal</div>
+            <div class="marquee-item"><span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"/><path d="M12 8v8M8 12h8"/></svg></span>OpenAI</div>
+            <div class="marquee-item"><span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="9" cy="16" r="1"/><circle cx="15" cy="16" r="1"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span>Anthropic</div>
+            <div class="marquee-item"><span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>Gemini</div>
+            <div class="marquee-item"><span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="15" rx="2" ry="2"/><path d="M17 2l-5 5-5-5"/></svg></span>Docker</div>
+            <div class="marquee-item"><span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></span>npm</div>
         </div>
     </div>
 
     <!-- 🎁 免费 AI 接口推广 -->
     <section class="section" id="free-ai" style="background: linear-gradient(180deg, transparent, rgba(16,183,129,0.04), transparent);">
         <div class="container">
-            <h2 class="section-title">🎁 免费 AI 接口</h2>
+            <h2 class="section-title"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-4px;margin-right:6px"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>免费 AI 接口</h2>
             <p class="section-desc">零成本接入主流 AI 模型 — 内部公益平台，无限 Token 流量，超级省钱！</p>
 
             <div class="install-card" style="max-width: 900px; margin: 0 auto; border-color: rgba(16,183,129,0.2);">
                 <div class="free-ai-grid">
                     <div>
                         <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px;">
-                            <span style="font-size: 2rem;">🚀</span>
+                            <span style="font-size: 2rem;display:inline-flex"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></span>
                             <h3 style="font-size: 1.2rem;">gpt.qt.cool</h3>
                         </div>
                         <div style="display: flex; flex-direction: column; gap: 12px;">
                             <div style="display: flex; align-items: center; gap: 8px;">
-                                <span style="color: #10b981; font-size: 1.2rem;">✓</span>
+                                <span style="color: #10b981; font-size: 1.2rem;display:inline-flex"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
                                 <span><strong>无限 Token 流量</strong> — 不限调用次数，真正零成本</span>
                             </div>
                             <div style="display: flex; align-items: center; gap: 8px;">
-                                <span style="color: #10b981; font-size: 1.2rem;">✓</span>
+                                <span style="color: #10b981; font-size: 1.2rem;display:inline-flex"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
                                 <span><strong>主流模型全覆盖</strong> — GPT-5.4、Claude、Gemini、DeepSeek</span>
                             </div>
                             <div style="display: flex; align-items: center; gap: 8px;">
-                                <span style="color: #10b981; font-size: 1.2rem;">✓</span>
+                                <span style="color: #10b981; font-size: 1.2rem;display:inline-flex"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
                                 <span><strong>即开即用</strong> — 兼容 OpenAI 接口，无缝对接 OpenClaw</span>
                             </div>
                             <div style="display: flex; align-items: center; gap: 8px;">
-                                <span style="color: #10b981; font-size: 1.2rem;">✓</span>
+                                <span style="color: #10b981; font-size: 1.2rem;display:inline-flex"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
                                 <span><strong>安全稳定</strong> — 内部公益项目，长期维护</span>
                             </div>
                         </div>
@@ -1738,9 +1738,9 @@
                             </div>
                         </div>
                         <div style="display: flex; gap: 12px; margin-top: 16px;">
-                            <a href="https://gpt.qt.cool/" target="_blank" class="btn btn-primary" style="flex: 1; justify-content: center;">🎁 立即使用</a>
+                            <a href="https://gpt.qt.cool/" target="_blank" class="btn btn-primary" style="flex: 1; justify-content: center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px;margin-right:4px"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/></svg> 立即使用</a>
                         </div>
-                        <p style="text-align: center; margin-top: 10px; color: var(--text-muted); font-size: 0.82rem;">💡 搭配 OpenClaw = 免费私人 AI 助手</p>
+                        <p style="text-align: center; margin-top: 10px; color: var(--text-muted); font-size: 0.82rem;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px;opacity:0.7"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg> 搭配 OpenClaw = 免费私人 AI 助手</p>
                     </div>
                 </div>
             </div>
@@ -1758,7 +1758,7 @@
                     <div class="step-num">1</div>
                     <h3>安装</h3>
                     <p>npm 全局安装汉化版</p>
-                    <code>npm i -g @qingchencloud/openclaw-zh@latest</code>
+                    <code>npm i -g @qingchencloud/openclaw-zh --registry=https://registry.npmmirror.com</code>
                 </div>
                 <div class="step-card">
                     <div class="step-num">2</div>
@@ -1812,9 +1812,9 @@
                 </div>
 
                 <div class="install-method" id="method-npm">
-                    <div class="code-label">npm 全局安装</div>
+                    <div class="code-label">npm 全局安装（国内自动加速）</div>
                     <div class="code-block">
-                        <code>npm install -g @qingchencloud/openclaw-zh@latest</code>
+                        <code>npm install -g @qingchencloud/openclaw-zh@latest --registry=https://registry.npmmirror.com</code>
                         <button class="copy-btn" onclick="copyCode(this)">复制</button>
                     </div>
                     <div class="code-label">安装后运行</div>
@@ -1853,7 +1853,7 @@
 
             <div class="docs-grid reveal">
                 <div class="doc-card" onclick="openDoc('../README.md','OpenClaw 主页')" style="cursor:pointer">
-                    <div class="doc-icon" style="background:rgba(220,38,38,0.12);color:var(--primary)">🏠</div>
+                    <div class="doc-icon" style="background:rgba(220,38,38,0.12);color:var(--primary)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
                     <div>
                         <h3>项目主页 README</h3>
                         <p>最完整的项目介绍，包含安装上手、命令速查、更新升级、Docker 部署、手机端、插件扩展等全部内容</p>
@@ -1866,7 +1866,7 @@
                     </div>
                 </div>
                 <div class="doc-card" onclick="openDoc('INSTALL_GUIDE.md','安装指南')" style="cursor:pointer">
-                    <div class="doc-icon" style="background:rgba(59,130,246,0.12);color:var(--blue)">📖</div>
+                    <div class="doc-icon" style="background:rgba(59,130,246,0.12);color:var(--blue)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
                     <div>
                         <h3>安装指南</h3>
                         <p>从零开始的完整安装教程，包含 Node.js 安装、模型配置、守护进程、内网访问等</p>
@@ -1879,7 +1879,7 @@
                     </div>
                 </div>
                 <div class="doc-card" onclick="openDoc('DOCKER_GUIDE.md','Docker 部署指南')" style="cursor:pointer">
-                    <div class="doc-icon" style="background:rgba(6,182,212,0.12);color:var(--cyan)">🐳</div>
+                    <div class="doc-icon" style="background:rgba(6,182,212,0.12);color:var(--cyan)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="15" rx="2" ry="2"/><path d="M17 2l-5 5-5-5"/></svg></div>
                     <div>
                         <h3>Docker 部署指南</h3>
                         <p>一键部署脚本、Docker Compose、远程访问配置、Nginx 反代、Token 认证</p>
@@ -1892,7 +1892,7 @@
                     </div>
                 </div>
                 <div class="doc-card" onclick="openDoc('FAQ.md','常见问题 FAQ')" style="cursor:pointer">
-                    <div class="doc-icon" style="background:rgba(245,158,11,0.12);color:var(--amber)">❓</div>
+                    <div class="doc-icon" style="background:rgba(245,158,11,0.12);color:var(--amber)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
                     <div>
                         <h3>常见问题 FAQ</h3>
                         <p>安装失败、启动报错、Dashboard 连不上、内网访问、模型配置等高频问题解答</p>
@@ -1904,8 +1904,21 @@
                         </div>
                     </div>
                 </div>
+                <div class="doc-card" onclick="window.open('doc-hub.html','_self')" style="cursor:pointer;border:1px solid rgba(220,38,38,0.3);">
+                    <div class="doc-icon" style="background:rgba(220,38,38,0.12);color:var(--red)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+                    <div>
+                        <h3>📚 完整文档中心</h3>
+                        <p>国产模型配置、NAS 部署、官方文档中文版等全部文档，专为国内用户优化</p>
+                        <div class="doc-tags">
+                            <span class="doc-tag">国产模型</span>
+                            <span class="doc-tag">NAS 部署</span>
+                            <span class="doc-tag">官方文档</span>
+                            <span class="doc-tag">飞书配置</span>
+                        </div>
+                    </div>
+                </div>
                 <div class="doc-card" onclick="openDoc('CONTRIBUTING.md','贡献指南')" style="cursor:pointer">
-                    <div class="doc-icon" style="background:rgba(168,85,247,0.12);color:var(--purple)">🤝</div>
+                    <div class="doc-icon" style="background:rgba(168,85,247,0.12);color:var(--purple)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
                     <div>
                         <h3>贡献指南</h3>
                         <p>参与汉化翻译、提交 PR、项目结构说明、翻译规范</p>
@@ -1972,32 +1985,32 @@
 
             <div class="features-grid reveal">
                 <div class="feature-card">
-                    <div class="feature-icon">⏱️</div>
+                    <div class="feature-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
                     <h3>每小时自动同步</h3>
                     <p>GitHub Actions CI/CD 流水线，每小时检查官方更新，零延迟体验新功能</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🌏</div>
+                    <div class="feature-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
                     <h3>全量深度汉化</h3>
                     <p>覆盖 CLI 界面、初始化向导、安全提示、帮助信息，符合中文语境</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🚀</div>
+                    <div class="feature-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/></svg></div>
                     <h3>CDN 极速下载</h3>
                     <p>内置 jsDelivr CDN 加速，国内网络环境也能快速安装</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">💬</div>
+                    <div class="feature-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
                     <h3>多平台聊天</h3>
                     <p>WhatsApp、Telegram、Discord、Slack、Signal 等主流聊天应用全支持</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🧠</div>
+                    <div class="feature-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"/><path d="M12 8v8M8 12h8"/></svg></div>
                     <h3>持久记忆</h3>
                     <p>AI 助手记住你的偏好和上下文，成为真正专属于你的个人助手</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🔒</div>
+                    <div class="feature-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
                     <h3>隐私优先</h3>
                     <p>完全运行在你自己的机器上，数据始终在本地，你的消息你做主</p>
                 </div>
@@ -2059,27 +2072,27 @@
                     </p>
                     <div class="promo-features">
                         <div class="promo-feat">
-                            <div class="promo-feat-icon" style="background:rgba(34,197,94,0.12);color:var(--green)">📦</div>
+                            <div class="promo-feat-icon" style="background:rgba(34,197,94,0.12);color:var(--green)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div>
                             <span>一键安装 · 自动部署 OpenClaw</span>
                         </div>
                         <div class="promo-feat">
-                            <div class="promo-feat-icon" style="background:rgba(59,130,246,0.12);color:var(--blue)">🤖</div>
+                            <div class="promo-feat-icon" style="background:rgba(59,130,246,0.12);color:var(--blue)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="9" cy="16" r="1"/><circle cx="15" cy="16" r="1"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
                             <span>AI 助手 · 8 大工具 + 4 种模式</span>
                         </div>
                         <div class="promo-feat">
-                            <div class="promo-feat-icon" style="background:rgba(244,63,94,0.1);color:#f43f5e">🖼️</div>
+                            <div class="promo-feat-icon" style="background:rgba(244,63,94,0.1);color:#f43f5e"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
                             <span>图片识别 · 多模态对话</span>
                         </div>
                         <div class="promo-feat">
-                            <div class="promo-feat-icon" style="background:rgba(168,85,247,0.12);color:var(--purple)">⚙️</div>
+                            <div class="promo-feat-icon" style="background:rgba(168,85,247,0.12);color:var(--purple)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
                             <span>模型管理 · 多厂商一键切换</span>
                         </div>
                         <div class="promo-feat">
-                            <div class="promo-feat-icon" style="background:rgba(245,158,11,0.12);color:var(--amber)">📊</div>
+                            <div class="promo-feat-icon" style="background:rgba(245,158,11,0.12);color:var(--amber)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
                             <span>仪表盘 · 服务状态一目了然</span>
                         </div>
                         <div class="promo-feat">
-                            <div class="promo-feat-icon" style="background:rgba(6,182,212,0.12);color:var(--cyan)">🔄</div>
+                            <div class="promo-feat-icon" style="background:rgba(6,182,212,0.12);color:var(--cyan)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg></div>
                             <span>一键更新 · 版本升级无忧</span>
                         </div>
                     </div>
@@ -2093,9 +2106,9 @@
                         <img src="https://claw.qt.cool/00.png" alt="ClawPanel 仪表盘" loading="lazy">
                     </div>
                     <div class="promo-platform-tags">
-                        <span class="promo-platform-tag">🪟 Windows</span>
-                        <span class="promo-platform-tag">🍎 macOS</span>
-                        <span class="promo-platform-tag">🐧 Linux</span>
+                        <span class="promo-platform-tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg> Windows</span>
+                        <span class="promo-platform-tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg> macOS</span>
+                        <span class="promo-platform-tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></svg> Linux</span>
                     </div>
                 </div>
             </div>
@@ -2110,24 +2123,29 @@
 
             <div class="community-grid reveal">
                 <a href="https://qt.cool/c/OpenClaw" target="_blank" class="community-card">
-                    <div class="community-icon">💬</div>
+                    <div class="community-icon"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
                     <h3>QQ 群</h3>
                     <p>2000 人大群，满员自动切换</p>
                 </a>
                 <a href="https://qt.cool/c/OpenClawWx" target="_blank" class="community-card">
-                    <div class="community-icon">📱</div>
+                    <div class="community-icon"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
                     <h3>微信群</h3>
                     <p>扫码加入，问题随时反馈</p>
                 </a>
                 <a href="https://qt.cool/c/OpenClawDY" target="_blank" class="community-card">
-                    <div class="community-icon">🎵</div>
+                    <div class="community-icon"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="5.5" cy="17.5" r="2.5"/><circle cx="17.5" cy="15.5" r="2.5"/><path d="M8 17V5l12-2v12"/></svg></div>
                     <h3>抖音交流群</h3>
                     <p>关注抖音，加入社群交流</p>
                 </a>
                 <a href="https://discord.gg/U9AttmsNHh" target="_blank" class="community-card">
-                    <div class="community-icon">🎮</div>
+                    <div class="community-icon"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div>
                     <h3>Discord</h3>
                     <p>国际社区，英文交流</p>
+                </a>
+                <a href="https://qt.cool/c/feishu" target="_blank" class="community-card">
+                    <div class="community-icon"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l7.07 17 2.51-7.39L21 11.07z"/></svg></div>
+                    <h3>飞书交流群</h3>
+                    <p>飞书群聊，高效协作交流</p>
                 </a>
             </div>
 
@@ -2152,6 +2170,13 @@
                     </a>
                     <p>抖音交流群</p>
                     <a href="https://qt.cool/c/OpenClawDY" target="_blank">点击链接加入</a>
+                </div>
+                <div class="qr-item">
+                    <a href="https://qt.cool/c/feishu" target="_blank">
+                        <img src="https://qt.cool/c/feishu/qr.png" alt="飞书群二维码">
+                    </a>
+                    <p>飞书交流群</p>
+                    <a href="https://qt.cool/c/feishu" target="_blank">点击链接加入</a>
                 </div>
             </div>
         </div>
@@ -2183,6 +2208,7 @@
                     <h4>社区</h4>
                     <a href="https://qt.cool/c/OpenClaw" target="_blank">QQ 群</a>
                     <a href="https://qt.cool/c/OpenClawWx" target="_blank">微信群</a>
+                    <a href="https://qt.cool/c/feishu" target="_blank">飞书群</a>
                     <a href="https://discord.gg/U9AttmsNHh" target="_blank">Discord</a>
                     <a href="https://github.com/1186258278/OpenClawChineseTranslation/issues" target="_blank">问题反馈</a>
                 </div>
@@ -2238,12 +2264,12 @@
             var isLight = root.classList.toggle('light');
             localStorage.setItem('theme', isLight ? 'light' : 'dark');
             var btn = document.getElementById('themeToggle');
-            btn.textContent = isLight ? '☀️' : '🌙';
+            btn.innerHTML = isLight ? '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>' : '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
         }
         // 初始化按钮图标
         document.addEventListener('DOMContentLoaded', function() {
             var btn = document.getElementById('themeToggle');
-            if (btn) btn.textContent = document.documentElement.classList.contains('light') ? '☀️' : '🌙';
+            if (btn) btn.innerHTML = document.documentElement.classList.contains('light') ? '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>' : '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
         });
 
         // ===== 切换安装方式 Tab =====

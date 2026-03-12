@@ -24,6 +24,8 @@
 - [四、内网 / 远程访问](#network-issues)
 - [五、模型和对话](#model-issues)
 - [六、其他问题](#other-issues)
+  - [origin not allowed](#origin-not-allowed)
+  - [飞书/插件依赖缺失](#plugin-dependency)
 
 ---
 
@@ -801,6 +803,64 @@ sudo chown -R 1000:1000 /你的目录路径
 # 清理登录缓存后重试
 docker logout ghcr.io
 docker pull ghcr.io/1186258278/openclaw-zh:latest
+```
+
+---
+
+<a id="origin-not-allowed"></a>
+
+### `origin not allowed` / 来源不被允许
+
+**你会看到**：Dashboard 显示：
+```
+origin not allowed (open the Control UI from the gateway host or allow it in gateway.controlUi.allowedOrigins)
+```
+
+**原因**：你通过一个非本机地址（如 IP 或域名）访问 Dashboard，但该来源不在白名单中。
+
+**解决方案**：
+
+```bash
+# npm 环境
+openclaw config set gateway.controlUi.allowedOrigins '["http://你的IP:18789", "http://你的域名:18789"]'
+openclaw gateway restart
+
+# Docker 环境
+docker exec openclaw openclaw config set gateway.controlUi.allowedOrigins '["http://你的IP:18789"]'
+docker restart openclaw
+```
+
+> 或者配合 Token 认证使用，设置 Token 后通常不需要配置 allowedOrigins。
+
+---
+
+<a id="plugin-dependency"></a>
+
+### 飞书/插件安装后报 `Cannot find module`
+
+**你会看到**：
+```
+feishu failed to load: Error: Cannot find module 'lodash.identity'
+```
+
+**原因**：插件依赖安装不完整。
+
+**解决方案**：
+
+```bash
+# 第1步：进入插件目录重新安装依赖
+cd ~/.openclaw/extensions/feishu
+npm install
+
+# 如果仍报错，删除后重新安装
+rm -rf ~/.openclaw/extensions/feishu
+openclaw onboard  # 重新选择安装飞书插件
+
+# Docker 环境
+docker exec -it openclaw bash
+cd /root/.openclaw/extensions/feishu && npm install
+exit
+docker restart openclaw
 ```
 
 ---

@@ -10,7 +10,7 @@
     "{ value: \"skip\", label: \"Skip\" }": "{ value: \"skip\", label: \"跳过\" }",
     "progress.update(\"Restarting Gateway service…\")": "progress.update(\"正在重启网关服务…\")",
     "progress.update(\"Uninstalling Gateway service…\")": "progress.update(\"正在卸载网关服务…\")",
-    "doneMessage: \"Gateway service restarted.\"": "doneMessage: \"网关服务已重启。\"",
+    "let restartDoneMessage = \"Gateway service restarted.\"": "let restartDoneMessage = \"网关服务已重启。\"",
     "doneMessage: \"Gateway service uninstalled.\"": "doneMessage: \"网关服务已卸载。\"",
     "progress.update(\"Preparing Gateway service…\")": "progress.update(\"正在准备网关服务…\")",
     "progress.update(\"Installing Gateway service…\")": "progress.update(\"正在安装网关服务…\")",

@@ -1,0 +1,9 @@
+{
+  "file": "ui/src/ui/views/markdown-sidebar.ts",
+  "description": "Dashboard Markdown 侧边栏",
+  "replacements": {
+    ">Tool Output<": ">工具输出<",
+    ">No content available<": ">暂无内容<",
+    "\"Close sidebar\"": "\"关闭侧边栏\""
+  }
+}

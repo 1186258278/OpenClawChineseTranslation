@@ -649,6 +649,8 @@ npm install -g @qingchencloud/openclaw-updater
   <a href="https://qt.cool/c/OpenClawWx"><img src="https://img.shields.io/badge/微信群-加入交流-07C160?style=for-the-badge&logo=wechat&logoColor=white" alt="微信群"></a>
   &nbsp;&nbsp;
   <a href="https://qt.cool/c/OpenClawDY"><img src="https://img.shields.io/badge/抖音群-加入交流-000000?style=for-the-badge&logo=tiktok&logoColor=white" alt="抖音群"></a>
+  &nbsp;&nbsp;
+  <a href="https://qt.cool/c/feishu"><img src="https://img.shields.io/badge/飞书群-加入交流-3370FF?style=for-the-badge&logo=lark&logoColor=white" alt="飞书群"></a>
 </p>
 
 ### QQ 交流群
@@ -679,6 +681,16 @@ npm install -g @qingchencloud/openclaw-updater
   </a>
   <br>
   <em>扫码或 <a href="https://qt.cool/c/OpenClawDY">点击链接</a> 加入 | 拍视频、看教程、交流心得</em>
+</p>
+
+### 飞书交流群
+
+<p align="center">
+  <a href="https://qt.cool/c/feishu">
+    <img src="https://qt.cool/c/feishu/qr.png" alt="飞书交流群" width="200px">
+  </a>
+  <br>
+  <em>扫码或 <a href="https://qt.cool/c/feishu">点击链接</a> 加入 | 飞书群聊，高效协作交流</em>
 </p>
 
 <p align="right"><a href="#top">回到顶部</a></p>

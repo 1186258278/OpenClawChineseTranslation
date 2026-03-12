@@ -1,0 +1,13 @@
+{
+  "file": "ui/src/ui/views/usage-metrics.ts",
+  "description": "Dashboard 用量统计图表",
+  "replacements": {
+    ">Activity by Time<": ">按时间的活动<",
+    ">Estimates require session timestamps.<": ">估算需要会话时间戳。<",
+    ">No timeline data yet.<": ">暂无时间线数据。<",
+    ">Day of Week<": ">星期<",
+    ">Hours<": ">小时<",
+    ">Midnight<": ">午夜<",
+    ">Noon<": ">中午<"
+  }
+}

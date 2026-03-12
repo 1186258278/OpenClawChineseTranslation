@@ -1,0 +1,7 @@
+{
+  "file": "ui/src/ui/views/agents-utils.ts",
+  "description": "Dashboard 代理工具函数",
+  "replacements": {
+    ">No configured models<": ">暂无已配置的模型<"
+  }
+}

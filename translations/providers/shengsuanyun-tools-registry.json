@@ -4,7 +4,7 @@
   "replacements": {
     "import { createWebFetchTool, createWebSearchTool } from \"./tools/web-tools.js\";": "import { createWebFetchTool, createWebSearchTool } from \"./tools/web-tools.js\";\nimport { createGenerateTools } from \"./tools/shengsuanyun/generate.js\";",
 
-    "  const webFetchTool = createWebFetchTool({\n    config: options?.config,\n    sandboxed: options?.sandboxed,\n  });": "  const webFetchTool = createWebFetchTool({\n    config: options?.config,\n    sandboxed: options?.sandboxed,\n  });\n  const hasShengSuanYunProvider = Boolean(options?.config?.models?.providers?.shengsuanyun);\n  const shengsuanyunGenerateTools = hasShengSuanYunProvider\n    ? createGenerateTools({ config: options?.config })\n    : [];",
+    "  const webFetchTool = createWebFetchTool({\n    config: options?.config,\n    sandboxed: options?.sandboxed,\n    runtimeFirecrawl: runtimeWebTools?.fetch.firecrawl,\n  });": "  const webFetchTool = createWebFetchTool({\n    config: options?.config,\n    sandboxed: options?.sandboxed,\n    runtimeFirecrawl: runtimeWebTools?.fetch.firecrawl,\n  });\n  const hasShengSuanYunProvider = Boolean(options?.config?.models?.providers?.shengsuanyun);\n  const shengsuanyunGenerateTools = hasShengSuanYunProvider\n    ? createGenerateTools({ config: options?.config })\n    : [];",
 
     "    ...(imageTool ? [imageTool] : []),": "    ...(imageTool ? [imageTool] : []),\n    ...shengsuanyunGenerateTools,"
   }

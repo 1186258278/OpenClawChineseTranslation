@@ -1,0 +1,30 @@
+{
+  "file": "ui/src/ui/views/agents-panels-status-files.ts",
+  "description": "Dashboard 代理状态和文件面板",
+  "replacements": {
+    ">Agent Context<": ">代理上下文<",
+    ">Workspace<": ">工作区<",
+    ">Primary Model<": ">主模型<",
+    ">Identity Name<": ">身份名称<",
+    ">Identity Emoji<": ">身份 Emoji<",
+    ">Skills Filter<": ">技能过滤<",
+    ">Default<": ">默认<",
+    ">Channels<": ">渠道<",
+    ">Gateway-wide channel status snapshot.<": ">网关全局渠道状态快照。<",
+    ">Load channels to see live status.<": ">加载渠道以查看实时状态。<",
+    ">No channels found.<": ">未找到渠道。<",
+    ">Scheduler<": ">调度器<",
+    ">Gateway cron status.<": ">网关定时任务状态。<",
+    ">Enabled<": ">已启用<",
+    ">Jobs<": ">任务<",
+    ">Next wake<": ">下次唤醒<",
+    ">Agent Cron Jobs<": ">代理定时任务<",
+    ">Scheduled jobs targeting this agent.<": ">针对此代理的定时任务。<",
+    ">No jobs assigned.<": ">暂无分配的任务。<",
+    ">Core Files<": ">核心文件<",
+    ">Bootstrap persona, identity, and tool guidance.<": ">引导人格、身份和工具指南。<",
+    ">No files found.<": ">未找到文件。<",
+    ">Select a file to edit.<": ">选择要编辑的文件。<",
+    ">Content<": ">内容<"
+  }
+}

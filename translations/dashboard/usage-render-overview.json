@@ -1,0 +1,33 @@
+{
+  "file": "ui/src/ui/views/usage-render-overview.ts",
+  "description": "Dashboard 用量统计概览页面",
+  "replacements": {
+    ">Daily Usage<": ">每日用量<",
+    ">No data<": ">无数据<",
+    ">Usage Overview<": ">用量概览<",
+    ">Sessions<": ">会话<",
+    ">Sort<": ">排序<",
+    ">Cost<": ">费用<",
+    ">Errors<": ">错误<",
+    ">Messages<": ">消息<",
+    ">Recent<": ">最近<",
+    ">Tokens<": ">令牌数<",
+    ">No recent sessions<": ">暂无最近会话<",
+    ">No sessions in range<": ">范围内无会话<",
+    "\"Remove filter\"": "\"移除过滤\"",
+    "\"Top Models\"": "\"热门模型\"",
+    "\"No model data\"": "\"暂无模型数据\"",
+    "\"Top Providers\"": "\"热门提供商\"",
+    "\"No provider data\"": "\"暂无提供商数据\"",
+    "\"Top Tools\"": "\"热门工具\"",
+    "\"No tool calls\"": "\"暂无工具调用\"",
+    "\"Top Agents\"": "\"热门代理\"",
+    "\"No agent data\"": "\"暂无代理数据\"",
+    "\"Top Channels\"": "\"热门渠道\"",
+    "\"No channel data\"": "\"暂无渠道数据\"",
+    "\"Peak Error Days\"": "\"错误高峰日\"",
+    "\"No error data\"": "\"暂无错误数据\"",
+    "\"Peak Error Hours\"": "\"错误高峰时段\"",
+    "\"Copy session name\"": "\"复制会话名称\""
+  }
+}

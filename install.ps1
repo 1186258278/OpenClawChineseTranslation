@@ -124,13 +124,32 @@ function Remove-OriginalOpenClaw {
     }
 }
 
+# 检测是否在中国大陆（用于自动选择镜像源）
+function Test-ChinaEnvironment {
+    # 检查时区
+    try {
+        $tz = (Get-TimeZone).Id
+        if ($tz -match "China|Shanghai|Beijing") { return $true }
+    } catch {}
+    # 检查系统语言
+    $culture = [System.Globalization.CultureInfo]::CurrentCulture.Name
+    if ($culture -match "zh-CN|zh-TW|zh-HK") { return $true }
+    return $false
+}
+
 # 安装汉化版
 function Install-ChineseVersion {
     Write-Host ""
     Write-Host "📦 正在安装 OpenClaw 汉化版 [$VersionName]..." -ForegroundColor Blue
     Write-Host ""
     
-    npm install -g "@qingchencloud/openclaw-zh@$NpmTag"
+    $registryArg = @()
+    if (Test-ChinaEnvironment) {
+        Write-Host "🇨🇳 检测到中国大陆环境，自动使用淘宝镜像源加速" -ForegroundColor Cyan
+        $registryArg = @("--registry=https://registry.npmmirror.com")
+    }
+    
+    npm install -g "@qingchencloud/openclaw-zh@$NpmTag" @registryArg
     
     if ($LASTEXITCODE -ne 0) {
         Write-Host "❌ 安装失败，请检查网络连接" -ForegroundColor Red

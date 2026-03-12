@@ -1,0 +1,24 @@
+{
+  "file": "ui/src/ui/views/channels.nostr-profile-form.ts",
+  "description": "Dashboard Nostr 个人资料编辑表单",
+  "replacements": {
+    ">Edit Profile<": ">编辑资料<",
+    "alt=\"Profile picture preview\"": "alt=\"头像预览\"",
+    "help: \"Short username (e.g., satoshi)\"": "help: \"短用户名（例如 satoshi）\"",
+    "\"Display Name\"": "\"显示名称\"",
+    "help: \"Your full display name\"": "help: \"你的完整显示名称\"",
+    "help: \"A brief bio or description\"": "help: \"简短介绍或描述\"",
+    "\"Avatar URL\"": "\"头像 URL\"",
+    "help: \"HTTPS URL to your profile picture\"": "help: \"头像的 HTTPS URL\"",
+    ">Advanced<": ">高级<",
+    "\"Banner URL\"": "\"横幅 URL\"",
+    "help: \"HTTPS URL to a banner image\"": "help: \"横幅图片的 HTTPS URL\"",
+    "help: \"Your personal website\"": "help: \"你的个人网站\"",
+    "\"Lightning Address\"": "\"闪电网络地址\"",
+    "help: \"Lightning address for tips (LUD-16)\"": "help: \"接受打赏的闪电网络地址 (LUD-16)\"",
+    "help: \"Verifiable identifier (e.g., you@domain.com)\"": "help: \"可验证标识符（例如 you@domain.com）\"",
+    "\"Saving...\" : \"Save & Publish\"": "\"保存中...\" : \"保存并发布\"",
+    "\"Importing...\" : \"Import from Relays\"": "\"导入中...\" : \"从中继导入\"",
+    "\"Hide Advanced\" : \"Show Advanced\"": "\"隐藏高级\" : \"显示高级\""
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "file": "ui/src/ui/views/overview.ts",
+  "description": "Dashboard 概览页面",
+  "replacements": {
+    ">Docs: Device pairing<": ">文档：设备配对<",
+    ">Docs: Control UI auth<": ">文档：控制面板认证<",
+    ">Docs: Tailscale Serve<": ">文档：Tailscale Serve<",
+    ">Docs: Insecure HTTP<": ">文档：不安全 HTTP<"
+  }
+}

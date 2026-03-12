@@ -116,7 +116,17 @@
       "dashboard/exec-approval.json",
       "dashboard/agents-tools-skills.json",
       "dashboard/schema-labels.json",
-      "dashboard/schema-help.json"
+      "dashboard/schema-help.json",
+      "dashboard/usage-render-overview.json",
+      "dashboard/usage-render-details.json",
+      "dashboard/agents-status-files.json",
+      "dashboard/skills-grouping.json",
+      "dashboard/overview.json",
+      "dashboard/gateway-url-confirmation.json",
+      "dashboard/markdown-sidebar.json",
+      "dashboard/usage-metrics.json",
+      "dashboard/agents-utils.json",
+      "dashboard/channels-nostr-profile.json"
     ],
     "extensions": [
       "extensions/feishu.json",

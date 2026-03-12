@@ -68,9 +68,21 @@ sudo yum install -y nodejs
 # 安装 nvm（如果还没有）
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
 
-# 安装并使用 Node.js 22
+# 国内用户如果下载慢，使用镜像：
+export NVM_NODEJS_ORG_MIRROR=https://npmmirror.com/mirrors/node
 nvm install 22
 nvm use 22
+```
+
+**国内用户 Node.js 安装加速**：
+```bash
+# 方法1：使用淘宝 Node.js 镜像（推荐）
+# Ubuntu / Debian
+curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+# 方法2：直接下载二进制包
+# 访问 https://npmmirror.com/mirrors/node/ 下载对应系统的安装包
 ```
 
 ### <a id="verify-env"></a>2. 验证环境

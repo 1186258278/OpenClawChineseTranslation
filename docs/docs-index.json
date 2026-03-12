@@ -1,0 +1,56 @@
+{
+  "version": "1.0.0",
+  "updatedAt": "2026-03-12",
+  "baseUrl": "https://openclaw.qt.cool",
+  "categories": [
+    {
+      "id": "getting-started",
+      "title": "快速入门",
+      "icon": "rocket",
+      "docs": [
+        { "id": "install", "title": "安装指南", "file": "INSTALL_GUIDE.md", "description": "从零开始安装和配置 OpenClaw 汉化版" },
+        { "id": "docker", "title": "Docker 部署", "file": "DOCKER_GUIDE.md", "description": "使用 Docker 一键部署，适合服务器和 NAS" },
+        { "id": "faq", "title": "常见问题", "file": "FAQ.md", "description": "28+ 条常见问题排查和解决方案" }
+      ]
+    },
+    {
+      "id": "guides",
+      "title": "使用指南",
+      "icon": "book-open",
+      "docs": [
+        { "id": "models-cn", "title": "国产模型配置", "file": "guides/models-cn.md", "description": "胜算云、通义千问、Kimi、MiniMax、智谱等国产模型接入" },
+        { "id": "nas-deploy", "title": "NAS 部署详解", "file": "guides/nas-deploy.md", "description": "飞牛、群晖、威联通等 NAS 设备部署教程" },
+        { "id": "feishu", "title": "飞书渠道配置", "file": "guides/feishu.md", "description": "飞书机器人集成完整教程" },
+        { "id": "china-network", "title": "国内网络问题", "file": "guides/china-network.md", "description": "镜像源、代理、DNS 等国内网络问题排查" }
+      ]
+    },
+    {
+      "id": "upstream",
+      "title": "官方文档（中文）",
+      "icon": "library",
+      "docs": [
+        { "id": "quickstart", "title": "快速开始", "file": "upstream/quickstart.md", "description": "官方快速开始指南（已本地化）" },
+        { "id": "getting-started", "title": "入门指南", "file": "upstream/getting-started.md", "description": "从零开始的完整入门指南（已本地化）" },
+        { "id": "remote-access", "title": "远程访问", "file": "upstream/remote-access.md", "description": "SSH、Tailscale、隧道等远程访问方式（已本地化）" },
+        { "id": "wizard", "title": "初始化向导", "file": "upstream/wizard.md", "description": "openclaw onboard 引导式设置（已本地化）" },
+        { "id": "configuration", "title": "配置详解", "file": "upstream/configuration.md", "description": "openclaw.json 配置文件完整说明（已本地化）" },
+        { "id": "security", "title": "安全配置", "file": "upstream/security.md", "description": "令牌、白名单和安全控制（已本地化）" },
+        { "id": "troubleshooting", "title": "故障排除", "file": "upstream/troubleshooting.md", "description": "Gateway 网关诊断和常见错误（已本地化）" },
+        { "id": "channels", "title": "渠道配置", "file": "upstream/channels.md", "description": "WhatsApp、Telegram、Discord 等渠道设置（已本地化）" },
+        { "id": "tools", "title": "工具配置", "file": "upstream/tools.md", "description": "网页搜索、命令执行、浏览器等工具（已本地化）" },
+        { "id": "multi-agent", "title": "多代理路由", "file": "upstream/multi-agent.md", "description": "工作区隔离和按代理的会话管理（已本地化）" },
+        { "id": "docker-official", "title": "Docker（官方）", "file": "upstream/docker.md", "description": "官方 Docker 部署文档（已本地化）" }
+      ]
+    },
+    {
+      "id": "development",
+      "title": "开发者",
+      "icon": "wrench",
+      "docs": [
+        { "id": "contributing", "title": "贡献指南", "file": "CONTRIBUTING.md", "description": "如何参与 OpenClaw 汉化项目" },
+        { "id": "translation", "title": "翻译规范", "file": "TRANSLATION_GUIDE.md", "description": "翻译规则和锚点编写规范" },
+        { "id": "maintenance", "title": "维护手册", "file": "MAINTENANCE.md", "description": "版本同步和发布流程" }
+      ]
+    }
+  ]
+}

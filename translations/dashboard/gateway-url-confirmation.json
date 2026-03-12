@@ -1,0 +1,8 @@
+{
+  "file": "ui/src/ui/views/gateway-url-confirmation.ts",
+  "description": "Dashboard 网关 URL 确认弹窗",
+  "replacements": {
+    ">Change Gateway URL<": ">更改网关 URL<",
+    ">This will reconnect to a different gateway server<": ">这将重新连接到不同的网关服务器<"
+  }
+}
