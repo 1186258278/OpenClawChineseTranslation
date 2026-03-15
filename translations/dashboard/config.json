@@ -2,11 +2,7 @@
   "file": "ui/src/ui/views/config.ts",
   "description": "Dashboard 配置页面",
   "replacements": {
-    ">\n              Form\n            </button>": ">\n              表单\n            </button>",
-    ">\n              Raw\n            </button>": ">\n              原始\n            </button>",
-    "<div class=\"config-sidebar__title\">Settings</div>": "<div class=\"config-sidebar__title\">设置</div>",
     "placeholder=\"Search settings...\"": "placeholder=\"搜索设置...\"",
-    "<span class=\"config-nav__label\">All Settings</span>": "<span class=\"config-nav__label\">所有设置</span>",
     "\"Unsaved changes\"": "\"未保存的更改\"",
     "`${diff.length} unsaved change${diff.length !== 1 ? \"s\" : \"\"}`": "`${diff.length} 项未保存更改`",
     "<span class=\"config-status muted\">No changes</span>": "<span class=\"config-status muted\">无更改</span>",
@@ -14,15 +10,8 @@
     "${props.saving ? \"Saving…\" : \"Save\"}": "${props.saving ? \"保存中…\" : \"保存\"}",
     "${props.applying ? \"Applying…\" : \"Apply\"}": "${props.applying ? \"应用中…\" : \"应用\"}",
     "${props.updating ? \"Updating…\" : \"Update\"}": "${props.updating ? \"更新中…\" : \"更新\"}",
-    ">View ${diff.length} pending\n                    change${diff.length !== 1 ? \"s\" : \"\"}</span": ">查看 ${diff.length} 项待处理更改</span",
-    ">\n                  All\n                </button>": ">\n                  全部\n                </button>",
     "<span>Loading schema…</span>": "<span>加载架构中…</span>",
-    "Form view can't safely edit some fields.": "表单视图无法安全编辑某些字段。",
-    "Use Raw to avoid losing config entries.": "使用原始模式以避免丢失配置条目。",
-    "<span>Raw JSON5</span>": "<span>原始 JSON5</span>",
-    "const SECTIONS: Array<{ key: string; label: string }> = [\n  { key: \"env\", label: \"Environment\" },\n  { key: \"update\", label: \"Updates\" },\n  { key: \"agents\", label: \"Agents\" },\n  { key: \"auth\", label: \"Authentication\" },\n  { key: \"channels\", label: \"Channels\" },\n  { key: \"messages\", label: \"Messages\" },\n  { key: \"commands\", label: \"Commands\" },\n  { key: \"hooks\", label: \"Hooks\" },\n  { key: \"skills\", label: \"Skills\" },\n  { key: \"tools\", label: \"Tools\" },\n  { key: \"gateway\", label: \"Gateway\" },\n  { key: \"wizard\", label: \"Setup Wizard\" },\n];": "const SECTIONS: Array<{ key: string; label: string }> = [\n  { key: \"env\", label: \"环境\" },\n  { key: \"update\", label: \"更新\" },\n  { key: \"agents\", label: \"代理\" },\n  { key: \"auth\", label: \"身份验证\" },\n  { key: \"channels\", label: \"渠道\" },\n  { key: \"messages\", label: \"消息\" },\n  { key: \"commands\", label: \"命令\" },\n  { key: \"hooks\", label: \"钩子\" },\n  { key: \"skills\", label: \"技能\" },\n  { key: \"tools\", label: \"工具\" },\n  { key: \"gateway\", label: \"网关\" },\n  { key: \"wizard\", label: \"设置向导\" },\n  { key: \"meta\", label: \"元数据\" },\n  { key: \"diagnostics\", label: \"诊断\" },\n  { key: \"logging\", label: \"日志\" },\n  { key: \"browser\", label: \"浏览器\" },\n  { key: \"ui\", label: \"界面\" },\n  { key: \"models\", label: \"模型\" },\n  { key: \"nodeHost\", label: \"节点主机\" },\n  { key: \"bindings\", label: \"绑定\" },\n  { key: \"broadcast\", label: \"广播\" },\n  { key: \"audio\", label: \"音频\" },\n  { key: \"media\", label: \"媒体\" },\n  { key: \"approvals\", label: \"审批\" },\n  { key: \"session\", label: \"会话\" },\n  { key: \"cron\", label: \"定时任务\" },\n  { key: \"web\", label: \"网页\" },\n  { key: \"discovery\", label: \"发现\" },\n  { key: \"canvasHost\", label: \"画布主机\" },\n  { key: \"talk\", label: \"语音\" },\n  { key: \"plugins\", label: \"插件\" },\n];",
-    ".map((k) => ({ key: k, label: k.charAt(0).toUpperCase() + k.slice(1) }))": ".map((k) => ({ key: k, label: humanize(k) }))",
-    ">Tag filters:</span>": ">标签筛选:</span>",
-    ">Add tags</span>": ">添加标签</span>"
+    "the form editor can't safely represent. Use Raw mode to edit those": "表单编辑器无法安全表示的字段。请使用原始模式编辑这些",
+    "Raw JSON5": "原始 JSON5"
   }
 }

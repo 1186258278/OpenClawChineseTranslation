@@ -1,6 +1,6 @@
 {
   "file": "ui/src/ui/app-render.ts",
-  "description": "Dashboard 主布局和顶栏（保留官方图标，仅汉化文字和添加链接）",
+  "description": "Dashboard 主布局和侧边栏（汉化品牌标题，添加自定义链接到侧边栏底部）",
   "replacements": {
     "</div>\n          </div>\n        </div>\n        <div class=\"topbar-status\">": "</div>\n          </a>\n        </div>\n        <div class=\"topbar-status\">",
     "<div class=\"brand-title\">OPENCLAW</div>": "<div class=\"brand-title\">iRobot</div>",

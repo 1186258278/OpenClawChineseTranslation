@@ -2,10 +2,6 @@
   "file": "src/daemon/schtasks.ts",
   "description": "Windows schtasks 兼容修复 - 命令不可用时不阻断 onboarding",
   "replacements": {
-    "throw new Error(`schtasks unavailable: ${detail || \"unknown error\"}`.trim());": "throw new Error(`schtasks unavailable: ${detail || \"unknown error\"}. On Windows, run in PowerShell/CMD or skip daemon install.`.trim());",
-
-    "\" Run PowerShell as Administrator or rerun without installing the daemon.\"": "\" 请以管理员身份运行 PowerShell，或跳过守护进程安装重新运行。\"",
-
-    "export async function isScheduledTaskInstalled(args: GatewayServiceEnvArgs): Promise<boolean> {\n  await assertSchtasksAvailable();\n  const taskName = resolveTaskName(args.env ?? (process.env as GatewayServiceEnv));\n  const res = await execSchtasks([\"/Query\", \"/TN\", taskName]);\n  return res.code === 0;\n}": "export async function isScheduledTaskInstalled(args: GatewayServiceEnvArgs): Promise<boolean> {\n  try {\n    await assertSchtasksAvailable();\n  } catch {\n    return false;\n  }\n  const taskName = resolveTaskName(args.env ?? (process.env as GatewayServiceEnv));\n  const res = await execSchtasks([\"/Query\", \"/TN\", taskName]);\n  return res.code === 0;\n}"
+    "throw new Error(`schtasks unavailable: ${detail || \"unknown error\"}`.trim());": "throw new Error(`schtasks 不可用: ${detail || \"未知错误\"}. 在 Windows 上请使用 PowerShell/CMD 运行，或跳过守护进程安装。`.trim());"
   }
 }

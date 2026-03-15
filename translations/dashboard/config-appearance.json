@@ -1,0 +1,16 @@
+{
+  "file": "ui/src/ui/views/config.ts",
+  "description": "Dashboard 配置页面 - 外观设置虚拟分区（v2026.3.12 新增）",
+  "replacements": {
+    "label: \"System\", description: \"Follow OS light or dark\"": "label: \"跟随系统\", description: \"跟随操作系统的亮色或暗色模式\"",
+    "label: \"Light\", description: \"Force light mode\"": "label: \"亮色\", description: \"强制亮色模式\"",
+    "label: \"Dark\", description: \"Force dark mode\"": "label: \"暗色\", description: \"强制暗色模式\"",
+    "<h3 class=\"settings-appearance__heading\">Theme</h3>": "<h3 class=\"settings-appearance__heading\">主题</h3>",
+    "Choose a theme family.": "选择主题风格。",
+    "<h3 class=\"settings-appearance__heading\">Mode</h3>": "<h3 class=\"settings-appearance__heading\">模式</h3>",
+    "Choose light or dark mode for the selected theme.": "为所选主题选择亮色或暗色模式。",
+    "<h3 class=\"settings-appearance__heading\">Connection</h3>": "<h3 class=\"settings-appearance__heading\">连接</h3>",
+    ">Gateway</span>": ">网关</span>",
+    ">Assistant</span>": ">助手</span>"
+  }
+}

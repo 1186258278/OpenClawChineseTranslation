@@ -1,0 +1,28 @@
+{
+  "file": "ui/src/ui/chat/slash-commands.ts",
+  "description": "Dashboard 聊天斜杠命令（v2026.3.12 新增命令面板）",
+  "replacements": {
+    "description: \"Start a new session\"": "description: \"开始新会话\"",
+    "description: \"Reset current session\"": "description: \"重置当前会话\"",
+    "description: \"Compact session context\"": "description: \"压缩会话上下文\"",
+    "description: \"Stop current run\"": "description: \"停止当前运行\"",
+    "description: \"Clear chat history\"": "description: \"清除聊天历史\"",
+    "description: \"Toggle focus mode\"": "description: \"切换专注模式\"",
+    "description: \"Show or set model\"": "description: \"显示或设置模型\"",
+    "description: \"Set thinking level\"": "description: \"设置思考级别\"",
+    "description: \"Toggle verbose mode\"": "description: \"切换详细模式\"",
+    "description: \"Toggle fast mode\"": "description: \"切换快速模式\"",
+    "description: \"Show available commands\"": "description: \"显示可用命令\"",
+    "description: \"Show session status\"": "description: \"显示会话状态\"",
+    "description: \"Export session to Markdown\"": "description: \"导出会话为 Markdown\"",
+    "description: \"Show token usage\"": "description: \"显示令牌用量\"",
+    "description: \"List agents\"": "description: \"列出代理\"",
+    "description: \"Abort sub-agents\"": "description: \"终止子代理\"",
+    "description: \"Run a skill\"": "description: \"运行技能\"",
+    "description: \"Steer a sub-agent\"": "description: \"引导子代理\"",
+    "session: \"Session\"": "session: \"会话\"",
+    "model: \"Model\"": "model: \"模型\"",
+    "agents: \"Agents\"": "agents: \"代理\"",
+    "tools: \"Tools\"": "tools: \"工具\""
+  }
+}

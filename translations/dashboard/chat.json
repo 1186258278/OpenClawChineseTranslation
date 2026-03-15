@@ -6,16 +6,18 @@
     "${icons.check} Context compacted": "${icons.check} 上下文已压缩",
     "alt=\"Attachment preview\"": "alt=\"附件预览\"",
     "aria-label=\"Remove attachment\"": "aria-label=\"移除附件\"",
-    "<div class=\"muted\">Loading chat…</div>": "<div class=\"muted\">正在加载对话…</div>",
-    "\"Add a message or paste more images...\"": "\"添加消息或粘贴更多图片...\"",
-    "\"Message (↩ to send, Shift+↩ for line breaks, paste images)\"": "\"消息 (↩ 发送, Shift+↩ 换行, 可粘贴图片)\"",
-    "\"Connect to the gateway to start chatting…\"": "\"连接网关开始对话…\"",
+    "aria-label=\"Loading chat\"": "aria-label=\"正在加载对话\"",
+    ": `Message ${props.assistantName || \"agent\"} (Enter to send)`": ": `消息 ${props.assistantName || \"agent\"} (Enter 发送)`",
     "<div class=\"chat-queue__title\">Queued (${props.queue.length})</div>": "<div class=\"chat-queue__title\">队列中 (${props.queue.length})</div>",
     "? `Image (${item.attachments.length})`": "? `图片 (${item.attachments.length})`",
     "aria-label=\"Remove queued message\"": "aria-label=\"移除队列消息\"",
-    "<span>Message</span>": "<span>消息</span>",
-    "${canAbort ? \"Stop\" : \"New session\"}": "${canAbort ? \"停止\" : \"新会话\"}",
-    "${isBusy ? \"Queue\" : \"Send\"}": "${isBusy ? \"排队\" : \"发送\"}",
-    "`Showing last ${CHAT_HISTORY_RENDER_LIMIT} messages (${historyStart} hidden).`": "`显示最近 ${CHAT_HISTORY_RENDER_LIMIT} 条消息（已隐藏 ${historyStart} 条）。`"
+    "title=\"Attach file\"": "title=\"附加文件\"",
+    "title=\"New session\"": "title=\"新会话\"",
+    "aria-label=\"New session\"": "aria-label=\"新会话\"",
+    "title=\"Export\"": "title=\"导出\"",
+    "title=${isBusy ? \"Queue\" : \"Send\"}": "title=${isBusy ? \"排队\" : \"发送\"}",
+    "`Showing last ${CHAT_HISTORY_RENDER_LIMIT} messages (${historyStart} hidden).`": "`显示最近 ${CHAT_HISTORY_RENDER_LIMIT} 条消息（已隐藏 ${historyStart} 条）。`",
+    "placeholder=\"Search messages...\"": "placeholder=\"搜索消息...\"",
+    "No matching messages": "没有匹配的消息"
   }
 }

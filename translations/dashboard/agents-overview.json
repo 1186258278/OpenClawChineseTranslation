@@ -1,0 +1,21 @@
+{
+  "file": "ui/src/ui/views/agents-panels-overview.ts",
+  "description": "Dashboard 代理概览面板（从 agents.ts 拆分出来的新文件）",
+  "replacements": {
+    "<div class=\"card-title\">Overview</div>": "<div class=\"card-title\">概览</div>",
+    "<div class=\"card-sub\">Workspace paths and identity metadata.</div>": "<div class=\"card-sub\">工作区路径和身份元数据。</div>",
+    "<div class=\"label\">Workspace</div>": "<div class=\"label\">工作区</div>",
+    "<div class=\"label\">Primary Model</div>": "<div class=\"label\">主模型</div>",
+    "<div class=\"label\">Skills Filter</div>": "<div class=\"label\">技能过滤</div>",
+    "\"all skills\"": "\"所有技能\"",
+    "selected": "已选择",
+    "You have unsaved config changes.": "您有未保存的配置更改。",
+    "<div class=\"label\">Model Selection</div>": "<div class=\"label\">模型选择</div>",
+    "<span>Primary model${isDefault ? \" (default)\" : \"\"}</span>": "<span>主模型${isDefault ? \"（默认）\" : \"\"}</span>",
+    "? `Inherit default (${defaultPrimary})` : \"Inherit default\"": "? `继承默认（${defaultPrimary}）` : \"继承默认\"",
+    "<span>Fallbacks</span>": "<span>后备模型</span>",
+    "placeholder=${fallbackChips.length === 0 ? \"provider/model\" : \"\"}": "placeholder=${fallbackChips.length === 0 ? \"提供商/模型\" : \"\"}",
+    "Reload Config": "重新加载配置",
+    "${configSaving ? \"Saving…\" : \"Save\"}": "${configSaving ? \"保存中…\" : \"保存\"}"
+  }
+}

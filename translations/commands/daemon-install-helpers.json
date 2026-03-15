@@ -2,6 +2,6 @@
   "file": "src/commands/daemon-install-helpers.ts",
   "description": "网关安装错误提示（Windows PowerShell 提权）",
   "replacements": {
-    "\"Tip: rerun from an elevated PowerShell (Start → type PowerShell → right-click → Run as administrator) or skip service install.\"": "\"提示：请以管理员身份运行 PowerShell（开始 → 输入 PowerShell → 右键 → 以管理员身份运行），或跳过服务安装。\""
+    "\"Tip: native Windows now falls back to a per-user Startup-folder login item when Scheduled Task creation is denied; if install still fails, rerun from an elevated PowerShell or skip service install.\"": "\"提示：Windows 现在会在计划任务创建被拒绝时自动回退到用户启动文件夹的登录项；如仍安装失败，请以管理员身份运行 PowerShell 或跳过服务安装。\""
   }
 }

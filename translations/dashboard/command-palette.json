@@ -1,0 +1,19 @@
+{
+  "file": "ui/src/ui/views/command-palette.ts",
+  "description": "Dashboard 命令面板（v2026.3.12 新增 ⌘K 快捷键面板）",
+  "replacements": {
+    "label: \"Overview\"": "label: \"概览\"",
+    "label: \"Sessions\"": "label: \"会话\"",
+    "label: \"Scheduled\"": "label: \"定时任务\"",
+    "label: \"Skills\"": "label: \"技能\"",
+    "label: \"Settings\"": "label: \"设置\"",
+    "label: \"Agents\"": "label: \"代理\"",
+    "label: \"Shell Command\"": "label: \"Shell 命令\"",
+    "description: \"Run shell\"": "description: \"运行 Shell\"",
+    "label: \"Debug Mode\"": "label: \"调试模式\"",
+    "description: \"Toggle debug\"": "description: \"切换调试\"",
+    "navigate": "导航",
+    "select": "选择",
+    "close": "关闭"
+  }
+}

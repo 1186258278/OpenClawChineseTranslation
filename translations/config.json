@@ -126,7 +126,12 @@
       "dashboard/markdown-sidebar.json",
       "dashboard/usage-metrics.json",
       "dashboard/agents-utils.json",
-      "dashboard/channels-nostr-profile.json"
+      "dashboard/channels-nostr-profile.json",
+      "dashboard/agents-overview.json",
+      "dashboard/config-sections.json",
+      "dashboard/config-appearance.json",
+      "dashboard/slash-commands.json",
+      "dashboard/command-palette.json"
     ],
     "extensions": [
       "extensions/feishu.json",
