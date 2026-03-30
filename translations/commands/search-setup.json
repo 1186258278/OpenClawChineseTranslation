@@ -1,0 +1,25 @@
+{
+  "file": "src/flows/search-setup.ts",
+  "description": "网页搜索引导 - CLI onboard 搜索提供商选择",
+  "replacements": {
+    "\"No web search providers are currently available under this plugin policy.\"": "\"当前插件策略下没有可用的网页搜索提供商。\"",
+    "\"Enable plugins or remove deny rules, then run setup again.\"": "\"启用插件或删除拒绝规则，然后重新运行设置。\"",
+    "\"Web search lets your agent look things up online.\"": "\"网页搜索让您的智能体在线查找信息。\"",
+    "\"Choose a provider. Some providers need an API key, and some work key-free.\"": "\"选择一个提供商。部分提供商需要 API 密钥，部分无需密钥即可使用。\"",
+    "\"Web search\"": "\"网页搜索\"",
+    "? `${entry.hint} · key-free`": "? `${entry.hint} · 无需密钥`",
+    "? `${entry.hint} · configured`": "? `${entry.hint} · 已配置`",
+    "message: \"Search provider\"": "message: \"搜索提供商\"",
+    "label: \"Skip for now\",\n        hint: \"Configure later with openclaw configure --section web\"": "label: \"暂时跳过\",\n        hint: \"稍后通过 openclaw configure --section web 配置\"",
+    "`${entry.label} works without an API key.`": "`${entry.label} 无需 API 密钥即可使用。`",
+    "\"OpenClaw will enable the plugin and use it as your web_search provider.\"": "\"OpenClaw 将启用该插件并将其用作 web_search 提供商。\"",
+    "\"Secret references enabled \u2014 OpenClaw will store a reference instead of the API key.\"": "\"已启用密钥引用 \u2014 OpenClaw 将存储引用而不是 API 密钥.\"",
+    "`Env var: ${ref.id}${envAvailable ? \" (detected)\" : \"\"}.`": "`环境变量：${ref.id}${envAvailable ? \"（已检测到）\" : \"\"}。`",
+    "`Set ${ref.id} in the Gateway environment.`": "`在网关环境中设置 ${ref.id}。`",
+    "? `${credentialLabel} (leave blank to keep current)`": "? `${credentialLabel}（留空保持当前）`",
+    "        ? `${credentialLabel} (leave blank to use env var)`": "        ? `${credentialLabel}（留空使用环境变量）`",
+    "placeholder: keyConfigured ? \"Leave blank to keep current\" : entry.placeholder": "placeholder: keyConfigured ? \"留空保持当前\" : entry.placeholder",
+    "`No ${credentialLabel} stored \u2014 web_search won't work until a key is available.`": "`未存储 ${credentialLabel} \u2014 在有可用密钥之前 web_search 无法使用.`",
+    "`Get your key at: ${entry.signupUrl}`": "`在此获取密钥：${entry.signupUrl}`"
+  }
+}

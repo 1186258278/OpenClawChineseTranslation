@@ -1,0 +1,6 @@
+{
+  "file": "src/commands/auth-choice.apply.api-key-providers.ts",
+  "description": "晴辰云认证流程 - 已迁移至 extension plugin 架构",
+  "__note": "提供商注册由 extensions/qingchenyun/ 处理",
+  "replacements": {}
+}

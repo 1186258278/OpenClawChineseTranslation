@@ -10,7 +10,6 @@
     "help: \"A brief bio or description\"": "help: \"简短介绍或描述\"",
     "\"Avatar URL\"": "\"头像 URL\"",
     "help: \"HTTPS URL to your profile picture\"": "help: \"头像的 HTTPS URL\"",
-    ">Advanced<": ">高级<",
     "\"Banner URL\"": "\"横幅 URL\"",
     "help: \"HTTPS URL to a banner image\"": "help: \"横幅图片的 HTTPS URL\"",
     "help: \"Your personal website\"": "help: \"你的个人网站\"",
@@ -21,4 +20,4 @@
     "\"Importing...\" : \"Import from Relays\"": "\"导入中...\" : \"从中继导入\"",
     "\"Hide Advanced\" : \"Show Advanced\"": "\"隐藏高级\" : \"显示高级\""
   }
-}
+}\n

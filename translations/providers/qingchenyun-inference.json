@@ -1,0 +1,6 @@
+{
+  "file": "src/commands/onboard-non-interactive/local/auth-choice-inference.ts",
+  "description": "晴辰云 - flag 推断由 resolveManifestProviderOnboardAuthFlags() 处理",
+  "__note": "auth-choice-inference.ts 从 plugin manifest 加载 flags",
+  "replacements": {}
+}

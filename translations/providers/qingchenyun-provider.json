@@ -1,0 +1,6 @@
+{
+  "file": "src/agents/models-config.providers.ts",
+  "description": "晴辰云供应商注册 - 通过 extension catalog 处理",
+  "__note": "models-config.providers.ts 通过 runProviderCatalog() 从插件发现提供商",
+  "replacements": {}
+}

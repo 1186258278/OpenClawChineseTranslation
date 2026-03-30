@@ -11,20 +11,13 @@
     "${props.applying ? \"Applying…\" : \"Apply\"}": "${props.applying ? \"应用中…\" : \"应用\"}",
     "${props.updating ? \"Updating…\" : \"Update\"}": "${props.updating ? \"更新中…\" : \"更新\"}",
     "<span>Loading schema…</span>": "<span>加载架构中…</span>",
-    "the form editor can't safely represent. Use Raw mode to edit those": "表单编辑器无法安全表示的字段。请使用原始模式编辑这些",
     "Raw config (JSON/JSON5)": "原始配置 (JSON/JSON5)",
     "props.navRootLabel ?? \"Settings\"": "props.navRootLabel ?? \"设置\"",
     "${icons.fileText} Open": "${icons.fileText} 打开",
     "aria-label=\"Settings sections\"": "aria-label=\"设置分区\"",
-    ">\n                        Form\n                      </button>": ">\n                        表单\n                      </button>",
-    ">\n                        Raw\n                      </button>": ">\n                        原始\n                      </button>",
     "Your configuration is invalid. Some settings may not work as expected.": "您的配置无效。某些设置可能无法按预期工作。",
-    ">Don't remind again</button>": ">不再提醒</button>",
-    ">View ${diff.length} pending\n                    change${diff.length !== 1 ? \"s\" : \"\"}": ">查看 ${diff.length} 项待处理更改",
-    "${sensitiveCount} secret${sensitiveCount === 1 ? \"\" : \"s\"} ${blurred ? \"redacted\" : \"visible\"}": "${sensitiveCount} 个密钥${blurred ? \"已隐藏\" : \"可见\"}",
-    "? \"Reveal sensitive values\" : \"Hide sensitive values\"": "? \"显示敏感值\" : \"隐藏敏感值\"",
     "? \"Hide env values\" : \"Reveal env values\"": "? \"隐藏环境值\" : \"显示环境值\"",
     ">\n                        Peek\n                      </button>": ">\n                        查看\n                      </button>",
     "{ id: \"other\", label: \"Other\"": "{ id: \"other\", label: \"其他\""
   }
-}
+}\n

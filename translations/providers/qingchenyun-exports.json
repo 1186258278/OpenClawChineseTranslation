@@ -1,0 +1,6 @@
+{
+  "file": "src/commands/onboard-auth.ts",
+  "description": "晴辰云 - 目标文件已删除，导出由 extension plugin 处理",
+  "__note": "onboard-auth.ts 已在上游删除",
+  "replacements": {}
+}

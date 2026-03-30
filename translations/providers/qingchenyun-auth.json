@@ -1,0 +1,6 @@
+{
+  "file": "src/agents/model-auth-env-vars.ts",
+  "description": "晴辰云认证 - env var 映射由 openclaw.plugin.json 处理",
+  "__note": "model-auth-env-vars.ts 已重构为从 plugin manifest 加载",
+  "replacements": {}
+}

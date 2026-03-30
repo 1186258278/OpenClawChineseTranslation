@@ -1,0 +1,24 @@
+{
+  "file": "src/flows/channel-setup.prompts.ts",
+  "description": "渠道引导 - 渠道选择/配置提示 (channel-setup.prompts.ts)",
+  "replacements": {
+    "\"default (primary)\"": "\"默认 (主账户)\"",
+    "label: \"Modify settings\"": "label: \"修改设置\"",
+    "label: \"Disable (keeps config)\"": "label: \"禁用 (保留配置)\"",
+    "label: \"Delete config\"": "label: \"删除配置\"",
+    "label: \"Skip (leave as-is)\"": "label: \"跳过 (保持原样)\"",
+    "message: `${label} already configured. What do you want to do?`": "message: `${label} 已配置。你想做什么？`",
+    "message: `${label} account`": "message: `${label} 账户`",
+    "message: \"Configure DM access policies now? (default: pairing)\"": "message: \"现在配置私信访问策略吗？(默认: 配对)\"",
+    "\"Default: pairing (unknown DMs get a pairing code).\"": "\"默认: 配对 (未知私信将获得配对码)。\"",
+    "`Approve: ${formatCliCommand(`openclaw pairing approve ${policy.channel} <code>`)}`": "`批准: ${formatCliCommand(`openclaw pairing approve ${policy.channel} <code>`)}`",
+    "`Allowlist DMs: ${policyKey}=\"allowlist\" + ${allowFromKey} entries.`": "`白名单私信: ${policyKey}=\"allowlist\" + ${allowFromKey} 条目。`",
+    "`Public DMs: ${policyKey}=\"open\" + ${allowFromKey} includes \"*\".`": "`公开私信: ${policyKey}=\"open\" + ${allowFromKey} 包含 \"*\"。`",
+    "message: `${policy.label} DM policy`": "message: `${policy.label} 私信策略`",
+    "label: \"Pairing (recommended)\"": "label: \"配对 (推荐)\"",
+    "label: \"Allowlist (specific users only)\"": "label: \"白名单 (仅特定用户)\"",
+    "label: \"Open (public inbound DMs)\"": "label: \"开放 (公开入站私信)\"",
+    "label: \"Disabled (ignore DMs)\"": "label: \"禁用 (忽略私信)\"",
+    "\"disabled\"": "\"已禁用\""
+  }
+}

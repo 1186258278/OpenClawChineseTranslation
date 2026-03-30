@@ -2,10 +2,6 @@
   "file": "src/commands/auth-choice-options.static.ts",
   "description": "认证选项核心列表 - 3个内置提供商选项 (v2026.3.22 新架构)",
   "replacements": {
-    "label: \"Chutes (OAuth)\"": "label: \"Chutes（OAuth）\"",
-    "label: \"LiteLLM API key\"": "label: \"LiteLLM API 密钥\"",
-    "hint: \"Unified gateway for 100+ LLM providers\"": "hint: \"统一网关（100+ LLM 提供商）\"",
-    "groupHint: \"Unified LLM gateway (100+ providers)\"": "groupHint: \"统一 LLM 网关（100+ 提供商）\"",
     "label: \"Custom Provider\"": "label: \"自定义服务商\"",
     "hint: \"Any OpenAI or Anthropic compatible endpoint\"": "hint: \"任意 OpenAI 或 Anthropic 兼容端点\"",
     "groupHint: \"Any OpenAI or Anthropic compatible endpoint\"": "groupHint: \"任意 OpenAI 或 Anthropic 兼容端点\""

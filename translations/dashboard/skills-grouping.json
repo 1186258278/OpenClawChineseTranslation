@@ -3,6 +3,7 @@
   "description": "Dashboard 技能分组标签",
   "replacements": {
     "\"Workspace Skills\"": "\"工作区技能\"",
+    "\"Built-in Skills\"": "\"内置技能\"",
     "\"Installed Skills\"": "\"已安装技能\"",
     "\"Extra Skills\"": "\"额外技能\"",
     "\"Other Skills\"": "\"其他技能\""

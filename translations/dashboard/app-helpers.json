@@ -2,12 +2,6 @@
   "file": "ui/src/ui/app-render.helpers.ts",
   "description": "Dashboard 通用辅助组件",
   "replacements": {
-    "aria-label=\"System theme\"": "aria-label=\"系统主题\"",
-    "title=\"System\"": "title=\"系统\"",
-    "aria-label=\"Light theme\"": "aria-label=\"浅色主题\"",
-    "title=\"Light\"": "title=\"浅色\"",
-    "aria-label=\"Dark theme\"": "aria-label=\"深色主题\"",
-    "title=\"Dark\"": "title=\"深色\"",
     "aria-label=\"Theme\"": "aria-label=\"主题\""
   }
-}
+}\n

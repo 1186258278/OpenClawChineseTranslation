@@ -9,7 +9,6 @@
     "<div class=\"cfg-map__empty\">No custom entries.</div>": "<div class=\"cfg-map__empty\">暂无自定义条目。</div>",
     "item${arr.length !== 1 ? \"s\" : \"\"}": "项",
     "Unsupported schema node. Use Raw mode.": "不支持的 schema 节点。请使用原始模式。",
-    "? \"Hide value\"\n            : \"Reveal value\"\n          : \"Disable stream mode to reveal value\"": "? \"隐藏值\"\n            : \"显示值\"\n          : \"禁用流模式以显示值\"",
     "title=\"Reset to default\"": "title=\"重置为默认值\"",
     "? REDACTED_PLACEHOLDER : \"JSON value\"": "? REDACTED_PLACEHOLDER : \"JSON 值\"",
     "title=\"Remove item\"": "title=\"删除项\"",

@@ -1,0 +1,6 @@
+{
+  "file": "src/commands/auth-choice-options.ts",
+  "description": "晴辰云认证菜单 - 由 plugin manifest 加载",
+  "__note": "auth-choice-options.ts 从 resolveManifestProviderAuthChoices() 加载选项",
+  "replacements": {}
+}

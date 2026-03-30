@@ -1,16 +1,13 @@
 {
-  "file": "src/commands/doctor.ts",
+  "file": "src/flows/doctor-health-contributions.ts",
   "description": "诊断命令",
   "replacements": {
-    "intro(\"OpenClaw doctor\")": "intro(\"OpenClaw 诊断\")",
-    "outro(\"Doctor complete.\")": "outro(\"诊断完成。\")",
     "\"gateway.mode is unset; gateway start will be blocked.\"": "\"gateway.mode 未设置；网关启动将被阻止。\"",
     "`Fix: run ${formatCliCommand(\"openclaw configure\")} and set Gateway mode (local/remote).`": "`修复：运行 ${formatCliCommand(\"openclaw configure\")} 并设置网关模式（local/remote）。`",
     "`Or set directly: ${formatCliCommand(\"openclaw config set gateway.mode local\")}`": "`或直接设置：${formatCliCommand(\"openclaw config set gateway.mode local\")}`",
     "`Missing config: run ${formatCliCommand(\"openclaw setup\")} first.`": "`缺少配置：请先运行 ${formatCliCommand(\"openclaw setup\")}。`",
     "note(lines.join(\"\\n\"), \"Gateway\")": "note(lines.join(\"\\n\"), \"网关\")",
-    "note(gatewayDetails.remoteFallbackNote, \"Gateway\")": "note(gatewayDetails.remoteFallbackNote, \"网关\")",
-    "\"Gateway auth is off or missing a token. Token auth is now the recommended default (including loopback).\",\n          \"Gateway auth\"": "\"网关认证已关闭或缺少令牌。令牌认证现在是推荐的默认方式（包括本地回环）。\",\n          \"网关认证\"",
+    "\"Gateway auth is off or missing a token. Token auth is now the recommended default (including loopback).\",\n    \"Gateway auth\"": "\"网关认证已关闭或缺少令牌。令牌认证现在是推荐的默认方式（包括本地回环）。\",\n    \"网关认证\"",
     "\"gateway.auth.token and gateway.auth.password are both configured while gateway.auth.mode is unset.\"": "\"gateway.auth.token 和 gateway.auth.password 同时配置但 gateway.auth.mode 未设置。\"",
     "\"Set an explicit mode to avoid ambiguous auth selection and startup/runtime failures.\"": "\"请设置明确的模式以避免认证选择歧义和启动/运行时故障。\"",
     "\"Gateway token is managed via SecretRef and is currently unavailable.\"": "\"网关令牌由 SecretRef 管理，当前不可用。\"",

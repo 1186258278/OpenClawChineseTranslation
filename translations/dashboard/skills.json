@@ -5,8 +5,12 @@
     "<div class=\"card-title\">Skills</div>": "<div class=\"card-title\">技能</div>",
     "<div class=\"card-sub\">Installed skills and their status.</div>": "<div class=\"card-sub\">已安装技能及其状态。</div>",
     "${props.loading ? \"Loading\\u2026\" : \"Refresh\"}": "${props.loading ? \"加载中…\" : \"刷新\"}",
+    "{ id: \"all\", label: \"All\" }": "{ id: \"all\", label: \"全部\" }",
+    "{ id: \"ready\", label: \"Ready\" }": "{ id: \"ready\", label: \"就绪\" }",
+    "{ id: \"needs-setup\", label: \"Needs Setup\" }": "{ id: \"needs-setup\", label: \"需要配置\" }",
+    "{ id: \"disabled\", label: \"Disabled\" }": "{ id: \"disabled\", label: \"已禁用\" }",
+    ">Browse Skills Store<": ">浏览技能商店<",
     "placeholder=\"Search skills\"": "placeholder=\"搜索技能\"",
-    ">Browse Skills Store</a>": ">浏览技能商店</a>",
     "<div class=\"muted\">${filtered.length} shown</div>": "<div class=\"muted\">显示 ${filtered.length} 项</div>",
     "No skills found.": "未找到技能。",
     "Not connected to gateway.": "未连接到网关。",
@@ -14,7 +18,7 @@
     "Reason: ${reasons.join(\", \")}": "原因：${reasons.join(\", \")}",
     "${skill.disabled ? \"Disabled\" : \"Enabled\"}": "${skill.disabled ? \"已禁用\" : \"已启用\"}",
     "${busy ? \"Installing\\u2026\" : skill.install[0].label}": "${busy ? \"安装中…\" : skill.install[0].label}",
-    "<span>API key ": "<span>API 密钥 ",
-    "Save key": "保存密钥"
+    "Save key": "保存密钥",
+    ">\n            Close\n          </button>": ">\n            关闭\n          </button>"
   }
 }

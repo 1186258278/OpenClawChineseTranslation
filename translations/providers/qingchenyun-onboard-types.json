@@ -1,0 +1,11 @@
+{
+  "file": "src/commands/onboard-types.ts",
+  "description": "晴辰云 (qtcool) - 在 AuthChoice/AuthChoiceGroupId 类型和 OnboardOptions 中添加晴辰云支持（优先级高于胜算云，列于其前）",
+  "replacements": {
+    "| \"custom-api-key\"": "| \"qtcool-api-key\"\n  | \"custom-api-key\"",
+
+    "| \"custom\";": "| \"qtcool\"\n  | \"custom\";",
+
+    "togetherApiKey?: string;": "togetherApiKey?: string;\n  qtcoolApiKey?: string;"
+  }
+}

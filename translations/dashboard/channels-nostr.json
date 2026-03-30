@@ -12,8 +12,7 @@
     ">\n                  Edit Profile\n                </button>": ">\n                  编辑资料\n                </button>",
     "<span class=\"label\">Name</span>": "<span class=\"label\">名称</span>",
     "<span class=\"label\">Display Name</span>": "<span class=\"label\">显示名称</span>",
-    "<span class=\"label\">About</span>": "<span class=\"label\">简介</span>",
     "No profile set. Click \"Edit Profile\" to add your name, bio, and avatar.": "暂无个人资料。点击\"编辑资料\"添加您的名称、简介和头像。",
     ">Refresh</button>": ">刷新</button>"
   }
-}
+}\n

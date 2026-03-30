@@ -1,0 +1,12 @@
+{
+  "name": "@openclaw/qtcool-provider",
+  "version": "2026.3.28",
+  "private": true,
+  "description": "OpenClaw 晴辰云 provider plugin (gpt.qt.cool)",
+  "type": "module",
+  "openclaw": {
+    "extensions": [
+      "./index.ts"
+    ]
+  }
+}

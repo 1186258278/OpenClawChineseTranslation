@@ -3,13 +3,11 @@
   "description": "CLI 命令注册表 - 顶层命令描述",
   "replacements": {
     "description: \"Initialize local config and agent workspace\"": "description: \"初始化本地配置和代理工作区\"",
-    "description: \"Search and reindex memory files\"": "description: \"搜索和重建记忆文件索引\"",
     "description: \"Run one agent turn via the Gateway\"": "description: \"通过网关运行一次代理\"",
     "description: \"Manage isolated agents (workspaces, auth, routing)\"": "description: \"管理隔离的代理（工作区、认证、路由）\"",
     "description: \"Show channel health and recent session recipients\"": "description: \"显示渠道健康状态和最近会话接收者\"",
     "description: \"Fetch health from the running gateway\"": "description: \"从运行中的网关获取健康状态\"",
     "description: \"List stored conversation sessions\"": "description: \"列出已存储的对话会话\"",
-    "description: \"Manage OpenClaw's dedicated browser (Chrome/Chromium)\"": "description: \"管理 OpenClaw 专用浏览器（Chrome/Chromium）\"",
     "description: \"Interactive onboarding for gateway, workspace, and skills\"": "description: \"交互式引导配置网关、工作区和技能\"",
     "description: \"Create and verify local backup archives for OpenClaw state\"": "description: \"创建和验证 OpenClaw 状态的本地备份归档\"",
     "description: \"Health checks + quick fixes for the gateway and channels\"": "description: \"网关和渠道的健康检查与快速修复\"",
@@ -17,8 +15,7 @@
     "description: \"Reset local config/state (keeps the CLI installed)\"": "description: \"重置本地配置/状态（保留 CLI）\"",
     "description: \"Uninstall the gateway service + local data (CLI remains)\"": "description: \"卸载网关服务和本地数据（保留 CLI）\"",
     "description: \"Send, read, and manage messages\"": "description: \"发送、读取和管理消息\"",
-    "description: \"Manage embedded Pi MCP servers\"": "description: \"管理内嵌的 Pi MCP 服务器\"",
     "description:\n          \"Interactive configuration for credentials, channels, gateway, and agent defaults\"": "description:\n          \"交互式配置凭证、渠道、网关和代理默认设置\"",
     "description:\n          \"Non-interactive config helpers (get/set/unset/file/validate). Default: starts guided setup.\"": "description:\n          \"非交互式配置工具（get/set/unset/file/validate）。默认：启动引导式设置。\""
   }
-}
+}\n

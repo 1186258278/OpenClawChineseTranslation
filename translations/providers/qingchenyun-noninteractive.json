@@ -1,0 +1,6 @@
+{
+  "file": "src/commands/onboard-non-interactive/local/auth-choice.api-key-providers.ts",
+  "description": "晴辰云 - 非交互式认证由 plugin system 处理",
+  "__note": "NI api-key-providers.ts 只处理 litellm，插件提供商通过 auth-choice.plugin-providers.ts",
+  "replacements": {}
+}

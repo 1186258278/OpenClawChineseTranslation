@@ -1,0 +1,28 @@
+{
+  "id": "qtcool",
+  "providers": ["qtcool"],
+  "providerAuthEnvVars": {
+    "qtcool": ["QTCOOL_API_KEY"]
+  },
+  "providerAuthChoices": [
+    {
+      "provider": "qtcool",
+      "method": "api-key",
+      "choiceId": "qtcool-api-key",
+      "choiceLabel": "晴辰云 API 密钥",
+      "choiceHint": "项目方每日免费模型站，签到领额度",
+      "groupId": "qtcool",
+      "groupLabel": "晴辰云",
+      "groupHint": "项目方每日免费模型站 — 在 gpt.qt.cool/user 获取密钥",
+      "optionKey": "qtcoolApiKey",
+      "cliFlag": "--qtcool-api-key",
+      "cliOption": "--qtcool-api-key <key>",
+      "cliDescription": "晴辰云 API 密钥 (gpt.qt.cool)"
+    }
+  ],
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {}
+  }
+}
