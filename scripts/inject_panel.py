@@ -67,10 +67,25 @@ def write_file(path, content):
 
 def upsert_marked_block(content, marker, block_content):
     """插入或更新带 marker 的注入块"""
-    block = f"{marker}\n{block_content}"
-    if marker in content:
-        pattern = re.compile(re.escape(marker) + r"[\s\S]*$", re.MULTILINE)
-        return pattern.sub(block, content), True
+    start_marker = marker
+    end_marker = f"{marker} [END]"
+    block = f"{start_marker}\n{block_content}\n{end_marker}"
+
+    has_start = start_marker in content
+    has_end = end_marker in content
+
+    if has_start or has_end:
+        if not (has_start and has_end):
+            raise ValueError(f"检测到不完整注入块边界: {start_marker}")
+
+        start_idx = content.find(start_marker)
+        end_idx = content.find(end_marker, start_idx)
+        if start_idx == -1 or end_idx == -1 or end_idx < start_idx:
+            raise ValueError(f"检测到无效注入块边界: {start_marker}")
+
+        pattern = re.compile(re.escape(start_marker) + r"[\s\S]*?" + re.escape(end_marker), re.MULTILINE)
+        return pattern.sub(block, content, count=1), True
+
     return content.rstrip() + "\n\n" + block + "\n", False
 
 def inject_to_directory(name, build_dir, panel_js, panel_css, inject_marker):
