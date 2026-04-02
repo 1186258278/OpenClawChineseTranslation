@@ -12,17 +12,18 @@ import re
 import os
 import glob
 import sys
+import stat
 
 # ========== 配置 ==========
-import tempfile
-TEMP_DIR = tempfile.gettempdir()
-CONTROL_UI_DIR = os.path.join(TEMP_DIR, "control-ui-clean")
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+ROOT_DIR = os.path.dirname(SCRIPT_DIR)
+CONTROL_UI_DIR = os.path.join(ROOT_DIR, "openclaw", "dist", "control-ui")
 ASSETS_DIR = os.path.join(CONTROL_UI_DIR, "assets")
 
 # 面板文件路径
-PANEL_JS_PATH = os.path.join(TEMP_DIR, "feature-panel.js")
-PANEL_CSS_PATH = os.path.join(TEMP_DIR, "feature-panel.css")
-PANEL_DATA_PATH = os.path.join(TEMP_DIR, "panel-data.json")
+PANEL_JS_PATH = os.path.join(ROOT_DIR, "translations", "panel", "feature-panel.js")
+PANEL_CSS_PATH = os.path.join(ROOT_DIR, "translations", "panel", "feature-panel.css")
+PANEL_DATA_PATH = os.path.join(ROOT_DIR, "translations", "panel", "panel-data.json")
 
 # 注入标记（防止重复注入）
 INJECT_MARKER = "/* === OpenClaw 功能面板 === */"
@@ -73,6 +74,11 @@ def check_required_files():
     for path, name in required:
         if not os.path.exists(path):
             missing.append(f"  - {name}: {path}")
+            continue
+        if os.path.isfile(path):
+            mode = stat.S_IMODE(os.stat(path).st_mode)
+            if mode & 0o022:
+                missing.append(f"  - {name} 权限过宽(应禁止 group/other 写入): {path}")
     
     if missing:
         print("❌ 缺少必需文件:")
