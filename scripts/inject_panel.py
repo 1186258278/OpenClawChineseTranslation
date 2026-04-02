@@ -18,6 +18,9 @@ import re
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 ROOT_DIR = os.path.dirname(SCRIPT_DIR)
 PANEL_DIR = os.path.join(ROOT_DIR, 'translations', 'panel')
+PANEL_JS_PATH = os.path.join(PANEL_DIR, 'feature-panel.js')
+PANEL_CSS_PATH = os.path.join(PANEL_DIR, 'feature-panel.css')
+PANEL_DATA_PATH = os.path.join(PANEL_DIR, 'panel-data.json')
 
 # Dashboard 目录配置（按优先级排序，会尝试注入到所有存在的目录）
 DASHBOARD_DIRS = [
