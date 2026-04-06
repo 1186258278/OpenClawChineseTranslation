@@ -32,9 +32,10 @@ if (!fs.existsSync(distDir)) {
 const files = fs.readdirSync(distDir).filter(f => f.endsWith('.js'));
 let patched = 0;
 
-// Bug 1: shouldPreferNativeJiti(modulePath) || modulePath.includes(...)
-const BUG1 = /shouldPreferNativeJiti\(modulePath\) \|\| modulePath\.includes\(/g;
-const FIX1 = 'shouldPreferNativeJiti(modulePath) || (process.platform !== "win32" && modulePath.includes(';
+// Bug 1: shouldPreferNativeJiti(modulePath) || modulePath.includes(`${path.sep}dist${path.sep}`)
+// 匹配完整表达式（含 includes 的闭合括号），确保替换后括号平衡
+const BUG1 = /shouldPreferNativeJiti\(modulePath\) \|\| modulePath\.includes\(`\$\{path\.sep\}dist\$\{path\.sep\}`\)/g;
+const FIX1 = 'shouldPreferNativeJiti(modulePath) || (process.platform !== "win32" && modulePath.includes(`${path.sep}dist${path.sep}`))';
 
 for (const file of files) {
   const filePath = path.join(distDir, file);
