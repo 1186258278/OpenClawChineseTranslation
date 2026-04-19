@@ -1,13 +1,11 @@
 {
   "file": "extensions/minimax/provider-registration.ts",
-  "description": "MiniMax 扩展认证选项 (v2026.4.8 迁移到 provider-registration)",
+  "description": "MiniMax 扩展认证选项 (v2026.4.15 重构为 helper 函数 + 模板字面量)",
   "replacements": {
-    "label: \"MiniMax API key (Global)\"": "label: \"MiniMax API 密钥（国际版）\"",
-    "hint: \"Global endpoint - api.minimax.io\"": "hint: \"国际端点 - api.minimax.io\"",
-    "label: \"MiniMax API key (CN)\"": "label: \"MiniMax API 密钥（国内版）\"",
-    "hint: \"CN endpoint - api.minimaxi.com\"": "hint: \"国内端点 - api.minimaxi.com\"",
-    "label: \"MiniMax OAuth (Global)\"": "label: \"MiniMax OAuth（国际版）\"",
-    "label: \"MiniMax OAuth (CN)\"": "label: \"MiniMax OAuth（国内版）\"",
+    "return region === \"cn\" ? \"CN\" : \"Global\";": "return region === \"cn\" ? \"国内版\" : \"国际版\";",
+    "return region === \"cn\" ? \"CN endpoint - api.minimaxi.com\" : \"Global endpoint - api.minimax.io\";": "return region === \"cn\" ? \"国内端点 - api.minimaxi.com\" : \"国际端点 - api.minimax.io\";",
+    "`MiniMax API key (${regionLabel})`": "`MiniMax API 密钥（${regionLabel}）`",
+    "`MiniMax OAuth (${regionLabel})`": "`MiniMax OAuth（${regionLabel}）`",
     "groupHint: \"M2.7 (recommended)\"": "groupHint: \"M2.7（推荐）\""
   }
 }

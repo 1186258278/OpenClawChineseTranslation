@@ -166,6 +166,8 @@
       "extensions/ext-venice.json",
       "extensions/ext-together.json",
       "extensions/ext-opencode.json",
+      "extensions/ext-opencode-go.json",
+      "extensions/ext-opencode-shared.json",
       "extensions/ext-zai.json",
       "extensions/ext-qianfan.json",
       "extensions/ext-qwen.json",

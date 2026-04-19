@@ -1,14 +1,12 @@
 {
   "file": "extensions/opencode/index.ts",
-  "description": "OpenCode Zen 扩展认证选项 (v2026.3.22 从 auth-choice 迁移)",
+  "description": "OpenCode Zen 扩展认证选项 (v2026.4.15 hint/promptMessage/groupHint 迁移到 plugin-sdk/opencode.ts)",
   "replacements": {
     "label: \"OpenCode Zen catalog\"": "label: \"OpenCode Zen 目录\"",
-    "hint: \"Shared API key for Zen + Go catalogs\"": "hint: \"Zen + Go 目录共享 API 密钥\"",
-    "promptMessage: \"Enter OpenCode API key\"": "promptMessage: \"输入 OpenCode API 密钥\"",
+    "choiceLabel: \"OpenCode Zen catalog\"": "choiceLabel: \"OpenCode Zen 目录\"",
     "\"OpenCode uses one API key across the Zen and Go catalogs.\"": "\"OpenCode 使用一个 API 密钥，同时适用于 Zen 和 Go 目录。\"",
     "\"Zen provides access to Claude, GPT, Gemini, and more models.\"": "\"Zen 提供对 Claude、GPT、Gemini 等模型的访问。\"",
     "\"Get your API key at: https://opencode.ai/auth\"": "\"在此获取 API 密钥: https://opencode.ai/auth\"",
-    "\"Choose the Zen catalog when you want the curated multi-model proxy.\"": "\"选择 Zen 目录以使用精选的多模型代理。\"",
-    "groupHint: \"Shared API key for Zen + Go catalogs\"": "groupHint: \"Zen + Go 目录共享 API 密钥\""
+    "\"Choose the Zen catalog when you want the curated multi-model proxy.\"": "\"选择 Zen 目录以使用精选的多模型代理。\""
   }
 }

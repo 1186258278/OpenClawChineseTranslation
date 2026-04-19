@@ -1,0 +1,11 @@
+{
+  "file": "extensions/opencode-go/index.ts",
+  "description": "OpenCode Go 扩展认证选项 (v2026.4.15 新增)",
+  "replacements": {
+    "label: \"OpenCode Go catalog\"": "label: \"OpenCode Go 目录\"",
+    "choiceLabel: \"OpenCode Go catalog\"": "choiceLabel: \"OpenCode Go 目录\"",
+    "\"OpenCode uses one API key across the Zen and Go catalogs.\"": "\"OpenCode 使用一个 API 密钥，同时适用于 Zen 和 Go 目录。\"",
+    "\"Go focuses on Kimi, GLM, and MiniMax coding models.\"": "\"Go 专注于 Kimi、GLM、MiniMax 编码模型。\"",
+    "\"Get your API key at: https://opencode.ai/auth\"": "\"在此获取 API 密钥: https://opencode.ai/auth\""
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "file": "src/plugin-sdk/opencode.ts",
+  "description": "OpenCode 共享认证 helper 常量 (v2026.4.15 从 extensions/opencode 提取)",
+  "replacements": {
+    "const OPENCODE_SHARED_HINT = \"Shared API key for Zen + Go catalogs\";": "const OPENCODE_SHARED_HINT = \"Zen + Go 目录共享 API 密钥\";",
+    "promptMessage: \"Enter OpenCode API key\"": "promptMessage: \"输入 OpenCode API 密钥\""
+  }
+}

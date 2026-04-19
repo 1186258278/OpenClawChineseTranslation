@@ -776,6 +776,20 @@
     "\"agents.defaults.heartbeat.timeoutSeconds\": \"Heartbeat Timeout (Seconds)\"": "\"agents.defaults.heartbeat.timeoutSeconds\": \"心跳超时（秒）\"",
     "\"agents.list.*.heartbeat.timeoutSeconds\": \"Heartbeat Timeout (Seconds)\"": "\"agents.list.*.heartbeat.timeoutSeconds\": \"心跳超时（秒）\"",
     "\"agents.list[].heartbeat.suppressToolErrorWarnings\":\n    \"Agent Heartbeat Suppress Tool Error Warnings\"": "\"agents.list[].heartbeat.suppressToolErrorWarnings\":\n    \"代理心跳抑制工具错误警告\"",
-    "\"agents.list[].heartbeat.timeoutSeconds\": \"Agent Heartbeat Timeout (Seconds)\"": "\"agents.list[].heartbeat.timeoutSeconds\": \"代理心跳超时（秒）\""
+    "\"agents.list[].heartbeat.timeoutSeconds\": \"Agent Heartbeat Timeout (Seconds)\"": "\"agents.list[].heartbeat.timeoutSeconds\": \"代理心跳超时（秒）\"",
+    "\"agents.defaults.contextLimits\": \"Default Context Limits\"": "\"agents.defaults.contextLimits\": \"默认上下文限制\"",
+    "\"agents.defaults.contextLimits.memoryGetMaxChars\": \"Default memory_get Max Chars\"": "\"agents.defaults.contextLimits.memoryGetMaxChars\": \"默认 memory_get 最大字符数\"",
+    "\"agents.defaults.contextLimits.memoryGetDefaultLines\": \"Default memory_get Line Window\"": "\"agents.defaults.contextLimits.memoryGetDefaultLines\": \"默认 memory_get 行窗口\"",
+    "\"agents.defaults.contextLimits.toolResultMaxChars\": \"Default Tool Result Max Chars\"": "\"agents.defaults.contextLimits.toolResultMaxChars\": \"默认工具结果最大字符数\"",
+    "\"agents.defaults.contextLimits.postCompactionMaxChars\": \"Default Post-compaction Max Chars\"": "\"agents.defaults.contextLimits.postCompactionMaxChars\": \"默认压缩后最大字符数\"",
+    "\"agents.list[].skillsLimits\": \"Agent Skills Limits\"": "\"agents.list[].skillsLimits\": \"代理技能限制\"",
+    "\"agents.list[].skillsLimits.maxSkillsPromptChars\": \"Agent Skills Prompt Max Chars\"": "\"agents.list[].skillsLimits.maxSkillsPromptChars\": \"代理技能提示最大字符数\"",
+    "\"agents.list[].contextLimits\": \"Agent Context Limits\"": "\"agents.list[].contextLimits\": \"代理上下文限制\"",
+    "\"agents.list[].contextLimits.memoryGetMaxChars\": \"Agent memory_get Max Chars\"": "\"agents.list[].contextLimits.memoryGetMaxChars\": \"代理 memory_get 最大字符数\"",
+    "\"agents.list[].contextLimits.memoryGetDefaultLines\": \"Agent memory_get Line Window\"": "\"agents.list[].contextLimits.memoryGetDefaultLines\": \"代理 memory_get 行窗口\"",
+    "\"agents.list[].contextLimits.toolResultMaxChars\": \"Agent Tool Result Max Chars\"": "\"agents.list[].contextLimits.toolResultMaxChars\": \"代理工具结果最大字符数\"",
+    "\"agents.list[].contextLimits.postCompactionMaxChars\": \"Agent Post-compaction Max Chars\"": "\"agents.list[].contextLimits.postCompactionMaxChars\": \"代理压缩后最大字符数\"",
+    "\"agents.defaults.experimental\": \"Experimental Agent Flags\"": "\"agents.defaults.experimental\": \"实验性代理标志\"",
+    "\"agents.defaults.experimental.localModelLean\": \"Enable Lean Local Model Mode (Experimental)\"": "\"agents.defaults.experimental.localModelLean\": \"启用精简本地模型模式（实验性）\""
   }
 }
