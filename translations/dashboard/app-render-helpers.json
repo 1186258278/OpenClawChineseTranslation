@@ -1,14 +1,9 @@
 {
   "file": "ui/src/ui/app-render.helpers.ts",
-  "description": "控制面板顶栏和会话分组辅助文本",
+  "description": "控制面板顶栏和主题模式选择器辅助文本",
   "replacements": {
     "title=\"Chat settings\"": "title=\"聊天设置\"",
     "aria-label=\"Chat settings\"": "aria-label=\"聊天设置\"",
-    "aria-label=\"Chat model\"": "aria-label=\"聊天模型\"",
-    "fallbackName: \"Main Session\"": "fallbackName: \"主会话\"",
-    "prefix: \"Subagent:\", fallbackName: \"Subagent:\"": "prefix: \"子代理:\", fallbackName: \"子代理:\"",
-    "prefix: \"Cron:\", fallbackName: \"Cron Job:\"": "prefix: \"定时:\", fallbackName: \"定时任务:\"",
-    "\"Other Sessions\"": "\"其他会话\"",
     "{ id: \"system\", label: \"System\", short: \"SYS\" }": "{ id: \"system\", label: \"系统\", short: \"系统\" }",
     "{ id: \"light\", label: \"Light\", short: \"LIGHT\" }": "{ id: \"light\", label: \"亮色\", short: \"亮色\" }",
     "aria-label=\"Color mode\"": "aria-label=\"颜色模式\""

@@ -2,8 +2,6 @@
   "file": "ui/src/ui/views/chat.ts",
   "description": "Dashboard 对话页面",
   "replacements": {
-    "${icons.loader} Compacting context...": "${icons.loader} 正在压缩上下文...",
-    "${icons.check} Context compacted": "${icons.check} 上下文已压缩",
     "alt=\"Attachment preview\"": "alt=\"附件预览\"",
     "aria-label=\"Remove attachment\"": "aria-label=\"移除附件\"",
     "aria-label=\"Loading chat\"": "aria-label=\"正在加载对话\"",
@@ -12,11 +10,6 @@
     "? `Image (${item.attachments.length})`": "? `图片 (${item.attachments.length})`",
     "aria-label=\"Remove queued message\"": "aria-label=\"移除队列消息\"",
     "title=\"Attach file\"": "title=\"附加文件\"",
-    "title=\"New session\"": "title=\"新会话\"",
-    "aria-label=\"New session\"": "aria-label=\"新会话\"",
-    "title=\"Export\"": "title=\"导出\"",
-    "title=${isBusy ? \"Queue\" : \"Send\"}": "title=${isBusy ? \"排队\" : \"发送\"}",
-    "`Showing last ${CHAT_HISTORY_RENDER_LIMIT} messages (${historyStart} hidden).`": "`显示最近 ${CHAT_HISTORY_RENDER_LIMIT} 条消息（已隐藏 ${historyStart} 条）。`",
     "placeholder=\"Search messages...\"": "placeholder=\"搜索消息...\"",
     "No matching messages": "没有匹配的消息"
   }

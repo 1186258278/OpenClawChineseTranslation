@@ -1,0 +1,14 @@
+{
+  "file": "ui/src/ui/chat/run-controls.ts",
+  "description": "对话运行控件（新会话/导出/发送/停止按钮）",
+  "replacements": {
+    "title=\"New session\"": "title=\"新会话\"",
+    "aria-label=\"New session\"": "aria-label=\"新会话\"",
+    "title=\"Export\"": "title=\"导出\"",
+    "aria-label=\"Export chat\"": "aria-label=\"导出对话\"",
+    "title=\"Stop\"": "title=\"停止\"",
+    "aria-label=\"Stop generating\"": "aria-label=\"停止生成\"",
+    "title=${props.isBusy ? \"Queue\" : \"Send\"}": "title=${props.isBusy ? \"排队\" : \"发送\"}",
+    "aria-label=${props.isBusy ? \"Queue message\" : \"Send message\"}": "aria-label=${props.isBusy ? \"消息排队\" : \"发送消息\"}"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "file": "src/wizard/setup.security-note.ts",
+  "description": "安全警告提示正文（重构自 setup.ts）",
+  "replacements": {
+    "\"Security disclaimer\"": "\"安全声明\"",
+    "\"I understand this is personal-by-default and shared/multi-user use requires lock-down. Continue?\"": "\"我理解这默认是个人使用的，共享/多用户使用需要安全加固。是否继续？\"",
+    "theme.warn(\"⚠ OpenClaw is in Beta - expect sharp edges\")": "theme.warn(\"⚠ OpenClaw 处于 Beta 阶段——请注意可能存在的问题\")",
+    "\"- By default, OpenClaw is a personal agent: one trusted operator boundary.\"": "\"- 默认情况下，OpenClaw 是个人代理：单一可信操作者边界。\"",
+    "\"- This bot can read files and run actions if tools are enabled.\"": "\"- 如果启用了工具，这个机器人可以读取文件并执行操作。\"",
+    "\"- A bad prompt can trick it into doing unsafe things.\"": "\"- 恶意提示可能诱使它做出不安全的事情。\"",
+    "heading(\"How OpenClaw treats trust\")": "heading(\"OpenClaw 如何处理信任\")",
+    "\"- OpenClaw is not a hostile multi-tenant boundary by default.\"": "\"- OpenClaw 默认不是对抗性多租户边界。\"",
+    "\"- If multiple users can message one tool-enabled agent, they share that delegated tool authority.\"": "\"- 如果多个用户可以向同一个启用工具的代理发消息，他们将共享该代理的工具权限。\"",
+    "heading(\"When not to run OpenClaw\")": "heading(\"什么情况下不要运行 OpenClaw\")",
+    "\"- If you’re not comfortable with security hardening and access control, don’t run OpenClaw.\"": "\"- 如果你不熟悉安全加固和访问控制，请不要运行 OpenClaw。\"",
+    "\"- Ask someone experienced to help before enabling tools or exposing it to the internet.\"": "\"- 在启用工具或将其暴露到互联网之前，请寻求有经验的人帮助。\"",
+    "heading(\"Recommended baseline\")": "heading(\"建议的基线配置\")",
+    "\"- Pairing/allowlists + mention gating.\"": "\"- 配对/白名单 + 提及控制。\"",
+    "\"- Multi-user/shared inbox: split trust boundaries (separate gateway/credentials, ideally separate OS users/hosts).\"": "\"- 多用户/共享信箱：拆分信任边界（独立网关/凭证，最好使用独立的系统用户/主机）。\"",
+    "\"- Sandbox + least-privilege tools.\"": "\"- 沙箱 + 最小权限工具。\"",
+    "\"- Shared inboxes: isolate DM sessions (session.dmScope: per-channel-peer) and keep tool access minimal.\"": "\"- 共享信箱：隔离私信会话 (session.dmScope: per-channel-peer) 并保持最小工具访问权限。\"",
+    "\"- Keep secrets out of the agent’s reachable filesystem.\"": "\"- 将密钥保存在代理无法访问的文件系统之外。\"",
+    "\"- Use the strongest available model for any bot with tools or untrusted inboxes.\"": "\"- 对于任何带有工具或不受信任收件箱的机器人，使用最强大的可用模型。\"",
+    "heading(\"Run regularly\")": "heading(\"定期运行\")",
+    "heading(\"Learn more\")": "heading(\"了解更多\")",
+    "\"- https://docs.openclaw.ai/gateway/security\",": "\"- https://docs.openclaw.ai/gateway/security\",\n  \"\",\n  \"汉化版社区：QQ 群 https://qt.cool/c/OpenClaw | 微信群 https://qt.cool/c/OpenClawWx\","
+  }
+}

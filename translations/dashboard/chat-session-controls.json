@@ -1,0 +1,11 @@
+{
+  "file": "ui/src/ui/chat/session-controls.ts",
+  "description": "对话会话控件（模型选择/会话显示名）",
+  "replacements": {
+    "aria-label=\"Chat model\"": "aria-label=\"聊天模型\"",
+    "fallbackName: \"Main Session\"": "fallbackName: \"主会话\"",
+    "prefix: \"Subagent:\", fallbackName: \"Subagent:\"": "prefix: \"子代理:\", fallbackName: \"子代理:\"",
+    "prefix: \"Cron:\", fallbackName: \"Cron Job:\"": "prefix: \"定时:\", fallbackName: \"定时任务:\"",
+    "ensureGroup(\"other\", \"Other Sessions\")": "ensureGroup(\"other\", \"其他会话\")"
+  }
+}

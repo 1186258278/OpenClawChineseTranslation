@@ -1,0 +1,7 @@
+{
+  "file": "ui/src/ui/chat/build-chat-items.ts",
+  "description": "对话历史构建（历史截断提示）",
+  "replacements": {
+    "`Showing last ${CHAT_HISTORY_RENDER_LIMIT} messages (${historyStart} hidden).`": "`显示最近 ${CHAT_HISTORY_RENDER_LIMIT} 条消息（已隐藏 ${historyStart} 条）。`"
+  }
+}

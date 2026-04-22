@@ -6,7 +6,7 @@
     "\"not configured\"": "\"未配置\"",
     "\"configured · plugin disabled\"": "\"已配置 · 插件已禁用\"",
     "\"plugin · install\"": "\"插件 · 安装\"",
-    "`${entry.meta.label}: install plugin to enable`": "`${entry.meta.label}: 安装插件以启用`",
+    "`${formatSetupSelectionLabel(entry.meta.label, entry.id)}: install plugin to enable`": "`${formatSetupSelectionLabel(entry.meta.label, entry.id)}: 安装插件以启用`",
     "\"DM security: default is pairing; unknown DMs get a pairing code.\"": "\"私信安全: 默认配对；未知私信将获得配对码。\"",
     "`Approve with: ${formatCliCommand(\"openclaw pairing approve <channel> <code>\")}`": "`批准命令: ${formatCliCommand(\"openclaw pairing approve <channel> <code>\")}`",
     "'Public DMs require dmPolicy=\"open\" + allowFrom=[\"*\"].'": "'公开私信需要 dmPolicy=\"open\" + allowFrom=[\"*\"].'",

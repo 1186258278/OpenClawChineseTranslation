@@ -1,0 +1,15 @@
+{
+  "file": "ui/src/ui/chat/status-indicators.ts",
+  "description": "对话状态指示器（上下文压缩/Fallback 提示）",
+  "replacements": {
+    "${icons.loader} Compacting context...": "${icons.loader} 正在压缩上下文...",
+    "${icons.check} Context compacted": "${icons.check} 上下文已压缩",
+    "`Selected: ${status.selected}`": "`已选择: ${status.selected}`",
+    "phase === \"cleared\" ? `Active: ${status.selected}` : `Active: ${status.active}`": "phase === \"cleared\" ? `当前: ${status.selected}` : `当前: ${status.active}`",
+    "phase === \"cleared\" && status.previous ? `Previous fallback: ${status.previous}` : null": "phase === \"cleared\" && status.previous ? `上一次降级: ${status.previous}` : null",
+    "status.reason ? `Reason: ${status.reason}` : null": "status.reason ? `原因: ${status.reason}` : null",
+    "status.attempts.length > 0 ? `Attempts: ${status.attempts.slice(0, 3).join(\" | \")}` : null": "status.attempts.length > 0 ? `尝试: ${status.attempts.slice(0, 3).join(\" | \")}` : null",
+    "`Fallback cleared: ${status.selected}`": "`已退出降级: ${status.selected}`",
+    "`Fallback active: ${status.active}`": "`降级进行中: ${status.active}`"
+  }
+}

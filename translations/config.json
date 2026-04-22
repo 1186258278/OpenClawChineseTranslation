@@ -22,6 +22,7 @@
       "wizard/onboarding.json",
       "wizard/onboarding-gateway-config.json",
       "wizard/security.json",
+      "wizard/security-note.json",
       "wizard/finalize.json",
       "wizard/onboarding-finalize.json",
       "wizard/setup-plugin-config.json"
@@ -133,7 +134,6 @@
       "dashboard/usage-render-details.json",
       "dashboard/agents-status-files.json",
       "dashboard/skills-grouping.json",
-      "dashboard/overview.json",
       "dashboard/gateway-url-confirmation.json",
       "dashboard/markdown-sidebar.json",
       "dashboard/usage-metrics.json",
@@ -147,13 +147,16 @@
       "dashboard/command-palette.json",
       "dashboard/slash-command-executor.json",
       "dashboard/grouped-render.json",
-      "dashboard/login-gate.json",
       "dashboard/copy-as-markdown.json",
       "dashboard/speech.json",
       "dashboard/app-render-helpers.json",
       "dashboard/dreaming-structured.json",
       "dashboard/dreaming-ui.json",
-      "dashboard/tool-cards.json"
+      "dashboard/tool-cards.json",
+      "dashboard/chat-status-indicators.json",
+      "dashboard/chat-run-controls.json",
+      "dashboard/chat-build-items.json",
+      "dashboard/chat-session-controls.json"
     ],
     "extensions": [
       "extensions/feishu.json",
