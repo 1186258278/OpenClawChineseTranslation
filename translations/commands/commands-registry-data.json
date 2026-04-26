@@ -19,6 +19,6 @@
     "description: \"Show or set the model.\"": "description: \"显示或设置模型。\"",
     "description: \"Export a JSONL trajectory bundle for the active session.\"": "description: \"为当前会话导出 JSONL 轨迹包。\"",
     "description: \"Output directory (default: workspace)\"": "description: \"输出目录（默认：工作区）\"",
-    "description: \"List model providers/models or add a model.\"": "description: \"列出模型提供商/模型或添加模型。\""
+    "description: \"List model providers/models.\"": "description: \"列出模型提供商/模型。\""
   }
 }

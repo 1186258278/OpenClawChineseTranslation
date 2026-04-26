@@ -3,6 +3,7 @@
   "description": "子代理命令 - /subagents info",
   "replacements": {
     "\"ℹ️ Usage: /subagents info <id|#>\"": "\"ℹ️ 用法：/subagents info <id|#>\"",
-    "\"ℹ️ Subagent info\"": "\"ℹ️ 子代理信息\""
+    "\"ℹ️ Subagent info\"": "\"ℹ️ 子代理信息\"",
+    "missingTarget: \"Missing subagent id.\"": "missingTarget: \"缺少子代理 ID。\""
   }
 }

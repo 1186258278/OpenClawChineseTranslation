@@ -16,6 +16,9 @@
     "Your configuration is invalid. Some settings may not work as expected.": "您的配置无效。某些设置可能无法按预期工作。",
     "? \"Hide env values\" : \"Reveal env values\"": "? \"隐藏环境值\" : \"显示环境值\"",
     ">\n                        Peek\n                      </button>": ">\n                        查看\n                      </button>",
-    "{ id: \"other\", label: \"Other\"": "{ id: \"other\", label: \"其他\""
+    "{ id: \"other\", label: \"Other\"": "{ id: \"other\", label: \"其他\"",
+    "id: \"custom\",\n      label: \"Custom\"": "id: \"custom\",\n      label: \"自定义\"",
+    "? \"Replace custom theme\"": "? \"替换自定义主题\"",
+    "title=${props.configPath ? `Open ${props.configPath}` : \"Open config file\"}": "title=${props.configPath ? `打开 ${props.configPath}` : \"打开配置文件\"}"
   }
 }

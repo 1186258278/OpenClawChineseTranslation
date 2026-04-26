@@ -15,7 +15,7 @@
     "<div class=\"label\">Profile</div>": "<div class=\"label\">配置文件</div>",
     "<div class=\"label\">Source</div>": "<div class=\"label\">来源</div>",
     "<div class=\"label\">Status</div>": "<div class=\"label\">状态</div>",
-    "<div class=\"mono\">unsaved</div>": "<div class=\"mono\">未保存</div>",
+    "params.configSaving ? \"saving…\" : params.configDirty ? \"unsaved\" : \"saved\"": "params.configSaving ? \"保存中…\" : params.configDirty ? \"未保存\" : \"已保存\"",
     "<div class=\"label\">Quick Presets</div>": "<div class=\"label\">快速预设</div>",
     "Inherit": "继承",
     "\"agent override\"": "\"代理覆盖\"",
@@ -32,6 +32,19 @@
     "${filtered.length} shown": "${filtered.length} 个显示",
     "No skills found.": "未找到技能。",
     "Missing: ${missing.join(\", \")}": "缺失: ${missing.join(\", \")}",
-    "Reason: ${reasons.join(\", \")}": "原因: ${reasons.join(\", \")}"
+    "Reason: ${reasons.join(\", \")}": "原因: ${reasons.join(\", \")}",
+    "return \"Disabled by agent override.\";": "return \"已被代理覆盖禁用。\";",
+    "return \"Enabled by the current profile.\";": "return \"由当前配置文件启用。\";",
+    "return \"Enabled by agent override.\";": "return \"由代理覆盖启用。\";",
+    "return \"Not included in the current profile.\";": "return \"未包含在当前配置文件中。\";",
+    "return \"Override Off\";": "return \"覆盖关闭\";",
+    "return \"Override On\";": "return \"覆盖开启\";",
+    "return \"Profile Off\";": "return \"配置文件关闭\";",
+    "return \"Other Agent\";": "return \"其他代理\";",
+    "aria-label=\"Tool preview\"": "aria-label=\"工具预览\"",
+    "formatCountLabel(enabledSectionCount, \"Enabled Tool\")": "formatCountLabel(enabledSectionCount, \"已启用工具\")",
+    "formatCountLabel(activeSectionCount, \"Live Tool\")": "formatCountLabel(activeSectionCount, \"活跃工具\")",
+    "\"Not available in this chat session right now.\"": "\"当前聊天会话中暂不可用。\"",
+    "\"Switch chat to this agent to inspect live availability.\"": "\"切换聊天到此代理以查看实时可用性。\""
   }
 }

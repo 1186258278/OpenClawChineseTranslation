@@ -11,6 +11,12 @@
     "aria-label=\"Remove queued message\"": "aria-label=\"移除队列消息\"",
     "title=\"Attach file\"": "title=\"附加文件\"",
     "placeholder=\"Search messages...\"": "placeholder=\"搜索消息...\"",
-    "No matching messages": "没有匹配的消息"
+    "No matching messages": "没有匹配的消息",
+    "title=\"Steer now\"": "title=\"立即引导\"",
+    "aria-label=\"Steer queued message\"": "aria-label=\"引导排队消息\"",
+    "\"Asking OpenClaw...\"": "\"正在请求 OpenClaw...\"",
+    "\"Connecting Talk...\"": "\"正在连接对话...\"",
+    "vs.sttRecording ? \"Stop recording\" : \"Voice input\"": "vs.sttRecording ? \"停止录音\" : \"语音输入\"",
+    "props.realtimeTalkActive ? \"Stop Talk\" : \"Start Talk\"": "props.realtimeTalkActive ? \"停止对话\" : \"开始对话\""
   }
 }

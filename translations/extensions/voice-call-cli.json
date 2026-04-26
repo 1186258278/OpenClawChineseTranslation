@@ -24,6 +24,23 @@
     "\"off | serve (tailnet) | funnel (public)\"": "\"off | serve (Tailnet) | funnel (公共)\"",
     "\"Tailscale path to expose (recommend matching serve.path)\"": "\"要暴露的 Tailscale 路径 (建议匹配 serve.path)\"",
     "\"Local webhook port\"": "\"本地 Webhook 端口\"",
-    "\"Local webhook path\"": "\"本地 Webhook 路径\""
+    "\"Local webhook path\"": "\"本地 Webhook 路径\"",
+    "\"Voice Call plugin is enabled\"": "\"Voice Call 插件已启用\"",
+    "\"Provider credentials/config look complete\"": "\"提供商凭证/配置看起来完整\"",
+    "\"Mock provider does not need a public webhook\"": "\"Mock 提供商不需要公网 webhook\"",
+    "\"Webhook exposure configured through tunnel or Tailscale\"": "\"Webhook 暴露已通过隧道或 Tailscale 配置\"",
+    "\"Set publicUrl or configure tunnel/tailscale so the provider can reach webhooks\"": "\"设置 publicUrl 或配置 tunnel/tailscale，以便提供商可访问 webhook\"",
+    "\"Notify/conversation calls use normal TTS/STT flow\"": "\"Notify/conversation 通话使用正常的 TTS/STT 流程\"",
+    ".description(\"Show Voice Call provider and webhook setup status\")": ".description(\"显示 Voice Call 提供商和 webhook 设置状态\")",
+    ".option(\"--json\", \"Print machine-readable JSON\")": ".option(\"--json\", \"打印机器可读 JSON\")",
+    ".description(\"Check Voice Call readiness and optionally place a short outbound test call\")": ".description(\"检查 Voice Call 就绪状态，并可选择发起一次简短外呼测试\")",
+    ".option(\"-t, --to <phone>\", \"Phone number to call for a live smoke\")": ".option(\"-t, --to <phone>\", \"测试外呼的电话号码\")",
+    "\"Message to speak during the smoke call\"": "\"测试通话时朗读的消息\"",
+    "\"OpenClaw voice call smoke test.\"": "\"OpenClaw 语音通话测试。\"",
+    ".option(\"--mode <mode>\", \"Call mode: notify or conversation\", \"notify\")": ".option(\"--mode <mode>\", \"通话模式：notify 或 conversation\", \"notify\")",
+    ".option(\"--yes\", \"Actually place the live outbound call\")": ".option(\"--yes\", \"实际发起外呼通话\")",
+    ".description(\"Send DTMF digits to an active call\")": ".description(\"向活动通话发送 DTMF 数字\")",
+    ".requiredOption(\"--call-id <id>\", \"Call ID\")": ".requiredOption(\"--call-id <id>\", \"通话 ID\")",
+    ".requiredOption(\"--digits <digits>\", \"DTMF digits\")": ".requiredOption(\"--digits <digits>\", \"DTMF 数字\")"
   }
 }
