@@ -319,6 +319,20 @@ jobs:
           
           jq '.name = "@qingchencloud/openclaw-zh"' package.json > tmp.json && mv tmp.json package.json
           
+          # 修复 self-reference：包名改了，dist/ 中所有 `from "openclaw/..."` 需要同步替换
+          # 否则运行时报 Cannot find package 'openclaw' (issue #86)
+          # 仅替换 import/require 语句中的包名，不动配置/字面值（如 name: "openclaw"）
+          echo "🔧 修复 dist/ 中 self-reference 引用..."
+          BEFORE=$(grep -rE '(from |import |import\(|require\()"openclaw(["/])' dist/ --include='*.js' --include='*.mjs' --include='*.cjs' -l 2>/dev/null | wc -l)
+          find dist -type f \( -name '*.js' -o -name '*.mjs' -o -name '*.cjs' \) -print0 | \
+            xargs -0 sed -i -E 's#(from |import |import\(|require\()"openclaw(["/])#\1"@qingchencloud/openclaw-zh\2#g'
+          AFTER=$(grep -rE '(from |import |import\(|require\()"openclaw(["/])' dist/ --include='*.js' --include='*.mjs' --include='*.cjs' -l 2>/dev/null | wc -l)
+          echo "✅ self-reference 替换完成：$BEFORE 个文件 → 剩余 $AFTER 个未匹配"
+          if [ "$AFTER" -ne "0" ]; then
+            echo "⚠️ 仍有 $AFTER 个文件残留 openclaw self-reference，请检查"
+            grep -rE '(from |import |import\(|require\()"openclaw(["/])' dist/ --include='*.js' --include='*.mjs' --include='*.cjs' | head -5 || true
+          fi
+          
           # 使用中文 README
           cp ../README.md ./README.md
 
