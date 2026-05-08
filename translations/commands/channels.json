@@ -3,6 +3,12 @@
   "description": "通道列表命令",
   "replacements": {
     "theme.heading(\"Chat channels:\")": "theme.heading(\"聊天通道：\")",
-    "theme.heading(\"Auth providers (OAuth + API keys):\")": "theme.heading(\"认证提供商（OAuth + API 密钥）：\")"
+    "return value === false ? theme.error(\"disabled\") : theme.success(\"enabled\");": "return value === false ? theme.error(\"已禁用\") : theme.success(\"已启用\");",
+    "return value ? theme.success(\"configured\") : theme.warn(\"not configured\");": "return value ? theme.success(\"已配置\") : theme.warn(\"未配置\");",
+    "return value ? theme.success(\"installed\") : theme.warn(\"not installed\");": "return value ? theme.success(\"已安装\") : theme.warn(\"未安装\");",
+    "return value ? theme.success(\"linked\") : theme.warn(\"not linked\");": "return value ? theme.success(\"已连接\") : theme.warn(\"未连接\");",
+    "\"- no chat channels found\"": "\"- 未找到聊天通道\"",
+    "\"- no configured chat channels (run `openclaw channels list --all` to see installable channels)\"": "\"- 未配置聊天通道（运行 `openclaw channels list --all` 查看可安装的通道）\"",
+    "\"Model provider usage moved out of `channels list` — see `openclaw status` or `openclaw models list`.\"": "\"模型提供商用量已移出 `channels list` — 请查看 `openclaw status` 或 `openclaw models list`。\""
   }
 }
