@@ -144,11 +144,18 @@ async function regenerateSchemaArtifacts(targetDir) {
   // 写一个临时 mjs 调用 module API（避免 tsx 入口判定不触发 main 块的问题）
   const runnerPath = path.join(targetDir, '.openclaw-zh-regen-runner.mjs');
   const runnerSource = `
-import { writeBaseConfigSchemaModule } from "./scripts/generate-base-config-schema.ts";
-import { writeBundledChannelConfigMetadataModule } from "./scripts/generate-bundled-channel-config-metadata.ts";
-const r1 = writeBaseConfigSchemaModule();
-console.log("base:" + (r1?.changed ?? "?"));
-const r2 = await writeBundledChannelConfigMetadataModule();
+const base = await import("./scripts/generate-base-config-schema.ts");
+const bundled = await import("./scripts/generate-bundled-channel-config-metadata.ts");
+if (typeof base.writeBaseConfigSchemaModule === "function") {
+  const r1 = base.writeBaseConfigSchemaModule();
+  console.log("base:" + (r1?.changed ?? "?"));
+} else if (typeof base.checkBaseConfigSchema === "function") {
+  base.checkBaseConfigSchema();
+  console.log("base:runtime");
+} else {
+  console.log("base:?");
+}
+const r2 = await bundled.writeBundledChannelConfigMetadataModule();
 console.log("bundled:" + (r2?.changed ?? "?"));
 `;
 
@@ -173,9 +180,11 @@ console.log("bundled:" + (r2?.changed ?? "?"));
         kind === 'base'
           ? 'schema.base.generated.ts'
           : 'bundled-channel-config-metadata.generated.ts';
-      const changed = status.trim() === 'true';
-      if (changed) {
+      const normalizedStatus = status.trim();
+      if (normalizedStatus === 'true') {
         log.success(`  ${fileLabel} 已更新`);
+      } else if (normalizedStatus === 'runtime') {
+        log.dim(`  ${fileLabel} 运行时计算，无需生成`);
       } else {
         log.dim(`  ${fileLabel} 无变化`);
       }
