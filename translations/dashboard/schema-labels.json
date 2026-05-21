@@ -55,6 +55,8 @@
     "\"agents.list[].runtime.acp.backend\": \"Agent ACP Backend\"": "\"agents.list[].runtime.acp.backend\": \"代理 ACP 后端\"",
     "\"agents.list[].runtime.acp.mode\": \"Agent ACP Mode\"": "\"agents.list[].runtime.acp.mode\": \"代理 ACP 模式\"",
     "\"agents.list[].runtime.acp.cwd\": \"Agent ACP Working Directory\"": "\"agents.list[].runtime.acp.cwd\": \"代理 ACP 工作目录\"",
+    "\"agents.list[].experimental\": \"Agent Experimental Flags\"": "\"agents.list[].experimental\": \"代理实验性标志\"",
+    "\"agents.list[].experimental.localModelLean\": \"Agent Lean Local Model Mode\"": "\"agents.list[].experimental.localModelLean\": \"代理精简本地模型模式\"",
     "\"agents.defaults\": \"Agent Defaults\"": "\"agents.defaults\": \"代理默认设置\"",
     "\"agents.list\": \"Agent List\"": "\"agents.list\": \"代理列表\"",
     "\"gateway.port\": \"Gateway Port\"": "\"gateway.port\": \"网关端口\"",

@@ -7,6 +7,12 @@
     "theme.heading(\"Requirements:\")": "theme.heading(\"依赖条件：\")",
     "theme.heading(\"Install options:\")": "theme.heading(\"安装选项：\")",
     "theme.heading(\"Skills Status Check\")": "theme.heading(\"技能状态检查\")",
-    "theme.heading(\"Missing requirements:\")": "theme.heading(\"缺少依赖：\")"
+    "theme.heading(\"Missing requirements:\")": "theme.heading(\"缺少依赖：\")",
+    "Tip: use \\`openclaw skills search\\`, \\`openclaw skills install\\`, and \\`openclaw skills update\\` for ClawHub-backed skills.": "提示: 使用 \\`openclaw skills search\\`、\\`openclaw skills install\\` 和 \\`openclaw skills update\\` 管理由 ClawHub 支持的技能。",
+    "No eligible skills found. Run \\`${formatCliCommand(\"openclaw skills list\")}\\` to see all skills.": "未找到可用技能。运行 \\`${formatCliCommand(\"openclaw skills list\")}\\` 查看所有技能。",
+    "\"No skills found.\"": "\"未找到技能。\"",
+    "`Skill \"${safeRequestedName}\" not found. Run \\`${formatCliCommand(\"openclaw skills list\")}\\` to see available skills.`": "`未找到技能 \"${safeRequestedName}\"。运行 \\`${formatCliCommand(\"openclaw skills list\")}\\` 查看可用技能。`",
+    "theme.heading(\"API key setup:\")": "theme.heading(\"API Key 设置：\")",
+    "theme.heading(\"What this means:\")": "theme.heading(\"这些状态表示：\")"
   }
 }

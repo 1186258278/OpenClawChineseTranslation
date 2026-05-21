@@ -22,7 +22,6 @@
     "\"- Tip: back up the workspace in a private git repo (GitHub or GitLab).\"": "\"- 提示：将工作区备份到私有 git 仓库（GitHub 或 GitLab）。\"",
     "\"- Keep ~/.openclaw out of git; it contains credentials and session history.\"": "\"- 不要将 ~/.openclaw 提交到 git；它包含凭据和会话历史。\"",
     "\"- Details: /concepts/agent-workspace#git-backup-recommended\"": "\"- 详情：/concepts/agent-workspace#git-backup-recommended\"",
-    "note(\n    [": "note(\n    [",
-    "].join(\"\\n\"),\n    \"Workspace\",\n  )": "].join(\"\\n\"),\n    \"工作区\",\n  )"
+    "note(tip, \"Workspace\")": "note(tip, \"工作区\")"
   }
 }

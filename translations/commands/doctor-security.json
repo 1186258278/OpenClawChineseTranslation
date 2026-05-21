@@ -15,6 +15,12 @@
     "\"- Note: approvals.exec.enabled=false disables approval forwarding only.\"": "\"- 注意: approvals.exec.enabled=false 仅禁用审批转发。\"",
     "\"  Host exec gating still comes from ~/.openclaw/exec-approvals.json.\"": "\"  主机执行控制仍来自 ~/.openclaw/exec-approvals.json。\"",
     "\"  Safer remote access: keep bind loopback and use Tailscale Serve/Funnel or an SSH tunnel.\"": "\"  更安全的远程访问方式: 保持绑定回环地址，使用 Tailscale Serve/Funnel 或 SSH 隧道。\"",
-    "\"  Example tunnel: ssh -N -L 18789:127.0.0.1:18789 user@gateway-host\"": "\"  隧道示例: ssh -N -L 18789:127.0.0.1:18789 user@gateway-host\""
+    "\"  Example tunnel: ssh -N -L 18789:127.0.0.1:18789 user@gateway-host\"": "\"  隧道示例: ssh -N -L 18789:127.0.0.1:18789 user@gateway-host\"",
+    "\"  Docs: https://docs.openclaw.ai/gateway/remote\"": "\"  文档: https://docs.openclaw.ai/gateway/remote\"",
+    "`  Fix: ${formatCliCommand(\"openclaw configure\")} to set a password`": "`  修复: ${formatCliCommand(\"openclaw configure\")} 设置密码`",
+    "`  Or switch to token: ${formatCliCommand(\"openclaw config set gateway.auth.mode token\")}`": "`  或切换到 token: ${formatCliCommand(\"openclaw config set gateway.auth.mode token\")}`",
+    "`  Fix: ${formatCliCommand(\"openclaw doctor --fix\")} to generate a token`": "`  修复: ${formatCliCommand(\"openclaw doctor --fix\")} 生成 token`",
+    "`  Or set token directly: ${formatCliCommand(\n                \"openclaw config set gateway.auth.mode token\",\n              )}`": "`  或直接设置 token: ${formatCliCommand(\n                \"openclaw config set gateway.auth.mode token\",\n              )}`",
+    "`- Run: ${formatCliCommand(\"openclaw security audit --deep\")}`": "`- 运行: ${formatCliCommand(\"openclaw security audit --deep\")}`"
   }
 }
