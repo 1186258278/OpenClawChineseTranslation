@@ -10,8 +10,6 @@
     "\"Exporting session...\"": "\"正在导出会话...\"",
     "`Context compacted successfully${tokenSummary}.`": "`上下文压缩成功${tokenSummary}。`",
     "\"No active session.\"": "\"没有活跃会话。\"",
-    "\"No agents configured.\"": "\"未配置代理。\"",
-    "\"No active sub-agent sessions found.\"": "\"未找到活跃的子代理会话。\"",
-    "\"No active sub-agent runs to abort.\"": "\"没有可终止的活跃子代理运行。\""
+    "\"No agents configured.\"": "\"未配置代理。\""
   }
 }

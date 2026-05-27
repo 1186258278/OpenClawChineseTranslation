@@ -92,10 +92,7 @@
       "commands/commands-subagents-focus.json",
       "commands/commands-subagents-unfocus.json",
       "commands/commands-subagents-info.json",
-      "commands/commands-subagents-log.json",
-      "commands/commands-subagents-spawn.json",
-      "commands/commands-subagents-send.json",
-      "commands/commands-subagents-kill.json"
+      "commands/commands-subagents-log.json"
     ],
     "daemon": [
       "daemon/systemd-hints.json",

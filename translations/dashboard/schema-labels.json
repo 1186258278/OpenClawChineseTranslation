@@ -803,6 +803,26 @@
     "\"messages.visibleReplies\": \"Visible Replies\"": "\"messages.visibleReplies\": \"可见回复\"",
     "\"agents.list[].heartbeat.skipWhenBusy\": \"Agent Heartbeat Skip When Busy\"": "\"agents.list[].heartbeat.skipWhenBusy\": \"代理繁忙时跳过心跳\"",
     "\"messages.queue.debounceMs\": \"Queue Fallback Debounce (ms)\"": "\"messages.queue.debounceMs\": \"队列回退防抖 (ms)\"",
-    "\"messages.queue.debounceMsByChannel\": \"Queue Fallback Debounce by Channel (ms)\"": "\"messages.queue.debounceMsByChannel\": \"按通道队列回退防抖 (ms)\""
+    "\"messages.queue.debounceMsByChannel\": \"Queue Fallback Debounce by Channel (ms)\"": "\"messages.queue.debounceMsByChannel\": \"按通道队列回退防抖 (ms)\"",
+    "\"diagnostics.otel.captureContent.toolDefinitions\": \"OpenTelemetry Tool Definitions Capture\"": "\"diagnostics.otel.captureContent.toolDefinitions\": \"OpenTelemetry 工具定义捕获\"",
+    "\"models.providers.*.models[].mediaInput\": \"Model Media Input\"": "\"models.providers.*.models[].mediaInput\": \"模型媒体输入\"",
+    "\"models.providers.*.models[].mediaInput.image\": \"Model Image Input\"": "\"models.providers.*.models[].mediaInput.image\": \"模型图像输入\"",
+    "\"models.providers.*.models[].mediaInput.image.maxBytes\": \"Model Image Max Bytes\"": "\"models.providers.*.models[].mediaInput.image.maxBytes\": \"模型图像最大字节\"",
+    "\"models.providers.*.models[].mediaInput.image.maxPixels\": \"Model Image Max Pixels\"": "\"models.providers.*.models[].mediaInput.image.maxPixels\": \"模型图像最大像素\"",
+    "\"models.providers.*.models[].mediaInput.image.maxSidePx\": \"Model Image Max Side\"": "\"models.providers.*.models[].mediaInput.image.maxSidePx\": \"模型图像最大边长\"",
+    "\"models.providers.*.models[].mediaInput.image.preferredSidePx\": \"Model Image Preferred Side\"": "\"models.providers.*.models[].mediaInput.image.preferredSidePx\": \"模型图像首选边长\"",
+    "\"models.providers.*.models[].mediaInput.image.tokenMode\": \"Model Image Token Mode\"": "\"models.providers.*.models[].mediaInput.image.tokenMode\": \"模型图像令牌模式\"",
+    "\"agents.defaults.imageQuality\": \"Image Quality\"": "\"agents.defaults.imageQuality\": \"图像质量\"",
+    "transcripts: \"Transcripts\"": "transcripts: \"转录\"",
+    "\"transcripts.enabled\": \"Transcripts Enabled\"": "\"transcripts.enabled\": \"转录已启用\"",
+    "\"transcripts.maxUtterances\": \"Transcripts Max Utterances\"": "\"transcripts.maxUtterances\": \"转录最大语句数\"",
+    "\"transcripts.autoStart\": \"Transcripts Auto-start Sources\"": "\"transcripts.autoStart\": \"转录自启动源\"",
+    "\"transcripts.autoStart[].providerId\": \"Transcript Source Provider ID\"": "\"transcripts.autoStart[].providerId\": \"转录源提供商 ID\"",
+    "\"transcripts.autoStart[].sessionId\": \"Transcript Session ID\"": "\"transcripts.autoStart[].sessionId\": \"转录会话 ID\"",
+    "\"transcripts.autoStart[].title\": \"Transcript Title\"": "\"transcripts.autoStart[].title\": \"转录标题\"",
+    "\"transcripts.autoStart[].accountId\": \"Transcript Account ID\"": "\"transcripts.autoStart[].accountId\": \"转录账户 ID\"",
+    "\"transcripts.autoStart[].guildId\": \"Discord Guild ID\"": "\"transcripts.autoStart[].guildId\": \"Discord 服务器 ID\"",
+    "\"transcripts.autoStart[].channelId\": \"Transcript Channel ID\"": "\"transcripts.autoStart[].channelId\": \"转录频道 ID\"",
+    "\"transcripts.autoStart[].meetingUrl\": \"Transcript Meeting URL\"": "\"transcripts.autoStart[].meetingUrl\": \"转录会议 URL\""
   }
 }

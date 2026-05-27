@@ -1,8 +1,0 @@
-{
-  "file": "src/auto-reply/reply/commands-subagents/action-kill.ts",
-  "description": "子代理命令 - /subagents kill",
-  "replacements": {
-    "\"Usage: /subagents kill <id|#|all>\"": "\"用法：/subagents kill <id|#|all>\"",
-    "\"Usage: /kill <id|#|all>\"": "\"用法：/kill <id|#|all>\""
-  }
-}
