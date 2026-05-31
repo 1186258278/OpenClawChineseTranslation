@@ -1,0 +1,7 @@
+{
+  "file": "src/cli/program/register.migrate.ts",
+  "description": "migrate 命令描述",
+  "replacements": {
+    ".description(\"Import state from another agent system\")": ".description(\"从其他代理系统导入状态\")"
+  }
+}

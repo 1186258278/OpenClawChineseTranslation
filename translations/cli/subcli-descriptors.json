@@ -14,6 +14,7 @@
     "description: \"Run and manage the headless node host service\"": "description: \"运行和管理无头节点主机服务\"",
     "description: \"Manage sandbox containers for agent isolation\"": "description: \"管理沙箱容器以隔离代理\"",
     "description: \"Open a terminal UI connected to the Gateway\"": "description: \"打开连接到网关的终端界面\"",
+    "description: \"Open a local terminal UI (alias for tui --local)\"": "description: \"打开本地终端界面（tui --local 的别名）\"",
     "description: \"Schedule and inspect Gateway background jobs\"": "description: \"调度和查看网关后台任务\"",
     "description: \"DNS helpers for wide-area discovery (Tailscale + CoreDNS)\"": "description: \"DNS 工具 - 广域发现（Tailscale + CoreDNS）\"",
     "description: \"Search the live OpenClaw docs\"": "description: \"搜索 OpenClaw 在线文档\"",

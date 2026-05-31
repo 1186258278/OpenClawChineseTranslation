@@ -5,7 +5,7 @@
     ".description(\"Model discovery, scanning, and configuration\")": ".description(\"模型发现、扫描和配置\")",
     ".option(\"--status-json\", \"Output JSON (alias for `models status --json`)\", false)": ".option(\"--status-json\", \"输出 JSON (`models status --json` 的别名)\", false)",
     ".option(\"--status-plain\", \"Plain output (alias for `models status --plain`)\", false)": ".option(\"--status-plain\", \"纯文本输出 (`models status --plain` 的别名)\", false)",
-    "\"Agent id to inspect (overrides OPENCLAW_AGENT_DIR/PI_CODING_AGENT_DIR)\"": "\"要检查的代理 ID (覆盖 OPENCLAW_AGENT_DIR/PI_CODING_AGENT_DIR)\"",
+    "\"Agent id to inspect (overrides OPENCLAW_AGENT_DIR)\"": "\"要检查的代理 ID (覆盖 OPENCLAW_AGENT_DIR)\"",
     ".description(\"List models (configured by default)\")": ".description(\"列出模型 (默认已配置的)\")",
     "\"Show full model catalog\"": "\"显示完整模型目录\"",
     "\"Filter to local models\"": "\"仅显示本地模型\"",

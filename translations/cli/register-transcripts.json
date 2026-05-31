@@ -1,0 +1,7 @@
+{
+  "file": "src/cli/program/register.transcripts.ts",
+  "description": "transcripts 命令描述",
+  "replacements": {
+    ".description(\"Inspect stored transcripts\")": ".description(\"查看已存储的会话记录\")"
+  }
+}

@@ -4,6 +4,7 @@
   "replacements": {
     "\"--timeout must be a positive integer (milliseconds)\"": "\"--timeout 必须是正整数（毫秒）\"",
     ".description(\"Show channel health and recent session recipients\")": ".description(\"显示渠道健康状态和最近会话接收者\")",
+    ".description(\"List and manage inferred follow-up commitments\")": ".description(\"列出并管理推断出的后续跟进事项\")",
     ".option(\"--json\", \"Output JSON instead of text\", false)": ".option(\"--json\", \"输出 JSON 而非文本\", false)",
     ".option(\"--all\", \"Full diagnosis (read-only, pasteable)\", false)": ".option(\"--all\", \"完整诊断（只读，可粘贴）\", false)",
     ".option(\"--usage\", \"Show model provider usage/quota snapshots\", false)": ".option(\"--usage\", \"显示模型提供商用量/配额快照\", false)",

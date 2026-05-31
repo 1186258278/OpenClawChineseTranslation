@@ -17,7 +17,7 @@
     "`More: /models list ${provider} ${safePage + 1}`": "`更多：/models list ${provider} ${safePage + 1}`",
     "`Unknown provider: ${provider}`": "`未知提供商：${provider}`",
     "`Models (${emptyProviderLabel}) — none`": "`模型（${emptyProviderLabel}）— 无`",
-    "\"Use the built-in OpenClaw Pi runtime.\"": "\"使用内置 OpenClaw Pi 运行时。\"",
+    "\"Use the built-in OpenClaw runtime.\"": "\"使用内置 OpenClaw 运行时。\"",
     "`Run ${params.provider} models through ${label}.`": "`通过 ${label} 运行 ${params.provider} 模型。`",
     "`Use the ${label} runtime selected by the effective harness policy.`": "`使用有效 harness 策略选择的 ${label} 运行时。`"
   }

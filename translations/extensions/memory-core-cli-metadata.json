@@ -1,0 +1,9 @@
+{
+  "file": "extensions/memory-core/cli-metadata.ts",
+  "description": "Memory Core CLI 元数据",
+  "replacements": {
+    "name: \"Memory (Core)\"": "name: \"记忆（核心）\"",
+    "description: \"File-backed memory search tools and CLI\"": "description: \"基于文件的记忆搜索工具和 CLI\"",
+    "description: \"Search, inspect, and reindex memory files\"": "description: \"搜索、查看并重建记忆文件索引\""
+  }
+}

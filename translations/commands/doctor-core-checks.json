@@ -1,0 +1,8 @@
+{
+  "file": "src/flows/doctor-core-checks.ts",
+  "description": "诊断核心检查",
+  "replacements": {
+    "\"Gateway token is managed via SecretRef and is currently unavailable.\"": "\"网关令牌由 SecretRef 管理，当前不可用。\"",
+    "\"Resolve or rotate the external secret source, then rerun doctor.\"": "\"请解决或轮换外部密钥源，然后重新运行诊断。\""
+  }
+}

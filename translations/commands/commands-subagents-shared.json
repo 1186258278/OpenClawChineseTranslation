@@ -4,6 +4,13 @@
   "replacements": {
     "\"Subagents\"": "\"子代理\"",
     "\"Usage:\"": "\"用法：\"",
-    "\"Ids: use the list index (#), runId/session prefix, label, or full session key.\"": "\"ID：使用列表序号（#）、runId/会话前缀、标签或完整会话键。\""
+    "\"Ids: use the list index (#), runId/session prefix, label, or full session key.\"": "\"ID：使用列表序号（#）、runId/会话前缀、标签或完整会话键。\"",
+    "missingTarget: \"Missing subagent id.\"": "missingTarget: \"缺少子代理 ID。\"",
+    "invalidIndex: (value) => `Invalid subagent index: ${value}`": "invalidIndex: (value) => `无效的子代理序号：${value}`",
+    "unknownSession: (value) => `Unknown subagent session: ${value}`": "unknownSession: (value) => `未知子代理会话：${value}`",
+    "ambiguousLabel: (value) => `Ambiguous subagent label: ${value}`": "ambiguousLabel: (value) => `子代理标签不明确：${value}`",
+    "ambiguousLabelPrefix: (value) => `Ambiguous subagent label prefix: ${value}`": "ambiguousLabelPrefix: (value) => `子代理标签前缀不明确：${value}`",
+    "ambiguousRunIdPrefix: (value) => `Ambiguous run id prefix: ${value}`": "ambiguousRunIdPrefix: (value) => `运行 ID 前缀不明确：${value}`",
+    "unknownTarget: (value) => `Unknown subagent id: ${value}`": "unknownTarget: (value) => `未知子代理 ID：${value}`"
   }
 }

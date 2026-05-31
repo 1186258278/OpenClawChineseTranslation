@@ -1,0 +1,13 @@
+{
+  "file": "src/agents/subagent-control.ts",
+  "description": "子代理控制目标解析错误",
+  "replacements": {
+    "missingTarget: \"Missing subagent target.\"": "missingTarget: \"缺少子代理目标。\"",
+    "invalidIndex: (value) => `Invalid subagent index: ${value}`": "invalidIndex: (value) => `无效的子代理序号：${value}`",
+    "unknownSession: (value) => `Unknown subagent session: ${value}`": "unknownSession: (value) => `未知子代理会话：${value}`",
+    "ambiguousLabel: (value) => `Ambiguous subagent label: ${value}`": "ambiguousLabel: (value) => `子代理标签不明确：${value}`",
+    "ambiguousLabelPrefix: (value) => `Ambiguous subagent label prefix: ${value}`": "ambiguousLabelPrefix: (value) => `子代理标签前缀不明确：${value}`",
+    "ambiguousRunIdPrefix: (value) => `Ambiguous subagent run id prefix: ${value}`": "ambiguousRunIdPrefix: (value) => `子代理运行 ID 前缀不明确：${value}`",
+    "unknownTarget: (value) => `Unknown subagent target: ${value}`": "unknownTarget: (value) => `未知子代理目标：${value}`"
+  }
+}

@@ -22,7 +22,9 @@
       "cli/gateway-call.json",
       "cli/daemon-service-commands.json",
       "cli/onboard-register.json",
-      "cli/status-health-sessions.json"
+      "cli/status-health-sessions.json",
+      "cli/register-migrate.json",
+      "cli/register-transcripts.json"
     ],
     "wizard": [
       "wizard/onboarding.json",
@@ -53,6 +55,7 @@
       "commands/auth-choice-providers.json",
       "commands/helpers.json",
       "commands/doctor.json",
+      "commands/doctor-core-checks.json",
       "commands/doctor-health.json",
       "commands/doctor-security.json",
       "commands/doctor-workspace-status.json",
@@ -85,6 +88,7 @@
       "commands/commands-session-abort.json",
       "commands/daemon-install-helpers.json",
       "commands/onboard-channels-clawapp.json",
+      "commands/subagent-control.json",
       "commands/agent-runtime-label.json",
       "commands/commands-models.json",
       "commands/commands-subagents-main.json",
@@ -171,6 +175,9 @@
       "extensions/ext-qianfan.json",
       "extensions/ext-qwen.json",
       "extensions/ext-minimax.json",
+      "extensions/memory-core.json",
+      "extensions/memory-core-cli-metadata.json",
+      "extensions/memory-core-cli.json",
       "extensions/zalouser-setup.json"
     ],
     "plugins": [
