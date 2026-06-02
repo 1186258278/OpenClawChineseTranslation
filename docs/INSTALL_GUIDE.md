@@ -368,7 +368,7 @@ openclaw config set auth.zai.apiKey 你的API密钥
 #### MiniMax
 
 ```bash
-openclaw config set agents.defaults.model minimax/MiniMax-M2.1
+openclaw config set agents.defaults.model minimax/MiniMax-M3
 openclaw config set auth.minimax.apiKey 你的API密钥
 ```
 
