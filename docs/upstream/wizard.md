@@ -57,7 +57,7 @@ openclaw onboard --install-daemon
 | **OpenCode Go** | Kimi/GLM/MiniMax Go 目录 |
 | **胜算云** | 国产模型聚合平台 |
 | **阿里云百炼** | ModelStudio Coding Plan |
-| **MiniMax** | M2.5 系列 |
+| **MiniMax** | M3 / M2.7 系列 |
 | **Moonshot (Kimi)** | Kimi K2.5 + Kimi Coding |
 | **智谱 Z.AI** | GLM Coding Plan |
 | **Ollama** | 本地开源模型 |
