@@ -1,8 +1,0 @@
-{
-  "file": "src/shared/net/ipv4.ts",
-  "description": "IPv4 地址验证",
-  "replacements": {
-    "\"IP address is required for custom bind mode\"": "\"自定义绑定模式需要 IP 地址\"",
-    "\"Invalid IPv4 address (e.g., 192.168.1.100)\"": "\"无效的 IPv4 地址 (例如 192.168.1.100)\""
-  }
-}

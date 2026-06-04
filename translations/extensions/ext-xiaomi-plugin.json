@@ -1,0 +1,17 @@
+{
+  "file": "extensions/xiaomi/openclaw.plugin.json",
+  "description": "小米扩展插件元数据认证选项",
+  "replacements": {
+    "\"choiceLabel\": \"Xiaomi API key (Pay-as-you-go)\"": "\"choiceLabel\": \"小米 API 密钥（按量付费）\"",
+    "\"groupLabel\": \"Xiaomi\"": "\"groupLabel\": \"小米\"",
+    "\"groupHint\": \"Pay-as-you-go / Token Plan\"": "\"groupHint\": \"按量付费 / Token Plan\"",
+    "\"cliDescription\": \"Xiaomi MiMo pay-as-you-go API key\"": "\"cliDescription\": \"小米 MiMo 按量付费 API 密钥\"",
+    "\"choiceLabel\": \"Xiaomi Token Plan (Europe)\"": "\"choiceLabel\": \"小米 Token Plan（欧洲）\"",
+    "\"choiceLabel\": \"Xiaomi Token Plan (China)\"": "\"choiceLabel\": \"小米 Token Plan（中国）\"",
+    "\"choiceLabel\": \"Xiaomi Token Plan (Singapore)\"": "\"choiceLabel\": \"小米 Token Plan（新加坡）\"",
+    "\"choiceHint\": \"Endpoint preset: token-plan-ams.xiaomimimo.com/v1\"": "\"choiceHint\": \"端点预设：token-plan-ams.xiaomimimo.com/v1\"",
+    "\"choiceHint\": \"Endpoint preset: token-plan-cn.xiaomimimo.com/v1\"": "\"choiceHint\": \"端点预设：token-plan-cn.xiaomimimo.com/v1\"",
+    "\"choiceHint\": \"Endpoint preset: token-plan-sgp.xiaomimimo.com/v1\"": "\"choiceHint\": \"端点预设：token-plan-sgp.xiaomimimo.com/v1\"",
+    "\"cliDescription\": \"Xiaomi MiMo Token Plan API key\"": "\"cliDescription\": \"小米 MiMo Token Plan API 密钥\""
+  }
+}

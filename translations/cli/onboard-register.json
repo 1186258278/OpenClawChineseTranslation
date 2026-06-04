@@ -23,7 +23,7 @@
     ".option(\"--custom-api-key <key>\", \"Custom provider API key (optional)\")": ".option(\"--custom-api-key <key>\", \"自定义提供商 API 密钥（可选）\")",
     ".option(\"--custom-model-id <id>\", \"Custom provider model ID\")": ".option(\"--custom-model-id <id>\", \"自定义提供商模型 ID\")",
     ".option(\"--custom-provider-id <id>\", \"Custom provider ID (optional; auto-derived by default)\")": ".option(\"--custom-provider-id <id>\", \"自定义提供商 ID（可选；默认自动推导）\")",
-    "\"Custom provider API compatibility: openai|anthropic (default: openai)\"": "\"自定义提供商 API 兼容性：openai|anthropic（默认：openai）\"",
+    "\"Custom provider API compatibility: openai|openai-responses|anthropic (default: openai)\"": "\"自定义提供商 API 兼容性：openai|openai-responses|anthropic（默认：openai）\"",
     ".option(\"--gateway-port <port>\", \"Gateway port\")": ".option(\"--gateway-port <port>\", \"网关端口\")",
     ".option(\"--gateway-bind <mode>\", \"Gateway bind: loopback|tailnet|lan|auto|custom\")": ".option(\"--gateway-bind <mode>\", \"网关绑定：loopback|tailnet|lan|auto|custom\")",
     ".option(\"--gateway-auth <mode>\", \"Gateway auth: token|password\")": ".option(\"--gateway-auth <mode>\", \"网关认证：token|password\")",

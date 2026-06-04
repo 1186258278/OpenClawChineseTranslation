@@ -40,9 +40,7 @@
       "gateway/control-ui-csp.json",
       "gateway/auth-messages.json"
     ],
-    "shared": [
-      "shared/net/ipv4.json"
-    ],
+    "shared": [],
     "tui": [
       "tui/waiting.json",
       "tui/commands.json",
@@ -166,6 +164,7 @@
       "extensions/voice-call-cli.json",
       "extensions/ext-moonshot.json",
       "extensions/ext-xiaomi.json",
+      "extensions/ext-xiaomi-plugin.json",
       "extensions/ext-venice.json",
       "extensions/ext-together.json",
       "extensions/ext-opencode.json",
@@ -175,6 +174,11 @@
       "extensions/ext-qianfan.json",
       "extensions/ext-qwen.json",
       "extensions/ext-minimax.json",
+      "extensions/ext-minimax-contract-api.json",
+      "extensions/ext-minimax-generation-errors.json",
+      "extensions/ext-minimax-music-errors.json",
+      "extensions/ext-minimax-video-errors.json",
+      "extensions/ext-minimax-plugin.json",
       "extensions/memory-core.json",
       "extensions/memory-core-cli-metadata.json",
       "extensions/memory-core-cli.json",

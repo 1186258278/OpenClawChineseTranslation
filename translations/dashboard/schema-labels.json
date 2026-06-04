@@ -233,7 +233,6 @@
     "\"gateway.http.endpoints.chatCompletions.maxBodyBytes\": \"OpenAI Chat Completions Max Body Bytes\"": "\"gateway.http.endpoints.chatCompletions.maxBodyBytes\": \"OpenAI 聊天补全 最大 主体 Bytes\"",
     "\"gateway.http.endpoints.chatCompletions.maxImageParts\": \"OpenAI Chat Completions Max Image Parts\"": "\"gateway.http.endpoints.chatCompletions.maxImageParts\": \"OpenAI 聊天补全 最大 图片 Parts\"",
     "\"gateway.http.endpoints.chatCompletions.images\": \"OpenAI Chat Completions Image Limits\"": "\"gateway.http.endpoints.chatCompletions.images\": \"OpenAI 聊天补全 图片 限制\"",
-    "\"gateway.webchat.chatHistoryMaxChars\": \"WebChat History Max Chars\"": "\"gateway.webchat.chatHistoryMaxChars\": \"WebChat 历史最大字符数\"",
     "\"gateway.reload.mode\": \"Config Reload Mode\"": "\"gateway.reload.mode\": \"配置 重载 模式\"",
     "\"gateway.reload.debounceMs\": \"Config Reload Debounce (ms)\"": "\"gateway.reload.debounceMs\": \"配置重载防抖 (ms)\"",
     "\"gateway.nodes.browser.mode\": \"Gateway Node Browser Mode\"": "\"gateway.nodes.browser.mode\": \"网关 节点 浏览器 模式\"",

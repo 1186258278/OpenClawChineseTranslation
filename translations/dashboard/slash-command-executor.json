@@ -6,7 +6,6 @@
     "\"Resetting session...\"": "\"正在重置会话...\"",
     "\"Stopping current run...\"": "\"正在停止当前运行...\"",
     "\"Chat history cleared.\"": "\"聊天记录已清除。\"",
-    "\"Toggled focus mode.\"": "\"已切换专注模式。\"",
     "\"Exporting session...\"": "\"正在导出会话...\"",
     "`Context compacted successfully${tokenSummary}.`": "`上下文压缩成功${tokenSummary}。`",
     "\"No active session.\"": "\"没有活跃会话。\"",

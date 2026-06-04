@@ -1,0 +1,19 @@
+{
+  "file": "extensions/minimax/provider-contract-api.ts",
+  "description": "MiniMax 扩展契约 API 认证选项",
+  "replacements": {
+    "groupHint: \"M3 (recommended)\"": "groupHint: \"M3（推荐）\"",
+    "label: \"MiniMax API key (Global)\"": "label: \"MiniMax API 密钥（国际版）\"",
+    "hint: \"Global endpoint - api.minimax.io\"": "hint: \"国际端点 - api.minimax.io\"",
+    "choiceLabel: \"MiniMax API key (Global)\"": "choiceLabel: \"MiniMax API 密钥（国际版）\"",
+    "choiceHint: \"Global endpoint - api.minimax.io\"": "choiceHint: \"国际端点 - api.minimax.io\"",
+    "label: \"MiniMax API key (CN)\"": "label: \"MiniMax API 密钥（国内版）\"",
+    "hint: \"CN endpoint - api.minimaxi.com\"": "hint: \"国内端点 - api.minimaxi.com\"",
+    "choiceLabel: \"MiniMax API key (CN)\"": "choiceLabel: \"MiniMax API 密钥（国内版）\"",
+    "choiceHint: \"CN endpoint - api.minimaxi.com\"": "choiceHint: \"国内端点 - api.minimaxi.com\"",
+    "label: \"MiniMax OAuth (Global)\"": "label: \"MiniMax OAuth（国际版）\"",
+    "choiceLabel: \"MiniMax OAuth (Global)\"": "choiceLabel: \"MiniMax OAuth（国际版）\"",
+    "label: \"MiniMax OAuth (CN)\"": "label: \"MiniMax OAuth（国内版）\"",
+    "choiceLabel: \"MiniMax OAuth (CN)\"": "choiceLabel: \"MiniMax OAuth（国内版）\""
+  }
+}

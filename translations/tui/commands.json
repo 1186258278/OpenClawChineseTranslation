@@ -18,7 +18,7 @@
     "\"Alias for /elevated\"": "\"/elevated 的别名\"",
     "\"Set group activation\"": "\"设置群组激活模式\"",
     "\"Abort active run\"": "\"中止当前运行\"",
-    "\"Reset the session\"": "\"重置会话\"",
+    "\"Reset the current session\"": "\"重置当前会话\"",
     "\"Open settings\"": "\"打开设置\"",
     "\"Exit the TUI\"": "\"退出 TUI\"",
     "description: \"Run provider auth/login flow\"": "description: \"运行提供商认证/登录流程\"",

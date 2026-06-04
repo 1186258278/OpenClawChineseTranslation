@@ -1,0 +1,7 @@
+{
+  "file": "extensions/minimax/image-generation-provider.ts",
+  "description": "MiniMax 图片生成错误提示",
+  "replacements": {
+    "\"MiniMax API key missing\"": "\"缺少 MiniMax API 密钥\""
+  }
+}

@@ -2,7 +2,16 @@
   "file": "extensions/xiaomi/index.ts",
   "description": "小米扩展认证选项 (v2026.3.22 从 auth-choice 迁移)",
   "replacements": {
-    "label: \"Xiaomi API key\"": "label: \"小米 API 密钥\"",
-    "promptMessage: \"Enter Xiaomi API key\"": "promptMessage: \"输入小米 API 密钥\""
+    "groupLabel: \"Xiaomi\"": "groupLabel: \"小米\"",
+    "groupHint: \"Pay-as-you-go / Token Plan\"": "groupHint: \"按量付费 / Token Plan\"",
+    "label: \"Xiaomi API key (Pay-as-you-go)\"": "label: \"小米 API 密钥（按量付费）\"",
+    "choiceLabel: \"Xiaomi API key (Pay-as-you-go)\"": "choiceLabel: \"小米 API 密钥（按量付费）\"",
+    "promptMessage: \"Enter Xiaomi MiMo API key (pay-as-you-go, sk-...)\"": "promptMessage: \"输入小米 MiMo API 密钥（按量付费，sk-...）\"",
+    "label: \"Xiaomi Token Plan\"": "label: \"小米 Token Plan\"",
+    "displayName: \"Xiaomi MiMo Token Plan\"": "displayName: \"小米 MiMo Token Plan\"",
+    "const regionLabel = region === \"ams\" ? \"Europe\" : region === \"cn\" ? \"China\" : \"Singapore\";": "const regionLabel = region === \"ams\" ? \"欧洲\" : region === \"cn\" ? \"中国\" : \"新加坡\";",
+    "const choiceLabel = `Xiaomi Token Plan (${regionLabel})`;": "const choiceLabel = `小米 Token Plan（${regionLabel}）`;",
+    "const choiceHint = `Endpoint preset: token-plan-${region}.xiaomimimo.com/v1`;": "const choiceHint = `端点预设：token-plan-${region}.xiaomimimo.com/v1`;",
+    "promptMessage: `Enter Xiaomi MiMo Token Plan API key (tp-...) for ${regionLabel}`": "promptMessage: `输入 ${regionLabel} 的小米 MiMo Token Plan API 密钥（tp-...）`"
   }
 }

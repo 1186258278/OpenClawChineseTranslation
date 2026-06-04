@@ -6,6 +6,8 @@
     "return region === \"cn\" ? \"CN endpoint - api.minimaxi.com\" : \"Global endpoint - api.minimax.io\";": "return region === \"cn\" ? \"国内端点 - api.minimaxi.com\" : \"国际端点 - api.minimax.io\";",
     "`MiniMax API key (${regionLabel})`": "`MiniMax API 密钥（${regionLabel}）`",
     "`MiniMax OAuth (${regionLabel})`": "`MiniMax OAuth（${regionLabel}）`",
-    "groupHint: \"M2.7 (recommended)\"": "groupHint: \"M2.7（推荐）\""
+    "\"Enter MiniMax CN API key (sk-api- or sk-cp-)\\nhttps://platform.minimaxi.com/user-center/basic-information/interface-key\"": "\"输入 MiniMax 国内版 API 密钥（sk-api- 或 sk-cp-）\\nhttps://platform.minimaxi.com/user-center/basic-information/interface-key\"",
+    "\"Enter MiniMax API key (sk-api- or sk-cp-)\\nhttps://platform.minimax.io/user-center/basic-information/interface-key\"": "\"输入 MiniMax API 密钥（sk-api- 或 sk-cp-）\\nhttps://platform.minimax.io/user-center/basic-information/interface-key\"",
+    "groupHint: \"M3 (recommended)\"": "groupHint: \"M3（推荐）\""
   }
 }
