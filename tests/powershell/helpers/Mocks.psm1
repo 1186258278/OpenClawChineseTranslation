@@ -15,7 +15,7 @@
 #>
 function Set-MockNode {
     param(
-        [string]$Version = "v22.12.0"
+        [string]$Version = "v22.19.0"
     )
     
     $script:MockNodeVersion = $Version
@@ -143,7 +143,7 @@ function Reset-AllMocks {
     设置完整的测试环境 Mock
 #>
 function Set-FullMockEnvironment {
-    Set-MockNode -Version "v22.12.0"
+    Set-MockNode -Version "v22.19.0"
     Set-MockNpm -Version "10.2.0"
     Set-MockDockerAvailable
     Set-MockOpenClaw

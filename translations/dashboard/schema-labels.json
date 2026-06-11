@@ -331,6 +331,7 @@
     "\"memory.qmd.mcporter.startDaemon\": \"QMD MCPorter Start Daemon\"": "\"memory.qmd.mcporter.startDaemon\": \"QMD MCPorter 启动 守护进程\"",
     "\"memory.qmd.searchTool\": \"QMD Search Tool Override\"": "\"memory.qmd.searchTool\": \"QMD 搜索工具覆盖\"",
     "\"memory.qmd.searchMode\": \"QMD Search Mode\"": "\"memory.qmd.searchMode\": \"QMD 搜索 模式\"",
+    "\"memory.qmd.rerank\": \"QMD Rerank\"": "\"memory.qmd.rerank\": \"QMD 重排序\"",
     "\"memory.qmd.includeDefaultMemory\": \"QMD Include Default Memory\"": "\"memory.qmd.includeDefaultMemory\": \"QMD Include 默认 内存\"",
     "\"memory.qmd.paths\": \"QMD Extra Paths\"": "\"memory.qmd.paths\": \"QMD 额外路径\"",
     "\"memory.qmd.paths.path\": \"QMD Path\"": "\"memory.qmd.paths.path\": \"QMD 路径\"",

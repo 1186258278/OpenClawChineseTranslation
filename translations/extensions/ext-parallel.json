@@ -1,0 +1,9 @@
+{
+  "file": "extensions/parallel/src/parallel-web-search-provider.shared.ts",
+  "description": "Parallel web search provider 文案",
+  "replacements": {
+    "label: \"Parallel Search\"": "label: \"Parallel 搜索\"",
+    "hint: \"LLM-optimized dense excerpts from web sources\"": "hint: \"面向 LLM 优化的网页来源密集摘要\"",
+    "credentialLabel: \"Parallel API key\"": "credentialLabel: \"Parallel API 密钥\""
+  }
+}

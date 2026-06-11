@@ -84,7 +84,7 @@ npm install -g @qingchencloud/openclaw-zh@latest
 openclaw --version
 ```
 
-> 如果仍然报错，检查你的 Node.js 版本是否 >= 22：`node -v`
+> 如果仍然报错，检查你的 Node.js 版本是否 >= 22.19.0：`node -v`
 
 ---
 

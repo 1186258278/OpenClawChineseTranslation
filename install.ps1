@@ -77,12 +77,14 @@ function Test-NodeVersion {
         }
         
         $versionNum = $nodeVersion -replace 'v', ''
-        $majorVersion = [int]($versionNum.Split('.')[0])
+        $versionParts = $versionNum.Split('.')
+        $majorVersion = [int]$versionParts[0]
+        $minorVersion = if ($versionParts.Count -gt 1) { [int]$versionParts[1] } else { 0 }
         
-        if ($majorVersion -lt 22) {
+        if ($majorVersion -lt 22 -or ($majorVersion -eq 22 -and $minorVersion -lt 19)) {
             Write-Host "❌ Node.js 版本过低: $nodeVersion" -ForegroundColor Red
             Write-Host ""
-            Write-Host "OpenClaw 需要 Node.js >= 22.12.0" -ForegroundColor Yellow
+            Write-Host "OpenClaw 需要 Node.js >= 22.19.0" -ForegroundColor Yellow
             Write-Host "请访问 https://nodejs.org/ 下载最新版本" -ForegroundColor Yellow
             Write-Host ""
             exit 1
@@ -94,7 +96,7 @@ function Test-NodeVersion {
     catch {
         Write-Host "❌ 未检测到 Node.js" -ForegroundColor Red
         Write-Host ""
-        Write-Host "请先安装 Node.js 22.12.0 或更高版本：" -ForegroundColor Yellow
+        Write-Host "请先安装 Node.js 22.19.0 或更高版本：" -ForegroundColor Yellow
         Write-Host "  官网: https://nodejs.org/" -ForegroundColor White
         Write-Host ""
         exit 1

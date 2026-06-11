@@ -34,12 +34,12 @@
 
 ### <a id="install-nodejs"></a>1. 安装 Node.js
 
-OpenClaw 要求 **Node.js >= 22.12.0**。
+OpenClaw 要求 **Node.js >= 22.19.0**。
 
 **检查是否已安装**：
 ```bash
 node -v
-# 应输出 v22.x.x 或更高
+# 应输出 v22.19.0 或更高
 ```
 
 **如果没有安装或版本过低**：

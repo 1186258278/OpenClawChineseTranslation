@@ -160,7 +160,7 @@
 
 ## 4 步上手
 
-> **前提条件**：需要 **Node.js >= 22**（[下载 Node.js](https://nodejs.org/)）
+> **前提条件**：需要 **Node.js >= 22.19.0**（[下载 Node.js](https://nodejs.org/)）
 >
 > 检查版本：`node -v`
 

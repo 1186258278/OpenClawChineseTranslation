@@ -15,7 +15,7 @@ const PANEL_DIR = path.join(ROOT_DIR, 'translations', 'panel');
 const targetDir = process.argv[2];
 if (!targetDir) {
   console.error('用法: node inject_panel_node.mjs <openclaw-dir>');
-  console.error('例如: node inject_panel_node.mjs C:\\Data\\PC\\openclaw-upstream');
+  console.error('例如: node inject_panel_node.mjs D:\\Data\\PC\\openclaw-upstream');
   process.exit(1);
 }
 

@@ -99,7 +99,7 @@ check_node_version() {
     if ! check_command node; then
         echo -e "${RED}❌ 未检测到 Node.js${NC}"
         echo ""
-        echo -e "${YELLOW}请先安装 Node.js 22.12.0 或更高版本：${NC}"
+        echo -e "${YELLOW}请先安装 Node.js 22.19.0 或更高版本：${NC}"
         echo "  官网: https://nodejs.org/"
         echo "  推荐: 使用 nvm 管理 Node.js 版本"
         echo ""
@@ -108,11 +108,13 @@ check_node_version() {
 
     NODE_VERSION=$(node -v | sed 's/v//')
     NODE_MAJOR=$(echo "$NODE_VERSION" | cut -d. -f1)
+    NODE_MINOR=$(echo "$NODE_VERSION" | cut -d. -f2)
+    NODE_MINOR=${NODE_MINOR:-0}
 
-    if [ "$NODE_MAJOR" -lt 22 ]; then
+    if [ "$NODE_MAJOR" -lt 22 ] || { [ "$NODE_MAJOR" -eq 22 ] && [ "$NODE_MINOR" -lt 19 ]; }; then
         echo -e "${RED}❌ Node.js 版本过低: v$NODE_VERSION${NC}"
         echo ""
-        echo -e "${YELLOW}OpenClaw 需要 Node.js >= 22.12.0${NC}"
+        echo -e "${YELLOW}OpenClaw 需要 Node.js >= 22.19.0${NC}"
         echo "请升级 Node.js 后重试"
         echo ""
         exit 1

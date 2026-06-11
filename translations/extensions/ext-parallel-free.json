@@ -1,0 +1,9 @@
+{
+  "file": "extensions/parallel/src/parallel-free-web-search-provider.shared.ts",
+  "description": "Parallel 免费 web search provider 文案",
+  "replacements": {
+    "label: \"Parallel Search (Free)\"": "label: \"Parallel 搜索（免费）\"",
+    "hint: \"Free web search via Parallel's hosted Search MCP — no API key required\"": "hint: \"通过 Parallel 托管的 Search MCP 免费网页搜索，无需 API 密钥\"",
+    "placeholder: \"(no key needed)\"": "placeholder: \"（无需密钥）\""
+  }
+}

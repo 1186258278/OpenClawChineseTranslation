@@ -1,6 +1,6 @@
 {
     "name":  "@qingchencloud/openclaw-zh",
-    "version":  "2026.6.1-zh.1",
+    "version":  "2026.6.5-zh.1",
     "description":  "OpenClaw 汉化发行版 - 开源个人 AI 助手平台中文版，每小时自动同步官方更新",
     "keywords":  [
                      "openclaw",
@@ -40,7 +40,7 @@
                     "restore":  "node cli/index.mjs restore"
                 },
     "engines":  {
-                    "node":  "\u003e=22.12.0"
+                    "node":  "\u003e=22.19.0"
                 },
     "files":  [
                   "cli/",

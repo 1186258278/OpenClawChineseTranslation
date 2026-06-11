@@ -1,0 +1,10 @@
+{
+  "file": "extensions/parallel/openclaw.plugin.json",
+  "description": "Parallel 插件配置 UI 文案",
+  "replacements": {
+    "\"label\": \"Parallel API Key\"": "\"label\": \"Parallel API 密钥\"",
+    "\"help\": \"Parallel Search API key (fallback: PARALLEL_API_KEY env var).\"": "\"help\": \"Parallel Search API 密钥（可回退使用 PARALLEL_API_KEY 环境变量）。\"",
+    "\"label\": \"Parallel Search Base URL\"": "\"label\": \"Parallel Search 基础 URL\"",
+    "\"help\": \"Optional Parallel API base URL override. OpenClaw appends /v1/search when the URL does not already end there.\"": "\"help\": \"可选的 Parallel API 基础 URL 覆盖值。当 URL 末尾不是 /v1/search 时，OpenClaw 会自动追加。\""
+  }
+}

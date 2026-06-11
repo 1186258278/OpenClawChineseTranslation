@@ -10,7 +10,7 @@
 
 # 模拟 node 命令返回指定版本
 mock_node() {
-    local version="${1:-v22.12.0}"
+    local version="${1:-v22.19.0}"
     
     node() {
         case "$1" in
@@ -219,7 +219,7 @@ reset_mocks() {
 
 # 设置完整的测试环境 mock
 setup_full_mock_environment() {
-    mock_node "v22.12.0"
+    mock_node "v22.19.0"
     mock_npm "10.2.0"
     mock_docker_available
     mock_openclaw

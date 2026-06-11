@@ -69,10 +69,10 @@ SCRIPT_PATH="$(cd "$(dirname "$BATS_TEST_FILENAME")/../.." && pwd)/install.sh"
 # Node.js 版本检查测试 (使用 mock)
 # ============================================================
 
-@test "check_node_version 接受 Node.js 22+" {
+@test "check_node_version 接受 Node.js 22.19+" {
     # 先设置 mock
     node() {
-        echo "v22.12.0"
+        echo "v22.19.0"
     }
     export -f node
     
@@ -82,6 +82,19 @@ SCRIPT_PATH="$(cd "$(dirname "$BATS_TEST_FILENAME")/../.." && pwd)/install.sh"
     run check_node_version
     [ "$status" -eq 0 ]
     [[ "$output" == *"Node.js 版本"* ]] || [[ "$output" == *"v22"* ]]
+}
+
+@test "check_node_version 拒绝 Node.js 22.18" {
+    node() {
+        echo "v22.18.0"
+    }
+    export -f node
+    
+    source "$SCRIPT_PATH"
+    
+    run check_node_version
+    [ "$status" -ne 0 ]
+    [[ "$output" == *"版本过低"* ]]
 }
 
 @test "check_node_version 拒绝 Node.js 21" {
