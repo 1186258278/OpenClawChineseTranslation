@@ -148,6 +148,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       - name: 发布到 npm (nightly 标签)
+        if: vars.ENABLE_NPM_NIGHTLY == 'true'
         working-directory: openclaw
         # 使用 --ignore-scripts 跳过 prepack 脚本，因为代码已在 build job 中构建完成
         run: npm publish --access public --tag nightly --ignore-scripts
@@ -156,6 +157,7 @@ jobs:
         continue-on-error: true
 
       - name: 同步 npmmirror 镜像源
+        if: vars.ENABLE_NPM_NIGHTLY == 'true'
         run: |
           echo "🔄 触发 npmmirror 同步..."
           # 主动触发 npmmirror 同步，解决国内镜像源版本滞后问题
