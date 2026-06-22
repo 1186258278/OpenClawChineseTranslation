@@ -1,14 +1,17 @@
 {
-  "file": "ui/src/ui/views/logs.ts",
-  "description": "Dashboard 日志页面",
+  "file": "ui/src/i18n/locales/zh-CN.ts",
+  "description": "Dashboard 日志页面（上游已迁移至 i18n，覆盖 zh-CN locale）",
   "replacements": {
-    "<div class=\"card-title\">Logs</div>": "<div class=\"card-title\">日志</div>",
-    "<div class=\"card-sub\">Gateway file logs (JSONL).</div>": "<div class=\"card-sub\">网关文件日志 (JSONL)。</div>",
-    "Export ${exportLabel}": "导出 ${exportLabel}",
-    "<span>Filter</span>": "<span>筛选</span>",
-    "placeholder=\"Search logs\"": "placeholder=\"搜索日志\"",
-    "<span>Auto-follow</span>": "<span>自动跟踪</span>",
-    "<div class=\"muted\" style=\"padding: 12px\">No log entries.</div>": "<div class=\"muted\" style=\"padding: 12px\">暂无日志条目。</div>",
-    "Log output truncated; showing latest chunk.": "日志输出已截断；显示最新部分。"
+    "title: \"Logs\",": "title: \"日志\",",
+    "subtitle: \"Gateway file logs (JSONL).\",": "subtitle: \"网关文件日志 (JSONL)。\",",
+    "exportButton: \"Export {label}\",": "exportButton: \"导出 {label}\",",
+    "filtered: \"filtered\",": "filtered: \"已筛选\",",
+    "visible: \"visible\",": "visible: \"可见\",",
+    "filter: \"Filter\",": "filter: \"筛选\",",
+    "searchPlaceholder: \"Search logs\",": "searchPlaceholder: \"搜索日志\",",
+    "autoFollow: \"Auto-follow\",": "autoFollow: \"自动跟踪\",",
+    "file: \"File: {file}\",": "file: \"文件：{file}\",",
+    "truncated: \"Log output truncated; showing latest chunk.\",": "truncated: \"日志输出已截断；显示最新部分。\",",
+    "empty: \"No log entries.\",": "empty: \"暂无日志条目。\","
   }
 }
