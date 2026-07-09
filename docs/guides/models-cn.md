@@ -105,6 +105,8 @@ openclaw onboard
 
 | 选项 | 说明 |
 |------|------|
+| MiniMax M3 | 推荐版；100 万上下文；支持国际端点 (api.minimax.io) 与国内端点 (api.minimaxi.com) |
+| MiniMax M2.7 | 高性能版；20.48 万上下文 |
 | MiniMax M2.5 | 标准版 |
 | MiniMax M2.5 (CN) | 国内端点 (api.minimaxi.com) |
 | MiniMax M2.5 Highspeed | 官方快速层级 |
