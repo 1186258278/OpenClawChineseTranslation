@@ -63,7 +63,17 @@ jobs:
       - name: 获取上游版本
         id: upstream
         run: |
-          UPSTREAM_VERSION=$(curl -s https://registry.npmjs.org/openclaw/latest | jq -r '.version')
+          RELEASE_VERSION="${{ steps.version.outputs.release_version }}"
+          UPSTREAM_VERSION="${RELEASE_VERSION%%-zh.*}"
+          if [ "$UPSTREAM_VERSION" = "$RELEASE_VERSION" ]; then
+            echo "❌ 稳定版版本号必须包含 -zh.N 后缀: $RELEASE_VERSION"
+            exit 1
+          fi
+          PUBLISHED_VERSION=$(npm view "openclaw@${UPSTREAM_VERSION}" version)
+          if [ "$PUBLISHED_VERSION" != "$UPSTREAM_VERSION" ]; then
+            echo "❌ 上游 npm 版本校验失败: 期望 $UPSTREAM_VERSION，实际 $PUBLISHED_VERSION"
+            exit 1
+          fi
           echo "version=$UPSTREAM_VERSION" >> $GITHUB_OUTPUT
           echo "📦 上游版本: $UPSTREAM_VERSION"
 
@@ -98,6 +108,17 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           registry-url: 'https://registry.npmjs.org'
 
+      - name: 验证 npm 安装包
+        working-directory: openclaw
+        run: |
+          PACK_JSON=$(npm pack --ignore-scripts --json)
+          PACKAGE_FILE=$(node -e 'const fs=require("node:fs"); const data=JSON.parse(fs.readFileSync(0,"utf8")); process.stdout.write(data[0].filename)' <<< "$PACK_JSON")
+          SMOKE_DIR="$RUNNER_TEMP/openclaw-npm-smoke"
+          mkdir -p "$SMOKE_DIR"
+          npm install --prefix "$SMOKE_DIR" "$PWD/$PACKAGE_FILE" --ignore-scripts --no-audit --no-fund
+          node "$SMOKE_DIR/node_modules/@qingchencloud/openclaw-zh/openclaw.mjs" --version
+          rm -f "$PACKAGE_FILE"
+
       - name: 发布到 npm (@latest)
         working-directory: openclaw
         # 使用 --ignore-scripts 跳过 prepack 脚本，因为代码已在 build job 中构建完成
@@ -105,7 +126,6 @@ jobs:
         run: npm publish --access public --tag latest --ignore-scripts
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        continue-on-error: true
 
       - name: 同步 npmmirror 镜像源
         run: |
@@ -127,7 +147,7 @@ jobs:
         continue-on-error: true
 
       - name: 创建 GitHub Release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           tag_name: v${{ needs.prepare.outputs.release_version }}
           name: "🦞 OpenClaw 汉化版 v${{ needs.prepare.outputs.release_version }}"

@@ -76,6 +76,9 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           registry-url: 'https://registry.npmjs.org'
 
+      - name: 验证发布清单脚本
+        run: node --test tests/node/prepare-publish-package.test.mjs
+
       - name: 安装 pnpm
         uses: pnpm/action-setup@v4
         with:
@@ -306,18 +309,13 @@ jobs:
           echo "build_time=$(date +%H:%M)" >> $GITHUB_OUTPUT
           echo "📦 版本: $VERSION ($VERSION_TYPE)"
           
-          # 更新 package.json
+          # 更新并校验 package.json，同时将 pnpm workspace 运行时依赖固定为 npm 可安装版本
           cd openclaw
-          npm version $VERSION --no-git-tag-version --allow-same-version || true
-          
-          # 修改包信息
-          if [ "$VERSION_TYPE" = "nightly" ]; then
-            jq '.description = "OpenClaw 汉化发行版 (Nightly) - 武汉晴辰天下网络科技有限公司"' package.json > tmp.json && mv tmp.json package.json
-          else
-            jq '.description = "OpenClaw 汉化发行版（稳定版）- 武汉晴辰天下网络科技有限公司"' package.json > tmp.json && mv tmp.json package.json
-          fi
-          
-          jq '.name = "@qingchencloud/openclaw-zh"' package.json > tmp.json && mv tmp.json package.json
+          node ../scripts/prepare-publish-package.mjs \
+            package.json \
+            "$VERSION" \
+            "${{ inputs.upstream_version }}" \
+            "$VERSION_TYPE"
           
           # 修复 self-reference：包名改了，dist/ 中所有 `from "openclaw/..."` 需要同步替换
           # 否则运行时报 Cannot find package 'openclaw' (issue #86)

@@ -42,6 +42,9 @@ jobs:
         with:
           node-version: '22'
 
+      - name: 验证发布清单脚本
+        run: node --test tests/node/prepare-publish-package.test.mjs
+
       - name: 验证 JSON 格式
         run: |
           echo "🔍 检查所有翻译 JSON 文件格式..."
