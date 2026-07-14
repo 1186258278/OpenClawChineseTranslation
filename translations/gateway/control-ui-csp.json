@@ -2,6 +2,6 @@
   "file": "src/gateway/control-ui-csp.ts",
   "description": "Dashboard CSP 策略 — 放行 qt.cool 子域名及根域名（晴辰云快捷指令 Tab 调用 gpt.qt.cool API）",
   "replacements": {
-    "\"connect-src 'self' ws: wss: https://api.openai.com https://tweakcn.com\"": "\"connect-src 'self' ws: wss: https://api.openai.com https://tweakcn.com https://*.qt.cool https://qt.cool\""
+    "const connectTokens = [\"'self'\", \"ws:\", \"wss:\", \"https://api.openai.com\", \"https://tweakcn.com\"];": "const connectTokens = [\"'self'\", \"ws:\", \"wss:\", \"https://api.openai.com\", \"https://tweakcn.com\", \"https://*.qt.cool\", \"https://qt.cool\"];"
   }
 }

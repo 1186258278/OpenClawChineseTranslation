@@ -1,5 +1,5 @@
 {
-  "file": "ui/src/ui/views/markdown-sidebar.ts",
+  "file": "ui/src/pages/chat/components/chat-sidebar.ts",
   "description": "Dashboard Markdown 侧边栏",
   "replacements": {
     "? content.title?.trim() || \"Render Preview\"": "? content.title?.trim() || \"渲染预览\"",

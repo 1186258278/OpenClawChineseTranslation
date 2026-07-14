@@ -1,5 +1,5 @@
 {
-  "file": "ui/src/ui/views/agents-panels-tools-skills.ts",
+  "file": "ui/src/pages/agents/panels-tools-skills.ts",
   "description": "Dashboard 代理页面 - 工具访问和技能面板翻译",
   "replacements": {
     "<div class=\"card-title\">Tool Access</div>": "<div class=\"card-title\">工具访问</div>",

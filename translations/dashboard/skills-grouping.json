@@ -1,5 +1,5 @@
 {
-  "file": "ui/src/ui/views/skills-grouping.ts",
+  "file": "ui/src/lib/skills-grouping.ts",
   "description": "Dashboard 技能分组标签",
   "replacements": {
     "\"Workspace Skills\"": "\"工作区技能\"",

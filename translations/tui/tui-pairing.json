@@ -2,14 +2,16 @@
   "file": "src/tui/tui.ts",
   "description": "TUI 终端界面 - 配对提示和连接状态",
   "replacements": {
-    "\"pairing required: run openclaw devices list\"": "\"需要配对：运行 openclaw devices list\"",
-    "\"Pairing required. Run `openclaw devices list`, approve your request ID, then reconnect.\"": "\"需要设备配对。运行 `openclaw devices list`，批准你的请求 ID，然后重新连接。\"",
     "isLocalMode ? \"starting local runtime\" : \"connecting\"": "isLocalMode ? \"正在启动本地运行时\" : \"正在连接\"",
     "? \"local ready\"\n            : \"connected\"": "? \"本地就绪\"\n            : \"已连接\"",
     "? \"local stopped\"\n            : \"disconnected\"": "? \"本地已停止\"\n            : \"已断开\"",
     "setConnectionStatus(isLocalMode ? \"local ready\" : \"connected\")": "setConnectionStatus(isLocalMode ? \"本地就绪\" : \"已连接\")",
     "isLocalMode ? \"local ready\" : reconnected ? \"gateway reconnected\" : \"gateway connected\"": "isLocalMode ? \"本地就绪\" : reconnected ? \"网关已重连\" : \"网关已连接\"",
     "`local runtime stopped${reason ? `: ${reason}` : \"\"}`": "`本地运行时已停止${reason ? `：${reason}` : \"\"}`",
-    "`event gap: expected ${info.expected}, got ${info.received}`": "`事件间隔：预期 ${info.expected}，实际 ${info.received}`"
+    "`event gap: expected ${info.expected}, got ${info.received}`": "`事件间隔：预期 ${info.expected}，实际 ${info.received}`",
+    "activityStatus: \"device approval needed: preview latest request\"": "activityStatus: \"需要设备审批：预览最新请求\"",
+    "\"Device approval needed. Run `openclaw devices approve --latest` to preview the pending request, \"": "\"需要设备审批。运行 `openclaw devices approve --latest` 预览待处理请求，\"",
+    "\"then rerun the printed `openclaw devices approve <requestId>` command \"": "\"然后重新运行打印出的 `openclaw devices approve <requestId>` 命令 \"",
+    "\"(reuse `--token` or other auth flags if needed), then reconnect.\"": "\"（如需要，复用 `--token` 或其他认证参数），然后重新连接。\""
   }
 }

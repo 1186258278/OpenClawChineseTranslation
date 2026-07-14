@@ -1,5 +1,5 @@
 {
-  "file": "ui/src/ui/views/channels.nostr-profile-form.ts",
+  "file": "ui/src/pages/channels/view.nostr.ts",
   "description": "Dashboard Nostr 个人资料编辑表单",
   "replacements": {}
 }

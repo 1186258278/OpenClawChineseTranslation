@@ -1,5 +1,5 @@
 {
-  "file": "ui/src/ui/views/channels.slack.ts",
+  "file": "ui/src/pages/channels/view.slack.ts",
   "description": "Dashboard Slack 渠道卡片",
   "replacements": {
     "subtitle: \"Socket mode status and channel configuration.\"": "subtitle: \"Socket 模式状态和渠道配置。\"",

@@ -1,7 +1,5 @@
 {
-  "file": "ui/src/ui/chat/session-controls.ts",
+  "file": "ui/src/lib/sessions/grouping.ts",
   "description": "对话会话控件（模型选择/会话显示名）",
-  "replacements": {
-    "ensureGroup(\"other\", \"Other Sessions\")": "ensureGroup(\"other\", \"其他会话\")"
-  }
+  "replacements": {}
 }

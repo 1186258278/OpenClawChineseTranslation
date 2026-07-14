@@ -1,17 +1,7 @@
 {
   "file": "ui/src/i18n/locales/zh-CN.ts",
-  "description": "Dashboard 日志页面（上游已迁移至 i18n，覆盖 zh-CN locale）",
+  "description": "Dashboard 日志页面 i18n zh-CN 翻译注入",
   "replacements": {
-    "title: \"Logs\",": "title: \"日志\",",
-    "subtitle: \"Gateway file logs (JSONL).\",": "subtitle: \"网关文件日志 (JSONL)。\",",
-    "exportButton: \"Export {label}\",": "exportButton: \"导出 {label}\",",
-    "filtered: \"filtered\",": "filtered: \"已筛选\",",
-    "visible: \"visible\",": "visible: \"可见\",",
-    "filter: \"Filter\",": "filter: \"筛选\",",
-    "searchPlaceholder: \"Search logs\",": "searchPlaceholder: \"搜索日志\",",
-    "autoFollow: \"Auto-follow\",": "autoFollow: \"自动跟踪\",",
-    "file: \"File: {file}\",": "file: \"文件：{file}\",",
-    "truncated: \"Log output truncated; showing latest chunk.\",": "truncated: \"日志输出已截断；显示最新部分。\",",
-    "empty: \"No log entries.\",": "empty: \"暂无日志条目。\","
+    "  },\n};": "  },\n  logsView: {\n    title: \"日志\",\n    subtitle: \"网关文件日志 (JSONL)。\",\n    exportButton: \"导出 {label}\",\n    exportLabels: {\n      filtered: \"已筛选\",\n      visible: \"可见\",\n    },\n    filter: \"筛选\",\n    searchPlaceholder: \"搜索日志\",\n    autoFollow: \"自动跟随\",\n    file: \"文件：{file}\",\n    truncated: \"日志输出已截断；显示最新部分。\",\n    empty: \"暂无日志条目。\",\n  },\n};"
   }
 }

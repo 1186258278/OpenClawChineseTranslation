@@ -103,6 +103,7 @@
     "dashboard": [
       "dashboard/app-render.json",
       "dashboard/chat.json",
+      "dashboard/chat-thread.json",
       "dashboard/skills.json",
       "dashboard/nodes.json",
       "dashboard/config.json",
@@ -118,7 +119,6 @@
       "dashboard/channels-nostr.json",
       "dashboard/instances.json",
       "dashboard/cron.json",
-      "dashboard/logs.json",
       "dashboard/schema.json",
       "dashboard/schema-core.json",
       "dashboard/config-form-render.json",
@@ -137,6 +137,7 @@
       "dashboard/markdown-sidebar.json",
       "dashboard/usage-metrics.json",
       "dashboard/zh-CN-usage.json",
+      "dashboard/logs.json",
       "dashboard/agents-utils.json",
       "dashboard/channels-nostr-profile.json",
       "dashboard/agents-overview.json",

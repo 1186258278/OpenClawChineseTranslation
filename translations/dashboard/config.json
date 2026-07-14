@@ -1,5 +1,5 @@
 {
-  "file": "ui/src/ui/views/config.ts",
+  "file": "ui/src/pages/config/view.ts",
   "description": "Dashboard 配置页面",
   "replacements": {
     "placeholder=\"Search settings...\"": "placeholder=\"搜索设置...\"",
@@ -33,7 +33,6 @@
     "Click <strong>Import</strong> to add one browser-local tweakcn theme. In tweakcn,\n                use Share and paste the copied link here.": "点击 <strong>导入</strong> 添加一个浏览器本地的 tweakcn 主题。在 tweakcn 中\n                使用 Share 并将复制的链接粘贴到此处。",
     "<h3 class=\"settings-appearance__heading\">Roundness</h3>": "<h3 class=\"settings-appearance__heading\">圆角度</h3>",
     "<p class=\"settings-appearance__hint\">Adjust corner radius across the UI.</p>": "<p class=\"settings-appearance__hint\">调节界面各处的圆角半径。</p>",
-    "title=${props.configPath ? `Open ${props.configPath}` : \"Open config file\"}": "title=${props.configPath ? `打开 ${props.configPath}` : \"打开配置文件\"}",
     "<h3 class=\"settings-notifications__title\">Push notifications</h3>": "<h3 class=\"settings-notifications__title\">推送通知</h3>",
     "<p class=\"settings-notifications__hint\">Not available in this browser.</p>": "<p class=\"settings-notifications__hint\">此浏览器不可用。</p>",
     "              Unavailable\n            </span>": "              不可用\n            </span>",

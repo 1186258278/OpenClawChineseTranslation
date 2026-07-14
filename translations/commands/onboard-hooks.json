@@ -1,11 +1,5 @@
 {
   "file": "src/commands/onboard-hooks.ts",
   "description": "Hooks 初始化向导",
-  "replacements": {
-    "`Enabled ${selected.length} hook${selected.length > 1 ? \"s\" : \"\"}: ${selected.join(\", \")}`": "`已启用 ${selected.length} 个 Hook：${selected.join(\", \")}`",
-    "\"You can manage hooks later with:\"": "\"你可以稍后通过以下命令管理 Hooks：\"",
-    "\"Example: Save session context to memory when you issue /new or /reset.\"": "\"示例：当你执行 /new 或 /reset 时保存会话上下文到记忆。\"",
-    "\"Hooks let you automate actions when agent commands are issued.\"": "\"Hooks 让你在触发 Agent 命令时自动执行操作。\"",
-    "\"Learn more: https://docs.openclaw.ai/automation/hooks\"": "\"了解更多：https://docs.openclaw.ai/automation/hooks\""
-  }
+  "replacements": {}
 }

@@ -1,5 +1,5 @@
 {
-  "file": "ui/src/ui/views/channels.nostr.ts",
+  "file": "ui/src/pages/channels/view.nostr.ts",
   "description": "Dashboard Nostr 渠道卡片",
   "replacements": {
     "<div class=\"card-sub\">Decentralized DMs via Nostr relays (NIP-04).</div>": "<div class=\"card-sub\">通过 Nostr 中继进行去中心化私信 (NIP-04)。</div>"

@@ -37,7 +37,6 @@
     ".option(\"--install-daemon\", \"Install gateway service\")": ".option(\"--install-daemon\", \"安装网关服务\")",
     ".option(\"--no-install-daemon\", \"Skip gateway service install\")": ".option(\"--no-install-daemon\", \"跳过网关服务安装\")",
     ".option(\"--skip-daemon\", \"Skip gateway service install\")": ".option(\"--skip-daemon\", \"跳过网关服务安装\")",
-    ".option(\"--daemon-runtime <runtime>\", \"Daemon runtime: node|bun\")": ".option(\"--daemon-runtime <runtime>\", \"守护进程运行时：node|bun\")",
     ".option(\"--skip-channels\", \"Skip channel setup\")": ".option(\"--skip-channels\", \"跳过渠道设置\")",
     ".option(\"--skip-skills\", \"Skip skills setup\")": ".option(\"--skip-skills\", \"跳过技能设置\")",
     ".option(\"--skip-search\", \"Skip search provider setup\")": ".option(\"--skip-search\", \"跳过搜索提供商设置\")",
@@ -45,7 +44,8 @@
     ".option(\"--skip-ui\", \"Skip Control UI/TUI prompts\")": ".option(\"--skip-ui\", \"跳过控制面板/TUI 提示\")",
     ".option(\"--node-manager <name>\", \"Node manager for skills: npm|pnpm|bun\")": ".option(\"--node-manager <name>\", \"技能的 Node 管理器：npm|pnpm|bun\")",
     ".option(\"--json\", \"Output JSON summary\", false)": ".option(\"--json\", \"输出 JSON 摘要\", false)",
-    ".option(\"--modern\", \"Use the conversational setup/repair assistant\", false)": ".option(\"--modern\", \"使用对话式安装/修复助手\", false)",
-    ".option(\"--skip-hooks\", \"Skip hook setup\")": ".option(\"--skip-hooks\", \"跳过钩子设置\")"
+    ".option(\"--skip-hooks\", \"Skip hook setup\")": ".option(\"--skip-hooks\", \"跳过钩子设置\")",
+    ".option(\"--daemon-runtime <runtime>\", \"Daemon runtime: node\")": ".option(\"--daemon-runtime <runtime>\", \"守护进程运行时：node\")",
+    ".option(\n      \"--modern\",\n      \"Alias for the default bootstrap onboarding (kept for compatibility)\",\n      false,\n    )": ".option(\n      \"--modern\",\n      \"默认引导式初始化的别名（为兼容保留）\",\n      false,\n    )"
   }
 }

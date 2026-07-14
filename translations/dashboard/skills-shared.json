@@ -1,5 +1,5 @@
 {
-  "file": "ui/src/ui/views/skills-shared.ts",
+  "file": "ui/src/lib/skills-shared.ts",
   "description": "Dashboard 技能页面共享组件",
   "replacements": {
     "available ? \"eligible\" : \"blocked\"": "available ? \"可用\" : \"已阻止\"",

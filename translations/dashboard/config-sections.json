@@ -1,5 +1,5 @@
 {
-  "file": "ui/src/ui/views/config.ts",
+  "file": "ui/src/pages/config/view.ts",
   "description": "Dashboard 配置页面 - 分区分类标签（v2026.3.12 新增 SECTION_CATEGORIES）",
   "replacements": {
     "label: \"Core\"": "label: \"核心\"",

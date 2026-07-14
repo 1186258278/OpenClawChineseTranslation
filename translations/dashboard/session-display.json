@@ -1,5 +1,5 @@
 {
-  "file": "ui/src/ui/session-display.ts",
+  "file": "ui/src/lib/session-display.ts",
   "description": "会话显示名解析（主会话/子代理/定时任务）",
   "replacements": {
     "return { prefix: \"\", fallbackName: \"Main Session\" };": "return { prefix: \"\", fallbackName: \"主会话\" };",

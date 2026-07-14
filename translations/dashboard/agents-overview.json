@@ -1,5 +1,5 @@
 {
-  "file": "ui/src/ui/views/agents-panels-overview.ts",
+  "file": "ui/src/pages/agents/panels-overview.ts",
   "description": "Dashboard 代理概览面板（从 agents.ts 拆分出来的新文件）",
   "replacements": {
     "<div class=\"card-title\">Overview</div>": "<div class=\"card-title\">概览</div>",

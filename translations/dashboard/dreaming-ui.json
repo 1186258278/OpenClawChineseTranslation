@@ -1,5 +1,5 @@
 {
-  "file": "ui/src/ui/views/dreaming.ts",
+  "file": "ui/src/pages/dreams/view.ts",
   "description": "梦境系统 — 日记子标签、Wiki 预览、导入洞察、记忆宫殿 UI",
   "replacements": {
     ">\n              Dreams\n": ">\n              梦境\n",

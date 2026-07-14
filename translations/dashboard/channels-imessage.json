@@ -1,5 +1,5 @@
 {
-  "file": "ui/src/ui/views/channels.imessage.ts",
+  "file": "ui/src/pages/channels/view.imessage.ts",
   "description": "Dashboard iMessage 渠道卡片",
   "replacements": {
     "subtitle: \"macOS bridge status and channel configuration.\"": "subtitle: \"macOS 桥接状态和渠道配置。\"",

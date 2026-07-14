@@ -1,7 +1,5 @@
 {
-  "file": "ui/src/ui/views/agents-utils.ts",
+  "file": "ui/src/lib/agents/display.ts",
   "description": "Dashboard 代理工具函数",
-  "replacements": {
-  
-  }
+  "replacements": {}
 }

@@ -7,8 +7,10 @@
     "`Blocked by allowlist: ${blocked.length}`": "`被白名单阻止: ${blocked.length}`",
     "\"Many skill dependencies are shipped via Homebrew.\"": "\"许多技能依赖通过 Homebrew 分发。\"",
     "\"Without brew, you'll need to build from source or download releases manually.\"": "\"没有 brew，你需要从源码构建或手动下载。\"",
-    "\"Run:\"": "\"运行:\"",
     "` (exit ${result.code})`": "` (退出码 ${result.code})`",
-    "`Tip: run \\`${formatCliCommand(\"openclaw doctor\")}\\` to review skills + requirements.`": "`提示: 运行 \\`${formatCliCommand(\"openclaw doctor\")}\\` 查看技能和依赖状态。`"
+    "`Tip: run \\`${formatCliCommand(\"openclaw doctor\")}\\` to review skills + requirements.`": "`提示: 运行 \\`${formatCliCommand(\"openclaw doctor\")}\\` 查看技能和依赖状态。`",
+    "\"Install Homebrew:\"": "\"安装 Homebrew:\"",
+    "\"No missing skill dependencies to install.\"": "\"没有缺失的技能依赖需要安装。\"",
+    "`Unsupported on this OS: ${unsupportedOs.length}`": "`当前系统不支持: ${unsupportedOs.length}`"
   }
 }

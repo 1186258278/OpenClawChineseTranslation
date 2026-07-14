@@ -1,5 +1,5 @@
 {
-  "file": "ui/src/ui/views/nodes.ts",
+  "file": "ui/src/pages/nodes/view.ts",
   "description": "Dashboard 节点页面",
   "replacements": {
     "<div class=\"card-title\">Nodes</div>": "<div class=\"card-title\">节点</div>",

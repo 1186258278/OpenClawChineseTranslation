@@ -1,5 +1,5 @@
 {
-  "file": "ui/src/ui/views/usage.ts",
+  "file": "ui/src/pages/usage/view.ts",
   "description": "Dashboard 用量统计页面 (Token Usage Dashboard)",
   "__note": "v2026.3.22: usage.ts 已改用 i18n t() 调用，所有字符串迁移至 ui/i18n/zh-CN-usage.json",
   "replacements": {}

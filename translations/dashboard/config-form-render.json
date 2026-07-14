@@ -1,5 +1,5 @@
 {
-  "file": "ui/src/ui/views/config-form.render.ts",
+  "file": "ui/src/components/config-form.render.ts",
   "description": "Dashboard 配置页面章节标签和描述",
   "replacements": {
     "label: \"Environment Variables\",\n    description: \"Environment variables passed to the gateway process\"": "label: \"环境变量\",\n    description: \"传递给网关进程的环境变量\"",

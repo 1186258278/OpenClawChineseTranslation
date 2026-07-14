@@ -1,5 +1,5 @@
 {
-  "file": "ui/src/ui/views/channels.signal.ts",
+  "file": "ui/src/pages/channels/view.signal.ts",
   "description": "Dashboard Signal 渠道卡片",
   "replacements": {
     "subtitle: \"signal-cli status and channel configuration.\"": "subtitle: \"signal-cli 状态和渠道配置。\"",

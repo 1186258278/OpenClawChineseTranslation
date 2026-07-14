@@ -1,5 +1,5 @@
 {
-  "file": "ui/src/ui/views/instances.ts",
+  "file": "ui/src/pages/instances/view.ts",
   "description": "Dashboard 实例页面",
   "replacements": {}
 }

@@ -4,7 +4,6 @@
   "replacements": {
     "\"web_search (parallel) needs a Parallel API key. Set PARALLEL_API_KEY in the Gateway environment, or configure plugins.entries.parallel.config.webSearch.apiKey.\"": "\"web_search（parallel）需要 Parallel API 密钥。请在 Gateway 环境中设置 PARALLEL_API_KEY，或配置 plugins.entries.parallel.config.webSearch.apiKey。\"",
     "message: `plugins.entries.parallel.config.webSearch.baseUrl must be a valid http(s) URL. Got: ${value}`": "message: `plugins.entries.parallel.config.webSearch.baseUrl 必须是有效的 http(s) URL。当前值：${value}`",
-    "throw new Error(`Parallel API error (${res.status}): ${detail || res.statusText}`);": "throw new Error(`Parallel API 错误（${res.status}）：${detail || res.statusText}`);",
-    "throw new Error(\"Parallel API returned malformed JSON\", { cause });": "throw new Error(\"Parallel API 返回了格式错误的 JSON\", { cause });"
+    "throw new Error(`Parallel API error (${res.status}): ${detail || res.statusText}`);": "throw new Error(`Parallel API 错误（${res.status}）：${detail || res.statusText}`);"
   }
 }

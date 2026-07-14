@@ -1,5 +1,5 @@
 {
-  "file": "ui/src/ui/chat/slash-command-executor.ts",
+  "file": "ui/src/pages/chat/chat-command-executor.ts",
   "description": "斜杠命令执行反馈消息",
   "replacements": {
     "\"Starting new session...\"": "\"正在开始新会话...\"",

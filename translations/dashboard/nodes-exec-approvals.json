@@ -1,5 +1,5 @@
 {
-  "file": "ui/src/ui/views/nodes-exec-approvals.ts",
+  "file": "ui/src/pages/nodes/view-exec-approvals.ts",
   "description": "Dashboard 节点页面 - 执行审批策略",
   "replacements": {
     "<div class=\"card-title\">Exec approvals</div>": "<div class=\"card-title\">执行审批</div>",

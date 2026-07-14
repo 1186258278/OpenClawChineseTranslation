@@ -1,5 +1,5 @@
 {
-  "file": "ui/src/ui/views/channels.config.ts",
+  "file": "ui/src/pages/channels/view.config.ts",
   "description": "Dashboard 渠道配置通用组件",
   "replacements": {
     "<div class=\"callout danger\">Schema unavailable. Use Raw.</div>": "<div class=\"callout danger\">架构不可用。请使用原始模式。</div>",

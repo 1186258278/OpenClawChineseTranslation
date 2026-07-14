@@ -1,5 +1,5 @@
 {
-  "file": "ui/src/ui/views/dreaming.ts",
+  "file": "ui/src/pages/dreams/view.ts",
   "description": "梦境系统 — 追踪元数据标签 (v2026.4.10)",
   "replacements": {
     "recallCount} recall": "recallCount} 次召回",

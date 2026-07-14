@@ -1,5 +1,5 @@
 {
-  "file": "ui/src/ui/views/channels.googlechat.ts",
+  "file": "ui/src/pages/channels/view.googlechat.ts",
   "description": "Dashboard Google Chat 渠道卡片",
   "replacements": {
     "subtitle: \"Chat API webhook status and channel configuration.\"": "subtitle: \"Chat API Webhook 状态和渠道配置。\"",

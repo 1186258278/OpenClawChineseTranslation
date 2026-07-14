@@ -1,17 +1,20 @@
 {
-  "file": "ui/src/ui/chat/tool-cards.ts",
+  "file": "ui/src/pages/chat/components/chat-tool-cards.ts",
   "description": "Dashboard 工具卡片",
   "replacements": {
-    "title=\"Open in the side panel\"": "title=\"在侧面板中打开\"",
     "aria-label=\"Open tool details in side panel\"": "aria-label=\"在侧面板中打开工具详情\"",
     "label: \"Tool input\"": "label: \"工具输入\"",
     "label: \"Tool output\"": "label: \"工具输出\"",
-    "${isError ? \"Failed\" : \"Completed\"}": "${isError ? \"失败\" : \"已完成\"}",
-    "? \"View\" : \"\"": "? \"查看\" : \"\"",
     "<span>Raw details</span>": "<span>原始详情</span>",
     "### Tool input": "### 工具输入",
     "### Tool output": "### 工具输出",
     "*No output — tool completed successfully.*": "*无输出 — 工具执行成功。*",
-    "|| \"Canvas\"": "|| \"画布\""
+    "|| \"Canvas\"": "|| \"画布\"",
+    "content=\"Open in the side panel\"": "content=\"在侧面板中打开\"",
+    "label: isError ? \"Tool error\" : \"Tool output\"": "label: isError ? \"工具错误\" : \"工具输出\"",
+    "label: \"Tool error\"": "label: \"工具错误\"",
+    "text: \"No output — tool failed.\"": "text: \"无输出 — 工具执行失败。\"",
+    "`### ${isError ? \"Tool error\" : \"Tool output\"}\\n${formatToolOutputForSidebar(card.outputText)}`": "`### ${isError ? \"工具错误\" : \"工具输出\"}\\n${formatToolOutputForSidebar(card.outputText)}`",
+    "\"### Tool error\\n*No output — tool failed.*\"": "\"### 工具错误\\n*无输出 — 工具执行失败。*\""
   }
 }

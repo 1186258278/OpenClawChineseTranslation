@@ -1,5 +1,5 @@
 {
-  "file": "ui/src/ui/views/skills.ts",
+  "file": "ui/src/pages/skills/view.ts",
   "description": "Dashboard 技能页面",
   "replacements": {
     "<div class=\"card-title\">Skills</div>": "<div class=\"card-title\">技能</div>",

@@ -1,5 +1,5 @@
 {
-  "file": "ui/src/ui/views/channels.ts",
+  "file": "ui/src/pages/channels/view.ts",
   "description": "Dashboard 渠道页面",
   "replacements": {}
 }

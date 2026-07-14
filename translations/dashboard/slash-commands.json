@@ -1,5 +1,5 @@
 {
-  "file": "ui/src/ui/chat/slash-commands.ts",
+  "file": "ui/src/lib/chat/commands.ts",
   "description": "Dashboard 聊天斜杠命令（v2026.3.12 新增命令面板）",
   "replacements": {
     "description: \"Clear chat history\"": "description: \"清除聊天历史\"",

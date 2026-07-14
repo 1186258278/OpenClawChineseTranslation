@@ -1,0 +1,9 @@
+{
+  "file": "ui/src/pages/chat/components/chat-thread.ts",
+  "description": "Dashboard 对话线程搜索和加载状态",
+  "replacements": {
+    "aria-label=\"Loading chat\"": "aria-label=\"正在加载对话\"",
+    "placeholder=\"Search messages...\"": "placeholder=\"搜索消息...\"",
+    "No matching messages": "没有匹配的消息"
+  }
+}

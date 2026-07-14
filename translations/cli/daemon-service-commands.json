@@ -13,12 +13,12 @@
     ".option(\"--json\", \"Output JSON\", false)": ".option(\"--json\", \"输出 JSON\", false)",
     ".description(\"Install the Gateway service (launchd/systemd/schtasks)\")": ".description(\"安装网关服务（launchd/systemd/schtasks）\")",
     ".option(\"--port <port>\", \"Gateway port\")": ".option(\"--port <port>\", \"网关端口\")",
-    ".option(\"--runtime <runtime>\", \"Daemon runtime (node|bun). Default: node\")": ".option(\"--runtime <runtime>\", \"守护进程运行时（node|bun），默认：node\")",
     ".option(\"--token <token>\", \"Gateway token (token auth)\")": ".option(\"--token <token>\", \"网关令牌（token 认证）\")",
     ".option(\"--force\", \"Reinstall/overwrite if already installed\", false)": ".option(\"--force\", \"若已安装则重新安装/覆盖\", false)",
     ".description(\"Uninstall the Gateway service (launchd/systemd/schtasks)\")": ".description(\"卸载网关服务（launchd/systemd/schtasks）\")",
     ".description(\"Start the Gateway service (launchd/systemd/schtasks)\")": ".description(\"启动网关服务（launchd/systemd/schtasks）\")",
     ".description(\"Stop the Gateway service (launchd/systemd/schtasks)\")": ".description(\"停止网关服务（launchd/systemd/schtasks）\")",
-    ".description(\"Restart the Gateway service (launchd/systemd/schtasks)\")": ".description(\"重启网关服务（launchd/systemd/schtasks）\")"
+    ".description(\"Restart the Gateway service (launchd/systemd/schtasks)\")": ".description(\"重启网关服务（launchd/systemd/schtasks）\")",
+    ".option(\"--runtime <runtime>\", \"Daemon runtime (node). Default: node\")": ".option(\"--runtime <runtime>\", \"守护进程运行时（node）。默认：node\")"
   }
 }

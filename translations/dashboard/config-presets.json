@@ -1,13 +1,10 @@
 {
-  "file": "ui/src/ui/views/config-presets.ts",
+  "file": "ui/src/pages/config/presets.ts",
   "description": "Dashboard 设置页 - 配置预设标签和描述（v2026.5.3 上游新增）",
   "replacements": {
-    "    label: \"Personal Assistant\",\n    description: \"Balanced default for daily use.\",\n    detail: \"Good fit for chat, docs, and light edits without a large coding budget.\",\n    impact: \"Injects bootstrap context every turn with a moderate prompt budget.\",": "    label: \"个人助手\",\n    description: \"日常使用的均衡默认值。\",\n    detail: \"适合聊天、文档和不需要大量代码上下文的轻量编辑。\",\n    impact: \"以适中的提示预算每轮注入引导上下文。\",",
-
-    "    label: \"Code Agent\",\n    description: \"Highest context budget for repo work.\",\n    detail: \"Best for multi-file changes, long bootstrap docs, and code-heavy sessions.\",\n    impact: \"Uses the largest prompt budget and reinjects context every turn.\",": "    label: \"代码代理\",\n    description: \"代码仓库工作场景的最大上下文预算。\",\n    detail: \"适合多文件改动、长引导文档以及代码密集的会话。\",\n    impact: \"使用最大的提示预算并每轮重新注入上下文。\",",
-
-    "    label: \"Team Bot\",\n    description: \"Lean follow-ups for shared bots.\",\n    detail:\n      \"Best for multi-channel workflows where continuity matters more than large bootstrap payloads.\",\n    impact: \"Keeps follow-up turns smaller by skipping safe continuation reinjection.\",": "    label: \"团队机器人\",\n    description: \"共享机器人场景的精简跟进。\",\n    detail:\n      \"适合多渠道工作流；连续性比大体量引导内容更重要。\",\n    impact: \"通过跳过安全续接的重注入，让跟进轮次更精简。\",",
-
-    "    label: \"Minimal\",\n    description: \"Smallest context budget and lowest cost.\",\n    detail: \"Best for quick utility turns, automations, and cost-sensitive workflows.\",\n    impact: \"Uses the smallest bootstrap budget and the leanest follow-up behavior.\",": "    label: \"极简\",\n    description: \"最小的上下文预算与最低成本。\",\n    detail: \"适合快速工具型轮次、自动化任务以及对成本敏感的工作流。\",\n    impact: \"使用最小的引导预算和最精简的跟进行为。\","
+    "    label: \"Personal Assistant\",\n    description: \"Balanced default for daily use.\",": "    label: \"个人助手\",\n    description: \"日常使用的均衡默认值。\",",
+    "    label: \"Code Agent\",\n    description: \"Highest context budget for repo work.\",": "    label: \"代码代理\",\n    description: \"代码仓库工作场景的最大上下文预算。\",",
+    "    label: \"Team Bot\",\n    description: \"Lean follow-ups for shared bots.\",": "    label: \"团队机器人\",\n    description: \"共享机器人场景的精简跟进。\",",
+    "    label: \"Minimal\",\n    description: \"Smallest context budget and lowest cost.\",": "    label: \"极简\",\n    description: \"最小的上下文预算与最低成本。\","
   }
 }

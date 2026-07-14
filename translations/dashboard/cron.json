@@ -1,5 +1,5 @@
 {
-  "file": "ui/src/ui/views/cron.ts",
+  "file": "ui/src/pages/cron/view.ts",
   "description": "Dashboard 定时任务页面（上游已迁移至 i18n，翻译由 zh-CN locale 覆盖）",
   "replacements": {}
 }

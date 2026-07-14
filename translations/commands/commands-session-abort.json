@@ -1,7 +1,11 @@
 {
-  "file": "src/auto-reply/reply/commands-session-abort.ts",
+  "file": "src/auto-reply/reply/abort.ts",
   "description": "会话中止命令翻译",
   "replacements": {
-    "\"⚙️ Agent was aborted.\"": "\"⚙️ 代理已中止。\""
+    "\"⚙️ Agent was aborted.\"": "\"⚙️ 代理已中止。\"",
+    "const base = \"Agent reply is already finalizing and can no longer be aborted.\";": "const base = \"代理回复已进入最终输出阶段，无法再中止。\";",
+    "const label = stoppedSubagents === 1 ? \"sub-agent\" : \"sub-agents\";": "const label = \"子代理\";",
+    "return `${base} Stopped ${stoppedSubagents} ${label}.`;": "return `${base} 已停止 ${stoppedSubagents} 个${label}。`;",
+    "return `⚙️ Agent was aborted. Stopped ${stoppedSubagents} ${label}.`;": "return `⚙️ 代理已中止。已停止 ${stoppedSubagents} 个${label}。`;"
   }
 }

@@ -5,7 +5,6 @@
     "\"⚙️ Group activation only applies to group chats.\"": "\"⚙️ 群组激活仅适用于群聊。\"",
     "\"⚙️ Usage: /activation mention|always\"": "\"⚙️ 用法：/activation mention|always\"",
     "\"⚙️ Usage: /send on|off|inherit\"": "\"⚙️ 用法：/send on|off|inherit\"",
-    "\"⚙️ Usage: /usage off|tokens|full|cost\"": "\"⚙️ 用法：/usage off|tokens|full|cost\"",
     "\"ℹ️ Idle timeout is currently disabled for this focused session.\"": "\"ℹ️ 此聚焦会话的空闲超时当前已禁用。\"",
     "\"ℹ️ Max age is currently disabled for this focused session.\"": "\"ℹ️ 此聚焦会话的最大存活时间当前已禁用。\"",
     "\"⚠️ Failed to update idle timeout for the current binding.\"": "\"⚠️ 更新当前绑定的空闲超时失败。\"",
@@ -14,6 +13,7 @@
     "\"⚙️ Restarting OpenClaw in-process (SIGUSR1); back in a few seconds.\"": "\"⚙️ 正在进程内重启 OpenClaw（SIGUSR1），几秒后恢复。\"",
     "\"Usage: /session idle <duration|off> | /session max-age <duration|off> (example: /session idle 24h)\"": "\"用法：/session idle <时长|off> | /session max-age <时长|off>（示例：/session idle 24h）\"",
     "\"ℹ️ This conversation is not currently focused.\"": "\"ℹ️ 此对话当前未聚焦。\"",
-    "`⚠️ Only ${boundBy} can update session lifecycle settings for this conversation.`": "`⚠️ 只有 ${boundBy} 可以更新此对话的会话生命周期设置。`"
+    "`⚠️ Only ${boundBy} can update session lifecycle settings for this conversation.`": "`⚠️ 只有 ${boundBy} 可以更新此对话的会话生命周期设置。`",
+    "\"⚙️ Usage: /usage off|tokens|full|reset|cost\"": "\"⚙️ 用法：/usage off|tokens|full|reset|cost\""
   }
 }

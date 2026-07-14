@@ -1,5 +1,5 @@
 {
-  "file": "ui/src/ui/chat/copy-as-markdown.ts",
+  "file": "ui/src/components/copy-button.ts",
   "description": "复制为 Markdown 功能",
   "replacements": {
     "\"Copy as markdown\"": "\"复制为 Markdown\"",

@@ -16,12 +16,13 @@
     "\"- Multiple state directories detected. This can split session history.\"": "\"- 检测到多个状态目录。这可能导致会话历史分散。\"",
     "`- ${missing.length}/${recentTranscriptCandidates.length} recent sessions are missing transcripts.`": "`- ${missing.length}/${recentTranscriptCandidates.length} 个最近会话缺少记录文件。`",
     "`  Verify sessions in store: ${formatCliCommand(`openclaw sessions --store \"${absoluteStorePath}\"`)}`,": "`  验证存储中的会话: ${formatCliCommand(`openclaw sessions --store \"${absoluteStorePath}\"`)}`,",
-    "`  Preview cleanup impact: ${formatCliCommand(`openclaw sessions cleanup --store \"${absoluteStorePath}\" --dry-run`)}`,": "`  预览清理影响: ${formatCliCommand(`openclaw sessions cleanup --store \"${absoluteStorePath}\" --dry-run`)}`,",
     "`- Main session transcript missing (${shortenHomePath(transcriptPath)}). History will appear to reset.`": "`- 主会话记录缺失 (${shortenHomePath(transcriptPath)})。历史记录将显示为已重置。`",
     "`- Main session transcript has only ${lineCount} line. Session history may not be appending.`": "`- 主会话记录只有 ${lineCount} 行。会话历史可能没有正常追加。`",
     "\"- Tip: back up the workspace in a private git repo (GitHub or GitLab).\"": "\"- 提示：将工作区备份到私有 git 仓库（GitHub 或 GitLab）。\"",
     "\"- Keep ~/.openclaw out of git; it contains credentials and session history.\"": "\"- 不要将 ~/.openclaw 提交到 git；它包含凭据和会话历史。\"",
     "\"- Details: /concepts/agent-workspace#git-backup-recommended\"": "\"- 详情：/concepts/agent-workspace#git-backup-recommended\"",
-    "note(tip, \"Workspace\")": "note(tip, \"工作区\")"
+    "note(tip, \"Workspace\")": "note(tip, \"工作区\")",
+    "`  Preview cleanup impact: ${formatCliCommand(`openclaw sessions cleanup --store \"${absoluteStorePath}\" --dry-run --fix-missing`)}`,": "`  预览清理影响: ${formatCliCommand(`openclaw sessions cleanup --store \"${absoluteStorePath}\" --dry-run --fix-missing`)}`,",
+    "`  Prune missing entries: ${formatCliCommand(`openclaw sessions cleanup --store \"${absoluteStorePath}\" --enforce --fix-missing`)}`,": "`  清理缺失条目: ${formatCliCommand(`openclaw sessions cleanup --store \"${absoluteStorePath}\" --enforce --fix-missing`)}`,"
   }
 }

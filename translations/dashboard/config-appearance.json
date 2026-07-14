@@ -1,5 +1,5 @@
 {
-  "file": "ui/src/ui/views/config.ts",
+  "file": "ui/src/pages/config/view.ts",
   "description": "Dashboard 配置页面 - 外观设置虚拟分区（v2026.3.12 新增）",
   "replacements": {
     "<h3 class=\"settings-appearance__heading\">Theme</h3>": "<h3 class=\"settings-appearance__heading\">主题</h3>",

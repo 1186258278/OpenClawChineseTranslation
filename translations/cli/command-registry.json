@@ -2,20 +2,24 @@
   "file": "src/cli/program/core-command-descriptors.ts",
   "description": "CLI 命令注册表 - 顶层命令描述",
   "replacements": {
-    "description: \"Initialize local config and an agent workspace\"": "description: \"初始化本地配置和代理工作区\"",
-    "description: \"Run one agent turn via the Gateway\"": "description: \"通过网关运行一次代理\"",
-    "description: \"Manage isolated agents (workspaces, auth, routing)\"": "description: \"管理隔离的代理（工作区、认证、路由）\"",
-    "description: \"Show Gateway, channel, model, and recent-session status\"": "description: \"显示网关、渠道、模型和最近会话状态\"",
-    "description: \"Fetch detailed health from the running Gateway\"": "description: \"从运行中的网关获取详细健康状态\"",
     "description: \"List stored conversation sessions\"": "description: \"列出已存储的对话会话\"",
-    "description: \"Interactive onboarding for gateway, workspace, and skills\"": "description: \"交互式引导配置网关、工作区和技能\"",
     "description: \"Create and verify local backup archives for OpenClaw state\"": "description: \"创建和验证 OpenClaw 状态的本地备份归档\"",
-    "description: \"Diagnose and repair config, Gateway, plugin, and channel problems\"": "description: \"诊断并修复配置、网关、插件和渠道问题\"",
     "description: \"Open the Control UI with your current token\"": "description: \"使用当前令牌打开控制面板\"",
     "description: \"Reset local config/state (keeps the CLI installed)\"": "description: \"重置本地配置/状态（保留 CLI）\"",
     "description: \"Uninstall the gateway service + local data (CLI remains)\"": "description: \"卸载网关服务和本地数据（保留 CLI）\"",
-    "description: \"Send, read, and manage channel messages\"": "description: \"发送、读取和管理渠道消息\"",
     "description: \"Interactive configuration for credentials, channels, gateway, and agent defaults\"": "description: \"交互式配置凭证、渠道、网关和代理默认设置\"",
-    "description:\n      \"Non-interactive config helpers (get/set/unset/file/validate). Default: starts guided setup.\"": "description:\n      \"非交互式配置工具（get/set/unset/file/validate）。默认：启动引导式设置。\""
+    "description: \"Open the ring-zero setup and repair helper\"": "description: \"打开 ring-zero 设置与修复助手\"",
+    "description: \"Guided setup for auth, models, Gateway, workspace, channels, and skills\"": "description: \"引导配置认证、模型、网关、工作区、渠道和技能\"",
+    "description:\n      \"Non-interactive config helpers (get/set/patch/unset/file/schema/validate). Run without subcommand for guided setup.\"": "description:\n      \"非交互式配置工具（get/set/patch/unset/file/schema/validate）。无子命令运行时启动引导式设置。\"",
+    "description: \"Alias for openclaw onboard\"": "description: \"openclaw onboard 的别名\"",
+    "description: \"Health checks + quick fixes for the gateway and channels\"": "description: \"网关和渠道的健康检查与快速修复\"",
+    "description: \"Send, read, and manage messages and channel actions\"": "description: \"发送、读取和管理消息及渠道操作\"",
+    "description: \"Run an agent turn via the Gateway (use --local for embedded)\"": "description: \"通过网关运行一次代理轮次（嵌入式使用 --local）\"",
+    "description: \"Manage isolated agents (workspaces + auth + routing)\"": "description: \"管理隔离代理（工作区、认证、路由）\"",
+    "description: \"Show channel health and recent session recipients\"": "description: \"显示渠道健康状态和最近会话收件人\"",
+    "description: \"Fetch health from the running gateway\"": "description: \"从运行中的网关获取健康状态\"",
+    "description: \"Manage OpenClaw mcp.servers config and channel bridge\"": "description: \"管理 OpenClaw mcp.servers 配置和渠道桥接\"",
+    "description: \"Inspect durable background tasks and TaskFlow state\"": "description: \"查看持久化后台任务和 TaskFlow 状态\"",
+    "description: \"Inspect metadata-only agent run and tool action records\"": "description: \"查看仅含元数据的代理运行和工具操作记录\""
   }
 }

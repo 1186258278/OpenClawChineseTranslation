@@ -1,5 +1,5 @@
 {
-  "file": "ui/src/ui/views/gateway-url-confirmation.ts",
+  "file": "ui/src/components/gateway-url-confirmation.ts",
   "description": "Dashboard 网关 URL 确认弹窗",
   "replacements": {}
 }

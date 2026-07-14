@@ -1,5 +1,5 @@
 {
-  "file": "ui/src/ui/views/channels.whatsapp.ts",
+  "file": "ui/src/pages/channels/view.whatsapp.ts",
   "description": "Dashboard WhatsApp 渠道卡片",
   "replacements": {
     "subtitle: \"Link WhatsApp Web and monitor connection health.\"": "subtitle: \"连接 WhatsApp Web 并监控连接健康状态。\"",

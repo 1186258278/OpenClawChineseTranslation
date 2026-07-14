@@ -1,5 +1,5 @@
 {
-  "file": "ui/src/ui/views/usage-render-details.ts",
+  "file": "ui/src/pages/usage/view-details.ts",
   "description": "Dashboard 用量统计详情页面",
   "__note": "v2026.3.22: 已改用 i18n t() 调用",
   "replacements": {}
