@@ -14,6 +14,12 @@ export function buildQtcoolProvider(): ModelProviderConfig {
         maxTokens: 16384,
       },
       {
+        id: "MiniMax-M3",
+        name: "MiniMax M3",
+        contextWindow: 524288,
+        maxTokens: 131072,
+      },
+      {
         id: "MiniMax-M2.7",
         name: "MiniMax M2.7",
         contextWindow: 128000,
@@ -42,12 +48,6 @@ export function buildQtcoolProvider(): ModelProviderConfig {
         name: "GLM-5",
         contextWindow: 128000,
         maxTokens: 8192,
-      },
-      {
-        id: "MiniMax-M2.5",
-        name: "MiniMax M2.5",
-        contextWindow: 128000,
-        maxTokens: 16384,
       },
       {
         id: "gpt-5.4",
