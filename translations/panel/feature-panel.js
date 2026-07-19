@@ -359,6 +359,7 @@
 
       const builtins = [
         { id: 'auto', name: 'Auto（自动选择最优）' },
+        { id: 'MiniMax-M3', name: 'MiniMax M3' },
         { id: 'MiniMax-M2.7', name: 'MiniMax M2.7' },
         { id: 'kimi-k2.5', name: 'Kimi K2.5' },
         { id: 'glm-5.1', name: 'GLM-5.1' },
