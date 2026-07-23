@@ -1,25 +1,25 @@
 {
-  "description": "晴辰云源文件 (qtcool) - 项目方每日免费模型站 extension plugin",
+  "description": "词元 API / CiyAPI sponsored OpenAI Compatible provider extension plugin",
   "copyFiles": [
     {
       "source": "providers/files/extensions/qingchenyun/package.json",
-      "target": "extensions/qtcool/package.json"
+      "target": "extensions/ciyapi/package.json"
     },
     {
       "source": "providers/files/extensions/qingchenyun/openclaw.plugin.json",
-      "target": "extensions/qtcool/openclaw.plugin.json"
+      "target": "extensions/ciyapi/openclaw.plugin.json"
     },
     {
       "source": "providers/files/extensions/qingchenyun/index.ts",
-      "target": "extensions/qtcool/index.ts"
+      "target": "extensions/ciyapi/index.ts"
     },
     {
       "source": "providers/files/extensions/qingchenyun/onboard.ts",
-      "target": "extensions/qtcool/onboard.ts"
+      "target": "extensions/ciyapi/onboard.ts"
     },
     {
       "source": "providers/files/extensions/qingchenyun/provider-catalog.ts",
-      "target": "extensions/qtcool/provider-catalog.ts"
+      "target": "extensions/ciyapi/provider-catalog.ts"
     }
   ]
 }

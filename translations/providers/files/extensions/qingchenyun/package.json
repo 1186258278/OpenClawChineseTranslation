@@ -1,8 +1,8 @@
 {
-  "name": "@openclaw/qtcool-provider",
+  "name": "@openclaw/ciyapi-provider",
   "version": "2026.3.28",
   "private": true,
-  "description": "OpenClaw 晴辰云 provider plugin (gpt.qt.cool)",
+  "description": "OpenClaw 词元 API / CiyAPI sponsored provider plugin",
   "type": "module",
   "openclaw": {
     "extensions": [

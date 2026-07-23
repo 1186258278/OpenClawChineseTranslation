@@ -1,23 +1,23 @@
 {
-  "id": "qtcool",
-  "providers": ["qtcool"],
+  "id": "ciyapi",
+  "providers": ["ciyapi"],
   "providerAuthEnvVars": {
-    "qtcool": ["QTCOOL_API_KEY"]
+    "ciyapi": ["CIYAPI_API_KEY"]
   },
   "providerAuthChoices": [
     {
-      "provider": "qtcool",
+      "provider": "ciyapi",
       "method": "api-key",
-      "choiceId": "qtcool-api-key",
-      "choiceLabel": "晴辰云 API 密钥",
-      "choiceHint": "项目方每日免费模型站，签到领额度",
-      "groupId": "qtcool",
-      "groupLabel": "晴辰云",
-      "groupHint": "项目方每日免费模型站 — 在 gpt.qt.cool/user 获取密钥",
-      "optionKey": "qtcoolApiKey",
-      "cliFlag": "--qtcool-api-key",
-      "cliOption": "--qtcool-api-key <key>",
-      "cliDescription": "晴辰云 API 密钥 (gpt.qt.cool)"
+      "choiceId": "ciyapi-api-key",
+      "choiceLabel": "词元 API 密钥",
+      "choiceHint": "Sponsored: 支持 GPT、Claude、Gemini、Grok、Kimi 等主流前沿模型；充值 ¥1 到账 $1 平台额度，部分线路按折扣计费。",
+      "groupId": "ciyapi",
+      "groupLabel": "词元 API",
+      "groupHint": "Sponsored: 第三方赞助推广，具体规则以词元 API 页面为准。密钥：https://ciyapi.79tian.com/keys/",
+      "optionKey": "ciyapiApiKey",
+      "cliFlag": "--ciyapi-api-key",
+      "cliOption": "--ciyapi-api-key <key>",
+      "cliDescription": "词元 API 密钥 (CiyAPI)"
     }
   ],
   "configSchema": {

@@ -215,8 +215,8 @@
 
   // 渲染快捷指令 Tab
   function renderCommandsTab() {
-    const savedQtcoolKey = localStorage.getItem('qtcool_api_key') || '';
-    const keyPreview = savedQtcoolKey ? savedQtcoolKey.slice(0, 8) + '...' + savedQtcoolKey.slice(-4) : '';
+    const savedCiyapiKey = localStorage.getItem('ciyapi_api_key') || '';
+    const keyPreview = savedCiyapiKey ? savedCiyapiKey.slice(0, 8) + '...' + savedCiyapiKey.slice(-4) : '';
     return `
       <div class="commands-grid">
         <button class="command-btn" data-action="restart">
@@ -246,107 +246,107 @@
         </button>
       </div>
 
-      <div class="qtcool-setup">
-        <div class="qtcool-setup-header">
-          <span class="qtcool-setup-logo">⚡</span>
+      <div class="ciyapi-setup">
+        <div class="ciyapi-setup-header">
+          <span class="ciyapi-setup-logo">Sponsored</span>
           <div>
-            <h3 class="qtcool-setup-title">晴辰云快速配置</h3>
-            <p class="qtcool-setup-sub">输入 API 密钥 → 获取模型列表 → 一键生成配置命令</p>
+            <h3 class="ciyapi-setup-title">词元 API 快速配置 <span class="ciyapi-sponsored-badge">赞助推广</span></h3>
+            <p class="ciyapi-setup-sub">支持 GPT、Claude 等主流前沿模型；充值 ¥1 到账 $1 平台额度，部分线路按折扣计费。</p>
           </div>
-          <a href="https://gpt.qt.cool/user" target="_blank" class="qtcool-get-key-link">🎁 免费获取密钥</a>
+          <a href="https://ciyapi.79tian.com/keys/" target="_blank" rel="sponsored noopener noreferrer" class="ciyapi-get-key-link">获取 API 密钥</a>
         </div>
 
-        <div class="qtcool-key-row">
-          <input type="password" id="qtcool-api-key" class="ssy-input"
-                 placeholder="输入晴辰云 API 密钥 (sk-...)"
-                 value="${savedQtcoolKey}" />
-          <button class="ssy-btn ssy-btn-test" id="qtcool-fetch-btn">🔍 获取模型列表</button>
+        <div class="ciyapi-key-row">
+          <input type="password" id="ciyapi-api-key" class="ssy-input"
+                 placeholder="输入词元 API 密钥 (sk-...)"
+                 value="${savedCiyapiKey}" />
+          <button class="ssy-btn ssy-btn-test" id="ciyapi-fetch-btn">获取模型列表</button>
         </div>
-        ${savedQtcoolKey
-          ? `<p class="ssy-key-hint">✅ 已保存：${keyPreview} &nbsp;·&nbsp; <a href="https://gpt.qt.cool/user" target="_blank">重新获取密钥</a></p>`
-          : `<p class="ssy-key-hint">📎 每天在 <a href="https://gpt.qt.cool/user" target="_blank">gpt.qt.cool/user</a> 签到可免费领取额度</p>`
+        ${savedCiyapiKey
+          ? `<p class="ssy-key-hint">已保存：${keyPreview} &nbsp;·&nbsp; <a href="https://ciyapi.79tian.com/keys/" target="_blank" rel="sponsored noopener noreferrer">重新获取密钥</a></p>`
+          : `<p class="ssy-key-hint">第三方赞助推广，具体规则以词元 API 页面为准。<a href="https://ciyapi.79tian.com/sign-up" target="_blank" rel="sponsored noopener noreferrer">注册</a> · <a href="https://ciyapi.79tian.com/pricing/" target="_blank" rel="sponsored noopener noreferrer">模型与价格</a> · <a href="https://ciyapi.79tian.com/wallet/" target="_blank" rel="sponsored noopener noreferrer">充值</a></p>`
         }
-        <div id="qtcool-model-status" class="ssy-test-loading" style="display:none;"></div>
+        <div id="ciyapi-model-status" class="ssy-test-loading" style="display:none;"></div>
 
-        <div id="qtcool-model-section" style="display:none;">
-          <div class="qtcool-model-row">
-            <label class="ssy-label">🤖 默认模型</label>
-            <select id="qtcool-model-select" class="ssy-select ssy-model-select">
+        <div id="ciyapi-model-section" style="display:none;">
+          <div class="ciyapi-model-row">
+            <label class="ssy-label">默认模型</label>
+            <select id="ciyapi-model-select" class="ssy-select ssy-model-select">
               <option value="auto">Auto（自动选择最优）</option>
             </select>
           </div>
           <div class="ssy-config-commands">
             <div class="ssy-config-cmd-block">
-              <span class="ssy-config-cmd-label">📋 复制以下命令到终端执行：</span>
-              <pre class="ssy-config-cmd" id="qtcool-cmd-text"></pre>
+              <span class="ssy-config-cmd-label">复制以下命令到终端执行：</span>
+              <pre class="ssy-config-cmd" id="ciyapi-cmd-text"></pre>
               <div class="ssy-config-actions">
-                <button class="ssy-btn ssy-btn-copy" id="qtcool-copy-cmd">📋 复制命令</button>
-                <button class="ssy-btn ssy-btn-test-model" id="qtcool-test-model">🧪 测试连通</button>
+                <button class="ssy-btn ssy-btn-copy" id="ciyapi-copy-cmd">复制命令</button>
+                <button class="ssy-btn ssy-btn-test-model" id="ciyapi-test-model">测试连通</button>
               </div>
             </div>
           </div>
-          <div id="qtcool-test-result"></div>
+          <div id="ciyapi-test-result"></div>
         </div>
       </div>
     `;
   }
 
   // ============================================================
-  // 晴辰云快速配置逻辑
+  // 词元 API 赞助推广快速配置逻辑
   // ============================================================
-  const QTCOOL_API_BASE = 'https://gpt.qt.cool/v1';
-  const QTCOOL_STORAGE_KEY = 'qtcool_api_key';
+  const CIYAPI_API_BASE = 'https://ciyapi.79tian.com/v1';
+  const CIYAPI_STORAGE_KEY = 'ciyapi_api_key';
 
-  function getQtcoolApiKey() {
-    return document.getElementById('qtcool-api-key')?.value?.trim()
-      || localStorage.getItem(QTCOOL_STORAGE_KEY) || '';
+  function getCiyapiApiKey() {
+    return document.getElementById('ciyapi-api-key')?.value?.trim()
+      || localStorage.getItem(CIYAPI_STORAGE_KEY) || '';
   }
 
-  function generateQtcoolCommands() {
-    const apiKey = getQtcoolApiKey();
-    const select = document.getElementById('qtcool-model-select');
+  function generateCiyapiCommands() {
+    const apiKey = getCiyapiApiKey();
+    const select = document.getElementById('ciyapi-model-select');
     const modelId = select?.value?.trim() || 'auto';
-    const cmdEl = document.getElementById('qtcool-cmd-text');
+    const cmdEl = document.getElementById('ciyapi-cmd-text');
     if (!cmdEl) return;
 
     const lines = [];
-    lines.push('# 步骤 1: 写入晴辰云 API 密钥（适用于所有版本）');
+    lines.push('# 步骤 1: 写入词元 API 密钥（独立 ciyapi provider，不覆盖旧配置）');
     if (apiKey) {
       const safeKey = apiKey.replace(/"/g, '\\"');
-      lines.push(`openclaw config set models.providers.qtcool.apiKey "${safeKey}"`);
+      lines.push(`openclaw config set models.providers.ciyapi.apiKey "${safeKey}"`);
     } else {
-      lines.push('openclaw config set models.providers.qtcool.apiKey "你的密钥（从 gpt.qt.cool/user 获取）"');
+      lines.push('openclaw config set models.providers.ciyapi.apiKey "你的词元 API 密钥（从 https://ciyapi.79tian.com/keys/ 获取）"');
     }
     lines.push('');
     lines.push('# 步骤 2: 配置 provider 端点和接口类型');
-    lines.push(`openclaw config set models.providers.qtcool.baseUrl "${QTCOOL_API_BASE}"`);
-    lines.push(`openclaw config set models.providers.qtcool.api "openai-completions"`);
+    lines.push(`openclaw config set models.providers.ciyapi.baseUrl "${CIYAPI_API_BASE}"`);
+    lines.push(`openclaw config set models.providers.ciyapi.api "openai-completions"`);
     lines.push('');
     lines.push(`# 步骤 3: 设置默认模型`);
-    lines.push(`openclaw config set agents.defaults.model.primary "qtcool/${modelId}"`);
+    lines.push(`openclaw config set agents.defaults.model.primary "ciyapi/${modelId}"`);
 
     cmdEl.textContent = lines.join('\n');
   }
 
-  async function fetchQtcoolModels() {
-    const apiKey = getQtcoolApiKey();
-    const statusEl = document.getElementById('qtcool-model-status');
-    const sectionEl = document.getElementById('qtcool-model-section');
-    const selectEl = document.getElementById('qtcool-model-select');
+  async function fetchCiyapiModels() {
+    const apiKey = getCiyapiApiKey();
+    const statusEl = document.getElementById('ciyapi-model-status');
+    const sectionEl = document.getElementById('ciyapi-model-section');
+    const selectEl = document.getElementById('ciyapi-model-select');
     if (!statusEl || !sectionEl || !selectEl) return;
 
     if (apiKey) {
-      localStorage.setItem(QTCOOL_STORAGE_KEY, apiKey);
+      localStorage.setItem(CIYAPI_STORAGE_KEY, apiKey);
     }
 
     statusEl.style.display = '';
     statusEl.className = 'ssy-test-loading';
-    statusEl.textContent = '⏳ 正在获取模型列表...';
+    statusEl.textContent = '正在获取模型列表...';
 
     try {
       const headers = { 'Content-Type': 'application/json' };
       if (apiKey) headers['Authorization'] = `Bearer ${apiKey}`;
-      const resp = await fetch(`${QTCOOL_API_BASE}/models`, { headers });
+      const resp = await fetch(`${CIYAPI_API_BASE}/models`, { headers });
       const data = await resp.json();
 
       if (!resp.ok) {
@@ -359,10 +359,11 @@
 
       const builtins = [
         { id: 'auto', name: 'Auto（自动选择最优）' },
-        { id: 'MiniMax-M2.7', name: 'MiniMax M2.7' },
-        { id: 'kimi-k2.5', name: 'Kimi K2.5' },
-        { id: 'glm-5.1', name: 'GLM-5.1' },
-        { id: 'gpt-5.4', name: 'GPT-5.4' },
+        { id: 'gpt-4o', name: 'GPT-4o' },
+        { id: 'claude-sonnet-4', name: 'Claude Sonnet 4' },
+        { id: 'gemini-2.5-pro', name: 'Gemini 2.5 Pro' },
+        { id: 'grok-4', name: 'Grok 4' },
+        { id: 'kimi-k2', name: 'Kimi K2' },
       ];
       const dynamicIds = new Set(models.map(m => m.id));
       const builtinFiltered = builtins.filter(m => !dynamicIds.has(m.id) || m.id === 'auto');
@@ -379,27 +380,27 @@
       selectEl.value = 'auto';
 
       statusEl.className = 'ssy-test-ok';
-      statusEl.textContent = `✅ 共 ${models.length} 个模型已加载`;
+      statusEl.textContent = `共 ${models.length} 个模型已加载`;
       sectionEl.style.display = '';
-      generateQtcoolCommands();
+      generateCiyapiCommands();
     } catch (err) {
       statusEl.className = 'ssy-test-fail';
-      statusEl.textContent = `❌ ${err?.message || '获取模型失败，请检查密钥或网络'}`;
+      statusEl.textContent = `${err?.message || '获取模型失败，请检查密钥或网络'}`;
       sectionEl.style.display = '';
-      generateQtcoolCommands();
+      generateCiyapiCommands();
     }
   }
 
-  async function testQtcoolModel() {
-    const apiKey = getQtcoolApiKey();
+  async function testCiyapiModel() {
+    const apiKey = getCiyapiApiKey();
     if (!apiKey) { showToast('请先输入 API 密钥', 'error'); return; }
-    const select = document.getElementById('qtcool-model-select');
+    const select = document.getElementById('ciyapi-model-select');
     const modelId = select?.value?.trim() || 'auto';
-    const resultEl = document.getElementById('qtcool-test-result');
-    if (resultEl) resultEl.innerHTML = `<p class="ssy-test-loading">⏳ 测试模型 ${escapeHtml(modelId)}...</p>`;
+    const resultEl = document.getElementById('ciyapi-test-result');
+    if (resultEl) resultEl.innerHTML = `<p class="ssy-test-loading">测试模型 ${escapeHtml(modelId)}...</p>`;
 
     try {
-      const resp = await fetch(`${QTCOOL_API_BASE}/chat/completions`, {
+      const resp = await fetch(`${CIYAPI_API_BASE}/chat/completions`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${apiKey}` },
         body: JSON.stringify({
@@ -412,30 +413,30 @@
       if (resp.ok) {
         const reply = data?.choices?.[0]?.message?.content || '（已响应）';
         const truncated = reply.length > 100 ? reply.slice(0, 100) + '...' : reply;
-        if (resultEl) resultEl.innerHTML = `<div class="ssy-test-ok"><p>✅ <strong>${escapeHtml(modelId)}</strong> 可用</p><p class="ssy-model-reply">"${escapeHtml(truncated)}"</p></div>`;
+        if (resultEl) resultEl.innerHTML = `<div class="ssy-test-ok"><p><strong>${escapeHtml(modelId)}</strong> 可用</p><p class="ssy-model-reply">"${escapeHtml(truncated)}"</p></div>`;
       } else {
         const msg = data?.error?.message || `错误 (${resp.status})`;
-        if (resultEl) resultEl.innerHTML = `<p class="ssy-test-fail">❌ ${escapeHtml(msg)}</p>`;
+        if (resultEl) resultEl.innerHTML = `<p class="ssy-test-fail">${escapeHtml(msg)}</p>`;
       }
     } catch (err) {
-      if (resultEl) resultEl.innerHTML = '<p class="ssy-test-fail">⚠️ 网络错误，无法连接服务器</p>';
+      if (resultEl) resultEl.innerHTML = '<p class="ssy-test-fail">网络错误，无法连接服务器</p>';
     }
   }
 
-  function bindQtcoolSetupEvents() {
-    const fetchBtn = document.getElementById('qtcool-fetch-btn');
-    if (fetchBtn) fetchBtn.addEventListener('click', fetchQtcoolModels);
+  function bindCiyapiSetupEvents() {
+    const fetchBtn = document.getElementById('ciyapi-fetch-btn');
+    if (fetchBtn) fetchBtn.addEventListener('click', fetchCiyapiModels);
 
-    const selectEl = document.getElementById('qtcool-model-select');
-    if (selectEl) selectEl.addEventListener('change', generateQtcoolCommands);
+    const selectEl = document.getElementById('ciyapi-model-select');
+    if (selectEl) selectEl.addEventListener('change', generateCiyapiCommands);
 
-    const keyInput = document.getElementById('qtcool-api-key');
-    if (keyInput) keyInput.addEventListener('input', generateQtcoolCommands);
+    const keyInput = document.getElementById('ciyapi-api-key');
+    if (keyInput) keyInput.addEventListener('input', generateCiyapiCommands);
 
-    const copyBtn = document.getElementById('qtcool-copy-cmd');
+    const copyBtn = document.getElementById('ciyapi-copy-cmd');
     if (copyBtn) {
       copyBtn.addEventListener('click', () => {
-        const cmdEl = document.getElementById('qtcool-cmd-text');
+        const cmdEl = document.getElementById('ciyapi-cmd-text');
         if (cmdEl) {
           const cmds = cmdEl.textContent.split('\n').filter(l => l.trim() && !l.trim().startsWith('#')).join('\n');
           copyToClipboard(cmds);
@@ -443,12 +444,12 @@
       });
     }
 
-    const testBtn = document.getElementById('qtcool-test-model');
-    if (testBtn) testBtn.addEventListener('click', testQtcoolModel);
+    const testBtn = document.getElementById('ciyapi-test-model');
+    if (testBtn) testBtn.addEventListener('click', testCiyapiModel);
 
     // 如果已有密钥，自动拉取模型
-    if (localStorage.getItem(QTCOOL_STORAGE_KEY)) {
-      fetchQtcoolModels();
+    if (localStorage.getItem(CIYAPI_STORAGE_KEY)) {
+      fetchCiyapiModels();
     }
   }
 
@@ -2703,8 +2704,8 @@
       });
     }
 
-    // 晴辰云快速配置事件
-    bindQtcoolSetupEvents();
+    // 词元 API 快速配置事件
+    bindCiyapiSetupEvents();
 
     // AI 创作工具事件
     bindAiStudioEvents();

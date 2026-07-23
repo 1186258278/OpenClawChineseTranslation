@@ -1,11 +1,11 @@
 {
   "file": "src/commands/onboard-types.ts",
-  "description": "晴辰云 (qtcool) - 在 AuthChoice/AuthChoiceGroupId 类型和 OnboardOptions 中添加晴辰云支持（优先级高于胜算云，列于其前）",
+  "description": "词元 API / CiyAPI sponsored provider - 在 AuthChoice/AuthChoiceGroupId 类型和 OnboardOptions 中添加独立 ciyapi 支持",
   "replacements": {
-    "| \"custom-api-key\"": "| \"qtcool-api-key\"\n  | \"custom-api-key\"",
+    "| \"custom-api-key\"": "| \"ciyapi-api-key\"\n  | \"custom-api-key\"",
 
-    "\"custom\" | (string & {})": "\"qtcool\"\n  | \"custom\" | (string & {})",
+    "\"custom\" | (string & {})": "\"ciyapi\"\n  | \"custom\" | (string & {})",
 
-    "customApiKey?: string;": "customApiKey?: string;\n  qtcoolApiKey?: string;"
+    "customApiKey?: string;": "customApiKey?: string;\n  ciyapiApiKey?: string;"
   }
 }

@@ -1,35 +1,35 @@
 import { defineSingleProviderPluginEntry } from "openclaw/plugin-sdk/provider-entry";
-import { applyQtcoolConfig, QTCOOL_DEFAULT_MODEL_REF } from "./onboard.js";
-import { buildQtcoolProvider } from "./provider-catalog.js";
+import { applyCiyapiConfig, CIYAPI_DEFAULT_MODEL_REF } from "./onboard.js";
+import { buildCiyapiProvider, CIYAPI_SPONSOR_NOTE } from "./provider-catalog.js";
 
-const PROVIDER_ID = "qtcool";
+const PROVIDER_ID = "ciyapi";
 
 export default defineSingleProviderPluginEntry({
   id: PROVIDER_ID,
-  name: "QingChenYun Provider",
-  description: "晴辰云项目方每日免费模型站 provider plugin (gpt.qt.cool)",
+  name: "CiyAPI Provider",
+  description: `词元 API / CiyAPI sponsored OpenAI Compatible provider plugin. ${CIYAPI_SPONSOR_NOTE}`,
   provider: {
-    label: "晴辰云",
-    docsPath: "/providers/qtcool",
+    label: "词元 API",
+    docsPath: "/providers/ciyapi",
     auth: [
       {
         methodId: "api-key",
-        label: "晴辰云 API 密钥",
-        hint: "项目方每日免费模型站 — 在 https://gpt.qt.cool/user 获取密钥，签到领每日免费额度",
-        optionKey: "qtcoolApiKey",
-        flagName: "--qtcool-api-key",
-        envVar: "QTCOOL_API_KEY",
-        promptMessage: "输入晴辰云 API 密钥（https://gpt.qt.cool/user 获取）",
-        defaultModel: QTCOOL_DEFAULT_MODEL_REF,
-        applyConfig: (cfg) => applyQtcoolConfig(cfg),
+        label: "词元 API 密钥",
+        hint: `Sponsored: 支持 GPT、Claude、Gemini、Grok、Kimi 等主流前沿模型；充值 ¥1 到账 $1 平台额度，部分线路按折扣计费。密钥：https://ciyapi.79tian.com/keys/。${CIYAPI_SPONSOR_NOTE}`,
+        optionKey: "ciyapiApiKey",
+        flagName: "--ciyapi-api-key",
+        envVar: "CIYAPI_API_KEY",
+        promptMessage: "输入词元 API 密钥（https://ciyapi.79tian.com/keys/ 获取）",
+        defaultModel: CIYAPI_DEFAULT_MODEL_REF,
+        applyConfig: (cfg) => applyCiyapiConfig(cfg),
         wizard: {
-          groupLabel: "晴辰云",
-          groupHint: "项目方每日免费模型站 — 签到领额度 (gpt.qt.cool)",
+          groupLabel: "词元 API",
+          groupHint: `Sponsored: OpenAI Compatible，模型与价格见 https://ciyapi.79tian.com/pricing/。${CIYAPI_SPONSOR_NOTE}`,
         },
       },
     ],
     catalog: {
-      buildProvider: buildQtcoolProvider,
+      buildProvider: buildCiyapiProvider,
     },
   },
 });

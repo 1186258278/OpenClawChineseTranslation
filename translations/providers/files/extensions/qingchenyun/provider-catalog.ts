@@ -1,10 +1,11 @@
 import type { ModelProviderConfig } from "openclaw/plugin-sdk/provider-models";
 
-export const QTCOOL_BASE_URL = "https://gpt.qt.cool/v1";
+export const CIYAPI_BASE_URL = "https://ciyapi.79tian.com/v1";
+export const CIYAPI_SPONSOR_NOTE = "第三方赞助推广，具体规则以词元 API 页面为准。";
 
-export function buildQtcoolProvider(): ModelProviderConfig {
+export function buildCiyapiProvider(): ModelProviderConfig {
   return {
-    baseUrl: QTCOOL_BASE_URL,
+    baseUrl: CIYAPI_BASE_URL,
     api: "openai-completions",
     models: [
       {
@@ -14,100 +15,34 @@ export function buildQtcoolProvider(): ModelProviderConfig {
         maxTokens: 16384,
       },
       {
-        id: "MiniMax-M2.7",
-        name: "MiniMax M2.7",
+        id: "gpt-4o",
+        name: "GPT-4o",
         contextWindow: 128000,
         maxTokens: 16384,
       },
       {
-        id: "kimi-k2.5",
-        name: "Kimi K2.5",
-        contextWindow: 128000,
+        id: "claude-sonnet-4",
+        name: "Claude Sonnet 4",
+        contextWindow: 200000,
         maxTokens: 16384,
       },
       {
-        id: "glm-5.1",
-        name: "GLM-5.1",
+        id: "gemini-2.5-pro",
+        name: "Gemini 2.5 Pro",
+        contextWindow: 1048576,
+        maxTokens: 8192,
+      },
+      {
+        id: "grok-4",
+        name: "Grok 4",
         contextWindow: 128000,
         maxTokens: 8192,
       },
       {
-        id: "glm-5-turbo",
-        name: "GLM-5 Turbo",
+        id: "kimi-k2",
+        name: "Kimi K2",
         contextWindow: 128000,
         maxTokens: 8192,
-      },
-      {
-        id: "glm-5",
-        name: "GLM-5",
-        contextWindow: 128000,
-        maxTokens: 8192,
-      },
-      {
-        id: "MiniMax-M2.5",
-        name: "MiniMax M2.5",
-        contextWindow: 128000,
-        maxTokens: 16384,
-      },
-      {
-        id: "gpt-5.4",
-        name: "GPT-5.4",
-        contextWindow: 128000,
-        maxTokens: 16384,
-      },
-      {
-        id: "gpt-5.3-codex",
-        name: "GPT-5.3 Codex",
-        contextWindow: 128000,
-        maxTokens: 16384,
-      },
-      {
-        id: "gpt-5.2-codex",
-        name: "GPT-5.2 Codex",
-        contextWindow: 128000,
-        maxTokens: 16384,
-      },
-      {
-        id: "gpt-5.2",
-        name: "GPT-5.2",
-        contextWindow: 128000,
-        maxTokens: 16384,
-      },
-      {
-        id: "gpt-5.1-codex-mini",
-        name: "GPT-5.1 Codex Mini",
-        contextWindow: 128000,
-        maxTokens: 16384,
-      },
-      {
-        id: "gpt-5.1-codex-max",
-        name: "GPT-5.1 Codex Max",
-        contextWindow: 128000,
-        maxTokens: 16384,
-      },
-      {
-        id: "gpt-5.1-codex",
-        name: "GPT-5.1 Codex",
-        contextWindow: 128000,
-        maxTokens: 16384,
-      },
-      {
-        id: "gpt-5.1",
-        name: "GPT-5.1",
-        contextWindow: 128000,
-        maxTokens: 16384,
-      },
-      {
-        id: "gpt-5-codex",
-        name: "GPT-5 Codex",
-        contextWindow: 128000,
-        maxTokens: 16384,
-      },
-      {
-        id: "gpt-5",
-        name: "GPT-5",
-        contextWindow: 128000,
-        maxTokens: 16384,
       },
     ],
   };

@@ -22,7 +22,7 @@
 ## 目录
 
 [什么是 OpenClaw？](#what-is-openclaw) ·
-[🎁 免费AI接口](#free-ai) ·
+[词元 API 赞助](#free-ai) ·
 [4 步上手](#quickstart) ·
 [汉化效果预览](#preview) ·
 [常用命令](#commands) ·
@@ -63,28 +63,28 @@
 
 <a id="free-ai"></a>
 
-## 🎁 免费 AI 接口
+## 词元 API 赞助推广
 
-> **内部公益平台，免费使用主流 AI 模型！** 签到领额度，邀请得更多，持续免费用 AI！
+> **第三方赞助推广，具体规则以词元 API 页面为准。**
 
 <p align="center">
-  <a href="https://gpt.qt.cool/"><img src="https://img.shields.io/badge/🚀_免费AI接口-gpt.qt.cool-10b981?style=for-the-badge" alt="免费AI接口"></a>
+  <a href="https://ciyapi.79tian.com"><img src="https://img.shields.io/badge/Sponsored-%E8%AF%8D%E5%85%83%20API-0ea5e9?style=for-the-badge" alt="词元 API 赞助推广"></a>
 </p>
 
 **平台亮点：**
 
-- **� 签到领免费额度** — 每日签到 + 邀请好友，持续获取免费使用额度
-- **💰 不满意可退** — 用着不爽随时退款，零风险体验
-- **⚡ 兼容 OpenAI 接口** — 无缝对接 OpenClaw，即开即用
-- **🔒 内部公益项目** — 长期维护，安全稳定
+- **主流模型覆盖** — 支持 GPT、Claude、Gemini、Grok、Kimi 等主流前沿模型
+- **价格福利** — 充值 ¥1 到账 $1 平台额度，部分线路按折扣计费
+- **OpenAI Compatible** — API Base URL：`https://ciyapi.79tian.com/v1`
+- **赞助推广** — 第三方服务，具体规则以词元 API 页面为准
 
 **配合 OpenClaw 使用：**
 
-在 [gpt.qt.cool](https://gpt.qt.cool/) 注册并签到领取免费额度，获取 API Key 后，初始化 OpenClaw 时选择 **OpenAI Compatible** 提供商，填入地址和 Key 即可使用。
+在 [词元 API](https://ciyapi.79tian.com/sign-up) 注册，前往 [API 密钥](https://ciyapi.79tian.com/keys/) 获取 Key。初始化 OpenClaw 时选择 **OpenAI Compatible** 提供商，Base URL 填入 `https://ciyapi.79tian.com/v1`，再填入 Key 即可使用。
 
-> 💡 **小贴士**：每日签到 + 邀请好友即可持续获取免费额度，搭配 OpenClaw 等于拥有一个免费私人 AI 助手！
+价格与可用模型请查看 [模型与价格](https://ciyapi.79tian.com/pricing/)，充值入口在 [钱包页面](https://ciyapi.79tian.com/wallet/)。
 
-[立即使用 →](https://gpt.qt.cool/)
+[前往词元 API →](https://ciyapi.79tian.com)
 
 <a id="partners"></a>
 

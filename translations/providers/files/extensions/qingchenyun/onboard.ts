@@ -2,25 +2,28 @@ import {
   createModelCatalogPresetAppliers,
   type OpenClawConfig,
 } from "openclaw/plugin-sdk/provider-onboard";
-import { buildQtcoolProvider, QTCOOL_BASE_URL } from "./provider-catalog.js";
+import { buildCiyapiProvider, CIYAPI_BASE_URL } from "./provider-catalog.js";
 
-export const QTCOOL_DEFAULT_MODEL_REF = "qtcool/auto";
+export const CIYAPI_DEFAULT_MODEL_REF = "ciyapi/auto";
 
-const qtcoolPresetAppliers = createModelCatalogPresetAppliers({
-  primaryModelRef: QTCOOL_DEFAULT_MODEL_REF,
+const ciyapiPresetAppliers = createModelCatalogPresetAppliers({
+  primaryModelRef: CIYAPI_DEFAULT_MODEL_REF,
   resolveParams: (_cfg: OpenClawConfig) => ({
-    providerId: "qtcool",
+    providerId: "ciyapi",
     api: "openai-completions" as const,
-    baseUrl: QTCOOL_BASE_URL,
-    catalogModels: buildQtcoolProvider().models,
-    aliases: [{ modelRef: QTCOOL_DEFAULT_MODEL_REF, alias: "晴辰云" }],
+    baseUrl: CIYAPI_BASE_URL,
+    catalogModels: buildCiyapiProvider().models,
+    aliases: [
+      { modelRef: CIYAPI_DEFAULT_MODEL_REF, alias: "词元 API" },
+      { modelRef: CIYAPI_DEFAULT_MODEL_REF, alias: "CiyAPI" },
+    ],
   }),
 });
 
-export function applyQtcoolProviderConfig(cfg: OpenClawConfig): OpenClawConfig {
-  return qtcoolPresetAppliers.applyProviderConfig(cfg);
+export function applyCiyapiProviderConfig(cfg: OpenClawConfig): OpenClawConfig {
+  return ciyapiPresetAppliers.applyProviderConfig(cfg);
 }
 
-export function applyQtcoolConfig(cfg: OpenClawConfig): OpenClawConfig {
-  return qtcoolPresetAppliers.applyConfig(cfg);
+export function applyCiyapiConfig(cfg: OpenClawConfig): OpenClawConfig {
+  return ciyapiPresetAppliers.applyConfig(cfg);
 }

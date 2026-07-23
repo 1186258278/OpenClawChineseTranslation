@@ -347,8 +347,8 @@ body.light .feature-panel-overlay,
   font-weight: 400;
 }
 
-/* ========== 晴辰云快速配置样式 ========== */
-.qtcool-setup {
+/* ========== 词元 API 赞助推广快速配置样式 ========== */
+.ciyapi-setup {
   margin-top: 20px;
   padding: 16px;
   border: 1px solid var(--panel-border);
@@ -356,7 +356,7 @@ body.light .feature-panel-overlay,
   background: var(--panel-surface, rgba(255,255,255,0.03));
 }
 
-.qtcool-setup-header {
+.ciyapi-setup-header {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -364,58 +364,78 @@ body.light .feature-panel-overlay,
   flex-wrap: wrap;
 }
 
-.qtcool-setup-logo {
-  font-size: 22px;
+.ciyapi-setup-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 8px;
+  border: 1px solid rgba(14, 165, 233, 0.3);
+  border-radius: 999px;
+  color: #0ea5e9;
+  font-size: 11px;
+  font-weight: 700;
   flex-shrink: 0;
 }
 
-.qtcool-setup-title {
+.ciyapi-setup-title {
   font-size: 15px;
   font-weight: 600;
   margin: 0 0 2px;
   color: var(--panel-text);
 }
 
-.qtcool-setup-sub {
+.ciyapi-sponsored-badge {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 6px;
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: rgba(14, 165, 233, 0.1);
+  color: #0ea5e9;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.ciyapi-setup-sub {
   font-size: 12px;
   color: var(--panel-text-muted);
   margin: 0;
 }
 
-.qtcool-get-key-link {
+.ciyapi-get-key-link {
   margin-left: auto;
   font-size: 12px;
   font-weight: 600;
   padding: 4px 10px;
   border-radius: 6px;
-  background: rgba(245, 158, 11, 0.12);
-  color: #f59e0b;
+  background: rgba(14, 165, 233, 0.12);
+  color: #0ea5e9;
   text-decoration: none;
   white-space: nowrap;
   flex-shrink: 0;
 }
 
-.qtcool-get-key-link:hover {
-  background: rgba(245, 158, 11, 0.22);
+.ciyapi-get-key-link:hover {
+  background: rgba(14, 165, 233, 0.22);
 }
 
-.qtcool-key-row {
+.ciyapi-key-row {
   display: flex;
   gap: 8px;
   align-items: center;
   margin-bottom: 6px;
 }
 
-.qtcool-key-row .ssy-input {
+.ciyapi-key-row .ssy-input {
   flex: 1;
   min-width: 0;
 }
 
-.qtcool-model-row {
+.ciyapi-model-row {
   margin-bottom: 10px;
 }
 
-.qtcool-model-row .ssy-label {
+.ciyapi-model-row .ssy-label {
   display: block;
   margin-bottom: 6px;
   font-size: 13px;
