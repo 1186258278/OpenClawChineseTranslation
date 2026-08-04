@@ -86,3 +86,16 @@ test("CiyAPI setup does not read or overwrite the old provider configuration", a
   assert.match(onboard, /applyProviderConfig/);
   assert.match(onboard, /applyConfig/);
 });
+
+test("CiyAPI model catalog and panel recommend MiniMax M3 and M2.7", async () => {
+  const panel = await text("translations/panel/feature-panel.js");
+  const catalog = await text("translations/providers/files/extensions/qingchenyun/provider-catalog.ts");
+
+  for (const id of ["MiniMax-M3", "MiniMax-M2.7"]) {
+    assert.match(catalog, new RegExp(`id: "${id}"`));
+    assert.match(panel, new RegExp(`id: '${id}'`));
+  }
+
+  assert.match(catalog, /contextWindow: 1000000/);
+  assert.match(catalog, /contextWindow: 204800/);
+});

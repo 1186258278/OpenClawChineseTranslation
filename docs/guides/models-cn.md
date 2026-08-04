@@ -105,9 +105,9 @@ openclaw onboard
 
 | 选项 | 说明 |
 |------|------|
-| MiniMax M2.5 | 标准版 |
-| MiniMax M2.5 (CN) | 国内端点 (api.minimaxi.com) |
-| MiniMax M2.5 Highspeed | 官方快速层级 |
+| MiniMax M3 | 最新旗舰版（默认推荐，100 万 token 上下文） |
+| MiniMax M2.7 | 标准版（204,800 token 上下文） |
+| MiniMax M2.7 (CN) | 国内端点 (api.minimaxi.com) |
 
 ---
 
