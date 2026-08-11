@@ -101,19 +101,19 @@ openclaw onboard
 # 选择「MiniMax」→ 选择 OAuth 或 API Key
 ```
 
-### 模型选择
+### Model selection
 
-| 模型 | 说明 |
+| Model | Description |
 |------|------|
-| MiniMax M3 (`MiniMax-M3`) | 最新旗舰版（默认推荐，100 万 token 上下文） |
-| MiniMax M2.7 (`MiniMax-M2.7`) | 标准版（204,800 token 上下文） |
+| MiniMax M3 (`MiniMax-M3`) | Latest flagship model (recommended default, 1,000,000-token context window) |
+| MiniMax M2.7 (`MiniMax-M2.7`) | Standard model (204,800-token context window) |
 
-### 区域端点
+### Regional endpoints
 
-| 区域 | OpenAI 兼容端点 | Anthropic 兼容端点 |
+| Region | OpenAI-compatible endpoint | Anthropic-compatible endpoint |
 |------|-----------------|--------------------|
-| 国际版 | `https://api.minimax.io/v1` | `https://api.minimax.io/anthropic` |
-| 国内版 | `https://api.minimaxi.com/v1` | `https://api.minimaxi.com/anthropic` |
+| Global | `https://api.minimax.io/v1` | `https://api.minimax.io/anthropic` |
+| China | `https://api.minimaxi.com/v1` | `https://api.minimaxi.com/anthropic` |
 
 ---
 
