@@ -90,12 +90,23 @@ test("CiyAPI setup does not read or overwrite the old provider configuration", a
 test("CiyAPI model catalog and panel recommend MiniMax M3 and M2.7", async () => {
   const panel = await text("translations/panel/feature-panel.js");
   const catalog = await text("translations/providers/files/extensions/qingchenyun/provider-catalog.ts");
+  const guide = await text("docs/guides/models-cn.md");
 
-  for (const id of ["MiniMax-M3", "MiniMax-M2.7"]) {
-    assert.match(catalog, new RegExp(`id: "${id}"`));
+  for (const [id, contextWindow] of [
+    ["MiniMax-M3", 1000000],
+    ["MiniMax-M2.7", 204800],
+  ]) {
+    assert.match(catalog, new RegExp(`id: "${id}"[\\s\\S]*?contextWindow: ${contextWindow}`));
     assert.match(panel, new RegExp(`id: '${id}'`));
+    assert.equal(guide.includes(`\`${id}\``), true, `${id} is missing from the MiniMax guide`);
   }
 
-  assert.match(catalog, /contextWindow: 1000000/);
-  assert.match(catalog, /contextWindow: 204800/);
+  for (const endpoint of [
+    "https://api.minimax.io/v1",
+    "https://api.minimax.io/anthropic",
+    "https://api.minimaxi.com/v1",
+    "https://api.minimaxi.com/anthropic",
+  ]) {
+    assert.equal(guide.includes(endpoint), true, `${endpoint} is missing from the MiniMax guide`);
+  }
 });
