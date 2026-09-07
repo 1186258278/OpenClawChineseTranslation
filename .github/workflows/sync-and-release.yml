@@ -30,7 +30,7 @@ on:
 
 env:
   UPSTREAM_REPO: openclaw/openclaw
-  NODE_VERSION: '22'
+  NODE_VERSION: '24.16.0'
 
 permissions:
   contents: write

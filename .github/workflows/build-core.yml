@@ -51,7 +51,7 @@ on:
 
 env:
   UPSTREAM_REPO: openclaw/openclaw
-  NODE_VERSION: '22'
+  NODE_VERSION: '24.16.0'
 
 jobs:
   build:
@@ -76,8 +76,8 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           registry-url: 'https://registry.npmjs.org'
 
-      - name: 验证发布清单脚本
-        run: node --test tests/node/prepare-publish-package.test.mjs
+      - name: 验证构建配置和发布清单脚本
+        run: node --test tests/node/build-core-workflow.test.mjs tests/node/prepare-publish-package.test.mjs
 
       - name: 安装 pnpm
         uses: pnpm/action-setup@v4

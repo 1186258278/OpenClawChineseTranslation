@@ -14,7 +14,7 @@
 # ============================================================
 
 # syntax=docker/dockerfile:1.4
-FROM node:22-slim
+FROM node:24.16.0-slim
 
 LABEL org.opencontainers.image.source="https://github.com/1186258278/OpenClawChineseTranslation"
 LABEL org.opencontainers.image.description="OpenClaw 汉化发行版 - 开源个人 AI 助手中文版"
