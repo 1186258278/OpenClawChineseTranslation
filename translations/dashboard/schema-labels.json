@@ -344,7 +344,6 @@
     "  \"gateway.controlUi.environment\": \"Control UI Environment\"": "  \"gateway.controlUi.environment\": \"Control UI 环境\"",
     "  \"gateway.controlUi.environment.label\": \"Control UI Environment Label\"": "  \"gateway.controlUi.environment.label\": \"Control UI 环境 Label\"",
     "  \"gateway.controlUi.environment.color\": \"Control UI Environment Color\"": "  \"gateway.controlUi.environment.color\": \"Control UI 环境 Color\"",
-    "  \"gateway.controlUi.toolTitles\": \"Control UI Tool Call Titles\"": "  \"gateway.controlUi.toolTitles\": \"Control UI 工具 Call Titles\"",
     "  \"gateway.controlUi.sessionObserver\": \"Control UI Session Observer\"": "  \"gateway.controlUi.sessionObserver\": \"Control UI 会话 Observer\"",
     "  \"gateway.controlUi.root\": \"Control UI Assets Root\"": "  \"gateway.controlUi.root\": \"控制面板 Assets Root\"",
     "  \"gateway.controlUi.embedSandbox\": \"Control UI Embed Sandbox Mode\"": "  \"gateway.controlUi.embedSandbox\": \"控制面板嵌入沙箱模式\"",
@@ -814,7 +813,6 @@
     "  \"messages.queue.cap\": \"Queue Capacity\"": "  \"messages.queue.cap\": \"队列 Capacity\"",
     "  \"messages.queue.drop\": \"Queue Drop Strategy\"": "  \"messages.queue.drop\": \"队列 Drop Strategy\"",
     "  \"messages.inbound\": \"Inbound Debounce\"": "  \"messages.inbound\": \"Inbound 防抖\"",
-    "  \"messages.suppressToolErrors\": \"Suppress Tool Error Warnings\"": "  \"messages.suppressToolErrors\": \"Suppress 工具 错误 Warnings\"",
     "  \"messages.ackReaction\": \"Ack Reaction Emoji\"": "  \"messages.ackReaction\": \"确认反应 表情\"",
     "  \"messages.ackReactionScope\": \"Ack Reaction Scope\"": "  \"messages.ackReactionScope\": \"确认反应 范围\"",
     "  \"messages.statusReactions\": \"Status Reactions\"": "  \"messages.statusReactions\": \"状态 Reactions\"",
@@ -892,6 +890,10 @@
     "  \"agents.defaults.cwd\": \"Working Directory\"": "  \"agents.defaults.cwd\": \"工作目录\"",
     "  \"browser.ssrfPolicy.blockedHostnames\": \"Browser Blocked Hostnames\"": "  \"browser.ssrfPolicy.blockedHostnames\": \"浏览器阻止主机名\"",
     "  \"cron.skipMissedJobs\": \"Skip Missed Recurring Automations\"": "  \"cron.skipMissedJobs\": \"跳过错过的循环自动化\"",
-    "  \"cron.webhookSsrfPolicy.blockedHostnames\": \"Automations Webhook Blocked Hostnames\"": "  \"cron.webhookSsrfPolicy.blockedHostnames\": \"自动化 Webhook 阻止主机名\""
+    "  \"cron.webhookSsrfPolicy.blockedHostnames\": \"Automations Webhook Blocked Hostnames\"": "  \"cron.webhookSsrfPolicy.blockedHostnames\": \"自动化 Webhook 阻止主机名\"",
+    "  \"gateway.controlUi.experimental\": \"Experimental Control UI Features\"": "  \"gateway.controlUi.experimental\": \"实验性控制面板功能\"",
+    "  \"gateway.controlUi.experimental.customPlugins\": \"Custom Plugin UI\"": "  \"gateway.controlUi.experimental.customPlugins\": \"自定义插件 UI\"",
+    "  \"gateway.controlUi.communityInvite\": \"Control UI Community Invitation\"": "  \"gateway.controlUi.communityInvite\": \"控制面板社区邀请\"",
+    "  \"transcripts.autoStart[].whenOccupied\": \"Transcript Capture When Occupied\"": "  \"transcripts.autoStart[].whenOccupied\": \"有人在线时捕获转录\""
   }
 }

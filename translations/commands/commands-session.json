@@ -7,7 +7,6 @@
     "\"⚙️ Usage: /send on|off|inherit\"": "\"⚙️ 用法：/send on|off|inherit\"",
     "\"⚠️ Failed to update idle timeout for the current binding.\"": "\"⚠️ 更新当前绑定的空闲超时失败。\"",
     "\"⚠️ Failed to update max age for the current binding.\"": "\"⚠️ 更新当前绑定的最大存活时间失败。\"",
-    "\"⚠️ /restart is disabled (commands.restart=false).\"": "\"⚠️ /restart 已禁用（commands.restart=false）。\"",
     "\"⚙️ Restarting OpenClaw in-process (SIGUSR1); back in a few seconds.\"": "\"⚙️ 正在进程内重启 OpenClaw（SIGUSR1），几秒后恢复。\"",
     "`⚠️ Only ${boundBy} can update session lifecycle settings for this conversation.`": "`⚠️ 只有 ${boundBy} 可以更新此对话的会话生命周期设置。`",
     "\"⚙️ Usage: /usage off|tokens|full|reset|cost\"": "\"⚙️ 用法：/usage off|tokens|full|reset|cost\"",
@@ -18,6 +17,10 @@
     "\"ℹ️ Max age is currently disabled for this bound session.\"": "\"ℹ️ 此绑定会话的最大存活时间当前已禁用。\"",
     "\"Usage: /session idle <duration|off> | /session max-age <duration|off> | /session unbind (example: /session idle 24h)\"": "\"用法：/session idle <时长|off> | /session max-age <时长|off> | /session unbind（示例：/session idle 24h）\"",
     "`⚠️ Only ${boundBy} can unbind this conversation.`": "`⚠️ 只有 ${boundBy} 可以解绑此对话。`",
-    "\"✅ Conversation unbound.\"": "\"✅ 对话已解绑。\""
+    "\"✅ Conversation unbound.\"": "\"✅ 对话已解绑。\"",
+    "` Details: ${restartMethod.detail}`": "` 详情：${restartMethod.detail}`",
+    "\"⚠️ Restart failed: could not persist the post-restart acknowledgement.\"": "\"⚠️ 重启失败：无法保存重启后的确认消息。\"",
+    "`⚠️ Restart failed (${restartMethod.method}).${detail}`": "`⚠️ 重启失败（${restartMethod.method}）。${detail}`",
+    "`⚙️ Restarting OpenClaw via ${restartMethod.method}; give me a few seconds to come back online.`": "`⚙️ 正在通过 ${restartMethod.method} 重启 OpenClaw；请稍等几秒，我会重新上线。`"
   }
 }
