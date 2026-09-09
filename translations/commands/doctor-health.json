@@ -6,6 +6,6 @@
     "outro(\"Doctor complete.\")": "outro(\"诊断完成。\")",
     "\"Doctor finished, but some config fixes were not applied.\"": "\"诊断已完成，但部分配置修复未应用。\"",
     "\"Doctor finished, but config fixes were not applied.\"": "\"诊断已完成，但配置修复未应用。\"",
-    "\"Doctor could not complete maintenance. Check the reported service state, resolve the failure, and rerun doctor --fix.\"": "\"诊断未完成维护。请检查报告的服务状态，解决故障后重新运行 doctor --fix。\""
+    "\"Doctor could not complete maintenance. Check the reported service state and resolve the failure.\"": "\"诊断未完成维护。请检查报告的服务状态并解决故障。\""
   }
 }

@@ -7,7 +7,6 @@
     "`Or set directly: ${formatCliCommand(\"openclaw config set gateway.mode local\")}`": "`或直接设置：${formatCliCommand(\"openclaw config set gateway.mode local\")}`",
     "`Missing config: run ${formatCliCommand(\"openclaw setup\")} first.`": "`缺少配置：请先运行 ${formatCliCommand(\"openclaw setup\")}。`",
     "note(lines.join(\"\\n\"), \"Gateway\")": "note(lines.join(\"\\n\"), \"网关\")",
-    "\"Gateway auth is off or missing a token. Token auth is now the recommended default (including loopback).\",\n    \"Gateway auth\"": "\"网关认证已关闭或缺少令牌。令牌认证现在是推荐的默认方式（包括本地回环）。\",\n    \"网关认证\"",
     "\"gateway.auth.token and gateway.auth.password are both configured while gateway.auth.mode is unset.\"": "\"gateway.auth.token 和 gateway.auth.password 同时配置但 gateway.auth.mode 未设置。\"",
     "\"Set an explicit mode to avoid ambiguous auth selection and startup/runtime failures.\"": "\"请设置明确的模式以避免认证选择歧义和启动/运行时故障。\"",
     "\"Doctor will not overwrite gateway.auth.token with a plaintext value.\"": "\"诊断不会用明文值覆盖 gateway.auth.token。\"",
@@ -18,13 +17,15 @@
     "\"Pending owners and blockers:\"": "\"待处理所有者和阻塞项：\"",
     "`${omittedDetailCount} additional pending entries were omitted from this report.`": "`${omittedDetailCount} 个额外待处理条目已从此报告中省略。`",
     "\"No listed legacy source was removed.\"": "\"未移除任何列出的旧版来源。\"",
-    "'Fix the config errors above, then rerun \"openclaw doctor --fix\".'": "'修复上面的配置错误，然后重新运行 \"openclaw doctor --fix\"。'",
-    "'Resolve the Gateway or cron-store condition above, then rerun \"openclaw doctor --fix\".'": "'解决上面的网关或 cron-store 状态，然后重新运行 \"openclaw doctor --fix\"。'",
+    "\"Fix the config errors above.\"": "\"修复上面的配置错误。\"",
+    "\"Resolve the Gateway or cron-store condition above.\"": "\"解决上面的网关或 cron-store 状态。\"",
     "\"Legacy state deferred\"": "\"旧版状态已延后\"",
     "\"Doctor notices\"": "\"诊断提示\"",
     "message: \"Migrate detected legacy state now?\"": "message: \"现在迁移检测到的旧版状态吗？\"",
     "`Exec approvals updated: removed ${removedExecApprovals} older generated ${removedExecApprovals === 1 ? \"approval\" : \"approvals\"} that were not tied to a working directory. Manual allowlist rules were not changed. Rerun affected workflows and choose \"Always allow here\" when prompted.`": "`执行审批已更新：移除了 ${removedExecApprovals} 条未绑定工作目录的旧版生成审批。手动 allowlist 规则未更改。重新运行受影响的工作流，并在提示时选择 \"Always allow here\"。`",
     "note(\"Gateway health will be checked after Doctor repair.\", \"Gateway\")": "note(\"诊断修复后将检查网关健康状态。\", \"网关\")",
-    "\"Gateway health probes skipped because gateway credentials use an exec SecretRef. Run `openclaw doctor --allow-exec` to verify Gateway health with exec SecretRefs.\"": "\"由于网关凭据使用 exec SecretRef，已跳过网关健康探测。运行 `openclaw doctor --allow-exec` 可使用 exec SecretRef 验证网关健康。\""
+    "\"Gateway health probes skipped because gateway credentials use an exec SecretRef. Run `openclaw doctor --allow-exec` to verify Gateway health with exec SecretRefs.\"": "\"由于网关凭据使用 exec SecretRef，已跳过网关健康探测。运行 `openclaw doctor --allow-exec` 可使用 exec SecretRef 验证网关健康。\"",
+    "\"Repair the include boundary named above by hand.\"": "\"请手动修复上面命名的 include 边界。\"",
+    "message: \"Generate and configure a gateway token now?\"": "message: \"现在生成并配置网关令牌吗？\""
   }
 }

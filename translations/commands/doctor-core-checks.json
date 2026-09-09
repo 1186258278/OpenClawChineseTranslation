@@ -3,6 +3,9 @@
   "description": "诊断核心检查",
   "replacements": {
     "\"Gateway token is managed via SecretRef and is currently unavailable.\"": "\"网关令牌由 SecretRef 管理，当前不可用。\"",
-    "\"Resolve or rotate the external secret source, then rerun doctor.\"": "\"请解决或轮换外部密钥源，然后重新运行诊断。\""
+    "\"Resolve or rotate the external secret source, then rerun doctor.\"": "\"请解决或轮换外部密钥源，然后重新运行诊断。\"",
+    "\"Gateway token is blank or the literal string undefined/null, not a usable secret.\"": "\"网关令牌为空或为字面值 undefined/null，不能作为可用密钥。\"",
+    "\"Gateway auth is off or missing a token.\"": "\"网关认证已关闭或缺少令牌。\"",
+    "\"Run `openclaw doctor --fix --generate-gateway-token` to generate a token, then restart the Gateway.\"": "\"运行 `openclaw doctor --fix --generate-gateway-token` 生成令牌，然后重启网关。\""
   }
 }

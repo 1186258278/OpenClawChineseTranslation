@@ -1,0 +1,8 @@
+{
+  "file": "ui/src/i18n/locales/en.ts",
+  "description": "Dashboard 代理概览 i18n 文案",
+  "replacements": {
+    "      fallbacks: \"Fallbacks\"": "      fallbacks: \"回退模型\"",
+    "      addFallback: \"Add fallback…\"": "      addFallback: \"添加回退…\""
+  }
+}

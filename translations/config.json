@@ -140,6 +140,7 @@
       "dashboard/agents-utils.json",
       "dashboard/channels-nostr-profile.json",
       "dashboard/agents-overview.json",
+      "dashboard/agents-i18n.json",
       "dashboard/config-sections.json",
       "dashboard/config-appearance.json",
       "dashboard/slash-commands.json",

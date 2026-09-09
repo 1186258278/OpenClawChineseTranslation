@@ -2,7 +2,6 @@
   "file": "ui/src/pages/agents/panels-overview.ts",
   "description": "Dashboard 代理概览面板（从 agents.ts 拆分出来的新文件）",
   "replacements": {
-    "selected": "已选择",
-    "placeholder=${fallbackChips.length === 0 ? \"provider/model\" : \"\"}": "placeholder=${fallbackChips.length === 0 ? \"提供商/模型\" : \"\"}"
+    "selected": "已选择"
   }
 }
