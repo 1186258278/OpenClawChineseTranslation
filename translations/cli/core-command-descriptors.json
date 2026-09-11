@@ -5,7 +5,7 @@
     "description: \"Interactive configuration for credentials, channels, gateway, and agent defaults\"": "description: \"交互式配置凭证、渠道、网关和代理默认设置\"",
     "description: \"Open the Control UI with your current token\"": "description: \"使用当前令牌打开控制面板\"",
     "description: \"Reset local config/state (keeps the CLI installed)\"": "description: \"重置本地配置/状态（保留 CLI）\"",
-    "description: \"Uninstall the gateway service + local data (CLI remains)\"": "description: \"卸载网关服务和本地数据（保留 CLI）\"",
+    "description: \"Uninstall the gateway service + local data\"": "description: \"卸载网关服务和本地数据\"",
     "description: \"Import state from another agent system\"": "description: \"从其他代理系统导入状态\"",
     "description: \"List stored conversation sessions\"": "description: \"列出已存储的对话会话\"",
     "description: \"Inspect stored transcripts\"": "description: \"查看已存储的会话记录\"",
@@ -18,6 +18,7 @@
     "description: \"Show channel health and recent session recipients\"": "description: \"显示渠道健康状态和最近会话收件人\"",
     "description: \"Fetch health from the running gateway\"": "description: \"从运行中的网关获取健康状态\"",
     "description: \"Manage OpenClaw mcp.servers config and channel bridge\"": "description: \"管理 OpenClaw mcp.servers 配置和渠道桥接\"",
-    "description: \"Inspect durable background tasks and TaskFlow state\"": "description: \"查看持久化后台任务和 TaskFlow 状态\""
+    "description: \"Inspect durable background tasks and TaskFlow state\"": "description: \"查看持久化后台任务和 TaskFlow 状态\"",
+    "description: \"Inspect database schema compatibility and shared-state write ownership\"": "description: \"检查数据库 schema 兼容性和共享状态写入归属\""
   }
 }

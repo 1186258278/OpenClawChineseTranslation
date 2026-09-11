@@ -12,7 +12,7 @@
     "\"Filter by provider id\"": "\"按提供商 ID 过滤\"",
     "\"Plain line output\"": "\"纯文本行输出\"",
     ".description(\"Show configured model state\")": ".description(\"显示已配置的模型状态\")",
-    "\"Exit non-zero if auth is expiring/expired (1=expired/missing, 2=expiring)\"": "\"如果认证即将过期/已过期则非零退出 (1=过期/缺失, 2=即将过期)\"",
+    "\"Check auth/runtime readiness (1=missing/expired/unavailable/incompatible/indeterminate, 2=expiring)\"": "\"检查认证/运行时就绪状态 (1=缺失/过期/不可用/不兼容/无法确定, 2=即将过期)\"",
     "\"Probe configured provider auth (live)\"": "\"探测已配置的提供商认证 (实时)\"",
     "\"Only probe a single provider\"": "\"仅探测单个提供商\"",
     "\"Only probe specific auth profile ids (repeat or comma-separated)\"": "\"仅探测特定认证配置 ID (重复或逗号分隔)\"",
@@ -66,6 +66,7 @@
     ".description(\"Save an API key in an auth profile and update config\")": ".description(\"将 API 密钥保存到认证配置并更新配置\")",
     ".description(\"Show per-agent auth profile order override\")": ".description(\"显示每代理认证配置顺序覆盖\")",
     ".description(\"Set per-agent auth profile order override\")": ".description(\"设置每代理认证配置顺序覆盖\")",
-    ".description(\"Clear per-agent auth profile order override\")": ".description(\"清除每代理认证配置顺序覆盖\")"
+    ".description(\"Clear per-agent auth profile order override\")": ".description(\"清除每代理认证配置顺序覆盖\")",
+    "\"Refresh provider discovery before listing\"": "\"列出前刷新提供商发现\""
   }
 }

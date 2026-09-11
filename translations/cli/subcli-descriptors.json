@@ -31,7 +31,7 @@
     "description: \"Run an ACP bridge backed by the Gateway\"": "description: \"运行由网关支持的 ACP 桥接\"",
     "description: \"Manage the Gateway service (launchd/systemd/schtasks)\"": "description: \"管理网关服务（launchd/systemd/schtasks）\"",
     "description: \"System tools (events, heartbeat, presence)\"": "description: \"系统工具（事件、心跳、在线状态）\"",
-    "description: \"Device pairing and auth tokens\"": "description: \"设备配对和认证令牌\"",
+    "description:\n      \"Device pairing and auth tokens (for mobile app setup codes, use `openclaw qr` instead)\"": "description:\n      \"设备配对和认证令牌（移动应用设置码请改用 `openclaw qr`）\"",
     "description: \"Secrets runtime controls\"": "description: \"密钥运行时控制\"",
     "\"Generate a mobile pairing QR code and setup code\"": "\"生成移动端配对二维码和设置码\"",
     "description: \"Discover and claim promotional model offers from ClawHub\"": "description: \"发现并领取 ClawHub 模型优惠\"",

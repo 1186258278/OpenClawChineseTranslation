@@ -6,7 +6,7 @@
     "`Non-interactive uninstall requires --yes. Preview first with ${formatCliCommand(\"openclaw uninstall --dry-run --all\")}.`": "`非交互卸载需要 --yes。请先用 ${formatCliCommand(\"openclaw uninstall --dry-run --all\")} 预览。`",
     "`Non-interactive uninstall requires explicit scopes. Use --all, or choose scopes such as --service --state.`": "`非交互卸载需要明确指定范围。请使用 --all，或选择 --service --state 等范围。`",
     "\"Nothing selected.\"": "\"未选择任何内容。\"",
-    "\"CLI still installed. Remove via npm/pnpm if desired.\"": "\"CLI 仍已安装。如需删除请使用 npm/pnpm。\"",
+    "\"CLI removal instructions: https://docs.openclaw.ai/install/uninstall\"": "\"CLI 移除说明：https://docs.openclaw.ai/install/uninstall\"",
     "\"Tip: workspaces were preserved. Re-run with --workspace to remove them.\"": "\"提示：工作区已保留。如需删除请加 --workspace 重新运行。\""
   }
 }
