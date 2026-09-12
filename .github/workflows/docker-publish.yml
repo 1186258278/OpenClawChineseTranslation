@@ -131,6 +131,13 @@ jobs:
           echo '### Docker published and verified (amd64 + arm64)' >> "$GITHUB_STEP_SUMMARY"
           echo "Version: $VERSION; channel: $CHANNEL" >> "$GITHUB_STEP_SUMMARY"
           echo 'Both registries passed anonymous manifest/config readback.' >> "$GITHUB_STEP_SUMMARY"
+      - name: Update Docker Hub deployment instructions
+        uses: peter-evans/dockerhub-description@v4
+        with:
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          repository: ${{ github.repository_owner }}/openclaw-zh
+          readme-filepath: ./DOCKER_README.md
       - uses: actions/upload-artifact@v4
         if: always()
         with:

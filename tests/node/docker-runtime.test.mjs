@@ -38,6 +38,7 @@ test('stable and nightly share a mandatory Docker runtime gate', () => {
   assert.match(source, /ubuntu-24\.04-arm/);
   assert.match(source, /scripts\/smoke-docker\.sh/);
   assert.match(source, /scripts\/verify-container-images\.py/);
+  assert.match(source, /uses: peter-evans\/dockerhub-description@v4/);
   assert.match(source, /needs: build/);
   assert.doesNotMatch(source, /continue-on-error: true/);
   assert.ok(source.indexOf('scripts/smoke-docker.sh') < source.indexOf('docker push'));
