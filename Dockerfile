@@ -1,10 +1,12 @@
+# syntax=docker/dockerfile:1
 # ============================================================
 # OpenClaw 汉化发行版 - Docker 镜像
 # 武汉晴辰天下网络科技有限公司 | https://qingchencloud.com/
 # ============================================================
 #
 # 注意：此 Dockerfile 假设代码已在 GitHub Actions 中构建完成
-# 构建上下文应包含 dist/ 目录和 node_modules/
+# 构建上下文只包含 npm pack --ignore-scripts 生成的 openclaw-runtime.tgz。
+# 不复制 CI 的 node_modules，避免 pnpm 隐藏目录、软链接、权限和架构损坏。
 #
 # 优化策略：
 # 1. 层顺序优化 - 不常变的层放前面
@@ -13,7 +15,6 @@
 #
 # ============================================================
 
-# syntax=docker/dockerfile:1.4
 FROM node:24.16.0-slim
 
 LABEL org.opencontainers.image.source="https://github.com/1186258278/OpenClawChineseTranslation"
@@ -35,25 +36,19 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     git \
     curl \
     ca-certificates \
-    chromium \
-    && rm -rf /tmp/*
+    chromium python3 make g++
 
 # 设置工作目录
 WORKDIR /app
 
-# 先复制 package.json（用于判断依赖是否变化）
-COPY package.json package-lock.json* pnpm-lock.yaml* ./
-
-# 复制所有构建好的代码
-COPY . .
-
-# 重新安装原生依赖以匹配当前架构（使用 cache-mount 加速 npm）
+# 在目标架构安装真正的发行包及依赖，保留原生依赖和内置插件的安装脚本。
+COPY openclaw-runtime.tgz /tmp/openclaw-runtime.tgz
 RUN --mount=type=cache,target=/root/.npm,sharing=locked \
-    npm rebuild || true && \
-    npm install --prefer-offline --no-audit --omit=dev || true
+    npm install --global --omit=dev --no-audit --no-fund /tmp/openclaw-runtime.tgz && \
+    rm /tmp/openclaw-runtime.tgz && \
+    openclaw --version && openclaw gateway --help >/dev/null
 
-# 全局安装
-RUN npm install -g . --omit=dev
+WORKDIR /usr/local/lib/node_modules/@qingchencloud/openclaw-zh
 
 # 创建配置目录
 RUN mkdir -p /root/.openclaw
@@ -65,8 +60,8 @@ EXPOSE 18789
 VOLUME ["/root/.openclaw"]
 
 # 健康检查
-HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
-    CMD curl -f http://localhost:18789/health || exit 1
+HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
+    CMD curl --fail --silent --show-error http://127.0.0.1:18789/healthz || exit 1
 
 # 默认启动命令
-CMD ["openclaw"]
+CMD ["openclaw", "gateway", "run", "--allow-unconfigured", "--bind", "lan"]

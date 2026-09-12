@@ -1,0 +1,52 @@
+# Repair container packaging without republishing npm or rewriting release tags.
+name: Docker stable rebuild
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Existing Chinese npm version; empty uses the checked-out package.json'
+        required: false
+        type: string
+permissions:
+  contents: read
+  packages: write
+jobs:
+  prepare:
+    runs-on: ubuntu-24.04
+    outputs:
+      version: ${{ steps.pack.outputs.version }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24.16.0'
+          registry-url: https://registry.npmjs.org
+      - name: Download the exact existing published package
+        id: pack
+        env:
+          REQUESTED_VERSION: ${{ inputs.version }}
+        run: |
+          set -euo pipefail
+          VERSION="${REQUESTED_VERSION:-$(node -p 'require("./package.json").version')}"
+          [[ "$VERSION" =~ ^[0-9][A-Za-z0-9.-]*-zh\.[0-9]+$ ]]
+          # This workflow updates latest: do not roll it back to a historical version.
+          test "$VERSION" = "$(npm view @qingchencloud/openclaw-zh dist-tags.latest)"
+          mkdir -p docker-context
+          PACK_JSON=$(npm pack "@qingchencloud/openclaw-zh@$VERSION" --ignore-scripts --json --pack-destination docker-context)
+          FILE=$(printf '%s' "$PACK_JSON" | node -e 'let s="";process.stdin.on("data",c=>s+=c).on("end",()=>process.stdout.write(JSON.parse(s)[0].filename))')
+          mv "docker-context/$FILE" docker-context/openclaw-runtime.tgz
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: openclaw-docker-stable-rebuild
+          path: docker-context/openclaw-runtime.tgz
+          if-no-files-found: error
+          retention-days: 1
+  docker:
+    needs: prepare
+    uses: ./.github/workflows/docker-publish.yml
+    with:
+      version: ${{ needs.prepare.outputs.version }}
+      channel: latest
+      artifact: openclaw-docker-stable-rebuild
+    secrets: inherit

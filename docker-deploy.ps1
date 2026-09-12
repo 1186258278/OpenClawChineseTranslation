@@ -176,6 +176,15 @@ function Initialize-Config {
     docker run --rm -v "${VolumeName}:/root/.openclaw" $Image openclaw config set gateway.mode local
     Write-Host "✓ 设置 gateway.mode = local" -ForegroundColor Green
     
+    $origins = @("http://localhost:${Port}", "http://127.0.0.1:${Port}")
+    if (-not $LocalOnly) { $origins += "http://$(Get-LocalIP):${Port}" }
+    $originsJson = ConvertTo-Json -InputObject $origins -Compress
+    docker run --rm -v "${VolumeName}:/root/.openclaw" $Image openclaw config get gateway.controlUi.allowedOrigins --json 2>$null | Out-Null
+    if ($LASTEXITCODE -ne 0) {
+        docker run --rm -v "${VolumeName}:/root/.openclaw" $Image openclaw config set gateway.controlUi.allowedOrigins $originsJson
+        if ($LASTEXITCODE -ne 0) { throw 'Dashboard 来源配置失败' }
+    }
+
     # 远程访问配置
     if (-not $LocalOnly) {
         Write-Host ""
@@ -198,10 +207,11 @@ function Start-OpenClawContainer {
     Write-Host ""
     Write-Host "🚀 启动 OpenClaw 容器..." -ForegroundColor Blue
     
+    $publish = if ($LocalOnly) { "127.0.0.1:${Port}:18789" } else { "${Port}:18789" }
     $dockerArgs = @(
         "run", "-d",
         "--name", $Name,
-        "-p", "${Port}:18789",
+        "-p", $publish,
         "-v", "${VolumeName}:/root/.openclaw"
     )
     
@@ -215,14 +225,9 @@ function Start-OpenClawContainer {
     $dockerArgs += "unless-stopped"
     $dockerArgs += $Image
     
-    # 远程访问需要显式运行 gateway
-    if (-not $LocalOnly) {
-        $dockerArgs += "openclaw"
-        $dockerArgs += "gateway"
-        $dockerArgs += "run"
-    }
+    $dockerArgs += @("openclaw", "gateway", "run", "--allow-unconfigured", "--bind", "lan")
     
-    & docker $dockerArgs | Out-Null
+    & docker @dockerArgs | Out-Null
     
     if ($LASTEXITCODE -ne 0) {
         Write-Host "❌ 容器启动失败" -ForegroundColor Red
@@ -237,16 +242,19 @@ function Wait-ForReady {
     Write-Host ""
     Write-Host "⏳ 等待服务启动..." -ForegroundColor Blue
     
-    for ($i = 1; $i -le 30; $i++) {
-        $logs = docker logs $Name 2>&1
-        if ($logs -match "listening on") {
+    for ($i = 1; $i -le 90; $i++) {
+        $running = docker inspect -f '{{.State.Running}}' $Name
+        if ($LASTEXITCODE -ne 0 -or $running -ne 'true') {
+            throw "容器已退出，请检查日志: docker logs $Name"
+        }
+        docker exec $Name curl --fail --silent --show-error http://127.0.0.1:18789/healthz 2>$null | Out-Null
+        if ($LASTEXITCODE -eq 0) {
             Write-Host "✓ 服务已就绪" -ForegroundColor Green
             return
         }
-        Start-Sleep -Seconds 1
+        Start-Sleep -Seconds 2
     }
-    
-    Write-Host "⚠ 等待超时，请检查日志: docker logs $Name" -ForegroundColor Yellow
+    throw "等待超时，请检查日志: docker logs $Name"
 }
 
 # 打印成功信息
@@ -334,7 +342,7 @@ function Main {
     Test-Docker
     
     # 如果没有指定 Token，生成一个
-    if (-not $Token -and -not $LocalOnly) {
+    if (-not $Token) {
         $script:Token = New-RandomToken
         Write-Host "✓ 自动生成 Token: $Token" -ForegroundColor Green
     }

@@ -77,7 +77,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       - name: 验证构建配置和发布清单脚本
-        run: node --test tests/node/build-core-workflow.test.mjs tests/node/prepare-publish-package.test.mjs
+        run: node --test tests/node/build-core-workflow.test.mjs tests/node/prepare-publish-package.test.mjs tests/node/docker-runtime.test.mjs
 
       - name: 安装 pnpm
         uses: pnpm/action-setup@v4
@@ -383,6 +383,25 @@ jobs:
           fi
           
           echo "✅ Docker 构建准备完成"
+
+      # Pack before artifact transport, while symlinks/permissions are still intact.
+      # Docker must not install the renamed workspace or reuse CI node_modules.
+      - name: 打包独立 Docker 运行时
+        working-directory: openclaw
+        run: |
+          set -euo pipefail
+          mkdir -p ../docker-context
+          PACK_JSON=$(npm pack --ignore-scripts --json --pack-destination ../docker-context)
+          PACKAGE_FILE=$(printf '%s' "$PACK_JSON" | node -e 'let s="";process.stdin.on("data",c=>s+=c).on("end",()=>process.stdout.write(JSON.parse(s)[0].filename))')
+          mv "../docker-context/$PACKAGE_FILE" ../docker-context/openclaw-runtime.tgz
+
+      - name: 上传独立 Docker 运行时
+        uses: actions/upload-artifact@v4
+        with:
+          name: openclaw-docker-${{ inputs.version_type }}
+          path: docker-context/openclaw-runtime.tgz
+          if-no-files-found: error
+          retention-days: 1
 
       - name: 上传构建产物
         uses: actions/upload-artifact@v4

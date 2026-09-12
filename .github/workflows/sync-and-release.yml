@@ -213,78 +213,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # ==================== Docker 镜像构建与推送 ====================
-      - name: 设置 Docker Buildx
-        uses: docker/setup-buildx-action@v3
-
-      - name: 登录 GitHub Container Registry
-        uses: docker/login-action@v3
-        with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: 准备 Docker 元数据
-        id: docker_meta
-        uses: docker/metadata-action@v5
-        with:
-          images: ghcr.io/${{ github.repository_owner }}/openclaw-zh
-          tags: |
-            type=raw,value=latest
-            type=raw,value=${{ needs.prepare.outputs.release_version }}
-
-      - name: 构建并推送 Docker 镜像
-        uses: docker/build-push-action@v5
-        with:
-          context: ./openclaw
-          push: true
-          tags: ${{ steps.docker_meta.outputs.tags }}
-          labels: ${{ steps.docker_meta.outputs.labels }}
-          # 使用 Registry Cache - 比 GHA 缓存更稳定，无 10GB 限制
-          cache-from: type=registry,ref=ghcr.io/${{ github.repository_owner }}/openclaw-zh:buildcache
-          cache-to: type=registry,ref=ghcr.io/${{ github.repository_owner }}/openclaw-zh:buildcache,mode=max
-          platforms: linux/amd64,linux/arm64
-
-      - name: 设置镜像为公开
-        run: |
-          # 使用 GitHub API 将包设置为公开
-          curl -X PATCH \
-            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-            -H "Accept: application/vnd.github.v3+json" \
-            https://api.github.com/user/packages/container/openclaw-zh/versions \
-            -d '{"visibility":"public"}' || true
-          echo "✅ Docker 镜像已推送到 ghcr.io"
-
-      # ==================== Docker Hub 镜像（国内加速） ====================
-      - name: 登录 Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ github.repository_owner }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-        continue-on-error: true
-
-      - name: 推送到 Docker Hub（国内加速）
-        uses: docker/build-push-action@v5
-        with:
-          context: ./openclaw
-          push: true
-          tags: |
-            ${{ github.repository_owner }}/openclaw-zh:latest
-            ${{ github.repository_owner }}/openclaw-zh:${{ needs.prepare.outputs.release_version }}
-          cache-from: type=registry,ref=ghcr.io/${{ github.repository_owner }}/openclaw-zh:buildcache
-          platforms: linux/amd64,linux/arm64
-        continue-on-error: true
-
-      # 同步 Docker Hub 仓库描述
-      - name: 更新 Docker Hub 描述
-        uses: peter-evans/dockerhub-description@v4
-        with:
-          username: ${{ github.repository_owner }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-          repository: ${{ github.repository_owner }}/openclaw-zh
-          readme-filepath: ./DOCKER_README.md
-        continue-on-error: true
-
       - name: 构建摘要
         run: |
           echo "## 🦞 稳定版发布完成" >> $GITHUB_STEP_SUMMARY
@@ -303,3 +231,13 @@ jobs:
           echo "**Docker (ghcr.io)**: \`docker pull ghcr.io/1186258278/openclaw-zh:latest\`" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "**Docker Hub (国内加速)**: \`docker pull 1186258278/openclaw-zh:latest\`" >> $GITHUB_STEP_SUMMARY
+
+  # 两个架构真实启动通过后，才更新两个镜像仓库的正式标签。
+  docker:
+    needs: [prepare, build]
+    uses: ./.github/workflows/docker-publish.yml
+    with:
+      version: ${{ needs.prepare.outputs.release_version }}
+      channel: latest
+      artifact: openclaw-docker-stable
+    secrets: inherit

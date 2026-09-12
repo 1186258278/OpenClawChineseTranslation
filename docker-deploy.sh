@@ -208,6 +208,16 @@ init_config() {
     docker run --rm -v "${VOLUME_NAME}:/root/.openclaw" "$IMAGE" openclaw config set gateway.mode local
     echo -e "${GREEN}✓${NC} 设置 gateway.mode = local"
     
+    local origins="[\"http://localhost:${PORT}\",\"http://127.0.0.1:${PORT}\"]"
+    if [ "$LOCAL_ONLY" = false ]; then
+        local host_ip
+        host_ip=$(get_local_ip)
+        origins="[\"http://localhost:${PORT}\",\"http://127.0.0.1:${PORT}\",\"http://${host_ip}:${PORT}\"]"
+    fi
+    if ! docker run --rm -v "${VOLUME_NAME}:/root/.openclaw" "$IMAGE" openclaw config get gateway.controlUi.allowedOrigins --json >/dev/null 2>&1; then
+        docker run --rm -v "${VOLUME_NAME}:/root/.openclaw" "$IMAGE" openclaw config set gateway.controlUi.allowedOrigins "$origins"
+    fi
+
     # 远程访问配置
     if [ "$LOCAL_ONLY" = false ]; then
         echo ""
@@ -230,28 +240,18 @@ start_container() {
     echo ""
     echo -e "${BLUE}🚀 启动 OpenClaw 容器...${NC}"
     
-    # 构建 docker run 命令
-    DOCKER_CMD="docker run -d"
-    DOCKER_CMD+=" --name $CONTAINER_NAME"
-    DOCKER_CMD+=" -p ${PORT}:18789"
-    DOCKER_CMD+=" -v ${VOLUME_NAME}:/root/.openclaw"
-    
-    # 添加 Token 环境变量
+    # 容器内绑定 lan；local-only 由宿主机端口绑定控制。
+    local publish="${PORT}:18789"
+    if [ "$LOCAL_ONLY" = true ]; then publish="127.0.0.1:${PORT}:18789"; fi
+    local args=(run -d --name "$CONTAINER_NAME" -p "$publish"
+        -v "${VOLUME_NAME}:/root/.openclaw")
     if [ -n "$GATEWAY_TOKEN" ]; then
-        DOCKER_CMD+=" -e OPENCLAW_GATEWAY_TOKEN=$GATEWAY_TOKEN"
+        args+=(-e "OPENCLAW_GATEWAY_TOKEN=$GATEWAY_TOKEN")
     fi
-    
-    DOCKER_CMD+=" --restart unless-stopped"
-    DOCKER_CMD+=" $IMAGE"
-    
-    # 远程访问需要显式运行 gateway
-    if [ "$LOCAL_ONLY" = false ]; then
-        DOCKER_CMD+=" openclaw gateway run"
-    fi
-    
-    # 执行
-    eval $DOCKER_CMD
-    
+    args+=(--restart unless-stopped "$IMAGE"
+        openclaw gateway run --allow-unconfigured --bind lan)
+    docker "${args[@]}"
+
     echo -e "${GREEN}✓${NC} 容器启动完成"
 }
 
@@ -260,15 +260,19 @@ wait_for_ready() {
     echo ""
     echo -e "${BLUE}⏳ 等待服务启动...${NC}"
     
-    for i in {1..30}; do
-        if docker logs "$CONTAINER_NAME" 2>&1 | grep -q "listening on"; then
+    for i in {1..90}; do
+        if [ "$(docker inspect -f '{{.State.Running}}' "$CONTAINER_NAME")" != true ]; then
+            echo "容器已退出，请检查日志: docker logs $CONTAINER_NAME" >&2
+            return 1
+        fi
+        if docker exec "$CONTAINER_NAME" curl --fail --silent --show-error http://127.0.0.1:18789/healthz >/dev/null 2>&1; then
             echo -e "${GREEN}✓${NC} 服务已就绪"
             return 0
         fi
-        sleep 1
+        sleep 2
     done
-    
-    echo -e "${YELLOW}⚠${NC} 等待超时，请检查日志: docker logs $CONTAINER_NAME"
+    echo "等待超时，请检查日志: docker logs $CONTAINER_NAME" >&2
+    return 1
 }
 
 # 打印成功信息
@@ -360,7 +364,7 @@ main() {
     fi
     
     # 如果没有指定 Token，生成一个
-    if [ -z "$GATEWAY_TOKEN" ] && [ "$LOCAL_ONLY" = false ]; then
+    if [ -z "$GATEWAY_TOKEN" ]; then
         GATEWAY_TOKEN=$(generate_token)
         echo -e "${GREEN}✓${NC} 自动生成 Token: $GATEWAY_TOKEN"
     fi
