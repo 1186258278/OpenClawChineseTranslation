@@ -41,6 +41,10 @@ permissions:
   contents: write
   packages: write
 
+concurrency:
+  group: nightly-build-and-publish
+  cancel-in-progress: false
+
 jobs:
   # ==================== 上游变更检测 ====================
   check-upstream:
@@ -166,18 +170,10 @@ jobs:
           echo "✅ 已触发 npmmirror 同步"
         continue-on-error: true
 
-      - name: 删除旧的 nightly 标签
-        run: |
-          git push origin :refs/tags/nightly || true
-          echo "🗑️ 已删除旧的 nightly 标签"
-
-      - name: 创建新的 nightly 标签
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git tag -fa nightly -m "Nightly build ${{ needs.build.outputs.build_date }} ${{ needs.build.outputs.build_time }}"
-          git push origin nightly --force
-          echo "🏷️ 已创建 nightly 标签"
+      - name: 原子更新 nightly 标签
+        run: node scripts/update-nightly-tag.mjs
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: 创建/更新 Nightly Release
         uses: softprops/action-gh-release@v2
@@ -185,6 +181,7 @@ jobs:
           tag_name: nightly
           name: "🌙 Nightly Build - ${{ needs.build.outputs.build_date }} ${{ needs.build.outputs.build_time }}"
           prerelease: true
+          draft: false
           body: |
             <!-- upstream_sha:${{ needs.check-upstream.outputs.upstream_sha }} -->
             
