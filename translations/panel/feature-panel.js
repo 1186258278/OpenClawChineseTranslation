@@ -359,6 +359,8 @@
 
       const builtins = [
         { id: 'auto', name: 'Auto（自动选择最优）' },
+        { id: 'MiniMax-M3', name: 'MiniMax M3' },
+        { id: 'MiniMax-M2.7', name: 'MiniMax M2.7' },
         { id: 'gpt-4o', name: 'GPT-4o' },
         { id: 'claude-sonnet-4', name: 'Claude Sonnet 4' },
         { id: 'gemini-2.5-pro', name: 'Gemini 2.5 Pro' },
