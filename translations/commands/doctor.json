@@ -9,7 +9,6 @@
     "note(lines.join(\"\\n\"), \"Gateway\")": "note(lines.join(\"\\n\"), \"网关\")",
     "\"gateway.auth.token and gateway.auth.password are both configured while gateway.auth.mode is unset.\"": "\"gateway.auth.token 和 gateway.auth.password 同时配置但 gateway.auth.mode 未设置。\"",
     "\"Set an explicit mode to avoid ambiguous auth selection and startup/runtime failures.\"": "\"请设置明确的模式以避免认证选择歧义和启动/运行时故障。\"",
-    "\"Doctor will not overwrite gateway.auth.token with a plaintext value.\"": "\"诊断不会用明文值覆盖 gateway.auth.token。\"",
     "note(\"Gateway token configured.\", \"Gateway auth\")": "note(\"网关令牌已配置。\", \"网关认证\")",
     "note(legacyState.preview.join(\"\\n\"), \"Legacy state detected\")": "note(legacyState.preview.join(\"\\n\"), \"检测到旧版状态\")",
     "note(migrated.changes.join(\"\\n\"), \"Doctor changes\")": "note(migrated.changes.join(\"\\n\"), \"诊断更改\")",
@@ -26,6 +25,7 @@
     "note(\"Gateway health will be checked after Doctor repair.\", \"Gateway\")": "note(\"诊断修复后将检查网关健康状态。\", \"网关\")",
     "\"Gateway health probes skipped because gateway credentials use an exec SecretRef. Run `openclaw doctor --allow-exec` to verify Gateway health with exec SecretRefs.\"": "\"由于网关凭据使用 exec SecretRef，已跳过网关健康探测。运行 `openclaw doctor --allow-exec` 可使用 exec SecretRef 验证网关健康。\"",
     "\"Repair the include boundary named above by hand.\"": "\"请手动修复上面命名的 include 边界。\"",
-    "message: \"Generate and configure a gateway token now?\"": "message: \"现在生成并配置网关令牌吗？\""
+    "message: \"Generate and configure a gateway token now?\"": "message: \"现在生成并配置网关令牌吗？\"",
+    "      `${ctx.options.generateGatewayToken === true ? \"Gateway token generation skipped because a SecretRef is configured. \" : \"\"}Doctor will not overwrite gateway.auth.token with a plaintext value.`,": "`${ctx.options.generateGatewayToken === true ? \"由于已配置 SecretRef，已跳过网关令牌生成。 \" : \"\"}诊断不会用明文值覆盖 gateway.auth.token。`"
   }
 }

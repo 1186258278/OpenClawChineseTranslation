@@ -11,7 +11,6 @@
     "`No install command generated; retry openclaw doctor after checking registry availability (${targetError}).`": "`未生成安装命令；检查 registry 可用性后重试 openclaw doctor（${targetError}）。`",
     "`Repair target resolution failed for ${entry.pluginId}: ${detail}. No install command generated.`": "`插件 ${entry.pluginId} 的修复目标解析失败：${detail}。未生成安装命令。`",
     "`Active official plugins match post-restart OpenClaw ${drift.gatewayVersion}, but the running Gateway is ${runningGatewayVersion}.`": "`活动官方插件与重启后的 OpenClaw ${drift.gatewayVersion} 匹配，但运行中的网关为 ${runningGatewayVersion}。`",
-    "`Plugin ${entry.pluginId} is ${entry.installedVersion}, but a Gateway restart will load OpenClaw ${drift.gatewayVersion}.${runningGatewayVersion ? ` The running Gateway is ${runningGatewayVersion}.` : \"\"}${updateCommand ? \"\" : ` Repair target resolution failed: ${targetError}.`}`": "`插件 ${entry.pluginId} 当前为 ${entry.installedVersion}，但网关重启后会加载 OpenClaw ${drift.gatewayVersion}.${runningGatewayVersion ? ` 当前运行中的网关为 ${runningGatewayVersion}。` : \"\"}${updateCommand ? \"\" : ` 修复目标解析失败：${targetError}。`}`",
     "`Could not check plugin restart readiness: ${readiness.reason}`": "`无法检查插件重启就绪状态：${readiness.reason}`",
     "\"Repair the Gateway service installation, then rerun openclaw doctor before restarting.\"": "\"修复网关服务安装，然后在重启前重新运行 openclaw doctor。\"",
     "\"Update or replace the plugin so it no longer depends on legacy compatibility paths.\"": "\"更新或替换该插件，使其不再依赖旧版兼容路径。\"",
@@ -20,6 +19,7 @@
     "`${drift.drifts.length} active official plugin${\n      drift.drifts.length === 1 ? \"\" : \"s\"\n    } not on post-restart OpenClaw ${drift.gatewayVersion}`": "`${drift.drifts.length} 个活动官方插件未处于重启后的 OpenClaw ${drift.gatewayVersion}`",
     "Errors: ": "错误：",
     "Running Gateway: OpenClaw ": "运行中的网关：OpenClaw ",
-    " -> expected ": " -> 预期 "
+    " -> expected ": " -> 预期 ",
+    "        message: `Plugin ${entry.pluginId} is ${entry.installedVersion} and its registry publishes no newer release (registry version ${registryLag.registryVersion}), but a Gateway restart will load OpenClaw ${drift.gatewayVersion}.${runningGatewayVersion ? ` The running Gateway is ${runningGatewayVersion}.` : \"\"} No plugin update can reach ${registryLag.expectedVersion}.`,": "`${\"插件\"} ${entry.pluginId} 当前为 ${entry.installedVersion}，但网关重启后会加载 OpenClaw ${drift.gatewayVersion}.${targetResolution?.status === \"resolved\" ? ` 已确认的插件目标版本为 ${targetResolution.version}。` : \"\"}${runningGatewayVersion ? ` 当前运行中的网关为 ${runningGatewayVersion}。` : \"\"}${updateCommand ? \"\" : ` 修复目标解析失败：${targetError}。`}`"
   }
 }

@@ -1,0 +1,8 @@
+{
+  "file": "src/auto-reply/reply/commands-models-catalog.ts",
+  "description": "模型目录与运行时选择文案",
+  "replacements": {
+    "\"Use OpenClaw's built-in agent and tools.\"": "\"使用 OpenClaw 内置代理和工具。\"",
+    "\"Some models could not be refreshed. You can still choose from the available models.\"": "\"部分模型未能刷新；你仍可从可用模型中选择。\""
+  }
+}

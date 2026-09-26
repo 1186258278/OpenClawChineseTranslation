@@ -17,15 +17,6 @@
     "`Unknown provider: ${provider}`": "`未知提供商：${provider}`",
     "`Models (${emptyProviderLabel}) — none`": "`模型（${emptyProviderLabel}）— 无`",
     "`Models (${providerLabel}) — ${count} available`": "`模型（${providerLabel}）— 可用 ${count} 个`",
-    "\"Use OpenClaw's built-in agent and tools.\"": "\"使用 OpenClaw 内置代理和工具。\"",
-    "\"Available models changed. Open /models and choose again.\"": "\"可用模型已变更。请打开 /models 后重新选择。\"",
-    "\"Some models could not be refreshed. You can still choose from the available models.\"": "\"部分模型未能刷新；你仍可从可用模型中选择。\"",
-    "\"Sign-in needed\"": "\"需要登录\"",
-    "\"Sign-in failed\"": "\"登录失败\"",
-    "\"Temporarily unavailable\"": "\"暂时不可用\"",
-    "\"Unavailable\"": "\"不可用\"",
-    "\"Connection not confirmed\"": "\"连接未确认\"",
-    "\"Try again later or choose another model.\"": "\"请稍后重试或选择其他模型。\"",
-    "\"Run /models again or choose another model.\"": "\"请再次运行 /models 或选择其他模型。\""
+    "\"Available models changed. Open /models and choose again.\"": "\"可用模型已变更。请打开 /models 后重新选择。\""
   }
 }

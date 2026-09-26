@@ -4,14 +4,13 @@
   "replacements": {
     "groupLabel: \"Xiaomi\"": "groupLabel: \"小米\"",
     "groupHint: \"Pay-as-you-go / Token Plan\"": "groupHint: \"按量付费 / Token Plan\"",
-    "label: \"Xiaomi API key (Pay-as-you-go)\"": "label: \"小米 API 密钥（按量付费）\"",
-    "choiceLabel: \"Xiaomi API key (Pay-as-you-go)\"": "choiceLabel: \"小米 API 密钥（按量付费）\"",
     "promptMessage: \"Enter Xiaomi MiMo API key (pay-as-you-go, sk-...)\"": "promptMessage: \"输入小米 MiMo API 密钥（按量付费，sk-...）\"",
     "label: \"Xiaomi Token Plan\"": "label: \"小米 Token Plan\"",
     "displayName: \"Xiaomi MiMo Token Plan\"": "displayName: \"小米 MiMo Token Plan\"",
     "const regionLabel = region === \"ams\" ? \"Europe\" : region === \"cn\" ? \"China\" : \"Singapore\";": "const regionLabel = region === \"ams\" ? \"欧洲\" : region === \"cn\" ? \"中国\" : \"新加坡\";",
-    "const choiceLabel = `Xiaomi Token Plan (${regionLabel})`;": "const choiceLabel = `小米 Token Plan（${regionLabel}）`;",
-    "const choiceHint = `Endpoint preset: token-plan-${region}.xiaomimimo.com/v1`;": "const choiceHint = `端点预设：token-plan-${region}.xiaomimimo.com/v1`;",
-    "promptMessage: `Enter Xiaomi MiMo Token Plan API key (tp-...) for ${regionLabel}`": "promptMessage: `输入 ${regionLabel} 的小米 MiMo Token Plan API 密钥（tp-...）`"
+    "promptMessage: `Enter Xiaomi MiMo Token Plan API key (tp-...) for ${regionLabel}`": "promptMessage: `输入 ${regionLabel} 的小米 MiMo Token Plan API 密钥（tp-...）`",
+    "const choiceLabel = region\n    ? `Xiaomi Token Plan (${regionLabel})`\n    : \"Xiaomi API key (Pay-as-you-go)\";": "const choiceLabel = region\n    ? `小米 Token Plan（${regionLabel}）`\n    : \"小米 API 密钥（按量付费）\";",
+    "const choiceHint = region\n    ? `Endpoint preset: token-plan-${region}.xiaomimimo.com/v1`\n    : \"Endpoint: api.xiaomimimo.com/v1\";": "const choiceHint = region\n    ? `端点预设：token-plan-${region}.xiaomimimo.com/v1`\n    : \"端点：api.xiaomimimo.com/v1\";",
+    "missingInputMessage: `Missing Xiaomi API key for provider \"${params.providerId}\".`,": "missingInputMessage: `缺少提供商 \"${params.providerId}\" 的小米 API 密钥`,"
   }
 }

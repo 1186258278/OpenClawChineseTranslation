@@ -8,7 +8,6 @@
     ".option(\"--all\", \"Full diagnosis (read-only, pasteable)\", false)": ".option(\"--all\", \"完整诊断（只读，可粘贴）\", false)",
     ".option(\"--usage\", \"Show model provider usage/quota snapshots\", false)": ".option(\"--usage\", \"显示模型提供商用量/配额快照\", false)",
     "\"Probe channels (WhatsApp Web + Telegram + Discord + Slack + Signal)\"": "\"探测渠道（WhatsApp Web + Telegram + Discord + Slack + Signal）\"",
-    ".option(\"--timeout <ms>\", \"Probe timeout in milliseconds\", \"10000\")": ".option(\"--timeout <ms>\", \"探测超时（毫秒）\", \"10000\")",
     ".option(\"--verbose\", \"Verbose logging\", false)": ".option(\"--verbose\", \"详细日志\", false)",
     ".option(\"--debug\", \"Alias for --verbose\", false)": ".option(\"--debug\", \"--verbose 的别名\", false)",
     "[\"openclaw status\", \"Show channel health + session summary.\"]": "[\"openclaw status\", \"显示渠道健康状态和会话摘要。\"]",
@@ -18,7 +17,6 @@
     "\"Run channel probes (WA + Telegram + Discord + Slack + Signal).\"": "\"运行渠道探测（WA + Telegram + Discord + Slack + Signal）。\"",
     "[\"openclaw status --deep --timeout 5000\", \"Tighten probe timeout.\"]": "[\"openclaw status --deep --timeout 5000\", \"缩短探测超时。\"]",
     ".description(\"Fetch health from the running gateway\")": ".description(\"从运行中的网关获取健康状态\")",
-    ".option(\"--timeout <ms>\", \"Connection timeout in milliseconds\", \"10000\")": ".option(\"--timeout <ms>\", \"连接超时（毫秒）\", \"10000\")",
     ".description(\"List stored conversation sessions\")": ".description(\"列出已存储的对话会话\")",
     ".option(\"--json\", \"Output as JSON\", false)": ".option(\"--json\", \"以 JSON 格式输出\", false)",
     ".option(\"--all-agents\", \"Aggregate sessions across all configured agents\", false)": ".option(\"--all-agents\", \"聚合所有已配置代理的会话\", false)",
@@ -43,6 +41,8 @@
     "[\"openclaw sessions cleanup --all-agents --dry-run\", \"Preview all agent stores.\"]": "[\"openclaw sessions cleanup --all-agents --dry-run\", \"预览所有代理的存储。\"]",
     "\"Use a specific store.\"": "\"使用特定的存储。\"",
     "theme.heading(\"Examples:\")": "theme.heading(\"示例：\")",
-    "theme.muted(\"Docs:\")": "theme.muted(\"文档：\")"
+    "theme.muted(\"Docs:\")": "theme.muted(\"文档：\")",
+    ".option(\"--timeout <ms>\", \"Probe timeout in milliseconds\")": ".option(\"--timeout <ms>\", \"探测超时（毫秒）\")",
+    ".option(\"--timeout <ms>\", \"Connection timeout in milliseconds\")": ".option(\"--timeout <ms>\", \"连接超时（毫秒）\")"
   }
 }

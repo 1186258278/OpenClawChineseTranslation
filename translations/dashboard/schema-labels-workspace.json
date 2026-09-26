@@ -1,0 +1,12 @@
+{
+  "file": "src/config/schema.labels.workspace.ts",
+  "description": "Dashboard 配置页面工作区标签翻译",
+  "replacements": {
+    "  \"agents.defaults.workspace\": \"Workspace\"": "  \"agents.defaults.workspace\": \"工作区\"",
+    "  \"agents.defaults.repoRoot\": \"Repo Root\"": "  \"agents.defaults.repoRoot\": \"仓库根目录\"",
+    "  \"agents.defaults.contextInjection\": \"Context Injection\"": "  \"agents.defaults.contextInjection\": \"上下文注入\"",
+    "  \"agents.defaults.bootstrapMaxChars\": \"Bootstrap Max Chars\"": "  \"agents.defaults.bootstrapMaxChars\": \"引导消息最大字符数\"",
+    "  \"agents.defaults.bootstrapTotalMaxChars\": \"Bootstrap Total Max Chars\"": "  \"agents.defaults.bootstrapTotalMaxChars\": \"引导消息总计最大字符数\"",
+    "  \"agents.defaults.cwd\": \"Working Directory\"": "  \"agents.defaults.cwd\": \"工作目录\""
+  }
+}

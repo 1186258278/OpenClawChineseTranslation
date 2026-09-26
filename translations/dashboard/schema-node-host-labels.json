@@ -1,0 +1,22 @@
+{
+  "file": "src/config/zod-schema.node-host.ts",
+  "description": "Dashboard 配置页面节点主机标签翻译",
+  "replacements": {
+    "  nodeHost: \"Node Host\"": "  nodeHost: \"节点主机\"",
+    "  \"nodeHost.agentRuns\": \"Node Agent Runs\"": "  \"nodeHost.agentRuns\": \"节点代理运行\"",
+    "  \"nodeHost.agentRuns.claude\": \"Node Claude Agent Runs\"": "  \"nodeHost.agentRuns.claude\": \"节点 Claude 代理运行\"",
+    "  \"nodeHost.agentRuns.claude.enabled\": \"Node Claude Agent Runs Enabled\"": "  \"nodeHost.agentRuns.claude.enabled\": \"节点 Claude 代理运行启用\"",
+    "  \"nodeHost.workerRuns\": \"Node Worker Runs\"": "  \"nodeHost.workerRuns\": \"节点工作进程运行\"",
+    "  \"nodeHost.workerRuns.enabled\": \"Node Worker Runs Enabled\"": "  \"nodeHost.workerRuns.enabled\": \"节点工作进程运行启用\"",
+    "  \"nodeHost.workerRuns.capacity\": \"Node Worker Run Capacity\"": "  \"nodeHost.workerRuns.capacity\": \"节点工作进程运行容量\"",
+    "  \"nodeHost.workerRuns.isolation\": \"Node Worker Run Isolation\"": "  \"nodeHost.workerRuns.isolation\": \"节点工作进程运行隔离\"",
+    "  \"nodeHost.workerRuns.containerImage\": \"Node Worker Run Container Image\"": "  \"nodeHost.workerRuns.containerImage\": \"节点工作进程运行容器镜像\"",
+    "  \"nodeHost.browserProxy\": \"Node Browser Proxy\"": "  \"nodeHost.browserProxy\": \"节点浏览器代理\"",
+    "  \"nodeHost.browserProxy.enabled\": \"Node Browser Proxy Enabled\"": "  \"nodeHost.browserProxy.enabled\": \"节点浏览器代理启用\"",
+    "  \"nodeHost.browserProxy.allowProfiles\": \"Node Browser Proxy Allowed Profiles\"": "  \"nodeHost.browserProxy.allowProfiles\": \"节点浏览器代理允许的配置文件\"",
+    "  \"nodeHost.mcp\": \"Node Host MCP\"": "  \"nodeHost.mcp\": \"节点主机 MCP\"",
+    "  \"nodeHost.mcp.servers\": \"Node Host MCP Servers\"": "  \"nodeHost.mcp.servers\": \"节点主机 MCP 服务器\"",
+    "  \"nodeHost.skills\": \"Node Host Skills\"": "  \"nodeHost.skills\": \"节点主机技能\"",
+    "  \"nodeHost.skills.enabled\": \"Node Host Skills Enabled\"": "  \"nodeHost.skills.enabled\": \"节点主机技能启用\""
+  }
+}

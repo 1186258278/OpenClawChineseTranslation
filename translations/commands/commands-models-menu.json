@@ -1,0 +1,22 @@
+{
+  "file": "src/auto-reply/reply/commands-models-menu.ts",
+  "description": "模型菜单可用性与登录提示文案",
+  "replacements": {
+    "\"Set up this connection with the custom-provider guide: https://docs.openclaw.ai/concepts/model-providers/custom-providers\"": "\"请参阅自定义提供商指南配置此连接：https://docs.openclaw.ai/concepts/model-providers/custom-providers\"",
+    "\"Claude CLI runs through Claude Code using its native login or a selected saved account. An explicitly selected API-key account has separate API billing; CLI does not mean free or subscription-only.\"": "\"Claude CLI 通过 Claude Code 及其原生登录或选定的已保存帐户运行。显式选择的 API 密钥帐户单独计费；CLI 不代表免费或仅订阅。\"",
+    "\"Anthropic models can use the API or Claude CLI. Check each model's route label and selected account: API-key usage is billed separately from a Claude subscription.\"": "\"Anthropic 模型可使用 API 或 Claude CLI。请检查每个模型的路由标签和选定帐户：API 密钥用量与 Claude 订阅分开计费。\"",
+    "\"Checking native agent\"": "\"正在检查原生代理\"",
+    "\"Connection not confirmed\"": "\"连接未确认\"",
+    "\"Run /models again when discovery finishes.\"": "\"发现完成后请再次运行 /models。\"",
+    "\"Check the native app on the Gateway host, then run /models again.\"": "\"请检查网关主机上的原生应用，然后再次运行 /models。\"",
+    "\"Sign-in needed\"": "\"需要登录\"",
+    "\"Sign-in failed\"": "\"登录失败\"",
+    "\"Temporarily unavailable\"": "\"暂时不可用\"",
+    "\"Unavailable\"": "\"不可用\"",
+    "\"Try again later or choose another model.\"": "\"请稍后重试或选择其他模型。\"",
+    "\"Run /models again or choose another model.\"": "\"请再次运行 /models 或选择其他模型。\"",
+    "`Connect with ${loginCommand}.`": "`请使用 ${loginCommand} 连接。`",
+    "`Sign in again with ${loginCommand}.`": "`请使用 ${loginCommand} 重新登录。`",
+    "`Connect with ${loginCommand}, or choose another model.`": "`请使用 ${loginCommand} 连接，或选择其他模型。`"
+  }
+}
