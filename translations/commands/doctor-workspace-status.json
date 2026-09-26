@@ -20,6 +20,6 @@
     "Errors: ": "错误：",
     "Running Gateway: OpenClaw ": "运行中的网关：OpenClaw ",
     " -> expected ": " -> 预期 ",
-    "        message: `Plugin ${entry.pluginId} is ${entry.installedVersion} and its registry publishes no newer release (registry version ${registryLag.registryVersion}), but a Gateway restart will load OpenClaw ${drift.gatewayVersion}.${runningGatewayVersion ? ` The running Gateway is ${runningGatewayVersion}.` : \"\"} No plugin update can reach ${registryLag.expectedVersion}.`,": "`${\"插件\"} ${entry.pluginId} 当前为 ${entry.installedVersion}，但网关重启后会加载 OpenClaw ${drift.gatewayVersion}.${targetResolution?.status === \"resolved\" ? ` 已确认的插件目标版本为 ${targetResolution.version}。` : \"\"}${runningGatewayVersion ? ` 当前运行中的网关为 ${runningGatewayVersion}。` : \"\"}${updateCommand ? \"\" : ` 修复目标解析失败：${targetError}。`}`"
+    "        message: `Plugin ${entry.pluginId} is ${entry.installedVersion} and its registry publishes no newer release (registry version ${registryLag.registryVersion}), but a Gateway restart will load OpenClaw ${drift.gatewayVersion}.${runningGatewayVersion ? ` The running Gateway is ${runningGatewayVersion}.` : \"\"} No plugin update can reach ${registryLag.expectedVersion}.`,": "        message: `插件 ${entry.pluginId} 当前版本为 ${entry.installedVersion}，其 registry 没有更新版本（registry 版本 ${registryLag.registryVersion}），但重启网关将加载 OpenClaw ${drift.gatewayVersion}.${runningGatewayVersion ? ` 运行中的网关为 ${runningGatewayVersion}。` : \"\"} 无法将插件更新到 ${registryLag.expectedVersion}。`,"
   }
 }

@@ -26,6 +26,6 @@
     "\"Gateway health probes skipped because gateway credentials use an exec SecretRef. Run `openclaw doctor --allow-exec` to verify Gateway health with exec SecretRefs.\"": "\"由于网关凭据使用 exec SecretRef，已跳过网关健康探测。运行 `openclaw doctor --allow-exec` 可使用 exec SecretRef 验证网关健康。\"",
     "\"Repair the include boundary named above by hand.\"": "\"请手动修复上面命名的 include 边界。\"",
     "message: \"Generate and configure a gateway token now?\"": "message: \"现在生成并配置网关令牌吗？\"",
-    "      `${ctx.options.generateGatewayToken === true ? \"Gateway token generation skipped because a SecretRef is configured. \" : \"\"}Doctor will not overwrite gateway.auth.token with a plaintext value.`,": "`${ctx.options.generateGatewayToken === true ? \"由于已配置 SecretRef，已跳过网关令牌生成。 \" : \"\"}诊断不会用明文值覆盖 gateway.auth.token。`"
+    "      `${ctx.options.generateGatewayToken === true ? \"Gateway token generation skipped because a SecretRef is configured. \" : \"\"}Doctor will not overwrite gateway.auth.token with a plaintext value.`,": "      `${ctx.options.generateGatewayToken === true ? \"由于已配置 SecretRef，已跳过网关令牌生成。 \" : \"\"}诊断不会用明文值覆盖 gateway.auth.token.`,"
   }
 }

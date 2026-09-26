@@ -13,6 +13,6 @@
     "\"Run `openclaw doctor --allow-exec` to verify exec SecretRefs during doctor, or `openclaw secrets audit --allow-exec` to audit all exec SecretRefs.\"": "\"运行 `openclaw doctor --allow-exec` 可在诊断时验证 exec SecretRef，或运行 `openclaw secrets audit --allow-exec` 审计全部 exec SecretRef。\"",
     "\"Replace or remove the optional password; keep trusted-proxy authentication configured.\"": "\"请替换或移除可选密码，并保持 trusted-proxy 认证配置。\"",
     "\"Gateway token is a known redaction sentinel, not a usable secret.\"": "\"网关令牌是已知的脱敏占位值，不能作为可用密钥。\"",
-    "`Run \\`openclaw doctor --fix\\` to regenerate secret store entry \"${gatewayTokenRef.id}\", then restart the Gateway and reconnect or re-pair devices with the new token.`": "`运行 `openclaw doctor --fix` 重新生成密钥存储条目 \"${gatewayTokenRef.id}\"，然后重启网关并使用新令牌重新连接或配对设备。`"
+    "`Run \\`openclaw doctor --fix\\` to regenerate secret store entry \"${gatewayTokenRef.id}\", then restart the Gateway and reconnect or re-pair devices with the new token.`": "`运行 \\`openclaw doctor --fix\\` 重新生成密钥存储条目 \"${gatewayTokenRef.id}\"，然后重启网关并使用新令牌重新连接或配对设备。`"
   }
 }
