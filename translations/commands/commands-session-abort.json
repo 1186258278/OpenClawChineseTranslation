@@ -2,10 +2,9 @@
   "file": "src/auto-reply/reply/abort.ts",
   "description": "会话中止命令翻译",
   "replacements": {
-    "const base = \"Agent reply is already finalizing and can no longer be aborted.\";": "const base = \"代理回复已进入最终输出阶段，无法再中止。\";",
     "const label = stoppedSubagents === 1 ? \"sub-agent\" : \"sub-agents\";": "const label = \"子代理\";",
     "` Cancellation was incomplete for ${failedSubagents} sub-agent${failedSubagents === 1 ? \"\" : \"s\"}. Retry /stop.`": "` ${failedSubagents} 个子代理取消不完整。请重试 /stop。`",
-    "`⚙️ Agent was aborted.${failureSuffix}`": "`⚙️ 代理已中止。${failureSuffix}`",
-    "`⚙️ Agent was aborted. Stopped ${stoppedSubagents} ${label}.${failureSuffix}`": "`⚙️ 代理已中止。已停止 ${stoppedSubagents} 个${label}。${failureSuffix}`"
+    "\"Agent reply is already finalizing and can no longer be aborted.\"": "\"代理回复已进入最终输出阶段，无法再中止。\"",
+    "\"⚙️ Agent was aborted.\"": "\"⚙️ 代理已中止。\""
   }
 }

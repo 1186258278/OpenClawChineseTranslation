@@ -2,7 +2,6 @@
   "file": "src/flows/channel-setup.ts",
   "description": "渠道初始化引导命令 (channel-setup.ts)",
   "replacements": {
-    "\"plugin disabled\"": "\"插件已禁用\"",
-    "\"plugins disabled\"": "\"插件已禁用\""
+    "\"plugin disabled\"": "\"插件已禁用\""
   }
 }

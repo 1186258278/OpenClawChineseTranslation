@@ -31,12 +31,12 @@
     "description: \"Run an ACP bridge backed by the Gateway\"": "description: \"运行由网关支持的 ACP 桥接\"",
     "description: \"Manage the Gateway service (launchd/systemd/schtasks)\"": "description: \"管理网关服务（launchd/systemd/schtasks）\"",
     "description: \"System tools (events, heartbeat, presence)\"": "description: \"系统工具（事件、心跳、在线状态）\"",
-    "description:\n      \"Device pairing and auth tokens (for mobile app setup codes, use `openclaw qr` instead)\"": "description:\n      \"设备配对和认证令牌（移动应用设置码请改用 `openclaw qr`）\"",
     "description: \"Secrets runtime controls\"": "description: \"密钥运行时控制\"",
     "\"Generate a mobile pairing QR code and setup code\"": "\"生成移动端配对二维码和设置码\"",
     "description: \"Discover and claim promotional model offers from ClawHub\"": "description: \"发现并领取 ClawHub 模型优惠\"",
     "description: \"Run provider-backed inference commands through a stable CLI surface\"": "description: \"通过稳定 CLI 界面运行提供商支持的推理命令\"",
     "description: \"Create, inspect, restore, and clean up managed worktrees\"": "description: \"创建、查看、恢复和清理托管 worktree\"",
-    "description: \"Attach Claude Code to a gateway session with scoped MCP tools\"": "description: \"将 Claude Code 附加到带作用域 MCP 工具的网关会话\""
+    "description: \"Attach Claude Code to a gateway session with scoped MCP tools\"": "description: \"将 Claude Code 附加到带作用域 MCP 工具的网关会话\"",
+    " (for mobile app setup codes, use `openclaw qr` instead)": "（移动应用设置码请改用 `openclaw qr`）"
   }
 }

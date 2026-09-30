@@ -56,7 +56,6 @@
     "colorize(rich, theme.muted, \"Privacy:\")": "colorize(rich, theme.muted, \"隐私：\")",
     "payload-free stability, sanitized logs/status/health/config`": "不含载荷的稳定性数据，已脱敏的日志/状态/健康/配置`",
     "`No stability bundles found in ${result.dir}`": "`在 ${result.dir} 中未找到稳定性包`",
-    "return \"Unexpected stability bundle read result\";": "return \"读取稳定性包时出现意外结果\";",
     "`\\n${theme.heading(\"Examples:\")}\\n${formatHelpExamples([": "`\\n${theme.heading(\"示例：\")}\\n${formatHelpExamples([",
     "])}\\n\\n${theme.muted(\"Docs:\")} ${formatDocsLink(\"/cli/gateway\", \"docs.openclaw.ai/cli/gateway\")}\\n`": "])}\\n\\n${theme.muted(\"文档：\")} ${formatDocsLink(\"/cli/gateway\", \"docs.openclaw.ai/cli/gateway\")}\\n`"
   }

@@ -5,10 +5,8 @@
     ".option(\"--port <port>\", \"Port for the gateway WebSocket\")": ".option(\"--port <port>\", \"网关 WebSocket 端口\")",
     "'Bind mode (\"loopback\"|\"lan\"|\"tailnet\"|\"auto\"|\"custom\"). Defaults to config gateway.bind (or loopback).'": "'绑定模式（\"loopback\"|\"lan\"|\"tailnet\"|\"auto\"|\"custom\"）。默认为配置 gateway.bind（或 loopback）。'",
     "\"Shared token required in connect.params.auth.token (default: OPENCLAW_GATEWAY_TOKEN env if set)\"": "\"connect.params.auth.token 中要求的共享令牌（默认：环境变量 OPENCLAW_GATEWAY_TOKEN 如已设置）\"",
-    "`Gateway auth mode (${formatModeChoices(GATEWAY_AUTH_MODES)})`": "`网关认证模式（${formatModeChoices(GATEWAY_AUTH_MODES)}）`",
     ".option(\"--password <password>\", \"Password for auth mode=password\")": ".option(\"--password <password>\", \"auth mode=password 时的密码\")",
     ".option(\"--password-file <path>\", \"Read gateway password from file\")": ".option(\"--password-file <path>\", \"从文件读取网关密码\")",
-    "`Tailscale exposure mode (${formatModeChoices(GATEWAY_TAILSCALE_MODES)})`": "`Tailscale 暴露模式（${formatModeChoices(GATEWAY_TAILSCALE_MODES)}）`",
     "\"Allow gateway start without enforcing gateway.mode=local in config (does not repair config)\"": "\"允许网关启动而不强制配置中的 gateway.mode=local（不修复配置）\"",
     ".option(\"--dev\", \"Create a dev config + workspace if missing (no BOOTSTRAP.md)\", false)": ".option(\"--dev\", \"如缺失则创建开发配置和工作区（不含 BOOTSTRAP.md）\", false)",
     "\"Reset dev config + credentials + sessions + workspace (requires --dev)\"": "\"重置开发配置、凭证、会话和工作区（需要 --dev）\"",
@@ -19,6 +17,8 @@
     ".option(\"--ws-log <style>\", 'WebSocket log style (\"auto\"|\"full\"|\"compact\")', \"auto\")": ".option(\"--ws-log <style>\", 'WebSocket 日志样式（\"auto\"|\"full\"|\"compact\"）', \"auto\")",
     ".option(\"--compact\", 'Alias for \"--ws-log compact\"', false)": ".option(\"--compact\", '\"--ws-log compact\" 的别名', false)",
     ".option(\"--raw-stream\", \"Log raw model stream events to jsonl\", false)": ".option(\"--raw-stream\", \"将原始模型流事件记录到 jsonl\", false)",
-    ".option(\"--raw-stream-path <path>\", \"Raw stream jsonl path\")": ".option(\"--raw-stream-path <path>\", \"原始流 jsonl 路径\")"
+    ".option(\"--raw-stream-path <path>\", \"Raw stream jsonl path\")": ".option(\"--raw-stream-path <path>\", \"原始流 jsonl 路径\")",
+    "'Gateway auth mode (\"none\"|\"token\"|\"password\"|\"trusted-proxy\")'": "'网关认证模式（\"none\"|\"token\"|\"password\"|\"trusted-proxy\"）'",
+    "'Tailscale exposure mode (\"off\"|\"serve\"|\"funnel\")'": "'Tailscale 暴露模式（\"off\"|\"serve\"|\"funnel\"）'"
   }
 }

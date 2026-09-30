@@ -15,7 +15,6 @@
     "\"OAuth dir\"": "\"OAuth 目录\"",
     "\"- Multiple state directories detected. This can split session history.\"": "\"- 检测到多个状态目录。这可能导致会话历史分散。\"",
     "`- Main session transcript missing (${shortenHomePath(transcriptPath)}). History will appear to reset.`": "`- 主会话记录缺失 (${shortenHomePath(transcriptPath)})。历史记录将显示为已重置。`",
-    "`- Main session transcript has only ${lineCount} line. Session history may not be appending.`": "`- 主会话记录只有 ${lineCount} 行。会话历史可能没有正常追加。`",
-    "note(tip, \"Workspace\")": "note(tip, \"工作区\")"
+    "`- Main session transcript has only ${lineCount} line. Session history may not be appending.`": "`- 主会话记录只有 ${lineCount} 行。会话历史可能没有正常追加。`"
   }
 }

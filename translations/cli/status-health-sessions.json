@@ -41,7 +41,6 @@
     "[\"openclaw sessions cleanup --all-agents --dry-run\", \"Preview all agent stores.\"]": "[\"openclaw sessions cleanup --all-agents --dry-run\", \"预览所有代理的存储。\"]",
     "\"Use a specific store.\"": "\"使用特定的存储。\"",
     "theme.heading(\"Examples:\")": "theme.heading(\"示例：\")",
-    "theme.muted(\"Docs:\")": "theme.muted(\"文档：\")",
     ".option(\"--timeout <ms>\", \"Probe timeout in milliseconds\")": ".option(\"--timeout <ms>\", \"探测超时（毫秒）\")",
     ".option(\"--timeout <ms>\", \"Connection timeout in milliseconds\")": ".option(\"--timeout <ms>\", \"连接超时（毫秒）\")"
   }

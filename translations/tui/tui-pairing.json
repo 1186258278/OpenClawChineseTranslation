@@ -9,6 +9,6 @@
     "isLocalMode ? \"local ready\" : reconnected ? \"gateway reconnected\" : \"gateway connected\"": "isLocalMode ? \"本地就绪\" : reconnected ? \"网关已重连\" : \"网关已连接\"",
     "`local runtime stopped${reason ? `: ${reason}` : \"\"}`": "`本地运行时已停止${reason ? `：${reason}` : \"\"}`",
     "`event gap: expected ${info.expected}, got ${info.received}`": "`事件间隔：预期 ${info.expected}，实际 ${info.received}`",
-    "activityStatus: \"device approval needed: preview latest request\"": "activityStatus: \"需要设备审批：预览最新请求\""
+    "\"device approval needed: preview latest request\"": "\"需要设备审批：预览最新请求\""
   }
 }

@@ -1,0 +1,7 @@
+{
+  "file": "src/cli/help-format.ts",
+  "description": "CLI 帮助文档链接",
+  "replacements": {
+    "theme.muted(\"Docs:\")": "theme.muted(\"文档：\")"
+  }
+}

@@ -23,7 +23,8 @@
       "cli/onboard-register.json",
       "cli/status-health-sessions.json",
       "cli/register-migrate.json",
-      "cli/register-transcripts.json"
+      "cli/register-transcripts.json",
+      "cli/help-format.json"
     ],
     "wizard": [
       "wizard/onboarding.json",
@@ -84,7 +85,6 @@
       "commands/commands-session.json",
       "commands/commands-session-abort.json",
       "commands/daemon-install-helpers.json",
-      "commands/onboard-channels-clawapp.json",
       "commands/agent-runtime-label.json",
       "commands/commands-models.json",
       "commands/commands-models-catalog.json",
@@ -161,7 +161,9 @@
       "dashboard/chat-status-indicators.json",
       "dashboard/chat-build-items.json",
       "dashboard/session-display.json",
-      "dashboard/chat-session-controls.json"
+      "dashboard/chat-session-controls.json",
+      "dashboard/schema-labels-browser.json",
+      "dashboard/schema-labels-approvals.json"
     ],
     "extensions": [
       "extensions/feishu.json",

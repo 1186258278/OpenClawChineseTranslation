@@ -15,7 +15,6 @@
     "description: \"Manage isolated agents (workspaces + auth + routing)\"": "description: \"管理隔离代理（工作区、认证、路由）\"",
     "description: \"Show channel health and recent session recipients\"": "description: \"显示渠道健康状态和最近会话收件人\"",
     "description: \"Fetch health from the running gateway\"": "description: \"从运行中的网关获取健康状态\"",
-    "description: \"Manage OpenClaw mcp.servers config and channel bridge\"": "description: \"管理 OpenClaw mcp.servers 配置和渠道桥接\"",
-    "description: \"Inspect durable background tasks and TaskFlow state\"": "description: \"查看持久化后台任务和 TaskFlow 状态\""
+    "description: \"Manage OpenClaw mcp.servers config and channel bridge\"": "description: \"管理 OpenClaw mcp.servers 配置和渠道桥接\""
   }
 }

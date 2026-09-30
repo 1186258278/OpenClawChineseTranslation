@@ -3,7 +3,6 @@
   "description": "onboard 命令及其选项",
   "replacements": {
     ".description(\"Guided setup for auth, models, Gateway, workspace, channels, and skills\")": ".description(\"引导设置认证、模型、网关、工作区、渠道和技能\")",
-    "`\\n${theme.muted(\"Docs:\")} ${formatDocsLink(\"/cli/onboard\", \"docs.openclaw.ai/cli/onboard\")}\\n`": "`\\n${theme.muted(\"文档：\")} ${formatDocsLink(\"/cli/onboard\", \"docs.openclaw.ai/cli/onboard\")}\\n`",
     "\"Reset config + credentials + sessions before running onboard (workspace only with --reset-scope full)\"": "\"在运行 onboard 前重置配置、凭证和会话（工作区仅在 --reset-scope full 时重置）\"",
     ".option(\"--reset-scope <scope>\", \"Reset scope: config|config+creds+sessions|full\")": ".option(\"--reset-scope <scope>\", \"重置范围：config|config+creds+sessions|full\")",
     ".option(\"--non-interactive\", \"Run without prompts\", false)": ".option(\"--non-interactive\", \"无提示运行\", false)",

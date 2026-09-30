@@ -19,9 +19,7 @@
     "\"Per-probe timeout in ms\"": "\"每次探测超时 (毫秒)\"",
     "\"Concurrent probes\"": "\"并发探测数\"",
     "\"Probe max tokens (best-effort)\"": "\"探测最大令牌数 (尽力而为)\"",
-    ".description(\"Set the default model\")": ".description(\"设置默认模型\")",
     "\"Model id or alias\"": "\"模型 ID 或别名\"",
-    ".description(\"Set the image model\")": ".description(\"设置图像模型\")",
     ".description(\"Manage model aliases\")": ".description(\"管理模型别名\")",
     ".description(\"List model aliases\")": ".description(\"列出模型别名\")",
     ".description(\"Add or update a model alias\")": ".description(\"添加或更新模型别名\")",
@@ -62,11 +60,11 @@
     "\"Agent id (default: configured default agent)\"": "\"代理 ID (默认：已配置的默认代理)\"",
     ".description(\"Remove a saved auth profile (see `models auth list` for ids)\")": ".description(\"移除已保存的认证配置（ID 见 `models auth list`）\")",
     "\"Skip the confirmation prompt\"": "\"跳过确认提示\"",
-    ".description(\"Save a token in an auth profile and update config\")": ".description(\"将令牌保存到认证配置并更新配置\")",
-    ".description(\"Save an API key in an auth profile and update config\")": ".description(\"将 API 密钥保存到认证配置并更新配置\")",
     ".description(\"Show per-agent auth profile order override\")": ".description(\"显示每代理认证配置顺序覆盖\")",
     ".description(\"Set per-agent auth profile order override\")": ".description(\"设置每代理认证配置顺序覆盖\")",
     ".description(\"Clear per-agent auth profile order override\")": ".description(\"清除每代理认证配置顺序覆盖\")",
-    "\"Refresh provider discovery before listing\"": "\"列出前刷新提供商发现\""
+    "\"Refresh provider discovery before listing\"": "\"列出前刷新提供商发现\"",
+    "\"Set the default model\"": "\"设置默认模型\"",
+    "\"Set the image model\"": "\"设置图像模型\""
   }
 }

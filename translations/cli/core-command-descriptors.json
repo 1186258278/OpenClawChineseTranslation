@@ -18,7 +18,6 @@
     "description: \"Show channel health and recent session recipients\"": "description: \"显示渠道健康状态和最近会话收件人\"",
     "description: \"Fetch health from the running gateway\"": "description: \"从运行中的网关获取健康状态\"",
     "description: \"Manage OpenClaw mcp.servers config and channel bridge\"": "description: \"管理 OpenClaw mcp.servers 配置和渠道桥接\"",
-    "description: \"Inspect durable background tasks and TaskFlow state\"": "description: \"查看持久化后台任务和 TaskFlow 状态\"",
     "description: \"Inspect database schema compatibility and shared-state write ownership\"": "description: \"检查数据库 schema 兼容性和共享状态写入归属\""
   }
 }
