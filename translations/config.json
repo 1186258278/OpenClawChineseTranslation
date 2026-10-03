@@ -92,7 +92,8 @@
       "commands/commands-subagents-main.json",
       "commands/commands-subagents-shared.json",
       "commands/commands-subagents-info.json",
-      "commands/commands-subagents-log.json"
+      "commands/commands-subagents-log.json",
+      "commands/doctor-legacy-silent-reply.json"
     ],
     "daemon": [
       "daemon/systemd-hints.json",
@@ -195,7 +196,11 @@
       "extensions/memory-core.json",
       "extensions/memory-core-cli-metadata.json",
       "extensions/memory-core-cli.json",
-      "extensions/zalouser-setup.json"
+      "extensions/zalouser-setup.json",
+      "extensions/telegram-state-migrations.json",
+      "extensions/llama-server-install.json",
+      "extensions/llama-server-vc-runtime.json",
+      "extensions/openai-codex-model-rows.json"
     ],
     "plugins": [
       "plugins/provider-auth-mode.json",

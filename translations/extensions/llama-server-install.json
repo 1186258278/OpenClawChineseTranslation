@@ -1,0 +1,8 @@
+{
+  "file": "extensions/llama-cpp/src/llama-server-install.ts",
+  "description": "llama-server Windows 运行时错误提示",
+  "replacements": {
+    "`The verified llama-server build could not start with its app-local Visual C++ runtime. Rerun llama.cpp setup to reinstall it, or configure a compatible llama-server manually. Detail: ${detail}`": "`已验证的 llama-server 构建无法使用应用本地 Visual C++ 运行时启动。请重新运行 llama.cpp 设置以重新安装，或手动配置兼容的 llama-server。详情：${detail}`",
+    "`The extracted llama-server could not start with the installed Windows runtime, and its app-local Visual C++ runtime fallback did not restore it. Initial startup detail: ${startupDetail} Fallback detail: ${fallbackDetail}`": "`提取的 llama-server 无法使用已安装的 Windows 运行时启动，应用本地 Visual C++ 运行时回退也未能恢复。初始启动详情：${startupDetail} 回退详情：${fallbackDetail}`"
+  }
+}

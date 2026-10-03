@@ -1,0 +1,7 @@
+{
+  "file": "extensions/openai/codex-model-rows.ts",
+  "description": "OpenAI Codex 模型目录错误提示",
+  "replacements": {
+    "\"OpenAI Codex model discovery response must be { models: [] }\"": "\"OpenAI Codex 模型发现响应必须为 { models: [] }\""
+  }
+}
