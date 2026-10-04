@@ -15,6 +15,18 @@ export function buildCiyapiProvider(): ModelProviderConfig {
         maxTokens: 16384,
       },
       {
+        id: "MiniMax-M3",
+        name: "MiniMax M3",
+        contextWindow: 1000000,
+        maxTokens: 16384,
+      },
+      {
+        id: "MiniMax-M2.7",
+        name: "MiniMax M2.7",
+        contextWindow: 204800,
+        maxTokens: 16384,
+      },
+      {
         id: "gpt-4o",
         name: "GPT-4o",
         contextWindow: 128000,
