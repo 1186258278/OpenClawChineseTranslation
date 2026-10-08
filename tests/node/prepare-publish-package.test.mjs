@@ -35,6 +35,25 @@ test('稳定版发布清单固定内部运行时依赖版本', () => {
   assert.equal(source.dependencies['@openclaw/ai'], 'workspace:*')
 })
 
+test('运行时使用的 tree-sitter-bash 从开发依赖提升到发布依赖', () => {
+  const source = {
+    name: 'openclaw',
+    version: '2026.9.9',
+    dependencies: { koffi: '2.14.0' },
+    devDependencies: { 'tree-sitter-bash': '0.25.1' },
+  }
+
+  const prepared = preparePublishManifest(source, {
+    releaseVersion: '2026.9.9-zh.2',
+    upstreamVersion: '2026.9.9',
+    versionType: 'stable',
+  })
+
+  assert.equal(prepared.dependencies['tree-sitter-bash'], '0.25.1')
+  assert.equal(prepared.devDependencies['tree-sitter-bash'], undefined)
+  assert.equal(source.devDependencies['tree-sitter-bash'], '0.25.1')
+})
+
 test('未知 workspace 运行时依赖会阻断发布', () => {
   assert.throws(
     () =>

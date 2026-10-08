@@ -8,6 +8,7 @@ const PUBLISHED_REPOSITORY = {
 }
 const RUNTIME_DEPENDENCY_FIELDS = ['dependencies', 'optionalDependencies', 'peerDependencies']
 const SUPPORTED_WORKSPACE_DEPENDENCIES = new Set(['@openclaw/ai'])
+const PROMOTED_RUNTIME_DEV_DEPENDENCIES = ['tree-sitter-bash']
 
 function publishedWorkspaceVersion(specifier, upstreamVersion) {
   const workspaceRange = specifier.slice('workspace:'.length)
@@ -36,6 +37,18 @@ export function preparePublishManifest(
     versionType === 'nightly'
       ? 'OpenClaw 汉化发行版 (Nightly) - 武汉晴辰天下网络科技有限公司'
       : 'OpenClaw 汉化发行版（稳定版）- 武汉晴辰天下网络科技有限公司'
+
+  for (const name of PROMOTED_RUNTIME_DEV_DEPENDENCIES) {
+    const specifier = prepared.devDependencies?.[name]
+    if (!specifier) continue
+
+    prepared.dependencies ??= {}
+    if (prepared.dependencies[name] && prepared.dependencies[name] !== specifier) {
+      throw new Error(`运行时依赖版本冲突: ${name}`)
+    }
+    prepared.dependencies[name] = specifier
+    delete prepared.devDependencies[name]
+  }
 
   for (const field of RUNTIME_DEPENDENCY_FIELDS) {
     const dependencies = prepared[field]
