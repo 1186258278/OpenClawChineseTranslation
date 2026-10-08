@@ -1,0 +1,17 @@
+{
+  "file": "src/commands/doctor-migration-backup.ts",
+  "description": "Doctor 迁移前 SQLite 备份提示",
+  "replacements": {
+    "Pre-migration SQLite backup source changed: ${pathname}": "迁移前 SQLite 备份源已变更：${pathname}",
+    "Pre-migration SQLite backup capture marker changed: ${capturePath}": "迁移前 SQLite 备份捕获标记已变更：${capturePath}",
+    "Migration backup directory": "迁移备份目录",
+    "Incomplete pre-migration SQLite backup changed: ${targetPath}": "未完成的迁移前 SQLite 备份已变更：${targetPath}",
+    "Discarded incomplete pre-migration SQLite backup: ${targetPath}": "已丢弃未完成的迁移前 SQLite 备份：${targetPath}",
+    "Backup must be a regular file": "备份必须是常规文件",
+    "Backup changed during verification": "备份在验证期间发生变更",
+    "Cannot verify pre-migration SQLite backup: ${targetPath}. ${formatErrorMessage(cause)}. Restore the matching backup group before retrying; surviving snapshots were preserved.": "无法验证迁移前 SQLite 备份：${targetPath}。${formatErrorMessage(cause)}。重试前请恢复相匹配的备份组；现存快照已保留。",
+    "Reused pre-migration SQLite backup: ${targetPath}": "已复用迁移前 SQLite 备份：${targetPath}",
+    "Completed pre-migration SQLite backup group is missing: ${targetPath}. Restore the matching backup group before retrying; surviving snapshots were preserved.": "缺少已完成的迁移前 SQLite 备份组：${targetPath}。重试前请恢复相匹配的备份组；现存快照已保留。",
+    "Pre-migration SQLite backup capture marker appeared during verification: ${capturePath}": "迁移前 SQLite 备份捕获标记在验证期间出现：${capturePath}"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "file": "extensions/a2a/src/outbound.ts",
+  "description": "A2A 出站令牌引用错误提示",
+  "replacements": {
+    "peer ${peerName} outboundToken reference did not resolve; set the variable and reload before sending": "A2A 对等端 ${peerName} 的 outboundToken 引用未能解析；请设置该变量并重新加载后再发送"
+  }
+}

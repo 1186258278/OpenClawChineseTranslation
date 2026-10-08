@@ -1,0 +1,13 @@
+{
+  "file": "src/commands/doctor-gateway-services.ts",
+  "description": "Doctor 网关服务令牌修复",
+  "replacements": {
+    "Preserve the Gateway token in the secret store, write its SecretRef to config, and reinstall the service now?": "将网关令牌保存到密钥存储、把其 SecretRef 写入配置并立即重新安装服务吗？",
+    "Overwrite gateway service config with current defaults now?": "立即使用当前默认值覆盖网关服务配置吗？",
+    "Update gateway service config to the recommended defaults now?": "立即将网关服务配置更新为推荐默认值吗？",
+    "Skipped Gateway token preservation and service repair. Rerun `openclaw doctor --fix` in an interactive terminal to approve saving a store SecretRef in gateway.auth.token.": "已跳过网关令牌保存和服务修复。请在交互式终端中重新运行 `openclaw doctor --fix`，以批准将存储 SecretRef 写入 gateway.auth.token。",
+    "Gateway service config": "网关服务配置",
+    "Gateway token already exists in secret store entry \"${ref.id}\"; the store was left unchanged.": "网关令牌已存在于密钥存储条目 \"${ref.id}\" 中；未更改存储。",
+    "Configured gateway.auth.token as a store SecretRef before reinstalling service.": "已在重新安装服务前将 gateway.auth.token 配置为存储 SecretRef。"
+  }
+}

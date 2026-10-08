@@ -1,0 +1,12 @@
+{
+  "file": "src/cli/update-cli/update-command-fresh-doctor.ts",
+  "description": "更新后 Doctor 检查提示",
+  "replacements": {
+    "Post-update plugin Doctor did not complete${exitCode == null ? \"\" : ` (exit ${exitCode})`}: ${message}": "更新后插件 Doctor 未完成${exitCode == null ? \"\" : `（退出码 ${exitCode}）`}：${message}",
+    "Run `openclaw update repair` to retry post-update plugin repair.": "运行 `openclaw update repair` 可重试更新后插件修复。",
+    "Doctor maintenance remains pending; run openclaw doctor --fix.": "Doctor 维护仍待完成；请运行 openclaw doctor --fix。",
+    "Doctor maintenance remains refused": "Doctor 维护仍被拒绝",
+    "Doctor result recording failed": "Doctor 结果记录失败",
+    "Updated ${params.phase} Doctor failed:\\n${details.join(\"\\n\")}": "更新后的 ${params.phase} Doctor 执行失败：\\n${details.join(\"\\n\")}"
+  }
+}

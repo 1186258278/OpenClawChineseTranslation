@@ -1,0 +1,9 @@
+{
+  "file": "src/commands/doctor/shared/retired-config-formats.ts",
+  "description": "Doctor 旧版配置迁移提示",
+  "replacements": {
+    "Config contains retired pre-June keys: ${retired.join(\", \")}. Doctor cannot remove these settings safely.": "配置包含 6 月前的废弃键：${retired.join(\", \")}。Doctor 无法安全移除这些设置。",
+    "Install OpenClaw 2026.9.5, run \"${formatCliCommand(\"openclaw doctor --fix\")}\", then upgrade to latest. ": "请安装 OpenClaw 2026.9.5，运行 \"${formatCliCommand(\"openclaw doctor --fix\")}\"，然后升级到最新版本。",
+    "See https://docs.openclaw.ai/install/updating#upgrading-very-old-versions.": "参阅 https://docs.openclaw.ai/install/updating#upgrading-very-old-versions。"
+  }
+}

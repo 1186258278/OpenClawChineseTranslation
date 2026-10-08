@@ -1,0 +1,10 @@
+{
+  "file": "src/cli/update-cli/update-command-service-recovery.ts",
+  "description": "更新后网关恢复提示",
+  "replacements": {
+    "Migrated Gateway runtime identity is unavailable.": "迁移后的网关运行时标识不可用。",
+    "Required database migrations completed before Gateway recovery.": "网关恢复前所需的数据库迁移已完成。",
+    "${database.path}: expected schema ${database.expected}, found ${database.observed}": "${database.path}：预期 schema ${database.expected}，实际为 ${database.observed}",
+    "Run \\`${formatCliCommand(\"openclaw doctor --fix\", env)}\\`, then \\`${formatCliCommand(\"openclaw gateway start\", env)}\\`. Gateway migration recovery did not finish: ${formatErrorMessage(error)}.": "运行 \\`${formatCliCommand(\"openclaw doctor --fix\", env)}\\`，然后运行 \\`${formatCliCommand(\"openclaw gateway start\", env)}\\`。网关迁移恢复未完成：${formatErrorMessage(error)}。"
+  }
+}

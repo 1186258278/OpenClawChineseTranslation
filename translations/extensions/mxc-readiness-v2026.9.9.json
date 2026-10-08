@@ -1,0 +1,18 @@
+{
+  "file": "extensions/mxc/src/readiness.ts",
+  "description": "MXC Windows 沙箱就绪诊断",
+  "replacements": {
+    "[mxc] MXC Windows ProcessContainer sandbox is not ready: ${reason}. ": "[mxc] MXC Windows ProcessContainer 沙箱尚未就绪：${reason}。",
+    "Run \"${executablePath}\" --probe for host details. ": "运行 \"${executablePath}\" --probe 获取主机详情。",
+    "The selected executor must be compatible with MXC 0.8.0 and support --probe. ": "所选执行器必须与 MXC 0.8.0 兼容并支持 --probe。",
+    "If mxcBinaryPath points to an older executor, update it or unset ": "若 mxcBinaryPath 指向旧执行器，请更新该执行器或取消设置 ",
+    "plugins.entries.mxc.config.mxcBinaryPath and restart the Gateway to use ": "plugins.entries.mxc.config.mxcBinaryPath，然后重启网关以使用 ",
+    "the bundled SDK executor.": "随附的 SDK 执行器。",
+    "the MXC host probe failed${detail}": "MXC 主机探测失败${detail}",
+    "the MXC host probe did not return JSON": "MXC 主机探测未返回 JSON",
+    "the MXC host probe returned an unexpected result": "MXC 主机探测返回了意外结果",
+    "the probe reported no isolation tier": "探测未报告隔离级别",
+    "MXC cannot select an isolation tier on this host (${reason})": "MXC 无法在此主机上选择隔离级别（${reason}）",
+    "[mxc] MXC sandbox is using the ${probe.tier} isolation tier: ${probe.warnings.join(\"; \")}": "[mxc] MXC 沙箱正在使用 ${probe.tier} 隔离级别：${probe.warnings.join(\"; \")}"
+  }
+}

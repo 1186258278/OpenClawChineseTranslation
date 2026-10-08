@@ -1,0 +1,12 @@
+{
+  "file": "extensions/telegram/src/miniapp/command.ts",
+  "description": "Telegram 控制界面命令",
+  "replacements": {
+    "Open the OpenClaw Control UI": "打开 OpenClaw 控制界面",
+    "open this in a DM with the bot": "请在与机器人的私聊中打开。",
+    "Restricted to the bot owner. Ask your OpenClaw administrator to add your numeric ": "仅限机器人所有者使用。请让 OpenClaw 管理员将您的数字 ",
+    "commands.ownerAllowFrom, then retry /controlui. Wildcards and usernames do not grant Control UI access.": "添加到 commands.ownerAllowFrom，然后重试 /controlui。通配符和用户名不能授予控制界面访问权限。",
+    "Open OpenClaw Control UI.": "打开 OpenClaw 控制界面。",
+    "Open Control UI": "打开控制界面"
+  }
+}

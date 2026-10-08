@@ -1,0 +1,10 @@
+{
+  "file": "extensions/a2a/src/status-issues.ts",
+  "description": "A2A 令牌状态提示",
+  "replacements": {
+    "A2A peer${inbound.length === 1 ? \"\" : \"s\"} ${inbound.join(\", \")} cannot authenticate: the inbound token reference did not resolve, so requests from ${inbound.length === 1 ? \"it are\" : \"them are\"} rejected with 401.": "A2A 对等端 ${inbound.join(\", \")} 无法认证：入站令牌引用未能解析，相关请求将被 401 拒绝。",
+    "Set the environment variable referenced by channels.a2a.peers.<name>.token for ${inbound.join(\", \")}, then reload or restart the gateway.": "请设置 ${inbound.join(\", \")} 的 channels.a2a.peers.<name>.token 所引用环境变量，然后重新加载或重启网关。",
+    "Sends to A2A peer${outbound.length === 1 ? \"\" : \"s\"} ${outbound.join(\", \")} are refused: the outbound token reference did not resolve.": "发送到 A2A 对等端 ${outbound.join(\", \")} 的请求已被拒绝：出站令牌引用未能解析。",
+    "Set the environment variable referenced by channels.a2a.peers.<name>.outboundToken for ${outbound.join(\", \")}, then reload or restart the gateway.": "请设置 ${outbound.join(\", \")} 的 channels.a2a.peers.<name>.outboundToken 所引用环境变量，然后重新加载或重启网关。"
+  }
+}

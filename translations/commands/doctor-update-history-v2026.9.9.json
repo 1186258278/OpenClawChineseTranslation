@@ -1,0 +1,9 @@
+{
+  "file": "src/commands/doctor-update-run.ts",
+  "description": "Doctor 更新历史提示",
+  "replacements": {
+    "Update history reconciliation could not complete: ${String(error)}": "更新历史协调未能完成：${String(error)}",
+    "Update history": "更新历史",
+    "Update history warning could not be saved: ${String(error)}": "更新历史警告未能保存：${String(error)}"
+  }
+}

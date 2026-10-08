@@ -24,7 +24,16 @@
       "cli/status-health-sessions.json",
       "cli/register-migrate.json",
       "cli/register-transcripts.json",
-      "cli/help-format.json"
+      "cli/help-format.json",
+      "cli/gateway-startup-recovery-v2026.9.9.json",
+      "cli/gateway-run-loop-v2026.9.9.json",
+      "cli/runtime-cleanup-v2026.9.9.json",
+      "cli/secrets-store-v2026.9.9.json",
+      "cli/update-config-failure-v2026.9.9.json",
+      "cli/update-database-backup-v2026.9.9.json",
+      "cli/update-fresh-doctor-v2026.9.9.json",
+      "cli/update-migrated-v2026.9.9.json",
+      "cli/update-service-recovery-v2026.9.9.json"
     ],
     "wizard": [
       "wizard/onboarding.json",
@@ -93,7 +102,12 @@
       "commands/commands-subagents-shared.json",
       "commands/commands-subagents-info.json",
       "commands/commands-subagents-log.json",
-      "commands/doctor-legacy-silent-reply.json"
+      "commands/doctor-legacy-silent-reply.json",
+      "commands/doctor-gateway-services-v2026.9.9.json",
+      "commands/doctor-maintenance-v2026.9.9.json",
+      "commands/doctor-migration-backup-v2026.9.9.json",
+      "commands/doctor-update-history-v2026.9.9.json",
+      "commands/doctor-retired-config-v2026.9.9.json"
     ],
     "daemon": [
       "daemon/systemd-hints.json",
@@ -200,7 +214,13 @@
       "extensions/telegram-state-migrations.json",
       "extensions/llama-server-install.json",
       "extensions/llama-server-vc-runtime.json",
-      "extensions/openai-codex-model-rows.json"
+      "extensions/openai-codex-model-rows.json",
+      "extensions/a2a-outbound-v2026.9.9.json",
+      "extensions/a2a-status-v2026.9.9.json",
+      "extensions/mxc-readiness-v2026.9.9.json",
+      "extensions/telegram-miniapp-command-v2026.9.9.json",
+      "extensions/telegram-miniapp-page-v2026.9.9.json",
+      "extensions/telegram-miniapp-url-v2026.9.9.json"
     ],
     "plugins": [
       "plugins/provider-auth-mode.json",

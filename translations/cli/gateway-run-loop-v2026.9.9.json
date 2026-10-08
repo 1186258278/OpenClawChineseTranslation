@@ -1,0 +1,8 @@
+{
+  "file": "src/cli/gateway-cli/run-loop.ts",
+  "description": "网关启动恢复提示",
+  "replacements": {
+    "Attempting automatic triage before recovery.": "恢复前正在尝试自动诊断。",
+    "Process will stay alive; fix the issue and restart.": "进程将保持运行；请修复问题后重启。"
+  }
+}
