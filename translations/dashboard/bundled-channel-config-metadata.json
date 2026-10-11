@@ -1,0 +1,9 @@
+{
+  "file": "src/config/bundled-channel-config-metadata.generated.ts",
+  "description": "Discord Activities 字段标签翻译",
+  "replacements": {
+    "\"activities\":{\"label\":\"Discord Activities\"": "\"activities\":{\"label\":\"Discord 活动\"",
+    "\"activities.clientSecret\":{\"label\":\"Discord Activities Client Secret\"": "\"activities.clientSecret\":{\"label\":\"Discord 活动客户端密钥\"",
+    "\"activities.applicationId\":{\"label\":\"Discord Activities Application ID\"": "\"activities.applicationId\":{\"label\":\"Discord 活动应用 ID\""
+  }
+}

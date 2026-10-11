@@ -2,7 +2,7 @@
   "file": "src/commands/status.command-report.ts",
   "description": "状态命令 - 报告顶层标题",
   "replacements": {
-    "params.heading(\"OpenClaw status\")": "params.heading(\"OpenClaw 状态\")",
-    "appendStatusReportLines(report, \"Security audit\", securityAuditLines);": "appendStatusReportLines(report, \"安全审计\", securityAuditLines);"
+    "lines.push(theme.heading(\"OpenClaw status\"));": "lines.push(theme.heading(\"OpenClaw 状态\"));",
+    "appendStatusReportLines(report, \"Security audit\", params.securityAuditLines);": "appendStatusReportLines(report, \"安全审计\", params.securityAuditLines);"
   }
 }

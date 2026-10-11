@@ -1,0 +1,17 @@
+{
+  "file": "src/config/schema.labels.github.ts",
+  "description": "Dashboard GitHub 身份字段标签翻译",
+  "replacements": {
+    "  \"tools.github\": \"GitHub CLI Identity and Git Author\"": "  \"tools.github\": \"GitHub CLI 身份与 Git 作者\"",
+    "  \"tools.github.profileId\": \"GitHub Profile Version\"": "  \"tools.github.profileId\": \"GitHub 配置档版本\"",
+    "  \"tools.github.kind\": \"GitHub Credential Kind\"": "  \"tools.github.kind\": \"GitHub 凭证类型\"",
+    "  \"tools.github.gitAuthor.name\": \"Git Author Name\"": "  \"tools.github.gitAuthor.name\": \"Git 作者名称\"",
+    "  \"tools.github.gitAuthor.email\": \"Git Author Email\"": "  \"tools.github.gitAuthor.email\": \"Git 作者邮箱\"",
+    "  \"agents.entries.*.tools.github\": \"Agent GitHub CLI Identity Override\"": "  \"agents.entries.*.tools.github\": \"代理 GitHub CLI 身份覆盖\"",
+    "  \"agents.entries.*.tools.github.allowInSandbox\": \"Allow Agent GitHub Identity in Sandbox\"": "  \"agents.entries.*.tools.github.allowInSandbox\": \"允许代理在沙箱中使用 GitHub 身份\"",
+    "  \"agents.entries.*.tools.github.profileId\": \"Agent GitHub Profile Version\"": "  \"agents.entries.*.tools.github.profileId\": \"代理 GitHub 配置档版本\"",
+    "  \"agents.entries.*.tools.github.kind\": \"Agent GitHub Credential Kind\"": "  \"agents.entries.*.tools.github.kind\": \"代理 GitHub 凭证类型\"",
+    "  \"agents.entries.*.tools.github.gitAuthor.name\": \"Agent Git Author Name\"": "  \"agents.entries.*.tools.github.gitAuthor.name\": \"代理 Git 作者名称\"",
+    "  \"agents.entries.*.tools.github.gitAuthor.email\": \"Agent Git Author Email\"": "  \"agents.entries.*.tools.github.gitAuthor.email\": \"代理 Git 作者邮箱\""
+  }
+}

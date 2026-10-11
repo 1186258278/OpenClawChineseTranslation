@@ -1,8 +1,8 @@
 {
-  "file": "src/cli/gateway-cli/run-loop.ts",
+  "file": "src/cli/gateway-cli/run-loop-startup.ts",
   "description": "网关启动恢复提示",
   "replacements": {
     "Attempting automatic triage before recovery.": "恢复前正在尝试自动诊断。",
-    "Process will stay alive; fix the issue and restart.": "进程将保持运行；请修复问题后重启。"
+    "Process will stay alive for manual recovery. Fix the startup refusal above, run ${formatCliCommand(\"openclaw doctor --fix\")}, then ${resume}": "进程将保持运行以便手动恢复。请修复上述启动拒绝问题，运行 ${formatCliCommand(\"openclaw doctor --fix\")}，然后${resume}"
   }
 }

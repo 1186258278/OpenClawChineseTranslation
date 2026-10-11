@@ -1,0 +1,9 @@
+{
+  "file": "extensions/zai/openclaw.plugin.json",
+  "description": "Z.AI 插件清单认证分组提示翻译",
+  "replacements": {
+    "\"groupHint\": \"GLM Coding Plan / Global / CN\"": "\"groupHint\": \"GLM 编程计划 / 国际版 / 国内版\"",
+    "\"choiceHint\": \"GLM Coding Plan Global (api.z.ai)\"": "\"choiceHint\": \"GLM 编程计划国际版 (api.z.ai)\"",
+    "\"choiceHint\": \"GLM Coding Plan CN (open.bigmodel.cn)\"": "\"choiceHint\": \"GLM 编程计划国内版 (open.bigmodel.cn)\""
+  }
+}

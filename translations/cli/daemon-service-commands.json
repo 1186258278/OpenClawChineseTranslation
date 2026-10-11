@@ -15,9 +15,10 @@
     ".option(\"--port <port>\", \"Gateway port\")": ".option(\"--port <port>\", \"网关端口\")",
     ".option(\"--token <token>\", \"Gateway token (token auth)\")": ".option(\"--token <token>\", \"网关令牌（token 认证）\")",
     ".option(\"--force\", \"Reinstall if already installed (may restart a running Gateway)\", false)": ".option(\"--force\", \"如已安装则重新安装（可能会重启正在运行的 Gateway）\", false)",
-    ".description(\"Uninstall the Gateway service (launchd/systemd/schtasks)\")": ".description(\"卸载网关服务（launchd/systemd/schtasks）\")",
-    ".description(\"Start the Gateway service (launchd/systemd/schtasks)\")": ".description(\"启动网关服务（launchd/systemd/schtasks）\")",
     ".description(\"Stop the Gateway service (launchd/systemd/schtasks)\")": ".description(\"停止网关服务（launchd/systemd/schtasks）\")",
-    ".description(\"Restart the Gateway service (launchd/systemd/schtasks)\")": ".description(\"重启网关服务（launchd/systemd/schtasks）\")"
+    ".description(\"Restart the Gateway service (launchd/systemd/schtasks)\")": ".description(\"重启网关服务（launchd/systemd/schtasks）\")",
+    "    [\"uninstall\", \"Uninstall\", \"runDaemonUninstall\"],": "    [\"uninstall\", \"卸载\", \"runDaemonUninstall\"],",
+    "    [\"start\", \"Start\", \"runDaemonStart\"],": "    [\"start\", \"启动\", \"runDaemonStart\"],",
+    ".description(`${description} the Gateway service (launchd/systemd/schtasks)`)": ".description(`${description}网关服务（launchd/systemd/schtasks）`)"
   }
 }

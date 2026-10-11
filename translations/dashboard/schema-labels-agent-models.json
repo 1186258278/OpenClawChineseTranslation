@@ -34,6 +34,14 @@
     "  \"agents.defaults.embeddedAgent.cyberFailover\": \"Cyber Policy Failover\"": "  \"agents.defaults.embeddedAgent.cyberFailover\": \"网络安全策略故障转移\"",
     "  \"agents.defaults.embeddedAgent.cyberFailover.mode\": \"Cyber Policy Failover Mode\"": "  \"agents.defaults.embeddedAgent.cyberFailover.mode\": \"网络安全策略故障转移模式\"",
     "  \"agents.defaults.embeddedAgent.cyberFailover.model\": \"Cyber Policy Failover Model\"": "  \"agents.defaults.embeddedAgent.cyberFailover.model\": \"网络安全策略故障转移模型\"",
-    "  \"agents.defaults.embeddedAgent.cyberFailover.cooloffMs\": \"Cyber Policy Failover Cooloff\"": "  \"agents.defaults.embeddedAgent.cyberFailover.cooloffMs\": \"网络安全策略故障转移冷却时间\""
+    "  \"agents.defaults.embeddedAgent.cyberFailover.cooloffMs\": \"Cyber Policy Failover Cooloff\"": "  \"agents.defaults.embeddedAgent.cyberFailover.cooloffMs\": \"网络安全策略故障转移冷却时间\"",
+    "  \"agents.entries.*.models\": \"Agent Model Overrides\"": "  \"agents.entries.*.models\": \"代理模型覆盖\"",
+    "  \"agents.entries.*.modelPolicy\": \"Agent Model Policy\"": "  \"agents.entries.*.modelPolicy\": \"代理模型策略\"",
+    "  \"agents.entries.*.modelPolicy.allow\": \"Allowed Agent Models\"": "  \"agents.entries.*.modelPolicy.allow\": \"允许的代理模型\"",
+    "  \"agents.entries.*.models.*.agentRuntime\": \"Agent Model Runtime\"": "  \"agents.entries.*.models.*.agentRuntime\": \"代理模型运行时\"",
+    "  \"agents.entries.*.models.*.agentRuntime.id\": \"Agent Model Runtime ID\"": "  \"agents.entries.*.models.*.agentRuntime.id\": \"代理模型运行时 ID\"",
+    "  \"agents.entries.*.models.*.codeMode\": \"Code Mode\"": "  \"agents.entries.*.models.*.codeMode\": \"代码模式\"",
+    "  \"agents.entries.*.agentRuntime\": \"Legacy Agent Runtime\"": "  \"agents.entries.*.agentRuntime\": \"旧版代理运行时\"",
+    "  \"agents.entries.*.agentRuntime.id\": \"Legacy Agent Runtime ID\"": "  \"agents.entries.*.agentRuntime.id\": \"旧版代理运行时 ID\""
   }
 }

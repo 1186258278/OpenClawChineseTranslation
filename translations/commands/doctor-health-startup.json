@@ -1,0 +1,7 @@
+{
+  "file": "src/flows/doctor-health-startup.ts",
+  "description": "诊断启动标题",
+  "replacements": {
+    "intro(\"OpenClaw doctor\")": "intro(\"OpenClaw 诊断\")"
+  }
+}

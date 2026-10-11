@@ -2,7 +2,6 @@
   "file": "src/flows/doctor-health.ts",
   "description": "诊断命令 - 主入口 (intro/outro)",
   "replacements": {
-    "intro(\"OpenClaw doctor\")": "intro(\"OpenClaw 诊断\")",
     "outro(\"Doctor complete.\")": "outro(\"诊断完成。\")",
     "\"Doctor finished, but some config fixes were not applied.\"": "\"诊断已完成，但部分配置修复未应用。\"",
     "\"Doctor finished, but config fixes were not applied.\"": "\"诊断已完成，但配置修复未应用。\"",
