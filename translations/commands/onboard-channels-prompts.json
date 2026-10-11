@@ -2,7 +2,6 @@
   "file": "src/flows/channel-setup.prompts.ts",
   "description": "渠道引导 - 渠道选择/配置提示 (channel-setup.prompts.ts)",
   "replacements": {
-    "\"default (primary)\"": "\"默认 (主账户)\"",
-    "\"disabled\"": "\"已禁用\""
+    "\"default (primary)\"": "\"默认 (主账户)\""
   }
 }
