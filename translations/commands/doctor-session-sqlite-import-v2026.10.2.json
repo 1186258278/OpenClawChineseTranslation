@@ -1,0 +1,11 @@
+{
+  "file": "src/commands/doctor-session-sqlite-import.ts",
+  "description": "Doctor 会话 SQLite 导入延迟与保留提示（v2026.10.2）",
+  "replacements": {
+    "`${formatErrorMessage(error)}. Originals retained; preserve the files and receipts, restore verified recovery evidence, then rerun openclaw doctor --fix.`": "`${formatErrorMessage(error)}。已保留原文件；请保留文件和回执，恢复已验证的恢复证据，然后重新运行 openclaw doctor --fix。`",
+    "`Cannot verify the destination for ${target.storePath}: ${formatErrorMessage(existingSnapshot.error)}. Originals retained; repair the named SQLite destination before retrying openclaw doctor --fix.`": "`无法验证目标 ${target.storePath}：${formatErrorMessage(existingSnapshot.error)}。已保留原文件；请先修复指定的 SQLite 目标，再重试 openclaw doctor --fix。`",
+    "`${record.transcriptPath ?? target.storePath}: ${formatErrorMessage(error)}. Original retained; verify this source against a backup and rerun openclaw doctor --fix.`": "`${record.transcriptPath ?? target.storePath}：${formatErrorMessage(error)}。已保留原文件；请对照备份验证此来源，然后重新运行 openclaw doctor --fix。`",
+    "`Historical transcript ${record.entry.sessionId} already belongs to ${currentOwner}`": "`历史记录 ${record.entry.sessionId} 已属于 ${currentOwner}`",
+    "`${record.transcriptPath}: ${formatErrorMessage(error)}. Original retained. Compare the named events with a verified backup, restore a corrected JSONL at this path, then rerun openclaw doctor --session-sqlite recover.`": "`${record.transcriptPath}：${formatErrorMessage(error)}。已保留原文件。请将指定事件与已验证备份比较，在此路径恢复修正后的 JSONL，然后重新运行 openclaw doctor --session-sqlite recover。`"
+  }
+}
