@@ -1,0 +1,9 @@
+{
+  "file": "src/cli/update-cli/update-command-finalize.ts",
+  "description": "更新后延迟维护提示汉化（v2026.10.3）",
+  "replacements": {
+    "`Doctor and plugin maintenance remain pending. ${nextAction} ${error.message}`": "`诊断和插件维护仍待完成。${nextAction} ${error.message}`",
+    "`Stop the Gateway through its service owner, stop other OpenClaw processes using this state, then rerun \\`${formatCliCommand(\"openclaw update repair\")}\\`.`": "`请通过其服务所有者停止网关，停止其他使用此状态的 OpenClaw 进程，然后重新运行 \\`${formatCliCommand(\"openclaw update repair\")}\\`。`",
+    "`Doctor maintenance remains pending. ${nextAction}`": "`诊断维护仍待完成。${nextAction}`"
+  }
+}

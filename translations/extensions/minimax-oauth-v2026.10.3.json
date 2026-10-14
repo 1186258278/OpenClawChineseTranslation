@@ -1,0 +1,12 @@
+{
+  "file": "extensions/minimax/oauth.ts",
+  "description": "MiniMax OAuth 区域与刷新错误提示汉化（v2026.10.3）",
+  "replacements": {
+    "\"An error occurred. Please try again later\"": "\"发生错误，请稍后重试。\"",
+    "`MiniMax OAuth credential does not record the account region it was issued for. ${MINIMAX_SIGN_IN_AGAIN}`": "`MiniMax OAuth 凭证未记录其签发账户所在的区域。${MINIMAX_SIGN_IN_AGAIN}`",
+    "`MiniMax OAuth credential has no refresh token. ${MINIMAX_SIGN_IN_AGAIN}`": "`MiniMax OAuth 凭证没有刷新令牌。${MINIMAX_SIGN_IN_AGAIN}`",
+    "`MiniMax OAuth refresh failed: ${result.message ?? \"token not issued\"}`": "`MiniMax OAuth 刷新失败：${result.message ?? \"未签发令牌\"}`",
+    "\"Run `openclaw models auth login --provider minimax-portal` to sign in again.\"": "\"请运行 `openclaw models auth login --provider minimax-portal` 重新登录。\"",
+    "`MiniMax OAuth credential was issued for the ${region === \"cn\" ? \"CN\" : \"Global\"} region, but models.providers.minimax-portal.baseUrl now points to ${MINIMAX_OAUTH_CONFIG[configuredRegion].baseUrl}. ${MINIMAX_SIGN_IN_AGAIN}`": "`MiniMax OAuth 凭证签发于 ${region === \"cn\" ? \"国内版\" : \"国际版\"} 区域，但 models.providers.minimax-portal.baseUrl 现在指向 ${MINIMAX_OAUTH_CONFIG[configuredRegion].baseUrl}。${MINIMAX_SIGN_IN_AGAIN}`"
+  }
+}

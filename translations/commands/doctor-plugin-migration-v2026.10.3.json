@@ -1,0 +1,7 @@
+{
+  "file": "src/commands/doctor/shared/plugin-migration-availability.ts",
+  "description": "插件迁移阻塞原因汉化（v2026.10.3）",
+  "replacements": {
+    "\"The configured plugin is present but blocked. Fix the blocked plugin path before retrying its data/settings upgrade.\"": "\"已配置的插件存在但被阻塞。请先修复被阻塞的插件路径，再重试其数据/设置升级。\""
+  }
+}

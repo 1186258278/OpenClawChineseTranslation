@@ -1,0 +1,7 @@
+{
+  "file": "src/commands/doctor/shared/stale-oauth-profile-shadows.ts",
+  "description": "OAuth 配置文件清理提示汉化（v2026.10.3）",
+  "replacements": {
+    "`Cannot read legacy auth profile store ${shortenHomePath(authPath)}; skipped OAuth shadow cleanup. Inspect or restore the file and rerun doctor.`": "`无法读取旧版认证配置文件存储 ${shortenHomePath(authPath)}；已跳过 OAuth 阴影清理。请检查或恢复该文件，然后重新运行诊断。`"
+  }
+}

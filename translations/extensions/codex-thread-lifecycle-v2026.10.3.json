@@ -1,0 +1,7 @@
+{
+  "file": "extensions/codex/src/app-server/thread-lifecycle-run.ts",
+  "description": "Codex 预热线程清理错误提示汉化（v2026.10.3）",
+  "replacements": {
+    "\"Codex warm thread preparation and subscription cleanup failed\"": "\"Codex 预热线程准备和订阅清理失败\""
+  }
+}

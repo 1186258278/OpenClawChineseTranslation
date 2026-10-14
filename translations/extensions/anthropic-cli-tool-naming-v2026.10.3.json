@@ -1,0 +1,9 @@
+{
+  "file": "extensions/anthropic/cli-tool-naming.ts",
+  "description": "Claude Code 工具名称提示汉化（v2026.10.3）",
+  "replacements": {
+    "`Tool-only replies: \\`${OPENCLAW_MCP_TOOL_PREFIX}message(action=send)\\`. Native \\`SendMessage\\`/\\`PushNotification\\` cannot deliver OpenClaw replies.`": "`仅通过工具回复：\\`${OPENCLAW_MCP_TOOL_PREFIX}message(action=send)\\`。原生 \\`SendMessage\\`/\\`PushNotification\\` 无法投递 OpenClaw 回复。`",
+    "`OpenClaw MCP: \\`${OPENCLAW_MCP_TOOL_PREFIX}<name>\\`. Deferred: ToolSearch \\`select:${OPENCLAW_MCP_TOOL_PREFIX}<name>\\` first.`": "`OpenClaw MCP：\\`${OPENCLAW_MCP_TOOL_PREFIX}<name>\\`。延迟调用：请先 ToolSearch \\`select:${OPENCLAW_MCP_TOOL_PREFIX}<name>\\`。`",
+    "const CLAUDE_CLI_TOOL_NAMING_HEADING = \"## OpenClaw tool names in Claude Code\";": "const CLAUDE_CLI_TOOL_NAMING_HEADING = \"## Claude Code 中的 OpenClaw 工具名称\";"
+  }
+}

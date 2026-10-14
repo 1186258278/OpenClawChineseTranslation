@@ -37,7 +37,10 @@
       "cli/restart-health-probe-v2026.10.2.json",
       "cli/config-guard-v2026.10.2.json",
       "cli/update-command-terminal-v2026.10.2.json",
-      "cli/update-command-verification-v2026.10.2.json"
+      "cli/update-command-verification-v2026.10.2.json",
+      "cli/update-finalize-maintenance-v2026.10.3.json",
+      "cli/update-package-activation-v2026.10.3.json",
+      "cli/update-recovery-guidance-v2026.10.3.json"
     ],
     "wizard": [
       "wizard/onboarding.json",
@@ -113,7 +116,11 @@
       "commands/doctor-migration-backup-v2026.9.9.json",
       "commands/doctor-update-history-v2026.9.9.json",
       "commands/doctor-retired-config-v2026.9.9.json",
-      "commands/doctor-session-sqlite-import-v2026.10.2.json"
+      "commands/doctor-session-sqlite-import-v2026.10.2.json",
+      "commands/doctor-workspace-utf8-v2026.10.3.json",
+      "commands/doctor-plugin-migration-v2026.10.3.json",
+      "commands/doctor-plugin-activation-v2026.10.3.json",
+      "commands/doctor-oauth-shadow-v2026.10.3.json"
     ],
     "daemon": [
       "daemon/systemd-hints.json",
@@ -228,7 +235,11 @@
       "extensions/telegram-miniapp-page-v2026.9.9.json",
       "extensions/telegram-miniapp-url-v2026.9.9.json",
       "extensions/llama-server-setup-v2026.10.2.json",
-      "extensions/telegram-delivery-v2026.10.2.json"
+      "extensions/telegram-delivery-v2026.10.2.json",
+      "extensions/anthropic-cli-tool-naming-v2026.10.3.json",
+      "extensions/codex-thread-lifecycle-v2026.10.3.json",
+      "extensions/minimax-oauth-v2026.10.3.json",
+      "extensions/oc-path-cli-v2026.10.3.json"
     ],
     "plugins": [
       "plugins/provider-auth-mode.json",

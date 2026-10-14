@@ -1,0 +1,7 @@
+{
+  "file": "src/commands/doctor/shared/plugin-update-config-migration.ts",
+  "description": "插件激活延迟提示汉化（v2026.10.3）",
+  "replacements": {
+    "`Plugin packages are saved; activation is deferred for ${unresolved.map((entry) => entry.pluginId).join(\", \")}. Existing data and settings are kept. Run openclaw doctor --fix to complete their data migrations, then reload the plugins.`": "`插件软件包已保存；${unresolved.map((entry) => entry.pluginId).join(\", \")} 的激活已延迟。现有数据和设置会被保留。请运行 openclaw doctor --fix 完成其数据迁移，然后重新加载插件。`"
+  }
+}
