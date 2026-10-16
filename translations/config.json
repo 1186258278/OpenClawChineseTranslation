@@ -40,7 +40,9 @@
       "cli/update-command-verification-v2026.10.2.json",
       "cli/update-finalize-maintenance-v2026.10.3.json",
       "cli/update-package-activation-v2026.10.3.json",
-      "cli/update-recovery-guidance-v2026.10.3.json"
+      "cli/update-recovery-guidance-v2026.10.3.json",
+      "cli/gateway-run-loop-v2026.10.4.json",
+      "cli/update-finalization-lifecycle-v2026.10.4.json"
     ],
     "wizard": [
       "wizard/onboarding.json",
@@ -120,7 +122,9 @@
       "commands/doctor-workspace-utf8-v2026.10.3.json",
       "commands/doctor-plugin-migration-v2026.10.3.json",
       "commands/doctor-plugin-activation-v2026.10.3.json",
-      "commands/doctor-oauth-shadow-v2026.10.3.json"
+      "commands/doctor-oauth-shadow-v2026.10.3.json",
+      "commands/doctor-maintenance-inspection-v2026.10.4.json",
+      "commands/doctor-tailscale-v2026.10.4.json"
     ],
     "daemon": [
       "daemon/systemd-hints.json",
@@ -239,7 +243,12 @@
       "extensions/anthropic-cli-tool-naming-v2026.10.3.json",
       "extensions/codex-thread-lifecycle-v2026.10.3.json",
       "extensions/minimax-oauth-v2026.10.3.json",
-      "extensions/oc-path-cli-v2026.10.3.json"
+      "extensions/oc-path-cli-v2026.10.3.json",
+      "extensions/browser-connection-v2026.10.4.json",
+      "extensions/browser-passkey-v2026.10.4.json",
+      "extensions/memory-core-doctor-dreaming-cron-v2026.10.4.json",
+      "extensions/tlon-approval-v2026.10.4.json",
+      "extensions/tlon-sender-label-v2026.10.4.json"
     ],
     "plugins": [
       "plugins/provider-auth-mode.json",

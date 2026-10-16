@@ -1,0 +1,7 @@
+{
+  "file": "src/commands/doctor-maintenance-inspection.ts",
+  "description": "应用管理的网关离线状态修复边界提示汉化（v2026.10.4）",
+  "replacements": {
+    "`${formatInstallOwnerMessage(owner)} Doctor can repair offline state; Gateway service installation and activation remain with the app.`": "`${formatInstallOwnerMessage(owner)} 诊断可以修复离线状态；网关服务的安装和激活仍由该应用负责。`"
+  }
+}

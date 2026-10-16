@@ -1,0 +1,7 @@
+{
+  "file": "extensions/memory-core/src/migration/doctor-dreaming-cron.ts",
+  "description": "v2026.10.4 Dreaming 定时任务检查延后提示",
+  "replacements": {
+    "`Dreaming cron inspection remains pending; existing cron rows were retained. Retry with \"openclaw doctor --fix\". ${String(error)}`": "`Dreaming 定时任务检查尚未完成，现有定时任务记录已保留。请运行 \"openclaw doctor --fix\" 重试。${String(error)}`"
+  }
+}

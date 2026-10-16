@@ -1,0 +1,7 @@
+{
+  "file": "src/cli/gateway-cli/run-loop.ts",
+  "description": "网关授权重启意图读取警告汉化（v2026.10.4）",
+  "replacements": {
+    "`Restart intent could not be read; continuing the authorized local restart: ${formatErrorMessage(intentReadError)}`": "`无法读取重启意图；继续执行已授权的本地重启：${formatErrorMessage(intentReadError)}`"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "file": "src/commands/doctor-tailscale.ts",
+  "description": "网关启动所需 Tailscale 后端状态与恢复指引汉化（v2026.10.4）",
+  "replacements": {
+    "`Gateway startup requires a running Tailscale backend because gateway.tailscale.mode=\"${mode}\".`": "`由于 gateway.tailscale.mode=\"${mode}\"，网关启动需要正在运行的 Tailscale 后端。`",
+    "`${prerequisite} Tailscale status ${inspection.status === \"invalid\" ? \"could not be parsed\" : \"is unavailable\"}. Verify that the Tailscale CLI is installed and the local Tailscale service is running with \\`tailscale status --json\\`, then rerun Doctor before restarting the Gateway.`": "`${prerequisite} Tailscale 状态${inspection.status === \"invalid\" ? \"无法解析\" : \"不可用\"}。请确认已安装 Tailscale CLI，并通过 \\`tailscale status --json\\` 确认本地 Tailscale 服务正在运行，然后重新运行诊断，再重启网关。`",
+    "`${prerequisite} Tailscale is stopped. Reconnect in the Tailscale app or run \\`tailscale up\\`, then verify \\`tailscale status --json\\` reports Running before restarting the Gateway.`": "`${prerequisite} Tailscale 已停止。请在 Tailscale 应用中重新连接或运行 \\`tailscale up\\`，然后确认 \\`tailscale status --json\\` 返回 Running，再重启网关。`",
+    "`${prerequisite} Tailscale is logged out. Sign in through the Tailscale app or \\`tailscale login\\`, then verify \\`tailscale status --json\\` reports Running before restarting the Gateway.`": "`${prerequisite} Tailscale 已退出登录。请通过 Tailscale 应用或 \\`tailscale login\\` 登录，然后确认 \\`tailscale status --json\\` 返回 Running，再重启网关。`",
+    "`${prerequisite} This machine needs tailnet administrator approval. Approve it in the Tailscale admin console, then verify \\`tailscale status --json\\` reports Running before restarting the Gateway.`": "`${prerequisite} 此设备需要 tailnet 管理员批准。请在 Tailscale 管理控制台中批准此设备，然后确认 \\`tailscale status --json\\` 返回 Running，再重启网关。`",
+    "`${prerequisite} The Tailscale backend is still starting. Wait for \\`tailscale status --json\\` to report Running before restarting the Gateway.`": "`${prerequisite} Tailscale 后端仍在启动。请等待 \\`tailscale status --json\\` 返回 Running 后再重启网关。`",
+    "`${prerequisite} Tailscale did not report a running backend. Inspect \\`tailscale status --json\\` and resolve its backend state before restarting the Gateway.`": "`${prerequisite} Tailscale 未报告正在运行的后端。请检查 \\`tailscale status --json\\` 并解决后端状态问题，再重启网关。`"
+  }
+}
