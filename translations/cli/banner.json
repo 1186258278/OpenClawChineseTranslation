@@ -2,6 +2,6 @@
   "file": "src/cli/banner.ts",
   "description": "CLI 横幅标题",
   "replacements": {
-    "const title = decorativePrefix(\"🦞\", \"OpenClaw\", emojiOptions);": "const title = decorativePrefix(\"🦞\", \"OpenClaw 中文版\", emojiOptions);"
+    "const title = decorativePrefix(\"🦞\", \"OpenClaw\", options);": "const title = decorativePrefix(\"🦞\", \"OpenClaw 中文版\", options);"
   }
 }

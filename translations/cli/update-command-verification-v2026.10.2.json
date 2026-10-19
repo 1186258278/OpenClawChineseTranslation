@@ -2,9 +2,11 @@
   "file": "src/cli/update-cli/update-command-verification.ts",
   "description": "更新后网关渠道警告与验证摘要（v2026.10.2）",
   "replacements": {
-    "`Channel health warning (${id}: ${error}). Run openclaw health --json to inspect it.`": "`渠道健康警告（${id}：${error}）。请运行 openclaw health --json 检查。`",
+    "`Channel health warning (${id}: ${error}). Run openclaw channels status --probe or openclaw health --json to inspect it.`": "`渠道健康警告（${id}：${error}）。请运行 openclaw channels status --probe 或 openclaw health --json 检查。`",
     "\"Gateway service, version, and readiness verified; channel warnings need attention.\"": "\"Gateway 服务、版本和就绪状态已验证；请关注渠道警告。\"",
     "\"Gateway service, version, channels, and readiness verified; plugin failures need a retry.\"": "\"Gateway 服务、版本、渠道和就绪状态已验证；插件失败需要重试。\"",
-    "\"Gateway service, version, plugins, channels, and readiness verified.\"": "\"Gateway 服务、版本、插件、渠道和就绪状态均已验证。\""
+    "\"Gateway service, version, plugins, channels, and readiness verified.\"": "\"Gateway 服务、版本、插件、渠道和就绪状态均已验证。\"",
+    "\"Package update installed; Gateway readiness remains unverified with --no-restart. Its replacement restart may still be starting.\"": "\"软件包更新已安装；使用 --no-restart 时仍未验证网关就绪状态。替换后的网关可能仍在启动。\"",
+    "\"Gateway recovery check did not verify serving health.\"": "\"网关恢复检查未能验证服务健康状态。\""
   }
 }

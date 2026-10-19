@@ -1,0 +1,13 @@
+{
+  "file": "extensions/x/src/github.ts",
+  "description": "X 账户 GitHub 同步失败与权限恢复提示",
+  "replacements": {
+    "\"GitHub returned an invalid response; the last verified set is unchanged.\"": "\"GitHub 返回了无效响应；上次验证通过的账户集合保持不变。\"",
+    "GitHub rate limit reached; retry after ${new Date(retryAt).toISOString()}.": "已达到 GitHub 速率限制；请在 ${new Date(retryAt).toISOString()} 之后重试。",
+    "\"Configure verifiedFromGitHub.token with a GitHub credential that can list repository collaborators.\"": "\"请为 verifiedFromGitHub.token 配置能够列出仓库协作者的 GitHub 凭据。\"",
+    "\"GitHub request failed or was cancelled; the last verified set is unchanged.\"": "\"GitHub 请求失败或已取消；上次验证通过的账户集合保持不变。\"",
+    "GitHub cannot list repository collaborators (HTTP ${response.status}); check the repository and verifiedFromGitHub.token access and permissions.": "GitHub 无法列出仓库协作者（HTTP ${response.status}）；请检查仓库及 verifiedFromGitHub.token 的访问权限。",
+    "GitHub request failed (HTTP ${response.status}); check verifiedFromGitHub.token and retry.": "GitHub 请求失败（HTTP ${response.status}）；请检查 verifiedFromGitHub.token 后重试。",
+    "\"verifiedFromGitHub.repo must be owner/name.\"": "\"verifiedFromGitHub.repo 必须为 owner/name 格式。\""
+  }
+}

@@ -4,19 +4,17 @@
   "replacements": {
     "name: \"Voice Call\"": "name: \"语音通话\"",
     "description: \"Voice-call plugin with Telnyx/Twilio/Plivo providers\"": "description: \"支持 Telnyx/Twilio/Plivo 的语音通话插件\"",
-    "description: \"Call target\"": "description: \"通话目标\"",
-    "description: \"Intro message\"": "description: \"开场消息\"",
-    "description: \"Call ID\"": "description: \"通话 ID\"",
-    "description: \"Follow-up message\"": "description: \"跟进消息\"",
-    "description: \"Message to speak\"": "description: \"要朗读的消息\"",
-    "description: \"Call SID\"": "description: \"通话 SID\"",
-    "description: \"Optional intro message\"": "description: \"可选开场消息\"",
     "description: \"Make phone calls and have voice conversations via the voice-call plugin.\"": "description: \"通过语音通话插件拨打电话并进行语音对话。\"",
     "throw new Error(\"Voice call disabled in plugin config\");": "throw new Error(\"语音通话在插件配置中已禁用\");",
     "\"message required\"": "\"消息必填\"",
     "\"to required\"": "\"目标(to)必填\"",
     "\"callId required\"": "\"callId 必填\"",
     "throw new Error(\"sid required for status\");": "throw new Error(\"状态查询需要 sid\");",
-    "\"to required for call\"": "\"呼叫需要目标(to)\""
+    "\"to required for call\"": "\"呼叫需要目标(to)\"",
+    "label: \"Voice Call\"": "label: \"语音通话\"",
+    "\"Voice call requester reporting requires service startup\"": "\"语音通话请求方报告需要先启动服务\"",
+    "\"mode must be say or guidance\"": "\"mode 必须为 say 或 guidance\"",
+    "\"Steering caller authority expired\"": "\"通话引导调用方的权限已过期\"",
+    "\"The bound realtime call service is no longer active.\"": "\"绑定的实时通话服务已停止运行。\""
   }
 }

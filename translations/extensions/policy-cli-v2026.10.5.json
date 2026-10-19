@@ -1,0 +1,7 @@
+{
+  "file": "extensions/policy/src/cli.ts",
+  "description": "策略基线参数诊断",
+  "replacements": {
+    "\"Missing required --baseline value.\"": "\"缺少必填的 --baseline 值。\""
+  }
+}

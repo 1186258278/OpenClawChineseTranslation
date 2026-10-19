@@ -32,6 +32,15 @@
     ".option(\"--yes\", \"Actually place the live outbound call\")": ".option(\"--yes\", \"实际发起外呼通话\")",
     ".description(\"Send DTMF digits to an active call\")": ".description(\"向活动通话发送 DTMF 数字\")",
     ".requiredOption(\"--call-id <id>\", \"Call ID\")": ".requiredOption(\"--call-id <id>\", \"通话 ID\")",
-    ".requiredOption(\"--digits <digits>\", \"DTMF digits\")": ".requiredOption(\"--digits <digits>\", \"DTMF 数字\")"
+    ".requiredOption(\"--digits <digits>\", \"DTMF digits\")": ".requiredOption(\"--digits <digits>\", \"DTMF 数字\")",
+    "\"Use either --brief or --brief-file\"": "\"请使用 --brief 或 --brief-file 其中一项\"",
+    "\"Brief input is too large\"": "\"通话简报输入过大\"",
+    "\"Per-call task or structured JSON brief\"": "\"本次通话任务或结构化 JSON 简报\"",
+    "\"Read a structured JSON brief from a file\"": "\"从文件读取结构化 JSON 简报\"",
+    "\"Steer an active realtime call through its owning Gateway\"": "\"通过所属网关引导正在进行的实时通话\"",
+    "\"Owner instruction\"": "\"通话所有者的指令\"",
+    "\"guidance or say\"": "\"guidance（引导）或 say（朗读）\"",
+    "\"mode must be say or guidance\"": "\"mode 必须为 say 或 guidance\"",
+    "\"Steering requires the running Gateway that owns the active call\"": "\"引导通话需要运行中的所属网关\""
   }
 }

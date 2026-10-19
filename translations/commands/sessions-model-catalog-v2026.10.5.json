@@ -1,0 +1,7 @@
+{
+  "file": "src/commands/sessions.ts",
+  "description": "v2026.10.5 sessions-model-catalog 用户可见提示",
+  "replacements": {
+    "\"Could not read the active Gateway model catalog; showing configured or last verified capacity. Retry when the Gateway is reachable.\"": "\"无法读取当前网关模型目录；显示已配置或上次验证的容量。请在网关可访问时重试。\""
+  }
+}

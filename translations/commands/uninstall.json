@@ -2,7 +2,6 @@
   "file": "src/commands/uninstall.ts",
   "description": "卸载命令提示",
   "replacements": {
-    "`Nix mode detected; service uninstall is disabled. Manage the service through your Nix profile instead, then run ${formatCliCommand(\"openclaw status\")} to verify.`": "`检测到 Nix 模式；服务卸载已禁用。请通过你的 Nix 配置管理服务，随后运行 ${formatCliCommand(\"openclaw status\")} 验证。`",
     "`Non-interactive uninstall requires --yes. Preview first with ${formatCliCommand(\"openclaw uninstall --dry-run --all\")}.`": "`非交互卸载需要 --yes。请先用 ${formatCliCommand(\"openclaw uninstall --dry-run --all\")} 预览。`",
     "`Non-interactive uninstall requires explicit scopes. Use --all, or choose scopes such as --service --state.`": "`非交互卸载需要明确指定范围。请使用 --all，或选择 --service --state 等范围。`",
     "\"Nothing selected.\"": "\"未选择任何内容。\"",

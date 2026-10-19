@@ -1,0 +1,20 @@
+{
+  "file": "ui/src/components/lobster-pet-lore.ts",
+  "description": "v2026.10.5 Dashboard 新增龙虾图鉴说明与发现提示（保留角色名和 palette ID）",
+  "replacements": {
+    "flavor: \"Built an empire. Still rules from the ledge.\"": "flavor: \"建立过帝国，如今仍在岩台上称王。\"",
+    "hint: \"All tides lead here.\"": "hint: \"所有潮汐都通向这里。\"",
+    "flavor: \"Changes shells. Never changes style.\"": "flavor: \"蜕壳常换，风格不变。\"",
+    "hint: \"Something electric washed ashore.\"": "hint: \"一股电光被冲上了岸。\"",
+    "flavor: \"Turns every tide into an era.\"": "flavor: \"每次涨潮，都是一个新纪元。\"",
+    "hint: \"Someone is shaking off the sand.\"": "hint: \"有人正抖落身上的沙粒。\"",
+    "flavor: \"Speaks fluent beep. Fixes things anyway.\"": "flavor: \"只会熟练地哔哔叫，照样能修好东西。\"",
+    "hint: \"A resourceful little droid.\"": "hint: \"一只足智多谋的小机器人。\"",
+    "flavor: \"Every shell is a canvas.\"": "flavor: \"每一片壳，都是画布。\"",
+    "hint: \"A little Renaissance is washing ashore.\"": "hint: \"一场小小的文艺复兴正随潮而来。\"",
+    "flavor: \"The king of rock and claw.\"": "flavor: \"摇滚与虾钳之王。\"",
+    "hint: \"Someone brought blue suede claws.\"": "hint: \"有人戴着蓝色麂皮虾钳来了。\"",
+    "flavor: \"Good ideas ring a bell.\"": "flavor: \"好点子总会响起铃声。\"",
+    "hint: \"A familiar ringing from the shore.\"": "hint: \"岸边传来熟悉的铃声。\""
+  }
+}

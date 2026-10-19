@@ -1,0 +1,7 @@
+{
+  "file": "extensions/memory-wiki/src/cli.ts",
+  "description": "记忆 Wiki CLI 新版检查命令说明",
+  "replacements": {
+    "\"Check the Obsidian CLI\"": "\"检查 Obsidian CLI\""
+  }
+}

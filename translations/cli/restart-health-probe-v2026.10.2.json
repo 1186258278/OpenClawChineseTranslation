@@ -3,6 +3,6 @@
   "description": "网关渠道运行状态诊断兜底文案（v2026.10.2）",
   "replacements": {
     "\"not running\"": "\"未运行\"",
-    "\"probe failed\"": "\"探测失败\""
+    "\"check failed\"": "\"检查失败\""
   }
 }

@@ -22,8 +22,8 @@
     "\"Doctor notices\"": "\"诊断提示\"",
     "message: \"Migrate detected legacy state now?\"": "message: \"现在迁移检测到的旧版状态吗？\"",
     "`Exec approvals updated: removed ${removedExecApprovals} older generated ${removedExecApprovals === 1 ? \"approval\" : \"approvals\"} that were not tied to a working directory. Manual allowlist rules were not changed. Rerun affected workflows and choose \"Always allow here\" when prompted.`": "`执行审批已更新：移除了 ${removedExecApprovals} 条未绑定工作目录的旧版生成审批。手动 allowlist 规则未更改。重新运行受影响的工作流，并在提示时选择 \"Always allow here\"。`",
-    "note(\"Gateway health will be checked after Doctor repair.\", \"Gateway\")": "note(\"诊断修复后将检查网关健康状态。\", \"网关\")",
-    "\"Gateway health probes skipped because gateway credentials use an exec SecretRef. Run `openclaw doctor --allow-exec` to verify Gateway health with exec SecretRefs.\"": "\"由于网关凭据使用 exec SecretRef，已跳过网关健康探测。运行 `openclaw doctor --allow-exec` 可使用 exec SecretRef 验证网关健康。\"",
+    "\"Gateway health will be checked after Doctor repair.\"": "\"Doctor 修复完成后将检查网关健康状态。\"",
+    "\"Gateway health checks skipped because gateway credentials use an exec SecretRef. Run `openclaw doctor --allow-exec` to verify Gateway health with exec SecretRefs.\"": "\"由于网关凭据使用 exec SecretRef，已跳过网关健康探测。运行 `openclaw doctor --allow-exec` 可使用 exec SecretRef 验证网关健康。\"",
     "\"Repair the include boundary named above by hand.\"": "\"请手动修复上面命名的 include 边界。\"",
     "message: \"Generate and configure a gateway token now?\"": "message: \"现在生成并配置网关令牌吗？\"",
     "      `${ctx.options.generateGatewayToken === true ? \"Gateway token generation skipped because a SecretRef is configured. \" : \"\"}Doctor will not overwrite gateway.auth.token with a plaintext value.`,": "      `${ctx.options.generateGatewayToken === true ? \"由于已配置 SecretRef，已跳过网关令牌生成。 \" : \"\"}诊断不会用明文值覆盖 gateway.auth.token.`,"

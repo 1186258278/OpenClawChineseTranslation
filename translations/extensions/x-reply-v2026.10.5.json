@@ -1,0 +1,13 @@
+{
+  "file": "extensions/x/src/reply.ts",
+  "description": "X 文本回复与目标地址诊断",
+  "replacements": {
+    "\"X replies require nonempty text\"": "\"X 回复内容不能为空\"",
+    "\"X replySignature exceeds 280 weighted characters\"": "\"X replySignature 超过 280 个加权字符\"",
+    "\"X reply contains a character sequence longer than one post\"": "\"X 回复中的字符序列超过单条帖子的长度限制\"",
+    "\"X target must be x:<postId> or an https://x.com/<handle>/status/<postId> URL\"": "\"X 目标必须为 x:<postId> 或 https://x.com/<handle>/status/<postId> URL\"",
+    "\"X reply text could not be prepared\"": "\"无法准备 X 回复文本\"",
+    "\"X reply was aborted before dispatch\"": "\"X 回复在发送前已中止\"",
+    "\"Work session (sign-in required): \"": "\"工作会话（需要登录）：\""
+  }
+}

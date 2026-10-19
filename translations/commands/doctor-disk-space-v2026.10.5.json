@@ -1,0 +1,9 @@
+{
+  "file": "src/commands/doctor-disk-space.ts",
+  "description": "v2026.10.5 doctor-disk-space 用户可见提示",
+  "replacements": {
+    "\"Config writes, session transcripts, and log rotation may fail silently.\"": "\"配置写入、会话记录和日志轮转可能静默失败。\"",
+    "\"Free up disk space immediately to avoid data loss.\"": "\"请立即释放磁盘空间，避免数据丢失。\"",
+    "\"Consider freeing space to prevent future config/session write failures.\"": "\"建议释放空间，防止后续配置或会话写入失败。\""
+  }
+}

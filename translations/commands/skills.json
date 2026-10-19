@@ -2,7 +2,7 @@
   "file": "src/cli/skills-cli.format.ts",
   "description": "技能命令输出",
   "replacements": {
-    "theme.heading(\"Skills\")": "theme.heading(\"技能\")",
+    "title: \"Skills\"": "title: \"技能\"",
     "theme.heading(\"Details:\")": "theme.heading(\"详情：\")",
     "theme.heading(\"Install options:\")": "theme.heading(\"安装选项：\")",
     "theme.heading(\"Skills Status Check\")": "theme.heading(\"技能状态检查\")",
@@ -12,6 +12,8 @@
     "theme.heading(\"API key setup:\")": "theme.heading(\"API Key 设置：\")",
     "theme.heading(\"What this means:\")": "theme.heading(\"这些状态表示：\")",
     "theme.muted(\"Missing requirements:\")": "theme.muted(\"缺少要求：\")",
-    "formatSkillCheckSection(\"Missing requirements:\",": "formatSkillCheckSection(\"缺少要求：\","
+    "formatSkillCheckSection(\"Missing requirements:\",": "formatSkillCheckSection(\"缺少要求：\",",
+    "\"No learned skills.\"": "\"没有学习的技能。\"",
+    "\"No Workshop changes.\\n\"": "\"没有 Workshop 变更。\\n\""
   }
 }

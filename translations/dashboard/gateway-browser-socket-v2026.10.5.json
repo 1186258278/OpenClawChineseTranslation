@@ -1,0 +1,10 @@
+{
+  "file": "ui/src/api/gateway-browser-socket.ts",
+  "description": "v2026.10.5 Dashboard 浏览器 WebSocket 安全与连接失败提示",
+  "replacements": {
+    "\"Browser refused the Gateway WebSocket for security reasons.\"": "\"浏览器因安全限制拒绝了网关 WebSocket 连接。\"",
+    "\" Use wss:// when the Control UI is served over HTTPS/Tailscale Serve, or open the loopback dashboard at http://127.0.0.1:18789.\"": "\" 控制界面通过 HTTPS/Tailscale Serve 提供时，请使用 wss://，或打开本机控制面板 http://127.0.0.1:18789。\"",
+    "\" Check the Gateway WebSocket URL and browser security policy.\"": "\" 请检查网关 WebSocket URL 与浏览器安全策略。\"",
+    "`Could not create the Gateway WebSocket: ${browserMessage}`": "`无法创建网关 WebSocket 连接：${browserMessage}`"
+  }
+}

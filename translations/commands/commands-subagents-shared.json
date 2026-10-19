@@ -9,9 +9,8 @@
     "\"Unknown subagent.\"": "\"未知子代理。\"",
     "`Invalid subagent index: ${trimmed}`": "`无效的子代理序号：${trimmed}`",
     "`Unknown subagent session: ${trimmed}`": "`未知子代理会话：${trimmed}`",
-    "\"Ambiguous subagent label\"": "\"子代理标签不明确\"",
-    "\"Ambiguous subagent label prefix\"": "\"子代理标签前缀不明确\"",
     "\"Ambiguous run id prefix\"": "\"运行 ID 前缀不明确\"",
-    "`Unknown subagent id: ${trimmed}`": "`未知子代理 ID：${trimmed}`"
+    "`Unknown subagent id: ${trimmed}`": "`未知子代理 ID：${trimmed}`",
+    "`Ambiguous subagent label${prefix ? \" prefix\" : \"\"}`": "`子代理标签${prefix ? \"前缀\" : \"\"}不明确`"
   }
 }

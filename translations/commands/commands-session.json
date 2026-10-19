@@ -5,8 +5,6 @@
     "\"⚙️ Group activation only applies to group chats.\"": "\"⚙️ 群组激活仅适用于群聊。\"",
     "\"⚙️ Usage: /activation mention|always\"": "\"⚙️ 用法：/activation mention|always\"",
     "\"⚙️ Usage: /send on|off|inherit\"": "\"⚙️ 用法：/send on|off|inherit\"",
-    "\"⚠️ Failed to update idle timeout for the current binding.\"": "\"⚠️ 更新当前绑定的空闲超时失败。\"",
-    "\"⚠️ Failed to update max age for the current binding.\"": "\"⚠️ 更新当前绑定的最大存活时间失败。\"",
     "`⚠️ Only ${boundBy} can update session lifecycle settings for this conversation.`": "`⚠️ 只有 ${boundBy} 可以更新此对话的会话生命周期设置。`",
     "\"⚙️ Usage: /usage off|tokens|full|reset|cost\"": "\"⚙️ 用法：/usage off|tokens|full|reset|cost\"",
     "\"⚠️ /session commands must be run inside a bindable conversation.\"": "\"⚠️ /session 命令必须在可绑定的对话中运行。\"",
@@ -22,8 +20,9 @@
     "\"⚙️ Restarting OpenClaw in-process (SIGUSR2); back in a few seconds.\"": "\"⚙️ 正在进程内重启 OpenClaw（SIGUSR2），几秒后恢复。\"",
     "const settingLabel = isIdle ? \"Idle timeout\" : \"Max age\";": "const settingLabel = isIdle ? \"空闲超时\" : \"最大时长\";",
     "const expiryDescription = isIdle ? \"next auto-unbind\" : \"hard auto-unbind\";": "const expiryDescription = isIdle ? \"下次自动解绑\" : \"强制自动解绑\";",
-    "`ℹ️ ${settingLabel} active (${formatThreadBindingDurationLabel(isIdle ? idleTimeoutMs : maxAgeMs)}, ${expiryDescription} at ${formatSessionExpiry(expiresAt)}).`": "`ℹ️ ${settingLabel} 已启用（${formatThreadBindingDurationLabel(isIdle ? idleTimeoutMs : maxAgeMs)}，${expiryDescription}时间：${formatSessionExpiry(expiresAt)}）。`",
+    "`ℹ️ ${settingLabel} active (${formatThreadBindingDurationLabel(durationMs)}, ${expiryDescription} at ${formatSessionExpiry(expiresAt)}).`": "`ℹ️ ${settingLabel} 已启用（${formatThreadBindingDurationLabel(durationMs)}，${expiryDescription}时间：${formatSessionExpiry(expiresAt)}）。`",
     "`ℹ️ ${settingLabel} is currently disabled for this bound session.`": "`ℹ️ 当前绑定会话的${settingLabel}已禁用。`",
-    "`✅ ${settingLabel} disabled for ${updatedBindings.length} binding${updatedBindings.length === 1 ? \"\" : \"s\"}.`": "`✅ 已为 ${updatedBindings.length} 个绑定禁用${settingLabel}。`"
+    "`✅ ${settingLabel} disabled for ${updatedBindings.length} binding${updatedBindings.length === 1 ? \"\" : \"s\"}.`": "`✅ 已为 ${updatedBindings.length} 个绑定禁用${settingLabel}。`",
+    "`⚠️ Failed to update ${settingLabel.toLowerCase()} for the current binding.`": "`⚠️ 无法更新当前绑定的${settingLabel.toLowerCase()}。`"
   }
 }

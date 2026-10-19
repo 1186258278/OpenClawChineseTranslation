@@ -43,6 +43,11 @@
     "  \"session.maintenance.highWaterBytes\": \"Session Disk High-water Target\"": "  \"session.maintenance.highWaterBytes\": \"会话磁盘高水位目标\"",
     "  \"session.maintenance.coldStorage\": \"Transcript Cold Storage\"": "  \"session.maintenance.coldStorage\": \"会话转录冷存储\"",
     "  \"session.maintenance.coldStorage.enabled\": \"Automatically Archive Old Transcripts\"": "  \"session.maintenance.coldStorage.enabled\": \"自动归档旧会话转录\"",
-    "  \"session.maintenance.coldStorage.afterDays\": \"Archive After Inactive Days\"": "  \"session.maintenance.coldStorage.afterDays\": \"空闲天数后归档\""
+    "  \"session.maintenance.coldStorage.afterDays\": \"Archive After Inactive Days\"": "  \"session.maintenance.coldStorage.afterDays\": \"空闲天数后归档\"",
+    "  \"tools.agentToAgent\": \"Agent-to-Agent Tool Access\"": "  \"tools.agentToAgent\": \"代理间工具访问\"",
+    "  \"tools.agentToAgent.enabled\": \"Enable Agent-to-Agent Tool\"": "  \"tools.agentToAgent.enabled\": \"启用代理间工具\"",
+    "  \"tools.agentToAgent.allow\": \"Agent-to-Agent Target Allowlist\"": "  \"tools.agentToAgent.allow\": \"代理间目标白名单\"",
+    "  \"agents.entries.*.tools.agentToAgent\": \"Agent Outbound Messaging\"": "  \"agents.entries.*.tools.agentToAgent\": \"代理出站消息\"",
+    "  \"agents.entries.*.tools.agentToAgent.send\": \"Agent Send Destination Allowlist\"": "  \"agents.entries.*.tools.agentToAgent.send\": \"代理发送目标白名单\""
   }
 }

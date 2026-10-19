@@ -1,0 +1,16 @@
+{
+  "file": "extensions/x/src/admin.ts",
+  "description": "X 回复管理权限、输入与恢复提示",
+  "replacements": {
+    "\"X replies management requires an active administrator.\"": "\"管理 X 回复需要当前有效的管理员权限。\"",
+    "\"An authenticated administrator is required.\"": "\"需要已认证的管理员。\"",
+    "\"The administrator identity is unavailable.\"": "\"管理员身份不可用。\"",
+    "\"accountId must be a nonempty string.\"": "\"accountId 必须为非空字符串。\"",
+    "\"The X account is not configured.\"": "\"尚未配置 X 账户。\"",
+    "\"enabled must be a boolean.\"": "\"enabled 必须为布尔值。\"",
+    "\"The X account is no longer configured.\"": "\"X 账户配置已不存在。\"",
+    "\"username must be an X handle, with or without @.\"": "\"username 必须是 X 用户名，可包含或省略 @。\"",
+    "\"userId must be a numeric X user ID.\"": "\"userId 必须是数字形式的 X 用户 ID。\"",
+    "\"X replies operation failed. Check the Gateway logs and try again.\"": "\"X 回复操作失败。请检查网关日志后重试。\""
+  }
+}

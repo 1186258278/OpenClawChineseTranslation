@@ -9,7 +9,7 @@
     "\"Plugin diagnostics\"": "\"\\n\"",
     "\"npm registry target was not resolved\"": "\"npm registry 目标未解析\"",
     "`No install command generated; retry openclaw doctor after checking registry availability (${targetError}).`": "`未生成安装命令；检查 registry 可用性后重试 openclaw doctor（${targetError}）。`",
-    "`Repair target resolution failed for ${entry.pluginId}: ${detail}. No install command generated.`": "`插件 ${entry.pluginId} 的修复目标解析失败：${detail}。未生成安装命令。`",
+    "`Repair target resolution failed for ${entry.pluginId}: ${pluginTargetResolutionError(entry)}. No install command generated.`": "`插件 ${entry.pluginId} 的修复目标解析失败：${pluginTargetResolutionError(entry)}。未生成安装命令。`",
     "`Active official plugins match post-restart OpenClaw ${drift.gatewayVersion}, but the running Gateway is ${runningGatewayVersion}.`": "`活动官方插件与重启后的 OpenClaw ${drift.gatewayVersion} 匹配，但运行中的网关为 ${runningGatewayVersion}。`",
     "`Could not check plugin restart readiness: ${readiness.reason}`": "`无法检查插件重启就绪状态：${readiness.reason}`",
     "\"Repair the Gateway service installation, then rerun openclaw doctor before restarting.\"": "\"修复网关服务安装，然后在重启前重新运行 openclaw doctor。\"",

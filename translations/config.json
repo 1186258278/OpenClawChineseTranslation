@@ -42,7 +42,15 @@
       "cli/update-package-activation-v2026.10.3.json",
       "cli/update-recovery-guidance-v2026.10.3.json",
       "cli/gateway-run-loop-v2026.10.4.json",
-      "cli/update-finalization-lifecycle-v2026.10.4.json"
+      "cli/update-finalization-lifecycle-v2026.10.4.json",
+      "cli/skills-workshop-v2026.10.5.json",
+      "cli/device-pairing-v2026.10.5.json",
+      "cli/device-join-v2026.10.5.json",
+      "cli/gateway-status-output-v2026.10.5.json",
+      "cli/gateway-status-required-rpc-v2026.10.5.json",
+      "cli/update-option-restart-v2026.10.5.json",
+      "cli/update-service-maintenance-v2026.10.5.json",
+      "cli/update-failure-recovery-v2026.10.5.json"
     ],
     "wizard": [
       "wizard/onboarding.json",
@@ -124,7 +132,12 @@
       "commands/doctor-plugin-activation-v2026.10.3.json",
       "commands/doctor-oauth-shadow-v2026.10.3.json",
       "commands/doctor-maintenance-inspection-v2026.10.4.json",
-      "commands/doctor-tailscale-v2026.10.4.json"
+      "commands/doctor-tailscale-v2026.10.4.json",
+      "commands/model-scan-v2026.10.5.json",
+      "commands/doctor-disk-space-v2026.10.5.json",
+      "commands/sessions-tail-v2026.10.5.json",
+      "commands/sessions-model-catalog-v2026.10.5.json",
+      "commands/cleanup-service-v2026.10.5.json"
     ],
     "daemon": [
       "daemon/systemd-hints.json",
@@ -196,7 +209,10 @@
       "dashboard/session-display.json",
       "dashboard/chat-session-controls.json",
       "dashboard/schema-labels-browser.json",
-      "dashboard/schema-labels-approvals.json"
+      "dashboard/schema-labels-approvals.json",
+      "dashboard/gateway-browser-socket-v2026.10.5.json",
+      "dashboard/chat-commands-v2026.10.5.json",
+      "dashboard/lobster-pet-lore-v2026.10.5.json"
     ],
     "extensions": [
       "extensions/feishu.json",
@@ -248,7 +264,28 @@
       "extensions/browser-passkey-v2026.10.4.json",
       "extensions/memory-core-doctor-dreaming-cron-v2026.10.4.json",
       "extensions/tlon-approval-v2026.10.4.json",
-      "extensions/tlon-sender-label-v2026.10.4.json"
+      "extensions/tlon-sender-label-v2026.10.4.json",
+      "extensions/browser-cli-input-v2026.10.5.json",
+      "extensions/browser-cli-manage-v2026.10.5.json",
+      "extensions/browser-cli-metadata-v2026.10.5.json",
+      "extensions/browser-extension-options-v2026.10.5.json",
+      "extensions/browser-extension-popup-v2026.10.5.json",
+      "extensions/google-meet-cli-artifacts-v2026.10.5.json",
+      "extensions/google-meet-cli-context-v2026.10.5.json",
+      "extensions/memory-core-status-v2026.10.5.json",
+      "extensions/memory-wiki-cli-v2026.10.5.json",
+      "extensions/onnx-cli-v2026.10.5.json",
+      "extensions/policy-cli-v2026.10.5.json",
+      "extensions/voice-call-tool-schema-v2026.10.5.json",
+      "extensions/workboard-i18n-v2026.10.5.json",
+      "extensions/x-admin-v2026.10.5.json",
+      "extensions/x-channel-v2026.10.5.json",
+      "extensions/x-client-v2026.10.5.json",
+      "extensions/x-control-ui-v2026.10.5.json",
+      "extensions/x-github-v2026.10.5.json",
+      "extensions/x-guests-readiness-v2026.10.5.json",
+      "extensions/x-reply-v2026.10.5.json",
+      "extensions/x-spend-v2026.10.5.json"
     ],
     "plugins": [
       "plugins/provider-auth-mode.json",

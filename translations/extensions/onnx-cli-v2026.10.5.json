@@ -1,0 +1,8 @@
+{
+  "file": "extensions/onnx/src/cli.ts",
+  "description": "ONNX 模型检查命令说明与失败诊断",
+  "replacements": {
+    "\"Download, verify, and check local ONNX decision models\"": "\"下载、验证并检查本地 ONNX 决策模型\"",
+    "ONNX check failed: ${outcome.reason}": "ONNX 检查失败：${outcome.reason}"
+  }
+}

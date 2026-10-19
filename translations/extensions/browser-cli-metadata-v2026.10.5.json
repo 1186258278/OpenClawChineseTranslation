@@ -1,0 +1,7 @@
+{
+  "file": "extensions/browser/src/cli/browser-cli.ts",
+  "description": "浏览器 CLI 延迟注册状态检查说明",
+  "replacements": {
+    "\"Run a live snapshot check\"": "\"执行实时快照检查\""
+  }
+}

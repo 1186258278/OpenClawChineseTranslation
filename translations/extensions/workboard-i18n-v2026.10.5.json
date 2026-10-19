@@ -1,0 +1,15 @@
+{
+  "file": "extensions/workboard/browser/i18n/locales/en.ts",
+  "description": "任务看板本次新增操作的英文回退文案",
+  "replacements": {
+    "\"Workboard could not load. Check your connection and reload this page.\"": "\"任务看板加载失败。请检查连接并重新加载页面。\"",
+    "\"Pin to sidebar\"": "\"固定到侧栏\"",
+    "\"Unpin from sidebar\"": "\"取消固定到侧栏\"",
+    "\"Delete board…\"": "\"删除看板…\"",
+    "\"Delete “{name}”?\"": "\"删除“{name}”？\"",
+    "\"Delete board\"": "\"删除看板\"",
+    "\"This permanently deletes the board and its saved session placements. Sessions are kept. Boards with cards must be emptied first.\"": "\"此操作会永久删除看板及其保存的会话位置，会话仍会保留。请先清空看板中的卡片。\"",
+    "\"Connect with write access to delete this board.\"": "\"请使用具有写入权限的连接删除此看板。\"",
+    "\"Color\"": "\"颜色\""
+  }
+}

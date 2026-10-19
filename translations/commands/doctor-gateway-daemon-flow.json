@@ -6,7 +6,7 @@
     "note(\"LaunchAgent is installed but not loaded in launchd.\", `${params.title} LaunchAgent`)": "note(\"LaunchAgent 已安装但未在 launchd 中加载。\", `${params.title} LaunchAgent`)",
     "note(`${params.title} LaunchAgent repaired.`, `${params.title} LaunchAgent`)": "note(`${params.title} LaunchAgent 已修复。`, `${params.title} LaunchAgent`)",
     "note(formatPortDiagnostics(diagnostics).join(\"\\n\"), \"Gateway port\")": "note(formatPortDiagnostics(diagnostics).join(\"\\n\"), \"网关端口\")",
-    "note(`Last gateway error: ${lastError}`, \"Gateway\")": "note(`最近网关错误: ${lastError}`, \"网关\")",
+    "note(`Recent Gateway log error (may be from an earlier run): ${lastError}`, \"Gateway\")": "note(`最近的网关日志错误（可能来自此前运行）：${lastError}`, \"网关\")",
     "note(\"Gateway service not installed.\", \"Gateway\")": "note(\"网关服务未安装。\", \"网关\")",
     "message: \"Install gateway service now?\"": "message: \"现在安装网关服务？\"",
     "message: \"Gateway service runtime\"": "message: \"网关服务运行时\"",

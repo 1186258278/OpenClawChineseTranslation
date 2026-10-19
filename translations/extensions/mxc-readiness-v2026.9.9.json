@@ -8,11 +8,11 @@
     "If mxcBinaryPath points to an older executor, update it or unset ": "若 mxcBinaryPath 指向旧执行器，请更新该执行器或取消设置 ",
     "plugins.entries.mxc.config.mxcBinaryPath and restart the Gateway to use ": "plugins.entries.mxc.config.mxcBinaryPath，然后重启网关以使用 ",
     "the bundled SDK executor.": "随附的 SDK 执行器。",
-    "the MXC host probe failed${detail}": "MXC 主机探测失败${detail}",
-    "the MXC host probe did not return JSON": "MXC 主机探测未返回 JSON",
-    "the MXC host probe returned an unexpected result": "MXC 主机探测返回了意外结果",
-    "the probe reported no isolation tier": "探测未报告隔离级别",
     "MXC cannot select an isolation tier on this host (${reason})": "MXC 无法在此主机上选择隔离级别（${reason}）",
-    "[mxc] MXC sandbox is using the ${probe.tier} isolation tier: ${probe.warnings.join(\"; \")}": "[mxc] MXC 沙箱正在使用 ${probe.tier} 隔离级别：${probe.warnings.join(\"; \")}"
+    "[mxc] MXC sandbox is using the ${probe.tier} isolation tier: ${probe.warnings.join(\"; \")}": "[mxc] MXC 沙箱正在使用 ${probe.tier} 隔离级别：${probe.warnings.join(\"; \")}",
+    "the MXC host check failed${detail}": "MXC 主机探测失败${detail}",
+    "the MXC host check did not return JSON": "MXC 主机探测未返回 JSON",
+    "the MXC host check returned an unexpected result": "MXC 主机探测返回了意外结果",
+    "the check reported no isolation tier": "探测未报告隔离级别"
   }
 }

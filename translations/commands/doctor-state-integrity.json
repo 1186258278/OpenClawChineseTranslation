@@ -6,15 +6,14 @@
     "noteFn(changes.join(\"\\n\"), \"Doctor changes\")": "noteFn(changes.join(\"\\n\"), \"诊断更改\")",
     "`- CRITICAL: state directory missing (${displayStateDir}). Sessions, credentials, logs, and config are stored there.`": "`- 严重：状态目录缺失 (${displayStateDir})。会话、凭据、日志和配置都存储在那里。`",
     "\"- Gateway is in remote mode; run doctor on the remote host where the gateway runs.\"": "\"- 网关处于远程模式；请在运行网关的远程主机上执行 doctor。\"",
-    "`- State directory not writable (${displayStateDir}).`": "`- 状态目录不可写 (${displayStateDir})。`",
     "`- State directory permissions are too open (${displayStateDir}). Recommend chmod 700.`": "`- 状态目录权限过于开放 (${displayStateDir})。建议 chmod 700。`",
     "`- CRITICAL: ${label} missing (${displayDir}).`": "`- 严重：${label} 缺失 (${displayDir})。`",
-    "`- ${label} not writable (${displayDir}).`": "`- ${label} 不可写 (${displayDir})。`",
     "\"Sessions dir\"": "\"会话目录\"",
     "\"Session store dir\"": "\"会话存储目录\"",
     "\"OAuth dir\"": "\"OAuth 目录\"",
     "\"- Multiple state directories detected. This can split session history.\"": "\"- 检测到多个状态目录。这可能导致会话历史分散。\"",
     "`- Main session transcript missing (${shortenHomePath(transcriptPath)}). History will appear to reset.`": "`- 主会话记录缺失 (${shortenHomePath(transcriptPath)})。历史记录将显示为已重置。`",
-    "`- Main session transcript has only ${lineCount} line. Session history may not be appending.`": "`- 主会话记录只有 ${lineCount} 行。会话历史可能没有正常追加。`"
+    "`- Main session transcript has only ${lineCount} line. Session history may not be appending.`": "`- 主会话记录只有 ${lineCount} 行。会话历史可能没有正常追加。`",
+    "`- ${label ?? \"State directory\"} not writable (${displayDir}).`": "`- ${label ?? \"状态目录\"} 不可写（${displayDir}）。`"
   }
 }

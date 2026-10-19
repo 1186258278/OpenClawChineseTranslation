@@ -1,0 +1,8 @@
+{
+  "file": "src/cli/update-cli/update-command-service-maintenance.ts",
+  "description": "v2026.10.5 update-service-maintenance 用户可见提示",
+  "replacements": {
+    "\"--no-restart skips only the updater's managed restart; the running Gateway will restart itself when it detects the replaced package installation.\"": "\"--no-restart 仅跳过更新器管理的重启；运行中的网关检测到软件包安装被替换后会自行重启。\"",
+    "\"--no-restart is set while the managed gateway service is running; the git update will not stop or restart that process.\"": "\"受管网关服务运行期间设置了 --no-restart；Git 更新不会停止或重启该进程。\""
+  }
+}

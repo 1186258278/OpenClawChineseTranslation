@@ -1,0 +1,16 @@
+{
+  "file": "src/cli/daemon-cli/status.print.ts",
+  "description": "v2026.10.5 gateway-status-output 用户可见提示",
+  "replacements": {
+    "\"Gateway accepted the connection, but the read check timed out. Inspect event-loop load and retry before treating the service as unreachable.\"": "\"网关已接受连接，但读取检查超时。请检查事件循环负载并重试，再判断服务是否无法访问。\"",
+    "\"Gateway process is running and owns the gateway port, but readiness is not yet confirmed. Warm-up is still possible. Try openclaw gateway status --deep again shortly; check the connection credentials/config and logs if it stays unresponsive.\"": "\"网关进程正在运行并占用网关端口，但尚未确认就绪，可能仍在预热。请稍后重试 openclaw gateway status --deep；若持续无响应，检查连接凭证、配置和日志。\"",
+    "\"Readiness is not confirmed. A running service process does not prove the Gateway is available; inspect the service logs and openclaw gateway status --deep.\"": "\"尚未确认就绪。服务进程正在运行并不代表网关可用；请检查服务日志并运行 openclaw gateway status --deep。\"",
+    "\"Read check:\"": "\"读取检查：\"",
+    "\"Connectivity check:\"": "\"连接检查：\"",
+    "\"Check target:\"": "\"检查目标：\"",
+    "\"Check auth:\"": "\"检查认证：\"",
+    "\"Check note:\"": "\"检查说明：\"",
+    "\"Recent Gateway log error (may be from an earlier run):\"": "\"最近的网关日志错误（可能来自此前运行）：\"",
+    "\"Native service is not installed; diagnostic only, not the check target.\"": "\"未安装原生服务；仅用于诊断，不是检查目标。\""
+  }
+}

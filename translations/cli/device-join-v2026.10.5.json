@@ -1,0 +1,8 @@
+{
+  "file": "src/cli/devices-cli-join.ts",
+  "description": "v2026.10.5 device-join 用户可见提示",
+  "replacements": {
+    "\"Gateway did not return a device join URL.\"": "\"网关未返回设备加入链接。\"",
+    "\"Installs a background node service that can run agent sessions.\"": "\"安装可运行代理会话的后台节点服务。\""
+  }
+}

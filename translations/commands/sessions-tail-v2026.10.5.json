@@ -1,0 +1,8 @@
+{
+  "file": "src/commands/sessions-tail.ts",
+  "description": "v2026.10.5 sessions-tail 用户可见提示",
+  "replacements": {
+    "\"explicit store: ordered by activity\"": "\"已指定存储：按活动排序\"",
+    "\"Gateway unreachable: showing the most recently active session\"": "\"网关无法访问：显示最近活动的会话\""
+  }
+}
