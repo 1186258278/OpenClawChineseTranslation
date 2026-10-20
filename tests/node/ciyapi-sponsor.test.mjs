@@ -87,17 +87,13 @@ test("CiyAPI setup does not read or overwrite the old provider configuration", a
   assert.match(onboard, /applyConfig/);
 });
 
-test("CiyAPI model catalog and panel recommend MiniMax M3 and M2.7", async () => {
-  const panel = await text("translations/panel/feature-panel.js");
+test("MiniMax guide separates direct API choices from gateway availability", async () => {
   const catalog = await text("translations/providers/files/extensions/qingchenyun/provider-catalog.ts");
   const guide = await text("docs/guides/models-cn.md");
 
-  for (const [id, contextWindow] of [
-    ["MiniMax-M3", 1000000],
-    ["MiniMax-M2.7", 204800],
-  ]) {
-    assert.match(catalog, new RegExp(`id: "${id}"[\\s\\S]*?contextWindow: ${contextWindow}`));
-    assert.match(panel, new RegExp(`id: '${id}'`));
+  assert.equal(catalog.includes('id: "MiniMax-'), false);
+  assert.ok(guide.indexOf('`MiniMax-M3.1-Flash`') < guide.indexOf('`MiniMax-M3`'));
+  for (const id of ["MiniMax-M3.1-Flash", "MiniMax-M3"]) {
     assert.equal(guide.includes(`\`${id}\``), true, `${id} is missing from the MiniMax guide`);
   }
 

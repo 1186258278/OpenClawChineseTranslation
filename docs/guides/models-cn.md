@@ -105,8 +105,12 @@ openclaw onboard
 
 | Model | Description |
 |------|------|
-| MiniMax M3 (`MiniMax-M3`) | Latest flagship model (recommended default, 1,000,000-token context window) |
-| MiniMax M2.7 (`MiniMax-M2.7`) | Standard model (204,800-token context window) |
+| MiniMax M3.1 Flash (`MiniMax-M3.1-Flash`) | Recommended for direct API use; 1,000,000-token context window |
+| MiniMax M3 (`MiniMax-M3`) | Alternative for direct API use; 1,000,000-token context window |
+
+These are direct API model IDs. OAuth and subscription availability depend on the account and region; this table does not change the upstream onboarding catalog. See the [official model guide](https://platform.minimax.io/docs/guides/models-intro.md).
+
+Gateway routes and limits follow the gateway catalog. The panel only recommends current MiniMax text models advertised by that gateway; it keeps an explicitly selected legacy or custom model. CiyAPI keeps its `auto` default and does not bundle unverified MiniMax routes. The ShengSuanYun catalog advertises `minimax/minimax-m3` with a 1,000,000-token context window and an 81,920-token output limit. Flash availability on either gateway has not been verified.
 
 ### Regional endpoints
 
