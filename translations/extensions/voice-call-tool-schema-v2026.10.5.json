@@ -1,0 +1,18 @@
+{
+  "file": "extensions/voice-call/src/tool-schema.ts",
+  "description": "语音通话工具参数说明迁移与实时引导",
+  "replacements": {
+    "description: \"Call target\"": "description: \"通话目标\"",
+    "description: \"Intro message\"": "description: \"开场消息\"",
+    "description: \"Call ID\"": "description: \"通话 ID\"",
+    "description: \"Follow-up message\"": "description: \"跟进消息\"",
+    "description: \"Message to speak\"": "description: \"要朗读的消息\"",
+    "description: \"Call SID\"": "description: \"通话 SID\"",
+    "description: \"Optional intro message\"": "description: \"可选开场消息\"",
+    "description: \"OpenClaw session key for the call\"": "description: \"此通话的 OpenClaw 会话键\"",
+    "description: \"DTMF digits to play before connect\"": "description: \"接通前播放的 DTMF 数字\"",
+    "description: \"Exact active call ID\"": "description: \"当前通话的准确 ID\"",
+    "description: \"Owner instruction for the live call\"": "description: \"通话所有者对当前通话的指令\"",
+    "description: \"DTMF digits to send\"": "description: \"要发送的 DTMF 数字\""
+  }
+}

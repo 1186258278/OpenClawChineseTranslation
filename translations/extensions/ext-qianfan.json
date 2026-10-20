@@ -1,8 +1,5 @@
 {
   "file": "extensions/qianfan/index.ts",
   "description": "千帆 (百度) 扩展认证选项 (v2026.3.22 从 auth-choice 迁移)",
-  "replacements": {
-    "label: \"Qianfan API key\"": "label: \"千帆 API 密钥\"",
-    "promptMessage: \"Enter Qianfan API key\"": "promptMessage: \"输入千帆 API 密钥\""
-  }
+  "replacements": {}
 }

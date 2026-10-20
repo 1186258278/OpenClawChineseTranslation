@@ -1,0 +1,7 @@
+{
+  "file": "src/cli/program/config-guard.ts",
+  "description": "配置校验兜底错误提示（v2026.10.2）",
+  "replacements": {
+    "\"Unknown validation issue.\"": "\"未知的校验问题。\""
+  }
+}

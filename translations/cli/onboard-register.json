@@ -3,8 +3,6 @@
   "description": "onboard 命令及其选项",
   "replacements": {
     ".description(\"Guided setup for auth, models, Gateway, workspace, channels, and skills\")": ".description(\"引导设置认证、模型、网关、工作区、渠道和技能\")",
-    "`\\n${theme.muted(\"Docs:\")} ${formatDocsLink(\"/cli/onboard\", \"docs.openclaw.ai/cli/onboard\")}\\n`": "`\\n${theme.muted(\"文档：\")} ${formatDocsLink(\"/cli/onboard\", \"docs.openclaw.ai/cli/onboard\")}\\n`",
-    ".option(\"--workspace <dir>\", \"Agent workspace directory (default: ~/.openclaw/workspace)\")": ".option(\"--workspace <dir>\", \"代理工作区目录（默认：~/.openclaw/workspace）\")",
     "\"Reset config + credentials + sessions before running onboard (workspace only with --reset-scope full)\"": "\"在运行 onboard 前重置配置、凭证和会话（工作区仅在 --reset-scope full 时重置）\"",
     ".option(\"--reset-scope <scope>\", \"Reset scope: config|config+creds+sessions|full\")": ".option(\"--reset-scope <scope>\", \"重置范围：config|config+creds+sessions|full\")",
     ".option(\"--non-interactive\", \"Run without prompts\", false)": ".option(\"--non-interactive\", \"无提示运行\", false)",
@@ -16,7 +14,6 @@
     ".option(\"--token <token>\", \"Token value (non-interactive; used with --auth-choice token)\")": ".option(\"--token <token>\", \"令牌值（非交互式；与 --auth-choice token 一起使用）\")",
     "\"Auth profile id (non-interactive; default: <provider>:manual)\"": "\"认证配置文件 ID（非交互式；默认：<provider>:manual）\"",
     ".option(\"--token-expires-in <duration>\", \"Optional token expiry duration (e.g. 365d, 12h)\")": ".option(\"--token-expires-in <duration>\", \"可选的令牌过期时长（例如 365d、12h）\")",
-    "\"API key persistence mode: plaintext|ref (default: plaintext)\"": "\"API 密钥持久化模式：plaintext|ref（默认：plaintext）\"",
     ".option(\"--cloudflare-ai-gateway-account-id <id>\", \"Cloudflare Account ID\")": ".option(\"--cloudflare-ai-gateway-account-id <id>\", \"Cloudflare 账户 ID\")",
     ".option(\"--cloudflare-ai-gateway-gateway-id <id>\", \"Cloudflare AI Gateway ID\")": ".option(\"--cloudflare-ai-gateway-gateway-id <id>\", \"Cloudflare AI Gateway ID\")",
     ".option(\"--custom-base-url <url>\", \"Custom provider base URL\")": ".option(\"--custom-base-url <url>\", \"自定义提供商基础 URL\")",
@@ -33,7 +30,6 @@
     ".option(\"--remote-url <url>\", \"Remote Gateway WebSocket URL\")": ".option(\"--remote-url <url>\", \"远程网关 WebSocket URL\")",
     ".option(\"--remote-token <token>\", \"Remote Gateway token (optional)\")": ".option(\"--remote-token <token>\", \"远程网关令牌（可选）\")",
     ".option(\"--tailscale <mode>\", \"Tailscale: off|serve|funnel\")": ".option(\"--tailscale <mode>\", \"Tailscale：off|serve|funnel\")",
-    ".option(\"--tailscale-reset-on-exit\", \"Reset tailscale serve/funnel on exit\")": ".option(\"--tailscale-reset-on-exit\", \"退出时重置 tailscale serve/funnel\")",
     ".option(\"--install-daemon\", \"Install gateway service\")": ".option(\"--install-daemon\", \"安装网关服务\")",
     ".option(\"--no-install-daemon\", \"Skip gateway service install\")": ".option(\"--no-install-daemon\", \"跳过网关服务安装\")",
     ".option(\"--skip-daemon\", \"Skip gateway service install\")": ".option(\"--skip-daemon\", \"跳过网关服务安装\")",
@@ -41,11 +37,9 @@
     ".option(\"--skip-skills\", \"Skip skills setup\")": ".option(\"--skip-skills\", \"跳过技能设置\")",
     ".option(\"--skip-search\", \"Skip search provider setup\")": ".option(\"--skip-search\", \"跳过搜索提供商设置\")",
     ".option(\"--skip-health\", \"Skip health check\")": ".option(\"--skip-health\", \"跳过健康检查\")",
-    ".option(\"--skip-ui\", \"Skip Control UI/TUI prompts\")": ".option(\"--skip-ui\", \"跳过控制面板/TUI 提示\")",
+    "\"Skip Control UI/TUI prompts\"": "\"跳过控制面板/TUI 提示\"",
     ".option(\"--node-manager <name>\", \"Node manager for skills: npm|pnpm|bun\")": ".option(\"--node-manager <name>\", \"技能的 Node 管理器：npm|pnpm|bun\")",
     ".option(\"--json\", \"Output JSON summary\", false)": ".option(\"--json\", \"输出 JSON 摘要\", false)",
-    ".option(\"--skip-hooks\", \"Skip hook setup\")": ".option(\"--skip-hooks\", \"跳过钩子设置\")",
-    ".option(\"--daemon-runtime <runtime>\", \"Daemon runtime: node\")": ".option(\"--daemon-runtime <runtime>\", \"守护进程运行时：node\")",
-    ".option(\n      \"--modern\",\n      \"Alias for the default bootstrap onboarding (kept for compatibility)\",\n      false,\n    )": ".option(\n      \"--modern\",\n      \"默认引导式初始化的别名（为兼容保留）\",\n      false,\n    )"
+    "\"Skip hook setup\"": "\"跳过钩子设置\""
   }
 }

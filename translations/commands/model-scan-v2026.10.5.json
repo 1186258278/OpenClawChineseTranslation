@@ -1,0 +1,9 @@
+{
+  "file": "src/commands/models/scan.ts",
+  "description": "v2026.10.5 model-scan 用户可见提示",
+  "replacements": {
+    "\"Cannot apply metadata-only OpenRouter scan results. Remove --no-probe or configure OPENROUTER_API_KEY and rerun with checks before changing defaults.\"": "\"无法应用仅包含元数据的 OpenRouter 扫描结果。请移除 --no-probe，或配置 OPENROUTER_API_KEY 并重新运行检查，然后再更改默认设置。\"",
+    "\"Cannot apply metadata-only OpenRouter scan results. Configure OPENROUTER_API_KEY and rerun with checks before changing defaults.\"": "\"无法应用仅包含元数据的 OpenRouter 扫描结果。请配置 OPENROUTER_API_KEY 并重新运行检查，然后再更改默认设置。\"",
+    "\"OpenRouter free models still require OPENROUTER_API_KEY for live checks and inference. Listing public catalog metadata only.\"": "\"OpenRouter 免费模型仍需 OPENROUTER_API_KEY 才能进行实时检查和推理。当前仅列出公开目录元数据。\""
+  }
+}

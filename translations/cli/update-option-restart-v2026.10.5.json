@@ -1,0 +1,7 @@
+{
+  "file": "src/cli/update-option-specs.ts",
+  "description": "v2026.10.5 update-option-restart 用户可见提示",
+  "replacements": {
+    "\"Skip updater restart (package Gateways may restart themselves)\"": "\"跳过更新器重启（软件包安装的网关可能自行重启）\""
+  }
+}

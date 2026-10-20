@@ -1,7 +1,5 @@
 {
   "file": "ui/src/i18n/locales/zh-CN.ts",
   "description": "Dashboard 日志页面 i18n zh-CN 翻译注入",
-  "replacements": {
-    "  },\n};": "  },\n  logsView: {\n    title: \"日志\",\n    subtitle: \"网关文件日志 (JSONL)。\",\n    exportButton: \"导出 {label}\",\n    exportLabels: {\n      filtered: \"已筛选\",\n      visible: \"可见\",\n    },\n    filter: \"筛选\",\n    searchPlaceholder: \"搜索日志\",\n    autoFollow: \"自动跟随\",\n    file: \"文件：{file}\",\n    truncated: \"日志输出已截断；显示最新部分。\",\n    empty: \"暂无日志条目。\",\n  },\n};"
-  }
+  "replacements": {}
 }

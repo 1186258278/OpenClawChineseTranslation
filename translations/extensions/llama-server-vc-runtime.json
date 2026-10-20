@@ -1,0 +1,16 @@
+{
+  "file": "extensions/llama-cpp/src/llama-server-vc-runtime.ts",
+  "description": "Visual C++ 运行时提取错误提示",
+  "replacements": {
+    "`invalid Visual C++ runtime manifest filename: ${filename}`": "`Visual C++ 运行时清单文件名无效：${filename}`",
+    "\"Visual C++ runtime container copy made no progress\"": "\"Visual C++ 运行时容器复制未取得进展\"",
+    "`Visual C++ runtime bundle size mismatch: expected ${params.asset.size}, got ${stat.size}`": "`Visual C++ 运行时包大小不匹配：预期 ${params.asset.size}，实际为 ${stat.size}`",
+    "\"invalid Visual C++ runtime container bounds\"": "\"Visual C++ 运行时容器边界无效\"",
+    "\"Visual C++ runtime bundle does not contain the pinned cabinet\"": "\"Visual C++ 运行时包不包含指定的 cabinet 文件\"",
+    "\"Visual C++ runtime container ended before its pinned size\"": "\"Visual C++ 运行时容器在达到指定大小前结束\"",
+    "\"SystemRoot is unavailable; cannot extract the Visual C++ runtime\"": "\"SystemRoot 不可用；无法提取 Visual C++ 运行时\"",
+    "`Failed to extract the Visual C++ runtime${detail ? `: ${detail}` : \"\"}`": "`提取 Visual C++ 运行时失败${detail ? `：${detail}` : \"\"}`",
+    "`Visual C++ runtime does not contain regular file ${label}`": "`Visual C++ 运行时不包含常规文件 ${label}`",
+    "\"duplicate Visual C++ runtime target filename\"": "\"Visual C++ 运行时目标文件名重复\""
+  }
+}

@@ -8,8 +8,6 @@
     "\"Then open:\"": "\"然后打开：\"",
     "\"Docs:\"": "\"文档：\"",
     "runtime.log(`Workspace OK: ${shortenHomePath(ws.dir)}`)": "runtime.log(`工作区已就绪: ${shortenHomePath(ws.dir)}`)",
-    "runtime.log(`Sessions OK: ${shortenHomePath(sessionsDir)}`)": "runtime.log(`会话目录已就绪: ${shortenHomePath(sessionsDir)}`)",
-    "runtime.log(`Moved to Trash: ${shortenHomePath(pathname)}`)": "runtime.log(`已移至回收站: ${shortenHomePath(pathname)}`)",
-    "runtime.log(`Failed to move to Trash (manual delete): ${shortenHomePath(pathname)}`)": "runtime.log(`移至回收站失败 (请手动删除): ${shortenHomePath(pathname)}`)"
+    "runtime.log(`Sessions OK: ${shortenHomePath(sessionsDir)}`)": "runtime.log(`会话目录已就绪: ${shortenHomePath(sessionsDir)}`)"
   }
 }

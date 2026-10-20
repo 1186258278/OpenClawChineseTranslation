@@ -1,19 +1,5 @@
 {
   "file": "ui/src/pages/config/view.ts",
   "description": "Dashboard 配置页面 - 外观设置虚拟分区（v2026.3.12 新增）",
-  "replacements": {
-    "<h3 class=\"settings-appearance__heading\">Theme</h3>": "<h3 class=\"settings-appearance__heading\">主题</h3>",
-    "<h3 class=\"settings-appearance__heading\">Connection</h3>": "<h3 class=\"settings-appearance__heading\">连接</h3>",
-    ">Gateway</span>": ">网关</span>",
-    ">Assistant</span>": ">助手</span>",
-    "0: \"None\"": "0: \"无\"",
-    "25: \"Slight\"": "25: \"微圆\"",
-    "50: \"Default\"": "50: \"默认\"",
-    "75: \"Round\"": "75: \"圆形\"",
-    "100: \"Full\"": "100: \"全圆\"",
-    ">Status</span>": ">状态</span>",
-    "description: \"Chroma family\"": "description: \"色彩系列\"",
-    "description: \"Black & red\"": "description: \"黑红对比\"",
-    "description: \"Chocolate blueprint\"": "description: \"巧克力蓝图\""
-  }
+  "replacements": {}
 }

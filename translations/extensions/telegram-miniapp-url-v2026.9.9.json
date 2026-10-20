@@ -1,0 +1,7 @@
+{
+  "file": "extensions/telegram/src/miniapp/url.ts",
+  "description": "Telegram 控制界面地址提示",
+  "replacements": {
+    "Mini App needs an HTTPS gateway URL. Set `gateway.tailscale.mode: serve` or `funnel`, then retry /controlui.": "Mini App 需要 HTTPS 网关 URL。请设置 `gateway.tailscale.mode: serve` 或 `funnel`，然后重试 /controlui。"
+  }
+}

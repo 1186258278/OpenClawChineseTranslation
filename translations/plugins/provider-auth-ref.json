@@ -6,10 +6,8 @@
     "label: \"Environment variable\"": "label: \"环境变量\"",
     "hint: \"Reference a variable from your runtime environment\"": "hint: \"引用运行时环境中的变量\"",
     "label: \"Configured secret provider\"": "label: \"已配置的密钥提供商\"",
-    "hint: \"Use a configured file or exec secret provider\"": "hint: \"使用已配置的文件或 exec 密钥提供商\"",
     "message: params.copy?.envVarMessage ?? \"Environment variable name\"": "message: params.copy?.envVarMessage ?? \"环境变量名称\"",
     "message: \"Select secret provider\"": "message: \"选择密钥提供商\"",
-    "\"No file/exec secret providers are configured yet. Add one under secrets.providers, or select Environment variable.\"": "\"尚未配置文件/exec 密钥提供商。请在 secrets.providers 下添加，或选择环境变量。\"",
     "\"No providers configured\"": "\"未配置提供商\"",
     "\"Reference validated\"": "\"引用已验证\"",
     "\"Invalid provider\"": "\"无效的提供商\""

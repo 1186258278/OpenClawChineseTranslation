@@ -2,7 +2,6 @@
   "file": "src/commands/doctor-gateway-health.ts",
   "description": "网关健康检查",
   "replacements": {
-    "note(\"Gateway not running.\", \"Gateway\")": "note(\"网关未运行。\", \"网关\")",
     "note(gatewayDetails.message, \"Gateway connection\")": "note(gatewayDetails.message, \"网关连接\")",
     "note(\n          issues": "note(\n          issues",
     "\"Channel warnings\",\n        )": "\"频道警告\",\n        )"

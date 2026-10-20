@@ -1,0 +1,13 @@
+{
+  "file": "extensions/browser/src/cli/browser-cli-manage.ts",
+  "description": "浏览器 CLI 生命周期和状态检查说明",
+  "replacements": {
+    "\"No tabs (browser closed or no targets).\"": "\"没有标签页（浏览器已关闭或没有目标）。\"",
+    "\"Run a live snapshot check\"": "\"执行实时快照检查\"",
+    "\"Start the browser (no-op if already running)\"": "\"启动浏览器（已运行时不执行操作）\"",
+    "\"Stop the browser (best-effort)\"": "\"尽力停止浏览器\"",
+    "\"Launch a local managed browser headless for this start\"": "\"本次启动以无头模式运行本地托管浏览器\"",
+    "\"No profiles configured.\"": "\"未配置任何配置文件。\"",
+    "\"No system browser profiles found.\"": "\"未找到系统浏览器配置文件。\""
+  }
+}

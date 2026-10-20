@@ -1,53 +1,53 @@
 {
-    "name":  "@qingchencloud/openclaw-zh",
-    "version":  "2026.7.1-2-zh.1",
-    "description":  "OpenClaw 汉化发行版 - 开源个人 AI 助手平台中文版，每小时自动同步官方更新",
-    "keywords":  [
-                     "openclaw",
-                     "chinese",
-                     "汉化",
-                     "ai",
-                     "assistant",
-                     "personal-ai",
-                     "telegram",
-                     "whatsapp",
-                     "discord",
-                     "claude",
-                     "gpt"
-                 ],
-    "homepage":  "https://openclaw.qt.cool/",
-    "repository":  {
-                       "type":  "git",
-                       "url":  "https://github.com/1186258278/OpenClawChineseTranslation"
-                   },
-    "bugs":  {
-                 "url":  "https://github.com/1186258278/OpenClawChineseTranslation/issues"
-             },
-    "author":  {
-                   "name":  "武汉晴辰天下网络科技有限公司",
-                   "url":  "https://qingchencloud.com/"
-               },
-    "license":  "MIT",
-    "type":  "module",
-    "bin":  {
-                "openclaw-zh-cli":  "./cli/index.mjs"
-            },
-    "scripts":  {
-                    "cli":  "node cli/index.mjs",
-                    "status":  "node cli/index.mjs status",
-                    "apply":  "node cli/index.mjs apply",
-                    "verify":  "node cli/index.mjs verify",
-                    "restore":  "node cli/index.mjs restore"
-                },
-    "engines":  {
-                    "node":  "\u003e=22.19.0"
-                },
-    "files":  [
-                  "cli/",
-                  "translations/",
-                  "install.sh",
-                  "install.ps1",
-                  "README.md",
-                  "LICENSE"
-              ]
+  "name": "@qingchencloud/openclaw-zh",
+  "version": "2026.10.5-zh.1",
+  "description": "OpenClaw 汉化发行版 - 开源个人 AI 助手平台中文版，每小时自动同步官方更新",
+  "keywords": [
+    "openclaw",
+    "chinese",
+    "汉化",
+    "ai",
+    "assistant",
+    "personal-ai",
+    "telegram",
+    "whatsapp",
+    "discord",
+    "claude",
+    "gpt"
+  ],
+  "homepage": "https://openclaw.qt.cool/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/1186258278/OpenClawChineseTranslation"
+  },
+  "bugs": {
+    "url": "https://github.com/1186258278/OpenClawChineseTranslation/issues"
+  },
+  "author": {
+    "name": "武汉晴辰天下网络科技有限公司",
+    "url": "https://qingchencloud.com/"
+  },
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "openclaw-zh-cli": "./cli/index.mjs"
+  },
+  "scripts": {
+    "cli": "node cli/index.mjs",
+    "status": "node cli/index.mjs status",
+    "apply": "node cli/index.mjs apply",
+    "verify": "node cli/index.mjs verify",
+    "restore": "node cli/index.mjs restore"
+  },
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "files": [
+    "cli/",
+    "translations/",
+    "install.sh",
+    "install.ps1",
+    "README.md",
+    "LICENSE"
+  ]
 }

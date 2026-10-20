@@ -1,0 +1,8 @@
+{
+  "file": "src/commands/doctor-maintenance-state.ts",
+  "description": "Doctor 维护状态清理提示",
+  "replacements": {
+    "Doctor maintenance resource cleanup failed.": "Doctor 维护资源清理失败。",
+    "Doctor maintenance state cleanup failed.": "Doctor 维护状态清理失败。"
+  }
+}

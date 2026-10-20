@@ -1,0 +1,10 @@
+{
+  "file": "extensions/telegram/src/state-migrations.ts",
+  "description": "Telegram 旧状态迁移提示",
+  "replacements": {
+    "\"Telegram thread bindings\"": "\"Telegram 线程绑定\"",
+    "\"Telegram state\"": "\"Telegram 状态\"",
+    "`${state} may contain unmigrated data. Run openclaw doctor --fix on 2026.9.5 with a pre-update backup. Preserved retired Telegram JSON state at ${source}. See https://docs.openclaw.ai/install/updating#upgrading-very-old-versions`": "`${state} 可能包含未迁移的数据。请在升级前备份，并在 2026.9.5 上运行 openclaw doctor --fix。已将废弃的 Telegram JSON 状态保存在 ${source}。参见 https://docs.openclaw.ai/install/updating#upgrading-very-old-versions`",
+    "\"empty Telegram thread bindings\"": "\"空的 Telegram 线程绑定\""
+  }
+}

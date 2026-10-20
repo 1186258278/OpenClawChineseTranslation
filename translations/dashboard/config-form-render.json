@@ -1,37 +1,5 @@
 {
   "file": "ui/src/components/config-form.render.ts",
   "description": "Dashboard 配置页面章节标签和描述",
-  "replacements": {
-    "label: \"Environment Variables\",\n    description: \"Environment variables passed to the gateway process\"": "label: \"环境变量\",\n    description: \"传递给网关进程的环境变量\"",
-    "label: \"Updates\", description: \"Auto-update settings and release channel\"": "label: \"更新\", description: \"自动更新设置和发布渠道\"",
-    "label: \"Agents\", description: \"Agent configurations, models, and identities\"": "label: \"代理\", description: \"代理配置、模型和身份\"",
-    "label: \"Authentication\", description: \"API keys and authentication profiles\"": "label: \"身份验证\", description: \"API 密钥和认证配置\"",
-    "label: \"Channels\",\n    description: \"Messaging channels (Telegram, Discord, Slack, etc.)\"": "label: \"渠道\",\n    description: \"消息渠道 (Telegram、Discord、Slack 等)\"",
-    "label: \"Messages\", description: \"Message handling and routing settings\"": "label: \"消息\", description: \"消息处理和路由设置\"",
-    "label: \"Commands\", description: \"Custom slash commands\"": "label: \"命令\", description: \"自定义斜杠命令\"",
-    "label: \"Hooks\", description: \"Webhooks and event hooks\"": "label: \"钩子\", description: \"Webhooks 和事件钩子\"",
-    "label: \"Skills\", description: \"Skill packs and capabilities\"": "label: \"技能\", description: \"技能包和功能\"",
-    "label: \"Tools\", description: \"Tool configurations (browser, search, etc.)\"": "label: \"工具\", description: \"工具配置 (浏览器、搜索等)\"",
-    "label: \"Gateway\", description: \"Gateway server settings (port, auth, binding)\"": "label: \"网关\", description: \"网关服务器设置 (端口、认证、绑定)\"",
-    "label: \"Setup Wizard\", description: \"Setup wizard state and history\"": "label: \"设置向导\", description: \"设置向导状态和历史\"",
-    "label: \"Metadata\", description: \"Gateway metadata and version information\"": "label: \"元数据\", description: \"网关元数据和版本信息\"",
-    "label: \"Logging\", description: \"Log levels and output configuration\"": "label: \"日志\", description: \"日志级别和输出配置\"",
-    "label: \"Browser\", description: \"Browser automation settings\"": "label: \"浏览器\", description: \"浏览器自动化设置\"",
-    "label: \"UI\", description: \"User interface preferences\"": "label: \"界面\", description: \"用户界面偏好\"",
-    "label: \"Models\", description: \"AI model configurations and providers\"": "label: \"模型\", description: \"AI 模型配置和提供商\"",
-    "label: \"Bindings\", description: \"Key bindings and shortcuts\"": "label: \"绑定\", description: \"按键绑定和快捷键\"",
-    "label: \"Broadcast\", description: \"Broadcast and notification settings\"": "label: \"广播\", description: \"广播和通知设置\"",
-    "label: \"Audio\", description: \"Audio input/output settings\"": "label: \"音频\", description: \"音频输入/输出设置\"",
-    "label: \"Session\", description: \"Session management and persistence\"": "label: \"会话\", description: \"会话管理和持久化\"",
-    "label: \"Cron\", description: \"Scheduled tasks and automation\"": "label: \"定时任务\", description: \"计划任务和自动化\"",
-    "label: \"Web\", description: \"Web server and API settings\"": "label: \"网页\", description: \"网页服务器和 API 设置\"",
-    "label: \"Discovery\", description: \"Service discovery and networking\"": "label: \"发现\", description: \"服务发现和网络\"",
-    "label: \"Canvas Host\", description: \"Canvas rendering and display\"": "label: \"画布主机\", description: \"画布渲染和显示\"",
-    "label: \"Talk\", description: \"Voice and speech settings\"": "label: \"语音\", description: \"语音和语音设置\"",
-    "label: \"Plugins\", description: \"Plugin management and extensions\"": "label: \"插件\", description: \"插件管理和扩展\"",
-    ">Schema unavailable.</div>": ">Schema 不可用。</div>",
-    ">Unsupported schema. Use Raw.</div>": ">不支持的 schema。请使用原始模式。</div>",
-    "`No settings match \"${searchQuery}\"`": "`没有匹配 \"${searchQuery}\" 的设置`",
-    "\"No settings in this section\"": "\"此分区暂无设置\""
-  }
+  "replacements": {}
 }

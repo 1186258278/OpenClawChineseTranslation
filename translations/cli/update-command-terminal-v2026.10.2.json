@@ -1,0 +1,7 @@
+{
+  "file": "src/cli/update-cli/update-command-terminal.ts",
+  "description": "更新结果发布失败但更新已成功提示（v2026.10.2）",
+  "replacements": {
+    "`Warning: Update succeeded, but result publication failed: ${createUpdateErrorFact(\"update\", error, run.env).message}`": "`警告：更新已成功，但结果发布失败：${createUpdateErrorFact(\"update\", error, run.env).message}`"
+  }
+}

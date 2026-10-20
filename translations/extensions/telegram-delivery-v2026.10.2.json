@@ -1,0 +1,8 @@
+{
+  "file": "extensions/telegram/src/bot-message-dispatch-progress.ts",
+  "description": "Telegram 最终消息投递失败提示（v2026.10.2）",
+  "replacements": {
+    "\"I couldn't send the reply to Telegram. Check OpenClaw chat history for the answer and the Gateway logs for the delivery error.\"": "\"无法将回复发送到 Telegram。请查看 OpenClaw 聊天记录获取答案，并检查 Gateway 日志中的投递错误。\"",
+    "\"I couldn't confirm the reply reached Telegram. Check OpenClaw chat history for the answer before retrying the task.\"": "\"无法确认回复已送达 Telegram。重试任务前，请先查看 OpenClaw 聊天记录获取答案。\""
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "file": "src/config/schema.meta.ts",
+  "description": "配置兼容性元数据标签和帮助文本",
+  "replacements": {
+    "  meta: \"Backward-readable compatibility metadata retained so older binaries can refuse unsafe config downgrades.\"": "  meta: \"保留向后可读的兼容性元数据，使旧版本二进制程序可以拒绝不安全的配置降级。\"",
+    "  \"meta.lastTouchedVersion\": \"OpenClaw version that most recently wrote this config.\"": "  \"meta.lastTouchedVersion\": \"最近写入此配置的 OpenClaw 版本。\"",
+    "  \"meta.migrations\": \"Bounded compatibility markers for completed config migrations.\"": "  \"meta.migrations\": \"已完成配置迁移的有限兼容性标记。\"",
+    "  \"meta.migrations.modelPolicyAllowlist\":\n    \"Records that legacy model-map restrictions were preserved or evaluated.\"": "  \"meta.migrations.modelPolicyAllowlist\":\n    \"记录是否保留或评估旧版模型映射限制。\"",
+    "  \"meta.migrations.utilityModelSeparation\":\n    \"Records that legacy implicit primary models were preserved before separating utility model selection.\"": "  \"meta.migrations.utilityModelSeparation\":\n    \"记录在分离实用模型选择前是否保留旧版隐式主模型。\"",
+    "  meta: \"Compatibility Metadata\"": "  meta: \"兼容性元数据\"",
+    "  \"meta.lastTouchedVersion\": \"Config Last Touched Version\"": "  \"meta.lastTouchedVersion\": \"配置最后写入版本\"",
+    "  \"meta.migrations\": \"Config Migration Markers\"": "  \"meta.migrations\": \"配置迁移标记\"",
+    "  \"meta.migrations.modelPolicyAllowlist\": \"Model Policy Allowlist Migration\"": "  \"meta.migrations.modelPolicyAllowlist\": \"模型策略允许列表迁移\"",
+    "  \"meta.migrations.utilityModelSeparation\": \"Utility Model Separation Migration\"": "  \"meta.migrations.utilityModelSeparation\": \"实用模型分离迁移\""
+  }
+}

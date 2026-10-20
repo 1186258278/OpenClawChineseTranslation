@@ -1,0 +1,9 @@
+{
+  "file": "src/cli/update-cli/update-command-database-backup.ts",
+  "description": "更新数据库备份提示",
+  "replacements": {
+    "${reason}. Current databases were preserved. Keep the retained snapshots at ${params.backup.directory}; run openclaw doctor from the candidate version to inspect recovery before downgrading.": "${reason}。当前数据库已保留。请保留 ${params.backup.directory} 中的快照；降级前请使用候选版本运行 openclaw doctor 检查恢复状态。",
+    "Migration receipt belongs to a different database backup": "迁移回执属于其他数据库备份",
+    "databases changed after migration; the writer is unknown": "迁移后数据库发生变更；写入者未知"
+  }
+}

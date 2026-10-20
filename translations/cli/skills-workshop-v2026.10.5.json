@@ -1,0 +1,17 @@
+{
+  "file": "src/cli/skills-cli.ts",
+  "description": "v2026.10.5 skills-workshop 用户可见提示",
+  "replacements": {
+    "\"Inspect, archive, and restore learned Workshop skills\"": "\"查看、归档和恢复 Workshop 学习的技能\"",
+    "\"Target agent (defaults to cwd-inferred, then default agent)\"": "\"目标代理（优先根据当前目录推断，否则使用默认代理）\"",
+    "\"List learned skills and archived skills\"": "\"列出学习的技能和已归档技能\"",
+    "\"Show recent learned-skill changes\"": "\"显示最近的学习技能变更\"",
+    "\"Print a learned skill file\"": "\"输出学习的技能文件\"",
+    "\"Skill file to print (default SKILL.md)\"": "\"要输出的技能文件（默认 SKILL.md）\"",
+    "\"Print a saved version instead of the live skill\"": "\"输出已保存的版本，而非当前技能\"",
+    "\"Archive a learned skill so its agent no longer sees it\"": "\"归档学习的技能，使其代理不再看到该技能\"",
+    "\"Why the skill is archived\"": "\"技能归档原因\"",
+    "\"Restore an archived skill or a saved version\"": "\"恢复已归档技能或已保存版本\"",
+    "\"Version to restore (default newest)\"": "\"要恢复的版本（默认最新）\""
+  }
+}

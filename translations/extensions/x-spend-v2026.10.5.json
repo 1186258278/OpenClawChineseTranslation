@@ -1,0 +1,10 @@
+{
+  "file": "extensions/x/src/spend.ts",
+  "description": "X API 预算用尽与恢复提示",
+  "replacements": {
+    "`billing-cycle budget of $${view.config.monthlyUsd}`": "`计费周期预算 ${view.config.monthlyUsd} 美元`",
+    "`daily budget of $${view.config.dailyUsd}`": "`每日预算 ${view.config.dailyUsd} 美元`",
+    "X API ${reason} reached; resumes at ${new Date(until).toISOString().replace(\":00.000Z\", \"Z\")}": "X API ${reason} 已用尽；恢复时间：${new Date(until).toISOString().replace(\":00.000Z\", \"Z\")}",
+    "\"X API budget reset; paid requests may resume\"": "\"X API 预算已重置，可恢复付费请求\""
+  }
+}

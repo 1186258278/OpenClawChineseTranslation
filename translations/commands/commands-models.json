@@ -9,7 +9,6 @@
     "\"Switch: /model <provider/model>\"": "\"切换：/model <提供商/模型>\"",
     "\"Browse: /models\"": "\"浏览：/models\"",
     "\"⚠️ /models add is deprecated. Use /models to browse providers and /model to switch models.\"": "\"⚠️ /models add 已弃用。请使用 /models 浏览提供商，使用 /model 切换模型。\"",
-    "`Models (${providerLabel}) — ${params.total} available`": "`模型（${providerLabel}） — 可用 ${params.total} 个`",
     "`Models (${providerLabel}) — showing ${startIndex + 1}-${endIndexExclusive} of ${total} (page ${safePage}/${pageCount})`": "`模型（${providerLabel}） — 显示 ${startIndex + 1}-${endIndexExclusive}（共 ${total}，第 ${safePage}/${pageCount} 页）`",
     "`Page out of range: ${page} (valid: 1-${pageCount})`": "`页码超出范围：${page}（有效范围：1-${pageCount}）`",
     "`Try: /models list ${provider} ${safePage}`": "`请尝试：/models list ${provider} ${safePage}`",
@@ -17,8 +16,7 @@
     "`More: /models list ${provider} ${safePage + 1}`": "`更多：/models list ${provider} ${safePage + 1}`",
     "`Unknown provider: ${provider}`": "`未知提供商：${provider}`",
     "`Models (${emptyProviderLabel}) — none`": "`模型（${emptyProviderLabel}）— 无`",
-    "\"Use the built-in OpenClaw runtime.\"": "\"使用内置 OpenClaw 运行时。\"",
-    "`Run ${params.provider} models through ${label}.`": "`通过 ${label} 运行 ${params.provider} 模型。`",
-    "`Use the ${label} runtime selected by the effective harness policy.`": "`使用有效 harness 策略选择的 ${label} 运行时。`"
+    "`Models (${providerLabel}) — ${count} available`": "`模型（${providerLabel}）— 可用 ${count} 个`",
+    "\"Available models changed. Open /models and choose again.\"": "\"可用模型已变更。请打开 /models 后重新选择。\""
   }
 }

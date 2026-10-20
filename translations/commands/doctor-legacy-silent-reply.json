@@ -1,0 +1,9 @@
+{
+  "file": "src/commands/doctor/shared/legacy-config-migrations.runtime.agents.ts",
+  "description": "静默回复兼容迁移提示",
+  "replacements": {
+    "'agents.defaults.silentReply.internal was removed; only channel groups may use NO_REPLY. Run \"openclaw doctor --fix\" to remove it.'": "'agents.defaults.silentReply.internal 已移除；只有渠道组可以使用 NO_REPLY。运行 \"openclaw doctor --fix\" 将其删除。'",
+    "'surfaces.*.silentReply.internal was removed; only channel groups may use NO_REPLY. Run \"openclaw doctor --fix\" to remove it.'": "'surfaces.*.silentReply.internal 已移除；只有渠道组可以使用 NO_REPLY。运行 \"openclaw doctor --fix\" 将其删除。'",
+    "`Removed ${path}.silentReply.internal; internal sessions never use NO_REPLY.`": "`已删除 ${path}.silentReply.internal；内部会话永远不会使用 NO_REPLY。`"
+  }
+}

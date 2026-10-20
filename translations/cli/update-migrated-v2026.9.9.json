@@ -1,0 +1,8 @@
+{
+  "file": "src/cli/update-cli/update-command-migrated.ts",
+  "description": "更新状态迁移提示",
+  "replacements": {
+    "Shared state migration did not finish: expected schema ${candidateSchemaVersions.state}, found ${sharedVersion ?? \"missing\"}.": "共享状态迁移未完成：预期 schema ${candidateSchemaVersions.state}，实际为 ${sharedVersion ?? \"缺失\"}。",
+    "Agent database migration did not finish: ${entry.path}; expected schema ${candidateSchemaVersions.agent}, found ${entry.userVersion}.": "Agent 数据库迁移未完成：${entry.path}；预期 schema ${candidateSchemaVersions.agent}，实际为 ${entry.userVersion}。"
+  }
+}

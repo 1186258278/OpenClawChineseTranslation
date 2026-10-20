@@ -1,0 +1,7 @@
+{
+  "file": "src/cli/update-cli/update-command-run.ts",
+  "description": "更新包激活恢复提示汉化（v2026.10.3）",
+  "replacements": {
+    "`${opts.dryRun ? \"Would settle\" : \"Settled\"} previous package update ${settled.operationId} (${settled.reason}); update can proceed past package recovery admission. Evidence ${opts.dryRun ? \"would be retained\" : \"retained\"} at ${settled.retained}.${settled.warning ? ` ${settled.warning}` : \"\"}`": "`${opts.dryRun ? \"将处理\" : \"已处理\"}此前的软件包更新 ${settled.operationId}（${settled.reason}）；更新可继续通过软件包恢复准入检查。${opts.dryRun ? \"将保留\" : \"已保留\"}的证据位于 ${settled.retained}。${settled.warning ? ` ${settled.warning}` : \"\"}`"
+  }
+}

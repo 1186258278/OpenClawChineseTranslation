@@ -1,10 +1,5 @@
 {
   "file": "ui/src/pages/channels/view.config.ts",
   "description": "Dashboard 渠道配置通用组件",
-  "replacements": {
-    "<div class=\"callout danger\">Schema unavailable. Use Raw.</div>": "<div class=\"callout danger\">架构不可用。请使用原始模式。</div>",
-    "<div class=\"callout danger\">Channel config schema unavailable.</div>": "<div class=\"callout danger\">渠道配置架构不可用。</div>",
-    "<div class=\"muted\">Loading config schema…</div>": "<div class=\"muted\">加载配置架构中…</div>",
-    "${props.configSaving ? \"Saving…\" : \"Save\"}": "${props.configSaving ? \"保存中…\" : \"保存\"}"
-  }
+  "replacements": {}
 }

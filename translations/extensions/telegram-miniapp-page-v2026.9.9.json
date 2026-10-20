@@ -1,0 +1,8 @@
+{
+  "file": "extensions/telegram/src/miniapp/page.ts",
+  "description": "Telegram 控制界面页面提示",
+  "replacements": {
+    "This link expired. Run /controlui again in your bot chat.": "此链接已过期。请在机器人聊天中再次运行 /controlui。",
+    "Opening Control UI...": "正在打开控制界面…"
+  }
+}

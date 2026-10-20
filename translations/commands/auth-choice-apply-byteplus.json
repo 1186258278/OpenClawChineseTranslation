@@ -1,7 +1,5 @@
 {
   "file": "extensions/byteplus/index.ts",
   "description": "BytePlus 认证流程翻译 (v2026.3.22 迁移至 extension)",
-  "replacements": {
-    "promptMessage: \"Enter BytePlus API key\"": "promptMessage: \"请输入 BytePlus API 密钥\""
-  }
+  "replacements": {}
 }

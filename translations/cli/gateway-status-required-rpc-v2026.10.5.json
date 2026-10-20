@@ -1,0 +1,7 @@
+{
+  "file": "src/cli/daemon-cli/status.ts",
+  "description": "v2026.10.5 gateway-status-required-rpc 用户可见提示",
+  "replacements": {
+    "\"Gateway status failed: --require-rpc needs checking enabled. Remove --no-probe or drop --require-rpc.\"": "\"网关状态检查失败：--require-rpc 需要启用检查。请移除 --no-probe 或取消 --require-rpc。\""
+  }
+}

@@ -1,11 +1,5 @@
 {
   "file": "ui/src/pages/chat/components/chat-message.ts",
   "description": "聊天消息渲染 — 按钮标签和辅助文本",
-  "replacements": {
-    "aria-label=\"Delete message\"": "aria-label=\"删除消息\"",
-    "alt=${img.alt ?? \"Attached image\"}": "alt=${img.alt ?? \"附件图片\"}",
-    "aria-label=\"Open in canvas\"": "aria-label=\"在画布中打开\"",
-    "content=\"Delete\"": "content=\"删除\"",
-    "content=\"Open in canvas\"": "content=\"在画布中打开\""
-  }
+  "replacements": {}
 }

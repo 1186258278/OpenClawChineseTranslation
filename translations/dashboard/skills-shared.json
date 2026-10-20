@@ -1,11 +1,5 @@
 {
   "file": "ui/src/lib/skills-shared.ts",
   "description": "Dashboard 技能页面共享组件",
-  "replacements": {
-    "available ? \"eligible\" : \"blocked\"": "available ? \"可用\" : \"已阻止\"",
-    "<span class=\"chip chip-warn\">disabled</span>": "<span class=\"chip chip-warn\">已禁用</span>",
-    "reasons.push(\"disabled\");": "reasons.push(\"已禁用\");",
-    "reasons.push(\"blocked by allowlist\");": "reasons.push(\"被白名单阻止\");",
-    "reasons.push(\"blocked by agent filter\");": "reasons.push(\"被代理筛选阻止\");"
-  }
+  "replacements": {}
 }

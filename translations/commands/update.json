@@ -7,8 +7,9 @@
     "theme.heading(\"Non-interactive:\")": "theme.heading(\"非交互模式：\")",
     "theme.heading(\"Examples:\")": "theme.heading(\"示例：\")",
     "theme.heading(\"Notes:\")": "theme.heading(\"注意事项：\")",
-    "\"Preview update actions without making changes\"": "\"预览更新操作而不做任何更改\"",
     "\"Preview actions without changing anything\"": "\"预览操作而不做任何更改\"",
-    "- Use --dry-run to preview actions without writing config/installing/restarting": "- 使用 --dry-run 预览操作而不写入配置/安装/重启"
+    "- Use --dry-run to preview actions without writing config/installing/restarting": "- 使用 --dry-run 预览操作而不写入配置/安装/重启",
+    "\"Skip updater restart (package Gateways may restart themselves)\"": "\"跳过更新器重启（软件包安装的网关可能自行重启）\"",
+    "\"Update without an updater-managed restart\"": "\"更新且不由更新器管理重启\""
   }
 }

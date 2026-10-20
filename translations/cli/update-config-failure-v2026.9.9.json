@@ -1,0 +1,8 @@
+{
+  "file": "src/cli/update-cli/update-command-config-failure.ts",
+  "description": "更新配置拒绝提示",
+  "replacements": {
+    "Update refused: configuration contains retired fields that current Doctor cannot migrate.": "更新被拒绝：配置含有当前 Doctor 无法迁移的废弃字段。",
+    "Update refused: configuration is invalid at ${snapshot.path}.": "更新被拒绝：${snapshot.path} 中的配置无效。"
+  }
+}

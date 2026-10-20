@@ -11,6 +11,37 @@ SCRIPT_PATH="$(cd "$(dirname "$BATS_TEST_FILENAME")/../.." && pwd)/docker-deploy
 # 语法测试
 # ============================================================
 
+@test "local-only binds the host loopback but starts the container gateway on lan" {
+    source "$SCRIPT_PATH"
+    docker() { printf '%s\n' "$@"; }
+    LOCAL_ONLY=true
+    PORT=18888
+    GATEWAY_TOKEN='fixture-value'
+    run start_container
+    [ "$status" -eq 0 ]
+    [[ "$output" == *"127.0.0.1:18888:18789"* ]]
+    [[ "$output" == *$'openclaw\ngateway\nrun\n--allow-unconfigured\n--bind\nlan'* ]]
+}
+
+@test "startup failure returns nonzero instead of reporting deployment success" {
+    source "$SCRIPT_PATH"
+    docker() { echo false; }
+    run wait_for_ready
+    [ "$status" -ne 0 ]
+}
+
+@test "gateway health timeout returns nonzero" {
+    source "$SCRIPT_PATH"
+    docker() {
+        if [ "$1" = inspect ]; then echo true; return 0; fi
+        return 1
+    }
+    sleep() { :; }
+    run wait_for_ready
+    [ "$status" -ne 0 ]
+    [[ "$output" == *"等待超时"* ]]
+}
+
 @test "docker-deploy.sh 语法正确" {
     run bash -n "$SCRIPT_PATH"
     [ "$status" -eq 0 ]

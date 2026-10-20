@@ -2,6 +2,6 @@
   "file": "src/gateway/control-ui-csp.ts",
   "description": "Dashboard CSP 策略 — 放行词元 API 赞助推广快捷配置调用的 CiyAPI 接口域",
   "replacements": {
-    "\"connect-src 'self' ws: wss: https://api.openai.com https://tweakcn.com https://*.qt.cool https://qt.cool\"": "\"connect-src 'self' ws: wss: https://api.openai.com https://tweakcn.com https://ciyapi.79tian.com\""
+    "    \"https://tweakcn.com\",": "    \"https://tweakcn.com\",\n    \"https://ciyapi.79tian.com\","
   }
 }

@@ -5,7 +5,6 @@
     "\"WSL2 needs systemd enabled: edit /etc/wsl.conf with [boot]\\\\nsystemd=true\"": "\"WSL2 需要启用 systemd：编辑 /etc/wsl.conf 添加 [boot]\\\\nsystemd=true\"",
     "\"Then run: wsl --shutdown (from PowerShell) and reopen your distro.\"": "\"然后运行：wsl --shutdown（在 PowerShell 中）并重新打开你的发行版。\"",
     "\"Verify: systemctl --user status\"": "\"验证：systemctl --user status\"",
-    "\"systemd user services are unavailable; install/enable systemd or run the gateway under your supervisor.\"": "\"systemd 用户服务不可用；请安装/启用 systemd 或在你的进程管理器下运行网关。\"",
-    "If you're in a container, run the gateway in the foreground instead of \\`${formatCliCommand(\"openclaw gateway\")}\\`.": "如果你在容器中，请在前台运行网关而不是使用 \\`${formatCliCommand(\"openclaw gateway\")}\\`。"
+    "\"systemd user services are unavailable; install/enable systemd or run the gateway under your supervisor.\"": "\"systemd 用户服务不可用；请安装/启用 systemd 或在你的进程管理器下运行网关。\""
   }
 }

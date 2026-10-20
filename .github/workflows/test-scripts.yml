@@ -164,6 +164,10 @@ jobs:
           
           Write-Host "✅ 语法验证通过"
       
+      - name: Docker runtime PowerShell regression
+        shell: pwsh
+        run: ./tests/powershell/docker-runtime-smoke.ps1
+
       - name: 运行 Pester 测试
         shell: pwsh
         run: |

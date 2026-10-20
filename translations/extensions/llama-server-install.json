@@ -1,0 +1,11 @@
+{
+  "file": "extensions/llama-cpp/src/llama-server-install.ts",
+  "description": "llama-server Windows 运行时错误提示",
+  "replacements": {
+    "`The verified llama-server build could not start with its app-local Visual C++ runtime. Rerun llama.cpp setup to reinstall it, or configure a compatible llama-server manually. Detail: ${detail}`": "`已验证的 llama-server 构建无法使用应用本地 Visual C++ 运行时启动。请重新运行 llama.cpp 设置以重新安装，或手动配置兼容的 llama-server。详情：${detail}`",
+    "`The extracted llama-server could not start with the installed Windows runtime, and its app-local Visual C++ runtime fallback did not restore it. Initial startup detail: ${startupDetail} Fallback detail: ${fallbackDetail}`": "`提取的 llama-server 无法使用已安装的 Windows 运行时启动，应用本地 Visual C++ 运行时回退也未能恢复。初始启动详情：${startupDetail} 回退详情：${fallbackDetail}`",
+    "\"The verified Ubuntu llama-server build requires glibc and cannot run on musl/Alpine. Install llama-server manually for this host and configure its absolute path.\"": "\"已验证的 Ubuntu llama-server 构建需要 glibc，无法在 musl/Alpine 上运行。请为此主机手动安装 llama-server，并配置其绝对路径。\"",
+    "`The verified llama-server build requires glibc ${minimum}+ on Linux ${asset.arch}; this host has ${glibc}. Install a compatible llama-server manually and configure its absolute path.`": "`已验证的 llama-server 构建要求 Linux ${asset.arch} 上的 glibc 版本为 ${minimum}+；此主机为 ${glibc}。请手动安装兼容的 llama-server 并配置其绝对路径。`",
+    "`The verified llama-server ${LLAMA_SERVER_RELEASE} build requires macOS ${MACOS_MINIMUM}+; this Mac runs macOS ${version}. Build llama-server for this Mac and set models.providers.llama-cpp.localService.command to its absolute path, or use a remote model or embedding provider.`": "`已验证的 llama-server ${LLAMA_SERVER_RELEASE} 构建要求 macOS ${MACOS_MINIMUM}+；此 Mac 运行的是 macOS ${version}。请为此 Mac 构建 llama-server，并将 models.providers.llama-cpp.localService.command 设置为其绝对路径，或使用远程模型或嵌入提供商。`"
+  }
+}

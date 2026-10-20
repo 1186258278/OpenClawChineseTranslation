@@ -1,7 +1,5 @@
 {
   "file": "src/infra/openclaw-root.ts",
   "description": "修复汉化版包名识别 - 将 @qingchencloud/openclaw-zh 加入核心包名集合",
-  "replacements": {
-    "new Set([\"openclaw\"])": "new Set([\"openclaw\", \"@qingchencloud/openclaw-zh\"])"
-  }
+  "replacements": {}
 }

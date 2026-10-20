@@ -7,7 +7,6 @@
     "\"Message to speak when call connects\"": "\"通话连接时朗读的消息\"",
     "\"Phone number to call (E.164 format, uses config toNumber if not set)\"": "\"呼叫的电话号码 (E.164 格式，如果未设置则使用配置的 toNumber)\"",
     "\"Call mode: notify (hangup after message) or conversation (stay open)\"": "\"通话模式: notify (消息后挂断) 或 conversation (保持通话)\"",
-    "\"Missing --to and no toNumber configured\"": "\"缺少 --to 且未配置 toNumber\"",
     ".description(\"Alias for voicecall call\")": ".description(\"voicecall call 的别名\")",
     "\"Phone number to call\"": "\"呼叫的电话号码\"",
     ".description(\"Speak a message and wait for a response\")": ".description(\"朗读消息并等待响应\")",
@@ -16,10 +15,6 @@
     ".description(\"Speak a message without waiting for response\")": ".description(\"朗读消息而不等待响应\")",
     ".description(\"Hang up an active call\")": ".description(\"挂断活动通话\")",
     ".description(\"Show call status\")": ".description(\"显示通话状态\")",
-    ".description(\"Tail voice-call JSONL logs (prints new lines; useful during provider tests)\")": ".description(\"跟踪 voice-call JSONL 日志 (打印新行；用于提供商测试)\")",
-    "\"Path to calls.jsonl\"": "\"calls.jsonl 的路径\"",
-    "\"Print last N lines first\"": "\"先打印最后 N 行\"",
-    "\"Poll interval in ms\"": "\"轮询间隔 (毫秒)\"",
     ".description(\"Enable/disable Tailscale serve/funnel for the webhook\")": ".description(\"启用/禁用 Webhook 的 Tailscale serve/funnel\")",
     "\"off | serve (tailnet) | funnel (public)\"": "\"off | serve (Tailnet) | funnel (公共)\"",
     "\"Local webhook port\"": "\"本地 Webhook 端口\"",
@@ -37,6 +32,15 @@
     ".option(\"--yes\", \"Actually place the live outbound call\")": ".option(\"--yes\", \"实际发起外呼通话\")",
     ".description(\"Send DTMF digits to an active call\")": ".description(\"向活动通话发送 DTMF 数字\")",
     ".requiredOption(\"--call-id <id>\", \"Call ID\")": ".requiredOption(\"--call-id <id>\", \"通话 ID\")",
-    ".requiredOption(\"--digits <digits>\", \"DTMF digits\")": ".requiredOption(\"--digits <digits>\", \"DTMF 数字\")"
+    ".requiredOption(\"--digits <digits>\", \"DTMF digits\")": ".requiredOption(\"--digits <digits>\", \"DTMF 数字\")",
+    "\"Use either --brief or --brief-file\"": "\"请使用 --brief 或 --brief-file 其中一项\"",
+    "\"Brief input is too large\"": "\"通话简报输入过大\"",
+    "\"Per-call task or structured JSON brief\"": "\"本次通话任务或结构化 JSON 简报\"",
+    "\"Read a structured JSON brief from a file\"": "\"从文件读取结构化 JSON 简报\"",
+    "\"Steer an active realtime call through its owning Gateway\"": "\"通过所属网关引导正在进行的实时通话\"",
+    "\"Owner instruction\"": "\"通话所有者的指令\"",
+    "\"guidance or say\"": "\"guidance（引导）或 say（朗读）\"",
+    "\"mode must be say or guidance\"": "\"mode 必须为 say 或 guidance\"",
+    "\"Steering requires the running Gateway that owns the active call\"": "\"引导通话需要运行中的所属网关\""
   }
 }

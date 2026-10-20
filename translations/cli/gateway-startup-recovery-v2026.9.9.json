@@ -1,0 +1,7 @@
+{
+  "file": "src/cli/gateway-cli/run-loop-startup.ts",
+  "description": "网关启动自动诊断提示",
+  "replacements": {
+    "Automatic triage completed; retrying Gateway startup once.": "自动诊断已完成，正在再次尝试启动网关。"
+  }
+}

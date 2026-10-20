@@ -1,0 +1,8 @@
+{
+  "file": "extensions/oc-path/src/cli.ts",
+  "description": "oc-path UTF-8 输入保护提示汉化（v2026.10.3）",
+  "replacements": {
+    "`input is not valid UTF-8; the file was left unchanged: ${absPath}. ` +": "`输入不是有效的 UTF-8；文件未作改动：${absPath}。` +",
+    "`Convert or repair a backed-up copy as UTF-8, then retry.`": "`请将备份副本转换或修复为 UTF-8 后重试。`"
+  }
+}

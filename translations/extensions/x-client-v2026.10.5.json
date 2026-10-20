@@ -1,0 +1,8 @@
+{
+  "file": "extensions/x/src/client.ts",
+  "description": "X 账户配置与令牌刷新诊断",
+  "replacements": {
+    "\"X account is disabled or incomplete; configure userId, username, clientId, clientSecret and refreshToken.\"": "\"X 账户已禁用或配置不完整；请配置 userId、username、clientId、clientSecret 和 refreshToken。\"",
+    "\"X account was replaced during token refresh\"": "\"令牌刷新期间 X 账户已被替换\""
+  }
+}

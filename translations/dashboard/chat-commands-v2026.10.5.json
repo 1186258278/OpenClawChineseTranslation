@@ -1,0 +1,7 @@
+{
+  "file": "ui/src/pages/chat/chat-commands.ts",
+  "description": "v2026.10.5 Dashboard 命令执行时网关连接变更提示",
+  "replacements": {
+    "reason: \"The Gateway connection changed. Retry the command.\"": "reason: \"网关连接已变更，请重新执行命令。\""
+  }
+}

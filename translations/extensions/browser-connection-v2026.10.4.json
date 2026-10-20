@@ -1,0 +1,7 @@
+{
+  "file": "extensions/browser/src/browser/pw-session-connection.ts",
+  "description": "v2026.10.4 浏览器连接中断提示",
+  "replacements": {
+    "\"Browser disconnected while connecting.\"": "\"建立连接时浏览器已断开。\""
+  }
+}

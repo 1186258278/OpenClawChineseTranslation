@@ -1,12 +1,19 @@
 {
-  "file": "src/commands/status-all/report-sections.ts",
+  "file": "src/commands/status.command-report.ts",
   "description": "状态命令 - 报告各区块标题",
   "replacements": {
-    "title: \"Overview\",": "title: \"概览\",",
-    "title: \"Channels\",": "title: \"通道\",",
-    "title: \"Sessions\",": "title: \"会话\",",
-    "title: \"System events\",": "title: \"系统事件\",",
-    "title: \"Health\",": "title: \"健康状态\",",
-    "title: \"Usage\",": "title: \"用量统计\","
+    "appendStatusReportLines(report, \"Channels\", [channelsMessage]);": "appendStatusReportLines(report, \"通道\", [channelsMessage]);",
+    "appendStatusReportLines(report, \"Sessions\", [sessionsMessage]);": "appendStatusReportLines(report, \"会话\", [sessionsMessage]);",
+    "\"System events\",": "\"系统事件\",",
+    "appendStatusReportTable(report, \"Overview\", [...statusOverviewTableColumns], params.overviewRows);": "appendStatusReportTable(report, \"概览\", [...statusOverviewTableColumns], params.overviewRows);",
+    "appendStatusReportTable(report, \"Health\", [...(params.healthColumns ?? [])], params.healthRows);": "appendStatusReportTable(report, \"健康状态\", [...(params.healthColumns ?? [])], params.healthRows);",
+    "appendStatusReportLines(report, \"Usage\", params.usageLines);": "appendStatusReportLines(report, \"用量统计\", params.usageLines);",
+    "appendStatusReportTable(report, \"Channels\", [...params.channelsColumns], params.channelsRows);": "appendStatusReportTable(report, \"通道\", [...params.channelsColumns], params.channelsRows);",
+    "appendStatusReportTable(report, \"Sessions\", [...params.sessionsColumns], params.sessionsRows);": "appendStatusReportTable(report, \"会话\", [...params.sessionsColumns], params.sessionsRows);",
+    "theme.muted(\"No channels configured\")": "theme.muted(\"尚未配置渠道\")",
+    "theme.muted(\"No sessions\")": "theme.muted(\"暂无会话\")",
+    "appendStatusReportLines(report, \"Plugin compatibility\", params.pluginCompatibilityLines);": "appendStatusReportLines(report, \"插件兼容性\", params.pluginCompatibilityLines);",
+    "appendStatusReportLines(report, \"Model selection\", params.modelSelectionLines);": "appendStatusReportLines(report, \"模型选择\", params.modelSelectionLines);",
+    "[{ key: \"Event\", header: \"Event\", flex: true, minWidth: 24 }]": "[{ key: \"Event\", header: \"事件\", flex: true, minWidth: 24 }]"
   }
 }

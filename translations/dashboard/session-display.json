@@ -3,7 +3,6 @@
   "description": "会话显示名解析（主会话/子代理/定时任务）",
   "replacements": {
     "return { prefix: \"\", fallbackName: \"Main Session\" };": "return { prefix: \"\", fallbackName: \"主会话\" };",
-    "return { prefix: \"Subagent:\", fallbackName: \"Subagent:\" };": "return { prefix: \"子代理:\", fallbackName: \"子代理:\" };",
-    "return { prefix: \"Cron:\", fallbackName: \"Cron Job:\" };": "return { prefix: \"定时:\", fallbackName: \"定时任务:\" };"
+    "\"Cron Job:\"": "\"定时任务:\""
   }
 }

@@ -1,19 +1,5 @@
 {
   "file": "ui/src/pages/chat/chat-command-executor.ts",
   "description": "斜杠命令执行反馈消息",
-  "replacements": {
-    "\"Starting new session...\"": "\"正在开始新会话...\"",
-    "\"Resetting session...\"": "\"正在重置会话...\"",
-    "\"Stopping current run...\"": "\"正在停止当前运行...\"",
-    "\"Chat history cleared.\"": "\"聊天记录已清除。\"",
-    "\"Exporting session...\"": "\"正在导出会话...\"",
-    "`Context compacted successfully${tokenSummary}.`": "`上下文压缩成功${tokenSummary}。`",
-    "\"No active session.\"": "\"没有活跃会话。\"",
-    "\"No agents configured.\"": "\"未配置代理。\"",
-    "\"The active run ended before the steer message was accepted.\"": "\"活跃运行在接受引导消息前已结束。\"",
-    "\"Steer failed before it reached the run; try again.\"": "\"引导消息到达运行前失败；请重试。\"",
-    "\"The active run ended before the redirect message was accepted.\"": "\"活跃运行在接受重定向消息前已结束。\"",
-    "\"Redirect failed before it reached the run; try again.\"": "\"重定向消息到达运行前失败；请重试。\"",
-    "\"Steered.\"": "\"已引导。\""
-  }
+  "replacements": {}
 }

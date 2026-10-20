@@ -1,0 +1,7 @@
+{
+  "file": "extensions/tlon/src/monitor/index.ts",
+  "description": "v2026.10.4 Tlon 未经验证的群私信发送者显示标签",
+  "replacements": {
+    "`${senderShip} (unverified) [${senderRole}] in group DM ${clubId}`": "`${senderShip}（未经验证）[${senderRole}]，群私信 ${clubId}`"
+  }
+}

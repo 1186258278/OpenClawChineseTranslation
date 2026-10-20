@@ -2,7 +2,6 @@
   "file": "src/cli/program/subcli-descriptors.ts",
   "description": "CLI 子命令列表说明",
   "replacements": {
-    "Manage exec approvals (gateway or node host)": "管理执行审批（网关或节点主机）",
     "Run and manage the headless node host service": "运行和管理无头节点主机服务",
     "Open a terminal UI connected to the Gateway": "打开连接到网关的终端界面",
     "DNS helpers for wide-area discovery (Tailscale + CoreDNS)": "DNS 工具 - 广域发现（Tailscale + CoreDNS）",
@@ -20,7 +19,6 @@
     "Model discovery, scanning, and configuration": "模型发现、扫描和配置",
     "Manage gateway-owned nodes (pairing, status, invoke, and media)": "管理网关拥有的节点（配对、状态、调用和媒体）",
     "Manage sandbox containers (Docker-based agent isolation)": "管理沙箱容器（基于 Docker 的代理隔离）",
-    "Manage cron jobs (via Gateway)": "管理 cron 任务（通过网关）",
     "Manage OpenClaw plugins and extensions": "管理 OpenClaw 插件和扩展",
     "Manage connected chat channels and accounts": "管理已连接聊天渠道和账号",
     "Audit local config and state for common security foot-guns": "审计本地配置和状态中的常见安全隐患",

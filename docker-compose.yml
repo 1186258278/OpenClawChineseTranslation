@@ -4,14 +4,12 @@
 # 快速启动:
 #   docker-compose up -d
 #
-# 首次运行会自动初始化配置。
+# 首次运行前请按下方说明初始化配置和允许的 Dashboard 来源。
 # 远程访问请参考 README.md 中的配置说明。
 #
 # 官方网站: https://openclaw.ai/
 # 汉化项目: https://openclaw.qt.cool/
 # ============================================================
-
-version: '3.8'
 
 services:
   openclaw:
@@ -26,18 +24,18 @@ services:
     environment:
       # 访问令牌（推荐设置，用于 Dashboard 认证）
       # 建议创建 .env 文件设置: OPENCLAW_GATEWAY_TOKEN=your-secure-token
-      - OPENCLAW_GATEWAY_TOKEN=${OPENCLAW_GATEWAY_TOKEN:-}
+      - OPENCLAW_GATEWAY_TOKEN=${OPENCLAW_GATEWAY_TOKEN:?Set OPENCLAW_GATEWAY_TOKEN in .env}
       # 跳过首次初始化检查（仅高级用户使用）
       # - OPENCLAW_SKIP_SETUP=1
     restart: unless-stopped
     # 默认启动 gateway（首次需要初始化，见下方说明）
-    command: openclaw gateway run --allow-unconfigured
+    command: ["openclaw", "gateway", "run", "--allow-unconfigured", "--bind", "lan"]
     healthcheck:
-      test: ["CMD", "wget", "-q", "--spider", "http://localhost:18789/health", "||", "exit", "0"]
+      test: ["CMD", "curl", "--fail", "--silent", "--show-error", "http://127.0.0.1:18789/healthz"]
       interval: 30s
       timeout: 10s
       retries: 3
-      start_period: 10s
+      start_period: 60s
     # 
     # ========== 首次使用说明 ==========
     # 
@@ -45,8 +43,9 @@ services:
     #   curl -fsSL https://cdn.jsdelivr.net/gh/1186258278/OpenClawChineseTranslation@main/docker-deploy.sh | bash
     #
     # 方式 2: 手动初始化
-    #   docker-compose exec openclaw openclaw setup
-    #   docker-compose exec openclaw openclaw config set gateway.mode local
+    #   docker compose run --rm openclaw openclaw setup
+    #   docker compose run --rm openclaw openclaw config set gateway.mode local
+    #   docker compose run --rm openclaw openclaw config set gateway.controlUi.allowedOrigins '["http://localhost:18789", "http://127.0.0.1:18789"]'
     #   docker-compose restart
     #
     # ========== 远程访问配置 ==========
@@ -74,7 +73,7 @@ services:
     #    → 设置 token: docker-compose exec openclaw openclaw config set gateway.auth.token YOUR_TOKEN
     #
     # 2. "Missing config. Run openclaw setup"
-    #    → 初始化: docker-compose exec openclaw openclaw setup
+    #    → 初始化: docker compose run --rm openclaw openclaw setup
     #
     # 3. "control ui requires HTTPS or localhost"
     #    → 使用 Token 认证或配置 HTTPS 反向代理

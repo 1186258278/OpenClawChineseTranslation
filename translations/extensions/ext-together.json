@@ -1,8 +1,5 @@
 {
   "file": "extensions/together/index.ts",
   "description": "Together AI 扩展认证选项 (v2026.3.22 从 auth-choice 迁移)",
-  "replacements": {
-    "label: \"Together AI API key\"": "label: \"Together AI API 密钥\"",
-    "promptMessage: \"Enter Together AI API key\"": "promptMessage: \"输入 Together AI API 密钥\""
-  }
+  "replacements": {}
 }

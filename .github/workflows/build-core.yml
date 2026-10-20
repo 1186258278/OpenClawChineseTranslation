@@ -51,7 +51,7 @@ on:
 
 env:
   UPSTREAM_REPO: openclaw/openclaw
-  NODE_VERSION: '22'
+  NODE_VERSION: '24.16.0'
 
 jobs:
   build:
@@ -76,8 +76,8 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           registry-url: 'https://registry.npmjs.org'
 
-      - name: 验证发布清单脚本
-        run: node --test tests/node/prepare-publish-package.test.mjs
+      - name: 验证构建配置和发布清单脚本
+        run: node --test tests/node/build-core-workflow.test.mjs tests/node/prepare-publish-package.test.mjs tests/node/docker-runtime.test.mjs
 
       - name: 安装 pnpm
         uses: pnpm/action-setup@v4
@@ -205,8 +205,36 @@ jobs:
           pnpm canvas:a2ui:bundle
           
           # 3b: tsdown 主构建（核心，不含 tsc 类型检查）
+          # 上游 main 已将 tsdown-build/build-stamp 从 .mjs 迁移到 .mts；稳定 tag 仍可能保留 .mjs。
+          run_optional_script() {
+            local base="$1"
+            local required="${2:-false}"
+            if [ -f "${base}.mts" ]; then
+              node --import tsx "${base}.mts"
+            elif [ -f "${base}.mjs" ]; then
+              node "${base}.mjs"
+            elif [ "$required" = "true" ]; then
+              echo "❌ 缺少必需脚本: ${base}.mts / ${base}.mjs"
+              return 1
+            else
+              echo "⏭️ 跳过不存在的脚本: ${base}.mts / ${base}.mjs"
+            fi
+          }
+
+          run_package_script_if_present() {
+            local script_name="$1"
+            if node -e "const s=require('./package.json').scripts||{}; process.exit(s[process.argv[1]] ? 0 : 1)" "$script_name"; then
+              pnpm "$script_name"
+            else
+              echo "⏭️ 跳过不存在的 package script: $script_name"
+            fi
+          }
+
           echo "📦 [3b] tsdown 主构建..."
-          node scripts/tsdown-build.mjs
+          run_optional_script scripts/tsdown-build true
+          if [ -f scripts/check-cli-bootstrap-imports.mts ]; then
+            node --import tsx scripts/check-cli-bootstrap-imports.mts
+          fi
           
           # 3c: 运行时后处理（复制 plugin-sdk alias + 插件 metadata + 渠道目录 + 运行时依赖）
           echo "📦 [3c] runtime-postbuild（含 openclaw.plugin.json 复制）..."
@@ -214,8 +242,10 @@ jobs:
           
           # 3c2: 构建戳记
           echo "📦 [3c2] build-stamp..."
-          node scripts/build-stamp.mjs || true
-          
+          run_optional_script scripts/build-stamp false || true
+          run_optional_script scripts/runtime-postbuild-stamp false || true
+          run_package_script_if_present plugins:assets:build
+          run_package_script_if_present plugins:assets:copy
           # 3d: 生成类型声明（上游可能有 TS 错误，允许失败）
           echo "📦 [3d] 生成类型声明（允许失败）..."
           pnpm build:plugin-sdk:dts || echo "⚠️ 类型声明生成失败（上游 TS 错误，不影响运行）"
@@ -353,6 +383,25 @@ jobs:
           fi
           
           echo "✅ Docker 构建准备完成"
+
+      # Pack before artifact transport, while symlinks/permissions are still intact.
+      # Docker must not install the renamed workspace or reuse CI node_modules.
+      - name: 打包独立 Docker 运行时
+        working-directory: openclaw
+        run: |
+          set -euo pipefail
+          mkdir -p ../docker-context
+          PACK_JSON=$(npm pack --ignore-scripts --json --pack-destination ../docker-context)
+          PACKAGE_FILE=$(printf '%s' "$PACK_JSON" | node -e 'let s="";process.stdin.on("data",c=>s+=c).on("end",()=>process.stdout.write(JSON.parse(s)[0].filename))')
+          mv "../docker-context/$PACKAGE_FILE" ../docker-context/openclaw-runtime.tgz
+
+      - name: 上传独立 Docker 运行时
+        uses: actions/upload-artifact@v4
+        with:
+          name: openclaw-docker-${{ inputs.version_type }}
+          path: docker-context/openclaw-runtime.tgz
+          if-no-files-found: error
+          retention-days: 1
 
       - name: 上传构建产物
         uses: actions/upload-artifact@v4

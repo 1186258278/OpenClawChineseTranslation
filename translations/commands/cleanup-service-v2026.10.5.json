@@ -1,0 +1,7 @@
+{
+  "file": "src/commands/cleanup-service.ts",
+  "description": "重置与卸载共用服务清理提示（v2026.10.5）",
+  "replacements": {
+    "`Nix mode detected; service uninstall is disabled. Manage the service through your Nix profile instead, then run ${formatCliCommand(\"openclaw status\")} to verify.`": "`检测到 Nix 模式；服务卸载已禁用。请通过你的 Nix 配置管理服务，随后运行 ${formatCliCommand(\"openclaw status\")} 验证。`"
+  }
+}

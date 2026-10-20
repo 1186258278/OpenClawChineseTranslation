@@ -6,7 +6,6 @@
     "label: `Enable ${name}`": "label: `启用 ${name}`",
     "label: `${name} Config`": "label: `${name} 配置`",
     "help: `Plugin-defined config payload for ${id}.`": "help: `插件 ${id} 的自定义配置。`",
-    "` Known channels: ${channelList.join(\", \")}.`": "` 已知渠道：${channelList.join(\"、\")}`",
-    "`Delivery target (\"last\", \"none\", or a channel id).${channelHelp}`": "`投递目标（\"last\"、\"none\" 或渠道 ID）。${channelHelp}`"
+    "` Known channels: ${channelList.join(\", \")}.`": "` 已知渠道：${channelList.join(\"、\")}`"
   }
 }

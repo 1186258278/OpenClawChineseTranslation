@@ -2,9 +2,6 @@
   "file": "extensions/venice/index.ts",
   "description": "Venice AI 扩展认证选项 (v2026.3.22 从 auth-choice 迁移)",
   "replacements": {
-    "label: \"Venice AI API key\"": "label: \"Venice AI API 密钥\"",
-    "hint: \"Privacy-focused (uncensored models)\"": "hint: \"隐私优先（无审查模型）\"",
-    "promptMessage: \"Enter Venice AI API key\"": "promptMessage: \"输入 Venice AI API 密钥\"",
     "\"Venice AI provides privacy-focused inference with uncensored models.\"": "\"Venice AI 提供注重隐私的推理（使用无审查模型）。\"",
     "\"Get your API key at: https://venice.ai/settings/api\"": "\"在此获取 API 密钥: https://venice.ai/settings/api\"",
     "\"Supports 'private' (fully private) and 'anonymized' (proxy) modes.\"": "\"支持 'private' (完全私有) 和 'anonymized' (代理) 模式。\""

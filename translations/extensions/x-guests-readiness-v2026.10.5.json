@@ -1,0 +1,11 @@
+{
+  "file": "extensions/x/src/guests.ts",
+  "description": "X 访客配置隔离边界与绑定诊断",
+  "replacements": {
+    "X guest mode requires agents.entries.${agentId}.tools.fs.workspaceOnly=true (or tools.fs.workspaceOnly=true) and the OpenClaw clone as the agent working directory.": "X 访客模式要求 agents.entries.${agentId}.tools.fs.workspaceOnly=true（或 tools.fs.workspaceOnly=true），并将 OpenClaw 克隆目录设为智能体工作目录。",
+    "X guest mode requires agents.entries.${agentId}.skills=[] so read cannot access external skill directories.": "X 访客模式要求 agents.entries.${agentId}.skills=[]，避免 read 访问外部技能目录。",
+    "X guest mode requires agents.entries.${agentId}.sandbox.mode=\"off\" and workspace-only file tools; sandbox mounts can expose files outside the repository.": "X 访客模式要求 agents.entries.${agentId}.sandbox.mode=\"off\"，并将文件工具限制在工作区内；沙箱挂载可能暴露仓库外的文件。",
+    "X guest mode requires messages.queue.byChannel.x=\"followup\" or \"collect\" (or messages.queue.mode with either value) so guests cannot steer or interrupt an active turn.": "X 访客模式要求 messages.queue.byChannel.x=\"followup\" 或 \"collect\"（也可将 messages.queue.mode 设为其中任一值），防止访客引导或打断正在进行的轮次。",
+    "\"X guest mode requires valid X agent bindings. Add a channel-wide X binding and correct any missing target agents.\"": "\"X 访客模式需要有效的 X 智能体绑定。请添加覆盖整个 X 渠道的绑定，并修复缺失的目标智能体。\""
+  }
+}

@@ -1,27 +1,7 @@
 {
-  "file": "ui/src/pages/nodes/view.ts",
+  "file": "ui/src/pages/devices/view.ts",
   "description": "Dashboard 节点页面",
   "replacements": {
-    "<div class=\"card-title\">Nodes</div>": "<div class=\"card-title\">节点</div>",
-    "<div class=\"card-sub\">Paired devices and live links.</div>": "<div class=\"card-sub\">配对设备和实时链接。</div>",
-    "<div class=\"muted\">No nodes found.</div>": "<div class=\"muted\">未找到节点。</div>",
-    "<div class=\"card-title\">Devices</div>": "<div class=\"card-title\">设备</div>",
-    "<div class=\"card-sub\">Pairing requests + role tokens.</div>": "<div class=\"card-sub\">配对请求 + 角色令牌。</div>",
-    "<div class=\"muted\" style=\"margin-bottom: 8px;\">Pending</div>": "<div class=\"muted\" style=\"margin-bottom: 8px;\">待处理</div>",
-    "<div class=\"muted\" style=\"margin-top: 12px; margin-bottom: 8px;\">Paired</div>": "<div class=\"muted\" style=\"margin-top: 12px; margin-bottom: 8px;\">已配对</div>",
-    "<div class=\"muted\">No paired devices.</div>": "<div class=\"muted\">没有配对设备。</div>",
-    "Approve": "批准",
-    "Reject": "拒绝",
-    "Rotate": "轮换",
-    "Revoke": "撤销",
-    "<div class=\"muted\" style=\"margin-top: 6px\">Tokens: none</div>": "<div class=\"muted\" style=\"margin-top: 6px\">令牌：无</div>",
-    "<div class=\"muted\" style=\"margin-top: 10px;\">Tokens</div>": "<div class=\"muted\" style=\"margin-top: 10px;\">令牌</div>",
-    "<option value=\"\" ?selected=${defaultValue === \"\"}>Any node</option>": "<option value=\"\" ?selected=${defaultValue === \"\"}>任意节点</option>",
-    "<div class=\"muted\">No nodes with system.run available.</div>": "<div class=\"muted\">没有可用的 system.run 节点。</div>",
-    "<div class=\"muted\">No agents found.</div>": "<div class=\"muted\">未找到代理。</div>",
-    "Use default": "使用默认",
-    "<span>Binding</span>": "<span>绑定</span>",
-    "default agent": "默认代理",
     "agent": "代理"
   }
 }

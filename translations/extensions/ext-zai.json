@@ -8,7 +8,6 @@
     "hint: \"GLM Coding Plan Global (api.z.ai)\"": "hint: \"GLM 编程计划国际版 (api.z.ai)\"",
     "label: \"Coding-Plan-CN\"": "label: \"编程计划-国内版\"",
     "hint: \"GLM Coding Plan CN (open.bigmodel.cn)\"": "hint: \"GLM 编程计划国内版 (open.bigmodel.cn)\"",
-    "promptMessage: \"Enter Z.AI API key\"": "promptMessage: \"输入 Z.AI API 密钥\"",
-    "groupHint: \"GLM Coding Plan / Global / CN\"": "groupHint: \"GLM 编程计划 / 国际版 / 国内版\""
+    "promptMessage: \"Enter Z.AI API key\"": "promptMessage: \"输入 Z.AI API 密钥\""
   }
 }

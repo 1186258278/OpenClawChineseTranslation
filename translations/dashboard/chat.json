@@ -1,9 +1,5 @@
 {
   "file": "ui/src/pages/chat/components/chat-composer.ts",
   "description": "Dashboard 对话输入区",
-  "replacements": {
-    "alt=\"Attachment preview\"": "alt=\"附件预览\"",
-    "aria-label=\"Remove attachment\"": "aria-label=\"移除附件\"",
-    "\"Asking OpenClaw...\"": "\"正在请求 OpenClaw...\""
-  }
+  "replacements": {}
 }

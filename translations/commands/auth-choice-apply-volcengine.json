@@ -1,7 +1,5 @@
 {
   "file": "extensions/volcengine/index.ts",
   "description": "火山引擎认证流程翻译 (v2026.3.22 迁移至 extension)",
-  "replacements": {
-    "promptMessage: \"Enter Volcano Engine API key\"": "promptMessage: \"请输入火山引擎 API 密钥\""
-  }
+  "replacements": {}
 }

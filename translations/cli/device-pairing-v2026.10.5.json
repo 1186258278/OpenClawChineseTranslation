@@ -1,0 +1,10 @@
+{
+  "file": "src/cli/devices-cli.runtime.ts",
+  "description": "v2026.10.5 device-pairing 用户可见提示",
+  "replacements": {
+    "\"First-time device pairing request.\"": "\"首次设备配对请求。\"",
+    "\"Already paired. Requested role exceeds the current approval, so reconnect stays blocked until you approve this upgrade.\"": "\"已配对。请求的角色超出当前授权；批准此次升级前将阻止重新连接。\"",
+    "\"Already paired. Requested scopes exceed the current approval, so reconnect stays blocked until you approve this upgrade.\"": "\"已配对。请求的权限范围超出当前授权；批准此次升级前将阻止重新连接。\"",
+    "\"Already paired. Approval-bound device details changed, so OpenClaw created a fresh request instead of silently reusing the old approval.\"": "\"已配对。授权所绑定的设备信息已变更，OpenClaw 因此创建新请求，不会静默复用旧授权。\""
+  }
+}

@@ -11,9 +11,6 @@
     "\"Set model (or open picker)\"": "\"设置模型（或打开选择器）\"",
     "\"Open model picker\"": "\"打开模型选择器\"",
     "\"Set thinking level\"": "\"设置思考等级\"",
-    "\"Set verbose on/off\"": "\"开关详细模式\"",
-    "\"Set reasoning on/off\"": "\"开关思维链显示\"",
-    "\"Toggle per-response usage line\"": "\"切换每条回复的用量显示\"",
     "\"Set elevated on/off/ask/full\"": "\"设置提权级别 on/off/ask/full\"",
     "\"Alias for /elevated\"": "\"/elevated 的别名\"",
     "\"Set group activation\"": "\"设置群组激活模式\"",
@@ -21,7 +18,7 @@
     "\"Reset the current session\"": "\"重置当前会话\"",
     "\"Open settings\"": "\"打开设置\"",
     "\"Exit the TUI\"": "\"退出 TUI\"",
-    "description: \"Run provider auth/login flow\"": "description: \"运行提供商认证/登录流程\"",
+    "\"Run provider auth/login flow\"": "\"运行提供商认证/登录流程\"",
     "\"Slash commands:\"": "\"斜杠命令列表：\""
   }
 }

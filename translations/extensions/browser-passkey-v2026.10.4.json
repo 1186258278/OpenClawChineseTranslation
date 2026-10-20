@@ -1,0 +1,10 @@
+{
+  "file": "extensions/browser/src/browser/pw-session-webauthn.ts",
+  "description": "v2026.10.4 无头浏览器通行密钥保护提示",
+  "replacements": {
+    "`Could not read the browser launch mode (${reason}). If it runs headless, a page that asks for a passkey ignores clicks and keys until the request ends or the page navigates away; use a headed profile for such sites.`": "`无法读取浏览器启动模式（${reason}）。如果浏览器以无头模式运行，请求通行密钥的页面会忽略鼠标点击和按键，直到请求结束或离开该页面；访问此类网站时请使用有界面的浏览器配置。`",
+    "`no answer within ${HEADLESS_PASSKEY_GUARD_TIMEOUT_MS} ms`": "`${HEADLESS_PASSKEY_GUARD_TIMEOUT_MS} 毫秒内未收到响应`",
+    "`Passkey guard registration failed: ${redactCdpErrorText(formatErrorMessage(err))}`": "`通行密钥保护注册失败：${redactCdpErrorText(formatErrorMessage(err))}`",
+    "\"Passkey guard registration is still waiting on an open page after 5000 ms; continuing while it finishes.\"": "\"通行密钥保护注册等待已打开的页面响应已超过 5000 毫秒；将继续运行并在后台完成注册。\""
+  }
+}

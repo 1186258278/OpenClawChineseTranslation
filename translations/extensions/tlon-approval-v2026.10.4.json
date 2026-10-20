@@ -1,0 +1,11 @@
+{
+  "file": "extensions/tlon/src/monitor/approval.ts",
+  "description": "v2026.10.4 Tlon 群私信身份与历史消息审批提示",
+  "replacements": {
+    "const actionText = action === \"approve\" ? \"Approved\" : \"Denied\";": "const actionText = action === \"approve\" ? \"已批准\" : \"已拒绝\";",
+    "`The message is answered as an unverified group DM sender, never as ${approval.requestingShip}.`": "`将以未经验证的群私信发送者身份回复此消息，绝不会将其视为 ${approval.requestingShip}。`",
+    "`The message is not kept, so it will not be answered; have ${approval.requestingShip} send it again in a normal direct message to get a reply.`": "`此消息未被保留，因此不会收到回复；请让 ${approval.requestingShip} 通过普通私信重新发送，以获得回复。`",
+    "`New group DM message claiming to be from ${approval.requestingShip} (unverified; group DM ${approval.clubId}):${preview}\\n\\n` +\n          `Approving adds ${approval.requestingShip} to the DM allowlist. ${replayLine}\\n` +\n          `Reply \"approve\", \"deny\", or \"block\" (ID: ${approval.id})`": "`收到一条自称来自 ${approval.requestingShip} 的新群私信（未经验证；群私信 ${approval.clubId}）：${preview}\\n\\n` +\n          `批准后会将 ${approval.requestingShip} 加入私信允许列表。${replayLine}\\n` +\n          `回复 \"approve\"（批准）、\"deny\"（拒绝）或 \"block\"（屏蔽）（ID: ${approval.id}）`",
+    "`${actionText} DM access for ${approval.requestingShip}. They can now message the bot.\\n` +\n            `Their earlier message was saved before this version and its sender cannot be verified, ` +\n            `so it was not processed. Ask ${approval.requestingShip} to send it again.`": "`${actionText} ${approval.requestingShip} 的私信权限，现在可以向机器人发送消息。\\n` +\n            `此前的消息由旧版本保存，无法验证发送者身份，` +\n            `因此未处理。请让 ${approval.requestingShip} 重新发送。`"
+  }
+}

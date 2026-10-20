@@ -1,7 +1,5 @@
 {
   "file": "src/commands/onboarding-plugin-install.ts",
   "description": "插件安装向导（v2026.4.22: 迁移到 onboarding-plugin-install.ts，变量名改为 safeLabel/safeNpmSpec/sanitizeTerminalText）",
-  "replacements": {
-    "`Plugin install failed: ${sanitizeTerminalText(result.error)}`": "`插件安装失败: ${sanitizeTerminalText(result.error)}`"
-  }
+  "replacements": {}
 }

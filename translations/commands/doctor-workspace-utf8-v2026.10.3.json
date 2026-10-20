@@ -1,0 +1,11 @@
+{
+  "file": "src/commands/doctor-workspace.ts",
+  "description": "工作区记忆 UTF-8 诊断提示汉化（v2026.10.3）",
+  "replacements": {
+    "\"a file could not be read\"": "\"文件无法读取\"",
+    "\"legacy memory could not be archived atomically\"": "\"无法以原子方式归档旧版记忆\"",
+    "\"a file exceeded the safe read limit\"": "\"文件超过安全读取限制\"",
+    "`File is not valid UTF-8: ${filePath}; preserve its bytes and convert a copy to UTF-8 before retrying`": "`文件不是有效的 UTF-8：${filePath}；请保留其字节内容，将副本转换为 UTF-8 后重试`",
+    "`${prefix}Workspace memory root repair skipped (${reason}):`": "`${prefix}已跳过工作区记忆根目录修复（${reason}）：`"
+  }
+}

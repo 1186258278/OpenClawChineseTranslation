@@ -1,0 +1,8 @@
+{
+  "file": "src/cli/update-cli/update-finalization-lifecycle.ts",
+  "description": "更新过程中已解决警告的历史记录提示汉化（v2026.10.4）",
+  "replacements": {
+    "\"Settled or superseded later in this update.\"": "\"已在本次更新的后续步骤中解决或取代。\"",
+    "\"[update finalize] Could not retire a settled warning.\"": "\"[update finalize] 无法将已解决的警告标记为失效。\""
+  }
+}

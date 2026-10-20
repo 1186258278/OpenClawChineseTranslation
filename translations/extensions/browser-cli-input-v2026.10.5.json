@@ -1,0 +1,10 @@
+{
+  "file": "extensions/browser/src/cli/browser-cli-actions-input/shared.ts",
+  "description": "浏览器 CLI 批量输入格式与编码诊断",
+  "replacements": {
+    "${source} must be valid UTF-8.": "${source} 必须采用有效的 UTF-8 编码。",
+    "${kind} are required": "必须提供 ${kind}",
+    "${kind} must be valid JSON${kind === \"fields\" ? \".\" : \"\"}": "${kind} 必须是有效的 JSON${kind === \"fields\" ? \"。\" : \"\"}",
+    "${kind} must be ${kind === \"fields\" ? \"an array\" : \"a JSON array\"}": "${kind} 必须为${kind === \"fields\" ? \"数组\" : \" JSON 数组\"}"
+  }
+}

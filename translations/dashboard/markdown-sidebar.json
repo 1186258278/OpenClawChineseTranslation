@@ -1,15 +1,5 @@
 {
   "file": "ui/src/pages/chat/components/chat-sidebar.ts",
   "description": "Dashboard Markdown 侧边栏",
-  "replacements": {
-    "? content.title?.trim() || \"Render Preview\"": "? content.title?.trim() || \"渲染预览\"",
-    "? \"Markdown Preview\"": "? \"Markdown 预览\"",
-    ": \"Tool Details\"": ": \"工具详情\"",
-    "|| \"Render preview\"": "|| \"渲染预览\"",
-    "<span>Rendered Markdown</span>": "<span>已渲染 Markdown</span>",
-    "Sanitized rich-text preview for quick reading.": "供快速阅读的安全富文本预览。",
-    ">No content available<": ">暂无内容<",
-    "\"Close sidebar\"": "\"关闭侧边栏\"",
-    "View Raw Text": "查看原始文本"
-  }
+  "replacements": {}
 }

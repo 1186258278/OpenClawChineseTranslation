@@ -1,0 +1,7 @@
+{
+  "file": "src/cli/update-cli/update-command-failure-recovery.ts",
+  "description": "v2026.10.5 update-failure-recovery 用户可见提示",
+  "replacements": {
+    "\"Gateway recovery verification deferred because --no-restart leaves activation to the operator. Resolve the recorded update failure before restarting the Gateway through its service owner, then run openclaw update status and openclaw doctor.\"": "\"由于 --no-restart 将激活操作留给操作员，网关恢复验证已推迟。请先解决记录的更新故障，再通过网关服务管理器重启，然后运行 openclaw update status 和 openclaw doctor。\""
+  }
+}

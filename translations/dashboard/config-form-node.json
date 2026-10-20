@@ -1,21 +1,5 @@
 {
   "file": "ui/src/components/config-form.node.ts",
   "description": "Dashboard 配置表单通用 UI 元素",
-  "replacements": {
-    ">${icons.plus}</span>\n          Add\n        </button>": ">${icons.plus}</span>\n          添加\n        </button>",
-    "No items yet. Click \"Add\" to create one.": "暂无项目。点击\"添加\"创建一个。",
-    "<span class=\"cfg-map__label\">Custom entries</span>": "<span class=\"cfg-map__label\">自定义条目</span>",
-    ">${icons.plus}</span>\n          Add Entry\n        </button>": ">${icons.plus}</span>\n          添加条目\n        </button>",
-    "<div class=\"cfg-map__empty\">No custom entries.</div>": "<div class=\"cfg-map__empty\">暂无自定义条目。</div>",
-    "item${arr.length !== 1 ? \"s\" : \"\"}": "项",
-    "Unsupported schema node. Use Raw mode.": "不支持的 schema 节点。请使用原始模式。",
-    "? REDACTED_PLACEHOLDER : \"JSON value\"": "? REDACTED_PLACEHOLDER : \"JSON 值\"",
-    "placeholder=\"Key\"": "placeholder=\"键\"",
-    "content=\"Reset to default\"": "content=\"重置为默认值\"",
-    "aria-label=\"Reset to default\"": "aria-label=\"重置为默认值\"",
-    "content=\"Remove item\"": "content=\"删除项\"",
-    "aria-label=\"Remove item\"": "aria-label=\"删除项\"",
-    "content=\"Remove entry\"": "content=\"删除条目\"",
-    "aria-label=\"Remove entry\"": "aria-label=\"删除条目\""
-  }
+  "replacements": {}
 }

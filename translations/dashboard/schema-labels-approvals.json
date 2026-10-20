@@ -1,0 +1,30 @@
+{
+  "file": "src/config/schema.labels.approvals.ts",
+  "description": "Dashboard 审批转发字段标签",
+  "replacements": {
+    "  approvals: \"Approvals\"": "  approvals: \"审批\"",
+    "  \"approvals.exec\": \"Exec Approval Forwarding\"": "  \"approvals.exec\": \"执行审批转发\"",
+    "  \"approvals.exec.enabled\": \"Forward Exec Approvals\"": "  \"approvals.exec.enabled\": \"转发执行审批\"",
+    "  \"approvals.exec.mode\": \"Approval Forwarding Mode\"": "  \"approvals.exec.mode\": \"审批转发模式\"",
+    "  \"approvals.exec.agentFilter\": \"Approval Agent Filter\"": "  \"approvals.exec.agentFilter\": \"审批代理过滤器\"",
+    "  \"approvals.exec.sessionFilter\": \"Approval Session Filter\"": "  \"approvals.exec.sessionFilter\": \"审批会话过滤器\"",
+    "  \"approvals.exec.targets\": \"Approval Forwarding Targets\"": "  \"approvals.exec.targets\": \"审批转发目标\"",
+    "  \"approvals.exec.targets[].channel\": \"Approval Target Channel\"": "  \"approvals.exec.targets[].channel\": \"审批目标渠道\"",
+    "  \"approvals.exec.targets[].to\": \"Approval Target Destination\"": "  \"approvals.exec.targets[].to\": \"审批目标目的地\"",
+    "  \"approvals.exec.targets[].accountId\": \"Approval Target Account ID\"": "  \"approvals.exec.targets[].accountId\": \"审批目标账户 ID\"",
+    "  \"approvals.exec.targets[].threadId\": \"Approval Target Thread ID\"": "  \"approvals.exec.targets[].threadId\": \"审批目标线程 ID\"",
+    "  \"approvals.plugin\": \"Plugin Approval Forwarding\"": "  \"approvals.plugin\": \"插件审批转发\"",
+    "  \"approvals.plugin.enabled\": \"Forward Plugin Approvals\"": "  \"approvals.plugin.enabled\": \"转发插件审批\"",
+    "  \"approvals.plugin.mode\": \"Plugin Approval Forwarding Mode\"": "  \"approvals.plugin.mode\": \"插件审批转发模式\"",
+    "  \"approvals.plugin.agentFilter\": \"Plugin Approval Agent Filter\"": "  \"approvals.plugin.agentFilter\": \"插件审批代理过滤器\"",
+    "  \"approvals.plugin.sessionFilter\": \"Plugin Approval Session Filter\"": "  \"approvals.plugin.sessionFilter\": \"插件审批会话过滤器\"",
+    "  \"approvals.plugin.targets\": \"Plugin Approval Forwarding Targets\"": "  \"approvals.plugin.targets\": \"插件审批转发目标\"",
+    "  \"approvals.plugin.targets[].channel\": \"Plugin Approval Target Channel\"": "  \"approvals.plugin.targets[].channel\": \"插件审批目标渠道\"",
+    "  \"approvals.plugin.targets[].to\": \"Plugin Approval Target Destination\"": "  \"approvals.plugin.targets[].to\": \"插件审批目标目的地\"",
+    "  \"approvals.plugin.targets[].accountId\": \"Plugin Approval Target Account ID\"": "  \"approvals.plugin.targets[].accountId\": \"插件审批目标账户 ID\"",
+    "  \"approvals.plugin.targets[].threadId\": \"Plugin Approval Target Thread ID\"": "  \"approvals.plugin.targets[].threadId\": \"插件审批目标线程 ID\"",
+    "  \"approvals.plugin.slack\": \"Slack Plugin Reviewers\"": "  \"approvals.plugin.slack\": \"Slack 插件审阅者\"",
+    "  \"approvals.plugin.slack.approvers\": \"Default Slack Plugin Reviewers\"": "  \"approvals.plugin.slack.approvers\": \"默认 Slack 插件审阅者\"",
+    "  \"approvals.plugin.slack.plugins\": \"Slack Plugin Reviewer Overrides\"": "  \"approvals.plugin.slack.plugins\": \"Slack 插件审阅者覆盖\""
+  }
+}

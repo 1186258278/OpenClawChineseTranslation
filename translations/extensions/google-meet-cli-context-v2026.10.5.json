@@ -1,0 +1,7 @@
+{
+  "file": "extensions/google-meet/src/cli-command-context.ts",
+  "description": "Google Meet 会议选择诊断",
+  "replacements": {
+    "\"Meeting input is required. Pass a URL/meeting code or configure defaults.meeting.\"": "\"需要会议输入。请传入 URL/会议代码，或配置 defaults.meeting。\""
+  }
+}

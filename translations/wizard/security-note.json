@@ -1,7 +1,5 @@
 {
   "file": "src/wizard/setup.security-note.ts",
   "description": "安全警告提示正文（v2026.4.22: 去掉列表项前缀 + 重构）",
-  "replacements": {
-    "\"- https://docs.openclaw.ai/gateway/security\",": "\"- https://docs.openclaw.ai/gateway/security\",\n  \"\",\n  \"汉化版社区：QQ 群 https://qt.cool/c/OpenClaw | 微信群 https://qt.cool/c/OpenClawWx\","
-  }
+  "replacements": {}
 }

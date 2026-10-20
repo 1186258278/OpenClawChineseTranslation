@@ -1,0 +1,10 @@
+{
+  "file": "extensions/x/src/channel.ts",
+  "description": "X 渠道选择说明与投递错误",
+  "replacements": {
+    "selectionLabel: \"X (Twitter mentions)\"": "selectionLabel: \"X（Twitter 提及）\"",
+    "blurb: \"Allowlisted mentions with thread context and public replies.\"": "blurb: \"回复允许列表中的提及，支持讨论串上下文与公开回复。\"",
+    "X does not support ${action}.": "X 不支持 ${action}。",
+    "\"X supports text replies only; media is not supported.\"": "\"X 仅支持文本回复，不支持媒体。\""
+  }
+}

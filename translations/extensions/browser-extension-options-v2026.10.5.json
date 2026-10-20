@@ -1,0 +1,22 @@
+{
+  "file": "extensions/browser/chrome-extension/options.js",
+  "description": "浏览器扩展配对与连接设置状态",
+  "replacements": {
+    "\"Paired; automation paused\"": "\"已配对；自动化已暂停\"",
+    "\"Connected\"": "\"已连接\"",
+    "\"Paired; relay unavailable\"": "\"已配对；中继不可用\"",
+    "\"Not paired\"": "\"未配对\"",
+    "\"Retired recovery state requires confirmation\"": "\"旧版恢复状态需要确认\"",
+    "\"Automatic setup disabled\"": "\"自动设置已禁用\"",
+    "\"Waiting for the local native host\"": "\"正在等待本地原生主机\"",
+    "\"Automatic bootstrap ready\"": "\"自动引导已就绪\"",
+    "\"Operation failed.\"": "\"操作失败。\"",
+    "\"Automatic setup enabled.\"": "\"自动设置已启用。\"",
+    "\"Automatic setup disabled.\"": "\"自动设置已禁用。\"",
+    "\"Looking for local OpenClaw…\"": "\"正在查找本地 OpenClaw…\"",
+    "\"Access mode updated.\"": "\"访问模式已更新。\"",
+    "\"Manual pairing saved.\"": "\"手动配对已保存。\"",
+    "\"Disconnected. Automatic setup is disabled.\"": "\"已断开连接。自动设置已禁用。\"",
+    "Manual setup required (${status.nativeBootstrap.failureCode ?? \"unsupported topology\"})": "需要手动设置（${status.nativeBootstrap.failureCode ?? \"不支持的拓扑\"}）"
+  }
+}

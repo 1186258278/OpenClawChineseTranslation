@@ -2,23 +2,23 @@
   "file": "src/cli/daemon-cli/register-service-commands.ts",
   "description": "网关服务（install/start/stop/restart/uninstall/status）子命令",
   "replacements": {
-    "opts?.statusDescription ?? \"Show gateway service status + probe connectivity/capability\"": "opts?.statusDescription ?? \"显示网关服务状态并探测连通性/能力\"",
+    "opts?.statusDescription ?? \"Show gateway service status + check connectivity/capability\"": "opts?.statusDescription ?? \"显示网关服务状态并探测连通性/能力\"",
     ".option(\"--url <url>\", \"Gateway WebSocket URL (defaults to config/remote/local)\")": ".option(\"--url <url>\", \"网关 WebSocket URL（默认来自 config/remote/local）\")",
     ".option(\"--token <token>\", \"Gateway token (if required)\")": ".option(\"--token <token>\", \"网关令牌（如需要）\")",
     ".option(\"--password <password>\", \"Gateway password (password auth)\")": ".option(\"--password <password>\", \"网关密码（password 认证）\")",
     ".option(\"--timeout <ms>\", \"Timeout in ms\", \"10000\")": ".option(\"--timeout <ms>\", \"超时（毫秒）\", \"10000\")",
-    ".option(\"--no-probe\", \"Skip RPC probe\")": ".option(\"--no-probe\", \"跳过 RPC 探测\")",
-    ".option(\"--require-rpc\", \"Exit non-zero when the RPC probe fails\", false)": ".option(\"--require-rpc\", \"RPC 探测失败时返回非零退出码\", false)",
+    ".option(\"--no-probe\", \"Skip RPC check\")": ".option(\"--no-probe\", \"跳过 RPC 探测\")",
+    ".option(\"--require-rpc\", \"Exit non-zero when the RPC check fails\", false)": ".option(\"--require-rpc\", \"RPC 探测失败时返回非零退出码\", false)",
     ".option(\"--deep\", \"Scan system-level services\", false)": ".option(\"--deep\", \"扫描系统级服务\", false)",
     ".option(\"--json\", \"Output JSON\", false)": ".option(\"--json\", \"输出 JSON\", false)",
-    ".description(\"Install the Gateway service (launchd/systemd/schtasks)\")": ".description(\"安装网关服务（launchd/systemd/schtasks）\")",
+    ".description(\"Install and start the Gateway service (launchd/systemd/schtasks)\")": ".description(\"安装并启动 Gateway 服务（launchd/systemd/schtasks）\")",
     ".option(\"--port <port>\", \"Gateway port\")": ".option(\"--port <port>\", \"网关端口\")",
     ".option(\"--token <token>\", \"Gateway token (token auth)\")": ".option(\"--token <token>\", \"网关令牌（token 认证）\")",
-    ".option(\"--force\", \"Reinstall/overwrite if already installed\", false)": ".option(\"--force\", \"若已安装则重新安装/覆盖\", false)",
-    ".description(\"Uninstall the Gateway service (launchd/systemd/schtasks)\")": ".description(\"卸载网关服务（launchd/systemd/schtasks）\")",
-    ".description(\"Start the Gateway service (launchd/systemd/schtasks)\")": ".description(\"启动网关服务（launchd/systemd/schtasks）\")",
+    ".option(\"--force\", \"Reinstall if already installed (may restart a running Gateway)\", false)": ".option(\"--force\", \"如已安装则重新安装（可能会重启正在运行的 Gateway）\", false)",
     ".description(\"Stop the Gateway service (launchd/systemd/schtasks)\")": ".description(\"停止网关服务（launchd/systemd/schtasks）\")",
     ".description(\"Restart the Gateway service (launchd/systemd/schtasks)\")": ".description(\"重启网关服务（launchd/systemd/schtasks）\")",
-    ".option(\"--runtime <runtime>\", \"Daemon runtime (node). Default: node\")": ".option(\"--runtime <runtime>\", \"守护进程运行时（node）。默认：node\")"
+    "    [\"uninstall\", \"Uninstall\", \"runDaemonUninstall\"],": "    [\"uninstall\", \"卸载\", \"runDaemonUninstall\"],",
+    "    [\"start\", \"Start\", \"runDaemonStart\"],": "    [\"start\", \"启动\", \"runDaemonStart\"],",
+    ".description(`${description} the Gateway service (launchd/systemd/schtasks)`)": ".description(`${description}网关服务（launchd/systemd/schtasks）`)"
   }
 }

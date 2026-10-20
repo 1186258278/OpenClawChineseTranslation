@@ -1,0 +1,19 @@
+{
+  "file": "extensions/browser/chrome-extension/popup.js",
+  "description": "浏览器扩展弹窗连接与标签页访问状态",
+  "replacements": {
+    "\"Automatic setup disabled\"": "\"自动设置已禁用\"",
+    "\"Manual setup required\"": "\"需要手动设置\"",
+    "\"Waiting for local OpenClaw\"": "\"正在等待本地 OpenClaw\"",
+    "\"Could not read browser status.\"": "\"无法读取浏览器状态。\"",
+    "\"Automation paused; open Settings\"": "\"自动化已暂停；请打开设置\"",
+    "\"Connected\"": "\"已连接\"",
+    "\"Connecting…\"": "\"正在连接…\"",
+    "\"OpenClaw relay unavailable\"": "\"OpenClaw 中继不可用\"",
+    "\"Selected tabs\"": "\"选定标签页\"",
+    "\"All tabs\"": "\"全部标签页\"",
+    "\"Pause on this tab\"": "\"暂停此标签页\"",
+    "\"Allow on this tab\"": "\"允许此标签页\"",
+    "\"Could not update tab access.\"": "\"无法更新标签页访问权限。\""
+  }
+}

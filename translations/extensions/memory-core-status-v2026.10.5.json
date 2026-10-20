@@ -1,0 +1,24 @@
+{
+  "file": "extensions/memory-core/src/cli-status.runtime.ts",
+  "description": "记忆状态 CLI 检查进度与新增字段标签",
+  "replacements": {
+    "\"Checking vector store…\"": "\"正在检查向量存储…\"",
+    "\"Checking vectors…\"": "\"正在检查向量…\"",
+    "\"Checking embeddings…\"": "\"正在检查嵌入…\"",
+    "Memory index failed: ${indexError}": "记忆索引失败：${indexError}",
+    "addField(\"Embeddings error\",": "addField(\"嵌入错误\",",
+    "addField(\"Server model\",": "addField(\"服务器模型\",",
+    "addPath(\"Model path\",": "addPath(\"模型路径\",",
+    "addState(\"Vector store\",": "addState(\"向量存储\",",
+    "addState(\"Semantic vectors\",": "addState(\"语义向量\",",
+    "addField(\"Vector dims\",": "addField(\"向量维数\",",
+    "addPath(\"Vector path\",": "addPath(\"向量路径\",",
+    "addField(\"Vector error\",": "addField(\"向量错误\",",
+    "addField(\"FTS error\",": "addField(\"全文检索错误\",",
+    "addField(\"Batch error\",": "addField(\"批处理错误\",",
+    "addField(\"Recall updated\",": "addField(\"召回更新时间\",",
+    "addPath(\"Dream diary\",": "addPath(\"梦境日记\",",
+    "addPath(\"Dream archive\",": "addPath(\"梦境归档\",",
+    "addField(\"Index error\",": "addField(\"索引错误\","
+  }
+}

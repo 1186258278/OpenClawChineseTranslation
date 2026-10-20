@@ -14,7 +14,6 @@
     "`unauthorized: gateway password missing (${passwordHint})`": "`未授权：缺少网关密码（${passwordHint}）`",
     "`unauthorized: gateway password mismatch (${passwordHint})`": "`未授权：网关密码不匹配（${passwordHint}）`",
     "\"unauthorized: gateway password not configured on gateway (set gateway.auth.password)\"": "\"未授权：网关未配置密码（请设置 gateway.auth.password）\"",
-    "\"unauthorized: bootstrap token invalid or expired (scan a fresh setup code)\"": "\"未授权：引导令牌无效或已过期（请扫描新的设置码）\"",
     "\"unauthorized: tailscale identity missing (use Tailscale Serve auth or gateway token/password)\"": "\"未授权：缺少 Tailscale 身份（请使用 Tailscale Serve 认证或网关令牌/密码）\"",
     "\"unauthorized: tailscale proxy headers missing (use Tailscale Serve or gateway token/password)\"": "\"未授权：缺少 Tailscale 代理头（请使用 Tailscale Serve 或网关令牌/密码）\"",
     "\"unauthorized: tailscale identity check failed (use Tailscale Serve auth or gateway token/password)\"": "\"未授权：Tailscale 身份验证失败（请使用 Tailscale Serve 认证或网关令牌/密码）\"",
@@ -22,6 +21,13 @@
     "\"unauthorized: too many failed authentication attempts (retry later)\"": "\"未授权：认证失败次数过多（请稍后重试）\"",
     "\"unauthorized: device token mismatch (rotate/reissue device token)\"": "\"未授权：设备令牌不匹配（请轮换/重新签发设备令牌）\"",
     "\"unauthorized: device token rejected (pair/repair this device, or provide gateway token)\"": "\"未授权：设备令牌被拒绝（请配对/重新配对此设备，或提供网关令牌）\"",
-    "\"unauthorized\"": "\"未授权\""
+    "\"unauthorized\"": "\"未授权\"",
+    "\"paste in Control UI settings or openclaw doctor --generate-gateway-token; restart\"": "\"在控制面板设置中粘贴，或运行 openclaw doctor --generate-gateway-token；然后重启\"",
+    "\"use this gateway's gateway.auth.token or pair the device\"": "\"使用此网关的 gateway.auth.token 或配对此设备\"",
+    "\"use this gateway's gateway.auth.password\"": "\"使用此网关的 gateway.auth.password\"",
+    "\"gateway rejected this node: trusted-proxy identity-header authentication is required and no usable machine credential was accepted; run `openclaw doctor` on the Gateway\"": "\"网关拒绝了此节点：需要 trusted-proxy identity-header 认证，且没有接受可用的机器凭据；请在网关上运行 `openclaw doctor`\"",
+    "\"unauthorized: setup code invalid, expired, revoked, or already used (create a new code; review `openclaw devices list`)\"": "\"未授权：设置码无效、过期、已撤销或已被使用（请创建新代码；检查 `openclaw devices list`）\"",
+    "\"unauthorized: proxy client attribution is required (configure gateway.trustedProxies narrowly and make the proxy overwrite or safely rebuild forwarded client headers)\"": "\"未授权：需要代理客户端归因（请精确配置 gateway.trustedProxies，并让代理覆盖或安全重建转发的客户端头）\"",
+    "\"unauthorized: device token scope mismatch (re-pair or approve scope upgrade)\"": "\"未授权：设备令牌作用域不匹配（请重新配对或批准作用域升级）\""
   }
 }

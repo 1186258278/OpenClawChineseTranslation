@@ -1,0 +1,8 @@
+{
+  "file": "src/cli/runtime-cleanup.ts",
+  "description": "CLI 清理延后提示",
+  "replacements": {
+    "CLI cleanup deferred: ": "CLI 清理已延后：",
+    " until pending disposers settle: ": "，等待待处理释放器完成："
+  }
+}
