@@ -1,0 +1,7 @@
+{
+  "file": "src/cli/update-cli/update-command-windows-preflight.ts",
+  "description": "v2026.10.7 update-command-windows-preflight 用户可见提示",
+  "replacements": {
+    "`For a global npm installation, update manually: npm i -g ${spec} --allow-scripts=openclaw, then openclaw doctor --fix, then openclaw gateway restart.`": "`全局 npm 安装请手动更新：先运行 npm i -g ${spec} --allow-scripts=openclaw，再运行 openclaw doctor --fix，最后运行 openclaw gateway restart。`"
+  }
+}

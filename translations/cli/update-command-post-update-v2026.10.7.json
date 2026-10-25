@@ -1,0 +1,7 @@
+{
+  "file": "src/cli/update-cli/update-command-post-update.ts",
+  "description": "v2026.10.7 update-command-post-update 用户可见提示",
+  "replacements": {
+    "`Restart finalization: ${verificationFailure}.`": "`重启收尾： ${verificationFailure}.`"
+  }
+}

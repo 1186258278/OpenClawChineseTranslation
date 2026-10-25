@@ -1,0 +1,7 @@
+{
+  "file": "src/cli/update-cli/update-command-terminal-publication.ts",
+  "description": "v2026.10.7 update-command-terminal-publication 用户可见提示",
+  "replacements": {
+    "`Gateway activation verified; post-update maintenance needs attention: ${message}`": "`网关激活已验证；请关注更新后维护： ${message}`"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "file": "src/cli/daemon-cli/lifecycle.ts",
+  "description": "v2026.10.7 lifecycle 用户可见提示",
+  "replacements": {
+    "`Stopped stalled Gateway startup pid ${stalled.pid}.`": "`已停止启动卡住的网关进程，PID 为 ${stalled.pid}.`"
+  }
+}

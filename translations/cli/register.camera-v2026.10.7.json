@@ -1,0 +1,8 @@
+{
+  "file": "src/cli/nodes-cli/register.camera.ts",
+  "description": "v2026.10.7 register.camera 用户可见提示",
+  "replacements": {
+    "\"Unknown Camera\"": "\"未知摄像头\"",
+    "muted(\"unspecified\")": "muted(\"未指定\")"
+  }
+}

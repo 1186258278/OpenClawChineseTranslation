@@ -1,0 +1,7 @@
+{
+  "file": "src/cli/update-cli/update-recovery-guidance.ts",
+  "description": "v2026.10.7 update-recovery-guidance 用户可见提示",
+  "replacements": {
+    "`A dependency link reaches OpenClaw-owned files that cannot be safely retained. Keep source files and backups; inspect the link in the local error and follow https://docs.openclaw.ai/cli/update#runtime-retention-failures. Do not skip runtime retention. After repairing the link, retry the update.`": "`依赖链接指向 OpenClaw 管理的文件，无法安全保留。请保留源文件和备份，检查本地错误中指出的链接，并参阅 https://docs.openclaw.ai/cli/update#runtime-retention-failures。请勿跳过运行时保留步骤。修复链接后重试更新。`"
+  }
+}

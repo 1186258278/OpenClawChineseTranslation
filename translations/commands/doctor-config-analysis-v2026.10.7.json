@@ -1,0 +1,11 @@
+{
+  "file": "src/commands/doctor-config-analysis.ts",
+  "description": "v2026.10.7 doctor-config-analysis 用户可见提示",
+  "replacements": {
+    "\"hooks.token has an unresolved environment reference in the current Doctor environment.\"": "\"当前 Doctor 环境无法解析 hooks.token 的环境变量引用。\"",
+    "\"External HTTP hooks are disabled on Gateway startup if its environment cannot resolve the secret; an invalid hot reload keeps the previous valid hooks configuration.\"": "\"若网关环境无法解析密钥，启动时将禁用外部 HTTP 钩子；无效的热重载会保留上次有效的钩子配置。\"",
+    "\"Supply the configured secret to the Gateway service environment, then reload or restart. The CLI and service environments may differ.\"": "\"请将所配置的密钥提供给网关服务环境，然后重载或重启。CLI 与服务的环境可能不同。\"",
+    "`To leave hooks disabled explicitly, run ${formatCliCommand(\"openclaw config set hooks.enabled false\")}.`": "`如需明确禁用钩子，请运行 ${formatCliCommand(\"openclaw config set hooks.enabled false\")}.`",
+    "\"Doctor does not generate a replacement secret or overwrite the configured reference.\"": "\"Doctor 不会生成替代密钥，也不会覆盖已配置的引用。\""
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "file": "src/commands/doctor-tools-md-migration.ts",
+  "description": "v2026.10.7 doctor-tools-md-migration 用户可见提示",
+  "replacements": {
+    "`File is not valid UTF-8: ${filePath}; preserve its bytes and convert a copy to UTF-8 before retrying`": "`文件不是有效的 UTF-8： ${filePath}；请保留原始字节，将副本转换为 UTF-8 后重试`"
+  }
+}

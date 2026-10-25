@@ -1,0 +1,10 @@
+{
+  "file": "src/commands/doctor-sqlite-nocow-recovery-identity.ts",
+  "description": "v2026.10.7 doctor-sqlite-nocow-recovery-identity 用户可见提示",
+  "replacements": {
+    "\"rewritten file is not the recorded generation\"": "\"改写后的文件与记录的文件代次不符\"",
+    "\"rewritten file is not an unaliased regular file\"": "\"改写后的文件不是无别名的普通文件\"",
+    "\"rewritten copy does not match the recorded original\"": "\"改写后的副本与记录的原文件不符\"",
+    "`NOCOW recovery identity left unchanged for ${pathname}: ${String(error)}`": "`以下路径的 NOCOW 恢复标识保持原样：${pathname}: ${String(error)}`"
+  }
+}

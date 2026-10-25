@@ -1,0 +1,8 @@
+{
+  "file": "src/commands/doctor-session-sqlite-retirement.ts",
+  "description": "v2026.10.7 doctor-session-sqlite-retirement 用户可见提示",
+  "replacements": {
+    "\"Recovery manifest changed during confirmation; preview again.\"": "\"恢复清单在确认期间发生变更；请重新预览。\"",
+    "\"Recovery target changed during confirmation; preview again.\"": "\"恢复目标在确认期间发生变更；请重新预览。\""
+  }
+}

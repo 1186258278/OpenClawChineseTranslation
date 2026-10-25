@@ -1,0 +1,7 @@
+{
+  "file": "src/cli/update-cli/update-command-initialization-revalidation.ts",
+  "description": "v2026.10.7 update-command-initialization-revalidation 用户可见提示",
+  "replacements": {
+    "\"Gateway state or configuration selectors changed during target initialization. Retry from the installation's current owning account.\"": "\"目标初始化期间，网关状态或配置选择参数发生变更。请使用当前安装所属的账户重试。\""
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "file": "extensions/cloudflare/s3-backend.ts",
+  "description": "v2026.10.7 s3-backend 用户可见提示",
+  "replacements": {
+    "` Download stopped after ${offset} of ${size ?? \"unknown\"} bytes (next offset ${offset}${reason ? `; ${reason}` : \"\"}).`": "` 下载已停止，已接收 ${offset} / ${size ?? \"unknown\"} 字节（下一偏移量为 ${offset}${reason ? `; ${reason}` : \"\"}）。`",
+    "\"R2 returned no valid object size or ETag; retry the download.\"": "\"R2 未返回有效的对象大小或 ETag；请重试下载。\"",
+    "\"R2 object changed during download; restart the download.\"": "\"R2 对象在下载期间发生变更；请重新开始下载。\"",
+    "\"R2 returned an unexpected byte range; retry the download.\"": "\"R2 返回的字节范围不符合预期；请重试下载。\"",
+    "\"R2 returned more bytes than requested; retry the download.\"": "\"R2 返回的字节数超过请求范围；请重试下载。\"",
+    "\"R2 returned no object body; retry the download.\"": "\"R2 未返回对象内容；请重试下载。\""
+  }
+}

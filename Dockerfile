@@ -15,7 +15,7 @@
 #
 # ============================================================
 
-FROM node:24.16.0-slim
+FROM node:24.22.1-slim
 
 LABEL org.opencontainers.image.source="https://github.com/1186258278/OpenClawChineseTranslation"
 LABEL org.opencontainers.image.description="OpenClaw 汉化发行版 - 开源个人 AI 助手中文版"

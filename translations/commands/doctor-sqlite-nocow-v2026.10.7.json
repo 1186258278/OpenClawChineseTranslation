@@ -1,0 +1,7 @@
+{
+  "file": "src/commands/doctor-sqlite-nocow.ts",
+  "description": "v2026.10.7 doctor-sqlite-nocow 用户可见提示",
+  "replacements": {
+    "`NOCOW recovery-identity reconciliation failed for ${directory}: ${String(error)}`": "`以下目录的 NOCOW 恢复标识核对失败：${directory}: ${String(error)}`"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "file": "extensions/memory-wiki/src/markdown.ts",
+  "description": "v2026.10.7 markdown 用户可见提示",
+  "replacements": {
+    "`Wiki page is not valid UTF-8 and cannot be rewritten safely: ${displayPath}. `": "`Wiki 页面不是有效的 UTF-8，无法安全改写： ${displayPath}. `",
+    "\"The file was left unchanged. Keep a byte-for-byte backup, convert a copy to UTF-8 with its original encoding, then retry.\"": "\"文件保持原样。请先保留逐字节备份，再按原编码将副本转换为 UTF-8，然后重试。\""
+  }
+}

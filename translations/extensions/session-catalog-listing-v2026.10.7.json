@@ -1,0 +1,7 @@
+{
+  "file": "extensions/anthropic/session-catalog-listing.ts",
+  "description": "v2026.10.7 session-catalog-listing 用户可见提示",
+  "replacements": {
+    "\"Claude session discovery reached its scan limit; some sessions are omitted. Search by exact session ID.\"": "\"Claude 会话发现已达到扫描上限；部分会话未列出。请使用完整会话 ID 搜索。\""
+  }
+}

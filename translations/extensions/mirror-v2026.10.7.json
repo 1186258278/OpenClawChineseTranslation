@@ -1,0 +1,7 @@
+{
+  "file": "extensions/beam/src/mirror.ts",
+  "description": "v2026.10.7 mirror 用户可见提示",
+  "replacements": {
+    "`beam mirror paused: ${MIRROR_TOKEN_PATH} credential unavailable; restore it and run openclaw secrets reload`": "`beam 镜像已暂停： ${MIRROR_TOKEN_PATH} 凭据不可用；恢复后请运行 openclaw secrets reload`"
+  }
+}

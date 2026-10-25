@@ -1,0 +1,7 @@
+{
+  "file": "extensions/copilot/src/attempt-transcript-journal.ts",
+  "description": "v2026.10.7 attempt-transcript-journal 用户可见提示",
+  "replacements": {
+    "\"Copilot caller-owned transcript changed during attempt\"": "\"Copilot 调用方管理的会话记录在执行期间发生变更\""
+  }
+}

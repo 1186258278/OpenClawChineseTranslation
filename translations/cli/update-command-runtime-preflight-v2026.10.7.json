@@ -1,0 +1,7 @@
+{
+  "file": "src/cli/update-cli/update-command-runtime-preflight.ts",
+  "description": "v2026.10.7 update-command-runtime-preflight 用户可见提示",
+  "replacements": {
+    "`Gateway service Node ${runtime.version ?? \"unknown\"} at ${runtimePath} requires ${target.nodeEngine}. Install ${recommendation ? `Node ${recommendation}` : \"a compatible Node runtime\"} and update that service definition, then retry; changing the shell's Node alone does not update the service.`": "`网关服务的 Node ${runtime.version ?? \"unknown\"}（路径：${runtimePath}）要求 ${target.nodeEngine}。请安装 ${recommendation ? `Node ${recommendation}` : \"兼容的 Node 运行时\"}，更新该服务的定义后重试；仅更改终端中的 Node 不会更新服务。`"
+  }
+}

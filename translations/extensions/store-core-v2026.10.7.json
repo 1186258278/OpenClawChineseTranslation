@@ -1,0 +1,7 @@
+{
+  "file": "extensions/workboard/src/store-core.ts",
+  "description": "v2026.10.7 store-core 用户可见提示",
+  "replacements": {
+    "\"card dependencies are not done.\"": "\"卡片的前置依赖尚未完成。\""
+  }
+}

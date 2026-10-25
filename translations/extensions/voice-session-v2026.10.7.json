@@ -1,0 +1,7 @@
+{
+  "file": "extensions/discord/src/voice/voice-session.ts",
+  "description": "v2026.10.7 voice-session 用户可见提示",
+  "replacements": {
+    "\"Discord voice reply authorization is no longer current\"": "\"Discord 语音回复授权已失效\""
+  }
+}

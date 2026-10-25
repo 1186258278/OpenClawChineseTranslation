@@ -1,0 +1,9 @@
+{
+  "file": "src/commands/doctor-memory-search.ts",
+  "description": "v2026.10.7 doctor-memory-search 用户可见提示",
+  "replacements": {
+    "\"Without working primary or fallback embeddings, memory sync stops for explicitly configured providers or existing vector indexes; new and changed memory files are not indexed.\"": "\"若主嵌入模型和备用嵌入模型均不可用，显式配置了提供商或已有向量索引的记忆同步将停止；新增和修改的记忆文件不会被索引。\"",
+    "`- For keyword-only recall without a key, set memory.search.provider to \"none\" for this agent (including any agent override), then run ${formatCliCommand(`openclaw memory index --force --agent ${agentId}`)}`": "`- 如需无需密钥的纯关键词召回，请将该智能体的 memory.search.provider 设为 \"none\"（包括智能体级覆盖配置），然后运行 ${formatCliCommand(`openclaw memory index --force --agent ${agentId}`)}`",
+    "`Then rerun: ${formatCliCommand(\"openclaw doctor\")}`": "`然后重新运行： ${formatCliCommand(\"openclaw doctor\")}`"
+  }
+}

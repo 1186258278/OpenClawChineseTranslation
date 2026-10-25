@@ -1,0 +1,8 @@
+{
+  "file": "src/commands/doctor-session-state-providers.ts",
+  "description": "v2026.10.7 doctor-session-state-providers 用户可见提示",
+  "replacements": {
+    "`- Found stale ${ownerLabel} session routing state in ${staleCount}.`": "`- 在 ${ownerLabel} 中发现过期的会话路由状态：${staleCount}.`",
+    "\"  An unavailable runtime or legacy routing state can keep later runs on an obsolete route.\"": "\"  不可用的运行时或旧路由状态可能导致后续运行继续使用过时路由。\""
+  }
+}

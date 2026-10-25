@@ -1,0 +1,7 @@
+{
+  "file": "src/cli/update-cli/update-command-database-backup.ts",
+  "description": "v2026.10.7 update-command-database-backup 用户可见提示",
+  "replacements": {
+    "`Databases snapshotted at ${backup.directory}. ${restorable ? \"Verified successful activation removes these snapshots only if automatic restoration remains available; otherwise retain them with the update's recovery artifacts.\" : \"These snapshots require manual recovery and remain available after successful activation.\"}`": "`数据库快照已保存至 ${backup.directory}. ${restorable ? \"激活验证成功后，仅在仍可自动恢复时删除这些快照；否则会与更新恢复产物一并保留。\" : \"这些快照需要手动恢复，激活成功后仍会保留。\"}`"
+  }
+}

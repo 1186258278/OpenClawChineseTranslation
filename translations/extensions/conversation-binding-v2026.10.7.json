@@ -1,0 +1,9 @@
+{
+  "file": "extensions/codex/src/conversation-binding.ts",
+  "description": "v2026.10.7 conversation-binding 用户可见提示",
+  "replacements": {
+    "\"Codex conversation binding changed before recovery; review it before resending.\"": "\"Codex 会话绑定在恢复前发生变更；请核对后重新发送。\"",
+    "\"Codex conversation policy changed before recovery; rebind the conversation and resend your message.\"": "\"Codex 会话策略在恢复前发生变更；请重新绑定会话并发送消息。\"",
+    "\"The bound Codex thread is unavailable. Your message was not submitted; rebind the conversation and resend it.\"": "\"绑定的 Codex 线程不可用。消息未提交；请重新绑定会话并发送。\""
+  }
+}

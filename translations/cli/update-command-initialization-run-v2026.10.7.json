@@ -1,0 +1,7 @@
+{
+  "file": "src/cli/update-cli/update-command-initialization-run.ts",
+  "description": "v2026.10.7 update-command-initialization-run 用户可见提示",
+  "replacements": {
+    "`Original state capture is unavailable; the update continues without it. A running Gateway or another active writer changing state during capture is expected to cause this. Database rollback uses the pre-migration snapshots taken after the Gateway stops. A completed update does not need to be restarted because of this warning. Cause: ${formatErrorMessage(error)}`": "`无法获取原始状态快照；更新将继续。网关运行中或其他写入进程在采集期间修改状态时可能出现此情况。数据库回滚使用网关停止后创建的迁移前快照。更新完成后，无需因本警告重新更新。原因： ${formatErrorMessage(error)}`"
+  }
+}

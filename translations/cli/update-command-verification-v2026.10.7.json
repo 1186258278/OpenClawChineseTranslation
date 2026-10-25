@@ -1,0 +1,7 @@
+{
+  "file": "src/cli/update-cli/update-command-verification.ts",
+  "description": "v2026.10.7 update-command-verification 用户可见提示",
+  "replacements": {
+    "`Gateway readiness was not verified; service status: ${health.runtime.status ?? \"unknown\"}${health.startupPhase ? `; startup phase: ${health.startupPhase}` : \"\"}. Check ${formatCliCommand(\"openclaw gateway status --deep\", params.serviceEnv)}.`": "`未能验证网关就绪状态；服务状态： ${health.runtime.status ?? \"unknown\"}${health.startupPhase ? `；启动阶段： ${health.startupPhase}` : \"\"}。请检查 ${formatCliCommand(\"openclaw gateway status --deep\", params.serviceEnv)}.`"
+  }
+}

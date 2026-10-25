@@ -3,9 +3,9 @@ import { readFileSync } from "node:fs";
 import test from "node:test";
 
 const workflow = readFileSync(new URL("../../.github/workflows/build-core.yml", import.meta.url), "utf8");
-// Upstream ce0e84d drops Node 22 and requires >=24.16.0 <25 || >=26.1.0.
+// Upstream v2026.10.7 requires >=24.22.1 <25 || >=26.12.1.
 // Pin the same supported runtime for building, publishing, and Docker installs.
-const expectedNodeVersion = "24.16.0";
+const expectedNodeVersion = "24.22.1";
 
 for (const filename of ["build-core.yml", "nightly.yml", "sync-and-release.yml"]) {
   test(`${filename} configures the supported release runtime`, () => {

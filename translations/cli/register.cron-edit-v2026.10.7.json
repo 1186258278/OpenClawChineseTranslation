@@ -1,0 +1,7 @@
+{
+  "file": "src/cli/cron-cli/register.cron-edit.ts",
+  "description": "v2026.10.7 register.cron-edit 用户可见提示",
+  "replacements": {
+    "\"Exclude skips except local-provider outages\"": "\"排除跳过事件，但保留本地提供商故障告警\""
+  }
+}

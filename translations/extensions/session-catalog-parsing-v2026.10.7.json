@@ -1,0 +1,7 @@
+{
+  "file": "extensions/anthropic/session-catalog-parsing.ts",
+  "description": "v2026.10.7 session-catalog-parsing 用户可见提示",
+  "replacements": {
+    "\"Claude node returned an invalid session page error\"": "\"Claude 节点返回的会话分页错误格式无效\""
+  }
+}

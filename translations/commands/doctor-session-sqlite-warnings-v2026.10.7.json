@@ -1,0 +1,7 @@
+{
+  "file": "src/commands/doctor-session-sqlite-warnings.ts",
+  "description": "v2026.10.7 doctor-session-sqlite-warnings 用户可见提示",
+  "replacements": {
+    "\"Run openclaw doctor --session-sqlite inspect to check current originals before choosing recovery.\"": "\"选择恢复方案前，请运行 openclaw doctor --session-sqlite inspect 检查当前原始数据。\""
+  }
+}

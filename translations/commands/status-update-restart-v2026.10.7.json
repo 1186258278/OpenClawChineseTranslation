@@ -1,0 +1,8 @@
+{
+  "file": "src/commands/status-update-restart.ts",
+  "description": "v2026.10.7 status-update-restart 用户可见提示",
+  "replacements": {
+    "`Last update run failed (${reasonLabel}) — Gateway is serving ${servingLabel}; run \\`openclaw update\\` to clear the record.`": "`上次更新失败（${reasonLabel}）— 网关当前运行版本为 ${servingLabel}；请运行 \\`openclaw update\\` 清除此记录。`",
+    "`Last update run failed (${reasonLabel}) — Gateway is now serving ${serving}; recorded serving identity was ${recorded}.`": "`上次更新失败（${reasonLabel}）— 网关当前运行版本为 ${serving}；记录的服务标识为 ${recorded}.`"
+  }
+}

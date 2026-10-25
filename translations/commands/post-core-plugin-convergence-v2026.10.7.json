@@ -1,0 +1,7 @@
+{
+  "file": "src/commands/doctor/shared/post-core-plugin-convergence.ts",
+  "description": "v2026.10.7 post-core-plugin-convergence 用户可见提示",
+  "replacements": {
+    "`Plugin \"${drift.pluginId}\" remains at ${drift.installedVersion} after the core update to ${drift.gatewayVersion}.`": "`插件 \"${drift.pluginId}\" 仍为 ${drift.installedVersion}，核心已更新至 ${drift.gatewayVersion}.`"
+  }
+}

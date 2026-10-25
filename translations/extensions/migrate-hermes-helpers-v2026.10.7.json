@@ -1,0 +1,7 @@
+{
+  "file": "extensions/migrate-hermes/helpers.ts",
+  "description": "v2026.10.7 migrate-hermes-helpers 用户可见提示",
+  "replacements": {
+    "`Source file is not valid UTF-8: ${item.source}. Re-encode it as UTF-8 and retry migration.`": "`源文件不是有效的 UTF-8： ${item.source}。请转换为 UTF-8 后重新迁移。`"
+  }
+}

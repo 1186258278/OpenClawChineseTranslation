@@ -1,0 +1,7 @@
+{
+  "file": "src/commands/doctor-agent-database-paths.ts",
+  "description": "v2026.10.7 doctor-agent-database-paths 用户可见提示",
+  "replacements": {
+    "\"Skipped agent database path repair during update Doctor. Run openclaw doctor --fix to repair agent database paths.\"": "\"更新诊断已跳过智能体数据库路径修复。请运行 openclaw doctor --fix 修复路径。\""
+  }
+}

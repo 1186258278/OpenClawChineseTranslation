@@ -1,0 +1,8 @@
+{
+  "file": "extensions/workboard/src/store-workflow.ts",
+  "description": "v2026.10.7 store-workflow 用户可见提示",
+  "replacements": {
+    "\"card dependencies are not done.\"": "\"卡片的前置依赖尚未完成。\"",
+    "\"card is blocked; use workboard_unblock before claiming.\"": "\"卡片已阻塞；请先使用 workboard_unblock 解除阻塞，再领取。\""
+  }
+}

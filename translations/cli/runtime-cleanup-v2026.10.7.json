@@ -1,0 +1,7 @@
+{
+  "file": "src/cli/runtime-cleanup.ts",
+  "description": "v2026.10.7 runtime-cleanup 用户可见提示",
+  "replacements": {
+    "`CLI cleanup failed: ${name}: ${formatErrorMessage(error)}`": "`CLI 清理失败： ${name}: ${formatErrorMessage(error)}`"
+  }
+}

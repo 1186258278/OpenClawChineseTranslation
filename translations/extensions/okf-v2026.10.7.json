@@ -1,0 +1,9 @@
+{
+  "file": "extensions/memory-wiki/src/okf.ts",
+  "description": "v2026.10.7 okf 用户可见提示",
+  "replacements": {
+    "\"OKF document must be valid UTF-8. Convert the source to UTF-8 and retry the import.\"": "\"OKF 文档必须使用有效的 UTF-8 编码。请将源文件转换为 UTF-8 后重新导入。\"",
+    "\"Close the producer Markdown fence before importing this OKF concept.\"": "\"导入此 OKF 概念前，请先闭合来源 Markdown 中的代码围栏。\"",
+    "`Cannot read OKF bundle index.md: ${warnings.at(-1)?.message}`": "`无法读取 OKF 包中的 index.md： ${warnings.at(-1)?.message}`"
+  }
+}

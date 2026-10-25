@@ -1,0 +1,7 @@
+{
+  "file": "src/cli/update-cli/update-command-service-drain.ts",
+  "description": "v2026.10.7 update-command-service-drain 用户可见提示",
+  "replacements": {
+    "`WARNING: Could not resume Gateway suspension ${suspensionId}: ${coerceErrorMessage(error)}; the Gateway reopens admission automatically when the lease expires (within 2 minutes).`": "`警告：无法解除网关暂停 ${suspensionId}: ${coerceErrorMessage(error)}；租约到期后网关将自动重新接受请求（不超过 2 分钟）。`"
+  }
+}

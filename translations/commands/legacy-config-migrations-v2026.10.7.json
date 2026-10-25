@@ -1,0 +1,8 @@
+{
+  "file": "src/commands/doctor/shared/legacy-config-migrations.ts",
+  "description": "v2026.10.7 legacy-config-migrations 用户可见提示",
+  "replacements": {
+    "'Empty plugins.installs is retired; run \"openclaw doctor --fix\" to remove it.'": "'空的 plugins.installs 配置已弃用；请运行 \"openclaw doctor --fix\" 移除。'",
+    "\"Removed empty retired plugins.installs; install records remain in SQLite.\"": "\"已移除弃用的空 plugins.installs 配置；安装记录仍保留在 SQLite 中。\""
+  }
+}
