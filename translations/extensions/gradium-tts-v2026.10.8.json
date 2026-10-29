@@ -1,0 +1,7 @@
+{
+  "file": "extensions/gradium/tts.ts",
+  "description": "v2026.10.8 Gradium 语音错误提示",
+  "replacements": {
+    "Gradium API error": "Gradium API 错误"
+  }
+}

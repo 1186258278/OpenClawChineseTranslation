@@ -1,0 +1,8 @@
+{
+  "file": "src/commands/doctor/shared/codex-route-warnings.ts",
+  "description": "v2026.10.8 Codex 路由警告",
+  "replacements": {
+    "- Codex runtime ignores compaction.provider; compaction.model still applies to OpenClaw host summaries.": "- Codex 运行时会忽略 compaction.provider；compaction.model 仍适用于 OpenClaw 主机摘要。",
+    "- Move or remove shared `agents.defaults.compaction.provider` manually; doctor keeps shared defaults while non-Codex agents can inherit them.": "- 请手动移动或移除共享的 `agents.defaults.compaction.provider`；Doctor 会保留共享默认值，非 Codex 代理仍可继承这些默认值。"
+  }
+}

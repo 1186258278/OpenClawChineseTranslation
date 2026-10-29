@@ -1,0 +1,13 @@
+{
+  "file": "src/commands/doctor-relative-session-store-preservation.ts",
+  "description": "v2026.10.8 相对会话存储保留提示",
+  "replacements": {
+    "pending context-engine advancements need to drain through their original Gateway before recovery": "待处理的上下文引擎推进必须先通过原网关完成排空，才能恢复",
+    "goal-operation receipts prevent delayed goal recreation until ": "目标操作回执会阻止目标在以下时间前延迟重建：",
+    "; retain the old store until that time before retrying": "；重试前请保留旧存储，直到该时间点",
+    "retained transcript archives require explicit recovery from the original store; automatic archive relocation is unsupported": "保留的会话记录归档需要从原存储显式恢复；不支持自动迁移归档",
+    "pending conversation deliveries must settle through their original Gateway and queue before recovery": "待处理的会话投递必须先通过原网关和队列完成结算，才能恢复",
+    "delivery receipts without a retained session require explicit recovery from the original store": "没有保留会话的投递回执需要从原存储显式恢复",
+    "conversation progress without its delivery receipt requires explicit recovery from the original store": "没有投递回执的会话进度需要从原存储显式恢复"
+  }
+}

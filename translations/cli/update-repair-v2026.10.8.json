@@ -1,0 +1,8 @@
+{
+  "file": "src/cli/update-cli/update-repair-command.ts",
+  "description": "v2026.10.8 更新修复渠道警告",
+  "replacements": {
+    "Channel health warnings: ": "渠道健康警告： ",
+    "Run openclaw channels status --probe.": "请运行 openclaw channels status --probe。"
+  }
+}

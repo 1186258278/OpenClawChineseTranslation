@@ -1,0 +1,7 @@
+{
+  "file": "extensions/zalo/src/monitor.ts",
+  "description": "v2026.10.8 Zalo 消息提示",
+  "replacements": {
+    "Zalo unsupported message has no recoverable text; ask the sender to resend as plain text.": "Zalo 不支持的消息没有可恢复文本；请让发送者以纯文本重新发送。"
+  }
+}

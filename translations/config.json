@@ -65,7 +65,10 @@
       "cli/update-recovery-guidance-v2026.10.7.json",
       "cli/register.camera-v2026.10.7.json",
       "cli/update-command-git-v2026.10.7.json",
-      "cli/update-command-windows-preflight-v2026.10.7.json"
+      "cli/update-command-windows-preflight-v2026.10.7.json",
+      "cli/daemon-install-v2026.10.8.json",
+      "cli/restart-health-diagnostics-v2026.10.8.json",
+      "cli/update-repair-v2026.10.8.json"
     ],
     "wizard": [
       "wizard/onboarding.json",
@@ -167,7 +170,13 @@
       "commands/legacy-config-migrations-v2026.10.7.json",
       "commands/post-core-plugin-convergence-v2026.10.7.json",
       "commands/status-update-restart-v2026.10.7.json",
-      "commands/doctor-session-sqlite-retirement-v2026.10.7.json"
+      "commands/doctor-session-sqlite-retirement-v2026.10.7.json",
+      "commands/doctor-config-preflight-plugin-verification-v2026.10.8.json",
+      "commands/doctor-maintenance-v2026.10.8.json",
+      "commands/doctor-plugin-host-links-v2026.10.8.json",
+      "commands/doctor-relative-session-preservation-v2026.10.8.json",
+      "commands/doctor-relative-session-store-v2026.10.8.json",
+      "commands/doctor-codex-route-warnings-v2026.10.8.json"
     ],
     "daemon": [
       "daemon/systemd-hints.json",
@@ -328,7 +337,19 @@
       "extensions/migrate-claude-helpers-v2026.10.7.json",
       "extensions/migrate-hermes-helpers-v2026.10.7.json",
       "extensions/store-core-v2026.10.7.json",
-      "extensions/store-workflow-v2026.10.7.json"
+      "extensions/store-workflow-v2026.10.7.json",
+      "extensions/codex-doctor-contract-v2026.10.8.json",
+      "extensions/codex-native-assignment-repair-v2026.10.8.json",
+      "extensions/google-transport-sse-v2026.10.8.json",
+      "extensions/googlechat-format-v2026.10.8.json",
+      "extensions/synology-chat-client-v2026.10.8.json",
+      "extensions/twitch-outbound-v2026.10.8.json",
+      "extensions/x-verified-github-v2026.10.8.json",
+      "extensions/zalo-monitor-v2026.10.8.json",
+      "extensions/slack-relay-v2026.10.8.json",
+      "extensions/tlon-ingress-v2026.10.8.json",
+      "extensions/fish-audio-tts-v2026.10.8.json",
+      "extensions/gradium-tts-v2026.10.8.json"
     ],
     "plugins": [
       "plugins/provider-auth-mode.json",

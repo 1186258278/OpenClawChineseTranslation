@@ -1,0 +1,7 @@
+{
+  "file": "extensions/codex/doctor-contract-api.ts",
+  "description": "v2026.10.8 Codex Doctor 修复标签",
+  "replacements": {
+    "Codex native pending assignment repair": "Codex 原生待处理分配修复"
+  }
+}

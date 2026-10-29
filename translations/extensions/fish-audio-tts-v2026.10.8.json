@@ -1,0 +1,8 @@
+{
+  "file": "extensions/fish-audio-speech/tts.ts",
+  "description": "v2026.10.8 Fish Audio 语音错误提示",
+  "replacements": {
+    "Fish Audio TTS API error": "Fish Audio TTS API 错误",
+    "Fish Audio voices API error": "Fish Audio 音色 API 错误"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "file": "src/cli/daemon-cli/install.ts",
+  "description": "v2026.10.8 网关服务安装提示",
+  "replacements": {
+    "Gateway service definition is missing; refreshing the install.": "网关服务定义缺失；正在刷新安装。"
+  }
+}

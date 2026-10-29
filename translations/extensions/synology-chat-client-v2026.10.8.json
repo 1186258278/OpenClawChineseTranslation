@@ -1,0 +1,7 @@
+{
+  "file": "extensions/synology-chat/src/client.ts",
+  "description": "v2026.10.8 Synology Chat 发送错误",
+  "replacements": {
+    "Failed to send message to Synology Chat (": "向 Synology Chat 发送消息失败（"
+  }
+}

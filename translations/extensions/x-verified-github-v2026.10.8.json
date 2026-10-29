@@ -1,0 +1,7 @@
+{
+  "file": "extensions/x/src/verified-github-service.ts",
+  "description": "v2026.10.8 X GitHub 验证失败提示",
+  "replacements": {
+    "GitHub verification failed; check the configured credentials and Gateway logs. If X token refresh failed, reauthorize the X account. The last verified set is unchanged.": "GitHub 验证失败；请检查已配置的凭据和网关日志。如果 X 令牌刷新失败，请重新授权 X 账户。上次验证的集合未改变。"
+  }
+}

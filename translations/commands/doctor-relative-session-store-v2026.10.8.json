@@ -1,0 +1,28 @@
+{
+  "file": "src/commands/doctor-relative-session-store.ts",
+  "description": "v2026.10.8 相对会话存储迁移提示",
+  "replacements": {
+    "Cannot merge the old relative session.store: ": "无法合并旧的相对 session.store：",
+    "Original stores and existing backups are retained. Resolve the reported conflict before retrying Doctor or the update.": "原存储及现有备份已保留。请解决报告的冲突后再重试 Doctor 或更新。",
+    " is outside the copied update state; run openclaw doctor --fix against the original state directory outside the update rehearsal first": " 位于复制的更新状态之外；请先针对更新演练之外的原始状态目录运行 openclaw doctor --fix",
+    " was not copied for rehearsal; run openclaw doctor --fix against the original state directory outside the update rehearsal first": " 未复制到演练目录；请先针对更新演练之外的原始状态目录运行 openclaw doctor --fix",
+    "SQLite sidecars at ": "位于 ",
+    " need their matching main database restored": " 的 SQLite 伴随文件需要恢复对应的主数据库",
+    "source session ": "源会话 ",
+    " could not be read from ": " 无法从以下位置读取：",
+    "store discovery failed: ": "存储发现失败：",
+    "repair requires Doctor maintenance ownership": "修复需要 Doctor 维护所有权",
+    "legacy JSON at ": "位于 ",
+    " has unresolved Doctor import issues": " 的旧版 JSON 存在未解决的 Doctor 导入问题",
+    "recovered session ": "恢复的会话 ",
+    " already has different sharing permissions": " 已具有不同的共享权限",
+    "conflicting session generations or sharing in ": "以下位置存在冲突的会话世代或共享设置：",
+    "; preserve the originals and their pre-migration backups for recovery": "；请保留原始数据及迁移前备份以便恢复",
+    "source ${source.path} changed during the copy": "源 ${source.path} 在复制期间发生了变化",
+    "Merged ": "已合并 ",
+    " session(s) from ": " 个会话，来源为 ",
+    "; retained the original store and its pre-migration backup for recovery.": "；已保留原存储及迁移前备份以便恢复。",
+    "the retired source ": "已停用的源 ",
+    " changed; preserve it for explicit recovery without replaying deleted conversations": " 已发生变化；请保留它以便显式恢复，且不要重放已删除的会话"
+  }
+}

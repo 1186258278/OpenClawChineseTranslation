@@ -1,0 +1,7 @@
+{
+  "file": "src/cli/daemon-cli/restart-health-diagnostics.ts",
+  "description": "v2026.10.8 渠道就绪诊断",
+  "replacements": {
+    "channel readiness unavailable": "渠道就绪状态不可用"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "file": "extensions/tlon/src/monitor/ingress.ts",
+  "description": "v2026.10.8 Tlon 事件提示",
+  "replacements": {
+    "Tlon firehose event is too deeply nested to store.": "Tlon firehose 事件嵌套过深，无法存储。"
+  }
+}

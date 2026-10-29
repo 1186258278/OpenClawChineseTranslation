@@ -1,0 +1,8 @@
+{
+  "file": "src/commands/doctor-config-preflight-plugin-verification.ts",
+  "description": "v2026.10.8 Doctor 主机链接修复提示",
+  "replacements": {
+    "Could not repair OpenClaw host links: ": "无法修复 OpenClaw 主机链接：",
+    "Run openclaw doctor --fix.": "请运行 openclaw doctor --fix。"
+  }
+}

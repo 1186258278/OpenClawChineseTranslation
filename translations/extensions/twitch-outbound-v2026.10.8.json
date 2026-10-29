@@ -1,0 +1,7 @@
+{
+  "file": "extensions/twitch/src/outbound.ts",
+  "description": "v2026.10.8 Twitch 投递提示",
+  "replacements": {
+    "Delivering to Twitch requires target <channel-name>": "投递到 Twitch 需要目标 <channel-name>"
+  }
+}

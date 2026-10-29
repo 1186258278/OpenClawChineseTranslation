@@ -1,0 +1,19 @@
+{
+  "file": "extensions/codex/src/migration/native-assignment-repair.ts",
+  "description": "v2026.10.8 Codex 原生分配修复提示",
+  "replacements": {
+    "Preserved Codex native assignments in ": "已保留以下位置的 Codex 原生分配：",
+    "; the binding could not be decoded. Inspect it before retrying Doctor.": "；绑定无法解码。请检查后再重试 Doctor。",
+    "Preserved malformed Codex native assignments in ": "已保留以下位置格式错误的 Codex 原生分配：",
+    "; inspect the binding before retrying Doctor.": "；请检查绑定后再重试 Doctor。",
+    "Preserved Codex assignments with unknown lifecycle evidence in ": "已保留以下位置的 Codex 分配，生命周期证据未知：",
+    "Preserved Codex assignments with unknown requester evidence in ": "已保留以下位置的 Codex 分配，请求方证据未知：",
+    "Could not establish requester ownership for Codex native assignments in ": "无法确定以下位置的 Codex 原生分配请求方所有权：",
+    "; preserved them for a later Doctor repair.": "；已保留，等待后续 Doctor 修复。",
+    "ownership inspection prerequisites are incomplete. Inspect the binding before retrying Doctor.": "所有权检查前置条件不完整。请检查绑定后再重试 Doctor。",
+    "Preserved uncertain native submission receipts in ": "已保留以下位置不确定的原生提交回执：",
+    "Codex native assignment repair requires locked SQLite maintenance ownership": "Codex 原生分配修复需要锁定的 SQLite 维护所有权",
+    "Repaired native pending assignments in ": "已修复以下数量的 Codex 原生待处理分配：",
+    "Codex native assignment bindings could not be repaired; preserved them for a later openclaw doctor --fix pass.": "Codex 原生分配绑定无法修复；已保留，等待后续 openclaw doctor --fix。"
+  }
+}

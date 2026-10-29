@@ -1,0 +1,7 @@
+{
+  "file": "extensions/googlechat/src/format.ts",
+  "description": "v2026.10.8 Google Chat 附件提示",
+  "replacements": {
+    "Google Chat outbound attachments require remote HTTP(S) URLs.": "Google Chat 出站附件需要远程 HTTP(S) URL。"
+  }
+}

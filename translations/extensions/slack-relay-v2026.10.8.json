@@ -1,0 +1,7 @@
+{
+  "file": "extensions/slack/src/monitor/relay-source.ts",
+  "description": "v2026.10.8 Slack 中继提示",
+  "replacements": {
+    "Slack relay websocket heartbeat timed out": "Slack 中继 WebSocket 心跳超时"
+  }
+}

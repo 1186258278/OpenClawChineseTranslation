@@ -7,7 +7,7 @@
     "`- CRITICAL: state directory missing (${displayStateDir}). Sessions, credentials, logs, and config are stored there.`": "`- 严重：状态目录缺失 (${displayStateDir})。会话、凭据、日志和配置都存储在那里。`",
     "\"- Gateway is in remote mode; run doctor on the remote host where the gateway runs.\"": "\"- 网关处于远程模式；请在运行网关的远程主机上执行 doctor。\"",
     "`- State directory permissions are too open (${displayStateDir}). Recommend chmod 700.`": "`- 状态目录权限过于开放 (${displayStateDir})。建议 chmod 700。`",
-    "`- CRITICAL: ${label} missing (${displayDir}).`": "`- 严重：${label} 缺失 (${displayDir})。`",
+    "`- ${label} missing (${displayDir}).`": "`- ${label} 缺失 (${displayDir})。`",
     "\"Sessions dir\"": "\"会话目录\"",
     "\"Session store dir\"": "\"会话存储目录\"",
     "\"OAuth dir\"": "\"OAuth 目录\"",

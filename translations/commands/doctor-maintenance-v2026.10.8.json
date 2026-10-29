@@ -1,0 +1,9 @@
+{
+  "file": "src/commands/doctor-maintenance.ts",
+  "description": "v2026.10.8 Doctor 网关恢复提示",
+  "replacements": {
+    "Warning: Doctor could not complete Gateway restoration: ": "警告：Doctor 无法完成网关恢复：",
+    "After Doctor exits, run ": "Doctor 退出后，请运行 ",
+    "resolve the reported failure, then run ": "解决报告的失败后，再运行 "
+  }
+}

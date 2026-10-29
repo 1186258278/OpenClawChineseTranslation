@@ -1,0 +1,10 @@
+{
+  "file": "extensions/google/transport-stream-sse.ts",
+  "description": "v2026.10.8 Google SSE 错误提示",
+  "replacements": {
+    "No response body": "响应正文为空",
+    "Google SSE stream ended with an incomplete frame": "Google SSE 流以不完整帧结束",
+    "Google SSE stream returned malformed JSON": "Google SSE 流返回了格式错误的 JSON",
+    "Google stream failed": "Google 流失败"
+  }
+}

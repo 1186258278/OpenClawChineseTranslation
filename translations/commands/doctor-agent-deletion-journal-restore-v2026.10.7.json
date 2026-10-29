@@ -3,14 +3,14 @@
   "description": "v2026.10.7 doctor-agent-deletion-journal-restore 用户可见提示",
   "replacements": {
     "`Could not release agent recovery inspection snapshot: ${snapshot.location}`": "`无法释放智能体恢复检查快照： ${snapshot.location}`",
-    "`Agent ${target.agentId} remains held; could not verify its original producer: ${formatErrorMessage(error)}`": "`智能体 ${target.agentId} 仍被保留；无法验证其原始生成程序： ${formatErrorMessage(error)}`",
+    "`Agent ${target.agentId} remains held; could not verify its database ownership: ${formatErrorMessage(error)}`": "`智能体 ${target.agentId} 仍被保留；无法验证其数据库所有权： ${formatErrorMessage(error)}`",
     "\"Agent deletion recovery changed; preserved stores remain held. Rerun Doctor.\"": "\"智能体删除恢复状态发生变更；已保留的存储仍将保留。请重新运行 Doctor。\"",
     "\"Recovery backup does not preserve the deletion reconstruction records.\"": "\"恢复备份未保留删除重建记录。\"",
-    "\"Recovery backup does not preserve the affected agent producer metadata.\"": "\"恢复备份未保留受影响智能体的生成程序元数据。\"",
+    "\"Recovery backup does not preserve the verified agent ownership metadata.\"": "\"恢复备份未保留经过验证的智能体所有权元数据。\"",
     "\"Agent restoration requires a verified shared-state and reconstruction-record backup.\"": "\"恢复智能体需要经过验证的共享状态及重建记录备份。\"",
     "`System agent ${agentId} ownership changed before recovery.`": "`系统智能体 ${agentId} 的所有权在恢复前发生变更。`",
     "`Agent ${agentId} remains held: ${result.message}`": "`智能体 ${agentId} 仍被保留： ${result.message}`",
     "`Agent ${agentId} restoration left ${target.path} held.`": "`智能体 ${agentId} 恢复后仍保留 ${target.path}。`",
-    "`Warning: Automatically restored agent ${agentId} database ${target.path}${isReservedSystemAgentId(agentId) ? \" after verifying reserved system-agent ownership\" : ` created by affected OpenClaw ${target.producer.app_version}`}. Verified backup: ${backupPaths.find((entry) => samePath(entry.sourcePath, target.path))!.path}; shared state and reconstruction records: ${sharedBackup.path}.`": "`警告：已自动恢复智能体 ${agentId} 的数据库 ${target.path}${isReservedSystemAgentId(agentId) ? \"（已验证保留系统智能体的所有权）\" : `，创建于受影响的 OpenClaw ${target.producer.app_version}`}。已验证的备份： ${backupPaths.find((entry) => samePath(entry.sourcePath, target.path))!.path}；共享状态及重建记录： ${sharedBackup.path}.`"
+    "`Warning: Automatically restored agent ${agentId} database ${target.path}${isReservedSystemAgentId(agentId) ? \" after verifying reserved system-agent ownership\" : \" after verifying configured ownership and missing deletion history\"}. Verified backup: ${backupPaths.find((entry) => samePath(entry.sourcePath, target.path))!.path}; shared state and reconstruction records: ${sharedBackup.path}.`": "`警告：已自动恢复智能体 ${agentId} 的数据库 ${target.path}${isReservedSystemAgentId(agentId) ? \"（已验证保留系统智能体的所有权）\" : \"（已验证配置的所有权和缺失的删除历史）\"}。已验证的备份： ${backupPaths.find((entry) => samePath(entry.sourcePath, target.path))!.path}；共享状态及重建记录： ${sharedBackup.path}。`"
   }
 }

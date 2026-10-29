@@ -1,0 +1,7 @@
+{
+  "file": "src/commands/doctor-plugin-host-links.ts",
+  "description": "v2026.10.8 Doctor 主机对等链接警告",
+  "replacements": {
+    "OpenClaw host peer link warnings:": "OpenClaw 主机对等链接警告："
+  }
+}
