@@ -297,6 +297,21 @@
   const CIYAPI_API_BASE = 'https://ciyapi.79tian.com/v1';
   const CIYAPI_STORAGE_KEY = 'ciyapi_api_key';
 
+  // Filter recommendations only; keep raw catalogs for explicit legacy requests.
+  // A current ID is eligible only when the gateway actually advertises it.
+  function currentMiniMaxTextChoices(models) {
+    const modelName = model => model.id.split('/').pop().toLowerCase();
+    const current = ['minimax-m3.1-flash', 'minimax-m3'];
+    const rank = model => {
+      const index = current.indexOf(modelName(model));
+      return index < 0 ? current.length : index;
+    };
+    return models.filter(model => {
+      const name = modelName(model);
+      return !/^(?:minimax-m\d|abab\d)/.test(name) || current.includes(name);
+    }).sort((a, b) => rank(a) - rank(b));
+  }
+
   function getCiyapiApiKey() {
     return document.getElementById('ciyapi-api-key')?.value?.trim()
       || localStorage.getItem(CIYAPI_STORAGE_KEY) || '';
@@ -353,9 +368,10 @@
         throw new Error(data?.error?.message || data?.message || `请求失败 (${resp.status})`);
       }
 
-      const models = (Array.isArray(data.data) ? data.data : [])
+      const selectedModel = selectEl.value || 'auto';
+      const models = currentMiniMaxTextChoices((Array.isArray(data.data) ? data.data : [])
         .map(m => ({ id: String(m.id || '').trim(), name: String(m.id || m.name || '').trim() }))
-        .filter(m => m.id);
+        .filter(m => m.id));
 
       const builtins = [
         { id: 'auto', name: 'Auto（自动选择最优）' },
@@ -376,8 +392,11 @@
         html += models.map(m => `<option value="${m.id}">${escapeHtml(m.name)}</option>`).join('');
         html += '</optgroup>';
       }
+      if (!models.some(m => m.id === selectedModel) && !builtins.some(m => m.id === selectedModel)) {
+        html += `<optgroup label="Current selection"><option value="${escapeAttr(selectedModel)}">${escapeHtml(selectedModel)}</option></optgroup>`;
+      }
       selectEl.innerHTML = html;
-      selectEl.value = 'auto';
+      selectEl.value = selectedModel;
 
       statusEl.className = 'ssy-test-ok';
       statusEl.textContent = `共 ${models.length} 个模型已加载`;
@@ -1007,7 +1026,7 @@
     if (!select) return;
 
     const currentSelected = preferredModelId || getSelectedModelId() || SSY_DEFAULT_LLM_MODEL;
-    const allModels = ssyModelState.llmModels;
+    const allModels = currentMiniMaxTextChoices(ssyModelState.llmModels);
     const preferSet = new Set([...SSY_PREFERRED_LLM_MODELS, SSY_DEFAULT_LLM_MODEL]);
     const recommended = [];
     const others = [];
