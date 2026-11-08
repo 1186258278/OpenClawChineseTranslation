@@ -282,7 +282,7 @@ jobs:
               const controlUiRoot = path.join(extensionsRoot, plugin.name, "dist", "control-ui");
               if (!fs.existsSync(controlUiRoot)) continue;
               for (const entry of fs.readdirSync(controlUiRoot, { withFileTypes: true })) {
-                if (/^[a-f0-9]{64}$/u.test(entry.name) && entry.isFile()) {
+                if (/^[a-f0-9]{64}$/u.test(entry.name) && !entry.isDirectory()) {
                   fs.rmSync(path.join(controlUiRoot, entry.name), { force: true });
                   console.log(`Removed stale plugin Control UI file: ${extensionsRoot}/${plugin.name}/${entry.name}`);
                 }
