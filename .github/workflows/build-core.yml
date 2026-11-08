@@ -275,8 +275,8 @@ jobs:
           import fs from "node:fs";
           import path from "node:path";
 
-          const extensionsRoot = path.resolve("dist/extensions");
-          if (fs.existsSync(extensionsRoot)) {
+          for (const extensionsRoot of ["extensions", "dist/extensions"]) {
+            if (!fs.existsSync(extensionsRoot)) continue;
             for (const plugin of fs.readdirSync(extensionsRoot, { withFileTypes: true })) {
               if (!plugin.isDirectory()) continue;
               const controlUiRoot = path.join(extensionsRoot, plugin.name, "dist", "control-ui");
@@ -284,12 +284,13 @@ jobs:
               for (const entry of fs.readdirSync(controlUiRoot, { withFileTypes: true })) {
                 if (/^[a-f0-9]{64}$/u.test(entry.name) && entry.isFile()) {
                   fs.rmSync(path.join(controlUiRoot, entry.name), { force: true });
-                  console.log(`Removed stale plugin Control UI file: ${plugin.name}/${entry.name}`);
+                  console.log(`Removed stale plugin Control UI file: ${extensionsRoot}/${plugin.name}/${entry.name}`);
                 }
               }
             }
           }
           NODE
+          pnpm plugins:assets:build
           pnpm plugins:assets:copy
           pnpm ui:build
           echo "✅ Dashboard UI 构建完成"
