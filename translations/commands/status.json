@@ -9,7 +9,9 @@
     "appendStatusReportLines(report, \"Plugin compatibility\", params.pluginCompatibilityLines);": "appendStatusReportLines(report, \"插件兼容性\", params.pluginCompatibilityLines);",
     "appendStatusReportLines(report, \"Model selection\", params.modelSelectionLines);": "appendStatusReportLines(report, \"模型选择\", params.modelSelectionLines);",
     "[{ key: \"Event\", header: \"Event\", flex: true, minWidth: 24 }]": "[{ key: \"Event\", header: \"事件\", flex: true, minWidth: 24 }]",
-    "[\"Channels\", params.channelsColumns, params.channelsRows, \"No channels configured\"],": "theme.muted(\"尚未配置渠道\")",
-    "[\"Sessions\", params.sessionsColumns, params.sessionsRows, \"No sessions\"],": "theme.muted(\"暂无会话\")"
+    "\"Channels\"": "\"通道\"",
+    "\"Sessions\"": "\"会话\"",
+    "\"No channels configured\"": "\"尚未配置渠道\"",
+    "\"No sessions\"": "\"暂无会话\""
   }
 }
