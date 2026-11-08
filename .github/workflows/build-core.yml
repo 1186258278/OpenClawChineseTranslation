@@ -294,6 +294,7 @@ jobs:
             }
           }
 
+          cleanControlUiRoots("dist");
           cleanControlUiRoots("extensions");
           cleanControlUiRoots("dist/extensions");
           NODE
