@@ -54,15 +54,15 @@
     "Refresh": "              刷新\n",
     "Add account": "                          添加账户\n",
     "Applies to the selected bot account. Guests get repository answers with hidden\n                    helpers of the same agent. No writes, commands, visible work sessions, or other\n                    agents. Maintainers keep their normal access.": "适用于所选机器人账户。访客由同一智能体的隐藏助手回答仓库问题。\n                                      不允许写入、执行命令、可见工作会话或其他智能体。\n                                      维护者保留正常访问权限。",
-    "Guest setup and limits": ">访客设置与限制<",
-    "Billing cycle since {view.snapshot.spend.cycleStart}": ">计费周期起始日：${snapshot.spend.cycleStart}<",
-    "Remove stored entry for ": "删除 ${entry.username ? `@${entry.username}` : entry.userId} 的存储条目",
+    "Guest setup and limits": "访客设置与限制",
+    "Billing cycle since {view.snapshot.spend.cycleStart}": "计费周期起始日：{view.snapshot.spend.cycleStart}",
+    "Remove stored entry for ": "删除 ${entry().username ? `@${entry().username}` : entry().userId} 的存储条目",
     "Remove": "                                                        删除\n",
     "No manual entries yet. Add a maintainer above or set <code>allowFrom</code> in\n                      config.": "暂无手动条目。请在上方添加维护者，或在配置中设置\n                                      <code>allowFrom</code>。",
     "Verified through": "                                        验证来源：\n",
-    ". To enable yourself, add your X handle to your GitHub profile.": ">。如需启用自己的账户，请在 GitHub 个人资料中添加 X 用户名。",
-    "Profile setup": ">个人资料设置<",
-    "Last successful sync:": "html`上次同步成功时间：",
-    "The last good set remains active. ": "\"上次有效的账户集合仍在生效。\""
+    ". To enable yourself, add your X handle to your GitHub profile.": "。如需启用自己的账户，请在 GitHub 个人资料中添加 X 用户名。",
+    "Profile setup": "个人资料设置",
+    "Last successful sync:": "上次同步成功时间：",
+    "The last good set remains active. ": "上次有效的账户集合仍在生效。"
   }
 }
