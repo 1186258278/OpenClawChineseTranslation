@@ -275,20 +275,27 @@ jobs:
           import fs from "node:fs";
           import path from "node:path";
 
-          for (const extensionsRoot of ["extensions", "dist/extensions"]) {
-            if (!fs.existsSync(extensionsRoot)) continue;
-            for (const plugin of fs.readdirSync(extensionsRoot, { withFileTypes: true })) {
-              if (!plugin.isDirectory()) continue;
-              const controlUiRoot = path.join(extensionsRoot, plugin.name, "dist", "control-ui");
-              if (!fs.existsSync(controlUiRoot)) continue;
-              for (const entry of fs.readdirSync(controlUiRoot, { withFileTypes: true })) {
-                if (/^[a-f0-9]{64}$/u.test(entry.name) && !entry.isDirectory()) {
-                  fs.rmSync(path.join(controlUiRoot, entry.name), { force: true });
-                  console.log(`Removed stale plugin Control UI file: ${extensionsRoot}/${plugin.name}/${entry.name}`);
+          function cleanControlUiRoots(directory) {
+            if (!fs.existsSync(directory)) return;
+            for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
+              const entryPath = path.join(directory, entry.name);
+              if (entry.isDirectory()) {
+                if (entry.name === "node_modules") continue;
+                if (entry.name === "control-ui" && path.basename(directory) === "dist") {
+                  for (const asset of fs.readdirSync(entryPath, { withFileTypes: true })) {
+                    if (/^[a-f0-9]{64}$/u.test(asset.name) && !asset.isDirectory()) {
+                      fs.rmSync(path.join(entryPath, asset.name), { force: true });
+                      console.log(`Removed stale plugin Control UI entry: ${path.relative(".", path.join(entryPath, asset.name))}`);
+                    }
+                  }
                 }
+                cleanControlUiRoots(entryPath);
               }
             }
           }
+
+          cleanControlUiRoots("extensions");
+          cleanControlUiRoots("dist/extensions");
           NODE
           pnpm plugins:assets:build
           pnpm plugins:assets:copy
