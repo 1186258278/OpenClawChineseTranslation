@@ -1,5 +1,0 @@
-{
-  "file": "ui/src/pages/chat/components/chat-composer.ts",
-  "description": "对话状态指示器（上下文压缩/Fallback 提示）",
-  "replacements": {}
-}

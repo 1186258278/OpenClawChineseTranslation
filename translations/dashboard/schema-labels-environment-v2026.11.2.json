@@ -1,0 +1,11 @@
+{
+  "file": "src/config/schema.labels.environment.ts",
+  "description": "Dashboard 环境字段标签翻译（v2026.11.2 模块拆分）",
+  "replacements": {
+    "  env: \"Environment\"": "  env: \"环境\"",
+    "  \"env.shellEnv\": \"Shell Environment Import\"": "  \"env.shellEnv\": \"Shell 环境导入\"",
+    "  \"env.shellEnv.enabled\": \"Shell Environment Import Enabled\"": "  \"env.shellEnv.enabled\": \"Shell 环境导入启用\"",
+    "  \"env.shellEnv.timeoutMs\": \"Shell Environment Import Timeout (ms)\"": "  \"env.shellEnv.timeoutMs\": \"Shell 环境导入超时 (ms)\"",
+    "  \"env.vars\": \"Environment Variable Overrides\"": "  \"env.vars\": \"环境变量覆盖\""
+  }
+}

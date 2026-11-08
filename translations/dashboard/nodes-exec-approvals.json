@@ -1,5 +1,5 @@
 {
-  "file": "ui/src/pages/devices/view-exec-approvals.ts",
+  "file": "ui/src/pages/devices/view-exec-approvals.tsx",
   "description": "Dashboard 节点页面 - 执行审批策略",
   "replacements": {
     "Defaults": "默认"

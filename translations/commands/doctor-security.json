@@ -5,8 +5,8 @@
     "without authentication.": "但未设置认证。",
     "Anyone on your network (or internet if port-forwarded) can fully control your agent.": "你网络上的任何人（如果做了端口转发则是互联网上的任何人）都可以完全控制你的 AI 助手。",
     "(network-accessible).": "(可被网络访问)。",
-    "Ensure your auth credentials are strong and not exposed.": "请确保你的认证凭据足够强且未被泄露。",
     "note(lines.join(\"\\n\"), \"Security\")": "note(lines.join(\"\\n\"), \"安全\")",
-    "`- Run: ${formatCliCommand(\"openclaw security audit --deep\")}`": "`- 运行: ${formatCliCommand(\"openclaw security audit --deep\")}`"
+    "`- Run: ${formatCliCommand(\"openclaw security audit --deep\")}`": "`- 运行: ${formatCliCommand(\"openclaw security audit --deep\")}`",
+    "Use strong authentication credentials and keep them private.": "请确保你的认证凭据足够强且未被泄露。"
   }
 }

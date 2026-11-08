@@ -1,0 +1,29 @@
+{
+  "file": "src/config/schema.labels.messages.ts",
+  "description": "Dashboard 消息字段标签翻译（v2026.11.2 模块拆分）",
+  "replacements": {
+    "  messages: \"Messages\"": "  messages: \"消息\"",
+    "  \"messages.visibleReplies\": \"Visible Replies\"": "  \"messages.visibleReplies\": \"可见回复\"",
+    "  \"messages.responsePrefix\": \"Outbound Response Prefix\"": "  \"messages.responsePrefix\": \"Outbound 响应前缀\"",
+    "  \"messages.usageTemplate\": \"Usage Footer Template\"": "  \"messages.usageTemplate\": \"Usage Footer 模板\"",
+    "  \"messages.responseUsage\": \"Default Usage Footer Mode\"": "  \"messages.responseUsage\": \"默认 Usage Footer 模式\"",
+    "  \"messages.groupChat\": \"Group Chat Rules\"": "  \"messages.groupChat\": \"群聊规则\"",
+    "  \"messages.groupChat.mentionPatterns\": \"Group Mention Patterns\"": "  \"messages.groupChat.mentionPatterns\": \"Group 提及 模式\"",
+    "  \"messages.groupChat.historyLimit\": \"Group History Limit\"": "  \"messages.groupChat.historyLimit\": \"Group History 限制\"",
+    "  \"messages.groupChat.unmentionedInbound\": \"Group Unmentioned Inbound\"": "  \"messages.groupChat.unmentionedInbound\": \"分组 Unmentioned Inbound\"",
+    "  \"messages.groupChat.visibleReplies\": \"Group Visible Replies\"": "  \"messages.groupChat.visibleReplies\": \"分组 Visible Replies\"",
+    "  \"messages.queue\": \"Inbound Queue\"": "  \"messages.queue\": \"Inbound 队列\"",
+    "  \"messages.queue.mode\": \"Queue Mode\"": "  \"messages.queue.mode\": \"队列 模式\"",
+    "  \"messages.queue.byChannel\": \"Queue Mode by Channel\"": "  \"messages.queue.byChannel\": \"队列 模式 by 通道\"",
+    "  \"messages.queue.debounceMsByChannel\": \"Queue Fallback Debounce by Channel (ms)\"": "  \"messages.queue.debounceMsByChannel\": \"按通道队列回退防抖 (ms)\"",
+    "  \"messages.queue.cap\": \"Queue Capacity\"": "  \"messages.queue.cap\": \"队列 Capacity\"",
+    "  \"messages.queue.drop\": \"Queue Drop Strategy\"": "  \"messages.queue.drop\": \"队列 Drop Strategy\"",
+    "  \"messages.inbound\": \"Inbound Debounce\"": "  \"messages.inbound\": \"Inbound 防抖\"",
+    "  \"messages.ackReaction\": \"Ack Reaction Emoji\"": "  \"messages.ackReaction\": \"确认反应 表情\"",
+    "  \"messages.ackReactionScope\": \"Ack Reaction Scope\"": "  \"messages.ackReactionScope\": \"确认反应 范围\"",
+    "  \"messages.statusReactions\": \"Status Reactions\"": "  \"messages.statusReactions\": \"状态 Reactions\"",
+    "  \"messages.statusReactions.enabled\": \"Enable Status Reactions\"": "  \"messages.statusReactions.enabled\": \"启用 状态 Reactions\"",
+    "  \"messages.inbound.debounceMs\": \"Inbound Message Debounce (ms)\"": "  \"messages.inbound.debounceMs\": \"Inbound Message 防抖 (ms)\"",
+    "  \"messages.inbound.byChannel\": \"Inbound Debounce by Channel (ms)\"": "  \"messages.inbound.byChannel\": \"Inbound 防抖 by 通道 (ms)\""
+  }
+}

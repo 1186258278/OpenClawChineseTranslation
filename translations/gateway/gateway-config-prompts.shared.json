@@ -6,7 +6,7 @@
     "hint: \"Private HTTPS for your tailnet (devices on Tailscale)\"": "hint: \"Tailnet 私有 HTTPS (Tailscale 设备)\"",
     "hint: \"Public HTTPS via Tailscale Funnel (internet)\"": "hint: \"通过 Tailscale Funnel 的公共 HTTPS (互联网)\"",
     "\"Tailscale binary not found in PATH or /Applications.\"": "\"在 PATH 或 /Applications 中未找到 Tailscale 二进制文件。\"",
-    "\"Ensure Tailscale is installed from:\"": "\"请确保已安装 Tailscale：\"",
-    "\"You can continue setup, but serve/funnel will fail at runtime.\"": "\"您可以继续设置，但 serve/funnel 将在运行时失败。\""
+    "\"You can continue setup, but serve/funnel will fail at runtime.\"": "\"您可以继续设置，但 serve/funnel 将在运行时失败。\"",
+    "\"Install Tailscale from:\"": "\"请确保已安装 Tailscale：\""
   }
 }

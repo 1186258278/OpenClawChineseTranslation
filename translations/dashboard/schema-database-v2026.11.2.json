@@ -1,0 +1,16 @@
+{
+  "file": "src/config/zod-schema.database.ts",
+  "description": "Database 配置字段标签与帮助翻译（v2026.11.2）",
+  "replacements": {
+    "label: \"Database Engine (Experimental)\"": "label: \"数据库引擎（实验性）\"",
+    "help: \"Store engine (default: sqlite). Experimental postgres selects every store with a registered PostgreSQL schema; other stores stay on SQLite. Port existing data in supported families with openclaw database port while the Gateway is stopped.\"": "help: \"存储引擎（默认：sqlite）。实验性 postgres 会为已注册 PostgreSQL schema 的存储选择 PostgreSQL，其他存储仍使用 SQLite。网关停止时，可使用 openclaw database port 为受支持的存储迁移现有数据。\"",
+    "label: \"PostgreSQL Connection (Experimental)\"": "label: \"PostgreSQL 连接（实验性）\"",
+    "help: \"Experimental PostgreSQL connection DSN, required when database.engine is postgres. Use an env/file/exec SecretRef; store-backed refs cannot bootstrap the database. The host resolves it before handing it to database workers. Connection failures never fall back to SQLite.\"": "help: \"实验性 PostgreSQL 连接 DSN，database.engine 为 postgres 时必需。使用 env/file/exec SecretRef；基于存储的引用不能引导数据库。主机解析后才会交给数据库工作线程。连接失败时不会回退到 SQLite。\"",
+    "label: \"PostgreSQL Schema Prefix (Experimental)\"": "label: \"PostgreSQL Schema 前缀（实验性）\"",
+    "help: \"Prefix for new experimental PostgreSQL store schemas (default: openclaw). Use 1–27 lowercase letters, digits, or underscores, starting with a letter or underscore. Existing anchors retain their schema.\"": "help: \"新建实验性 PostgreSQL 存储 schema 使用的前缀（默认：openclaw）。使用 1–27 个小写字母、数字或下划线，并以字母或下划线开头。现有锚点保留其 schema。\"",
+    "label: \"PostgreSQL (Experimental)\"": "label: \"PostgreSQL（实验性）\"",
+    "help: \"Experimental PostgreSQL connection and schema naming. Back up each PostgreSQL store schema together with its SQLite anchor.\"": "help: \"实验性 PostgreSQL 连接与 schema 命名。请将每个 PostgreSQL 存储 schema 与其 SQLite 锚点一起备份。\"",
+    "label: \"Database (Experimental)\"": "label: \"数据库（实验性）\"",
+    "help: \"Database engine selection. SQLite is the supported default; experimental PostgreSQL applies to supported store families. Doctor reports each store's engine and warns about stores that remain on SQLite.\"": "help: \"数据库引擎选择。SQLite 是受支持的默认值；实验性 PostgreSQL 适用于受支持的存储族。Doctor 会报告每个存储的引擎，并警告仍使用 SQLite 的存储。\""
+  }
+}

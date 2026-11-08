@@ -18,6 +18,6 @@
     "\"Show channel health and recent session recipients\"": "\"显示渠道健康状态和最近会话收件人\"",
     "\"Fetch health from the running gateway\"": "\"从运行中的网关获取健康状态\"",
     "\"Manage OpenClaw mcp.servers config and channel bridge\"": "\"管理 OpenClaw mcp.servers 配置和渠道桥接\"",
-    "\"Inspect database schema compatibility and shared-state write ownership\"": "\"检查数据库 schema 兼容性和共享状态写入归属\""
+    "\"Inspect database compatibility, manage ownership, and port workboard stores\"": "\"检查数据库 schema 兼容性和共享状态写入归属\""
   }
 }

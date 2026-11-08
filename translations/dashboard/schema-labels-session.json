@@ -48,6 +48,10 @@
     "  \"tools.agentToAgent.enabled\": \"Enable Agent-to-Agent Tool\"": "  \"tools.agentToAgent.enabled\": \"启用代理间工具\"",
     "  \"tools.agentToAgent.allow\": \"Agent-to-Agent Target Allowlist\"": "  \"tools.agentToAgent.allow\": \"代理间目标白名单\"",
     "  \"agents.entries.*.tools.agentToAgent\": \"Agent Outbound Messaging\"": "  \"agents.entries.*.tools.agentToAgent\": \"代理出站消息\"",
-    "  \"agents.entries.*.tools.agentToAgent.send\": \"Agent Send Destination Allowlist\"": "  \"agents.entries.*.tools.agentToAgent.send\": \"代理发送目标白名单\""
+    "  \"agents.entries.*.tools.agentToAgent.send\": \"Agent Send Destination Allowlist\"": "  \"agents.entries.*.tools.agentToAgent.send\": \"代理发送目标白名单\"",
+    "  \"agents.entries.*.subagents.delegateToolsTo\": \"Delegated Tool Targets\",": "  \"agents.entries.*.subagents.delegateToolsTo\": \"委派工具目标\",",
+    "  \"session.communication\": \"Session Communication Defaults\",": "  \"session.communication\": \"会话通信默认设置\",",
+    "  \"session.communication.send\": \"Send Messages to Other Sessions\",": "  \"session.communication.send\": \"向其他会话发送消息\",",
+    "  \"session.communication.receive\": \"Receive Messages from Other Sessions\",": "  \"session.communication.receive\": \"接收其他会话消息\","
   }
 }
