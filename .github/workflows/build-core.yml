@@ -270,6 +270,27 @@ jobs:
       - name: 构建 Dashboard UI
         working-directory: openclaw
         run: |
+          echo "🧹 清理缓存恢复的失效插件 Control UI 生成物..."
+          node --input-type=module <<'NODE'
+          import fs from "node:fs";
+          import path from "node:path";
+
+          const extensionsRoot = path.resolve("dist/extensions");
+          if (fs.existsSync(extensionsRoot)) {
+            for (const plugin of fs.readdirSync(extensionsRoot, { withFileTypes: true })) {
+              if (!plugin.isDirectory()) continue;
+              const controlUiRoot = path.join(extensionsRoot, plugin.name, "dist", "control-ui");
+              if (!fs.existsSync(controlUiRoot)) continue;
+              for (const entry of fs.readdirSync(controlUiRoot, { withFileTypes: true })) {
+                if (/^[a-f0-9]{64}$/u.test(entry.name) && entry.isFile()) {
+                  fs.rmSync(path.join(controlUiRoot, entry.name), { force: true });
+                  console.log(`Removed stale plugin Control UI file: ${plugin.name}/${entry.name}`);
+                }
+              }
+            }
+          }
+          NODE
+          pnpm plugins:assets:copy
           pnpm ui:build
           echo "✅ Dashboard UI 构建完成"
           ls -la dist/control-ui/ || echo "❌ control-ui 目录不存在"
