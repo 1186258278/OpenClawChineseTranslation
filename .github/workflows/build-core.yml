@@ -235,6 +235,10 @@ jobs:
           if [ -f scripts/check-cli-bootstrap-imports.mts ]; then
             node --import tsx scripts/check-cli-bootstrap-imports.mts
           fi
+
+          # 3b2: 先生成插件 Control UI，再由 runtime-postbuild 读取生成清单。
+          # 新鲜依赖可能改变 immutable generation hash，不能让后处理提前复制上游旧清单。
+          run_package_script_if_present plugins:assets:build
           
           # 3c: 运行时后处理（复制 plugin-sdk alias + 插件 metadata + 渠道目录 + 运行时依赖）
           echo "📦 [3c] runtime-postbuild（含 openclaw.plugin.json 复制）..."
@@ -244,7 +248,6 @@ jobs:
           echo "📦 [3c2] build-stamp..."
           run_optional_script scripts/build-stamp false || true
           run_optional_script scripts/runtime-postbuild-stamp false || true
-          run_package_script_if_present plugins:assets:build
           run_package_script_if_present plugins:assets:copy
           # 3d: 生成类型声明（上游可能有 TS 错误，允许失败）
           echo "📦 [3d] 生成类型声明（允许失败）..."
