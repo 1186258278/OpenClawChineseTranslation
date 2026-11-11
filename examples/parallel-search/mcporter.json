@@ -1,0 +1,11 @@
+{
+  "imports": [],
+  "mcpServers": {
+    "parallel-search": {
+      "url": "https://search.parallel.ai/mcp",
+      "headers": {
+        "User-Agent": "OpenClawChineseTranslation/parallel-search-example"
+      }
+    }
+  }
+}

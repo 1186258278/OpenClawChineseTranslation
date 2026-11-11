@@ -1,0 +1,14 @@
+{
+  "name": "openclaw-zh-parallel-search-example",
+  "private": true,
+  "description": "通过 mcporter 调用免费的 Parallel Search MCP",
+  "scripts": {
+    "mcp": "mcporter --config ./mcporter.json"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "dependencies": {
+    "mcporter": "0.14.2"
+  }
+}
