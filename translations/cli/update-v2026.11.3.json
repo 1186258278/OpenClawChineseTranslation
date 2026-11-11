@@ -1,0 +1,7 @@
+{
+  "file": "src/cli/update-cli/update-command-database-backup.ts",
+  "description": "更新恢复与网关修复提示（v2026.11.3）",
+  "replacements": {
+    "`Database rollback could not finish (data at risk: rollback-state-unverified); keep the Gateway stopped. Preserve ${params.backup.directory} and <database>.migrated-${params.runId}. Run the compatible candidate's Doctor to inspect recovery before restarting.`": "`数据库回滚未完成（数据风险：rollback-state-unverified）；请保持网关停止。请保留 ${params.backup.directory} 和 <database>.migrated-${params.runId}，重启前运行兼容候选版本的 Doctor 检查恢复状态。`"
+  }
+}

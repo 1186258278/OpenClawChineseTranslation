@@ -1,0 +1,12 @@
+{
+  "file": "extensions/signal/src/daemon-env.ts",
+  "description": "Signal 托管守护进程环境变量诊断（v2026.11.3）",
+  "replacements": {
+    "`The managed signal-cli daemon does not inherit ${names.join(\", \")} from the OpenClaw process environment. `": "`托管的 signal-cli 守护进程不会从 OpenClaw 进程环境继承 ${names.join(\", \")}。`",
+    "\"signal-cli's JVM takes proxy and trust-store settings from Java system properties: pass them in \"": "\"signal-cli 的 JVM 从 Java 系统属性读取代理和信任库设置：请通过\"",
+    "\"JAVA_TOOL_OPTIONS (for example -Dhttps.proxyHost=<host> -Dhttps.proxyPort=<port>, or \"": "\"JAVA_TOOL_OPTIONS 传入（例如 -Dhttps.proxyHost=<host> -Dhttps.proxyPort=<port>，或\"",
+    "\"-Djavax.net.ssl.trustStore=<path> for a private CA), set the variables inside a transport.cliPath \"": "\"-Djavax.net.ssl.trustStore=<path>；私有 CA），在 transport.cliPath 的\"",
+    "\"wrapper script, or run the daemon yourself with transport.kind external-native. \"": "\"包装脚本中设置变量，或使用 transport.kind external-native 自行运行守护进程。\"",
+    "`See ${SIGNAL_MANAGED_DAEMON_ENV_DOCS_URL}`": "`参见 ${SIGNAL_MANAGED_DAEMON_ENV_DOCS_URL}`"
+  }
+}

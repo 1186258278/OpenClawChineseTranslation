@@ -1,0 +1,11 @@
+{
+  "file": "src/cli/update-cli/update-repair-service.ts",
+  "description": "更新修复服务恢复提示（v2026.11.3）",
+  "replacements": {
+    "Gateway service remains stopped: ${reason}. After resolving this, start it with ": "网关服务仍处于停止状态：${reason}。解决问题后，请使用 ",
+    "Gateway remains stopped: ${warning}. Run openclaw gateway status --deep.": "网关仍处于停止状态：${warning}。请运行 openclaw gateway status --deep。",
+    "Recovered update's Gateway stop intent changed. Run openclaw gateway status --deep.": "已恢复更新的网关停止意图发生变化。请运行 openclaw gateway status --deep。",
+    "Gateway remains stopped: ${dataAtRisk}. Run openclaw gateway status --deep.": "网关仍处于停止状态：${dataAtRisk}。请运行 openclaw gateway status --deep。",
+    "Gateway recovery after update repair was not verified: ${formatErrorMessage(error)}. After resolving the failure, start it with ": "更新修复后的网关恢复未通过验证：${formatErrorMessage(error)}。解决失败后，请使用 "
+  }
+}

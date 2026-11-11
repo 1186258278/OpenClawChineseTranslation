@@ -1,0 +1,7 @@
+{
+  "file": "src/cli/update-cli/update-command-failure-recovery.ts",
+  "description": "更新失败后的网关恢复提示（v2026.11.3）",
+  "replacements": {
+    "`Gateway recovered on ${version}; ${result.reason ?? \"update recovery\"} remains unverified. Recovery artifacts and package backups were retained. Run openclaw update repair.`": "`网关已在 ${version} 上恢复，但 ${result.reason ?? \"update recovery\"} 仍未验证。恢复工件和软件包备份已保留。请运行 openclaw update repair。`"
+  }
+}

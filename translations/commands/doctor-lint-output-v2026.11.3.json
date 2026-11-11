@@ -1,0 +1,7 @@
+{
+  "file": "src/commands/doctor-lint-output.ts",
+  "description": "Doctor 延后检查提示（v2026.11.3）",
+  "replacements": {
+    "\"Run `openclaw doctor` after activation.\"": "\"激活后运行 `openclaw doctor`。\""
+  }
+}

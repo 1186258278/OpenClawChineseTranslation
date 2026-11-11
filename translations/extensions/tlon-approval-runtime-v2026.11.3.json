@@ -1,0 +1,10 @@
+{
+  "file": "extensions/tlon/src/monitor/approval-runtime.ts",
+  "description": "Tlon 审批队列反馈（v2026.11.3）",
+  "replacements": {
+    "`Pending approval queue is full (${approvals.length}). Resolve existing requests by replying with approve, deny, or block followed by the request ID before asking rejected requesters to retry.`": "`待处理审批队列已满（${approvals.length}）。请先回复 approve、deny 或 block 并附上请求 ID 处理现有请求，再让被拒绝的请求方重试。`",
+    "`No pending approval found for ID: ${parsed.id}`": "`未找到请求 ID 为 ${parsed.id} 的待处理审批`",
+    "`Multiple approvals are pending. Include an approval ID with your decision.\\n\\n${formatPendingList(state.pendingApprovals)}`": "`有多个待处理审批。请在决定中包含审批 ID。\\n\\n${formatPendingList(state.pendingApprovals)}`",
+    "\"No pending approval found.\"": "\"未找到待处理审批。\""
+  }
+}

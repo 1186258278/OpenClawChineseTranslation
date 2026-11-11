@@ -1,0 +1,8 @@
+{
+  "file": "src/agents/agent-bundle-lsp-env.ts",
+  "description": "Bundle LSP 环境变量诊断提示（v2026.11.3）",
+  "replacements": {
+    "`${withheld.configurable.join(\", \")}: add to the server's \"env\" in its bundle .lsp.json if it needs them.`": "`${withheld.configurable.join(\", \")}：如需使用，请在 bundle .lsp.json 的 \"env\" 中添加。`",
+    "`${withheld.refused.join(\", \")}: refused by the host exec env policy, also in \"env\"; a server that needs them must set them itself (for example, a wrapper script as its \"command\").`": "`${withheld.refused.join(\", \")}：被主机 exec 环境策略拒绝，也无法通过 \"env\" 传入；需要这些变量的服务器必须自行设置（例如使用包装脚本作为 \"command\"）。`"
+  }
+}

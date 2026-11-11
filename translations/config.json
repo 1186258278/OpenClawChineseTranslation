@@ -67,7 +67,10 @@
       "cli/update-command-windows-preflight-v2026.10.7.json",
       "cli/daemon-install-v2026.10.8.json",
       "cli/restart-health-diagnostics-v2026.10.8.json",
-      "cli/update-repair-v2026.10.8.json"
+      "cli/update-repair-v2026.10.8.json",
+      "cli/update-v2026.11.3.json",
+      "cli/update-recovery-v2026.11.3.json",
+      "cli/update-repair-v2026.11.3.json"
     ],
     "wizard": [
       "wizard/onboarding.json",
@@ -175,7 +178,9 @@
       "commands/doctor-plugin-host-links-v2026.10.8.json",
       "commands/doctor-relative-session-preservation-v2026.10.8.json",
       "commands/doctor-relative-session-store-v2026.10.8.json",
-      "commands/doctor-codex-route-warnings-v2026.10.8.json"
+      "commands/doctor-codex-route-warnings-v2026.10.8.json",
+      "commands/doctor-bundle-lsp-env-v2026.11.3.json",
+      "commands/doctor-lint-output-v2026.11.3.json"
     ],
     "daemon": [
       "daemon/systemd-hints.json",
@@ -332,14 +337,17 @@
       "extensions/slack-relay-v2026.10.8.json",
       "extensions/tlon-ingress-v2026.10.8.json",
       "extensions/fish-audio-tts-v2026.10.8.json",
-      "extensions/gradium-tts-v2026.10.8.json"
+      "extensions/gradium-tts-v2026.10.8.json",
+      "extensions/signal-daemon-env-v2026.11.3.json",
+      "extensions/tlon-approval-runtime-v2026.11.3.json"
     ],
     "plugins": [
       "plugins/provider-auth-mode.json",
       "plugins/provider-auth-ref.json"
     ],
     "config": [
-      "config/schema-dynamic-hints.json"
+      "config/schema-dynamic-hints.json",
+      "config/agent-bundle-lsp-env-v2026.11.3.json"
     ],
     "providers": [
       "providers/plugin-providers-noninteractive.json"

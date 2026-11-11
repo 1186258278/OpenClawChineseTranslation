@@ -1,0 +1,9 @@
+{
+  "file": "src/commands/doctor-bundle-lsp-env.ts",
+  "description": "Doctor Bundle LSP 环境变量说明（v2026.11.3）",
+  "replacements": {
+    "\"Bundle LSP servers start from an allowlisted environment, not the full Gateway environment. These Gateway variables are set but not passed:\"": "\"Bundle LSP 服务器从允许列表环境启动，不会继承完整网关环境。以下网关变量已设置但未传入：\"",
+    "`Docs: ${LSP_ENV_PASSTHROUGH_DOCS_URL}`": "`文档：${LSP_ENV_PASSTHROUGH_DOCS_URL}`",
+    "\"Bundle LSP environment\"": "\"Bundle LSP 环境\""
+  }
+}
