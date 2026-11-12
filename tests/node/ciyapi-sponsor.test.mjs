@@ -86,3 +86,23 @@ test("CiyAPI setup does not read or overwrite the old provider configuration", a
   assert.match(onboard, /applyProviderConfig/);
   assert.match(onboard, /applyConfig/);
 });
+
+test("MiniMax guide separates direct API choices from gateway availability", async () => {
+  const catalog = await text("translations/providers/files/extensions/qingchenyun/provider-catalog.ts");
+  const guide = await text("docs/guides/models-cn.md");
+
+  assert.equal(catalog.includes('id: "MiniMax-'), false);
+  assert.ok(guide.indexOf('`MiniMax-M3.1-Flash`') < guide.indexOf('`MiniMax-M3`'));
+  for (const id of ["MiniMax-M3.1-Flash", "MiniMax-M3"]) {
+    assert.equal(guide.includes(`\`${id}\``), true, `${id} is missing from the MiniMax guide`);
+  }
+
+  for (const endpoint of [
+    "https://api.minimax.io/v1",
+    "https://api.minimax.io/anthropic",
+    "https://api.minimaxi.com/v1",
+    "https://api.minimaxi.com/anthropic",
+  ]) {
+    assert.equal(guide.includes(endpoint), true, `${endpoint} is missing from the MiniMax guide`);
+  }
+});
