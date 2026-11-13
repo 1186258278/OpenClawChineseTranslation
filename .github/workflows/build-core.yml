@@ -200,9 +200,14 @@ jobs:
           # 拆分构建步骤（与 test-local-full.ps1 一致），
           # 避免上游 tsc 类型错误阻塞整个流程
           
-          # 3a: 打包 canvas a2ui
+          # 3a: 打包 canvas a2ui（上游 v2026.11.x 起已移除该脚本与 a2ui 打包流程，
+          # 无条件执行会让 pnpm 直接报错退出，故仅在脚本存在时打包）
           echo "📦 [3a] 打包 canvas a2ui..."
-          pnpm canvas:a2ui:bundle
+          if node -e "const s=require('./package.json').scripts||{};process.exit(s['canvas:a2ui:bundle']?0:1)"; then
+            pnpm canvas:a2ui:bundle
+          else
+            echo "⏭️ 上游已移除 canvas:a2ui:bundle，跳过（面板注入走 control-ui/assets 回退路径）"
+          fi
           
           # 3b: tsdown 主构建（核心，不含 tsc 类型检查）
           # 上游 main 已将 tsdown-build/build-stamp 从 .mjs 迁移到 .mts；稳定 tag 仍可能保留 .mjs。
