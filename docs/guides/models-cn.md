@@ -105,6 +105,7 @@ openclaw onboard
 
 | 选项 | 说明 |
 |------|------|
+| MiniMax M3.1 Flash | Recommended; 1,000,000-token context window; text, image, and video input; adaptive thinking |
 | MiniMax M3 | Recommended; 1,000,000-token context window; text, image, and video input; adaptive or disabled thinking |
 | MiniMax M2.7 | 204,800-token context window; text input; thinking always enabled |
 | MiniMax M2.5 | 标准版 |
@@ -117,13 +118,14 @@ Prices are in USD per million tokens. A dash means the official pricing page doe
 
 | Model | Service tier | Input-token range | Input | Output | Cache read | Cache write |
 |-------|--------------|-------------------|-------|--------|------------|-------------|
+| MiniMax M3.1 Flash | Not supported | All input lengths | 0.15 | 0.60 | 0.015 | - |
 | MiniMax M3 | Standard | Up to 512,000 | 0.30 | 1.20 | 0.06 | - |
 | MiniMax M3 | Standard | Over 512,000 | 0.60 | 2.40 | 0.12 | - |
 | MiniMax M3 | Priority | Up to 512,000 | 0.45 | 1.80 | 0.09 | - |
 | MiniMax M3 | Priority | Over 512,000 | 0.90 | 3.60 | 0.18 | - |
 | MiniMax M2.7 | Standard | All input lengths | 0.30 | 1.20 | 0.06 | 0.375 |
 
-See the [official pay-as-you-go pricing](https://platform.minimax.io/docs/guides/pricing-paygo) for current rates.
+See the [official pricing overview](https://platform.minimax.io/docs/pricing/overview) for current rates.
 
 ### Compatible API configuration
 
@@ -135,7 +137,7 @@ Use the matching `baseUrl` and `api` values for the required region and protocol
 | China | `https://api.minimaxi.com/v1` | `https://api.minimaxi.com/anthropic` |
 
 OpenClaw appends `/chat/completions` to an OpenAI-compatible base URL and `/v1/messages` to an Anthropic-compatible base URL. Do not append `/v1` to the Anthropic-compatible base URL.
-See the official [OpenAI-compatible API](https://platform.minimax.io/docs/api-reference/text-openai-api) and [Anthropic-compatible API](https://platform.minimax.io/docs/api-reference/text-anthropic-api) documentation for protocol details.
+See the official [OpenAI-compatible API](https://platform.minimax.io/docs/api-reference/text-chat-openai) and [Anthropic-compatible API](https://platform.minimax.io/docs/api-reference/text-chat-anthropic) documentation for protocol details.
 
 ```json
 {
@@ -147,6 +149,13 @@ See the official [OpenAI-compatible API](https://platform.minimax.io/docs/api-re
         "api": "anthropic-messages",
         "apiKey": "${MINIMAX_API_KEY}",
         "models": [
+          {
+            "id": "MiniMax-M3.1-Flash",
+            "name": "MiniMax M3.1 Flash",
+            "reasoning": true,
+            "input": ["text", "image", "video"],
+            "contextWindow": 1000000
+          },
           {
             "id": "MiniMax-M3",
             "name": "MiniMax M3",
@@ -168,7 +177,7 @@ See the official [OpenAI-compatible API](https://platform.minimax.io/docs/api-re
   "agents": {
     "defaults": {
       "model": {
-        "primary": "minimax-custom/MiniMax-M3"
+        "primary": "minimax-custom/MiniMax-M3.1-Flash"
       }
     }
   }

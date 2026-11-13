@@ -14,6 +14,12 @@ export function buildQtcoolProvider(): ModelProviderConfig {
         maxTokens: 16384,
       },
       {
+        id: "MiniMax-M3.1-Flash",
+        name: "MiniMax M3.1 Flash",
+        contextWindow: 1000000,
+        maxTokens: 16384,
+      },
+      {
         id: "MiniMax-M3",
         name: "MiniMax M3",
         contextWindow: 1000000,
