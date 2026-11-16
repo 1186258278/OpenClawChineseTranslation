@@ -2,7 +2,7 @@
   "file": "src/commands/health-format.ts",
   "description": "健康检查命令",
   "replacements": {
-    "`Health check failed: ${raw}`": "`健康检查失败：${raw}`",
+    "`Health check failed: ${formatHealthDiagnosticText(raw)}`": "`健康检查失败：${formatHealthDiagnosticText(raw)}`",
     "colorize(rich, theme.error.bold, \"Health check failed\")": "colorize(rich, theme.error.bold, \"健康检查失败\")"
   }
 }

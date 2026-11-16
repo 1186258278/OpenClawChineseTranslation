@@ -2,7 +2,7 @@
   "file": "src/commands/doctor-gateway-daemon-flow.ts",
   "description": "网关守护进程流程",
   "replacements": {
-    "note(params.gatewayDetailsMessage, \"Gateway connection\")": "note(params.gatewayDetailsMessage, \"网关连接\")",
+    "note(formatHealthDiagnosticNote(params.gatewayDetailsMessage), \"Gateway connection\")": "note(formatHealthDiagnosticNote(params.gatewayDetailsMessage), \"网关连接\")",
     "note(\"LaunchAgent is installed but not loaded in launchd.\", `${params.title} LaunchAgent`)": "note(\"LaunchAgent 已安装但未在 launchd 中加载。\", `${params.title} LaunchAgent`)",
     "note(`${params.title} LaunchAgent repaired.`, `${params.title} LaunchAgent`)": "note(`${params.title} LaunchAgent 已修复。`, `${params.title} LaunchAgent`)",
     "note(formatPortDiagnostics(diagnostics).join(\"\\n\"), \"Gateway port\")": "note(formatPortDiagnostics(diagnostics).join(\"\\n\"), \"网关端口\")",
