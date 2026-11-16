@@ -9,6 +9,9 @@ const PUBLISHED_REPOSITORY = {
 const RUNTIME_DEPENDENCY_FIELDS = ['dependencies', 'optionalDependencies', 'peerDependencies']
 const SUPPORTED_WORKSPACE_DEPENDENCIES = new Set(['@openclaw/ai'])
 const PROMOTED_RUNTIME_DEV_DEPENDENCIES = ['tree-sitter-bash']
+// Bundled native integrations load koffi directly at runtime, but upstream does
+// not expose it from the root package manifest used for the published tarball.
+const REQUIRED_RUNTIME_DEPENDENCIES = { koffi: '3.3.2' }
 
 function publishedWorkspaceVersion(specifier, upstreamVersion) {
   const workspaceRange = specifier.slice('workspace:'.length)
@@ -48,6 +51,11 @@ export function preparePublishManifest(
     }
     prepared.dependencies[name] = specifier
     delete prepared.devDependencies[name]
+  }
+
+  prepared.dependencies ??= {}
+  for (const [name, specifier] of Object.entries(REQUIRED_RUNTIME_DEPENDENCIES)) {
+    prepared.dependencies[name] ??= specifier
   }
 
   for (const field of RUNTIME_DEPENDENCY_FIELDS) {
