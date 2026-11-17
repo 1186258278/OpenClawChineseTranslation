@@ -5,7 +5,6 @@
     "? `${plugin.description} (plugin: ${id})`\n        : `Plugin entry for ${id}.`": "? `${plugin.description}（插件：${id}）`\n        : `${id} 插件配置`",
     "label: `Enable ${name}`": "label: `启用 ${name}`",
     "label: `${name} Config`": "label: `${name} 配置`",
-    "help: `Plugin-defined config payload for ${id}.`": "help: `插件 ${id} 的自定义配置。`",
-    "` Known channels: ${channelList.join(\", \")}.`": "` 已知渠道：${channelList.join(\"、\")}`"
+    "help: `Plugin-defined config payload for ${id}.`": "help: `插件 ${id} 的自定义配置。`"
   }
 }

@@ -1,0 +1,7 @@
+{
+  "file": "extensions/memory-core/cli-metadata.ts",
+  "description": "Memory Core 插件元数据 (v2026.11.5)",
+  "replacements": {
+    "description: \"Search, inspect, and reindex memory files\"": "description: \"搜索、查看并重建记忆文件索引\""
+  }
+}

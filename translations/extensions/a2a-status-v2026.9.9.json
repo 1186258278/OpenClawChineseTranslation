@@ -1,5 +1,5 @@
 {
-  "file": "extensions/a2a/src/status-issues.ts",
+  "file": "extensions/a2a/src/channel.ts",
   "description": "A2A 令牌状态提示",
   "replacements": {
     "A2A peer${inbound.length === 1 ? \"\" : \"s\"} ${inbound.join(\", \")} cannot authenticate: the inbound token reference did not resolve, so requests from ${inbound.length === 1 ? \"it are\" : \"them are\"} rejected with 401.": "A2A 对等端 ${inbound.join(\", \")} 无法认证：入站令牌引用未能解析，相关请求将被 401 拒绝。",

@@ -2,7 +2,7 @@
   "file": "extensions/opencode-go/index.ts",
   "description": "OpenCode Go 扩展认证选项 (v2026.4.15 新增)",
   "replacements": {
-    "\"Go focuses on Kimi, GLM, and MiniMax coding models.\"": "\"Go 专注于 Kimi、GLM、MiniMax 编码模型。\"",
+    "\"Go includes DeepSeek, Kimi, GLM, Qwen, MiniMax, and other coding models.\"": "\"Go 提供 DeepSeek、Kimi、GLM、Qwen、MiniMax 等编程模型。\"",
     "\"Get your API key at: https://opencode.ai/auth\"": "\"在此获取 API 密钥: https://opencode.ai/auth\""
   }
 }

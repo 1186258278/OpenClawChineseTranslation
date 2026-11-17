@@ -1,0 +1,7 @@
+{
+  "file": "src/commands/gateway-install-token.ts",
+  "description": "诊断命令 (v2026.11.5)",
+  "replacements": {
+    "\"gateway.auth.token and gateway.auth.password are both configured while gateway.auth.mode is unset.\"": "\"gateway.auth.token 和 gateway.auth.password 同时配置但 gateway.auth.mode 未设置。\""
+  }
+}

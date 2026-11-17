@@ -1,8 +1,0 @@
-{
-  "file": "ui/src/pages/channels/view.whatsapp.tsx",
-  "description": "Dashboard WhatsApp 渠道卡片",
-  "replacements": {
-    "Logout": "退出登录",
-    "Refresh": "刷新"
-  }
-}

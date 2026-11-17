@@ -1,0 +1,7 @@
+{
+  "file": "src/commands/doctor-gateway-daemon-flow.ts",
+  "description": "诊断命令 (v2026.11.5)",
+  "replacements": {
+    "note(lines.join(\"\\n\"), \"Gateway\")": "note(lines.join(\"\\n\"), \"网关\")"
+  }
+}

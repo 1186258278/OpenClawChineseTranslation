@@ -8,7 +8,7 @@
     "theme.heading(\"Skills Status Check\")": "theme.heading(\"技能状态检查\")",
     "No eligible skills found. Run \\`${formatCliCommand(\"openclaw skills list\")}\\` to see all skills.": "未找到可用技能。运行 \\`${formatCliCommand(\"openclaw skills list\")}\\` 查看所有技能。",
     "\"No skills found.\"": "\"未找到技能。\"",
-    "`Skill \"${safeRequestedName}\" not found. Run \\`${formatCliCommand(\"openclaw skills list\")}\\` to see available skills.`": "`未找到技能 \"${safeRequestedName}\"。运行 \\`${formatCliCommand(\"openclaw skills list\")}\\` 查看可用技能。`",
+    "terminalText`Skill \"${requestedName}\" not found. Run \\`${formatCliCommand(\"openclaw skills list\")}\\` to see available skills.`": "terminalText`未找到技能 \"${requestedName}\"。运行 \\`${formatCliCommand(\"openclaw skills list\")}\\` 查看可用技能。`",
     "theme.heading(\"API key setup:\")": "theme.heading(\"API Key 设置：\")",
     "theme.heading(\"What this means:\")": "theme.heading(\"这些状态表示：\")",
     "theme.muted(\"Missing requirements:\")": "theme.muted(\"缺少要求：\")",

@@ -1,5 +1,0 @@
-{
-  "file": "src/daemon/schtasks.ts",
-  "description": "Windows schtasks 兼容修复 - 命令不可用时不阻断 onboarding",
-  "replacements": {}
-}

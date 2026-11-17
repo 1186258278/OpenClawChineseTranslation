@@ -2,9 +2,10 @@
   "file": "src/commands/auth-choice-prompt.ts",
   "description": "认证选择提示",
   "replacements": {
-    "message: \"Model/auth provider\"": "message: \"模型/认证提供商\"",
+    "\"Model/auth provider\"": "\"模型/认证提供商\"",
     "\"No auth methods available for that provider.\"": "\"该提供商没有可用的认证方式。\"",
     "\"Model/auth choice\"": "\"模型/认证选择\"",
-    "{ value: BACK_VALUE, label: \"Back\" }": "{ value: BACK_VALUE, label: \"返回\" }"
+    "{ value: BACK_VALUE, label: \"Back\" }": "{ value: BACK_VALUE, label: \"返回\" }",
+    "\"Model/auth provider\\nProvider not listed? Find community provider plugins at https://clawhub.ai/plugins\"": "\"模型/认证提供商\\n未找到提供商？请前往 https://clawhub.ai/plugins 查找社区提供商插件\""
   }
 }

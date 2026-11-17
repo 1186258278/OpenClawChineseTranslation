@@ -1,5 +1,5 @@
 {
-  "file": "src/cli/nodes-cli/register.camera.ts",
+  "file": "src/cli/nodes-cli/register.ts",
   "description": "v2026.10.7 register.camera 用户可见提示",
   "replacements": {
     "\"Unknown Camera\"": "\"未知摄像头\"",

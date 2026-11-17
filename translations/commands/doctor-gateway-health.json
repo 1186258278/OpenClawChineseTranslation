@@ -2,8 +2,7 @@
   "file": "src/commands/doctor-gateway-health.ts",
   "description": "网关健康检查",
   "replacements": {
-    "note(formatHealthDiagnosticNote(gatewayDetails.message), \"Gateway connection\")": "note(formatHealthDiagnosticNote(gatewayDetails.message), \"网关连接\")",
-    "note(\n          issues": "note(\n          issues",
+    "report(formatHealthDiagnosticNote(gatewayDetails.message), \"Gateway connection\")": "report(formatHealthDiagnosticNote(gatewayDetails.message), \"网关连接\")",
     "\"Channel warnings\",\n        )": "\"频道警告\",\n        )"
   }
 }

@@ -19,7 +19,7 @@
     "Use a named profile (isolates OPENCLAW_STATE_DIR/OPENCLAW_CONFIG_PATH under ~/.openclaw-<name>)": "使用命名配置文件（在 ~/.openclaw-<name> 下隔离状态和配置）",
     "Disable ANSI colors": "禁用 ANSI 颜色",
     "`Global log level override for file + console (${CLI_LOG_LEVEL_VALUES})`": "`全局日志级别覆盖，适用于文件和控制台 (${CLI_LOG_LEVEL_VALUES})`",
-    "return `\\n${theme.heading(\"Examples:\")}\\n${fmtExamples}\\n\\n${theme.muted(\"Docs:\")} ${docs}\\n`;": "return `\\n${theme.heading(\"示例：\")}\\n${fmtExamples}\\n\\n${theme.muted(\"文档：\")} ${docs}\\n${theme.muted(\"汉化版：\")} ${theme.info(\"https://openclaw.qt.cool/\")}\\n`;",
+    "return `\\n${theme.heading(\"Examples:\")}\\n${fmtExamples}\\n\\n${theme.muted(\"Docs:\")} ${docs}\\n${theme.muted(\"Support:\")} https://community.openclaw.ai/\\n`;": "return `\\n${theme.heading(\"示例：\")}\\n${fmtExamples}\\n\\n${theme.muted(\"文档：\")} ${docs}\\n${theme.muted(\"汉化版：\")} ${theme.info(\"https://openclaw.qt.cool/\")}\\n${theme.muted(\"支持：\")} https://community.openclaw.ai/\\n`;",
     "\"Run the CLI inside a running Podman/Docker container named <name> (default: env OPENCLAW_CONTAINER)\"": "\"在正在运行的 Podman/Docker 容器 <name> 内运行 CLI（默认：环境变量 OPENCLAW_CONTAINER）\"",
     "\"Hint: commands suffixed with * have subcommands. Run <command> --help for details.\"": "\"提示：带 * 后缀的命令有子命令。运行 <command> --help 查看详情。\"",
     "program.helpOption(\"-h, --help\", \"Display help for command\")": "program.helpOption(\"-h, --help\", \"显示命令帮助\")",

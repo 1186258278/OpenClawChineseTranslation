@@ -1,8 +1,0 @@
-{
-  "file": "ui/src/i18n/locales/en.ts",
-  "description": "Dashboard Signal 渠道卡片",
-  "replacements": {
-    "subtitle: \"signal-cli status and channel configuration.\"": "subtitle: \"signal-cli 状态和渠道配置。\"",
-    "Probe": "探测"
-  }
-}

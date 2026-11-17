@@ -1,5 +1,5 @@
 {
-  "file": "extensions/minimax/music-generation-provider.ts",
+  "file": "extensions/minimax/media-provider-runtime.ts",
   "description": "MiniMax 音乐生成错误提示",
   "replacements": {
     "\"MiniMax API key missing\"": "\"缺少 MiniMax API 密钥\""

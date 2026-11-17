@@ -6,7 +6,7 @@
     "label: \"Environment variable\"": "label: \"环境变量\"",
     "hint: \"Reference a variable from your runtime environment\"": "hint: \"引用运行时环境中的变量\"",
     "label: \"Configured secret provider\"": "label: \"已配置的密钥提供商\"",
-    "message: params.copy?.envVarMessage ?? \"Environment variable name\"": "message: params.copy?.envVarMessage ?? \"环境变量名称\"",
+    "message: copy?.envVarMessage ?? \"Environment variable name\"": "message: copy?.envVarMessage ?? \"环境变量名称\"",
     "message: \"Select secret provider\"": "message: \"选择密钥提供商\"",
     "\"No providers configured\"": "\"未配置提供商\"",
     "\"Reference validated\"": "\"引用已验证\"",

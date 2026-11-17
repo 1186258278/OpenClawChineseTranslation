@@ -1,5 +1,5 @@
 {
-  "file": "extensions/google-meet/src/cli-artifact-commands.ts",
+  "file": "extensions/google-meet/src/cli.ts",
   "description": "Google Meet 导出命令输入与格式诊断",
   "replacements": {
     "\"Meeting input or conference record is required. Pass --meeting, --today, --event, --conference-record, or configure defaults.meeting.\"": "\"需要会议输入或会议记录。请传入 --meeting、--today、--event、--conference-record，或配置 defaults.meeting。\"",

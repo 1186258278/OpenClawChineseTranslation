@@ -2,6 +2,6 @@
   "file": "extensions/migrate-claude/helpers.ts",
   "description": "v2026.10.7 migrate-claude-helpers 用户可见提示",
   "replacements": {
-    "`Claude instruction file is not valid UTF-8: ${item.source}. Re-save or re-encode it as UTF-8, then rerun the migration.`": "`Claude 指令文件不是有效的 UTF-8： ${item.source}。请重新保存或转换为 UTF-8 后重新迁移。`"
+    "`Claude instruction file ${item.source} (re-save or re-encode it as UTF-8, then rerun the migration)`": "`Claude 指令文件 ${item.source}（请重新保存或转码为 UTF-8，再重新运行迁移）`"
   }
 }

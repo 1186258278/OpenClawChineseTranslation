@@ -1,0 +1,7 @@
+{
+  "file": "src/commands/doctor-config-analysis.ts",
+  "description": "诊断配置分析警告标题",
+  "replacements": {
+    "\"Doctor warnings\"": "\"诊断警告\""
+  }
+}

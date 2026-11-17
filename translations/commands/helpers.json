@@ -7,7 +7,7 @@
     "\"No GUI detected. Open from your computer:\"": "\"未检测到图形界面。请从你的电脑打开：\"",
     "\"Then open:\"": "\"然后打开：\"",
     "\"Docs:\"": "\"文档：\"",
-    "runtime.log(`Workspace OK: ${shortenHomePath(ws.dir)}`)": "runtime.log(`工作区已就绪: ${shortenHomePath(ws.dir)}`)",
-    "runtime.log(`Sessions OK: ${shortenHomePath(sessionsDir)}`)": "runtime.log(`会话目录已就绪: ${shortenHomePath(sessionsDir)}`)"
+    "runtime.log(`Workspace OK: ${displayPath(ws.dir)}`)": "runtime.log(`工作区已就绪: ${displayPath(ws.dir)}`)",
+    "runtime.log(`Sessions OK: ${displayPath(sessionsDir)}`)": "runtime.log(`会话目录已就绪: ${displayPath(sessionsDir)}`)"
   }
 }

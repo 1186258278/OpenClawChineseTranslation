@@ -1,0 +1,8 @@
+{
+  "file": "src/commands/doctor-service-audit.ts",
+  "description": "Doctor 网关服务令牌修复 (v2026.11.5)",
+  "replacements": {
+    "Skipped Gateway token preservation and service repair. Rerun `openclaw doctor --fix` in an interactive terminal to approve saving a store SecretRef in gateway.auth.token.": "已跳过网关令牌保存和服务修复。请在交互式终端中重新运行 `openclaw doctor --fix`，以批准将存储 SecretRef 写入 gateway.auth.token。",
+    "\"Gateway service findings still unresolved\"": "\"网关服务问题仍未解决\""
+  }
+}

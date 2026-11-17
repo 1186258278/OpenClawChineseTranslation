@@ -1,0 +1,7 @@
+{
+  "file": "src/commands/doctor-config-preflight-plugin-verification.ts",
+  "description": "诊断命令 (v2026.11.5)",
+  "replacements": {
+    "\"Doctor notices\"": "\"诊断提示\""
+  }
+}

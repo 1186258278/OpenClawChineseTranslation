@@ -100,8 +100,8 @@ jobs:
       - name: 下载构建产物
         uses: actions/download-artifact@v4
         with:
-          name: openclaw-build-stable
-          path: openclaw
+          name: openclaw-docker-stable
+          path: docker-context
 
       - name: 设置 Node.js
         uses: actions/setup-node@v4
@@ -115,21 +115,15 @@ jobs:
           npm --version
 
       - name: 验证 npm 安装包
-        working-directory: openclaw
         run: |
-          PACK_JSON=$(npm pack --ignore-scripts --json)
-          PACKAGE_FILE=$(node -e 'const fs=require("node:fs"); const data=JSON.parse(fs.readFileSync(0,"utf8")); process.stdout.write(data[0].filename)' <<< "$PACK_JSON")
           SMOKE_DIR="$RUNNER_TEMP/openclaw-npm-smoke"
           mkdir -p "$SMOKE_DIR"
-          npm install --prefix "$SMOKE_DIR" "$PWD/$PACKAGE_FILE" --ignore-scripts --no-audit --no-fund
+          npm install --prefix "$SMOKE_DIR" "$PWD/docker-context/openclaw-runtime.tgz" --ignore-scripts --no-audit --no-fund
           node "$SMOKE_DIR/node_modules/@qingchencloud/openclaw-zh/openclaw.mjs" --version
-          rm -f "$PACKAGE_FILE"
 
       - name: 发布到 npm (@latest)
-        working-directory: openclaw
-        # 使用 --ignore-scripts 跳过 prepack 脚本，因为代码已在 build job 中构建完成
-        # 否则 prepack 会触发重新构建，覆盖掉注入的功能面板
-        run: npm publish --access public --tag latest --ignore-scripts
+        # 与双架构 Docker 使用同一个已完成 prepack 的归档，避免重打包丢失隐藏元数据。
+        run: npm publish ./docker-context/openclaw-runtime.tgz --access public --tag latest --ignore-scripts
 
       - name: 同步 npmmirror 镜像源
         run: |

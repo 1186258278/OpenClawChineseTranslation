@@ -1,0 +1,10 @@
+{
+  "file": "src/flows/doctor-core-checks.ts",
+  "description": "诊断命令 (v2026.11.5)",
+  "replacements": {
+    "\"gateway.mode is unset; gateway start will be blocked.\"": "\"gateway.mode 未设置；网关启动将被阻止。\"",
+    "\"Run `openclaw configure` and set Gateway mode (local/remote), or `openclaw config set gateway.mode local`.\"": "\"运行 `openclaw configure` 并设置网关模式（local/remote），或运行 `openclaw config set gateway.mode local`。\"",
+    "\"gateway.auth.token and gateway.auth.password are both configured while gateway.auth.mode is unset; auth selection is ambiguous.\"": "\"gateway.auth.token 与 gateway.auth.password 均已配置，但 gateway.auth.mode 未设置，认证方式存在歧义。\"",
+    "\"Set an explicit mode: `openclaw config set gateway.auth.mode token` or `... password`.\"": "\"请明确设置认证模式：`openclaw config set gateway.auth.mode token` 或 `... password`。\""
+  }
+}

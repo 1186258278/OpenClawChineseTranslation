@@ -2,6 +2,6 @@
   "file": "extensions/migrate-hermes/helpers.ts",
   "description": "v2026.10.7 migrate-hermes-helpers 用户可见提示",
   "replacements": {
-    "`Source file is not valid UTF-8: ${item.source}. Re-encode it as UTF-8 and retry migration.`": "`源文件不是有效的 UTF-8： ${item.source}。请转换为 UTF-8 后重新迁移。`"
+    "`Failed reading text file ${filePath}: ${formatErrorMessage(error)}. Use an ordinary readable UTF-8 file and retry migration.`": "`读取文本文件 ${filePath} 失败：${formatErrorMessage(error)}。请使用可读取的常规 UTF-8 文件并重试迁移。`"
   }
 }

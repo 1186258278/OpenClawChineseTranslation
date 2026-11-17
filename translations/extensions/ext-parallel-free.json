@@ -1,5 +1,5 @@
 {
-  "file": "extensions/parallel/src/parallel-free-web-search-provider.shared.ts",
+  "file": "extensions/parallel/src/parallel-free-web-search-provider.ts",
   "description": "Parallel 免费 web search provider 文案",
   "replacements": {
     "label: \"Parallel Search (Free)\"": "label: \"Parallel 搜索（免费）\"",

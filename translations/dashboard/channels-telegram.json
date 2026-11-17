@@ -1,8 +1,0 @@
-{
-  "file": "ui/src/i18n/locales/en.ts",
-  "description": "Dashboard Telegram 渠道卡片",
-  "replacements": {
-    "subtitle: \"Bot status and channel configuration.\"": "subtitle: \"机器人状态和渠道配置。\"",
-    "Probe": "探测"
-  }
-}

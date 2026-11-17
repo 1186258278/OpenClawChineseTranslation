@@ -194,9 +194,25 @@ jobs:
           pnpm install --no-frozen-lockfile
           echo "✅ 依赖安装完成"
 
+      - name: 生成汉化配置表单元数据
+        run: |
+          node cli/index.mjs apply --target=./openclaw | tee "$RUNNER_TEMP/openclaw-schema-regen.log"
+          if grep -q '重新生成失败' "$RUNNER_TEMP/openclaw-schema-regen.log"; then
+            echo "❌ 汉化配置表单元数据未生成"
+            exit 1
+          fi
+
       - name: 构建 OpenClaw
         working-directory: openclaw
         run: |
+          # v2026.11.5 起由上游 package 构建器统一准备原生协议、插件资产和声明。
+          # canvas:a2ui:bundle 已移除，继续拆分旧步骤会遗漏新的发布产物。
+          if [ -f scripts/build-all.mts ] && node -e "const s=require('./package.json').scripts||{}; process.exit(s['build:package'] && !s['canvas:a2ui:bundle'] ? 0 : 1)"; then
+            pnpm build:package
+            echo "✅ 上游完整发行包构建完成"
+            exit 0
+          fi
+
           # 拆分构建步骤（与 test-local-full.ps1 一致），
           # 避免上游 tsc 类型错误阻塞整个流程
           
@@ -362,6 +378,19 @@ jobs:
           fi
           echo "✅ 功能面板注入步骤完成"
 
+      - name: 准备上游发行包元数据
+        working-directory: openclaw
+        run: |
+          if [ -f scripts/build-all.mts ] && node -e "const s=require('./package.json').scripts||{}; process.exit(s['build:package'] && !s['canvas:a2ui:bundle'] ? 0 : 1)"; then
+            if [ "${{ inputs.version_type }}" = "nightly" ]; then
+              export OPENCLAW_PREPACK_ALLOW_UNRELEASED_CHANGELOG=1
+            fi
+            OPENCLAW_PREPACK_PREPARED=1 node --import ./scripts/tsx.mjs scripts/openclaw-prepack.ts
+            # 先释放上游身份的 manifest 收据，再由汉化清单创建自己的收据。
+            node scripts/package-manifest.mjs restore
+            echo "UPSTREAM_PACKAGE_PREPARED=true" >> "$GITHUB_ENV"
+          fi
+
       - name: 准备版本信息
         id: prepare
         run: |
@@ -397,6 +426,17 @@ jobs:
           # 使用中文 README
           cp ../README.md ./README.md
 
+          if [ "${UPSTREAM_PACKAGE_PREPARED:-false}" = "true" ]; then
+            node scripts/package-manifest.mjs prepare
+            # 归档与内容清单必须记录最终汉化身份及 self-reference 改写后的字节。
+            node --import ./scripts/tsx.mjs --input-type=module <<'NODE'
+          import { preparePackagedWorkerBundle } from "./scripts/package-worker-bundle.mts";
+          import { writePackageDistInventoryForPublish } from "./scripts/lib/package-dist-inventory.ts";
+          await preparePackagedWorkerBundle();
+          await writePackageDistInventoryForPublish(process.cwd());
+          NODE
+          fi
+
       - name: 准备 Docker 构建
         run: |
           # 复制 Dockerfile 和 .dockerignore 到构建目录
@@ -427,6 +467,13 @@ jobs:
           PACK_JSON=$(npm pack --ignore-scripts --json --pack-destination ../docker-context)
           PACKAGE_FILE=$(printf '%s' "$PACK_JSON" | node -e 'let s="";process.stdin.on("data",c=>s+=c).on("end",()=>process.stdout.write(JSON.parse(s)[0].filename))')
           mv "../docker-context/$PACKAGE_FILE" ../docker-context/openclaw-runtime.tgz
+          if [ "${UPSTREAM_PACKAGE_PREPARED:-false}" = "true" ]; then
+            tar -tzf ../docker-context/openclaw-runtime.tgz > "$RUNNER_TEMP/openclaw-package-files.txt"
+            grep -q '^package/dist/worker-artifacts/.*\.tar\.gz$' "$RUNNER_TEMP/openclaw-package-files.txt"
+            grep -qx 'package/dist/postinstall-inventory.json' "$RUNNER_TEMP/openclaw-package-files.txt"
+            grep -qx 'package/dist/postinstall-content-inventory.json' "$RUNNER_TEMP/openclaw-package-files.txt"
+          fi
+          sha256sum ../docker-context/openclaw-runtime.tgz
 
       - name: 上传独立 Docker 运行时
         uses: actions/upload-artifact@v4
@@ -442,3 +489,10 @@ jobs:
           name: openclaw-build-${{ inputs.version_type }}
           path: openclaw/
           retention-days: 1
+
+      - name: 清理上游打包暂存元数据
+        working-directory: openclaw
+        run: |
+          if [ "${UPSTREAM_PACKAGE_PREPARED:-false}" = "true" ]; then
+            node scripts/openclaw-postpack.mjs
+          fi

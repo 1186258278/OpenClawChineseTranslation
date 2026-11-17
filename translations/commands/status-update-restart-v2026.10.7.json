@@ -1,8 +1,14 @@
 {
   "file": "src/commands/status-update-restart.ts",
-  "description": "v2026.10.7 status-update-restart 用户可见提示",
+  "description": "更新状态与重启后的版本核验提示（v2026.11.5）",
   "replacements": {
-    "`Last update run failed (${reasonLabel}) — Gateway is serving ${servingLabel}; run \\`openclaw update\\` to clear the record.`": "`上次更新失败（${reasonLabel}）— 网关当前运行版本为 ${servingLabel}；请运行 \\`openclaw update\\` 清除此记录。`",
-    "`Last update run failed (${reasonLabel}) — Gateway is now serving ${serving}; recorded serving identity was ${recorded}.`": "`上次更新失败（${reasonLabel}）— 网关当前运行版本为 ${serving}；记录的服务标识为 ${recorded}.`"
+    "\"an unknown version\"": "\"未知版本\"",
+    "\"an unknown target\"": "\"未知目标\"",
+    "`Gateway is serving ${current}; the update target is unknown`": "`网关当前运行 ${current}；更新目标未知`",
+    "`Gateway serving version is unknown; the update to ${target} is unverified`": "`网关运行版本未知；更新到 ${target} 的结果未经验证`",
+    "`Gateway is still serving ${current}; the intended build for ${target} is unverified`": "`网关仍运行 ${current}；${target} 的目标构建未经验证`",
+    "`Gateway is still serving ${current}; the update to ${target} did not complete`": "`网关仍运行 ${current}；更新到 ${target} 尚未完成`",
+    "`Update run status unavailable: ${history.runStatusError}`": "`无法获取更新运行状态：${history.runStatusError}`",
+    "`Update run reconciliation failed: ${history.runReconciliationError}`": "`更新运行状态核对失败：${history.runReconciliationError}`"
   }
 }

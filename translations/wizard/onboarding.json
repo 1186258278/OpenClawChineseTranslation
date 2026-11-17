@@ -1,5 +1,7 @@
 {
   "file": "src/wizard/setup.ts",
   "description": "初始化引导向导",
-  "replacements": {}
+  "replacements": {
+    "\"config changed after first-agent creation; rerun setup\"": "\"创建首个智能体后配置发生变化；请重新运行 setup\""
+  }
 }

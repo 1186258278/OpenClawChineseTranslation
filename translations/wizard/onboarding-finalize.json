@@ -6,6 +6,7 @@
     "\"https://docs.openclaw.ai/gateway/health\"": "\"https://docs.openclaw.ai/gateway/health\"",
     "\"https://docs.openclaw.ai/gateway/troubleshooting\"": "\"https://docs.openclaw.ai/gateway/troubleshooting\"",
     "\"Control UI\"": "\"控制面板\"",
-    "\"Token\"": "\"令牌\""
+    "\"Token\"": "\"令牌\"",
+    "\"Temporary Gateway exited before becoming reachable\"": "\"临时网关尚未就绪便已退出\""
   }
 }

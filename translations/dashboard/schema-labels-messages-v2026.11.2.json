@@ -24,6 +24,7 @@
     "  \"messages.statusReactions\": \"Status Reactions\"": "  \"messages.statusReactions\": \"状态 Reactions\"",
     "  \"messages.statusReactions.enabled\": \"Enable Status Reactions\"": "  \"messages.statusReactions.enabled\": \"启用 状态 Reactions\"",
     "  \"messages.inbound.debounceMs\": \"Inbound Message Debounce (ms)\"": "  \"messages.inbound.debounceMs\": \"Inbound Message 防抖 (ms)\"",
-    "  \"messages.inbound.byChannel\": \"Inbound Debounce by Channel (ms)\"": "  \"messages.inbound.byChannel\": \"Inbound 防抖 by 通道 (ms)\""
+    "  \"messages.inbound.byChannel\": \"Inbound Debounce by Channel (ms)\"": "  \"messages.inbound.byChannel\": \"Inbound 防抖 by 通道 (ms)\"",
+    "  \"messages.queue.allowCollaborativeSteering\": \"Allow Collaborative Steering\"": "  \"messages.queue.allowCollaborativeSteering\": \"允许协作引导\""
   }
 }

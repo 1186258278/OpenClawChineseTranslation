@@ -1,11 +1,9 @@
 {
-  "file": "src/cli/update-cli/update-repair-service.ts",
-  "description": "更新修复服务恢复提示（v2026.11.3）",
+  "file": "src/commands/doctor-maintenance-restoration.ts",
+  "description": "更新修复后网关恢复策略（v2026.11.5）",
   "replacements": {
-    "Gateway service remains stopped: ${reason}. After resolving this, start it with ": "网关服务仍处于停止状态：${reason}。解决问题后，请使用 ",
-    "Gateway remains stopped: ${warning}. Run openclaw gateway status --deep.": "网关仍处于停止状态：${warning}。请运行 openclaw gateway status --deep。",
-    "Recovered update's Gateway stop intent changed. Run openclaw gateway status --deep.": "已恢复更新的网关停止意图发生变化。请运行 openclaw gateway status --deep。",
-    "Gateway remains stopped: ${dataAtRisk}. Run openclaw gateway status --deep.": "网关仍处于停止状态：${dataAtRisk}。请运行 openclaw gateway status --deep。",
-    "Gateway recovery after update repair was not verified: ${formatErrorMessage(error)}. After resolving the failure, start it with ": "更新修复后的网关恢复未通过验证：${formatErrorMessage(error)}。解决失败后，请使用 "
+    "Gateway service is stopped and remains stopped; update repair does not start a Gateway that a failed update or the operator stopped. Start it with ": "网关服务已停止并将保持停止；更新修复不会启动因更新失败或用户操作而停止的网关。请使用以下命令启动：",
+    ", then check \\`${formatCliCommand(\"openclaw gateway status --deep\", serviceEnv)}\\`.": "，然后运行 \\`${formatCliCommand(\"openclaw gateway status --deep\", serviceEnv)}\\` 检查。",
+    "The previous installation remains stopped because state compatibility is unverified.": "由于状态兼容性未经验证，旧版安装将保持停止。"
   }
 }

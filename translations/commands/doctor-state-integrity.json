@@ -2,8 +2,8 @@
   "file": "src/commands/doctor-state-integrity.ts",
   "description": "状态完整性检查",
   "replacements": {
-    "noteFn(warnings.join(\"\\n\"), \"State integrity\")": "noteFn(warnings.join(\"\\n\"), \"状态完整性\")",
-    "noteFn(changes.join(\"\\n\"), \"Doctor changes\")": "noteFn(changes.join(\"\\n\"), \"诊断更改\")",
+    "note(warnings.join(\"\\n\"), \"State integrity\")": "note(warnings.join(\"\\n\"), \"状态完整性\")",
+    "note(changes.join(\"\\n\"), \"Doctor changes\")": "note(changes.join(\"\\n\"), \"诊断更改\")",
     "`- CRITICAL: state directory missing (${displayStateDir}). Sessions, credentials, logs, and config are stored there.`": "`- 严重：状态目录缺失 (${displayStateDir})。会话、凭据、日志和配置都存储在那里。`",
     "\"- Gateway is in remote mode; run doctor on the remote host where the gateway runs.\"": "\"- 网关处于远程模式；请在运行网关的远程主机上执行 doctor。\"",
     "`- State directory permissions are too open (${displayStateDir}). Recommend chmod 700.`": "`- 状态目录权限过于开放 (${displayStateDir})。建议 chmod 700。`",

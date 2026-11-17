@@ -1,0 +1,8 @@
+{
+  "file": "src/flows/doctor-health-startup.ts",
+  "description": "诊断命令 - 主入口 (intro/outro) (v2026.11.5)",
+  "replacements": {
+    "\"Doctor finished, but some config fixes were not applied.\"": "\"诊断已完成，但部分配置修复未应用。\"",
+    "\"Doctor finished, but config fixes were not applied.\"": "\"诊断已完成，但配置修复未应用。\""
+  }
+}
