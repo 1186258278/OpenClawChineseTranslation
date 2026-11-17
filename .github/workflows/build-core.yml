@@ -486,6 +486,7 @@ jobs:
           retention-days: 1
 
       - name: 上传构建产物
+        if: inputs.version_type == 'nightly'
         uses: actions/upload-artifact@v4
         with:
           name: openclaw-build-${{ inputs.version_type }}
