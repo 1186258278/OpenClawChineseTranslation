@@ -195,12 +195,12 @@ jobs:
           echo "✅ 依赖安装完成"
 
       - name: 生成汉化配置表单元数据
+        working-directory: openclaw
         run: |
-          node cli/index.mjs apply --target=./openclaw | tee "$RUNNER_TEMP/openclaw-schema-regen.log"
-          if grep -q '重新生成失败' "$RUNNER_TEMP/openclaw-schema-regen.log"; then
-            echo "❌ 汉化配置表单元数据未生成"
-            exit 1
-          fi
+          # 新上游 base schema 已运行时计算；通过受支持入口调用其正确 loader，
+          # 不再依赖旧汉化 runner 已移除的模块导出或吞掉内部 stderr。
+          pnpm config:schema:gen
+          pnpm config:channels:gen
 
       - name: 构建 OpenClaw
         working-directory: openclaw
