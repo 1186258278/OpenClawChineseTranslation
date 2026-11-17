@@ -386,8 +386,11 @@ jobs:
               export OPENCLAW_PREPACK_ALLOW_UNRELEASED_CHANGELOG=1
             fi
             OPENCLAW_PREPACK_PREPARED=1 node --import ./scripts/tsx.mjs scripts/openclaw-prepack.ts
-            # 先释放上游身份的 manifest 收据，再由汉化清单创建自己的收据。
+            # 保留已按上游 workspace lock 净化的成品，再合法释放原 manifest 收据。
+            # 汉化后 @openclaw/ai 已固定为 npm 版本，不能再次从源 workspace lock 净化。
+            cp package.json "$RUNNER_TEMP/openclaw-prepared-package.json"
             node scripts/package-manifest.mjs restore
+            cp "$RUNNER_TEMP/openclaw-prepared-package.json" package.json
             echo "UPSTREAM_PACKAGE_PREPARED=true" >> "$GITHUB_ENV"
           fi
 
@@ -427,7 +430,6 @@ jobs:
           cp ../README.md ./README.md
 
           if [ "${UPSTREAM_PACKAGE_PREPARED:-false}" = "true" ]; then
-            node scripts/package-manifest.mjs prepare
             # 归档与内容清单必须记录最终汉化身份及 self-reference 改写后的字节。
             node --import ./scripts/tsx.mjs --input-type=module <<'NODE'
           import { preparePackagedWorkerBundle } from "./scripts/package-worker-bundle.mts";
