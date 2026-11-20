@@ -64,6 +64,10 @@ openclaw config set tools.web.fetch.enabled true
 
 > 对于 JS 密集型网站，推荐使用 browser 工具代替 web_fetch。
 
+## 可选：Parallel Search MCP
+
+通过 OpenClaw 支持的 mcporter CLI，可以使用免费的 Parallel 网页搜索与内容抓取，无需 Parallel API Key。参见 [Parallel Search MCP 使用指南](../guides/parallel-search.md)，包含独立配置、安装、工具发现及调用示例（需要 Node.js >= 24）。
+
 ## 禁用工具
 
 ```json
