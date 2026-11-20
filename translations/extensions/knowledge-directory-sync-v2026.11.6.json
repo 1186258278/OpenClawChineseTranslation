@@ -1,0 +1,7 @@
+{
+  "file": "extensions/knowledge/src/directory-sync.ts",
+  "description": "知识库目录同步不支持提示",
+  "replacements": {
+    "`Knowledge directory synchronization unsupported: ${outcome.code ?? \"unknown\"}`": "`不支持知识库目录同步：${outcome.code ?? \"unknown\"}`"
+  }
+}

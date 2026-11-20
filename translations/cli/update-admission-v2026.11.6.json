@@ -1,0 +1,12 @@
+{
+  "file": "src/cli/run-main-update-admission.ts",
+  "description": "v2026.11.6 命令行用户提示汉化",
+  "replacements": {
+    "`Candidate preflight requires a value for ${arg}.`": "`候选版本预检要求为 ${arg} 提供值。`",
+    "\"Candidate preflight requires nonempty option values.\"": "\"候选版本预检要求选项值非空。\"",
+    "\"Candidate preflight accepts only --json, --source-root, --timeout and root options.\"": "\"候选版本预检仅接受 --json、--source-root、--timeout 及全局选项。\"",
+    "\"Candidate admission requires only --context <absolute-path> and root options.\"": "\"候选版本准入仅接受 --context <absolute-path> 及全局选项。\"",
+    "\"Candidate preflight arguments are invalid.\"": "\"候选版本预检参数无效。\"",
+    "\"Candidate admission requires --context <absolute-path>.\"": "\"候选版本准入需要 --context <absolute-path>。\""
+  }
+}

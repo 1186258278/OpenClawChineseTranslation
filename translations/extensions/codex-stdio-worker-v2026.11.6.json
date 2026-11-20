@@ -1,0 +1,8 @@
+{
+  "file": "extensions/codex/src/app-server/stdio-worker.ts",
+  "description": "Codex stdio 工作进程失败提示",
+  "replacements": {
+    "\"Codex stdio worker failed\"": "\"Codex stdio 工作进程失败\"",
+    "\"Codex stdio worker exited before observing process exit\"": "\"Codex stdio 工作进程在观测到子进程退出前已退出\""
+  }
+}

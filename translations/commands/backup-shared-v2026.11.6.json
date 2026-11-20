@@ -1,0 +1,7 @@
+{
+  "file": "src/commands/backup-shared.ts",
+  "description": "v2026.11.6 备份路径解析提示",
+  "replacements": {
+    "Could not resolve ${label}: ${formatErrorMessage(error)}": "无法解析 ${label}：${formatErrorMessage(error)}"
+  }
+}

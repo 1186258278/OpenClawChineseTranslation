@@ -1,0 +1,7 @@
+{
+  "file": "src/commands/doctor-workspace.ts",
+  "description": "v2026.11.6 工作区记忆合并备份提示",
+  "replacements": {
+    "`- pre-merge backup: ${migration.canonicalBackupPath}`": "`- 合并前备份：${migration.canonicalBackupPath}`"
+  }
+}

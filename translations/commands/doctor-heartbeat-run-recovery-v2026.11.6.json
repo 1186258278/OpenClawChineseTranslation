@@ -1,0 +1,8 @@
+{
+  "file": "src/commands/doctor-heartbeat-run-recovery.ts",
+  "description": "v2026.11.6 自动化迁移与恢复提示",
+  "replacements": {
+    "`Heartbeat migration deferred: automation ${job.id} is running or its runtime owner is unproved. Its job and configuration were retained; stop the Gateway and rerun openclaw doctor --fix.`": "`心跳迁移已延后：自动化 ${job.id} 正在运行，或无法确认其运行时所有者。任务和配置均已保留；请停止网关后重新运行 openclaw doctor --fix。`",
+    "`Automation ${job.id} converted; run recovery and its notifications will complete at the next Gateway start.`": "`自动化 ${job.id} 已转换；下次启动网关时将完成运行恢复和相关通知。`"
+  }
+}

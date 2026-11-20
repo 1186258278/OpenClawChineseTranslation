@@ -1,0 +1,7 @@
+{
+  "file": "src/commands/doctor-maintenance-restoration.ts",
+  "description": "v2026.11.6 诊断修复状态未就绪提示",
+  "replacements": {
+    "`Doctor could not restore the Gateway because persisted repair state is not ready: ${formatErrorMessage(error)}`": "`持久化修复状态尚未就绪，Doctor 无法恢复网关：${formatErrorMessage(error)}`"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "file": "src/cli/update-cli/update-command-run.ts",
+  "description": "v2026.11.6 命令行用户提示汉化",
+  "replacements": {
+    "\"Profile update continuation has not acquired its native owner.\"": "\"配置档案更新的续接任务尚未取得原生管理权限。\""
+  }
+}

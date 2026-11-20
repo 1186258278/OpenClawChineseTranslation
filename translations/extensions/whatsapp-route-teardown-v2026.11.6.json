@@ -1,0 +1,7 @@
+{
+  "file": "extensions/whatsapp/src/connection-controller.ts",
+  "description": "WhatsApp 最后路由记录写入超时提示",
+  "replacements": {
+    "\"Last-route writes timed out; continuing teardown\"": "\"最后路由记录写入超时；继续清理连接\""
+  }
+}

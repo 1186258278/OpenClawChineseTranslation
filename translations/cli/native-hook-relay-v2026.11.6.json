@@ -1,0 +1,7 @@
+{
+  "file": "src/cli/native-hook-relay-cli.ts",
+  "description": "v2026.11.6 命令行用户提示汉化",
+  "replacements": {
+    "\"Native hook input could not be read; shorten or split tool input and retry\"": "\"无法读取原生钩子输入；请缩短或拆分工具输入后重试\""
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "file": "extensions/msteams/src/webhook-route.ts",
+  "description": "Microsoft Teams 多账户 Webhook 路径冲突提示",
+  "replacements": {
+    "\"Microsoft Teams webhook path \"": "\"Microsoft Teams Webhook 路径 \"",
+    "\" is shared by accounts \"": "\" 被以下账户共用：\"",
+    "\" and \"": "\" 和 \"",
+    "\". Configure distinct webhook.path values.\"": "\"。请为各账户配置不同的 webhook.path 值。\""
+  }
+}

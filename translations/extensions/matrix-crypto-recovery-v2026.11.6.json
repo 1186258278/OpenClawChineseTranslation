@@ -1,0 +1,16 @@
+{
+  "file": "extensions/matrix/src/cli-doctor.ts",
+  "description": "Matrix 加密存储检查及恢复指引",
+  "replacements": {
+    "\"Inspect and recover Matrix crypto storage refusal\"": "\"检查并解除 Matrix 加密存储的拒绝访问状态\"",
+    "\"List accounts blocked by an unsafe crypto final save (read-only)\"": "\"列出因加密状态最终保存不安全而受阻的账户（只读）\"",
+    "\"Output JSON\"": "\"输出 JSON\"",
+    "`Matrix crypto refusal: ${accounts.length} account store(s) blocked`": "`Matrix 加密存储拒绝访问：${accounts.length} 个账户存储受阻`",
+    "\"No blocked Matrix crypto stores found.\"": "\"未发现受阻的 Matrix 加密存储。\"",
+    "\"Accept rollback to a validated SQLite snapshot and clear one account's refusal\"": "\"接受回滚到已验证的 SQLite 快照，并解除一个账户的拒绝访问状态\"",
+    "\"Blocked account ID\"": "\"受阻账户 ID\"",
+    "\"Acknowledge that keys from the failed owner may be lost\"": "\"确认可能丢失故障所有者的密钥\"",
+    "`Expected exactly one blocked Matrix crypto store for account ${account}; found ${roots.length}. Refusing ambiguous recovery.`": "`账户 ${account} 应恰有一个受阻的 Matrix 加密存储；实际找到 ${roots.length} 个。已拒绝目标不明确的恢复操作。`",
+    "`Matrix crypto refusal cleared for account ${account}. Run openclaw update repair (or openclaw doctor --fix) to finish pending migrations, then restart the Gateway.`": "`账户 ${account} 的 Matrix 加密存储拒绝访问状态已解除。请运行 openclaw update repair（或 openclaw doctor --fix）完成待处理迁移，然后重启网关。`"
+  }
+}

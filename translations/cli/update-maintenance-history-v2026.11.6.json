@@ -1,0 +1,8 @@
+{
+  "file": "src/cli/update-cli/update-command-service-maintenance-history.ts",
+  "description": "v2026.11.6 命令行用户提示汉化",
+  "replacements": {
+    "\"Could not record the Gateway maintenance warning in update history.\"": "\"无法将网关维护警告写入更新历史。\"",
+    "\"Could not record the Gateway stop in update history; update repair may not restart it.\"": "\"无法将网关停止事件写入更新历史；更新修复可能无法重启网关。\""
+  }
+}

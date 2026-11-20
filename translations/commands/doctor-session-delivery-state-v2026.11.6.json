@@ -1,0 +1,8 @@
+{
+  "file": "src/commands/doctor-session-delivery-state.ts",
+  "description": "v2026.11.6 会话快照空间不足提示",
+  "replacements": {
+    "`Session entry state inspection deferred for agent ${target.agentId}: ${formatErrorMessage(error)}. Free temporary snapshot space, then run ${formatCliCommand(\"openclaw doctor --fix\")} after the update.`": "`智能体 ${target.agentId} 的会话条目状态检查已延后：${formatErrorMessage(error)}。请释放临时快照空间，并在更新完成后运行 ${formatCliCommand(\"openclaw doctor --fix\")}。`",
+    "note(warning, \"Doctor warning\")": "note(warning, \"诊断警告\")"
+  }
+}

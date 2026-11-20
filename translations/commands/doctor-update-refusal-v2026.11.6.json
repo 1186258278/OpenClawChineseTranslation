@@ -1,0 +1,7 @@
+{
+  "file": "src/commands/doctor-update-refusal.ts",
+  "description": "v2026.11.6 诊断维护警告保存失败提示",
+  "replacements": {
+    "runtime.error(\"Doctor maintenance warning could not be saved to update history.\")": "runtime.error(\"无法将诊断维护警告保存到更新历史。\")"
+  }
+}

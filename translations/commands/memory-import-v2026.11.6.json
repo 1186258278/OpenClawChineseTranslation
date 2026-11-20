@@ -1,0 +1,8 @@
+{
+  "file": "src/commands/migrate/memory-import.ts",
+  "description": "v2026.11.6 记忆迁移规划诊断消息",
+  "replacements": {
+    "`Memory migration provider ${provider.id} planning failed: ${formatErrorMessage(error)}`": "`记忆迁移提供商 ${provider.id} 规划失败：${formatErrorMessage(error)}`",
+    "`Memory migration planning through the Gateway failed: ${formatErrorMessage(error)}`": "`通过网关规划记忆迁移失败：${formatErrorMessage(error)}`"
+  }
+}

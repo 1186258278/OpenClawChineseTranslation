@@ -1,0 +1,7 @@
+{
+  "file": "src/commands/onboard-non-interactive/local.ts",
+  "description": "v2026.11.6 非交互引导认证迁移警告",
+  "replacements": {
+    "runtime.error(`Warning: ${warning}`)": "runtime.error(`警告：${warning}`)"
+  }
+}

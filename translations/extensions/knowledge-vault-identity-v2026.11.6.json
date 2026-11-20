@@ -1,0 +1,7 @@
+{
+  "file": "extensions/knowledge/src/storage-base.ts",
+  "description": "知识库扫描期间身份变化提示",
+  "replacements": {
+    "\"Knowledge vault identity changed during scan; retry the read.\"": "\"知识库身份在扫描期间发生变化；请重试读取。\""
+  }
+}

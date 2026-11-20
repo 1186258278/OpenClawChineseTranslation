@@ -1,0 +1,7 @@
+{
+  "file": "src/cli/capability-cli/media-understanding-command.ts",
+  "description": "v2026.11.6 命令行用户提示汉化",
+  "replacements": {
+    "`No ${audio ? \"transcript\" : \"description\"} returned for ${kind}: ${filePath}`": "`${kind} 未返回${audio ? \"转录\" : \"描述\"}：${filePath}`"
+  }
+}

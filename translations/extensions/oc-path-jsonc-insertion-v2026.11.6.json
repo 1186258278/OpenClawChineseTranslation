@@ -1,0 +1,7 @@
+{
+  "file": "extensions/oc-path/src/oc-path/jsonc/edit.ts",
+  "description": "oc-path 重复 JSONC 键插入歧义提示",
+  "replacements": {
+    "\"insertion under a duplicated key is ambiguous; merge the duplicate keys into one (keeping the last, effective value), then retry the insertion\"": "\"重复键下的插入位置不明确；请合并重复键（保留最后一个实际生效的值），然后重试插入\""
+  }
+}

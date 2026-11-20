@@ -1,0 +1,7 @@
+{
+  "file": "extensions/oc-path/src/oc-path/universal.ts",
+  "description": "oc-path value-json 格式限制提示",
+  "replacements": {
+    "\"--value-json only applies to JSON, JSONC and JSONL; pass a plain <value> without --value-json for Markdown or YAML\"": "\"--value-json 仅适用于 JSON、JSONC 和 JSONL；处理 Markdown 或 YAML 时请传入普通 <value>，不要使用 --value-json\""
+  }
+}

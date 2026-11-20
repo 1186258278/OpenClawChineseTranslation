@@ -1,0 +1,22 @@
+{
+  "file": "src/cli/update-cli/update-command-schema.ts",
+  "description": "v2026.11.6 命令行用户提示汉化",
+  "replacements": {
+    "\"Update dry-run\"": "\"更新预演\"",
+    "\"No changes were applied.\"": "\"未应用任何更改。\"",
+    "`  Root: ${theme.muted(preview.root)}`": "`  根目录：${theme.muted(preview.root)}`",
+    "`  Install kind: ${theme.muted(preview.installKind)}`": "`  安装类型：${theme.muted(preview.installKind)}`",
+    "`  Mode: ${theme.muted(preview.mode)}`": "`  模式：${theme.muted(preview.mode)}`",
+    "`  Channel: ${theme.muted(preview.effectiveChannel)}`": "`  渠道：${theme.muted(preview.effectiveChannel)}`",
+    "`  Tag/spec: ${theme.muted(preview.tag)}`": "`  标签/规格：${theme.muted(preview.tag)}`",
+    "`  Current version: ${theme.muted(preview.currentVersion)}`": "`  当前版本：${theme.muted(preview.currentVersion)}`",
+    "`  Target version: ${theme.muted(preview.targetVersion)}`": "`  目标版本：${theme.muted(preview.targetVersion)}`",
+    "`  Target version: unresolved (${preview.targetVersionReason})`": "`  目标版本：未确定（${preview.targetVersionReason}）`",
+    "\"  Downgrade confirmation would be required in a real run.\"": "\"  实际执行时需要确认降级。\"",
+    "\"Planned actions:\"": "\"计划操作：\"",
+    "\"Notes:\"": "\"备注：\"",
+    "\"Git dry-runs do not select a build-tested target version.\"": "\"Git 更新预演不会选择经过构建测试的目标版本。\"",
+    "\"The package target version could not be resolved.\"": "\"无法确定软件包目标版本。\"",
+    "\"The package artifact is not staged during a dry-run.\"": "\"更新预演期间不会暂存软件包产物。\""
+  }
+}

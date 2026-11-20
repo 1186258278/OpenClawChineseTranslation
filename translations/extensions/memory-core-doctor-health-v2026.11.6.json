@@ -1,0 +1,11 @@
+{
+  "file": "extensions/memory-core/src/doctor-health.ts",
+  "description": "Memory Core 语义索引就绪状态及快照容量诊断",
+  "replacements": {
+    "`Memory Core semantic-index readiness for agent ${agentId} could not be verified `": "`无法验证智能体 ${agentId} 的 Memory Core 语义索引是否就绪，`",
+    "`because temporary snapshot storage is unavailable (${formatErrorMessage(error)}).`": "`因为临时快照存储不可用（${formatErrorMessage(error)}）。`",
+    "\"Free temporary snapshot space or quota, then rerun `openclaw doctor --lint --only memory-core/managed-local-embedding-setup`.\"": "\"请释放临时快照空间或配额，然后重新运行 `openclaw doctor --lint --only memory-core/managed-local-embedding-setup`。\"",
+    "`Memory index for agent ${agentId} uses vector model ${model}, but `": "`智能体 ${agentId} 的记忆索引使用向量模型 ${model}，但`",
+    "`embedding provider \"${failure.provider}\" cannot initialize (${failure.reason}).`": "`嵌入提供商 \"${failure.provider}\" 无法初始化（${failure.reason}）。`"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "file": "extensions/browser/src/browser/pw-session-navigation-standing.ts",
+  "description": "浏览器操作间的导航阻止提示",
+  "replacements": {
+    "`Stopped a document the page requested between browser actions (${error instanceof Error ? error.name : \"error\"}).`": "`已阻止页面在浏览器操作之间请求的文档（${error instanceof Error ? error.name : \"error\"}）。`"
+  }
+}

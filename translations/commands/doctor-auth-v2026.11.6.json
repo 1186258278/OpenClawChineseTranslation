@@ -1,0 +1,7 @@
+{
+  "file": "src/commands/doctor-auth.ts",
+  "description": "v2026.11.6 共享认证来源读取与清理错误",
+  "replacements": {
+    "read: \"Shared auth source read failed\", cleanup: \"Shared auth source cleanup failed\"": "read: \"共享认证来源读取失败\", cleanup: \"共享认证来源清理失败\""
+  }
+}

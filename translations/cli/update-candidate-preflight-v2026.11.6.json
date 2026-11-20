@@ -1,0 +1,10 @@
+{
+  "file": "src/cli/update-cli/update-command-preflight.ts",
+  "description": "v2026.11.6 命令行用户提示汉化",
+  "replacements": {
+    "\"Candidate preflight requires an authority-free supervisor invocation.\"": "\"候选版本预检需要由不持有写入权限的监督进程调用。\"",
+    "\"Candidate package root is unavailable.\"": "\"候选软件包根目录不可用。\"",
+    "\"Candidate package version is unavailable.\"": "\"候选软件包版本不可用。\"",
+    "\"Candidate preflight requires an absolute source package root.\"": "\"候选版本预检需要源软件包的绝对根目录。\""
+  }
+}

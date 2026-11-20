@@ -1,0 +1,7 @@
+{
+  "file": "extensions/anthropic/cli.runtime.ts",
+  "description": "Claude Code 启动时 OpenClaw MCP 未连接提示",
+  "replacements": {
+    "`Claude Code started without the OpenClaw MCP server (status ${String(openClawServer.status)}). The CLI process was retired; retry the request to start a fresh process.`": "`Claude Code 启动时未连接 OpenClaw MCP 服务器（状态：${String(openClawServer.status)}）。CLI 进程已退出；请重试请求以启动新进程。`"
+  }
+}

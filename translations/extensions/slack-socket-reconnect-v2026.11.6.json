@@ -1,0 +1,7 @@
+{
+  "file": "extensions/slack/src/monitor/provider-support.ts",
+  "description": "Slack Socket Mode 重连中止提示",
+  "replacements": {
+    "\"Slack Socket Mode stopped during reconnect\"": "\"Slack Socket Mode 在重连期间已停止\""
+  }
+}

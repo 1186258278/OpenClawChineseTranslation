@@ -1,0 +1,7 @@
+{
+  "file": "extensions/codex/src/app-server/run-attempt-turn-request.ts",
+  "description": "Codex 请求派发缺少输入范围提示",
+  "replacements": {
+    "\"Codex prompt input range is missing before provider dispatch\"": "\"派发到提供商前缺少 Codex 提示词输入范围\""
+  }
+}

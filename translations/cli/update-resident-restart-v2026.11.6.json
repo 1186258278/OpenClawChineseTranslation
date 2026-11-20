@@ -1,0 +1,9 @@
+{
+  "file": "src/cli/update-cli/update-command-service-resident-restart.ts",
+  "description": "v2026.11.6 命令行用户提示汉化",
+  "replacements": {
+    "\"Gateway process changed during maintenance drain; inspect its service before retrying.\"": "\"网关进程在等待维护任务结束时发生变化；请检查其服务后重试。\"",
+    "`WARNING: The Gateway process changed during this stop and its shutdown record could not be read (${coerceErrorMessage(cause)}); the change is refused.`": "`警告：本次停止期间网关进程发生变化，且无法读取其关闭记录（${coerceErrorMessage(cause)}）；已拒绝此次更改。`",
+    "\"WARNING: The running Gateway restarted itself for the replaced installation during this stop; its service was inspected again and the restarted process is drained and stopped instead.\"": "\"警告：本次停止期间，运行中的网关为替换后的安装自行重启；已重新检查其服务，等待重启进程的任务结束后将其停止。\""
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "file": "src/commands/doctor-database-port-working.ts",
+  "description": "v2026.11.6 数据库迁移工作副本拒绝原因",
+  "replacements": {
+    "refuse(ctx, \"missing recorded original image\", \"manifest-bound SQLite capture\")": "refuse(ctx, \"缺少已记录的原始映像\", \"与清单绑定的 SQLite 快照\")",
+    "refuse(ctx, \"nonlocal or unclassified working cache\", \"XDG_CACHE_HOME on a local filesystem\")": "refuse(ctx, \"工作缓存不在本地或无法判定其位置\", \"将 XDG_CACHE_HOME 设在本地文件系统\")"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "file": "extensions/openai/token-sharing-oauth.runtime.ts",
+  "description": "ChatGPT 账户登录、令牌共享说明及完成提示",
+  "replacements": {
+    "displayName: sharing ? \"Sign in with ChatGPT\" : \"Sign in with ChatGPT (identity only)\"": "displayName: sharing ? \"使用 ChatGPT 登录\" : \"使用 ChatGPT 登录（仅验证身份）\"",
+    "\"Choose whether OpenClaw can use your ChatGPT plan for eligible Responses API requests. Token sharing does not grant access to conversations, Codex history, or connected apps.\"": "\"选择是否允许 OpenClaw 使用你的 ChatGPT 套餐处理符合条件的 Responses API 请求。令牌共享不会授予对聊天记录、Codex 历史记录或已连接应用的访问权限。\"",
+    "\"Sign in with ChatGPT\",": "\"使用 ChatGPT 登录\",",
+    "\"Account connected. Eligible Responses API requests with this account use your ChatGPT plan.\"": "\"账户已连接。通过此账户发起的符合条件的 Responses API 请求将使用你的 ChatGPT 套餐。\""
+  }
+}

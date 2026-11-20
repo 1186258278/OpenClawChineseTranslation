@@ -1,0 +1,8 @@
+{
+  "file": "src/cli/completion-runtime.ts",
+  "description": "v2026.11.6 命令行用户提示汉化",
+  "replacements": {
+    "`Cannot safely update malformed PowerShell profile ${profilePath}. Repair its encoding and retry uninstall.`": "`无法安全更新格式错误的 PowerShell 配置文件 ${profilePath}。请修复其编码后重新卸载。`",
+    "\"Completion profile changed during cleanup; retry uninstall.\"": "\"补全配置文件在清理期间发生变化；请重新卸载。\""
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "file": "src/cli/update-cli/update-command-runtime-preflight.ts",
+  "description": "v2026.11.6 命令行用户提示汉化",
+  "replacements": {
+    "`Updater Node ${process.versions.node} at ${process.execPath}.`": "`更新程序使用 Node ${process.versions.node}，路径 ${process.execPath}。`",
+    "`PATH Node at ${pathNodeRunner} (version unavailable).`": "`PATH 中的 Node 位于 ${pathNodeRunner}（版本不可用）。`",
+    "\"PATH Node: not found.\"": "\"PATH 中的 Node：未找到。\""
+  }
+}

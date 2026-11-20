@@ -1,0 +1,8 @@
+{
+  "file": "src/cli/update-cli/update-command-post-update-maintenance.ts",
+  "description": "v2026.11.6 命令行用户提示汉化",
+  "replacements": {
+    "Could not finish removing the previous Git checkout's openclaw wrapper:": "未能完成移除旧 Git 检出目录中的 openclaw 启动脚本：",
+    "The package install is kept. If \\`openclaw\\` still starts the old checkout, remove its wrapper from PATH.": "软件包安装已保留。如果 \\`openclaw\\` 仍启动旧检出目录，请从 PATH 移除其启动脚本。"
+  }
+}

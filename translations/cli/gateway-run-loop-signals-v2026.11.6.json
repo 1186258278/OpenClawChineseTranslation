@@ -1,0 +1,8 @@
+{
+  "file": "src/cli/gateway-cli/run-loop-signals.ts",
+  "description": "v2026.11.6 命令行用户提示汉化",
+  "replacements": {
+    "\"duplicate SIGTERM ignored\"": "\"已忽略重复的 SIGTERM\"",
+    "`failed to handle SIGTERM: ${String(err)}`": "`处理 SIGTERM 失败：${String(err)}`"
+  }
+}

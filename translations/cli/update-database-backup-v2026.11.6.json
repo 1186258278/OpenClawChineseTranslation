@@ -1,0 +1,7 @@
+{
+  "file": "src/cli/update-cli/update-command-database-backup.ts",
+  "description": "v2026.11.6 命令行用户提示汉化",
+  "replacements": {
+    "`Update refused before changing the install: PostgreSQL database backup requires exclusive state ownership (${unavailable}). Stop the Gateway through its service owner, then rerun openclaw update.`": "`更新已在更改安装前被拒绝：PostgreSQL 数据库备份需要独占状态权限（${unavailable}）。请通过服务管理器停止网关，然后重新运行 openclaw update。`"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "file": "src/commands/cleanup-utils.ts",
+  "description": "v2026.11.6 保留路径与补全注册清理提示",
+  "replacements": {
+    "`Cannot verify preserved path ${shortenHomeInString(target)}. Fix the path or its parent folder and retry.`": "`无法验证要保留的路径 ${shortenHomeInString(target)}。请修复该路径或其父目录后重试。`",
+    "terminalText`[dry-run] remove completion registration from ${shortenHomeInString(profilePath)}`": "terminalText`[dry-run] 从 ${shortenHomeInString(profilePath)} 移除补全注册`",
+    "terminalText`Removed completion registration from ${shortenHomeInString(profilePath)}`": "terminalText`已从 ${shortenHomeInString(profilePath)} 移除补全注册`"
+  }
+}

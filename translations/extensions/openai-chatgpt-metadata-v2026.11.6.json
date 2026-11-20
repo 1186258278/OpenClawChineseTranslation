@@ -1,0 +1,9 @@
+{
+  "file": "extensions/openai/provider-metadata.ts",
+  "description": "OpenAI ChatGPT 登录标签及授权范围提示",
+  "replacements": {
+    "groupHint: \"Codex login, Sign in with ChatGPT, or API key\"": "groupHint: \"Codex 登录、使用 ChatGPT 登录或 API 密钥\"",
+    "label: \"Sign in with ChatGPT\"": "label: \"使用 ChatGPT 登录\"",
+    "hint: \"Use your ChatGPT plan for eligible Responses API requests\"": "hint: \"使用 ChatGPT 套餐处理符合条件的 Responses API 请求\""
+  }
+}

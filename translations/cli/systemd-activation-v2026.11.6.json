@@ -1,0 +1,11 @@
+{
+  "file": "src/cli/gateway-cli/systemd-activation.ts",
+  "description": "v2026.11.6 命令行用户提示汉化",
+  "replacements": {
+    "`Systemd activation left unverifiable state unchanged. Run openclaw doctor to inspect it.\\n${problems.join(\"\\n\")}`": "`Systemd 激活未更改无法核验的状态。请运行 openclaw doctor 检查。\\n${problems.join(\"\\n\")}`",
+    "\"Systemd activation config changed before repair; retry startup.\"": "\"Systemd 激活配置在修复前发生变化；请重新启动。\"",
+    "\"Systemd activation: backing up and migrating older OpenClaw databases.\"": "\"Systemd 激活：正在备份并迁移旧版 OpenClaw 数据库。\"",
+    "\"Systemd activation requires Doctor maintenance ownership.\"": "\"Systemd 激活需要 Doctor 持有维护权限。\"",
+    "`Systemd activation repair failed: ${formatErrorMessage(error)}`": "`Systemd 激活修复失败：${formatErrorMessage(error)}`"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "file": "src/cli/update-cli/update-command-node-runtime.ts",
+  "description": "v2026.11.6 命令行用户提示汉化",
+  "replacements": {
+    "\"Node runtime provisioning\"": "\"准备 Node 运行环境\""
+  }
+}

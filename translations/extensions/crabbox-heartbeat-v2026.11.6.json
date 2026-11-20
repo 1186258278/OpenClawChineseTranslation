@@ -1,0 +1,8 @@
+{
+  "file": "extensions/crabbox/src/crabbox-worker-heartbeat.ts",
+  "description": "Crabbox 沙箱心跳失败及重试提示",
+  "replacements": {
+    "`${message}; Sandbox idle activity is not being refreshed; ${retry ? \"OpenClaw will retry automatically; \" : \"\"}save your work if failures persist`": "`${message}；沙箱空闲活动状态未能刷新；${retry ? \"OpenClaw 将自动重试；\" : \"\"}若持续失败，请保存工作`",
+    "`${message}; cloud worker machines may be reaped after ${entry.idleTimeout} of coordinator-idle time`": "`${message}；云端工作节点可能在协调器空闲 ${entry.idleTimeout} 后被回收`"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "file": "extensions/codex/src/app-server/inference-proxy-http.ts",
+  "description": "Codex 推理中继不支持的操作提示",
+  "replacements": {
+    "message: \"This operation is not supported by the Codex inference relay.\"": "message: \"Codex 推理中继不支持此操作。\""
+  }
+}

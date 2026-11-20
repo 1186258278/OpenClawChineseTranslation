@@ -1,0 +1,7 @@
+{
+  "file": "extensions/feishu/src/card-action.ts",
+  "description": "飞书卡片操作无法确认会话类型提示",
+  "replacements": {
+    "\"⚠️ Could not verify this chat's conversation type, so this action was not run. Try clicking again later.\"": "\"⚠️ 无法确认此聊天的会话类型，因此未执行操作。请稍后重新点击。\""
+  }
+}

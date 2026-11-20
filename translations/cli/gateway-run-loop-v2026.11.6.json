@@ -1,0 +1,9 @@
+{
+  "file": "src/cli/gateway-cli/run-loop.ts",
+  "description": "v2026.11.6 命令行用户提示汉化",
+  "replacements": {
+    "\"shutdown resources remain; refusing in-process restart and exiting\"": "\"仍有关闭资源未释放；已拒绝进程内重启并退出\"",
+    "\"Fresh-process restart failed; the unsettled native worker cannot recover in-process. Exiting through the verified service owner.\"": "\"新进程重启失败；未结束的原生工作进程无法在当前进程中恢复。正在通过已核验的服务管理器退出。\"",
+    "\"Fresh-process restart failed; the unavailable child runtime cannot recover in-process. Restart through the service owner after repairing its runtime.\"": "\"新进程重启失败；不可用的子进程运行环境无法在当前进程中恢复。请修复运行环境后通过服务管理器重启。\""
+  }
+}

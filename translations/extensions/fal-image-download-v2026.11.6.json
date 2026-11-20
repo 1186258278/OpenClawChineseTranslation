@@ -1,0 +1,7 @@
+{
+  "file": "extensions/fal/image-generation-provider.ts",
+  "description": "fal 生成图像下载大小限制提示",
+  "replacements": {
+    "`fal generated image download exceeds ${maxBytes} bytes`": "`fal 生成图像的下载大小超过 ${maxBytes} 字节`"
+  }
+}

@@ -1,18 +1,24 @@
 {
   "file": "src/commands/doctor-state-integrity.ts",
-  "description": "状态完整性检查",
+  "description": "状态完整性检查：技术目录标签保持原值，仅格式化用户可见文案",
   "replacements": {
     "note(warnings.join(\"\\n\"), \"State integrity\")": "note(warnings.join(\"\\n\"), \"状态完整性\")",
     "note(changes.join(\"\\n\"), \"Doctor changes\")": "note(changes.join(\"\\n\"), \"诊断更改\")",
     "`- CRITICAL: state directory missing (${displayStateDir}). Sessions, credentials, logs, and config are stored there.`": "`- 严重：状态目录缺失 (${displayStateDir})。会话、凭据、日志和配置都存储在那里。`",
     "\"- Gateway is in remote mode; run doctor on the remote host where the gateway runs.\"": "\"- 网关处于远程模式；请在运行网关的远程主机上执行 doctor。\"",
     "`- State directory permissions are too open (${displayStateDir}). Recommend chmod 700.`": "`- 状态目录权限过于开放 (${displayStateDir})。建议 chmod 700。`",
-    "`- ${label} missing (${displayDir}).`": "`- ${label} 缺失 (${displayDir})。`",
-    "\"Sessions dir\"": "\"会话目录\"",
-    "\"Session store dir\"": "\"会话存储目录\"",
-    "\"OAuth dir\"": "\"OAuth 目录\"",
+    "`- ${label} missing (${displayDir}).`": "`- ${formatRuntimeDirLabel(label)} 缺失（${displayDir}）。`",
     "`- Main session transcript missing (${shortenHomePath(transcriptPath)}). History will appear to reset.`": "`- 主会话记录缺失 (${shortenHomePath(transcriptPath)})。历史记录将显示为已重置。`",
     "`- Main session transcript has only ${lineCount} line. Session history may not be appending.`": "`- 主会话记录只有 ${lineCount} 行。会话历史可能没有正常追加。`",
-    "`- ${label ?? \"State directory\"} not writable (${displayDir}).`": "`- ${label ?? \"状态目录\"} 不可写（${displayDir}）。`"
+    "`- ${label ?? \"State directory\"} not writable (${displayDir}).`": "`- ${label ? formatRuntimeDirLabel(label) : \"状态目录\"} 不可写（${displayDir}）。`",
+    "function resolveSessionRuntimeDirectories(": "function formatRuntimeDirLabel(label: RuntimeDirLabel): string {\n  return {\n    \"Sessions dir\": \"会话目录\",\n    \"Session store dir\": \"会话存储目录\",\n    \"OAuth dir\": \"OAuth 目录\",\n  }[label];\n}\n\nfunction resolveSessionRuntimeDirectories(",
+    "`${issue.label} is missing.`": "`${formatRuntimeDirLabel(issue.label)}缺失。`",
+    "`${issue.label} is not writable. ${issue.hint}`": "`${formatRuntimeDirLabel(issue.label)}不可写。${issue.hint}`",
+    "`${issue.label} is not writable.`": "`${formatRuntimeDirLabel(issue.label)}不可写。`",
+    "`Repair permissions on ${label ?? displayDir}?`": "`修复 ${label ? formatRuntimeDirLabel(label) : displayDir} 的权限吗？`",
+    "`- Repaired permissions on ${label ? `${label}: ` : \"\"}${displayDir}`": "`- 已修复权限：${label ? `${formatRuntimeDirLabel(label)}：` : \"\"}${displayDir}`",
+    "`Create ${label} at ${displayDir}?`": "`在 ${displayDir} 创建${formatRuntimeDirLabel(label)}吗？`",
+    "`- Created ${label}: ${displayDir}`": "`- 已创建${formatRuntimeDirLabel(label)}：${displayDir}`",
+    "`- OAuth dir not present (${displayOauthDir}). Skipping create because no WhatsApp/pairing channel config is active.`": "`- OAuth 目录不存在（${displayOauthDir}）。未启用 WhatsApp 或配对频道配置，已跳过创建。`"
   }
 }

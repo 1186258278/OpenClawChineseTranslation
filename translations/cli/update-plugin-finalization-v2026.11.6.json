@@ -1,0 +1,8 @@
+{
+  "file": "src/cli/update-cli/update-command-plugins.ts",
+  "description": "v2026.11.6 命令行用户提示汉化",
+  "replacements": {
+    "`Plugin finalization conflicts with changed config field ${field.join(\".\")}`": "`插件收尾与已更改的配置字段 ${field.join(\".\")} 冲突`",
+    "\"Plugin finalization deferred because config changed. Run `openclaw plugins doctor` or `openclaw doctor --fix` to finish plugin repair.\"": "\"配置已变化，插件收尾已延后。请运行 `openclaw plugins doctor` 或 `openclaw doctor --fix` 完成插件修复。\""
+  }
+}

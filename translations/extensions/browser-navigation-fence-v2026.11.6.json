@@ -1,0 +1,8 @@
+{
+  "file": "extensions/browser/src/browser/pw-session-navigation-fence.ts",
+  "description": "浏览器导航拦截生命周期错误提示",
+  "replacements": {
+    "\"Browser navigation interception was not released in time\"": "\"浏览器导航拦截未及时释放\"",
+    "\"Browser navigation authority fence is no longer admitting targets\"": "\"浏览器导航权限边界已停止接纳目标\""
+  }
+}

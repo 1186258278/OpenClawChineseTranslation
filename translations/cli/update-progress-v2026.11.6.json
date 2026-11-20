@@ -1,0 +1,7 @@
+{
+  "file": "src/cli/update-cli/progress.ts",
+  "description": "v2026.11.6 命令行用户提示汉化",
+  "replacements": {
+    "`Report: ${reportPath}`": "`报告：${reportPath}`"
+  }
+}

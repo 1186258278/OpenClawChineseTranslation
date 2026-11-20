@@ -1,0 +1,7 @@
+{
+  "file": "extensions/browser/src/browser/navigation-guard.ts",
+  "description": "浏览器严格导航策略的配置指引",
+  "replacements": {
+    "'Navigation blocked: strict browser SSRF policy requires redirect-hop inspection, which existing-session (Chrome MCP) profiles cannot provide; use a profile with driver \"openclaw\" for strict navigation'": "'导航已阻止：严格浏览器 SSRF 策略需要逐跳检查重定向，现有会话（Chrome MCP）配置无法提供此检查；请使用 driver 为 \"openclaw\" 的配置进行严格导航'"
+  }
+}

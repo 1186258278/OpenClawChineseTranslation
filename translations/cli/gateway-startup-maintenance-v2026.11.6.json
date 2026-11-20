@@ -1,0 +1,10 @@
+{
+  "file": "src/cli/gateway-cli/startup-maintenance.ts",
+  "description": "v2026.11.6 命令行用户提示汉化",
+  "replacements": {
+    "`failed to park the managed LaunchAgent: ${formatErrorMessage(parkError)}`": "`停用受管理的 LaunchAgent 失败：${formatErrorMessage(parkError)}`",
+    "\" Parked the managed LaunchAgent.\"": "\" 已停用受管理的 LaunchAgent。\"",
+    "`Gateway failed to start: ${formatErrorMessage(refusal)}": "`网关启动失败：${formatErrorMessage(refusal)}",
+    "`Gateway failed to start: ${formatErrorMessage(error)}.": "`网关启动失败：${formatErrorMessage(error)}。"
+  }
+}

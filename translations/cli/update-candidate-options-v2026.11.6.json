@@ -1,0 +1,10 @@
+{
+  "file": "src/cli/update-cli.ts",
+  "description": "v2026.11.6 命令行用户提示汉化",
+  "replacements": {
+    "\"Internal isolated candidate readiness protocol\"": "\"内部隔离候选版本就绪协议\"",
+    "\"Output the readiness receipt as JSON\"": "\"以 JSON 输出就绪回执\"",
+    "\"Absolute serving package root\"": "\"当前服务包的绝对根目录\"",
+    "\"Override candidate check deadlines in seconds\"": "\"覆盖候选版本检查的截止时间（秒）\""
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "file": "src/cli/gateway-cli/run-loop-startup.ts",
+  "description": "v2026.11.6 命令行用户提示汉化",
+  "replacements": {
+    "\"released Gateway state ownership after a stop during startup\"": "\"启动期间收到停止请求后，已释放网关状态权限\""
+  }
+}

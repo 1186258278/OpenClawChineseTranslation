@@ -1,0 +1,9 @@
+{
+  "file": "src/commands/doctor/shared/legacy-config-core-normalizers.ts",
+  "description": "v2026.11.6 保留旧版模型路由与技能配置迁移提示",
+  "replacements": {
+    "`Kept legacy ${migrated.legacyProvider}/* model refs: ${pin.path} routes models to the ${sanitizeForLog(runtime)} runtime, and rewriting ${sanitizeForLog(ref)} to ${sanitizeForLog(migrated.ref)} could switch a route between ${sanitizeForLog(runtime)} and ${migrated.runtime}. Both routes keep working as configured.`": "`已保留旧版 ${migrated.legacyProvider}/* 模型引用：${pin.path} 将模型路由到 ${sanitizeForLog(runtime)} 运行时，将 ${sanitizeForLog(ref)} 改写为 ${sanitizeForLog(migrated.ref)} 可能使路由在 ${sanitizeForLog(runtime)} 与 ${migrated.runtime} 之间切换。两条路由均继续按现有配置运行。`",
+    "`Kept legacy ${migrated.legacyProvider}/* model refs: ${path} selects ${sanitizeForLog(migrated.ref)} both directly and through ${migrated.runtime}; rewriting would move both routes onto ${migrated.runtime}. Both routes keep working as configured.`": "`已保留旧版 ${migrated.legacyProvider}/* 模型引用：${path} 同时直接选择 ${sanitizeForLog(migrated.ref)}，并通过 ${migrated.runtime} 选择它；改写会使两条路由都转到 ${migrated.runtime}。两条路由均继续按现有配置运行。`",
+    "`Removed ${key} from skills.allowBundled.`": "`已从 skills.allowBundled 移除 ${key}。`"
+  }
+}
