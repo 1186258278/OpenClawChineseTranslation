@@ -8,6 +8,12 @@ export function buildShengsuanyunProvider(): ModelProviderConfig {
     api: "openai-completions",
     models: [
       {
+        id: "minimax/minimax-m3",
+        name: "MiniMax M3",
+        contextWindow: 1000000,
+        maxTokens: 81920,
+      },
+      {
         id: "openai/gpt-4.1-nano",
         name: "GPT-4.1 Nano",
         contextWindow: 1047576,

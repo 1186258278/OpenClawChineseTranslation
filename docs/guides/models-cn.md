@@ -101,13 +101,23 @@ openclaw onboard
 # 选择「MiniMax」→ 选择 OAuth 或 API Key
 ```
 
-### 版本选择
+### Model selection
 
-| 选项 | 说明 |
+| Model | Description |
 |------|------|
-| MiniMax M2.5 | 标准版 |
-| MiniMax M2.5 (CN) | 国内端点 (api.minimaxi.com) |
-| MiniMax M2.5 Highspeed | 官方快速层级 |
+| MiniMax M3.1 Flash (`MiniMax-M3.1-Flash`) | Recommended for direct API use; 1,000,000-token context window |
+| MiniMax M3 (`MiniMax-M3`) | Alternative for direct API use; 1,000,000-token context window |
+
+These are direct API model IDs. OAuth and subscription availability depend on the account and region; this table does not change the upstream onboarding catalog. See the [official model guide](https://platform.minimax.io/docs/guides/models-intro.md).
+
+Gateway routes and limits follow the gateway catalog. The panel only recommends current MiniMax text models advertised by that gateway; it keeps an explicitly selected legacy or custom model. CiyAPI keeps its `auto` default and does not bundle unverified MiniMax routes. The ShengSuanYun catalog advertises `minimax/minimax-m3` with a 1,000,000-token context window and an 81,920-token output limit. Flash availability on either gateway has not been verified.
+
+### Regional endpoints
+
+| Region | OpenAI-compatible endpoint | Anthropic-compatible endpoint |
+|------|-----------------|--------------------|
+| Global | `https://api.minimax.io/v1` | `https://api.minimax.io/anthropic` |
+| China | `https://api.minimaxi.com/v1` | `https://api.minimaxi.com/anthropic` |
 
 ---
 
