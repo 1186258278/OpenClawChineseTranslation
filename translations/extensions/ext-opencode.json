@@ -4,6 +4,12 @@
   "replacements": {
     "\"Zen provides access to Claude, GPT, Gemini, and more models.\"": "\"Zen 提供对 Claude、GPT、Gemini 等模型的访问。\"",
     "\"Get your API key at: https://opencode.ai/auth\"": "\"在此获取 API 密钥: https://opencode.ai/auth\"",
-    "\"Choose the Zen catalog when you want the curated multi-model proxy.\"": "\"选择 Zen 目录以使用精选的多模型代理。\""
+    "\"Choose the Zen catalog when you want the curated multi-model proxy.\"": "\"选择 Zen 目录以使用精选的多模型代理。\"",
+    "label: \"OpenCode Console browser sign-in\"": "label: \"OpenCode Console 浏览器登录\"",
+    "hint: \"Sign in with your browser and pick a Console workspace\"": "hint: \"使用浏览器登录并选择一个 Console 工作区\"",
+    "choiceLabel: \"OpenCode Console (browser sign-in)\"": "choiceLabel: \"OpenCode Console（浏览器登录）\"",
+    "choiceHint: \"Sign in in your browser and pick an OpenCode Console workspace\"": "choiceHint: \"在浏览器中登录并选择一个 OpenCode Console 工作区\"",
+    "groupLabel: \"OpenCode\"": "groupLabel: \"OpenCode\"",
+    "groupHint: \"Browser sign-in or shared Zen + Go API key\"": "groupHint: \"浏览器登录或共享 Zen + Go API 密钥\""
   }
 }

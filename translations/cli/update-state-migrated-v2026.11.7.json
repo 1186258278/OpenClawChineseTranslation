@@ -1,0 +1,9 @@
+{
+  "file": "src/cli/update-cli/update-command-migrated.ts",
+  "description": "更新状态迁移检查提示（v2026.11.7）",
+  "replacements": {
+    "No data was changed because no new-version process had opened the state.": "由于新版本进程尚未打开状态数据，因此没有数据被修改。",
+    " The update continues.": " 更新将继续。",
+    "State schema check was inconclusive (${formatErrorMessage(cause).replace(/\\s+/g, \" \")}). ${state}${outcome}": "状态 schema 检查无法确定（${formatErrorMessage(cause).replace(/\\s+/g, \" \")}）。${state}${outcome}"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "file": "src/cli/capability-cli/image.ts",
+  "description": "图像描述 CLI 提示（v2026.11.7）",
+  "replacements": {
+    "Describe the image.": "描述图像。"
+  }
+}

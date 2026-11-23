@@ -1,0 +1,7 @@
+{
+  "file": "src/cli/update-cli/update-command-package.ts",
+  "description": "更新包 Doctor 校验提示（v2026.11.7）",
+  "replacements": {
+    "Validated Doctor requires its live update executor and captured config hash.": "已验证的 Doctor 需要实时更新执行器和捕获的配置哈希。"
+  }
+}

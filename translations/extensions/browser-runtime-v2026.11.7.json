@@ -1,0 +1,16 @@
+{
+  "file": "extensions/browser/src/browser/chrome.ts",
+  "description": "浏览器运行时诊断提示（v2026.11.7）",
+  "replacements": {
+    "Managed Chrome process spawned without a pid.": "受管 Chrome 进程启动时没有 pid。",
+    "CDP diagnostic failed: ${safeChromeCdpErrorMessage(err)}.": "CDP 诊断失败：${safeChromeCdpErrorMessage(err)}。",
+    "CDP diagnostic failed.": "CDP 诊断失败。",
+    "Removed stale Chromium Singleton* locks for profile \"${profile.name}\" and retrying launch.": "已移除配置文件“${profile.name}”的过期 Chromium Singleton* 锁，正在重试启动。",
+    "Managed Chrome process ${spawned.pid} survived singleton recovery.": "受管 Chrome 进程 ${spawned.pid} 在 Singleton 恢复后仍未退出。",
+    "Check the browser executable and browser.extraArgs, then retry. If it still fails, use another browser profile or an alternative tool.": "检查浏览器可执行文件和 browser.extraArgs，然后重试。如果仍然失败，请使用其他浏览器配置文件或替代工具。",
+    "If running in a container or as root, try setting browser.noSandbox: true.": "如果在容器中或以 root 身份运行，请尝试设置 browser.noSandbox: true。",
+    "No DISPLAY/X server was detected. Set OPENCLAW_BROWSER_HEADLESS=1, remove the headed override, start Xvfb, or run the Gateway in a desktop session.": "未检测到 DISPLAY/X 服务器。请设置 OPENCLAW_BROWSER_HEADLESS=1、移除有头模式覆盖、启动 Xvfb，或在桌面会话中运行 Gateway。",
+    "The Chromium profile \"${profile.name}\" is locked. Stop the existing browser or remove stale Singleton* lock files under ~/.openclaw/browser/${profile.name}/user-data.": "Chromium 配置文件“${profile.name}”已锁定。请停止现有浏览器，或移除 ~/.openclaw/browser/${profile.name}/user-data 下的过期 Singleton* 锁文件。",
+    "Managed Chrome for profile \"${profile.name}\" exited (code ${code}, signal ${exitSignal}). Check the browser executable and browser.extraArgs before retrying.${stderrDiagnostics.hint()}": "配置文件“${profile.name}”的受管 Chrome 已退出（代码 ${code}，信号 ${exitSignal}）。重试前请检查浏览器可执行文件和 browser.extraArgs。${stderrDiagnostics.hint()}"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "file": "src/cli/daemon-cli/shared.ts",
+  "description": "Gateway 状态崩溃历史提示（v2026.11.7）",
+  "replacements": {
+    "Recent Gateway crashes unavailable: ${history.crashHistoryError}": "最近的 Gateway 崩溃记录不可用：${history.crashHistoryError}",
+    "Previous Gateway run ended unexpectedly (${new Date(crash.detectedAtMs).toISOString()}): ${formatGatewayCrash(crash)}": "上次 Gateway 运行异常结束（${new Date(crash.detectedAtMs).toISOString()}）：${formatGatewayCrash(crash)}"
+  }
+}

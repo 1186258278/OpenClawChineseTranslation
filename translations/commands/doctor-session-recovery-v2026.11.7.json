@@ -1,0 +1,9 @@
+{
+  "file": "src/commands/doctor/shared/session-entry-shape.ts",
+  "description": "会话恢复 Doctor 提示（v2026.11.7）",
+  "replacements": {
+    "Retained legacy restart custody: ${reason}. Next step: inspect this session's retained run/generation IDs and pending-delivery outcome against its transcript before repairing custody; custody was left intact.": "已保留旧版重启托管状态：${reason}。下一步：在修复托管状态前，根据会话记录检查本会话保留的运行/代际 ID 以及待交付结果；托管状态保持不变。",
+    "Recovered legacy restart tombstone; matching obsolete claims and pending delivery retired (original state backed up).": "已恢复旧版重启墓碑；已停用匹配的过时声明和待交付项（原始状态已备份）。",
+    "Legacy restart recovery retired pending final delivery with an unknown outcome; the original is preserved in the pre-startup migration backup.": "旧版重启恢复已停用结果未知的待交付最终消息；原始数据保存在启动前迁移备份中。"
+  }
+}

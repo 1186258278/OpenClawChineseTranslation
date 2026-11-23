@@ -1,0 +1,7 @@
+{
+  "file": "src/cli/one-shot-exit.ts",
+  "description": "CLI 退出看门狗提示（v2026.11.7）",
+  "replacements": {
+    "command settled but the process is still alive after ${delayMs}ms; active resources: ${resources || \"unreported\"}${terminate ? \"; terminating\" : \"\"}\\n": "命令已完成，但进程在 ${delayMs}ms 后仍未退出；活动资源：${resources || \"未报告\"}${terminate ? \"；正在终止\" : \"\"}\\n"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "file": "src/commands/doctor-sandbox.ts",
+  "description": "沙箱镜像 Doctor 提示（v2026.11.7）",
+  "replacements": {
+    "Unable to locate ${scriptRel}. Run it from the repo root.": "找不到 ${scriptRel}。请在仓库根目录运行。",
+    "Running ${scriptRel}...": "正在运行 ${scriptRel}……",
+    "Completed ${scriptRel}.": "已完成 ${scriptRel}。",
+    "Run ${formatCliCommand(\"openclaw doctor --fix\")} to build it with ${params.buildScript}.": "运行 ${formatCliCommand(\"openclaw doctor --fix\")}，使用 ${params.buildScript} 构建。",
+    "Build it with ${params.buildScript}.": "使用 ${params.buildScript} 构建。",
+    "Build or pull it first.": "请先构建或拉取镜像。",
+    "Sandbox ${params.kind} image missing: ${params.image}. ${buildHint} Sandboxed turns will fail until the image is available.": "缺少沙箱 ${params.kind} 镜像：${params.image}。${buildHint} 镜像可用前，沙箱会话将失败。",
+    "Build ${params.kind} sandbox image now?": "现在构建 ${params.kind} 沙箱镜像吗？",
+    "Podman sandbox selected. Browser sandbox health checks are skipped because browser sandboxing requires the Docker engine.": "已选择 Podman 沙箱。由于浏览器沙箱需要 Docker 引擎，将跳过浏览器健康检查。"
+  }
+}

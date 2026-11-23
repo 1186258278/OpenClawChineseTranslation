@@ -1,0 +1,18 @@
+{
+  "file": "extensions/opencode-go/console-oauth.ts",
+  "description": "OpenCode Go Console OAuth 提示（v2026.11.7）",
+  "replacements": {
+    "OpenCode Console returned invalid credentials. Retry sign-in.": "OpenCode Console 返回的凭证无效。请重试登录。",
+    "OpenCode Console returned an invalid device authorization response.": "OpenCode Console 返回的设备授权响应无效。",
+    "OpenCode Console returned an invalid verification URL.": "OpenCode Console 返回的验证 URL 无效。",
+    "title: \"OpenCode Console sign-in\"": "title: \"OpenCode Console 登录\"",
+    "Confirm this code, then pick the workspace OpenClaw should use.": "确认此代码，然后选择 OpenClaw 要使用的工作区。",
+    "Waiting for OpenCode Console approval…": "正在等待 OpenCode Console 批准……",
+    "OpenCode Console sign-in was denied. Retry sign-in when ready.": "OpenCode Console 登录被拒绝。准备好后请重试登录。",
+    "OpenCode Console sign-in code expired. Start sign-in again.": "OpenCode Console 登录代码已过期。请重新开始登录。",
+    "OpenCode Console refresh token is missing. Sign in again.": "缺少 OpenCode Console 刷新令牌。请重新登录。",
+    "OpenCode Console sign-in complete": "OpenCode Console 登录完成",
+    "OpenCode Console sign-in stopped": "OpenCode Console 登录已停止",
+    "OpenCode Console refresh returned invalid credentials. Sign in again.": "OpenCode Console 刷新返回的凭证无效。请重新登录。"
+  }
+}

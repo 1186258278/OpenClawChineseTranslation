@@ -3,6 +3,12 @@
   "description": "网关健康检查",
   "replacements": {
     "report(formatHealthDiagnosticNote(gatewayDetails.message), \"Gateway connection\")": "report(formatHealthDiagnosticNote(gatewayDetails.message), \"网关连接\")",
-    "\"Channel warnings\",\n        )": "\"频道警告\",\n        )"
+    "\"Channel warnings\",\n        )": "\"频道警告\",\n        )",
+    "Gateway ended unexpectedly ": "Gateway 异常结束 ",
+    "Inspect \u0060openclaw gateway status\u0060 and Gateway or supervisor logs for the recorded exits. A healthy successor does not erase a previous crash.": "检查 \u0060openclaw gateway status\u0060 以及 Gateway 或监管进程日志中的退出记录。健康运行的后继进程不会抹去之前的崩溃记录。",
+    "Gateway crash history unavailable: ": "Gateway 崩溃历史不可用：",
+    "Inspect \u0060openclaw gateway status --deep\u0060 using the same profile and account.": "使用相同的配置文件和账户检查 \u0060openclaw gateway status --deep\u0060。",
+    "Previous installation replacement (": "上次安装替换（",
+    "Previous installation replacement unavailable: ": "上次安装替换不可用："
   }
 }

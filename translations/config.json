@@ -98,7 +98,13 @@
       "cli/update-repair-settlement-v2026.11.6.json",
       "cli/gateway-run-loop-signals-v2026.11.6.json",
       "cli/gateway-run-loop-startup-v2026.11.6.json",
-      "cli/gateway-shutdown-watchdog-v2026.11.6.json"
+      "cli/gateway-shutdown-watchdog-v2026.11.6.json",
+      "cli/daemon-status-crash-v2026.11.7.json",
+      "cli/capability-image-v2026.11.7.json",
+      "cli/update-config-failure-v2026.11.7.json",
+      "cli/update-state-migrated-v2026.11.7.json",
+      "cli/update-package-doctor-v2026.11.7.json",
+      "cli/one-shot-exit-v2026.11.7.json"
     ],
     "wizard": [
       "wizard/onboarding.json",
@@ -227,7 +233,9 @@
       "commands/doctor-workspace-v2026.11.6.json",
       "commands/legacy-config-runtime-refs-v2026.11.6.json",
       "commands/memory-import-v2026.11.6.json",
-      "commands/onboard-non-interactive-local-v2026.11.6.json"
+      "commands/onboard-non-interactive-local-v2026.11.6.json",
+      "commands/doctor-sandbox-v2026.11.7.json",
+      "commands/doctor-session-recovery-v2026.11.7.json"
     ],
     "daemon": [
       "daemon/systemd-hints.json"
@@ -395,7 +403,10 @@
       "extensions/openai-chatgpt-metadata-v2026.11.6.json",
       "extensions/openai-chatgpt-oauth-v2026.11.6.json",
       "extensions/slack-socket-reconnect-v2026.11.6.json",
-      "extensions/whatsapp-route-teardown-v2026.11.6.json"
+      "extensions/whatsapp-route-teardown-v2026.11.6.json",
+      "extensions/browser-runtime-v2026.11.7.json",
+      "extensions/opencode-console-oauth-v2026.11.7.json",
+      "extensions/opencode-go-console-oauth-v2026.11.7.json"
     ],
     "plugins": [
       "plugins/provider-auth-mode.json",

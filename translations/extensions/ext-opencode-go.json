@@ -3,6 +3,12 @@
   "description": "OpenCode Go 扩展认证选项 (v2026.4.15 新增)",
   "replacements": {
     "\"Go includes DeepSeek, Kimi, GLM, Qwen, MiniMax, and other coding models.\"": "\"Go 提供 DeepSeek、Kimi、GLM、Qwen、MiniMax 等编程模型。\"",
-    "\"Get your API key at: https://opencode.ai/auth\"": "\"在此获取 API 密钥: https://opencode.ai/auth\""
+    "\"Get your API key at: https://opencode.ai/auth\"": "\"在此获取 API 密钥: https://opencode.ai/auth\"",
+    "label: \"OpenCode Console browser sign-in (Go)\"": "label: \"OpenCode Console 浏览器登录（Go）\"",
+    "hint: \"Sign in with your browser and pick a Console workspace with Go\"": "hint: \"使用浏览器登录并选择包含 Go 的 Console 工作区\"",
+    "choiceLabel: \"OpenCode Go (browser sign-in)\"": "choiceLabel: \"OpenCode Go（浏览器登录）\"",
+    "choiceHint: \"Sign in in your browser and pick a Console workspace with Go\"": "choiceHint: \"在浏览器中登录并选择包含 Go 的 Console 工作区\"",
+    "groupLabel: \"OpenCode Go\"": "groupLabel: \"OpenCode Go\"",
+    "groupHint: \"Browser sign-in or shared Zen + Go API key\"": "groupHint: \"浏览器登录或共享 Zen + Go API 密钥\""
   }
 }
