@@ -2,6 +2,7 @@
   "file": "src/commands/doctor-state-integrity.ts",
   "description": "状态完整性检查：技术目录标签保持原值，仅格式化用户可见文案",
   "replacements": {
+    "const STATE_INTEGRITY_CHECK_ID = \"core/doctor/state-integrity\";": "const STATE_INTEGRITY_CHECK_ID = \"core/doctor/state-integrity\";\n\nfunction formatRuntimeDirLabel(label: RuntimeDirLabel): string {\n  return label === \"Sessions dir\" ? \"会话目录\" : label === \"Session store dir\" ? \"会话存储目录\" : \"OAuth 目录\";\n}",
     "note(warnings.join(\"\\n\"), \"State integrity\")": "note(warnings.join(\"\\n\"), \"状态完整性\")",
     "note(changes.join(\"\\n\"), \"Doctor changes\")": "note(changes.join(\"\\n\"), \"诊断更改\")",
     "`- CRITICAL: state directory missing (${displayStateDir}). Sessions, credentials, logs, and config are stored there.`": "`- 严重：状态目录缺失 (${displayStateDir})。会话、凭据、日志和配置都存储在那里。`",
