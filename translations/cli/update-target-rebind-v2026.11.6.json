@@ -2,7 +2,6 @@
   "file": "src/cli/update-cli/update-command-target.ts",
   "description": "v2026.11.6 命令行用户提示汉化",
   "replacements": {
-    "`Updating this installation and rebinding the managed Gateway from ${managedServicePlan.serviceRoot} after ownership and runtime verification.`": "`正在更新此安装；权限及运行环境核验通过后，将从 ${managedServicePlan.serviceRoot} 重新绑定受管理的网关。`",
     "`SECURITY WARNING: ${warning}`": "`安全警告：${warning}`"
   }
 }

@@ -2,10 +2,6 @@
   "file": "src/agents/openclaw-tools.ts",
   "description": "胜算云工具注册 - 将多模态工具接入 createOpenClawTools 运行链路",
   "replacements": {
-    "import { createWebFetchTool, createWebSearchTool } from \"./tools/web-tools.js\";": "import { createWebFetchTool, createWebSearchTool } from \"./tools/web-tools.js\";\nimport { createGenerateTools } from \"./tools/shengsuanyun/generate.js\";",
-
-    "  const webFetchTool = createWebFetchTool({\n    config: options?.config,\n    sandboxed: options?.sandboxed,\n    runtimeWebFetch: runtimeWebTools?.fetch,\n  });": "  const webFetchTool = createWebFetchTool({\n    config: options?.config,\n    sandboxed: options?.sandboxed,\n    runtimeWebFetch: runtimeWebTools?.fetch,\n  });\n  const hasShengSuanYunProvider = Boolean(options?.config?.models?.providers?.shengsuanyun);\n  const shengsuanyunGenerateTools = hasShengSuanYunProvider\n    ? createGenerateTools({ config: options?.config })\n    : [];",
-
-    "    ...collectPresentOpenClawTools([webSearchTool, webFetchTool, imageTool, pdfTool]),": "    ...collectPresentOpenClawTools([webSearchTool, webFetchTool, imageTool, pdfTool]),\n    ...shengsuanyunGenerateTools,"
+    "import { createWebFetchTool, createWebSearchTool } from \"./tools/web-tools.js\";": "import { createWebFetchTool, createWebSearchTool } from \"./tools/web-tools.js\";\nimport { createGenerateTools } from \"./tools/shengsuanyun/generate.js\";"
   }
 }

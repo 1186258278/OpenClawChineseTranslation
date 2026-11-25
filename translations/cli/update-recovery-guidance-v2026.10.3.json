@@ -5,7 +5,6 @@
     "`Fix ${truncateUtf16Safe(result.reason ?? \"the update failure\", 240)} then run \\`${formatCliCommand(\"openclaw update\", env)}\\` again.`": "`修复 ${truncateUtf16Safe(result.reason ?? \"更新失败\", 240)} 后，再次运行 \\`${formatCliCommand(\"openclaw update\", env)}\\`。`",
     "Rollback ${rollback.status === \"failed\" ? \"failed\" : \"not attempted\"}: ${rollback.reason}. ": "回滚${rollback.status === \"failed\" ? \"失败\" : \"未尝试\"}：${rollback.reason}。",
     "The installed Gateway is healthy and running on the retained state, but update maintenance is unfinished.": "已安装的网关运行正常，并使用保留的状态，但更新维护尚未完成。",
-    "Keep the recovery snapshots; stop the Gateway through its service owner first (\\`${formatCliCommand(\"openclaw gateway stop --force\", env)}\\` for the managed service), then run \\`${formatCliCommand(\"openclaw update repair\", env)}\\` to finish maintenance.": "请保留恢复快照；先通过服务所有者停止网关（\\`${formatCliCommand(\"openclaw gateway stop --force\", env)}\\`，用于受管服务），再运行 \\`${formatCliCommand(\"openclaw update repair\", env)}\\` 完成维护。",
-    "Keep the update installed and preserve recovery snapshots; do not roll back code alone.": "请保留已安装的更新和恢复快照；不要仅回滚代码。"
+    "Keep the recovery snapshots; stop the Gateway through its service owner first (\\`${formatCliCommand(\"openclaw gateway stop --force\", env)}\\` for the managed service), then run \\`${formatCliCommand(\"openclaw update repair\", env)}\\` to finish maintenance.": "请保留恢复快照；先通过服务所有者停止网关（\\`${formatCliCommand(\"openclaw gateway stop --force\", env)}\\`，用于受管服务），再运行 \\`${formatCliCommand(\"openclaw update repair\", env)}\\` 完成维护。"
   }
 }

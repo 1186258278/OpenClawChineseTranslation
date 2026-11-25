@@ -6,7 +6,6 @@
     "`Warning: previous package update operation ${settled.operationId} closed as ${settled.reason}. ${": "`警告：上次软件包更新操作 ${settled.operationId} 已以 ${settled.reason} 结束。${",
     "`Recovery evidence retained at ${settled.retained}.`": "`恢复证据保留于 ${settled.retained}。`",
     "\"The original package and launchers remain unchanged.\"": "\"原软件包及启动器保持不变。\"",
-    "`${settled.detail} Operation ${settled.operationId}; evidence retained at ${settled.retained}.`": "`${settled.detail} 操作 ${settled.operationId}；证据保留于 ${settled.retained}。`",
     "`Warning: ${settlement.warning}`": "`警告：${settlement.warning}`"
   }
 }

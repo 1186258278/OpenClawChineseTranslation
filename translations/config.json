@@ -270,7 +270,6 @@
       "dashboard/slash-commands.json",
       "dashboard/slash-command-executor.json",
       "dashboard/dreaming-structured.json",
-      "dashboard/tool-cards.json",
       "dashboard/chat-build-items.json",
       "dashboard/session-display.json",
       "dashboard/chat-session-controls.json",

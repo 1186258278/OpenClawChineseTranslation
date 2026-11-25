@@ -57,7 +57,6 @@
     "\"Plain output\"": "\"纯文本输出\"",
     ".description(\"List saved auth profiles\")": ".description(\"列出已保存的认证配置\")",
     "\"Agent id (default: configured system agent)\"": "\"代理 ID (默认：已配置的系统代理)\"",
-    "\"Agent id (default: configured default agent)\"": "\"代理 ID (默认：已配置的默认代理)\"",
     ".description(\"Remove a saved auth profile (see `models auth list` for ids)\")": ".description(\"移除已保存的认证配置（ID 见 `models auth list`）\")",
     "\"Skip the confirmation prompt\"": "\"跳过确认提示\"",
     ".description(\"Show per-agent auth profile order override\")": ".description(\"显示每代理认证配置顺序覆盖\")",

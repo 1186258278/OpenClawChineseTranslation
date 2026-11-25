@@ -41,8 +41,6 @@
     "  \"session.maintenance.resetArchiveRetention\": \"Session Reset Archive Retention\"": "  \"session.maintenance.resetArchiveRetention\": \"会话重置归档保留期限\"",
     "  \"session.maintenance.maxDiskBytes\": \"Session Max Disk Budget\"": "  \"session.maintenance.maxDiskBytes\": \"会话最大磁盘预算\"",
     "  \"session.maintenance.highWaterBytes\": \"Session Disk High-water Target\"": "  \"session.maintenance.highWaterBytes\": \"会话磁盘高水位目标\"",
-    "  \"session.maintenance.coldStorage\": \"Transcript Cold Storage\"": "  \"session.maintenance.coldStorage\": \"会话转录冷存储\"",
-    "  \"session.maintenance.coldStorage.enabled\": \"Automatically Archive Old Transcripts\"": "  \"session.maintenance.coldStorage.enabled\": \"自动归档旧会话转录\"",
     "  \"session.maintenance.coldStorage.afterDays\": \"Archive After Inactive Days\"": "  \"session.maintenance.coldStorage.afterDays\": \"空闲天数后归档\"",
     "  \"tools.agentToAgent\": \"Agent-to-Agent Tool Access\"": "  \"tools.agentToAgent\": \"代理间工具访问\"",
     "  \"tools.agentToAgent.enabled\": \"Enable Agent-to-Agent Tool\"": "  \"tools.agentToAgent.enabled\": \"启用代理间工具\"",

@@ -12,8 +12,6 @@
     "theme.heading(\"API key setup:\")": "theme.heading(\"API Key 设置：\")",
     "theme.heading(\"What this means:\")": "theme.heading(\"这些状态表示：\")",
     "theme.muted(\"Missing requirements:\")": "theme.muted(\"缺少要求：\")",
-    "formatSkillCheckSection(\"Missing requirements:\",": "formatSkillCheckSection(\"缺少要求：\",",
-    "\"No learned skills.\"": "\"没有学习的技能。\"",
-    "\"No Workshop changes.\\n\"": "\"没有 Workshop 变更。\\n\""
+    "formatSkillCheckSection(\"Missing requirements:\",": "formatSkillCheckSection(\"缺少要求：\","
   }
 }

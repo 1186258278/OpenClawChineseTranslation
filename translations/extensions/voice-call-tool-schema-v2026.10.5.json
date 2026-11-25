@@ -3,7 +3,6 @@
   "description": "语音通话工具参数说明迁移与实时引导",
   "replacements": {
     "description: \"Call target\"": "description: \"通话目标\"",
-    "description: \"Intro message\"": "description: \"开场消息\"",
     "description: \"Call ID\"": "description: \"通话 ID\"",
     "description: \"Follow-up message\"": "description: \"跟进消息\"",
     "description: \"Message to speak\"": "description: \"要朗读的消息\"",

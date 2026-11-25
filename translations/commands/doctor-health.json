@@ -2,7 +2,6 @@
   "file": "src/flows/doctor-health.ts",
   "description": "诊断命令 - 主入口 (intro/outro)",
   "replacements": {
-    "\"Doctor could not complete maintenance. Check the reported service state and resolve the failure.\"": "\"诊断未完成维护。请检查报告的服务状态并解决故障。\"",
-    "showDoctorOutro(\"Doctor complete.\")": "showDoctorOutro(\"诊断完成。\")"
+    "\"Doctor could not complete maintenance. Check the reported service state and resolve the failure.\"": "\"诊断未完成维护。请检查报告的服务状态并解决故障。\""
   }
 }

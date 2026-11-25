@@ -2,7 +2,6 @@
   "file": "src/auto-reply/commands-registry.shared.ts",
   "description": "聊天命令注册表 - 新增命令描述翻译",
   "replacements": {
-    "\"List thread-bound agents for this session.\"": "\"列出此会话的线程绑定代理。\"",
     "\"Duration (24h, 90m) or off\"": "\"时长（24h、90m）或 off\"",
     "\"Show available commands.\"": "\"显示可用命令。\"",
     "\"Run a skill by name.\"": "\"按名称运行技能。\"",
@@ -15,7 +14,6 @@
     "\"Toggle fast mode.\"": "\"切换快速模式。\"",
     "\"Export a JSONL trajectory bundle for the active session.\"": "\"为当前会话导出 JSONL 轨迹包。\"",
     "\"Output directory (default: workspace)\"": "\"输出目录（默认：工作区）\"",
-    "\"List model providers/models.\"": "\"列出模型提供商/模型。\"",
     "\"Manage conversation bindings and session lifecycle settings.\"": "\"管理对话绑定和会话生命周期设置。\"",
     "\"Show your sender id.\"": "\"显示你的发送者 ID。\"",
     "\"Ask a side question without changing future session context.\"": "\"提出旁路问题且不改变后续会话上下文。\"",
